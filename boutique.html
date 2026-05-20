@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Boutique ESSENTIEL CAR — Tous nos accessoires auto premium. Aspirateur, compresseur, dashcam, machine à polir et plus encore.">
+  <title>Boutique — ESSENTIEL CAR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    body.is-loading { opacity: 0; }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(224,0,12,0.06) 0%, transparent 60%),
+        linear-gradient(to bottom, transparent 60%, var(--black) 100%);
+      pointer-events: none;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0; z-index: -1;
+      background: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=50') center/cover no-repeat;
+      opacity: 0.08;
+    }
+  </style>
+</head>
+<body class="is-loading">
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div id="loader" role="status" aria-label="Chargement">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <div class="loader-mark">
+          <svg viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="22" x2="22" y2="27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="0" y1="36" x2="19" y2="36" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <line x1="2" y1="50" x2="22" y2="45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M26,6 Q4,6 4,36 Q4,66 26,66" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="55" cy="36" r="26" fill="none" stroke="white" stroke-width="4.5"/>
+            <circle cx="55" cy="36" r="16" fill="none" stroke="#E0000C" stroke-width="2.5"/>
+            <circle cx="55" cy="36" r="5" fill="#E0000C"/>
+            <line x1="55" y1="20" x2="55" y2="31" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+            <line x1="40" y1="45" x2="48" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+            <line x1="70" y1="45" x2="62" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="loader-wordmark">
+          <span class="l-e">ESSENTIEL</span><span class="l-c">CAR</span>
+        </div>
+      </div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <div class="lang-switcher" role="navigation" aria-label="Choix de langue">
+    <button class="lang-btn active" data-lang="fr" aria-label="Français">FR</button>
+    <div class="lang-divider" aria-hidden="true"></div>
+    <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+  </div>
+
+  <button class="back-top" aria-label="Retour en haut">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ESSENTIEL CAR — Accueil">
+        <div class="logo-mark">
+          <svg viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="22" x2="22" y2="27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="0" y1="36" x2="19" y2="36" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <line x1="2" y1="50" x2="22" y2="45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M26,6 Q4,6 4,36 Q4,66 26,66" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="55" cy="36" r="26" fill="none" stroke="white" stroke-width="4.5"/>
+            <circle cx="55" cy="36" r="16" fill="none" stroke="#E0000C" stroke-width="2.5"/>
+            <circle cx="55" cy="36" r="5" fill="#E0000C"/>
+            <line x1="55" y1="20" x2="55" y2="31" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+            <line x1="40" y1="45" x2="48" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+            <line x1="70" y1="45" x2="62" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-wordmark">
+          <span class="logo-e">ESSENTIEL</span><span class="logo-c">CAR</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html#produits" class="nav-link" data-i18n="nav_products">Produits</a></li>
+        <li><a href="index.html#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
+        <li><a href="index.html#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
+        <li><a href="index.html#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn--secondary btn--sm nav-cta-desktop" style="font-size:0.72rem">
+          ← Accueil
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
+      <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
+        <li><a href="index.html" class="mobile-link">Accueil</a></li>
+        <li><a href="index.html#produits" class="mobile-link" data-i18n="nav_products">Produits</a></li>
+        <li><a href="index.html#avis" class="mobile-link" data-i18n="nav_reviews">Avis</a></li>
+        <li><a href="index.html#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Page Hero -->
+    <header class="page-hero" style="position:relative;overflow:hidden">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-eyebrow" data-reveal>
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Tous nos produits</span>
+        </div>
+        <h1 class="section-title" style="font-size:clamp(3.5rem,8vw,7rem)" data-split data-i18n="boutique_title">NOS PRODUITS</h1>
+        <p class="section-sub" data-reveal data-i18n="boutique_sub">Toute notre sélection d'accessoires auto premium.</p>
+      </div>
+    </header>
+
+    <!-- Filters -->
+    <div class="boutique-filters" role="toolbar" aria-label="Filtres produits">
+      <div class="filter-group" role="group" aria-label="Catégories">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tous</button>
+        <button class="filter-btn" data-filter="nettoyage" data-i18n="filter_nettoyage">Nettoyage</button>
+        <button class="filter-btn" data-filter="securite" data-i18n="filter_securite">Sécurité</button>
+        <button class="filter-btn" data-filter="confort" data-i18n="filter_confort">Confort</button>
+        <button class="filter-btn" data-filter="technologie" data-i18n="filter_technologie">Technologie</button>
+        <button class="filter-btn" data-filter="entretien" data-i18n="filter_entretien">Entretien</button>
+      </div>
+
+      <label for="sortSelect" style="position:absolute;left:-9999px">Trier par</label>
+      <select id="sortSelect" class="sort-select" aria-label="Trier les produits">
+        <option value="popular" data-i18n="sort_popular">Popularité</option>
+        <option value="price_asc" data-i18n="sort_price_asc">Prix croissant</option>
+        <option value="price_desc" data-i18n="sort_price_desc">Prix décroissant</option>
+        <option value="rating" data-i18n="sort_rating">Mieux notés</option>
+      </select>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="boutique-grid-wrap">
+      <div class="container">
+        <div id="boutiqueGrid" class="boutique-grid"></div>
+      </div>
+    </div>
+
+    <!-- CTA Strip -->
+    <section class="section section--dark" style="padding:4rem 0" aria-label="Retour accueil">
+      <div class="container" style="text-align:center">
+        <h2 class="section-title" style="font-size:clamp(2rem,5vw,4rem);margin-bottom:1.25rem" data-reveal>
+          Vous ne trouvez pas<br>ce que vous cherchez ?
+        </h2>
+        <p class="section-sub" style="margin:0 auto 2rem;text-align:center" data-reveal>
+          Contactez-nous à <a href="mailto:contact@essentielcar.com" style="color:var(--red)">contact@essentielcar.com</a> — notre équipe vous aidera à trouver le bon accessoire.
+        </p>
+        <div style="display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap" data-reveal>
+          <a href="mailto:contact@essentielcar.com" class="btn btn--primary btn--lg" data-magnetic>
+            Contacter l'équipe
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5"/></svg>
+          </a>
+          <a href="index.html" class="btn btn--secondary btn--lg">← Retour accueil</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand footer-col">
+            <a href="index.html" class="footer-logo" aria-label="ESSENTIEL CAR accueil">
+              <div class="logo-mark">
+                <svg viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px">
+                  <line x1="2" y1="22" x2="22" y2="27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="0" y1="36" x2="19" y2="36" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="2" y1="50" x2="22" y2="45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M26,6 Q4,6 4,36 Q4,66 26,66" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                  <circle cx="55" cy="36" r="26" fill="none" stroke="white" stroke-width="4.5"/>
+                  <circle cx="55" cy="36" r="16" fill="none" stroke="#E0000C" stroke-width="2.5"/>
+                  <circle cx="55" cy="36" r="5" fill="#E0000C"/>
+                  <line x1="55" y1="20" x2="55" y2="31" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="40" y1="45" x2="48" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="70" y1="45" x2="62" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="logo-wordmark">
+                <span class="logo-e">ESSENTIEL</span><span class="logo-c">CAR</span>
+              </div>
+            </a>
+            <p class="footer-tagline" data-i18n="footer_tagline">L'essentiel pour votre voiture.</p>
+            <p class="footer-promise" data-i18n="footer_promise">Performez au quotidien.</p>
+            <div class="footer-socials">
+              <a href="#" class="social-btn" aria-label="Instagram">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="15" cy="5" r="0.5" fill="currentColor"/></svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Facebook">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3h-2a4 4 0 00-4 4v1H4v3h2v7h3v-7h2.6l.4-3H9V7a1 1 0 011-1h2V3z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title" data-i18n="footer_nav">Navigation</p>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link" data-i18n="footer_home">Accueil</a></li>
+              <li><a href="boutique.html" class="footer-link" data-i18n="footer_shop">Boutique</a></li>
+              <li><a href="index.html#faq" class="footer-link" data-i18n="footer_faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title" data-i18n="footer_contact_title">Contact</p>
+            <ul class="footer-links">
+              <li><a href="mailto:contact@essentielcar.com" class="footer-contact-email" data-i18n="footer_email">contact@essentielcar.com</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title" data-i18n="footer_legal_title">Légal</p>
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link" data-i18n="footer_mentions">Mentions légales</a></li>
+              <li><a href="#" class="footer-link" data-i18n="footer_privacy">Confidentialité</a></li>
+              <li><a href="#" class="footer-link" data-i18n="footer_cgv">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-rights" data-i18n="footer_rights">© 2024 ESSENTIEL CAR. Tous droits réservés.</p>
+        <p class="footer-made" data-i18n="footer_made">Fait avec passion pour les passionnés d'automobile.</p>
+      </div>
+    </div>
+    <div class="footer-bg-text" aria-hidden="true">BOUTIQUE</div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
