@@ -425,7 +425,16 @@ function buildStars(rating) {
 }
 
 function goToProduct(id) {
-  window.location.href = `boutique.html#${id}`;
+  window.location.href = `product.html?id=${id}`;
+}
+
+function updateCartCounter() {
+  const cart  = JSON.parse(localStorage.getItem('ec_cart') || '[]');
+  const total = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+  document.querySelectorAll('.cart-count').forEach(el => {
+    el.textContent = total;
+    el.style.display = total > 0 ? 'flex' : 'none';
+  });
 }
 
 function refreshCursorTargets() {
@@ -659,6 +668,12 @@ function startAnimations() {
   // Boutique page
   if (document.getElementById('boutiqueGrid')) initBoutique();
 
+  // Product page
+  if (document.getElementById('productMain')) {
+    if (typeof initProductPage === 'function') initProductPage();
+  }
+
+  updateCartCounter();
   ScrollTrigger.refresh();
 }
 
