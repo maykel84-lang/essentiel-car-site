@@ -673,6 +673,11 @@ function startAnimations() {
     if (typeof initProductPage === 'function') initProductPage();
   }
 
+  // Cart page
+  if (document.getElementById('cartItemsList')) {
+    if (typeof initCartPage === 'function') initCartPage();
+  }
+
   updateCartCounter();
   ScrollTrigger.refresh();
 }
