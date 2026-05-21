@@ -14,6 +14,10 @@ const PRODUCTS = [
     reviews: 847,
     category: 'nettoyage',
     accentColor: '#1a2a4a',
+    images: [
+      'assets/images/products/aspirateur-sans-fil-1.jpg',
+      'assets/images/products/aspirateur-sans-fil-2.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/>
       <circle cx="15" cy="38" r="4" fill="var(--red)" stroke="var(--red)"/>
@@ -43,6 +47,11 @@ const PRODUCTS = [
     reviews: 523,
     category: 'nettoyage',
     accentColor: '#2a1a0a',
+    images: [
+      'assets/images/products/brosse-jantes-1.jpg',
+      'assets/images/products/brosse-jantes-2.jpg',
+      'assets/images/products/brosse-jantes-3.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="24" r="14"/>
       <circle cx="24" cy="24" r="4" fill="var(--red)" stroke="var(--red)"/>
@@ -75,6 +84,9 @@ const PRODUCTS = [
     reviews: 1203,
     category: 'securite',
     accentColor: '#0a1a0a',
+    images: [
+      'assets/images/products/compresseur-air-1.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="14" width="18" height="26" rx="4"/>
       <circle cx="30" cy="20" r="8"/>
@@ -106,6 +118,13 @@ const PRODUCTS = [
     reviews: 634,
     category: 'technologie',
     accentColor: '#1a0a0a',
+    images: [
+      'assets/images/products/dashcam-4k-1.jpg',
+      'assets/images/products/dashcam-4k-2.jpg',
+      'assets/images/products/dashcam-4k-3.jpg',
+      'assets/images/products/dashcam-4k-4.jpg',
+      'assets/images/products/dashcam-4k-5.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="4" y="14" width="32" height="22" rx="3"/>
       <circle cx="20" cy="25" r="7"/>
@@ -137,6 +156,10 @@ const PRODUCTS = [
     reviews: 1891,
     category: 'confort',
     accentColor: '#0a0a1a',
+    images: [
+      'assets/images/products/support-telephone-1.jpg',
+      'assets/images/products/support-telephone-2.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="15" y="8" width="18" height="28" rx="3"/>
       <line x1="21" y1="11" x2="27" y2="11"/>
@@ -168,6 +191,11 @@ const PRODUCTS = [
     reviews: 412,
     category: 'entretien',
     accentColor: '#1a1a0a',
+    images: [
+      'assets/images/products/machine-polir-1.jpg',
+      'assets/images/products/machine-polir-2.jpg',
+      'assets/images/products/machine-polir-3.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="22" cy="28" r="14"/>
       <circle cx="22" cy="28" r="8" stroke="var(--red)"/>
@@ -199,6 +227,12 @@ const PRODUCTS = [
     reviews: 789,
     category: 'nettoyage',
     accentColor: '#0a0a1a',
+    images: [
+      'assets/images/products/lance-mousse-1.jpg',
+      'assets/images/products/lance-mousse-2.jpg',
+      'assets/images/products/lance-mousse-3.jpg',
+      'assets/images/products/lance-mousse-4.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="14" y="16" width="12" height="22" rx="3"/>
       <path d="M26 22 L34 18 L36 26 L28 24"/>
@@ -230,6 +264,12 @@ const PRODUCTS = [
     reviews: 567,
     category: 'securite',
     accentColor: '#1a0505',
+    images: [
+      'assets/images/products/tpms-1.jpg',
+      'assets/images/products/tpms-2.jpg',
+      'assets/images/products/tpms-3.jpg',
+      'assets/images/products/tpms-4.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="28" r="14"/>
       <circle cx="24" cy="28" r="6" fill="var(--red)" stroke="var(--red)"/>
@@ -262,6 +302,12 @@ const PRODUCTS = [
     reviews: 334,
     category: 'confort',
     accentColor: '#0a1a10',
+    images: [
+      'assets/images/products/table-volant-1.jpg',
+      'assets/images/products/table-volant-2.jpg',
+      'assets/images/products/table-volant-3.jpg',
+      'assets/images/products/table-volant-4.jpg',
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="20" width="32" height="16" rx="3"/>
       <path d="M24 20 L24 36"/>
@@ -281,6 +327,75 @@ const PRODUCTS = [
       tagline: 'Your perfect mobile office',
       desc: 'Non-slip foldable surface, side organizers, built-in USB port. Perfect for meal breaks, remote work and on-the-go organization. Fits all vehicles.',
       features: ['Non-slip', 'USB port', 'Foldable', 'Universal']
+    }
+  },
+  {
+    id: 'essuie-glace-retros',
+    badge: 'NOUVEAU',
+    badgeType: 'new',
+    price: 22.90,
+    oldPrice: 39.90,
+    discount: 43,
+    rating: 4.7,
+    reviews: 218,
+    category: 'entretien',
+    accentColor: '#0f0a1a',
+    images: [
+      'assets/images/products/essuie-glace-retros-1.jpg',
+      'assets/images/products/essuie-glace-retros-2.jpg',
+      'assets/images/products/essuie-glace-retros-3.jpg',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 36 Q24 8 42 36"/>
+      <path d="M10 33 Q24 12 38 33"/>
+      <line x1="24" y1="36" x2="24" y2="42"/>
+      <line x1="18" y1="42" x2="30" y2="42"/>
+      <path d="M16 30 Q24 16 32 30" stroke="var(--red)"/>
+    </svg>`,
+    fr: {
+      name: 'Essuie-Glaces Rétros Premium',
+      tagline: 'Visibilité parfaite par tous les temps',
+      desc: 'Lames en graphite haute résistance, installation universelle sans adaptateur, silence de fonctionnement garanti. Balayage parfait jusqu\'à 98cm. Résiste au gel, pluie et grêle.',
+      features: ['Graphite HD', 'Silencieux', 'Anti-gel', 'Jusqu\'à 98cm']
+    },
+    en: {
+      name: 'Retro Premium Wiper Blades',
+      tagline: 'Perfect visibility in any weather',
+      desc: 'High-resistance graphite blades, universal no-adapter installation, whisper-quiet operation. Perfect wipe up to 98cm. Resistant to ice, rain and hail.',
+      features: ['HD graphite', 'Silent', 'Anti-ice', 'Up to 98cm']
+    }
+  },
+  {
+    id: 'soufflant',
+    badge: 'PRO',
+    badgeType: 'pro',
+    price: 54.90,
+    oldPrice: 89.90,
+    discount: 38,
+    rating: 4.8,
+    reviews: 143,
+    category: 'nettoyage',
+    accentColor: '#001a10',
+    images: [
+      'assets/images/products/soufflant-1.jpg',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="14" cy="24" rx="8" ry="12"/>
+      <path d="M22 18 L38 14 M22 24 L42 24 M22 30 L38 34" stroke="var(--red)" stroke-dasharray="3 2"/>
+      <circle cx="14" cy="24" r="4" fill="var(--red)" stroke="var(--red)"/>
+      <path d="M38 14 L44 16 L44 32 L38 34"/>
+    </svg>`,
+    fr: {
+      name: 'Soufflant Sécheur Pro',
+      tagline: 'Séchage sans contact, zéro trace',
+      desc: 'Turbine 100 000 RPM, débit 480 L/min, chaleur réglable 3 niveaux. Élimine chaque goutte d\'eau sans microfibre. Idéal après lavage, jantes, vitres et joint de portière.',
+      features: ['100 000 RPM', '480 L/min', 'Chaleur 3 niveaux', 'Sans microfibre']
+    },
+    en: {
+      name: 'Pro Air Blower Dryer',
+      tagline: 'Contactless drying, zero water spots',
+      desc: '100,000 RPM turbine, 480 L/min airflow, 3-level adjustable heat. Removes every water drop without a microfiber cloth. Perfect after wash, rims, windows and door seals.',
+      features: ['100,000 RPM', '480 L/min', '3-level heat', 'No microfiber']
     }
   }
 ];
@@ -363,8 +478,8 @@ const CATEGORIES = [
   {
     id: 'nettoyage',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 24 L12 8 h8 l4 16 Z"/><line x1="7" y1="20" x2="25" y2="20"/><path d="M12 8 Q16 4 20 8"/></svg>`,
-    fr: { name: 'Nettoyage', count: 3 },
-    en: { name: 'Cleaning', count: 3 }
+    fr: { name: 'Nettoyage', count: 4 },
+    en: { name: 'Cleaning', count: 4 }
   },
   {
     id: 'confort',
@@ -387,13 +502,13 @@ const CATEGORIES = [
   {
     id: 'entretien',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="18" r="10"/><circle cx="16" cy="18" r="5" stroke="var(--red)"/><circle cx="16" cy="18" r="1.5" fill="var(--red)" stroke="var(--red)"/><path d="M16 8 L16 4 L20 4"/></svg>`,
-    fr: { name: 'Entretien', count: 1 },
-    en: { name: 'Maintenance', count: 1 }
+    fr: { name: 'Entretien', count: 2 },
+    en: { name: 'Maintenance', count: 2 }
   },
   {
     id: 'accessoires',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="20" r="5"/><circle cx="22" cy="20" r="5"/><path d="M6 18 Q6 8 16 8 Q26 8 26 18"/><path d="M6 18 L4 14 M26 18 L28 14"/></svg>`,
-    fr: { name: 'Accessoires', count: 9 },
-    en: { name: 'Accessories', count: 9 }
+    fr: { name: 'Accessoires', count: 11 },
+    en: { name: 'Accessories', count: 11 }
   }
 ];

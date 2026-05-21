@@ -2496,3 +2496,83 @@ svg { display: block; }
   .cart-item-bottom { flex-direction: column; align-items: flex-start; }
   .cart-layout { padding: 2rem 0 4rem; }
 }
+
+/* =========================================================
+   Product Image Gallery
+   ========================================================= */
+
+/* Product page — image variant */
+.product-visual-card--image {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+}
+.product-main-img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+  flex: 1;
+}
+.product-main-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s var(--ease-out), opacity 0.25s;
+}
+.product-main-img.is-switching {
+  opacity: 0;
+  transform: scale(0.97);
+}
+.product-img-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.product-img-thumbs::-webkit-scrollbar { display: none; }
+.product-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  background: var(--black-3);
+  padding: 0;
+}
+.product-thumb:hover { transform: scale(1.05); }
+.product-thumb.active { border-color: var(--red); }
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Product card — image thumbnail */
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s var(--ease-out);
+  position: relative;
+  z-index: 1;
+}
+.product-card:hover .product-card-img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .product-main-img { height: 260px; }
+  .product-img-thumbs { padding: 0.5rem 0.75rem; }
+  .product-thumb { width: 52px; height: 52px; }
+}

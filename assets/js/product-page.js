@@ -99,10 +99,18 @@ function renderProduct(p) {
 
           <!-- Left: Visual -->
           <div class="product-visual-col">
-            <div class="product-visual-card" style="background: radial-gradient(ellipse at 40% 40%, ${p.accentColor} 0%, #111 100%);">
+            <div class="product-visual-card${p.images && p.images.length ? ' product-visual-card--image' : ''}" style="background: radial-gradient(ellipse at 40% 40%, ${p.accentColor} 0%, #111 100%);">
               <div class="product-badge badge--${p.badgeType} product-visual-badge">${p.badge}</div>
+              ${p.images && p.images.length ? `
+              <div class="product-main-img-wrap">
+                <img class="product-main-img" src="${p.images[0]}" alt="${data.name}" loading="eager" onerror="this.parentElement.parentElement.classList.remove('product-visual-card--image');this.parentElement.style.display='none';this.parentElement.parentElement.querySelector('.product-visual-fallback').style.display='flex'">
+              </div>
+              ${p.images.length > 1 ? `<div class="product-img-thumbs">${p.images.map((src, i) => `<button class="product-thumb${i === 0 ? ' active' : ''}" onclick="switchProductImg(this,'${src}')" aria-label="${data.name} photo ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+              <div class="product-visual-fallback" style="display:none;width:55%;position:relative;z-index:1">${p.icon}</div>
+              ` : `
               <div class="product-visual-icon">${p.icon}</div>
               <div class="product-visual-number">${String(productIdx).padStart(2,'0')}</div>
+              `}
             </div>
 
             <!-- Trust mini -->
@@ -318,6 +326,18 @@ function handleAddToCart(product, data, isFr) {
       btn.disabled = false;
     }, 2000);
   }
+}
+
+function switchProductImg(thumbEl, src) {
+  const mainImg = document.querySelector('.product-main-img');
+  if (!mainImg) return;
+  mainImg.classList.add('is-switching');
+  setTimeout(() => {
+    mainImg.src = src;
+    mainImg.classList.remove('is-switching');
+  }, 200);
+  document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+  thumbEl.classList.add('active');
 }
 
 function showCartToast(name, isFr) {
