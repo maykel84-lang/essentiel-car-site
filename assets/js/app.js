@@ -685,9 +685,11 @@ function startAnimations() {
   ScrollTrigger.refresh();
 }
 
-/* ── DOM ready fallback ── */
+/* ── DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
-  if (!document.getElementById('loader')) {
+  if (document.getElementById('loader')) {
+    initLoader();
+  } else {
     startAnimations();
   }
 });
