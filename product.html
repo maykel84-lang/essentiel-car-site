@@ -3,28 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Boutique ESSENTIEL CAR — Tous nos accessoires auto premium. Aspirateur, compresseur, dashcam, machine à polir et plus encore.">
-  <title>Boutique — ESSENTIEL CAR</title>
+  <meta name="description" content="ESSENTIEL CAR — Accessoire auto premium. Livraison rapide, qualité garantie.">
+  <meta name="robots" content="index, follow">
+  <title>Produit — ESSENTIEL CAR</title>
 
   <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
   <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
   <link rel="stylesheet" href="assets/fonts/inter.css">
   <link rel="stylesheet" href="assets/css/main.css">
+
   <style>
     body.is-loading { opacity: 0; }
-    .page-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(224,0,12,0.06) 0%, transparent 60%),
-        linear-gradient(to bottom, transparent 60%, var(--black) 100%);
-      pointer-events: none;
-    }
-    .page-hero-bg {
-      position: absolute; inset: 0; z-index: -1;
-      background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(224,0,12,0.05) 0%, transparent 65%),
-                  linear-gradient(160deg, #111114 0%, #090909 100%);
-    }
   </style>
 </head>
 <body class="is-loading">
@@ -57,20 +46,25 @@
     </div>
   </div>
 
+  <!-- Cursor -->
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
+  <!-- Language Switcher -->
   <div class="lang-switcher" role="navigation" aria-label="Choix de langue">
     <button class="lang-btn active" data-lang="fr" aria-label="Français">FR</button>
     <div class="lang-divider" aria-hidden="true"></div>
     <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
   </div>
 
+  <!-- Back to top -->
   <button class="back-top" aria-label="Retour en haut">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 13V3M3 8l5-5 5 5"/>
+    </svg>
   </button>
 
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="ESSENTIEL CAR — Accueil">
@@ -94,98 +88,39 @@
       </a>
 
       <ul class="nav-links" role="list">
-        <li><a href="index.html#produits" class="nav-link" data-i18n="nav_products">Produits</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link" data-i18n="nav_shop">Boutique</a></li>
         <li><a href="index.html#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
         <li><a href="index.html#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
         <li><a href="index.html#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
       </ul>
 
-      <div class="nav-actions">
+      <div class="nav-right">
         <button class="nav-cart-btn" id="navCartBtn" aria-label="Panier">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
           <span class="cart-count" id="cartCount" style="display:none">0</span>
         </button>
-        <a href="index.html" class="btn btn--secondary btn--sm nav-cta-desktop" style="font-size:0.72rem">
-          ← Accueil
-        </a>
-        <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
+        <a href="boutique.html" class="btn btn--ghost btn--sm" data-i18n="nav_shop">Boutique</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
-      <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
-        <li><a href="index.html" class="mobile-link">Accueil</a></li>
-        <li><a href="index.html#produits" class="mobile-link" data-i18n="nav_products">Produits</a></li>
-        <li><a href="index.html#avis" class="mobile-link" data-i18n="nav_reviews">Avis</a></li>
-        <li><a href="index.html#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a></li>
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Menu mobile">
+      <ul class="nav-mobile-links" role="list">
+        <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link" data-i18n="nav_shop">Boutique</a></li>
+        <li><a href="index.html#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
+        <li><a href="index.html#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
+        <li><a href="index.html#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
-
-    <!-- Page Hero -->
-    <header class="page-hero" style="position:relative;overflow:hidden">
-      <div class="page-hero-bg" aria-hidden="true"></div>
-      <div class="container">
-        <div class="section-eyebrow" data-reveal>
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">Tous nos produits</span>
-        </div>
-        <h1 class="section-title" style="font-size:clamp(3.5rem,8vw,7rem)" data-split data-i18n="boutique_title">NOS PRODUITS</h1>
-        <p class="section-sub" data-reveal data-i18n="boutique_sub">Toute notre sélection d'accessoires auto premium.</p>
-      </div>
-    </header>
-
-    <!-- Filters -->
-    <div class="boutique-filters" role="toolbar" aria-label="Filtres produits">
-      <div class="filter-group" role="group" aria-label="Catégories">
-        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tous</button>
-        <button class="filter-btn" data-filter="nettoyage" data-i18n="filter_nettoyage">Nettoyage</button>
-        <button class="filter-btn" data-filter="securite" data-i18n="filter_securite">Sécurité</button>
-        <button class="filter-btn" data-filter="confort" data-i18n="filter_confort">Confort</button>
-        <button class="filter-btn" data-filter="technologie" data-i18n="filter_technologie">Technologie</button>
-        <button class="filter-btn" data-filter="entretien" data-i18n="filter_entretien">Entretien</button>
-      </div>
-
-      <label for="sortSelect" style="position:absolute;left:-9999px">Trier par</label>
-      <select id="sortSelect" class="sort-select" aria-label="Trier les produits">
-        <option value="popular" data-i18n="sort_popular">Popularité</option>
-        <option value="price_asc" data-i18n="sort_price_asc">Prix croissant</option>
-        <option value="price_desc" data-i18n="sort_price_desc">Prix décroissant</option>
-        <option value="rating" data-i18n="sort_rating">Mieux notés</option>
-      </select>
-    </div>
-
-    <!-- Products Grid -->
-    <div class="boutique-grid-wrap">
-      <div class="container">
-        <div id="boutiqueGrid" class="boutique-grid"></div>
-      </div>
-    </div>
-
-    <!-- CTA Strip -->
-    <section class="section section--dark" style="padding:4rem 0" aria-label="Retour accueil">
-      <div class="container" style="text-align:center">
-        <h2 class="section-title" style="font-size:clamp(2rem,5vw,4rem);margin-bottom:1.25rem" data-reveal>
-          Vous ne trouvez pas<br>ce que vous cherchez ?
-        </h2>
-        <p class="section-sub" style="margin:0 auto 2rem;text-align:center" data-reveal>
-          Contactez-nous à <a href="mailto:contact@essentielcar.com" style="color:var(--red)">contact@essentielcar.com</a> — notre équipe vous aidera à trouver le bon accessoire.
-        </p>
-        <div style="display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap" data-reveal>
-          <a href="mailto:contact@essentielcar.com" class="btn btn--primary btn--lg" data-magnetic>
-            Contacter l'équipe
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5"/></svg>
-          </a>
-          <a href="index.html" class="btn btn--secondary btn--lg">← Retour accueil</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
+  <!-- Main content — populated by product-page.js -->
+  <main id="productMain" class="product-page" role="main"></main>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
@@ -215,12 +150,9 @@
             <p class="footer-tagline" data-i18n="footer_tagline">L'essentiel pour votre voiture.</p>
             <p class="footer-promise" data-i18n="footer_promise">Performez au quotidien.</p>
             <div class="footer-socials">
-              <a href="#" class="social-btn" aria-label="Instagram">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="15" cy="5" r="0.5" fill="currentColor"/></svg>
-              </a>
-              <a href="#" class="social-btn" aria-label="Facebook">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3h-2a4 4 0 00-4 4v1H4v3h2v7h3v-7h2.6l.4-3H9V7a1 1 0 011-1h2V3z"/></svg>
-              </a>
+              <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="15" cy="5" r="0.5" fill="currentColor"/></svg></a>
+              <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3h-2a4 4 0 00-4 4v1H4v3h2v7h3v-7h2.6l.4-3H9V7a1 1 0 011-1h2V3z"/></svg></a>
+              <a href="#" class="social-btn" aria-label="TikTok"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 3a4 4 0 01-4 4V3h4z M10 7v7a3 3 0 11-3-3h1"/></svg></a>
             </div>
           </div>
           <div class="footer-col">
@@ -228,6 +160,7 @@
             <ul class="footer-links">
               <li><a href="index.html" class="footer-link" data-i18n="footer_home">Accueil</a></li>
               <li><a href="boutique.html" class="footer-link" data-i18n="footer_shop">Boutique</a></li>
+              <li><a href="index.html#avis" class="footer-link" data-i18n="nav_reviews">Avis</a></li>
               <li><a href="index.html#faq" class="footer-link" data-i18n="footer_faq">FAQ</a></li>
             </ul>
           </div>
@@ -235,6 +168,7 @@
             <p class="footer-col-title" data-i18n="footer_contact_title">Contact</p>
             <ul class="footer-links">
               <li><a href="mailto:contact@essentielcar.com" class="footer-contact-email" data-i18n="footer_email">contact@essentielcar.com</a></li>
+              <li style="margin-top:1rem"><a href="boutique.html" class="btn btn--ghost btn--sm" data-i18n="nav_shop">Boutique</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -252,9 +186,9 @@
         <p class="footer-made" data-i18n="footer_made">Fait avec passion pour les passionnés d'automobile.</p>
       </div>
     </div>
-    <div class="footer-bg-text" aria-hidden="true">BOUTIQUE</div>
   </footer>
 
+  <!-- Scripts -->
   <script src="assets/js/vendor/gsap.min.js"></script>
   <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/js/vendor/lenis.min.js"></script>
@@ -262,5 +196,6 @@
   <script src="assets/js/products.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/product-page.js"></script>
 </body>
 </html>
