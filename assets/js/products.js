@@ -51,6 +51,7 @@ const PRODUCTS = [
       'assets/images/products/brosse-jantes-1.jpg',
       'assets/images/products/brosse-jantes-2.jpg',
       'assets/images/products/brosse-jantes-3.jpg',
+      'assets/images/products/brosse-jantes-4.jpg',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="24" r="14"/>
@@ -124,6 +125,7 @@ const PRODUCTS = [
       'assets/images/products/dashcam-4k-3.jpg',
       'assets/images/products/dashcam-4k-4.jpg',
       'assets/images/products/dashcam-4k-5.jpg',
+      'assets/images/products/dashcam-4k-6.jpg',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="4" y="14" width="32" height="22" rx="3"/>
@@ -159,6 +161,7 @@ const PRODUCTS = [
     images: [
       'assets/images/products/support-telephone-1.jpg',
       'assets/images/products/support-telephone-2.jpg',
+      'assets/images/products/support-telephone-3.jpg',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="15" y="8" width="18" height="28" rx="3"/>
