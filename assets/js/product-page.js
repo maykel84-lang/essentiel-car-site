@@ -316,6 +316,11 @@ function handleAddToCart(product, data, isFr) {
   updateCartCounter();
   showCartToast(data.name, isFr);
 
+  // Upsell popup — show after short delay
+  setTimeout(() => {
+    if (typeof openUpsellPopup === 'function') openUpsellPopup(product.id);
+  }, 1500);
+
   // Button feedback
   const btn = document.getElementById('addToCartBtn');
   if (btn) {

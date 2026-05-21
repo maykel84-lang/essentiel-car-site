@@ -386,15 +386,16 @@ function buildProductCard(p, lang, num) {
   };
   const ctaText = lang === 'en' ? 'View product' : 'Voir le produit';
   const reviewsText = lang === 'en' ? 'reviews' : 'avis';
-  const priceFormatted = p.price.toFixed(2).replace('.', ',');
-  const oldPriceFormatted = p.oldPrice.toFixed(2).replace('.', ',');
+  const isHot = p.badgeType === 'bestseller' || p.badgeType === 'popular';
+  const stockLabel = lang === 'en' ? 'left in stock' : 'en stock';
+  const offerLabel = lang === 'en' ? 'Offer expires in' : 'Offre expire dans';
 
   return `
     <article class="product-card" data-id="${p.id}" data-category="${p.category}" onclick="goToProduct('${p.id}')">
       <div class="product-card-visual" style="background: radial-gradient(ellipse at 40% 50%, ${p.accentColor} 0%, #111 100%);">
         <div class="product-badge badge--${p.badgeType}">${p.badge}</div>
         ${p.images && p.images[0]
-          ? `<img class="product-card-img" src="${p.images[0]}" alt="${data.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+          ? `<img class="product-card-img" src="${p.images[0]}" alt="${data.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
           : ''}
         <div class="product-card-icon" style="${p.images && p.images[0] ? 'display:none' : ''}">${p.icon}</div>
         <div class="product-card-visual-num">${String(num).padStart(2,'0')}</div>
@@ -408,8 +409,8 @@ function buildProductCard(p, lang, num) {
           <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()} ${reviewsText})</span>
         </div>
         <div class="product-card-pricing">
-          <span class="price-current">${priceFormatted}€</span>
-          <span class="price-old">${oldPriceFormatted}€</span>
+          <span class="price-current" data-eur="${p.price}">${p.price.toFixed(2).replace('.', ',')}€</span>
+          <span class="price-old" data-eur="${p.oldPrice}">${p.oldPrice.toFixed(2).replace('.', ',')}€</span>
           <span class="price-discount">-${p.discount}%</span>
         </div>
         <button class="btn btn--primary product-card-cta btn--sm">
@@ -417,6 +418,16 @@ function buildProductCard(p, lang, num) {
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
         </button>
       </div>
+      ${isHot ? `
+      <div class="stock-badge" data-stock-id="${p.id}">
+        <span class="stock-dot"></span>
+        <span>Il reste <span class="stock-num">3</span> ${stockLabel}</span>
+      </div>
+      <div class="countdown-wrap" data-countdown="${p.id}">
+        <span class="countdown-icon">⏱</span>
+        <span class="countdown-label">${offerLabel}</span>
+        <span class="countdown-timer">--:--:--</span>
+      </div>` : ''}
     </article>`;
 }
 
