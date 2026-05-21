@@ -15,8 +15,8 @@ const PRODUCTS = [
     category: 'nettoyage',
     accentColor: '#1a2a4a',
     images: [
-      'assets/images/products/aspirateur-sans-fil-1.jpg',
-      'assets/images/products/aspirateur-sans-fil-2.jpg',
+      'assets/images/products/aspirateur-sans-fil-1.jpg.png',
+      'assets/images/products/aspirateur-sans-fil-2.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/>
@@ -48,10 +48,10 @@ const PRODUCTS = [
     category: 'nettoyage',
     accentColor: '#2a1a0a',
     images: [
-      'assets/images/products/brosse-jantes-1.jpg',
-      'assets/images/products/brosse-jantes-2.jpg',
-      'assets/images/products/brosse-jantes-3.jpg',
-      'assets/images/products/brosse-jantes-4.jpg',
+      'assets/images/products/brosse-jantes-1.jpg.png',
+      'assets/images/products/brosse-jantes-2.jpg.png',
+      'assets/images/products/brosse-jantes-3.jpg.png',
+      'assets/images/products/brosse-jantes-4.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="24" r="14"/>
@@ -86,7 +86,7 @@ const PRODUCTS = [
     category: 'securite',
     accentColor: '#0a1a0a',
     images: [
-      'assets/images/products/compresseur-air-1.jpg',
+      'assets/images/products/compresseur-air-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="14" width="18" height="26" rx="4"/>
@@ -120,12 +120,9 @@ const PRODUCTS = [
     category: 'technologie',
     accentColor: '#1a0a0a',
     images: [
-      'assets/images/products/dashcam-4k-1.jpg',
-      'assets/images/products/dashcam-4k-2.jpg',
-      'assets/images/products/dashcam-4k-3.jpg',
-      'assets/images/products/dashcam-4k-4.jpg',
-      'assets/images/products/dashcam-4k-5.jpg',
-      'assets/images/products/dashcam-4k-6.jpg',
+      'assets/images/products/dashcam-4k-1.jpg.png',
+      'assets/images/products/dashcam-4k-5.jpg.png',
+      'assets/images/products/dashcam-4k-6.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="4" y="14" width="32" height="22" rx="3"/>
@@ -159,9 +156,9 @@ const PRODUCTS = [
     category: 'confort',
     accentColor: '#0a0a1a',
     images: [
-      'assets/images/products/support-telephone-1.jpg',
-      'assets/images/products/support-telephone-2.jpg',
-      'assets/images/products/support-telephone-3.jpg',
+      'assets/images/products/support-telephone-1.jpg.png',
+      'assets/images/products/support-telephone-2.jpg.png',
+      'assets/images/products/support-telephone-3.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="15" y="8" width="18" height="28" rx="3"/>
@@ -195,9 +192,9 @@ const PRODUCTS = [
     category: 'entretien',
     accentColor: '#1a1a0a',
     images: [
-      'assets/images/products/machine-polir-1.jpg',
-      'assets/images/products/machine-polir-2.jpg',
-      'assets/images/products/machine-polir-3.jpg',
+      'assets/images/products/machine-polir-1.jpg.png',
+      'assets/images/products/machine-polir-2.jpg.png',
+      'assets/images/products/machine-polir-3.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="22" cy="28" r="14"/>
@@ -231,10 +228,10 @@ const PRODUCTS = [
     category: 'nettoyage',
     accentColor: '#0a0a1a',
     images: [
-      'assets/images/products/lance-mousse-1.jpg',
-      'assets/images/products/lance-mousse-2.jpg',
-      'assets/images/products/lance-mousse-3.jpg',
-      'assets/images/products/lance-mousse-4.jpg',
+      'assets/images/products/lance-mousse-1.jpg.png',
+      'assets/images/products/lance-mousse-2.jpg.png',
+      'assets/images/products/lance-mousse-3.jpg.png',
+      'assets/images/products/lance-mousse-4.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="14" y="16" width="12" height="22" rx="3"/>
@@ -268,10 +265,10 @@ const PRODUCTS = [
     category: 'securite',
     accentColor: '#1a0505',
     images: [
-      'assets/images/products/tpms-1.jpg',
-      'assets/images/products/tpms-2.jpg',
-      'assets/images/products/tpms-3.jpg',
-      'assets/images/products/tpms-4.jpg',
+      'assets/images/products/tpms-1.jpg.png',
+      'assets/images/products/tpms-2.jpg.png',
+      'assets/images/products/tpms-4.jpg.png',
+      'assets/images/products/tpms-5.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="28" r="14"/>
@@ -306,10 +303,10 @@ const PRODUCTS = [
     category: 'confort',
     accentColor: '#0a1a10',
     images: [
-      'assets/images/products/table-volant-1.jpg',
-      'assets/images/products/table-volant-2.jpg',
-      'assets/images/products/table-volant-3.jpg',
-      'assets/images/products/table-volant-4.jpg',
+      'assets/images/products/table-volant-1.jpg.png',
+      'assets/images/products/table-volant-2.jpg.png',
+      'assets/images/products/table-volant-3.jpg.png',
+      'assets/images/products/table-volant-4.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="20" width="32" height="16" rx="3"/>
@@ -344,9 +341,9 @@ const PRODUCTS = [
     category: 'entretien',
     accentColor: '#0f0a1a',
     images: [
-      'assets/images/products/essuie-glace-retros-1.jpg',
-      'assets/images/products/essuie-glace-retros-2.jpg',
-      'assets/images/products/essuie-glace-retros-3.jpg',
+      'assets/images/products/essuie-glace-retros-1.jpg.png',
+      'assets/images/products/essuie-glace-retros-2.jpg.png',
+      'assets/images/products/essuie-glace-retros-3.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M6 36 Q24 8 42 36"/>
@@ -380,7 +377,7 @@ const PRODUCTS = [
     category: 'nettoyage',
     accentColor: '#001a10',
     images: [
-      'assets/images/products/soufflant-1.jpg',
+      'assets/images/products/aspirateur-soufflant-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <ellipse cx="14" cy="24" rx="8" ry="12"/>
