@@ -5,6 +5,7 @@
 const TRANSLATIONS = {
   fr: {
     /* ── Navigation ── */
+    nav_home: 'Accueil',
     nav_products: 'Produits',
     nav_categories: 'Catégories',
     nav_reviews: 'Avis',
@@ -143,6 +144,7 @@ const TRANSLATIONS = {
 
   en: {
     /* ── Navigation ── */
+    nav_home: 'Home',
     nav_products: 'Products',
     nav_categories: 'Categories',
     nav_reviews: 'Reviews',

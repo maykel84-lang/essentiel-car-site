@@ -95,26 +95,25 @@
         <li><a href="index.html#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
       </ul>
 
-      <div class="nav-right">
-        <button class="nav-cart-btn" id="navCartBtn" aria-label="Panier">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          <span class="cart-count" id="cartCount" style="display:none">0</span>
-        </button>
-        <a href="boutique.html" class="btn btn--ghost btn--sm" data-i18n="nav_shop">Boutique</a>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <div class="nav-actions">
+        <a href="boutique.html" class="btn btn--primary btn--sm nav-cta-desktop" data-magnetic data-i18n="nav_shop">
+          Boutique
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile menu -->
-    <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Menu mobile">
-      <ul class="nav-mobile-links" role="list">
-        <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
-        <li><a href="boutique.html" class="nav-link" data-i18n="nav_shop">Boutique</a></li>
-        <li><a href="index.html#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
-        <li><a href="index.html#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
-        <li><a href="index.html#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
+      <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
+        <li><a href="index.html" class="mobile-link" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="boutique.html" class="mobile-link" data-i18n="nav_shop">Boutique</a></li>
+        <li><a href="index.html#categories" class="mobile-link" data-i18n="nav_categories">Catégories</a></li>
+        <li><a href="index.html#avis" class="mobile-link" data-i18n="nav_reviews">Avis</a></li>
+        <li><a href="index.html#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a></li>
       </ul>
     </div>
   </nav>

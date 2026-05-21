@@ -257,16 +257,19 @@ function initScrollReveal() {
     });
   });
 
-  // Stagger grids
+  // Stagger grids — fromTo so children with CSS opacity:0 still animate to visible
   gsap.utils.toArray('[data-stagger]').forEach(parent => {
     const children = parent.children;
-    gsap.from(children, {
-      opacity: 0, y: 36,
-      stagger: 0.1,
-      duration: 0.75,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: parent, start: 'top 82%', once: true },
-    });
+    gsap.fromTo(children,
+      { opacity: 0, y: 36 },
+      {
+        opacity: 1, y: 0,
+        stagger: 0.1,
+        duration: 0.75,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: parent, start: 'top 82%', once: true },
+      }
+    );
   });
 
   // Section titles with SplitType
@@ -387,7 +390,7 @@ function buildProductCard(p, lang, num) {
   const oldPriceFormatted = p.oldPrice.toFixed(2).replace('.', ',');
 
   return `
-    <article class="product-card" data-reveal-scale data-id="${p.id}" data-category="${p.category}" onclick="goToProduct('${p.id}')">
+    <article class="product-card" data-id="${p.id}" data-category="${p.category}" onclick="goToProduct('${p.id}')">
       <div class="product-card-visual" style="background: radial-gradient(ellipse at 40% 50%, ${p.accentColor} 0%, #111 100%);">
         <div class="product-badge badge--${p.badgeType}">${p.badge}</div>
         ${p.images && p.images[0]
@@ -504,7 +507,7 @@ function renderCategories() {
   grid.innerHTML = CATEGORIES.map(c => {
     const data = c[t_key] || c.fr;
     return `
-      <div class="category-card" data-reveal-scale onclick="filterBoutique('${c.id}')">
+      <div class="category-card" onclick="filterBoutique('${c.id}')">
         <div class="cat-icon">${c.icon}</div>
         <p class="cat-name">${data.name}</p>
         <p class="cat-count">${data.count} ${pText}</p>
