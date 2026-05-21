@@ -3,27 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Boutique ESSENTIEL CAR — Tous nos accessoires auto premium. Aspirateur, compresseur, dashcam, machine à polir et plus encore.">
-  <title>Boutique — ESSENTIEL CAR</title>
+  <meta name="description" content="Suivi de commande ESSENTIEL CAR — Entrez votre numéro de commande et votre email pour suivre votre livraison en temps réel.">
+  <title>Suivi commande — ESSENTIEL CAR</title>
 
   <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
   <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
   <link rel="stylesheet" href="assets/fonts/inter.css">
   <link rel="stylesheet" href="assets/css/main.css">
+
   <style>
     body.is-loading { opacity: 0; }
-    .page-hero::before {
+
+    .tracking-page { min-height: 100vh; padding-top: 100px; }
+
+    .tracking-hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+      position: relative;
+    }
+    .tracking-hero::before {
       content: '';
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(224,0,12,0.06) 0%, transparent 60%),
-        linear-gradient(to bottom, transparent 60%, var(--black) 100%);
+      background: radial-gradient(ellipse 60% 70% at 50% 0%, rgba(224,0,12,0.07) 0%, transparent 65%);
       pointer-events: none;
     }
-    .page-hero-bg {
-      position: absolute; inset: 0; z-index: -1;
-      background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(224,0,12,0.05) 0%, transparent 65%),
-                  linear-gradient(160deg, #111114 0%, #090909 100%);
+
+    .tracking-form-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .tracking-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+    }
+
+    .tracking-field {
+      margin-bottom: 1.25rem;
+    }
+    .tracking-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.5rem;
+    }
+    .tracking-input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.75rem;
+      padding: 0.875rem 1.125rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .tracking-input:focus {
+      border-color: var(--red);
+    }
+    .tracking-input::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+
+    .tracking-submit {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .tracking-result {
+      display: none;
+      margin-top: 2rem;
+    }
+    .tracking-result.show {
+      display: block;
+    }
+
+    .tracking-order-info {
+      background: rgba(224,0,12,0.06);
+      border: 1px solid rgba(224,0,12,0.2);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .tracking-order-ref {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+    .tracking-order-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .tracking-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(34,197,94,0.12);
+      color: #4ade80;
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .tracking-status-badge.in-transit {
+      background: rgba(251,191,36,0.12);
+      color: #fbbf24;
+      border-color: rgba(251,191,36,0.25);
+    }
+
+    .tracking-timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .tracking-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.75rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 1.5px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .timeline-step {
+      position: relative;
+      padding-bottom: 1.75rem;
+    }
+    .timeline-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.15);
+      background: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .timeline-step.done .timeline-dot {
+      background: #4ade80;
+      border-color: #4ade80;
+    }
+    .timeline-step.active .timeline-dot {
+      background: var(--red);
+      border-color: var(--red);
+      box-shadow: 0 0 12px rgba(224,0,12,0.4);
+    }
+    .timeline-dot svg {
+      width: 0.55rem;
+      height: 0.55rem;
+    }
+
+    .timeline-body {}
+    .timeline-date {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.2rem;
+    }
+    .timeline-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.15rem;
+    }
+    .timeline-step:not(.done):not(.active) .timeline-title {
+      color: rgba(255,255,255,0.35);
+    }
+    .timeline-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .tracking-error {
+      display: none;
+      background: rgba(224,0,12,0.08);
+      border: 1px solid rgba(224,0,12,0.2);
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      color: rgba(255,80,80,0.9);
+      margin-top: 1rem;
+    }
+    .tracking-error.show {
+      display: block;
+    }
+
+    .tracking-help {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .tracking-help p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.75rem;
     }
   </style>
 </head>
@@ -70,7 +265,7 @@
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
   </button>
 
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="ESSENTIEL CAR — Accueil">
@@ -94,14 +289,14 @@
       </a>
 
       <ul class="nav-links" role="list">
-        <li><a href="index.html#produits" class="nav-link" data-i18n="nav_products">Produits</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link" data-i18n="nav_shop">Boutique</a></li>
         <li><a href="index.html#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
         <li><a href="index.html#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
         <li><a href="index.html#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
       </ul>
 
       <div class="nav-actions">
-        <!-- Language -->
         <div class="nav-lang" id="navLang">
           <button class="nav-lang-btn" id="navLangBtn" onclick="toggleLangDropdown()">FR ▾</button>
           <div class="lang-dropdown" id="langDropdown">
@@ -114,7 +309,6 @@
             <div class="lang-option" data-lang="de" onclick="setLangFromNav('de')">🇩🇪 DE</div>
           </div>
         </div>
-        <!-- Currency -->
         <div class="currency-selector" id="currencySelector">
           <button class="currency-btn-main">
             <span>EUR €</span>
@@ -122,16 +316,10 @@
           </button>
           <div class="currency-dropdown"></div>
         </div>
-        <!-- Tracking -->
-        <a href="tracking.html" class="btn btn--ghost btn--sm nav-cta-desktop" data-i18n="nav_track" style="font-size:0.78rem">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
-          Suivi
+        <a href="boutique.html" class="btn btn--primary btn--sm nav-cta-desktop" data-magnetic data-i18n="nav_shop">
+          Boutique
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
         </a>
-        <!-- Cart -->
-        <button class="nav-cart-btn" id="navCartBtn" aria-label="Panier">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          <span class="cart-count" id="cartCount" style="display:none">0</span>
-        </button>
         <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -141,75 +329,124 @@
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
       <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
         <li><a href="index.html" class="mobile-link" data-i18n="nav_home">Accueil</a></li>
-        <li><a href="index.html#produits" class="mobile-link" data-i18n="nav_products">Produits</a></li>
+        <li><a href="boutique.html" class="mobile-link" data-i18n="nav_shop">Boutique</a></li>
+        <li><a href="index.html#categories" class="mobile-link" data-i18n="nav_categories">Catégories</a></li>
         <li><a href="index.html#avis" class="mobile-link" data-i18n="nav_reviews">Avis</a></li>
         <li><a href="index.html#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a></li>
-        <li><a href="tracking.html" class="mobile-link" data-i18n="nav_track">Suivi commande</a></li>
-        <li style="margin-top:1rem"><a href="boutique.html" class="btn btn--primary" data-i18n="nav_shop">Boutique</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
+  <main class="tracking-page" role="main">
 
-    <!-- Page Hero -->
-    <header class="page-hero" style="position:relative;overflow:hidden">
-      <div class="page-hero-bg" aria-hidden="true"></div>
+    <section class="tracking-hero">
       <div class="container">
-        <div class="section-eyebrow" data-reveal>
+        <div class="section-eyebrow" style="justify-content:center;margin-bottom:1.25rem">
           <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">Tous nos produits</span>
+          <span class="eyebrow-text">Ma commande</span>
         </div>
-        <h1 class="section-title" style="font-size:clamp(3.5rem,8vw,7rem)" data-split data-i18n="boutique_title">NOS PRODUITS</h1>
-        <p class="section-sub" data-reveal data-i18n="boutique_sub">Toute notre sélection d'accessoires auto premium.</p>
-      </div>
-    </header>
-
-    <!-- Filters -->
-    <div class="boutique-filters" role="toolbar" aria-label="Filtres produits">
-      <div class="filter-group" role="group" aria-label="Catégories">
-        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tous</button>
-        <button class="filter-btn" data-filter="nettoyage" data-i18n="filter_nettoyage">Nettoyage</button>
-        <button class="filter-btn" data-filter="securite" data-i18n="filter_securite">Sécurité</button>
-        <button class="filter-btn" data-filter="confort" data-i18n="filter_confort">Confort</button>
-        <button class="filter-btn" data-filter="technologie" data-i18n="filter_technologie">Technologie</button>
-        <button class="filter-btn" data-filter="entretien" data-i18n="filter_entretien">Entretien</button>
-      </div>
-
-      <label for="sortSelect" style="position:absolute;left:-9999px">Trier par</label>
-      <select id="sortSelect" class="sort-select" aria-label="Trier les produits">
-        <option value="popular" data-i18n="sort_popular">Popularité</option>
-        <option value="price_asc" data-i18n="sort_price_asc">Prix croissant</option>
-        <option value="price_desc" data-i18n="sort_price_desc">Prix décroissant</option>
-        <option value="rating" data-i18n="sort_rating">Mieux notés</option>
-      </select>
-    </div>
-
-    <!-- Products Grid -->
-    <div class="boutique-grid-wrap">
-      <div class="container">
-        <div id="boutiqueGrid" class="boutique-grid"></div>
-      </div>
-    </div>
-
-    <!-- CTA Strip -->
-    <section class="section section--dark" style="padding:4rem 0" aria-label="Retour accueil">
-      <div class="container" style="text-align:center">
-        <h2 class="section-title" style="font-size:clamp(2rem,5vw,4rem);margin-bottom:1.25rem" data-reveal>
-          Vous ne trouvez pas<br>ce que vous cherchez ?
-        </h2>
-        <p class="section-sub" style="margin:0 auto 2rem;text-align:center" data-reveal>
-          Contactez-nous à <a href="mailto:contact@essentielcar.com" style="color:var(--red)">contact@essentielcar.com</a> — notre équipe vous aidera à trouver le bon accessoire.
-        </p>
-        <div style="display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap" data-reveal>
-          <a href="mailto:contact@essentielcar.com" class="btn btn--primary btn--lg" data-magnetic>
-            Contacter l'équipe
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5"/></svg>
-          </a>
-          <a href="index.html" class="btn btn--secondary btn--lg">← Retour accueil</a>
-        </div>
+        <h1 class="section-title" style="font-size:clamp(2.5rem,6vw,5rem);margin-bottom:1rem">SUIVI DE COMMANDE</h1>
+        <p class="section-sub" style="margin:0 auto">Entrez vos informations pour suivre votre livraison en temps réel.</p>
       </div>
     </section>
+
+    <div class="tracking-form-wrap">
+      <div class="tracking-card">
+        <form id="trackingForm" onsubmit="handleTrack(event)">
+          <div class="tracking-field">
+            <label class="tracking-label" for="trackOrderId">Numéro de commande</label>
+            <input type="text" id="trackOrderId" class="tracking-input" placeholder="Ex : EC-2024-00123" autocomplete="off">
+          </div>
+          <div class="tracking-field">
+            <label class="tracking-label" for="trackEmail">Adresse e-mail</label>
+            <input type="email" id="trackEmail" class="tracking-input" placeholder="votre@email.com" autocomplete="email">
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg tracking-submit">
+            Suivre ma commande
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5"/></svg>
+          </button>
+        </form>
+
+        <div class="tracking-error" id="trackingError">
+          Commande introuvable. Vérifiez votre numéro de commande et votre email, puis réessayez.
+        </div>
+
+        <!-- Demo result (shown on submit) -->
+        <div class="tracking-result" id="trackingResult">
+          <div class="tracking-order-info">
+            <div class="tracking-order-ref">Commande #EC-2024-00123</div>
+            <div class="tracking-order-name">Aspirateur Sans Fil + Compresseur d'Air</div>
+            <div class="tracking-status-badge in-transit">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              En transit
+            </div>
+          </div>
+
+          <div class="tracking-timeline" id="trackingTimeline">
+            <div class="timeline-step done">
+              <div class="timeline-dot">
+                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M2 5l2.5 2.5L8 3"/></svg>
+              </div>
+              <div class="timeline-body">
+                <div class="timeline-date">Hier, 09:14</div>
+                <div class="timeline-title">Commande confirmée</div>
+                <div class="timeline-desc">Votre paiement a été validé.</div>
+              </div>
+            </div>
+
+            <div class="timeline-step done">
+              <div class="timeline-dot">
+                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M2 5l2.5 2.5L8 3"/></svg>
+              </div>
+              <div class="timeline-body">
+                <div class="timeline-date">Hier, 14:32</div>
+                <div class="timeline-title">Préparation en cours</div>
+                <div class="timeline-desc">Votre colis est en cours de préparation dans notre entrepôt.</div>
+              </div>
+            </div>
+
+            <div class="timeline-step done">
+              <div class="timeline-dot">
+                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M2 5l2.5 2.5L8 3"/></svg>
+              </div>
+              <div class="timeline-body">
+                <div class="timeline-date">Aujourd'hui, 07:51</div>
+                <div class="timeline-title">Expédié</div>
+                <div class="timeline-desc">Votre colis a été remis au transporteur.</div>
+              </div>
+            </div>
+
+            <div class="timeline-step active">
+              <div class="timeline-dot">
+                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M5 2v3l2 2"/></svg>
+              </div>
+              <div class="timeline-body">
+                <div class="timeline-date">En cours</div>
+                <div class="timeline-title">En transit</div>
+                <div class="timeline-desc">Votre colis est en route vers votre adresse de livraison.</div>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-dot"></div>
+              <div class="timeline-body">
+                <div class="timeline-date">Estimé dans 2–3 jours</div>
+                <div class="timeline-title">Livraison</div>
+                <div class="timeline-desc">Livraison à votre adresse.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tracking-help">
+          <p>Un problème avec votre commande ?</p>
+          <a href="mailto:contact@essentielcar.com" class="btn btn--ghost btn--sm">
+            Contacter le support
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -240,14 +477,6 @@
             </a>
             <p class="footer-tagline" data-i18n="footer_tagline">L'essentiel pour votre voiture.</p>
             <p class="footer-promise" data-i18n="footer_promise">Performez au quotidien.</p>
-            <div class="footer-socials">
-              <a href="#" class="social-btn" aria-label="Instagram">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="15" cy="5" r="0.5" fill="currentColor"/></svg>
-              </a>
-              <a href="#" class="social-btn" aria-label="Facebook">
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3h-2a4 4 0 00-4 4v1H4v3h2v7h3v-7h2.6l.4-3H9V7a1 1 0 011-1h2V3z"/></svg>
-              </a>
-            </div>
           </div>
           <div class="footer-col">
             <p class="footer-col-title" data-i18n="footer_nav">Navigation</p>
@@ -271,13 +500,6 @@
               <li><a href="#" class="footer-link" data-i18n="footer_privacy">Confidentialité</a></li>
               <li><a href="#" class="footer-link" data-i18n="footer_cgv">CGV</a></li>
             </ul>
-            <div style="margin-top:1.5rem">
-              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
-                <svg height="22" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.5" aria-label="Visa"><rect width="60" height="20" rx="3" fill="#1A1F71"/><text x="6" y="15" font-family="Arial" font-weight="700" font-size="13" fill="#FFFFFF" letter-spacing="0.5">VISA</text></svg>
-                <svg height="22" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" style="opacity:0.5" aria-label="Mastercard"><rect width="38" height="24" rx="3" fill="#252525"/><circle cx="15" cy="12" r="7" fill="#EB001B"/><circle cx="23" cy="12" r="7" fill="#F79E1B"/><path d="M19 7.4a7 7 0 0 1 0 9.2A7 7 0 0 1 19 7.4z" fill="#FF5F00"/></svg>
-                <svg height="22" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.5" aria-label="PayPal"><rect width="60" height="20" rx="3" fill="#003087"/><text x="8" y="14" font-family="Arial" font-weight="700" font-size="11" fill="#009CDE">Pay</text><text x="26" y="14" font-family="Arial" font-weight="700" font-size="11" fill="#FFFFFF">Pal</text></svg>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -286,19 +508,8 @@
         <p class="footer-made" data-i18n="footer_made">Fait avec passion pour les passionnés d'automobile.</p>
       </div>
     </div>
-    <div class="footer-bg-text" aria-hidden="true">BOUTIQUE</div>
+    <div class="footer-bg-text" aria-hidden="true">TRACKING</div>
   </footer>
-
-  <!-- Upsell Overlay -->
-  <div class="upsell-overlay" id="upsellOverlay" role="dialog" aria-modal="true" aria-label="Produits complémentaires">
-    <div class="upsell-popup">
-      <div class="upsell-header">
-        <p class="upsell-title">Complétez votre commande 🎁</p>
-        <button class="upsell-close" aria-label="Fermer">✕</button>
-      </div>
-      <div class="upsell-grid"></div>
-    </div>
-  </div>
 
   <!-- Chatbot -->
   <button class="chatbot-bubble" id="chatbotBubble" aria-label="Ouvrir le chat assistant">
@@ -331,5 +542,25 @@
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/features.js"></script>
+  <script>
+    function handleTrack(e) {
+      e.preventDefault();
+      const orderId = document.getElementById('trackOrderId').value.trim();
+      const email = document.getElementById('trackEmail').value.trim();
+      const result = document.getElementById('trackingResult');
+      const error = document.getElementById('trackingError');
+
+      result.classList.remove('show');
+      error.classList.remove('show');
+
+      if (!orderId || !email) return;
+
+      // Demo: show result for any non-empty input (static site)
+      setTimeout(() => {
+        result.classList.add('show');
+        result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 600);
+    }
+  </script>
 </body>
 </html>
