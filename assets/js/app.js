@@ -293,7 +293,7 @@ function initStats() {
   document.querySelectorAll('.stat-number').forEach(el => {
     const target = parseFloat(el.dataset.target || el.textContent.replace(/[^0-9.]/g, ''));
     const isFloat = el.dataset.float === 'true';
-    gsap.from({ val: 0 }, {
+    gsap.to({ val: 0 }, {
       val: target,
       duration: 2,
       ease: 'power2.out',
@@ -372,6 +372,8 @@ function renderProducts() {
   const featured = PRODUCTS.slice(0, 6);
   grid.innerHTML = featured.map((p, i) => buildProductCard(p, t_key, i + 1)).join('');
   refreshCursorTargets();
+  if (typeof initCountdowns === 'function') initCountdowns();
+  if (typeof initStockCounters === 'function') initStockCounters();
 }
 
 function buildProductCard(p, lang, num) {
@@ -568,6 +570,8 @@ function initBoutique() {
   const t_key = lang === 'en' ? 'en' : 'fr';
 
   grid.innerHTML = PRODUCTS.map((p, i) => buildProductCard(p, t_key, i + 1)).join('');
+  if (typeof initCountdowns === 'function') initCountdowns();
+  if (typeof initStockCounters === 'function') initStockCounters();
 
   // Filters
   const filterBtns = document.querySelectorAll('.filter-btn');

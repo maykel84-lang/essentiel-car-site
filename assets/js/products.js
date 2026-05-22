@@ -17,6 +17,7 @@ const PRODUCTS = [
     images: [
       'assets/images/products/aspirateur-sans-fil-1.jpg.png',
       'assets/images/products/aspirateur-sans-fil-2.jpg.png',
+      'assets/images/products/aspirateur-soufflant-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/>
@@ -78,9 +79,9 @@ const PRODUCTS = [
     id: 'compresseur-air',
     badge: 'POPULAIRE',
     badgeType: 'popular',
-    price: 59.90,
+    price: 54.90,
     oldPrice: 89.90,
-    discount: 33,
+    discount: 39,
     rating: 4.8,
     reviews: 1203,
     category: 'securite',
@@ -112,9 +113,9 @@ const PRODUCTS = [
     id: 'dashcam-4k',
     badge: 'NOUVEAU',
     badgeType: 'new',
-    price: 79.90,
+    price: 89.90,
     oldPrice: 119.90,
-    discount: 33,
+    discount: 25,
     rating: 4.8,
     reviews: 634,
     category: 'technologie',
@@ -146,11 +147,11 @@ const PRODUCTS = [
   },
   {
     id: 'support-telephone',
-    badge: '-42%',
+    badge: '-20%',
     badgeType: 'promo',
-    price: 19.90,
+    price: 27.90,
     oldPrice: 34.90,
-    discount: 42,
+    discount: 20,
     rating: 4.6,
     reviews: 1891,
     category: 'confort',
@@ -168,13 +169,13 @@ const PRODUCTS = [
       <circle cx="24" cy="42" r="2" fill="var(--red)" stroke="var(--red)"/>
     </svg>`,
     fr: {
-      name: 'Support Magnétique Pro',
+      name: 'Kit Mains Libres 360°',
       tagline: 'Votre GPS toujours en vue',
       desc: 'Aimant néodyme ultra-puissant, rotation 360°, fixation tableau de bord ou grille d\'aération. Compatible tous smartphones jusqu\'à 7". Stable sur toutes routes.',
       features: ['Aimant néodyme', 'Rotation 360°', 'Double fixation', 'Universel 7"']
     },
     en: {
-      name: 'Pro Magnetic Phone Mount',
+      name: 'Hands-Free Kit 360°',
       tagline: 'Your GPS always in sight',
       desc: 'Ultra-powerful neodymium magnet, 360° rotation, dashboard or vent mount. Compatible with all smartphones up to 7". Stable on any road.',
       features: ['Neodymium magnet', '360° rotation', 'Dual mount', 'Universal 7"']
@@ -184,9 +185,9 @@ const PRODUCTS = [
     id: 'machine-polir',
     badge: 'PRO',
     badgeType: 'pro',
-    price: 89.90,
+    price: 79.90,
     oldPrice: 149.90,
-    discount: 40,
+    discount: 47,
     rating: 4.9,
     reviews: 412,
     category: 'entretien',
@@ -204,13 +205,13 @@ const PRODUCTS = [
       <path d="M30 8 L38 6 L40 14 L34 12"/>
     </svg>`,
     fr: {
-      name: 'Machine à Polir Électrique',
+      name: 'Machine à Polir Sans Fil',
       tagline: 'Finition showroom à domicile',
       desc: 'Plateau orbital 600-3200 RPM, kit complet 6 disques + produits inclus. Efface rayures, oxydation, taches tenaces. Transformez votre carrosserie en 2 heures.',
       features: ['600-3200 RPM', '6 disques inclus', 'Kit complet', 'Anti-vibrations']
     },
     en: {
-      name: 'Electric Polishing Machine',
+      name: 'Cordless Polishing Machine',
       tagline: 'Showroom finish at home',
       desc: '600-3200 RPM orbital pad, complete kit with 6 pads + products. Removes scratches, oxidation, stains. Transform your paintwork in 2 hours.',
       features: ['600-3200 RPM', '6 pads included', 'Complete kit', 'Anti-vibration']
@@ -220,9 +221,9 @@ const PRODUCTS = [
     id: 'lance-mousse',
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
-    price: 34.90,
+    price: 44.90,
     oldPrice: 54.90,
-    discount: 36,
+    discount: 18,
     rating: 4.7,
     reviews: 789,
     category: 'nettoyage',
@@ -241,13 +242,13 @@ const PRODUCTS = [
       <path d="M14 22 L8 20 M14 26 L6 26 M14 30 L8 32" stroke="var(--red)" stroke-dasharray="2 2"/>
     </svg>`,
     fr: {
-      name: 'Lance à Mousse HP',
+      name: 'Pulvérisateur de Mousse',
       tagline: 'Lavage sans contact premium',
       desc: 'Mousse épaisse et clingante, protection peinture maximale, réservoir 1L intégré, compatible tous nettoyeurs HP. Bain de mousse professionnel à domicile.',
       features: ['Mousse épaisse', 'Réservoir 1L', 'Compatible HP', 'Sans contact']
     },
     en: {
-      name: 'High-Pressure Foam Lance',
+      name: 'Foam Sprayer',
       tagline: 'Premium contactless wash',
       desc: 'Thick clinging foam, maximum paint protection, 1L integrated tank, compatible with all pressure washers. Professional foam bath at home.',
       features: ['Thick foam', '1L tank', 'HP compatible', 'Contactless']
@@ -257,9 +258,9 @@ const PRODUCTS = [
     id: 'tpms',
     badge: 'SÉCURITÉ',
     badgeType: 'security',
-    price: 44.90,
+    price: 49.90,
     oldPrice: 69.90,
-    discount: 35,
+    discount: 29,
     rating: 4.8,
     reviews: 567,
     category: 'securite',
@@ -279,13 +280,13 @@ const PRODUCTS = [
       <path d="M16 4 Q24 -2 32 4"/>
     </svg>`,
     fr: {
-      name: 'Système TPMS Sans Fil',
+      name: 'TPMS Surveillance Pneus',
       tagline: 'Votre sécurité commence par vos pneus',
       desc: 'Capteurs sans fil sur 4 valves, affichage temps réel sur écran LCD, alertes sonores et visuelles. Économisez jusqu\'à 15% de carburant. Roulez serein.',
       features: ['4 capteurs sans fil', 'Écran LCD', 'Alertes temps réel', '-15% carburant']
     },
     en: {
-      name: 'Wireless TPMS System',
+      name: 'TPMS Tire Monitor',
       tagline: 'Safety starts with your tires',
       desc: 'Wireless sensors on 4 valves, real-time LCD display, audible and visual alerts. Save up to 15% on fuel. Drive with confidence.',
       features: ['4 wireless sensors', 'LCD display', 'Real-time alerts', '-15% fuel']
@@ -295,9 +296,9 @@ const PRODUCTS = [
     id: 'table-volant',
     badge: 'PRATIQUE',
     badgeType: 'practical',
-    price: 29.90,
+    price: 24.90,
     oldPrice: 49.90,
-    discount: 40,
+    discount: 50,
     rating: 4.5,
     reviews: 334,
     category: 'confort',
@@ -317,13 +318,13 @@ const PRODUCTS = [
       <circle cx="24" cy="12" r="2" fill="var(--red)" stroke="var(--red)"/>
     </svg>`,
     fr: {
-      name: 'Table de Volant Multifonction',
+      name: 'Table à Manger Volant',
       tagline: 'Votre bureau mobile parfait',
       desc: 'Surface antidérapante pliable, rangements latéraux, port USB intégré. Parfait pour les pauses repas, le télétravail et l\'organisation en déplacement. Compatible tous véhicules.',
       features: ['Antidérapante', 'Port USB', 'Pliable', 'Universel']
     },
     en: {
-      name: 'Steering Wheel Desk',
+      name: 'Steering Wheel Table',
       tagline: 'Your perfect mobile office',
       desc: 'Non-slip foldable surface, side organizers, built-in USB port. Perfect for meal breaks, remote work and on-the-go organization. Fits all vehicles.',
       features: ['Non-slip', 'USB port', 'Foldable', 'Universal']
@@ -333,9 +334,9 @@ const PRODUCTS = [
     id: 'essuie-glace-retros',
     badge: 'NOUVEAU',
     badgeType: 'new',
-    price: 22.90,
+    price: 19.90,
     oldPrice: 39.90,
-    discount: 43,
+    discount: 50,
     rating: 4.7,
     reviews: 218,
     category: 'entretien',
@@ -353,49 +354,116 @@ const PRODUCTS = [
       <path d="M16 30 Q24 16 32 30" stroke="var(--red)"/>
     </svg>`,
     fr: {
-      name: 'Essuie-Glaces Rétros Premium',
+      name: 'Essuie-Glace Rétroviseur Portable',
       tagline: 'Visibilité parfaite par tous les temps',
       desc: 'Lames en graphite haute résistance, installation universelle sans adaptateur, silence de fonctionnement garanti. Balayage parfait jusqu\'à 98cm. Résiste au gel, pluie et grêle.',
       features: ['Graphite HD', 'Silencieux', 'Anti-gel', 'Jusqu\'à 98cm']
     },
     en: {
-      name: 'Retro Premium Wiper Blades',
+      name: 'Portable Mirror Wiper Blades',
       tagline: 'Perfect visibility in any weather',
       desc: 'High-resistance graphite blades, universal no-adapter installation, whisper-quiet operation. Perfect wipe up to 98cm. Resistant to ice, rain and hail.',
       features: ['HD graphite', 'Silent', 'Anti-ice', 'Up to 98cm']
     }
   },
   {
-    id: 'soufflant',
-    badge: 'PRO',
-    badgeType: 'pro',
-    price: 54.90,
-    oldPrice: 89.90,
-    discount: 38,
-    rating: 4.8,
-    reviews: 143,
-    category: 'nettoyage',
-    accentColor: '#001a10',
+    id: 'pack-entretien',
+    badge: 'PACK',
+    badgeType: 'bundle',
+    price: 64.90,
+    oldPrice: 79.80,
+    discount: 19,
+    rating: 4.9,
+    reviews: 312,
+    category: 'entretien',
+    isBundle: true,
+    accentColor: '#0a1a0a',
     images: [
-      'assets/images/products/aspirateur-soufflant-1.jpg.png',
+      'assets/images/products/compresseur-air-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <ellipse cx="14" cy="24" rx="8" ry="12"/>
-      <path d="M22 18 L38 14 M22 24 L42 24 M22 30 L38 34" stroke="var(--red)" stroke-dasharray="3 2"/>
-      <circle cx="14" cy="24" r="4" fill="var(--red)" stroke="var(--red)"/>
-      <path d="M38 14 L44 16 L44 32 L38 34"/>
+      <rect x="8" y="14" width="18" height="26" rx="4"/>
+      <circle cx="30" cy="20" r="8"/>
+      <path d="M26 14 L28 12 L34 12"/><line x1="34" y1="12" x2="38" y2="16"/>
+      <path d="M17 14 L17 8 L22 8" stroke="var(--red)"/>
+      <circle cx="17" cy="24" r="3" fill="var(--red)" stroke="var(--red)"/>
     </svg>`,
     fr: {
-      name: 'Soufflant Sécheur Pro',
-      tagline: 'Séchage sans contact, zéro trace',
-      desc: 'Turbine 100 000 RPM, débit 480 L/min, chaleur réglable 3 niveaux. Élimine chaque goutte d\'eau sans microfibre. Idéal après lavage, jantes, vitres et joint de portière.',
-      features: ['100 000 RPM', '480 L/min', 'Chaleur 3 niveaux', 'Sans microfibre']
+      name: 'Pack Entretien Indispensable',
+      tagline: 'Duo Indispensable',
+      desc: 'Compresseur d\'air sans fil + Table à manger volant. Tout ce qu\'il vous faut pour l\'entretien quotidien. Économisez 14,90€ par rapport à l\'achat séparé.',
+      features: ['Compresseur 150 PSI', 'Table volant', 'Livraison offerte', 'Économisez 14,90€']
     },
     en: {
-      name: 'Pro Air Blower Dryer',
-      tagline: 'Contactless drying, zero water spots',
-      desc: '100,000 RPM turbine, 480 L/min airflow, 3-level adjustable heat. Removes every water drop without a microfiber cloth. Perfect after wash, rims, windows and door seals.',
-      features: ['100,000 RPM', '480 L/min', '3-level heat', 'No microfiber']
+      name: 'Essential Maintenance Pack',
+      tagline: 'Indispensable Duo',
+      desc: 'Cordless air compressor + Steering wheel table. Everything you need for daily maintenance. Save 14.90€ vs. buying separately.',
+      features: ['150 PSI compressor', 'Steering table', 'Free delivery', 'Save 14.90€']
+    }
+  },
+  {
+    id: 'pack-nettoyage',
+    badge: 'PACK',
+    badgeType: 'bundle',
+    price: 159.90,
+    oldPrice: 199.60,
+    discount: 20,
+    rating: 4.9,
+    reviews: 187,
+    category: 'nettoyage',
+    isBundle: true,
+    accentColor: '#001828',
+    images: [
+      'assets/images/products/aspirateur-sans-fil-1.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/>
+      <circle cx="15" cy="38" r="4" fill="var(--red)" stroke="var(--red)"/>
+      <line x1="4" y1="28" x2="12" y2="26"/><line x1="3" y1="22" x2="11" y2="22"/>
+    </svg>`,
+    fr: {
+      name: 'Pack Nettoyage Complet',
+      tagline: 'Résultat Professionnel',
+      desc: 'Aspirateur sans fil + Pulvérisateur mousse + Brosse jantes + Machine à polir. Le kit complet pour un nettoyage pro. Économisez 39,70€ par rapport à l\'achat séparé.',
+      features: ['4 produits inclus', 'Nettoyage complet', 'Livraison offerte', 'Économisez 39,70€']
+    },
+    en: {
+      name: 'Complete Cleaning Pack',
+      tagline: 'Professional Results',
+      desc: 'Cordless vacuum + Foam sprayer + Wheel brush + Polishing machine. The complete pro cleaning kit. Save 39.70€ vs. buying separately.',
+      features: ['4 products included', 'Full clean kit', 'Free delivery', 'Save 39.70€']
+    }
+  },
+  {
+    id: 'pack-securite',
+    badge: 'PACK',
+    badgeType: 'bundle',
+    price: 134.90,
+    oldPrice: 167.70,
+    discount: 20,
+    rating: 4.8,
+    reviews: 224,
+    category: 'securite',
+    isBundle: true,
+    accentColor: '#1a0a08',
+    images: [
+      'assets/images/products/dashcam-4k-1.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 4 L40 10 L40 26 Q40 38 24 44 Q8 38 8 26 L8 10 Z"/>
+      <path d="M17 24 L21 28 L31 18" stroke="var(--red)" stroke-width="2.5"/>
+    </svg>`,
+    fr: {
+      name: 'Pack Sécurité & Confort',
+      tagline: 'Conduite Sereine',
+      desc: 'Dashcam 4K HD + TPMS surveillance pneus + Kit mains libres 360°. La sécurité complète pour chaque trajet. Économisez 32,80€ par rapport à l\'achat séparé.',
+      features: ['Dashcam 4K HD', 'TPMS 4 capteurs', 'Kit mains libres 360°', 'Économisez 32,80€']
+    },
+    en: {
+      name: 'Safety & Comfort Pack',
+      tagline: 'Serene Driving',
+      desc: '4K dashcam + TPMS tire monitor + 360° hands-free kit. Complete safety for every journey. Save 32.80€ vs. buying separately.',
+      features: ['4K dashcam', '4 TPMS sensors', '360° hands-free', 'Save 32.80€']
     }
   }
 ];
