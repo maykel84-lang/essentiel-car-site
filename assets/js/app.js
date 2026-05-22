@@ -387,6 +387,7 @@ function buildProductCard(p, lang, num) {
     confort: lang === 'en' ? 'Comfort' : 'Confort',
     technologie: lang === 'en' ? 'Technology' : 'Technologie',
     entretien: lang === 'en' ? 'Maintenance' : 'Entretien',
+    pack: lang === 'en' ? 'Exclusive Bundle' : 'Pack Exclusif',
   };
   const ctaText = lang === 'en' ? 'View product' : 'Voir le produit';
   const reviewsText = lang === 'en' ? 'reviews' : 'avis';
@@ -433,6 +434,17 @@ function buildProductCard(p, lang, num) {
         <span class="countdown-timer">--:--:--</span>
       </div>` : ''}
     </article>`;
+}
+
+function renderBundles() {
+  const grid = document.getElementById('packsGrid');
+  if (!grid || typeof PRODUCTS === 'undefined') return;
+  const lang  = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+  const t_key = lang === 'en' ? 'en' : 'fr';
+  const bundles = PRODUCTS.filter(p => p.isBundle);
+  if (!bundles.length) return;
+  grid.innerHTML = bundles.map((p, i) => buildProductCard(p, t_key, i + 1)).join('');
+  refreshCursorTargets();
 }
 
 function buildStars(rating) {
@@ -594,8 +606,9 @@ function initBoutique() {
     });
   });
 
-  // Pre-filter from homepage
-  const savedFilter = sessionStorage.getItem('ec_filter');
+  // Pre-filter from homepage (sessionStorage or URL param)
+  const urlFilter = new URLSearchParams(window.location.search).get('filter');
+  const savedFilter = urlFilter || sessionStorage.getItem('ec_filter');
   if (savedFilter) {
     const btn = document.querySelector(`.filter-btn[data-filter="${savedFilter}"]`);
     if (btn) { btn.click(); sessionStorage.removeItem('ec_filter'); }
@@ -688,6 +701,7 @@ function startAnimations() {
 
   // Render dynamic content
   renderProducts();
+  renderBundles();
   renderReviews();
   renderCategories();
   renderProblems();

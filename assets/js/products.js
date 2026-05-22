@@ -375,7 +375,7 @@ const PRODUCTS = [
     discount: 19,
     rating: 4.9,
     reviews: 312,
-    category: 'entretien',
+    category: 'pack',
     isBundle: true,
     accentColor: '#0a1a0a',
     images: [
@@ -410,7 +410,7 @@ const PRODUCTS = [
     discount: 20,
     rating: 4.9,
     reviews: 187,
-    category: 'nettoyage',
+    category: 'pack',
     isBundle: true,
     accentColor: '#001828',
     images: [
@@ -443,7 +443,7 @@ const PRODUCTS = [
     discount: 20,
     rating: 4.8,
     reviews: 224,
-    category: 'securite',
+    category: 'pack',
     isBundle: true,
     accentColor: '#1a0a08',
     images: [

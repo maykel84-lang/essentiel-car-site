@@ -1669,6 +1669,11 @@ svg { display: block; }
 }
 .filter-btn:hover { color: var(--white); border-color: var(--border-h); }
 .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
+.filter-btn--pack { color: #a78bfa; border-color: rgba(167,139,250,0.3); }
+.filter-btn--pack:hover { color: #c4b5fd; border-color: rgba(167,139,250,0.6); }
+.filter-btn--pack.active { background: linear-gradient(135deg, #7c3aed, #a855f7); border-color: #7c3aed; }
+
+.packs-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 
 .sort-select {
   margin-left: auto;
