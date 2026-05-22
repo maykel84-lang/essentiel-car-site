@@ -234,9 +234,9 @@ const CHAT_REPLIES = [
   { pattern: /aspirateur|vacuum|aspirat/i,
     reply: () => `🔋 <strong>Aspirateur Sans Fil</strong> — 49,90€ (-37%). Moteur 120W, batterie 30 min, filtre HEPA. <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'>Voir le produit →</a>` },
   { pattern: /dashcam|caméra|camera/i,
-    reply: () => `📹 <strong>Dashcam 4K Ultra HD</strong> — 79,90€. Vision nocturne, GPS, 170° grand-angle. <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Voir le produit →</a>` },
+    reply: () => `📹 <strong>Dashcam 4K Ultra HD</strong> — 89,90€. Vision nocturne, GPS, 170° grand-angle. <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Voir le produit →</a>` },
   { pattern: /compresseur|pneu|gonf|tire|pump/i,
-    reply: () => `🔧 <strong>Compresseur d'Air Sans Fil</strong> — 59,90€. Gonflage en 3 min, batterie rechargeable. <a href='product.html?id=compresseur-air' style='color:var(--red)'>Voir le produit →</a>` },
+    reply: () => `🔧 <strong>Compresseur d'Air Sans Fil</strong> — 54,90€. Gonflage en 3 min, batterie rechargeable. <a href='product.html?id=compresseur-air' style='color:var(--red)'>Voir le produit →</a>` },
   { pattern: /paiement|visa|paypal|mastercard|payer|payment/i,
     reply: () => "💳 Visa, Mastercard, Amex, PayPal, Apple Pay. Toutes les transactions sont sécurisées par cryptage <strong>SSL 256 bits</strong>." },
   { pattern: /contact|email|mail|service|aide|help/i,
@@ -336,8 +336,6 @@ function setLangFromNav(lang) {
 /* ── Init all features ── */
 function initFeatures() {
   initCurrencySelector();
-  initCountdowns();
-  initStockCounters();
   initChatbot();
 
   // Upsell popup close handlers
