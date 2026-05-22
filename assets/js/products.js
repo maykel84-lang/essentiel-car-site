@@ -474,6 +474,7 @@ const REVIEWS = [
     city: 'Lyon',
     rating: 5,
     product: 'Aspirateur Sans Fil Voiture',
+    productId: 'aspirateur-sans-fil',
     fr: { text: 'L\'aspirateur sans fil est incroyable ! J\'ai enfin une voiture propre sans effort. La puissance est au rendez-vous et la batterie tient vraiment 30 minutes. Livraison ultra rapide, service client au top. Je recommande à 100% !' },
     en: { text: 'The cordless vacuum is incredible! My car is finally clean effortlessly. Power is impressive and the battery genuinely lasts 30 minutes. Ultra fast delivery, excellent customer service. 100% recommend!' }
   },
@@ -482,6 +483,7 @@ const REVIEWS = [
     city: 'Paris',
     rating: 5,
     product: 'Compresseur d\'Air Sans Fil',
+    productId: 'compresseur-air',
     fr: { text: 'Le compresseur m\'a sauvé la mise deux fois déjà. Compact, rapide et précis — il s\'arrête exactement à la pression cible. Je ne pars plus jamais en voiture sans lui. Une vraie révolution du quotidien.' },
     en: { text: 'The compressor has saved me twice already. Compact, fast and precise — stops exactly at the target pressure. I never drive without it now. A true daily revolution.' }
   },
@@ -490,6 +492,7 @@ const REVIEWS = [
     city: 'Marseille',
     rating: 5,
     product: 'Dashcam 4K Ultra HD',
+    productId: 'dashcam-4k',
     fr: { text: 'La dashcam 4K est d\'une qualité impressionnante, même la nuit les images sont nettes et exploitables. L\'installation est simple, le mode parking fonctionne parfaitement. Très satisfait de mon achat.' },
     en: { text: 'The 4K dashcam quality is impressive, even at night the footage is sharp and usable. Easy installation, parking mode works perfectly. Very satisfied with my purchase.' }
   },
@@ -497,7 +500,8 @@ const REVIEWS = [
     name: 'Julie R.',
     city: 'Bordeaux',
     rating: 5,
-    product: 'Machine à Polir Électrique',
+    product: 'Machine à Polir Sans Fil',
+    productId: 'machine-polir',
     fr: { text: 'La machine à polir a transformé ma vieille Clio ! Les micro-rayures ont disparu et la carrosserie brille comme au premier jour. Le kit inclus est complet et la prise en main très facile. Bluffant !' },
     en: { text: 'The polishing machine transformed my old Clio! Micro-scratches are gone and the bodywork shines like new. The included kit is complete and very easy to use. Stunning results!' }
   },
@@ -505,7 +509,8 @@ const REVIEWS = [
     name: 'Antoine B.',
     city: 'Toulouse',
     rating: 5,
-    product: 'Support Magnétique Pro',
+    product: 'Kit Mains Libres 360°',
+    productId: 'support-telephone',
     fr: { text: 'Support téléphone magnétique de qualité professionnelle. Il tient même sur les pires routes de montagne. Ça fait 8 mois et il n\'a jamais bougé d\'un millimètre. Rapport qualité/prix excellent, je l\'offre maintenant à ma femme !' },
     en: { text: 'Professional quality magnetic phone mount. Holds even on the worst mountain roads. 8 months in and it has never moved a millimeter. Excellent value, I\'m now buying one for my wife!' }
   },
@@ -513,7 +518,8 @@ const REVIEWS = [
     name: 'Camille F.',
     city: 'Nantes',
     rating: 5,
-    product: 'Système TPMS Sans Fil',
+    product: 'TPMS Surveillance Pneus',
+    productId: 'tpms',
     fr: { text: 'Le TPMS m\'a alerté d\'un sous-gonflage que je n\'avais pas remarqué. Sans lui, j\'aurais abîmé mon pneu. Depuis je roule l\'esprit tranquille et j\'ai même constaté une légère baisse de ma conso. Indispensable !' },
     en: { text: 'The TPMS alerted me to under-inflation I hadn\'t noticed. Without it, I would have damaged my tire. Now I drive in peace and even noticed a slight drop in fuel consumption. Essential!' }
   }

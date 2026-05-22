@@ -485,8 +485,12 @@ function renderReviews() {
     const data  = r[t_key] || r.fr;
     const stars = buildStars(r.rating);
     const initials = r.name.split(' ').map(n => n[0]).join('');
+    const linkedProduct = r.productId && typeof PRODUCTS !== 'undefined'
+      ? PRODUCTS.find(p => p.id === r.productId) : null;
+    const productImg = linkedProduct?.images?.[0] || null;
     return `
       <article class="review-card">
+        ${productImg ? `<div class="review-product-img-wrap"><img class="review-product-img" src="${productImg}" alt="${r.product}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>` : ''}
         <div class="review-stars">${stars}</div>
         <p class="review-text">${data.text}</p>
         <div class="review-meta">
