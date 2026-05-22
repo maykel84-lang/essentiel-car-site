@@ -199,6 +199,7 @@ function initHeroAnim() {
   const lines = document.querySelectorAll('.hero-title-line');
   const sub   = document.querySelector('.hero-sub');
   const ctas  = document.querySelector('.hero-ctas');
+  const trust = document.querySelector('.hero-trust-line');
   const stats = document.querySelector('.hero-stats');
 
   if (badge) tl.to(badge, { opacity: 1, y: 0, duration: 0.7 }, 0.1);
@@ -223,7 +224,8 @@ function initHeroAnim() {
 
   if (sub)   tl.to(sub,   { opacity: 1, y: 0, duration: 0.8 }, 0.7);
   if (ctas)  tl.to(ctas,  { opacity: 1, y: 0, duration: 0.7 }, 0.85);
-  if (stats) tl.to(stats, { opacity: 1, y: 0, duration: 0.7 }, 1.0);
+  if (trust) tl.to(trust, { opacity: 1, y: 0, duration: 0.6 }, 1.0);
+  if (stats) tl.to(stats, { opacity: 1, y: 0, duration: 0.7 }, 1.1);
 }
 
 /* ── 8. Scroll Reveal Animations ── */

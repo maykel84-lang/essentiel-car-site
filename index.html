@@ -22,7 +22,7 @@
   <style>
     /* Inline critical styles */
     body.is-loading { opacity: 0; }
-    .hero-badge, .hero-sub, .hero-ctas, .hero-stats { opacity: 0; transform: translateY(20px); }
+    .hero-badge, .hero-sub, .hero-ctas, .hero-trust-line, .hero-stats { opacity: 0; transform: translateY(20px); }
   </style>
 </head>
 <body class="is-loading">
@@ -106,9 +106,8 @@
       <!-- Links -->
       <ul class="nav-links" role="list">
         <li><a href="#produits" class="nav-link" data-i18n="nav_products">Produits</a></li>
-        <li><a href="#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
-        <li><a href="#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="#produits" class="nav-link">Bestsellers</a></li>
+        <li><a href="#avis" class="nav-link" data-i18n="nav_reviews">Avis clients</a></li>
         <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
       </ul>
 
@@ -147,7 +146,7 @@
         </a>
         <!-- Boutique -->
         <a href="boutique.html" class="btn btn--primary btn--sm nav-cta-desktop" data-magnetic data-i18n="nav_shop">
-          Boutique
+          Voir la boutique
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
@@ -160,11 +159,11 @@
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
       <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
         <li><a href="#produits" class="mobile-link" data-i18n="nav_products">Produits</a></li>
-        <li><a href="#categories" class="mobile-link" data-i18n="nav_categories">Catégories</a></li>
-        <li><a href="#avis" class="mobile-link" data-i18n="nav_reviews">Avis</a></li>
+        <li><a href="#produits" class="mobile-link">Bestsellers</a></li>
+        <li><a href="#avis" class="mobile-link" data-i18n="nav_reviews">Avis clients</a></li>
         <li><a href="#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a></li>
         <li><a href="tracking.html" class="mobile-link" data-i18n="nav_track">Suivi commande</a></li>
-        <li style="margin-top:1rem"><a href="boutique.html" class="btn btn--primary" data-i18n="nav_shop">Boutique</a></li>
+        <li style="margin-top:1rem"><a href="boutique.html" class="btn btn--primary" data-i18n="nav_shop">Voir la boutique</a></li>
       </ul>
     </div>
   </nav>
@@ -182,7 +181,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot" aria-hidden="true"></span>
-          <span data-i18n="hero_badge">Équipement Auto Premium</span>
+          <span data-i18n="hero_badge">Accessoires Auto Sélectionnés</span>
         </div>
 
         <h1 class="hero-title" aria-label="Équipez. Protégez. Performez.">
@@ -192,7 +191,7 @@
         </h1>
 
         <p class="hero-sub" data-i18n="hero_sub">
-          L'essentiel pour votre voiture — accessoires utiles, pratiques et haute performance, livrés directement chez vous.
+          Accessoires auto utiles, pratiques et performants pour améliorer votre confort, votre sécurité et votre quotidien.
         </p>
 
         <div class="hero-ctas">
@@ -204,6 +203,7 @@
             Voir les bestsellers
           </a>
         </div>
+        <p class="hero-trust-line">Paiement sécurisé&nbsp;&nbsp;·&nbsp;&nbsp;Livraison suivie&nbsp;&nbsp;·&nbsp;&nbsp;Retours faciles 30 jours</p>
 
         <div class="hero-stats" aria-label="Statistiques">
           <div class="hero-stat">
@@ -217,8 +217,8 @@
           </div>
           <div class="hero-stat-sep" aria-hidden="true"></div>
           <div class="hero-stat">
-            <span class="hero-stat-num">48h</span>
-            <span class="hero-stat-label" data-i18n="hero_stat3_label">Livraison express</span>
+            <span class="hero-stat-num">Rapide</span>
+            <span class="hero-stat-label" data-i18n="hero_stat3_label">Expédition suivie</span>
           </div>
         </div>
       </div>
@@ -272,8 +272,8 @@
     <!-- ═══════════════════════════════
          02b — VU SUR
          ═══════════════════════════════ -->
-    <section class="vu-sur" aria-label="Vu dans les médias">
-      <div class="vu-sur-label">Vu sur</div>
+    <section class="vu-sur" aria-label="Accessoires vus dans les médias">
+      <div class="vu-sur-label">Accessoires auto déjà vus dans les médias</div>
       <div class="vu-sur-track">
         <div class="vu-sur-item vu-sur-logo">
           <img src="https://logo.clearbit.com/bfmtv.com" alt="BFM TV" height="28" loading="lazy"
