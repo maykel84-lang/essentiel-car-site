@@ -1524,6 +1524,36 @@ svg { display: block; }
 }
 .social-btn:hover { background: var(--red); border-color: var(--red); }
 .social-btn svg { width: 16px; height: 16px; }
+.social-btn--instagram { color: #e1306c; border-color: rgba(225,48,108,0.3); }
+.social-btn--instagram:hover { background: linear-gradient(135deg,#405de6,#833ab4,#c13584,#e1306c,#fd1d1d) !important; border-color: transparent !important; color: #fff; }
+.social-btn--facebook { color: #1877F2; border-color: rgba(24,119,242,0.3); }
+.social-btn--facebook:hover { background: #1877F2 !important; border-color: #1877F2 !important; color: #fff; }
+.social-btn--tiktok { color: #fff; border-color: rgba(255,255,255,0.2); }
+.social-btn--tiktok:hover { background: #010101 !important; border-color: #69C9D0 !important; color: #69C9D0; }
+.social-btn--youtube { color: #FF0000; border-color: rgba(255,0,0,0.3); }
+.social-btn--youtube:hover { background: #FF0000 !important; border-color: #FF0000 !important; color: #fff; }
+
+/* ── Comparison Table ── */
+.comparison-section { background: var(--black-2); }
+.comparison-wrap { overflow-x: auto; border-radius: var(--r); border: 1px solid var(--border); margin-top: 3rem; }
+.comparison-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+.comparison-table thead tr { background: var(--black-3); }
+.comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+.comparison-table th { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-2); }
+.comparison-table tbody tr:last-child td { border-bottom: none; }
+.comparison-table tbody tr:hover { background: rgba(255,255,255,0.025); }
+.cmp-col-feature { color: var(--white); font-weight: 500; width: 30%; }
+.cmp-col-us { background: rgba(224,0,12,0.06) !important; color: var(--white); font-weight: 500; }
+.cmp-col-them { color: var(--gray-2); }
+.cmp-us-badge { display: inline-block; background: var(--red); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; }
+.cmp-check { color: #22c55e; font-weight: 700; margin-right: 0.35rem; }
+.cmp-cross { color: #ef4444; font-weight: 700; margin-right: 0.35rem; }
+
+/* ── Vu sur CDN logos ── */
+.vu-sur-logo { display: flex; align-items: center; justify-content: center; }
+.vu-sur-logo img { height: 28px; width: auto; object-fit: contain; filter: grayscale(1) brightness(1.6); opacity: 0.8; transition: filter 0.3s, opacity 0.3s; }
+.vu-sur-logo:hover img { filter: grayscale(0) brightness(1); opacity: 1; }
+.vu-sur-fallback { display: flex; align-items: center; }
 
 .footer-col-title {
   font-family: var(--font-sans);

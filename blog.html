@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog ESSENTIEL CAR — Conseils, guides et astuces pour entretenir, protéger et équiper votre voiture.">
+  <title>Blog — ESSENTIEL CAR</title>
+  <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
+  <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
+  <link rel="stylesheet" href="assets/fonts/inter.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    body.is-loading { opacity: 0; }
+    .blog-page { min-height: 100vh; padding-top: 100px; }
+    .blog-hero { padding: 5rem 0 4rem; text-align: center; position: relative; }
+    .blog-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 50% 0%, rgba(224,0,12,0.07) 0%, transparent 65%); pointer-events:none; }
+    .blog-hero-eyebrow { display:flex; align-items:center; gap:0.75rem; justify-content:center; margin-bottom:1.5rem; }
+    .blog-hero-eyebrow .eyebrow-line { width:32px; height:1px; background:var(--red); }
+    .blog-hero-eyebrow span { font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); }
+    .blog-hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,8vw,6rem); letter-spacing:0.04em; line-height:1; margin-bottom:1rem; }
+    .blog-hero p { color:var(--gray-2); font-size:1.05rem; max-width:560px; margin:0 auto; }
+    .blog-grid { max-width:1200px; margin:0 auto; padding:0 1.5rem 6rem; display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:2rem; }
+    .blog-card { background:var(--black-2); border:1px solid var(--border); border-radius:1.25rem; overflow:hidden; transition:border-color 0.3s, transform 0.3s; cursor:pointer; }
+    .blog-card:hover { border-color:rgba(224,0,12,0.4); transform:translateY(-4px); }
+    .blog-card-img { width:100%; height:200px; object-fit:cover; background:var(--black-3); display:flex; align-items:center; justify-content:center; }
+    .blog-card-img-placeholder { width:100%; height:200px; background:var(--black-3); display:flex; align-items:center; justify-content:center; font-size:3rem; }
+    .blog-card-body { padding:1.5rem; }
+    .blog-card-cat { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--red); margin-bottom:0.75rem; }
+    .blog-card-title { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:0.03em; line-height:1.2; margin-bottom:0.75rem; color:var(--white); }
+    .blog-card-excerpt { font-size:0.85rem; color:var(--gray-2); line-height:1.7; margin-bottom:1.25rem; }
+    .blog-card-meta { display:flex; align-items:center; gap:1rem; font-size:0.78rem; color:var(--gray-2); }
+    .blog-card-meta-dot { width:4px; height:4px; border-radius:50%; background:var(--border); }
+    .blog-card-cta { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.82rem; font-weight:600; color:var(--red); text-decoration:none; margin-top:1rem; }
+    .blog-card-cta svg { transition:transform 0.2s; }
+    .blog-card:hover .blog-card-cta svg { transform:translateX(4px); }
+    .blog-coming-soon { text-align:center; padding:4rem 1.5rem; color:var(--gray-2); }
+    .blog-coming-soon h3 { font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:0.06em; margin-bottom:0.75rem; color:var(--white); }
+    .blog-newsletter { max-width:520px; margin:3rem auto 0; padding:2rem; background:var(--black-2); border:1px solid var(--border); border-radius:1.25rem; text-align:center; }
+    .blog-newsletter h3 { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:0.05em; margin-bottom:0.5rem; }
+    .blog-newsletter p { font-size:0.85rem; color:var(--gray-2); margin-bottom:1.25rem; }
+    .blog-newsletter-form { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; }
+    .blog-newsletter-input { flex:1; min-width:200px; padding:0.75rem 1rem; background:var(--black-3); border:1px solid var(--border); border-radius:var(--r); color:var(--white); font-size:0.85rem; outline:none; }
+    .blog-newsletter-input:focus { border-color:var(--red); }
+    .blog-newsletter-input::placeholder { color:var(--gray-2); }
+  </style>
+</head>
+<body class="is-loading">
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <button class="back-top" aria-label="Retour en haut">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+  </button>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ESSENTIEL CAR — Accueil">
+        <div class="logo-mark">
+          <svg viewBox="0 0 90 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="22" x2="22" y2="27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="0" y1="36" x2="19" y2="36" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <line x1="2" y1="50" x2="22" y2="45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M26,6 Q4,6 4,36 Q4,66 26,66" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="55" cy="36" r="26" fill="none" stroke="white" stroke-width="4.5"/>
+            <circle cx="55" cy="36" r="16" fill="none" stroke="#E0000C" stroke-width="2.5"/>
+            <circle cx="55" cy="36" r="5" fill="#E0000C"/>
+            <line x1="55" y1="20" x2="55" y2="31" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+            <line x1="40" y1="45" x2="48" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+            <line x1="70" y1="45" x2="62" y2="40" stroke="#E0000C" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-wordmark"><span class="logo-e">ESSENTIEL</span><span class="logo-c">CAR</span></div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link">Boutique</a></li>
+        <li><a href="blog.html" class="nav-link" style="color:var(--red)">Blog</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="boutique.html" class="btn btn--primary btn--sm nav-cta-desktop" data-magnetic>Boutique</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
+      <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
+        <li><a href="index.html" class="mobile-link">Accueil</a></li>
+        <li><a href="boutique.html" class="mobile-link">Boutique</a></li>
+        <li style="margin-top:1rem"><a href="boutique.html" class="btn btn--primary">Boutique</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="blog-page">
+
+    <div class="blog-hero">
+      <div class="blog-hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Conseils & Guides Auto</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h1>LE BLOG<br><span style="color:var(--red)">ESSENTIEL CAR</span></h1>
+      <p>Conseils d'experts, guides d'entretien et astuces pour sublimer votre voiture.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- Article 1 -->
+      <article class="blog-card" data-reveal>
+        <div class="blog-card-img-placeholder">🚗</div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Nettoyage</p>
+          <h2 class="blog-card-title">5 astuces pour nettoyer votre voiture comme un pro</h2>
+          <p class="blog-card-excerpt">Découvrez les techniques utilisées par les détailers professionnels pour obtenir une carrosserie impeccable sans rayures ni auréoles.</p>
+          <div class="blog-card-meta">
+            <span>12 mai 2026</span>
+            <span class="blog-card-meta-dot"></span>
+            <span>5 min de lecture</span>
+          </div>
+          <a href="#" class="blog-card-cta">Lire l'article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card" data-reveal>
+        <div class="blog-card-img-placeholder">📷</div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Sécurité</p>
+          <h2 class="blog-card-title">Dashcam : pourquoi c'est devenu indispensable en 2026</h2>
+          <p class="blog-card-excerpt">En cas d'accident, la dashcam peut faire la différence. Tout ce que vous devez savoir pour bien choisir et installer votre caméra de bord.</p>
+          <div class="blog-card-meta">
+            <span>5 mai 2026</span>
+            <span class="blog-card-meta-dot"></span>
+            <span>7 min de lecture</span>
+          </div>
+          <a href="#" class="blog-card-cta">Lire l'article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card" data-reveal>
+        <div class="blog-card-img-placeholder">🔧</div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Entretien</p>
+          <h2 class="blog-card-title">Pneus sous-gonflés : les risques que vous ignorez</h2>
+          <p class="blog-card-excerpt">Un pneu mal gonflé consomme plus, s'use mal et peut provoquer un accident. Le TPMS peut vous sauver la mise — voici pourquoi.</p>
+          <div class="blog-card-meta">
+            <span>28 avril 2026</span>
+            <span class="blog-card-meta-dot"></span>
+            <span>4 min de lecture</span>
+          </div>
+          <a href="#" class="blog-card-cta">Lire l'article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="blog-card" data-reveal>
+        <div class="blog-card-img-placeholder">✨</div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Carrosserie</p>
+          <h2 class="blog-card-title">Polissage auto : éliminer les rayures soi-même</h2>
+          <p class="blog-card-excerpt">Guide pas à pas pour utiliser une machine à polir et retrouver un brillant de showroom. Matériel, techniques et erreurs à éviter.</p>
+          <div class="blog-card-meta">
+            <span>20 avril 2026</span>
+            <span class="blog-card-meta-dot"></span>
+            <span>8 min de lecture</span>
+          </div>
+          <a href="#" class="blog-card-cta">Lire l'article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="blog-card" data-reveal>
+        <div class="blog-card-img-placeholder">📱</div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Confort</p>
+          <h2 class="blog-card-title">Meilleur support téléphone voiture : le guide 2026</h2>
+          <p class="blog-card-excerpt">Magnétique, à ventouse ou sur grille d'aération ? Comparatif complet des supports smartphone pour ne plus rater une indication GPS.</p>
+          <div class="blog-card-meta">
+            <span>14 avril 2026</span>
+            <span class="blog-card-meta-dot"></span>
+            <span>6 min de lecture</span>
+          </div>
+          <a href="#" class="blog-card-cta">Lire l'article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="blog-card" data-reveal>
+        <div class="blog-card-img-placeholder">💨</div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Nettoyage</p>
+          <h2 class="blog-card-title">Compresseur portable : le test complet après 6 mois d'utilisation</h2>
+          <p class="blog-card-excerpt">Nous avons testé le compresseur ESSENTIEL CAR pendant 6 mois dans toutes les situations. Voici notre verdict honnête et détaillé.</p>
+          <div class="blog-card-meta">
+            <span>7 avril 2026</span>
+            <span class="blog-card-meta-dot"></span>
+            <span>9 min de lecture</span>
+          </div>
+          <a href="#" class="blog-card-cta">Lire l'article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Newsletter -->
+    <div class="blog-newsletter" style="margin:0 auto 6rem;max-width:520px;padding:2rem 1.5rem">
+      <h3>NE RATEZ AUCUN ARTICLE</h3>
+      <p>Recevez nos meilleurs conseils auto directement dans votre boîte mail. Pas de spam, promis.</p>
+      <form class="blog-newsletter-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:#22c55e;font-weight:600\'>✓ Merci ! Vous êtes inscrit.</p>'">
+        <input type="email" class="blog-newsletter-input" placeholder="Votre adresse email" required>
+        <button type="submit" class="btn btn--primary btn--sm">S'inscrire</button>
+      </form>
+    </div>
+
+  </main>
+
+  <script src="assets/js/vendor/gsap.min.js"></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor/lenis.min.js"></script>
+  <script src="assets/js/vendor/split-type.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/features.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
