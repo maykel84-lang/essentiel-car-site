@@ -675,7 +675,19 @@ function initFooter() {
   });
 }
 
-/* ── 19. Trust Bar duplication ── */
+/* ── 19. Hero Video ── */
+function initHeroVideo() {
+  const video = document.getElementById('heroVideo');
+  if (!video) return;
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  video.src = isMobile
+    ? 'assets/videos/hero-mobile.mp4'
+    : 'assets/videos/hero-desktop.mp4';
+  video.load();
+  video.play().catch(() => {});
+}
+
+/* ── 20. Trust Bar duplication ── */
 function initTrustBar() {
   const track = document.querySelector('.trust-track');
   if (!track) return;
@@ -688,6 +700,7 @@ function startAnimations() {
   gsap.registerPlugin(ScrollTrigger);
   initLenis();
   initCursor();
+  initHeroVideo();
   initHeroCanvas();
   initNavbar();
   initScrollProgress();
