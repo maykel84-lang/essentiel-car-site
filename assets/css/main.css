@@ -469,7 +469,7 @@ svg { display: block; }
   background:
     radial-gradient(ellipse 55% 65% at 72% 50%, rgba(224,0,12,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 30% 50% at 15% 70%, rgba(224,0,12,0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 160px 60px at 100% 100%, rgba(0,0,0,1) 25%, transparent 70%);
+    radial-gradient(ellipse 220px 80px at 100% 100%, rgba(0,0,0,1) 30%, transparent 75%);
   animation: heroGlowPulse 9s ease-in-out infinite alternate;
   pointer-events: none;
 }
@@ -903,7 +903,7 @@ svg { display: block; }
   border-radius: 16px;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 120px 50px at calc(100% - 0px) 100%, rgba(0,0,0,1) 30%, transparent 75%);
+    radial-gradient(ellipse 180px 70px at 100% 100%, rgba(0,0,0,1) 35%, transparent 78%);
 }
 
 /* ── Info overlay ── */
