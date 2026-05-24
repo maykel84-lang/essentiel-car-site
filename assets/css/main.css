@@ -1608,11 +1608,9 @@ svg { display: block; }
 .cmp-check { color: #22c55e; font-weight: 700; margin-right: 0.35rem; }
 .cmp-cross { color: #ef4444; font-weight: 700; margin-right: 0.35rem; }
 
-/* ── Vu sur CDN logos ── */
+/* ── Vu sur logos (inline SVG) ── */
 .vu-sur-logo { display: flex; align-items: center; justify-content: center; }
-.vu-sur-logo img { height: 28px; width: auto; object-fit: contain; filter: grayscale(1) brightness(1.6); opacity: 0.8; transition: filter 0.3s, opacity 0.3s; }
-.vu-sur-logo:hover img { filter: grayscale(0) brightness(1); opacity: 1; }
-.vu-sur-fallback { display: flex; align-items: center; }
+.vu-sur-logo svg { height: 36px; width: auto; display: block; border-radius: 4px; }
 
 .footer-col-title {
   font-family: var(--font-sans);
