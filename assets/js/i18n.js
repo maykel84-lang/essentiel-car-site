@@ -27,7 +27,7 @@ const TRANSLATIONS = {
     hero_scroll: 'Défiler',
 
     /* ── Trust bar ── */
-    trust_1: 'Livraison rapide 48h',
+    trust_1: 'Livraison rapide 🚚',
     trust_2: 'Paiement 100% sécurisé',
     trust_3: '10 000+ clients satisfaits',
     trust_4: 'Retours faciles 30 jours',
@@ -61,7 +61,7 @@ const TRANSLATIONS = {
     stat_1_label: 'Clients satisfaits',
     stat_2_label: 'Produits sélectionnés',
     stat_3_label: 'Note moyenne client',
-    stat_4_label: 'Livraison express',
+    stat_4_label: 'Livraison suivie',
 
     /* ── Categories ── */
     cat_eyebrow: 'Trouvez ce qu\'il vous faut',
@@ -167,7 +167,7 @@ const TRANSLATIONS = {
     hero_scroll: 'Scroll',
 
     /* ── Trust bar ── */
-    trust_1: 'Fast 48h delivery',
+    trust_1: 'Fast delivery 🚚',
     trust_2: '100% secure payment',
     trust_3: '10,000+ happy customers',
     trust_4: 'Easy 30-day returns',
@@ -201,7 +201,7 @@ const TRANSLATIONS = {
     stat_1_label: 'Satisfied customers',
     stat_2_label: 'Curated products',
     stat_3_label: 'Average customer rating',
-    stat_4_label: 'Express delivery',
+    stat_4_label: 'Tracked delivery',
 
     /* ── Categories ── */
     cat_eyebrow: 'Find what you need',
@@ -307,7 +307,7 @@ const TRANSLATIONS = {
     hero_scroll: 'Desplazar',
 
     /* ── Trust bar ── */
-    trust_1: 'Entrega rápida 48h',
+    trust_1: 'Entrega rápida 🚚',
     trust_2: 'Pago 100% seguro',
     trust_3: '+10 000 clientes satisfechos',
     trust_4: 'Devoluciones fáciles 30 días',
@@ -587,7 +587,7 @@ const TRANSLATIONS = {
     hero_scroll: 'Scorri',
 
     /* ── Trust bar ── */
-    trust_1: 'Consegna rapida 48h',
+    trust_1: 'Consegna rapida 🚚',
     trust_2: 'Pagamento 100% sicuro',
     trust_3: '+10 000 clienti soddisfatti',
     trust_4: 'Resi facili entro 30 giorni',
@@ -727,7 +727,7 @@ const TRANSLATIONS = {
     hero_scroll: 'Rolar',
 
     /* ── Trust bar ── */
-    trust_1: 'Entrega rápida 48h',
+    trust_1: 'Entrega rápida 🚚',
     trust_2: 'Pagamento 100% seguro',
     trust_3: '+10 000 clientes satisfeitos',
     trust_4: 'Devoluções fáceis em 30 dias',
@@ -867,7 +867,7 @@ const TRANSLATIONS = {
     hero_scroll: 'Scrollen',
 
     /* ── Trust bar ── */
-    trust_1: 'Schnelle Lieferung 48h',
+    trust_1: 'Schnelle Lieferung 🚚',
     trust_2: '100% sichere Zahlung',
     trust_3: '+10 000 zufriedene Kunden',
     trust_4: 'Einfache Rückgabe 30 Tage',

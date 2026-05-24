@@ -495,20 +495,18 @@ function renderReviews() {
   const t_key = lang === 'en' ? 'en' : 'fr';
   const verifiedText = lang === 'en' ? 'Verified' : 'Vérifié';
 
-  carousel.innerHTML = REVIEWS.map(r => {
+  carousel.innerHTML = REVIEWS.map((r, idx) => {
     const data  = r[t_key] || r.fr;
     const stars = buildStars(r.rating);
     const initials = r.name.split(' ').map(n => n[0]).join('');
-    const linkedProduct = r.productId && typeof PRODUCTS !== 'undefined'
-      ? PRODUCTS.find(p => p.id === r.productId) : null;
-    const productImg = linkedProduct?.images?.[0] || null;
+    const avatarColors = ['#c0392b','#16a085','#8e44ad','#2980b9','#d35400','#27ae60'];
+    const avatarBg = avatarColors[idx % avatarColors.length];
     return `
       <article class="review-card">
-        ${productImg ? `<div class="review-product-img-wrap"><img class="review-product-img" src="${productImg}" alt="${r.product}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>` : ''}
         <div class="review-stars">${stars}</div>
         <p class="review-text">${data.text}</p>
         <div class="review-meta">
-          <div class="review-avatar">${initials}</div>
+          <div class="review-avatar" style="background:${avatarBg}">${initials}</div>
           <div>
             <p class="review-name">${r.name} <span style="color:var(--gray-2);font-weight:400">· ${r.city}</span></p>
             <p class="review-product">${r.product}</p>
@@ -741,6 +739,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loader')) {
     initLoader();
   } else {
+    document.body.classList.remove('is-loading');
     startAnimations();
   }
 });
