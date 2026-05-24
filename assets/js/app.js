@@ -537,10 +537,13 @@ function renderCategories() {
     const data = c[t_key] || c.fr;
     return `
       <div class="category-card" onclick="filterBoutique('${c.id}')">
-        <div class="cat-icon">${c.icon}</div>
-        <p class="cat-name">${data.name}</p>
-        <p class="cat-count">${data.count} ${pText}</p>
-        <svg class="cat-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h14M10 3l7 7-7 7"/></svg>
+        ${c.coverImg ? `<div class="cat-cover"><img src="${c.coverImg}" alt="${data.name}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>` : ''}
+        <div class="cat-body">
+          <div class="cat-icon">${c.icon}</div>
+          <p class="cat-name">${data.name}</p>
+          <p class="cat-count">${data.count} ${pText}</p>
+          <svg class="cat-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h14M10 3l7 7-7 7"/></svg>
+        </div>
       </div>`;
   }).join('');
 }

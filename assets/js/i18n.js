@@ -104,6 +104,14 @@ const TRANSLATIONS = {
     faq_6_q: 'Les produits sont-ils compatibles avec mon véhicule ?',
     faq_6_a: 'La grande majorité de nos produits sont universels et compatibles avec tous les véhicules, toutes marques et modèles confondus. Les spécificités de compatibilité sont clairement indiquées sur chaque fiche produit.',
 
+    /* ── Cart Trust ── */
+    trust_shipping: 'Livraison offerte dès 49€',
+    trust_shipping_sub: 'Expédition sous 24h ouvrées',
+    trust_return: 'Retours 30 jours gratuits',
+    trust_return_sub: 'Satisfait ou remboursé',
+    trust_secure: 'Paiement 100% sécurisé',
+    trust_secure_sub: 'SSL · CB · PayPal · Virement',
+
     /* ── Final CTA ── */
     cta_eyebrow: 'Prêt à passer à l\'action ?',
     cta_title: 'ÉQUIPEZ VOTRE\nVOITURE MAINTENANT',

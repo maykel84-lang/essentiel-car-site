@@ -132,7 +132,10 @@ function renderCartItem(item, t_key, isFr) {
   return `
     <div class="cart-item" data-id="${p.id}">
       <div class="cart-item-visual" style="background: radial-gradient(ellipse at 40% 40%, ${p.accentColor} 0%, #111 100%);">
-        <div class="cart-item-icon">${p.icon}</div>
+        ${p.images && p.images[0]
+          ? `<img class="cart-item-img" src="${p.images[0]}" alt="${data.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+          : ''}
+        <div class="cart-item-icon" style="${p.images && p.images[0] ? 'display:none' : ''}">${p.icon}</div>
         <a href="product.html?id=${p.id}" class="cart-item-visual-link" aria-label="${data.name}"></a>
       </div>
       <div class="cart-item-info">
