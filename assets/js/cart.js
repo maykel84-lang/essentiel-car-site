@@ -64,7 +64,7 @@ function renderCart() {
 
   // Calculate totals
   const subtotal  = items.reduce((s, item) => s + item.product.price * item.qty, 0);
-  const shipping  = subtotal >= 49 ? 0 : 4.99;
+  const shipping  = subtotal >= 49.99 ? 0 : 4.99;
   const total     = subtotal + shipping;
   const savings   = items.reduce((s, item) => s + (item.product.oldPrice - item.product.price) * item.qty, 0);
 
@@ -86,12 +86,12 @@ function renderCart() {
         <span>${isFr ? 'Livraison' : 'Shipping'}</span>
         <span class="${shipping === 0 ? 'shipping-free' : ''}">${shipping === 0 ? (isFr ? 'Gratuite' : 'Free') : fmtPrice(shipping)}</span>
       </div>
-      ${subtotal < 49 && subtotal > 0 ? `
+      ${subtotal < 49.99 && subtotal > 0 ? `
       <div class="cart-free-shipping-notice">
         <div class="cart-free-shipping-bar">
-          <div class="cart-free-shipping-fill" style="width:${Math.min(100, (subtotal/49)*100).toFixed(0)}%"></div>
+          <div class="cart-free-shipping-fill" style="width:${Math.min(100, (subtotal/49.99)*100).toFixed(0)}%"></div>
         </div>
-        <p>${isFr ? `Plus que ${fmtPrice(49 - subtotal)} pour la livraison gratuite !` : `Only ${fmtPrice(49 - subtotal)} away from free shipping!`}</p>
+        <p>${isFr ? `Plus que ${fmtPrice(49.99 - subtotal)} pour la livraison gratuite !` : `Only ${fmtPrice(49.99 - subtotal)} away from free shipping!`}</p>
       </div>` : ''}
     </div>
 

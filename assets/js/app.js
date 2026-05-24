@@ -820,7 +820,7 @@ function renderCartPanel() {
     </div>`;
   }).join('');
   body.innerHTML = items;
-  const isFreeShipping = subtotal >= 49;
+  const isFreeShipping = subtotal >= 49.99;
   const shipping = isFreeShipping ? 0 : 4.99;
   const total = subtotal + shipping;
   footer.innerHTML = `

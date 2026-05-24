@@ -54,7 +54,7 @@ function renderProduct(p) {
     savings:    isFr ? `Économisez ${saving}€` : `Save €${saving}`,
     stock:      isFr ? '✓ En stock — Expédié sous 24h' : '✓ In stock — Ships within 24h',
     freeShip:   isFr ? 'Livraison offerte'  : 'Free shipping',
-    freeShipS:  isFr ? 'Dès 49€ d\'achat'  : 'From €49',
+    freeShipS:  isFr ? 'Dès 49€ d\'achat'  : 'From €49.99',
     returns:    isFr ? 'Retours 30j'        : '30-day returns',
     returnsS:   isFr ? 'Satisfait ou remb.' : 'Money-back guarantee',
     secure:     isFr ? 'Paiement sécurisé'  : 'Secure payment',
@@ -105,7 +105,7 @@ function renderProduct(p) {
               <div class="product-main-img-wrap">
                 <img class="product-main-img" src="${p.images[0]}" alt="${data.name}" loading="eager" onerror="this.parentElement.parentElement.classList.remove('product-visual-card--image');this.parentElement.style.display='none';this.parentElement.parentElement.querySelector('.product-visual-fallback').style.display='flex'">
               </div>
-              ${p.images.length > 1 ? `<div class="product-img-thumbs">${p.images.map((src, i) => `<button class="product-thumb${i === 0 ? ' active' : ''}" onclick="switchProductImg(this,'${src}')" aria-label="${data.name} photo ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+              ${p.images.length > 1 ? `<div class="product-img-thumbs">${p.images.map((src, i) => `<button class="product-thumb${i === 0 ? ' active' : ''}" onclick="switchProductImg(this,'${src}');openLightbox('${src}','${data.name}')" aria-label="${data.name} photo ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
               <div class="product-visual-fallback" style="display:none;width:55%;position:relative;z-index:1">${p.icon}</div>
               ` : `
               <div class="product-visual-icon">${p.icon}</div>
