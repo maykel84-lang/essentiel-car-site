@@ -733,8 +733,123 @@ function startAnimations() {
     if (typeof initCartPage === 'function') initCartPage();
   }
 
+  initCartPanel();
   updateCartCounter();
   ScrollTrigger.refresh();
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CART PANEL — slide-in drawer accessible on all pages
+   ═══════════════════════════════════════════════════════════ */
+function initCartPanel() {
+  if (document.getElementById('cartPanel')) return;
+  const panel = document.createElement('div');
+  panel.id = 'cartPanel';
+  panel.className = 'cart-panel';
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-modal', 'true');
+  panel.setAttribute('aria-label', 'Panier');
+  panel.innerHTML = `
+    <div class="cart-panel-overlay" id="cartPanelOverlay"></div>
+    <div class="cart-panel-drawer">
+      <div class="cart-panel-header">
+        <h2 class="cart-panel-title">Mon Panier</h2>
+        <button class="cart-panel-close" id="cartPanelClose" aria-label="Fermer">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="14" height="14"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
+        </button>
+      </div>
+      <div class="cart-panel-body" id="cartPanelBody"></div>
+      <div class="cart-panel-footer" id="cartPanelFooter"></div>
+    </div>`;
+  document.body.appendChild(panel);
+  document.getElementById('cartPanelOverlay').addEventListener('click', closeCartPanel);
+  document.getElementById('cartPanelClose').addEventListener('click', closeCartPanel);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCartPanel(); });
+  document.querySelectorAll('.nav-cart-btn').forEach(btn => {
+    btn.removeAttribute('onclick');
+    btn.addEventListener('click', e => { e.preventDefault(); openCartPanel(); });
+  });
+}
+
+function openCartPanel() {
+  renderCartPanel();
+  const panel = document.getElementById('cartPanel');
+  if (panel) { panel.classList.add('cart-panel--open'); document.body.classList.add('cart-panel-active'); }
+}
+
+function closeCartPanel() {
+  const panel = document.getElementById('cartPanel');
+  if (panel) { panel.classList.remove('cart-panel--open'); document.body.classList.remove('cart-panel-active'); }
+}
+
+function renderCartPanel() {
+  const body = document.getElementById('cartPanelBody');
+  const footer = document.getElementById('cartPanelFooter');
+  if (!body || !footer) return;
+  const cart = JSON.parse(localStorage.getItem('ec_cart') || '[]');
+  if (cart.length === 0) {
+    body.innerHTML = `<div class="cart-panel-empty"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="48" height="48"><path d="M12 4L6 12v28a4 4 0 004 4h28a4 4 0 004-4V12l-6-8z"/><line x1="6" y1="12" x2="42" y2="12"/><path d="M32 20a8 8 0 01-16 0"/></svg><p>Panier vide</p><a href="boutique.html" class="btn btn--primary btn--sm" onclick="closeCartPanel()">Voir la boutique</a></div>`;
+    footer.innerHTML = '';
+    return;
+  }
+  const isFr = typeof currentLang === 'undefined' || currentLang !== 'en';
+  let subtotal = 0;
+  const items = cart.map(item => {
+    if (typeof PRODUCTS === 'undefined') return '';
+    const p = PRODUCTS.find(pr => pr.id === item.id);
+    if (!p) return '';
+    const data = isFr ? p.fr : (p.en || p.fr);
+    const qty = item.qty || 1;
+    const linePrice = (p.price * qty).toFixed(2).replace('.', ',');
+    subtotal += p.price * qty;
+    const imgSrc = p.images && p.images[0] ? p.images[0] : '';
+    return `<div class="cart-panel-item" data-id="${p.id}">
+      <div class="cart-panel-item-img">${imgSrc ? `<img src="${imgSrc}" alt="${data.name}" loading="lazy">` : `<span style="font-size:1.6rem">${p.icon}</span>`}</div>
+      <div class="cart-panel-item-info">
+        <p class="cart-panel-item-name">${data.name}</p>
+        <p class="cart-panel-item-price">${linePrice}€</p>
+        <div class="cart-panel-item-qty">
+          <button class="qty-btn" onclick="changePanelQty('${p.id}',-1)">−</button>
+          <span>${qty}</span>
+          <button class="qty-btn" onclick="changePanelQty('${p.id}',1)">+</button>
+        </div>
+      </div>
+      <button class="cart-panel-item-remove" onclick="removePanelItem('${p.id}')" aria-label="Supprimer">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="13" height="13"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
+      </button>
+    </div>`;
+  }).join('');
+  body.innerHTML = items;
+  const isFreeShipping = subtotal >= 49;
+  const shipping = isFreeShipping ? 0 : 4.99;
+  const total = subtotal + shipping;
+  footer.innerHTML = `
+    <div class="cart-panel-subtotal"><span>Sous-total</span><span>${subtotal.toFixed(2).replace('.', ',')}€</span></div>
+    <div class="cart-panel-shipping${isFreeShipping ? ' cart-panel-shipping--free' : ''}"><span>Livraison</span><span>${isFreeShipping ? 'Gratuite 🎉' : shipping.toFixed(2).replace('.', ',') + '€'}</span></div>
+    <div class="cart-panel-total"><span>Total</span><strong>${total.toFixed(2).replace('.', ',')}€</strong></div>
+    <a href="cart.html" class="btn btn--primary btn--full" onclick="closeCartPanel()">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="15" height="15"><rect x="3" y="11" width="14" height="8" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      Commander — ${total.toFixed(2).replace('.', ',')}€
+    </a>
+    <a href="cart.html" class="cart-panel-view-all" onclick="closeCartPanel()">Voir le panier complet →</a>`;
+}
+
+function changePanelQty(id, delta) {
+  const cart = JSON.parse(localStorage.getItem('ec_cart') || '[]');
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty = Math.max(1, (item.qty || 1) + delta);
+  localStorage.setItem('ec_cart', JSON.stringify(cart));
+  updateCartCounter();
+  renderCartPanel();
+}
+
+function removePanelItem(id) {
+  let cart = JSON.parse(localStorage.getItem('ec_cart') || '[]');
+  cart = cart.filter(i => i.id !== id);
+  localStorage.setItem('ec_cart', JSON.stringify(cart));
+  updateCartCounter();
+  renderCartPanel();
 }
 
 /* ── DOM ready ── */

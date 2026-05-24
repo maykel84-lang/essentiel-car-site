@@ -260,6 +260,7 @@ function renderProduct(p) {
 
   refreshCursorTargets();
   updateCartCounter();
+  initProductLightbox();
 }
 
 /* ── Build product reviews ── */
@@ -343,6 +344,45 @@ function switchProductImg(thumbEl, src) {
   }, 200);
   document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
   thumbEl.classList.add('active');
+}
+
+/* ── Lightbox zoom ── */
+function initProductLightbox() {
+  const wrap = document.querySelector('.product-main-img-wrap');
+  if (!wrap) return;
+  wrap.addEventListener('click', () => {
+    const mainImg = document.querySelector('.product-main-img');
+    if (!mainImg) return;
+    openLightbox(mainImg.src, mainImg.alt);
+  });
+}
+
+function openLightbox(src, alt) {
+  if (document.getElementById('productLightbox')) {
+    const lb = document.getElementById('productLightbox');
+    lb.querySelector('img').src = src;
+    lb.querySelector('img').alt = alt || '';
+    lb.classList.add('lightbox--open');
+    return;
+  }
+  const lb = document.createElement('div');
+  lb.id = 'productLightbox';
+  lb.className = 'lightbox lightbox--open';
+  lb.innerHTML = `
+    <button class="lightbox-close" aria-label="Fermer">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="14" height="14"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
+    </button>
+    <img src="${src}" alt="${alt || ''}" draggable="false">`;
+  document.body.appendChild(lb);
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('.lightbox-close')) closeLightbox(); });
+  document.addEventListener('keydown', function lbKey(e) {
+    if (e.key === 'Escape') { closeLightbox(); document.removeEventListener('keydown', lbKey); }
+  });
+}
+
+function closeLightbox() {
+  const lb = document.getElementById('productLightbox');
+  if (lb) { lb.classList.remove('lightbox--open'); setTimeout(() => lb.remove(), 260); }
 }
 
 function showCartToast(name, isFr) {
