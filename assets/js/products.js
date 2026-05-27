@@ -380,6 +380,8 @@ const PRODUCTS = [
     accentColor: '#0a1a0a',
     images: [
       'assets/images/products/compresseur-air-1.jpg.png',
+      'assets/images/products/table-volant-1.jpg.png',
+      'assets/images/products/table-volant-2.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="14" width="18" height="26" rx="4"/>
@@ -415,6 +417,9 @@ const PRODUCTS = [
     accentColor: '#001828',
     images: [
       'assets/images/products/aspirateur-sans-fil-1.jpg.png',
+      'assets/images/products/lance-mousse-1.jpg.png',
+      'assets/images/products/brosse-jantes-1.jpg.png',
+      'assets/images/products/machine-polir-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/>
@@ -448,6 +453,8 @@ const PRODUCTS = [
     accentColor: '#1a0a08',
     images: [
       'assets/images/products/dashcam-4k-1.jpg.png',
+      'assets/images/products/tpms-1.jpg.png',
+      'assets/images/products/support-telephone-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M24 4 L40 10 L40 26 Q40 38 24 44 Q8 38 8 26 L8 10 Z"/>
