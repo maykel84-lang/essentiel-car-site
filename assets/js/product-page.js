@@ -347,58 +347,131 @@ function initProductThumbs() {
     if (!btn) return;
     const src = btn.dataset.src;
     if (!src) return;
-
-    // Crossfade main image
-    mainImg.style.transition = 'opacity 0.18s ease';
-    mainImg.style.opacity = '0';
-    setTimeout(() => {
-      mainImg.src = src;
-      mainImg.style.opacity = '1';
-    }, 180);
-
-    // Active state
-    container.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
+    lbSetActiveThumb(btn, container);
+    lbCrossfadeMain(mainImg, src);
   });
 }
 
-/* ── Lightbox zoom ── */
+/* ── Lightbox with full navigation (arrows, keyboard, swipe) ── */
+let _lbImages = [];
+let _lbIndex  = 0;
+
 function initProductLightbox() {
   const wrap = document.querySelector('.product-main-img-wrap');
   if (!wrap) return;
   wrap.addEventListener('click', () => {
     const mainImg = document.querySelector('.product-main-img');
     if (!mainImg) return;
-    openLightbox(mainImg.src, mainImg.alt);
+    const thumbs = Array.from(document.querySelectorAll('.product-thumb'));
+    const images = thumbs.length ? thumbs.map(t => t.dataset.src) : [mainImg.src];
+    const idx    = thumbs.findIndex(t => t.classList.contains('active'));
+    openLightbox(images, Math.max(0, idx), mainImg.alt);
   });
 }
 
-function openLightbox(src, alt) {
-  if (document.getElementById('productLightbox')) {
-    const lb = document.getElementById('productLightbox');
-    lb.querySelector('img').src = src;
-    lb.querySelector('img').alt = alt || '';
-    lb.classList.add('lightbox--open');
-    return;
+function openLightbox(images, startIndex, alt) {
+  _lbImages = images;
+  _lbIndex  = startIndex || 0;
+
+  let lb = document.getElementById('productLightbox');
+  if (!lb) {
+    lb = document.createElement('div');
+    lb.id = 'productLightbox';
+    lb.className = 'lightbox';
+    lb.innerHTML = `
+      <button class="lightbox-close" aria-label="Fermer">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="14" height="14"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
+      </button>
+      <button class="lightbox-nav lightbox-nav--prev" aria-label="Image précédente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <img src="" alt="" draggable="false">
+      <button class="lightbox-nav lightbox-nav--next" aria-label="Image suivante">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="lightbox-counter"></div>`;
+    document.body.appendChild(lb);
+
+    lb.addEventListener('click', e => {
+      if (e.target === lb || e.target.closest('.lightbox-close')) closeLightbox();
+    });
+    lb.querySelector('.lightbox-nav--prev').addEventListener('click', e => { e.stopPropagation(); lbNavigate(-1); });
+    lb.querySelector('.lightbox-nav--next').addEventListener('click', e => { e.stopPropagation(); lbNavigate(1); });
+
+    // Touch swipe
+    let _tx = 0;
+    lb.addEventListener('touchstart', e => { _tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend',   e => { const dx = e.changedTouches[0].clientX - _tx; if (Math.abs(dx) > 45) lbNavigate(dx < 0 ? 1 : -1); });
+
+    document.addEventListener('keydown', lbKeyHandler);
   }
-  const lb = document.createElement('div');
-  lb.id = 'productLightbox';
-  lb.className = 'lightbox lightbox--open';
-  lb.innerHTML = `
-    <button class="lightbox-close" aria-label="Fermer">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="14" height="14"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
-    </button>
-    <img src="${src}" alt="${alt || ''}" draggable="false">`;
-  document.body.appendChild(lb);
-  lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('.lightbox-close')) closeLightbox(); });
-  document.addEventListener('keydown', function lbKey(e) {
-    if (e.key === 'Escape') { closeLightbox(); document.removeEventListener('keydown', lbKey); }
-  });
+
+  lbSetImage(_lbIndex, true);
+  lb.classList.add('lightbox--open');
+}
+
+function lbSetImage(index, instant) {
+  const lb = document.getElementById('productLightbox');
+  if (!lb) return;
+  _lbIndex = (index + _lbImages.length) % _lbImages.length;
+  const img = lb.querySelector('img');
+
+  if (instant) {
+    img.src = _lbImages[_lbIndex];
+  } else {
+    img.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+    img.style.opacity = '0';
+    img.style.transform = 'scale(0.96)';
+    setTimeout(() => {
+      img.src = _lbImages[_lbIndex];
+      img.style.opacity = '1';
+      img.style.transform = 'scale(1)';
+    }, 150);
+  }
+
+  // Counter
+  const counter = lb.querySelector('.lightbox-counter');
+  const hasMany = _lbImages.length > 1;
+  counter.textContent = hasMany ? `${_lbIndex + 1} / ${_lbImages.length}` : '';
+  lb.querySelector('.lightbox-nav--prev').style.display = hasMany ? '' : 'none';
+  lb.querySelector('.lightbox-nav--next').style.display = hasMany ? '' : 'none';
+
+  // Sync thumbnail strip + main image
+  const thumbs = document.querySelectorAll('.product-thumb');
+  thumbs.forEach((t, i) => t.classList.toggle('active', i === _lbIndex));
+  const mainImg = document.querySelector('.product-main-img');
+  if (mainImg) lbCrossfadeMain(mainImg, _lbImages[_lbIndex]);
+}
+
+function lbNavigate(dir) { lbSetImage(_lbIndex + dir); }
+
+function lbKeyHandler(e) {
+  const lb = document.getElementById('productLightbox');
+  if (!lb || !lb.classList.contains('lightbox--open')) return;
+  if (e.key === 'Escape')      { closeLightbox(); }
+  if (e.key === 'ArrowLeft')   { lbNavigate(-1); }
+  if (e.key === 'ArrowRight')  { lbNavigate(1); }
 }
 
 function closeLightbox() {
   const lb = document.getElementById('productLightbox');
-  if (lb) { lb.classList.remove('lightbox--open'); setTimeout(() => lb.remove(), 260); }
+  if (!lb) return;
+  lb.classList.remove('lightbox--open');
+  document.removeEventListener('keydown', lbKeyHandler);
+  setTimeout(() => lb.remove(), 260);
+  _lbImages = []; _lbIndex = 0;
+}
+
+function lbCrossfadeMain(mainImg, src) {
+  if (mainImg.src.endsWith(src) || mainImg.src === src) return;
+  mainImg.style.transition = 'opacity 0.18s ease';
+  mainImg.style.opacity = '0';
+  setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 180);
+}
+
+function lbSetActiveThumb(btn, container) {
+  container.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
 }
 
 function showCartToast(name, isFr) {
