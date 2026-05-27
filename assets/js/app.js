@@ -676,27 +676,7 @@ function initFooter() {
   });
 }
 
-/* ── 19. Hero Product Cards ── */
-function initHeroCards() {
-  const container = document.getElementById('heroProductCards');
-  if (!container || typeof PRODUCTS === 'undefined') return;
-  const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
-  const picks = PRODUCTS.filter(p => p.images && p.images.length > 0).slice(0, 3);
-  container.innerHTML = picks.map(p => {
-    const d = p[lang] || p.fr;
-    return `<a href="product.html?id=${p.id}" class="hero-pcard">
-      <img class="hero-pcard-img" src="${p.images[0]}" alt="${d.name}" loading="lazy">
-      <div class="hero-pcard-info">
-        <p class="hero-pcard-name">${d.name}</p>
-        <span class="hero-pcard-price">${p.price.toFixed(2).replace('.',',')}€</span>
-        <span class="hero-pcard-old">${p.oldPrice.toFixed(2).replace('.',',')}€</span>
-      </div>
-      <span class="hero-pcard-badge">-${p.discount}%</span>
-    </a>`;
-  }).join('');
-}
-
-/* ── 19b. Hero Video ── */
+/* ── 19. Hero Video ── */
 function initHeroVideo() {
   const video = document.getElementById('heroVideo');
   if (!video) return;
@@ -721,7 +701,6 @@ function startAnimations() {
   gsap.registerPlugin(ScrollTrigger);
   initLenis();
   initCursor();
-  initHeroCards();
   initHeroVideo();
   initHeroCanvas();
   initNavbar();
