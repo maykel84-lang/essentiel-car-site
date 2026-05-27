@@ -551,42 +551,42 @@ const PROBLEMS = [
 const CATEGORIES = [
   {
     id: 'nettoyage',
-    coverImg: 'assets/images/products/aspirateur-sans-fil-1.jpg.png',
+    coverImg: 'assets/images/categories/nettoyage.jpg',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 24 L12 8 h8 l4 16 Z"/><line x1="7" y1="20" x2="25" y2="20"/><path d="M12 8 Q16 4 20 8"/></svg>`,
     fr: { name: 'Nettoyage', count: 4 },
     en: { name: 'Cleaning', count: 4 }
   },
   {
     id: 'confort',
-    coverImg: 'assets/images/products/support-telephone-1.jpg.png',
+    coverImg: 'assets/images/categories/confort.jpg',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="8" y="10" width="16" height="14" rx="2"/><path d="M12 10 L12 8 L20 8 L20 10"/><line x1="16" y1="24" x2="16" y2="28"/><line x1="12" y1="28" x2="20" y2="28"/></svg>`,
     fr: { name: 'Confort', count: 2 },
     en: { name: 'Comfort', count: 2 }
   },
   {
     id: 'securite',
-    coverImg: 'assets/images/products/dashcam-4k-1.jpg.png',
+    coverImg: 'assets/images/categories/securite.jpg',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16 4 L28 8 L28 18 Q28 26 16 30 Q4 26 4 18 L4 8 Z"/><path d="M11 16 L14 19 L21 12" stroke="var(--red)"/></svg>`,
     fr: { name: 'Sécurité', count: 2 },
     en: { name: 'Safety', count: 2 }
   },
   {
     id: 'technologie',
-    coverImg: 'assets/images/products/tpms-1.jpg.png',
+    coverImg: 'assets/images/categories/technologie.jpg',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="8" width="20" height="14" rx="2"/><circle cx="14" cy="15" r="4"/><circle cx="14" cy="15" r="1.5" fill="var(--red)" stroke="var(--red)"/><path d="M24 12 L28 10 L28 20 L24 18"/></svg>`,
     fr: { name: 'Technologie', count: 1 },
     en: { name: 'Technology', count: 1 }
   },
   {
     id: 'entretien',
-    coverImg: 'assets/images/products/machine-polir-1.jpg.png',
+    coverImg: 'assets/images/categories/entretien.jpg',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="18" r="10"/><circle cx="16" cy="18" r="5" stroke="var(--red)"/><circle cx="16" cy="18" r="1.5" fill="var(--red)" stroke="var(--red)"/><path d="M16 8 L16 4 L20 4"/></svg>`,
     fr: { name: 'Entretien', count: 2 },
     en: { name: 'Maintenance', count: 2 }
   },
   {
     id: 'accessoires',
-    coverImg: 'assets/images/products/brosse-jantes-1.jpg.png',
+    coverImg: 'assets/images/categories/accessoires.jpg',
     icon: `<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="20" r="5"/><circle cx="22" cy="20" r="5"/><path d="M6 18 Q6 8 16 8 Q26 8 26 18"/><path d="M6 18 L4 14 M26 18 L28 14"/></svg>`,
     fr: { name: 'Accessoires', count: 11 },
     en: { name: 'Accessories', count: 11 }
