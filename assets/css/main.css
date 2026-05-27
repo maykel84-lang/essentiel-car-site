@@ -493,6 +493,67 @@ svg { display: block; }
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 7rem var(--pad) 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+.hero-text { min-width: 0; }
+
+/* Hero visual — product cards column */
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1rem 0;
+}
+.hero-pcard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-decoration: none;
+  transition: border-color 0.25s, background 0.25s;
+  cursor: pointer;
+}
+.hero-pcard:hover { background: rgba(255,255,255,0.07); border-color: rgba(224,0,12,0.35); }
+.hero-pcard:nth-child(1) { margin-right: 2.5rem; animation: heroFloat 5.5s 0s ease-in-out infinite; }
+.hero-pcard:nth-child(2) { margin-left: 2rem; animation: heroFloat 5.5s 1.8s ease-in-out infinite; }
+.hero-pcard:nth-child(3) { margin-right: 1.5rem; animation: heroFloat 5.5s 0.9s ease-in-out infinite; }
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-9px); }
+}
+.hero-pcard-img {
+  width: 60px; height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--black-3);
+}
+.hero-pcard-info { flex: 1; min-width: 0; }
+.hero-pcard-name {
+  font-size: 0.825rem; font-weight: 600; color: var(--white);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-bottom: 0.25rem;
+}
+.hero-pcard-price { font-size: 0.95rem; color: var(--red); font-weight: 700; }
+.hero-pcard-old { font-size: 0.72rem; color: rgba(255,255,255,0.35); text-decoration: line-through; margin-left: 0.35rem; }
+.hero-pcard-badge {
+  flex-shrink: 0;
+  font-size: 0.68rem; font-weight: 700;
+  background: rgba(224,0,12,0.15); color: var(--red);
+  border: 1px solid rgba(224,0,12,0.25);
+  padding: 0.2rem 0.5rem; border-radius: 6px;
+}
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
 }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.65rem;
