@@ -168,6 +168,8 @@ function renderProduct(p) {
 
             <p class="product-desc">${data.desc}</p>
 
+            ${p.variants && p.variants.length ? `<div class="product-variants">${buildVariants(p.variants, lang)}</div>` : ''}
+
             <div class="product-ctas">
               <button class="btn btn--primary btn--lg btn--cart" id="addToCartBtn" data-id="${p.id}" data-magnetic>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -262,6 +264,45 @@ function renderProduct(p) {
   updateCartCounter();
   initProductLightbox();
   initProductThumbs();
+  initVariants();
+}
+
+/* ── Build variant selector ── */
+function buildVariants(variants, lang) {
+  return variants.map(v => `
+    <div class="variant-group">
+      <p class="variant-label">${v.label} : <strong class="variant-selected-label"></strong></p>
+      <div class="variant-options">
+        ${v.options.map((opt, i) => `
+          <button class="variant-swatch${i === 0 ? ' active' : ''}"
+            data-value="${opt.value}"
+            data-label="${opt.display}"
+            style="--swatch-color:${opt.hex}"
+            title="${opt.display}">
+            <span class="swatch-color"></span>
+            <span class="swatch-name">${opt.display}</span>
+          </button>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function initVariants() {
+  const container = document.querySelector('.product-variants');
+  if (!container) return;
+  // Set initial label
+  container.querySelectorAll('.variant-group').forEach(group => {
+    const first = group.querySelector('.variant-swatch.active');
+    if (first) group.querySelector('.variant-selected-label').textContent = first.dataset.label;
+  });
+  // Click handler
+  container.addEventListener('click', e => {
+    const btn = e.target.closest('.variant-swatch');
+    if (!btn) return;
+    const group = btn.closest('.variant-group');
+    group.querySelectorAll('.variant-swatch').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    group.querySelector('.variant-selected-label').textContent = btn.dataset.label;
+  });
 }
 
 /* ── Build product reviews ── */

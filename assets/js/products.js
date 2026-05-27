@@ -17,7 +17,12 @@ const PRODUCTS = [
     images: [
       'assets/images/products/aspirateur-sans-fil-1.jpg.png',
       'assets/images/products/aspirateur-sans-fil-2.jpg.png',
-      'assets/images/products/aspirateur-soufflant-1.jpg.png',
+    ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
+        { value: 'blanc', display: 'Blanc', hex: '#f0ede8' },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/>
@@ -160,6 +165,12 @@ const PRODUCTS = [
       'assets/images/products/support-telephone-1.jpg.png',
       'assets/images/products/support-telephone-2.jpg.png',
       'assets/images/products/support-telephone-3.jpg.png',
+    ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir',    display: 'Noir',    hex: '#1a1a1a' },
+        { value: 'argent',  display: 'Argent',  hex: '#c0c0c0' },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="15" y="8" width="18" height="28" rx="3"/>
@@ -344,7 +355,6 @@ const PRODUCTS = [
     images: [
       'assets/images/products/essuie-glace-retros-1.jpg.png',
       'assets/images/products/essuie-glace-retros-2.jpg.png',
-      'assets/images/products/essuie-glace-retros-3.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M6 36 Q24 8 42 36"/>
