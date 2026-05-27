@@ -105,7 +105,7 @@ function renderProduct(p) {
               <div class="product-main-img-wrap">
                 <img class="product-main-img" src="${p.images[0]}" alt="${data.name}" loading="eager" onerror="this.parentElement.parentElement.classList.remove('product-visual-card--image');this.parentElement.style.display='none';this.parentElement.parentElement.querySelector('.product-visual-fallback').style.display='flex'">
               </div>
-              ${p.images.length > 1 ? `<div class="product-img-thumbs">${p.images.map((src, i) => `<button class="product-thumb${i === 0 ? ' active' : ''}" onclick="switchProductImg(this,'${src}')" aria-label="${data.name} photo ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+              ${p.images.length > 1 ? `<div class="product-img-thumbs" id="productThumbs">${p.images.map((src, i) => `<button class="product-thumb${i === 0 ? ' active' : ''}" data-src="${src}" aria-label="${data.name} photo ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
               <div class="product-visual-fallback" style="display:none;width:55%;position:relative;z-index:1">${p.icon}</div>
               ` : `
               <div class="product-visual-icon">${p.icon}</div>
@@ -261,6 +261,7 @@ function renderProduct(p) {
   refreshCursorTargets();
   updateCartCounter();
   initProductLightbox();
+  initProductThumbs();
 }
 
 /* ── Build product reviews ── */
@@ -334,16 +335,31 @@ function handleAddToCart(product, data, isFr) {
   }
 }
 
-function switchProductImg(thumbEl, src) {
+/* ── Thumbnails — Amazon-style ── */
+function initProductThumbs() {
+  const container = document.getElementById('productThumbs');
+  if (!container) return;
   const mainImg = document.querySelector('.product-main-img');
   if (!mainImg) return;
-  mainImg.classList.add('is-switching');
-  setTimeout(() => {
-    mainImg.src = src;
-    mainImg.classList.remove('is-switching');
-  }, 200);
-  document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
-  thumbEl.classList.add('active');
+
+  container.addEventListener('click', function(e) {
+    const btn = e.target.closest('.product-thumb');
+    if (!btn) return;
+    const src = btn.dataset.src;
+    if (!src) return;
+
+    // Crossfade main image
+    mainImg.style.transition = 'opacity 0.18s ease';
+    mainImg.style.opacity = '0';
+    setTimeout(() => {
+      mainImg.src = src;
+      mainImg.style.opacity = '1';
+    }, 180);
+
+    // Active state
+    container.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  });
 }
 
 /* ── Lightbox zoom ── */
