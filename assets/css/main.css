@@ -2038,6 +2038,8 @@ svg { display: block; }
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(45deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 29px);
+  pointer-events: none;
+  z-index: 0;
 }
 .product-visual-badge { position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2; }
 .product-visual-icon {
@@ -2838,6 +2840,7 @@ svg { display: block; }
   overflow: hidden;
   border-radius: 18px 18px 0 0;
   flex: 1;
+  z-index: 1;
 }
 .product-main-img {
   width: 100%;
@@ -2860,6 +2863,8 @@ svg { display: block; }
   border-top: 1px solid var(--border);
   overflow-x: auto;
   scrollbar-width: none;
+  position: relative;
+  z-index: 1;
 }
 .product-img-thumbs::-webkit-scrollbar { display: none; }
 .product-thumb {
