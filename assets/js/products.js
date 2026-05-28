@@ -247,8 +247,8 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
-        { value: 'noir',  display: 'Noir',             hex: '#1a1a1a' },
-        { value: 'blanc', display: 'Blanc transparent', hex: '#e8e8e8', transparent: true },
+        { value: 'noir',  display: 'Noir',             hex: '#1a1a1a', imageIndex: 1 },
+        { value: 'blanc', display: 'Blanc transparent', hex: '#e8e8e8', transparent: true, imageIndex: 0 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -328,8 +328,8 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
-        { value: 'blanc', display: 'Blanc', hex: '#f0ede8' },
+        { value: 'blanc', display: 'Blanc', hex: '#f0ede8', imageIndex: 0 },
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 1 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -370,8 +370,8 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
-        { value: 'noir', display: 'Noir', hex: '#1a1a1a' },
-        { value: 'rose', display: 'Rose', hex: '#e8799a' },
+        { value: 'noir', display: 'Noir', hex: '#1a1a1a', imageIndex: 0 },
+        { value: 'rose', display: 'Rose', hex: '#e8799a', imageIndex: 1 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">

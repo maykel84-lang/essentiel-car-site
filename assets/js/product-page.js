@@ -309,17 +309,30 @@ function buildVariants(variants, lang) {
   }).join('');
 }
 
+function switchImageByIndex(idx) {
+  const thumbs = document.querySelectorAll('.product-thumb');
+  const mainImg = document.querySelector('.product-main-img');
+  if (!thumbs[idx] || !mainImg) return;
+  const src = thumbs[idx].dataset.src;
+  if (!src || mainImg.src.endsWith(src)) return;
+  thumbs.forEach(t => t.classList.remove('active'));
+  thumbs[idx].classList.add('active');
+  mainImg.style.transition = 'opacity 0.2s ease';
+  mainImg.style.opacity = '0';
+  setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 200);
+}
+
 function initVariants() {
   const container = document.querySelector('.product-variants');
   if (!container) return;
 
-  // Set initial labels + apply default qty price
+  // Set initial labels, price and image on load
   container.querySelectorAll('.variant-group').forEach(group => {
     const activeBtn = group.querySelector('.variant-swatch.active, .variant-qty.active');
-    if (activeBtn) {
-      group.querySelector('.variant-selected-label').textContent = activeBtn.dataset.label;
-      if (activeBtn.dataset.price) updateProductPrice(parseFloat(activeBtn.dataset.price), parseFloat(activeBtn.dataset.oldprice));
-    }
+    if (!activeBtn) return;
+    group.querySelector('.variant-selected-label').textContent = activeBtn.dataset.label;
+    if (activeBtn.dataset.price) updateProductPrice(parseFloat(activeBtn.dataset.price), parseFloat(activeBtn.dataset.oldprice));
+    if (activeBtn.dataset.imgindex !== undefined) switchImageByIndex(parseInt(activeBtn.dataset.imgindex, 10));
   });
 
   container.addEventListener('click', e => {
@@ -330,12 +343,7 @@ function initVariants() {
     btn.classList.add('active');
     group.querySelector('.variant-selected-label').textContent = btn.dataset.label;
     if (btn.dataset.price) updateProductPrice(parseFloat(btn.dataset.price), parseFloat(btn.dataset.oldprice));
-    // Switch to the matching product image if imageIndex is defined
-    if (btn.dataset.imgindex !== undefined) {
-      const idx = parseInt(btn.dataset.imgindex, 10);
-      const thumbs = document.querySelectorAll('.product-thumb');
-      if (thumbs[idx]) thumbs[idx].click();
-    }
+    if (btn.dataset.imgindex !== undefined) switchImageByIndex(parseInt(btn.dataset.imgindex, 10));
   });
 }
 
