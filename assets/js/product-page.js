@@ -299,6 +299,7 @@ function buildVariants(variants, lang) {
               data-label="${opt.display}"
               style="--swatch-color:${opt.hex}"
               ${opt.transparent ? 'data-transparent="true"' : ''}
+              ${opt.imageIndex !== undefined ? `data-imgindex="${opt.imageIndex}"` : ''}
               title="${opt.display}">
               <span class="swatch-color${opt.transparent ? ' swatch-color--transparent' : ''}"></span>
               <span class="swatch-name">${opt.display}</span>
@@ -329,6 +330,12 @@ function initVariants() {
     btn.classList.add('active');
     group.querySelector('.variant-selected-label').textContent = btn.dataset.label;
     if (btn.dataset.price) updateProductPrice(parseFloat(btn.dataset.price), parseFloat(btn.dataset.oldprice));
+    // Switch to the matching product image if imageIndex is defined
+    if (btn.dataset.imgindex !== undefined) {
+      const idx = parseInt(btn.dataset.imgindex, 10);
+      const thumbs = document.querySelectorAll('.product-thumb');
+      if (thumbs[idx]) thumbs[idx].click();
+    }
   });
 }
 
