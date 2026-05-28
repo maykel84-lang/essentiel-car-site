@@ -56,8 +56,8 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
+        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 0 },
         { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 1 },
-        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 3 },
         { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 2 },
       ]},
       { label: 'Quantité', type: 'qty', options: [
