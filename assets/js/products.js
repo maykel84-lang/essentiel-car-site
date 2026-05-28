@@ -17,12 +17,7 @@ const PRODUCTS = [
     images: [
       'assets/images/products/aspirateur-sans-fil-1.jpg.png',
       'assets/images/products/aspirateur-sans-fil-2.jpg.png',
-    ],
-    variants: [
-      { label: 'Couleur', options: [
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
-        { value: 'blanc', display: 'Blanc', hex: '#f0ede8' },
-      ]}
+      'assets/images/products/aspirateur-soufflant-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/>
@@ -44,11 +39,11 @@ const PRODUCTS = [
   },
   {
     id: 'brosse-jantes',
-    badge: '-37%',
+    badge: '-35%',
     badgeType: 'promo',
-    price: 24.90,
-    oldPrice: 39.90,
-    discount: 37,
+    price: 12.90,
+    oldPrice: 19.90,
+    discount: 35,
     rating: 4.7,
     reviews: 523,
     category: 'nettoyage',
@@ -58,6 +53,17 @@ const PRODUCTS = [
       'assets/images/products/brosse-jantes-2.jpg.png',
       'assets/images/products/brosse-jantes-3.jpg.png',
       'assets/images/products/brosse-jantes-4.jpg.png',
+    ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
+        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c' },
+        { value: 'jaune', display: 'Jaune', hex: '#f5c518' },
+      ]},
+      { label: 'Quantité', type: 'qty', options: [
+        { value: '1',   display: 'À l\'unité',  price: 12.90, oldPrice: 19.90, default: true },
+        { value: 'lot', display: 'Lot de 3',    price: 24.90, oldPrice: 38.70, badge: 'Meilleure valeur' },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="24" r="14"/>
@@ -166,12 +172,6 @@ const PRODUCTS = [
       'assets/images/products/support-telephone-2.jpg.png',
       'assets/images/products/support-telephone-3.jpg.png',
     ],
-    variants: [
-      { label: 'Couleur', options: [
-        { value: 'noir',    display: 'Noir',    hex: '#1a1a1a' },
-        { value: 'argent',  display: 'Argent',  hex: '#c0c0c0' },
-      ]}
-    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="15" y="8" width="18" height="28" rx="3"/>
       <line x1="21" y1="11" x2="27" y2="11"/>
@@ -244,6 +244,12 @@ const PRODUCTS = [
       'assets/images/products/lance-mousse-2.jpg.png',
       'assets/images/products/lance-mousse-3.jpg.png',
       'assets/images/products/lance-mousse-4.jpg.png',
+    ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir',  display: 'Noir',             hex: '#1a1a1a' },
+        { value: 'blanc', display: 'Blanc transparent', hex: '#e8e8e8', transparent: true },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="14" y="16" width="12" height="22" rx="3"/>
@@ -320,6 +326,12 @@ const PRODUCTS = [
       'assets/images/products/table-volant-3.jpg.png',
       'assets/images/products/table-volant-4.jpg.png',
     ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
+        { value: 'blanc', display: 'Blanc', hex: '#f0ede8' },
+      ]}
+    ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="20" width="32" height="16" rx="3"/>
       <path d="M24 20 L24 36"/>
@@ -355,6 +367,12 @@ const PRODUCTS = [
     images: [
       'assets/images/products/essuie-glace-retros-1.jpg.png',
       'assets/images/products/essuie-glace-retros-2.jpg.png',
+    ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir', display: 'Noir', hex: '#1a1a1a' },
+        { value: 'rose', display: 'Rose', hex: '#e8799a' },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M6 36 Q24 8 42 36"/>

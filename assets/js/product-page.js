@@ -269,40 +269,85 @@ function renderProduct(p) {
 
 /* ── Build variant selector ── */
 function buildVariants(variants, lang) {
-  return variants.map(v => `
-    <div class="variant-group">
-      <p class="variant-label">${v.label} : <strong class="variant-selected-label"></strong></p>
-      <div class="variant-options">
-        ${v.options.map((opt, i) => `
-          <button class="variant-swatch${i === 0 ? ' active' : ''}"
-            data-value="${opt.value}"
-            data-label="${opt.display}"
-            style="--swatch-color:${opt.hex}"
-            title="${opt.display}">
-            <span class="swatch-color"></span>
-            <span class="swatch-name">${opt.display}</span>
-          </button>`).join('')}
-      </div>
-    </div>`).join('');
+  return variants.map(v => {
+    if (v.type === 'qty') {
+      return `
+        <div class="variant-group">
+          <p class="variant-label">${v.label} : <strong class="variant-selected-label"></strong></p>
+          <div class="variant-options">
+            ${v.options.map((opt, i) => `
+              <button class="variant-qty${(opt.default || i === 0) ? ' active' : ''}"
+                data-value="${opt.value}"
+                data-label="${opt.display}"
+                data-price="${opt.price}"
+                data-oldprice="${opt.oldPrice}"
+                title="${opt.display}">
+                <span class="qty-label">${opt.display}</span>
+                <span class="qty-price">${opt.price.toFixed(2).replace('.', ',')}€</span>
+                ${opt.badge ? `<span class="qty-badge">${opt.badge}</span>` : ''}
+              </button>`).join('')}
+          </div>
+        </div>`;
+    }
+    return `
+      <div class="variant-group">
+        <p class="variant-label">${v.label} : <strong class="variant-selected-label"></strong></p>
+        <div class="variant-options">
+          ${v.options.map((opt, i) => `
+            <button class="variant-swatch${i === 0 ? ' active' : ''}"
+              data-value="${opt.value}"
+              data-label="${opt.display}"
+              style="--swatch-color:${opt.hex}"
+              ${opt.transparent ? 'data-transparent="true"' : ''}
+              title="${opt.display}">
+              <span class="swatch-color${opt.transparent ? ' swatch-color--transparent' : ''}"></span>
+              <span class="swatch-name">${opt.display}</span>
+            </button>`).join('')}
+        </div>
+      </div>`;
+  }).join('');
 }
 
 function initVariants() {
   const container = document.querySelector('.product-variants');
   if (!container) return;
-  // Set initial label
+
+  // Set initial labels + apply default qty price
   container.querySelectorAll('.variant-group').forEach(group => {
-    const first = group.querySelector('.variant-swatch.active');
-    if (first) group.querySelector('.variant-selected-label').textContent = first.dataset.label;
+    const activeBtn = group.querySelector('.variant-swatch.active, .variant-qty.active');
+    if (activeBtn) {
+      group.querySelector('.variant-selected-label').textContent = activeBtn.dataset.label;
+      if (activeBtn.dataset.price) updateProductPrice(parseFloat(activeBtn.dataset.price), parseFloat(activeBtn.dataset.oldprice));
+    }
   });
-  // Click handler
+
   container.addEventListener('click', e => {
-    const btn = e.target.closest('.variant-swatch');
+    const btn = e.target.closest('.variant-swatch, .variant-qty');
     if (!btn) return;
     const group = btn.closest('.variant-group');
-    group.querySelectorAll('.variant-swatch').forEach(b => b.classList.remove('active'));
+    group.querySelectorAll('.variant-swatch, .variant-qty').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     group.querySelector('.variant-selected-label').textContent = btn.dataset.label;
+    if (btn.dataset.price) updateProductPrice(parseFloat(btn.dataset.price), parseFloat(btn.dataset.oldprice));
   });
+}
+
+function updateProductPrice(price, oldPrice) {
+  const mainEl  = document.querySelector('.product-price-main');
+  const oldEl   = document.querySelector('.product-price-old');
+  const saveEl  = document.querySelector('.product-price-savings');
+  const saveTxt = document.querySelector('.product-price-saving-text');
+  if (!mainEl) return;
+  mainEl.textContent = price.toFixed(2).replace('.', ',') + '€';
+  if (oldEl && oldPrice)  oldEl.textContent  = oldPrice.toFixed(2).replace('.', ',') + '€';
+  if (saveEl && oldPrice) {
+    const disc = Math.round((1 - price / oldPrice) * 100);
+    saveEl.textContent = `-${disc}%`;
+  }
+  if (saveTxt && oldPrice) {
+    const saved = (oldPrice - price).toFixed(2).replace('.', ',');
+    saveTxt.textContent = `Économisez ${saved}€`;
+  }
 }
 
 /* ── Build product reviews ── */
