@@ -1474,6 +1474,74 @@ svg { display: block; }
 .why-dot.green { background: #4ade80; }
 .why-dot.amber { background: #fbbf24; }
 
+/* ── Why GIF + Keywords ── */
+.why-gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+}
+.why-keywords {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.why-kw {
+  position: absolute;
+  top: var(--kw-top, 50%);
+  left: var(--kw-left, 5%);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.9);
+  text-stroke: 2px rgba(255,255,255,0.9);
+  text-shadow:
+    2px 3px 0 rgba(255,255,255,0.22),
+    4px 6px 0 rgba(255,255,255,0.14),
+    6px 9px 0 rgba(255,255,255,0.08),
+    8px 12px 14px rgba(0,0,0,0.5);
+  white-space: nowrap;
+  line-height: 1;
+  opacity: 0;
+  animation: kwAppear 11s var(--kw-delay, 0s) infinite both;
+  user-select: none;
+}
+.why-kw--red {
+  -webkit-text-stroke: 2px rgba(224,0,12,1);
+  text-stroke: 2px rgba(224,0,12,1);
+  text-shadow:
+    2px 3px 0 rgba(224,0,12,0.35),
+    4px 6px 0 rgba(224,0,12,0.22),
+    6px 9px 0 rgba(224,0,12,0.12),
+    8px 12px 14px rgba(0,0,0,0.5);
+}
+@keyframes kwAppear {
+  0%   { opacity: 0; transform: translateY(8px) scale(0.93); }
+  7%   { opacity: 1; transform: translateY(0) scale(1); }
+  22%  { opacity: 1; transform: translateY(0) scale(1); }
+  28%  { opacity: 0; transform: translateY(-5px) scale(1.03); }
+  100% { opacity: 0; }
+}
+.why-mobile-visual { display: none; }
+.why-mobile-gif-wrap {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 9/16;
+  max-height: 480px;
+  margin: 0 auto;
+}
+.why-mobile-gif-wrap .why-gif { border-radius: inherit; }
+.why-mobile-gif-wrap .why-keywords { border-radius: inherit; }
+
 /* ── Reviews Carousel ── */
 .reviews-carousel-wrap {
   position: relative;
@@ -1943,6 +2011,7 @@ svg { display: block; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; }
   .why-visual { display: none; }
+  .why-mobile-visual { display: block; margin-top: 2.5rem; }
   .categories-grid { grid-template-columns: repeat(2, 1fr); }
   .ugc-grid { grid-template-columns: repeat(2, 1fr); }
   .ugc-card--featured { transform: none; }
