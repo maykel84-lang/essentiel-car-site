@@ -1103,25 +1103,63 @@ svg { display: block; }
   background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%);
   pointer-events: none;
 }
-.ugc-video {
+.ugc-thumb-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
-  opacity: 0;
-  transition: opacity 0.4s ease;
   z-index: 0;
+  transition: transform 0.4s var(--ease-out);
 }
-.ugc-video.ugc-video--ready {
-  opacity: 1;
+.ugc-card:hover .ugc-thumb-img {
+  transform: scale(1.04);
 }
-.ugc-card:hover .ugc-video.ugc-video--ready {
-  /* video already playing via JS */
+.ugc-card[data-youtube] { cursor: pointer; }
+
+/* ── YouTube modal ── */
+.yt-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ytFadeIn 0.2s ease;
 }
-.ugc-card.ugc-has-video .ugc-coming { display: none; }
-.ugc-card.ugc-has-video .ugc-play   { opacity: 0.7; }
+@keyframes ytFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.yt-modal-inner {
+  position: relative;
+  width: min(400px, 90vw);
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 100px rgba(0,0,0,0.9);
+}
+.yt-modal-inner iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.yt-modal-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+  padding: 4px 8px;
+}
+.yt-modal-close:hover { opacity: 1; }
 .ugc-play {
   width: 52px; height: 52px;
   background: rgba(224,0,12,0.9);

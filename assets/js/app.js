@@ -656,49 +656,34 @@ function initBackTop() {
   });
 }
 
-/* ── 18b. UGC Videos — lecture auto au hover, fallback gracieux ── */
+/* ── 18b. UGC Videos — lecture YouTube en modal au clic ── */
 function initUGCVideos() {
-  const videos = document.querySelectorAll('.ugc-video');
-  if (!videos.length) return;
-
-  videos.forEach(video => {
-    const card = video.closest('.ugc-card');
-    if (!card) return;
-
-    // Tester si la vidéo est disponible (elle charge sans erreur)
-    video.addEventListener('loadeddata', () => {
-      video.classList.add('ugc-video--ready');
-      card.classList.add('ugc-has-video');
-    });
-    video.addEventListener('error', () => {
-      video.style.display = 'none'; // reste sur le placeholder gradient
-    });
-
-    // Lecture au hover, pause au départ
-    card.addEventListener('mouseenter', () => {
-      if (!card.classList.contains('ugc-has-video')) return;
-      video.play().catch(() => {});
-    });
-    card.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-
-    // Sur mobile : IntersectionObserver pour auto-play quand visible à 60%
-    if ('IntersectionObserver' in window) {
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (!card.classList.contains('ugc-has-video')) return;
-          if (e.isIntersecting) video.play().catch(() => {});
-          else { video.pause(); video.currentTime = 0; }
-        });
-      }, { threshold: 0.6 });
-      obs.observe(card);
-    }
-
-    // Déclencher le chargement maintenant (preload="none" → on force)
-    video.load();
+  document.querySelectorAll('.ugc-card[data-youtube]').forEach(card => {
+    card.addEventListener('click', () => openYTModal(card.dataset.youtube));
   });
+}
+
+function openYTModal(videoId) {
+  const overlay = document.createElement('div');
+  overlay.className = 'yt-modal-overlay';
+  overlay.innerHTML = `
+    <div class="yt-modal-inner">
+      <button class="yt-modal-close" aria-label="Fermer">✕</button>
+      <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&rel=0&modestbranding=1"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>`;
+
+  const close = () => overlay.remove();
+  overlay.querySelector('.yt-modal-close').addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+
+  function onKey(e) {
+    if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
+  }
+  document.addEventListener('keydown', onKey);
+  overlay.addEventListener('remove', () => document.removeEventListener('keydown', onKey));
+
+  document.body.appendChild(overlay);
 }
 
 /* ── 18. Footer Curtain Reveal ── */
