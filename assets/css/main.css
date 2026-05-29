@@ -1557,6 +1557,72 @@ svg { display: block; }
 .why-dot.green { background: #4ade80; }
 .why-dot.amber { background: #fbbf24; }
 
+/* ── Why GIF + Keywords ── */
+.why-gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.why-keywords {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.why-kw {
+  position: absolute;
+  top: var(--kw-top, 50%);
+  left: var(--kw-left, 10%);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(5px);
+  padding: 0.22rem 0.55rem;
+  border-radius: 3px;
+  border-left: 2px solid rgba(255,255,255,0.55);
+  white-space: nowrap;
+  opacity: 0;
+  animation: kwAppear 11s var(--kw-delay, 0s) infinite both;
+}
+.why-kw--red { border-left-color: var(--red); }
+
+@keyframes kwAppear {
+  0%   { opacity: 0; transform: translateX(-8px); }
+  5%   { opacity: 1; transform: translateX(0); }
+  20%  { opacity: 1; transform: translateX(0); }
+  26%  { opacity: 0; transform: translateX(5px); }
+  100% { opacity: 0; }
+}
+
+/* Mobile-only GIF block */
+.why-mobile-visual { display: none; }
+.why-mobile-gif-wrap {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  aspect-ratio: 9/16;
+  max-height: 480px;
+  margin: 0 auto;
+}
+.why-mobile-gif-wrap .why-gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  z-index: 1;
+}
+.why-mobile-gif-wrap .why-keywords { border-radius: inherit; }
+
 /* ── Reviews Carousel ── */
 .reviews-carousel-wrap {
   position: relative;
@@ -2027,6 +2093,7 @@ svg { display: block; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; }
   .why-visual { display: none; }
+  .why-mobile-visual { display: block; margin-top: 2.5rem; }
   .categories-grid { grid-template-columns: repeat(2, 1fr); }
   .ugc-grid { grid-template-columns: repeat(2, 1fr); }
   .ugc-card--featured { transform: none; }
