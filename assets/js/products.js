@@ -132,9 +132,9 @@ const PRODUCTS = [
     category: 'technologie',
     accentColor: '#1a0a0a',
     images: [
+      'assets/images/products/dashcam-4k-6.jpg.png',
       'assets/images/products/dashcam-4k-1.jpg.png',
       'assets/images/products/dashcam-4k-5.jpg.png',
-      'assets/images/products/dashcam-4k-6.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="4" y="14" width="32" height="22" rx="3"/>
@@ -480,7 +480,7 @@ const PRODUCTS = [
     isBundle: true,
     accentColor: '#1a0a08',
     images: [
-      'assets/images/products/dashcam-4k-1.jpg.png',
+      'assets/images/products/dashcam-4k-6.jpg.png',
       'assets/images/products/tpms-1.jpg.png',
       'assets/images/products/support-telephone-1.jpg.png',
     ],
