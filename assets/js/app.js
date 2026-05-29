@@ -395,6 +395,12 @@ function buildProductCard(p, lang, num) {
   const stockLabel = lang === 'en' ? 'left in stock' : 'en stock';
   const offerLabel = lang === 'en' ? 'Offer expires in' : 'Offre expire dans';
 
+  const colorGroup = p.variants && p.variants.find(v => !v.type);
+  const swatchHTML = colorGroup ? `
+    <div class="card-swatches">
+      ${colorGroup.options.map(o => `<span class="card-swatch-dot${o.transparent ? ' card-swatch-dot--transparent' : ''}" style="${o.transparent ? '' : `background:${o.hex}`}" title="${o.display}"></span>`).join('')}
+    </div>` : '';
+
   return `
     <article class="product-card" data-id="${p.id}" data-category="${p.category}" onclick="goToProduct('${p.id}')">
       <div class="product-card-visual" style="background: radial-gradient(ellipse at 40% 50%, ${p.accentColor} 0%, #111 100%);">
@@ -413,6 +419,7 @@ function buildProductCard(p, lang, num) {
           <div class="stars">${stars}</div>
           <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()} ${reviewsText})</span>
         </div>
+        ${swatchHTML}
         <div class="product-card-pricing">
           <span class="price-current" data-eur="${p.price}">${p.price.toFixed(2).replace('.', ',')}€</span>
           <span class="price-old" data-eur="${p.oldPrice}">${p.oldPrice.toFixed(2).replace('.', ',')}€</span>
