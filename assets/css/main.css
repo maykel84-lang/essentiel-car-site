@@ -1637,6 +1637,9 @@ svg { display: block; }
   border-radius: inherit;
 }
 .why-mobile-gif-wrap .why-keywords { border-radius: inherit; }
+.why-mobile-gif-wrap .why-kw {
+  font-size: clamp(1.4rem, 7vw, 2.2rem);
+}
 
 /* ── Reviews Carousel ── */
 .reviews-carousel-wrap {
