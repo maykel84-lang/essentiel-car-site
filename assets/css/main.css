@@ -1520,6 +1520,7 @@ svg { display: block; }
 .why-accent-card {
   position: absolute;
   bottom: 1.5rem; right: 1rem;
+  z-index: 20;
   background: var(--red);
   border-radius: var(--r-lg);
   padding: 1.1rem 1.4rem;
@@ -1542,6 +1543,7 @@ svg { display: block; }
 .why-dot-card {
   position: absolute;
   top: 1.5rem; left: 1rem;
+  z-index: 20;
   background: rgba(0,0,0,0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
