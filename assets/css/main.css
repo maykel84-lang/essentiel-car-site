@@ -1567,20 +1567,6 @@ svg { display: block; }
   object-fit: cover;
   object-position: center center;
   z-index: 1;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 24%,
-    black 76%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 24%,
-    black 76%,
-    transparent 100%
-  );
 }
 .why-keywords {
   position: absolute;
