@@ -1565,10 +1565,10 @@ svg { display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 60% center;
+  object-position: 42% center;
   z-index: 1;
-  -webkit-mask-image: radial-gradient(ellipse 76% 86% at 58% 50%, black 45%, transparent 100%);
-  mask-image: radial-gradient(ellipse 76% 86% at 58% 50%, black 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 62% 90% at 42% 50%, black 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse 62% 90% at 42% 50%, black 45%, transparent 100%);
 }
 .why-keywords {
   position: absolute;
@@ -1582,13 +1582,18 @@ svg { display: block; }
   top: var(--kw-top, 50%);
   left: var(--kw-left, 5%);
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
   font-weight: 900;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255,255,255,0.72);
-  text-stroke: 1.5px rgba(255,255,255,0.72);
+  -webkit-text-stroke: 2px rgba(255,255,255,0.9);
+  text-stroke: 2px rgba(255,255,255,0.9);
+  text-shadow:
+    2px 3px 0 rgba(255,255,255,0.22),
+    4px 6px 0 rgba(255,255,255,0.14),
+    6px 9px 0 rgba(255,255,255,0.08),
+    8px 12px 14px rgba(0,0,0,0.5);
   white-space: nowrap;
   line-height: 1;
   opacity: 0;
@@ -1596,15 +1601,20 @@ svg { display: block; }
   user-select: none;
 }
 .why-kw--red {
-  -webkit-text-stroke: 1.5px rgba(224,0,12,0.9);
-  text-stroke: 1.5px rgba(224,0,12,0.9);
+  -webkit-text-stroke: 2px rgba(224,0,12,1);
+  text-stroke: 2px rgba(224,0,12,1);
+  text-shadow:
+    2px 3px 0 rgba(224,0,12,0.35),
+    4px 6px 0 rgba(224,0,12,0.22),
+    6px 9px 0 rgba(224,0,12,0.12),
+    8px 12px 14px rgba(0,0,0,0.5);
 }
 
 @keyframes kwAppear {
-  0%   { opacity: 0; transform: translateY(6px) scale(0.95); }
+  0%   { opacity: 0; transform: translateY(8px) scale(0.93); }
   7%   { opacity: 1; transform: translateY(0) scale(1); }
   22%  { opacity: 1; transform: translateY(0) scale(1); }
-  28%  { opacity: 0; transform: translateY(-4px) scale(1.02); }
+  28%  { opacity: 0; transform: translateY(-5px) scale(1.03); }
   100% { opacity: 0; }
 }
 
