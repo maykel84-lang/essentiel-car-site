@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/fonts/inter.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/main.css?v=2615">
+  <link rel="stylesheet" href="assets/css/main.css?v=2620">
 
   <style>
     /* Inline critical styles */
@@ -894,23 +894,48 @@ ESSENTIEL CAR ?</h2>
          11 — CTA FINAL
          ═══════════════════════════════ -->
     <section class="section final-cta" aria-label="Appel à l'action">
-      <div class="cta-bg" aria-hidden="true"></div>
-      <div class="cta-grid-overlay" aria-hidden="true"></div>
+      <!-- GIF background desktop -->
+      <img class="cta-gif cta-gif--desktop" src="assets/images/gifs/cta-hero-desktop.gif" alt="" aria-hidden="true">
+      <!-- GIF background mobile -->
+      <img class="cta-gif cta-gif--mobile" src="assets/images/gifs/cta-hero-mobile.gif" alt="" aria-hidden="true">
+      <!-- Dark gradient overlay for text readability -->
+      <div class="cta-overlay" aria-hidden="true"></div>
       <div class="container">
         <div class="cta-content">
-          <div class="section-eyebrow" style="justify-content:center;margin-bottom:1.25rem" data-reveal>
+          <div class="section-eyebrow" data-reveal>
             <span class="eyebrow-line"></span>
             <span class="eyebrow-text" data-i18n="cta_eyebrow">Prêt à passer à l'action ?</span>
+            <span class="eyebrow-line"></span>
           </div>
-          <h2 class="cta-title" data-split data-i18n="cta_title" style="white-space:pre-line">ÉQUIPEZ VOTRE
-VOITURE MAINTENANT</h2>
-          <p class="cta-sub" data-reveal data-i18n="cta_sub">Plus de 50 accessoires auto premium disponibles. Livraison rapide. Retours faciles. Satisfaction garantie.</p>
+          <h2 class="cta-title" data-split data-i18n="cta_title">ÉQUIPEZ VOTRE<br>VOITURE<br>MAINTENANT</h2>
           <div class="cta-btns" data-reveal>
-            <a href="boutique.html" class="btn btn--primary btn--lg" data-magnetic data-i18n="cta_btn1">
-              Commander maintenant
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5"/></svg>
+            <a href="boutique.html" class="btn cta-btn-main" data-magnetic>
+              DÉCOUVRIR LA BOUTIQUE
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5h11M6.5 1l5.5 5.5-5.5 5.5"/></svg>
             </a>
-            <a href="#produits" class="btn btn--secondary btn--lg" data-i18n="cta_btn2">Voir les bestsellers</a>
+          </div>
+          <div class="cta-features" data-reveal>
+            <div class="cta-feature">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div>
+                <p class="cta-feat-title">PIÈCES SÉLECTIONNÉES</p>
+                <p class="cta-feat-sub">Qualité premium</p>
+              </div>
+            </div>
+            <div class="cta-feature">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <div>
+                <p class="cta-feat-title">LIVRAISON RAPIDE</p>
+                <p class="cta-feat-sub">Partout en Europe</p>
+              </div>
+            </div>
+            <div class="cta-feature">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+              <div>
+                <p class="cta-feat-title">SUPPORT PASSIONNÉ</p>
+                <p class="cta-feat-sub">À votre écoute</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
