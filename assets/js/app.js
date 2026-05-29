@@ -411,26 +411,28 @@ function buildProductCard(p, lang, num) {
         <div class="product-card-icon" style="${p.images && p.images[0] ? 'display:none' : ''}">${p.icon}</div>
         <div class="product-card-visual-num">${String(num).padStart(2,'0')}</div>
       </div>
-      <div class="product-card-body">
-        <p class="product-card-cat">${catLabels[p.category] || p.category}</p>
-        <h3 class="product-card-name">${data.name}</h3>
-        <p class="product-card-tagline">${data.tagline}</p>
-        <div class="product-card-rating">
-          <div class="stars">${stars}</div>
-          <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()} ${reviewsText})</span>
+      <div class="product-card-main">
+        <div class="product-card-body">
+          <p class="product-card-cat">${catLabels[p.category] || p.category}</p>
+          <h3 class="product-card-name">${data.name}</h3>
+          <p class="product-card-tagline">${data.tagline}</p>
+          <div class="product-card-rating">
+            <div class="stars">${stars}</div>
+            <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()} ${reviewsText})</span>
+          </div>
+          ${swatchHTML}
         </div>
-        ${swatchHTML}
+        ${isHot ? `
+        <div class="stock-badge" data-stock-id="${p.id}">
+          <span class="stock-dot"></span>
+          <span>Il reste <span class="stock-num">3</span> ${stockLabel}</span>
+        </div>
+        <div class="countdown-wrap" data-countdown="${p.id}">
+          <span class="countdown-icon">⏱</span>
+          <span class="countdown-label">${offerLabel}</span>
+          <span class="countdown-timer">--:--:--</span>
+        </div>` : ''}
       </div>
-      ${isHot ? `
-      <div class="stock-badge" data-stock-id="${p.id}">
-        <span class="stock-dot"></span>
-        <span>Il reste <span class="stock-num">3</span> ${stockLabel}</span>
-      </div>
-      <div class="countdown-wrap" data-countdown="${p.id}">
-        <span class="countdown-icon">⏱</span>
-        <span class="countdown-label">${offerLabel}</span>
-        <span class="countdown-timer">--:--:--</span>
-      </div>` : ''}
       <div class="product-card-footer">
         <div class="product-card-pricing">
           <span class="price-current" data-eur="${p.price}">${p.price.toFixed(2).replace('.', ',')}€</span>
