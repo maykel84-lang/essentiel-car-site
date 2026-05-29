@@ -1561,20 +1561,15 @@ svg { display: block; }
 /* ── Why GIF + Keywords ── */
 .why-gif {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  left: 0;
+  width: 58%;
   height: 100%;
   object-fit: cover;
-  object-position: right center;
+  object-position: left center;
   z-index: 1;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, black 8%, black 88%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent 0%, black 8%, black 88%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%);
-  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to right, black 55%, transparent 100%);
+  mask-image: linear-gradient(to right, black 55%, transparent 100%);
 }
 .why-keywords {
   position: absolute;
