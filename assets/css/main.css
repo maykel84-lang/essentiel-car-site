@@ -1639,6 +1639,20 @@ svg { display: block; }
 .why-mobile-gif-wrap .why-keywords { border-radius: inherit; }
 .why-mobile-gif-wrap .why-kw {
   font-size: clamp(1.4rem, 7vw, 2.2rem);
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.95);
+  text-stroke: 1.5px rgba(255,255,255,0.95);
+  text-shadow:
+    1px 2px 0 rgba(255,255,255,0.18),
+    2px 3px 0 rgba(255,255,255,0.1),
+    3px 5px 8px rgba(0,0,0,0.55);
+}
+.why-mobile-gif-wrap .why-kw--red {
+  -webkit-text-stroke: 1.5px rgba(224,0,12,1);
+  text-stroke: 1.5px rgba(224,0,12,1);
+  text-shadow:
+    1px 2px 0 rgba(224,0,12,0.3),
+    2px 3px 0 rgba(224,0,12,0.16),
+    3px 5px 8px rgba(0,0,0,0.55);
 }
 
 /* ── Reviews Carousel ── */
