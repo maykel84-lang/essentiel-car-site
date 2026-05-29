@@ -1521,11 +1521,13 @@ svg { display: block; }
   position: absolute;
   bottom: 1.5rem; right: 1rem;
   z-index: 20;
-  background: var(--red);
+  background: rgba(200,10,20,0.62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: var(--r-lg);
   padding: 1.1rem 1.4rem;
   min-width: 140px;
-  box-shadow: 0 8px 28px rgba(224,0,12,0.45);
+  box-shadow: 0 6px 22px rgba(224,0,12,0.25);
 }
 .why-accent-num {
   font-family: var(--font-display);
@@ -1544,10 +1546,10 @@ svg { display: block; }
   position: absolute;
   top: 1.5rem; left: 1rem;
   z-index: 20;
-  background: rgba(0,0,0,0.82);
+  background: rgba(35,35,40,0.65);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--r-lg);
   padding: 1rem 1.3rem;
   display: flex; flex-direction: column; gap: 0.5rem;
