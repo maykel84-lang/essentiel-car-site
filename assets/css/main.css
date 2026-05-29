@@ -1493,20 +1493,7 @@ svg { display: block; }
   overflow: hidden;
   position: relative;
 }
-/* Gradient mask to hide white edges of the GIF */
-.why-visual-main::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background:
-    linear-gradient(to right, #0d0d0d 0%, transparent 22%),
-    linear-gradient(to left,  #0d0d0d 0%, transparent 18%),
-    linear-gradient(to bottom, #0d0d0d 0%, transparent 12%),
-    linear-gradient(to top,   #0d0d0d 0%, transparent 12%);
-  pointer-events: none;
-  border-radius: inherit;
-}
+
 .why-visual-bg {
   position: absolute; inset: 0;
   background:
@@ -1578,7 +1565,10 @@ svg { display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 60% center;
   z-index: 1;
+  -webkit-mask-image: radial-gradient(ellipse 76% 86% at 58% 50%, black 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse 76% 86% at 58% 50%, black 45%, transparent 100%);
 }
 .why-keywords {
   position: absolute;
@@ -1590,29 +1580,31 @@ svg { display: block; }
 .why-kw {
   position: absolute;
   top: var(--kw-top, 50%);
-  left: var(--kw-left, 10%);
-  font-family: var(--font-sans);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  left: var(--kw-left, 5%);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.52);
-  backdrop-filter: blur(5px);
-  padding: 0.22rem 0.55rem;
-  border-radius: 3px;
-  border-left: 2px solid rgba(255,255,255,0.55);
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.72);
+  text-stroke: 1.5px rgba(255,255,255,0.72);
   white-space: nowrap;
+  line-height: 1;
   opacity: 0;
   animation: kwAppear 11s var(--kw-delay, 0s) infinite both;
+  user-select: none;
 }
-.why-kw--red { border-left-color: var(--red); }
+.why-kw--red {
+  -webkit-text-stroke: 1.5px rgba(224,0,12,0.9);
+  text-stroke: 1.5px rgba(224,0,12,0.9);
+}
 
 @keyframes kwAppear {
-  0%   { opacity: 0; transform: translateX(-8px); }
-  5%   { opacity: 1; transform: translateX(0); }
-  20%  { opacity: 1; transform: translateX(0); }
-  26%  { opacity: 0; transform: translateX(5px); }
+  0%   { opacity: 0; transform: translateY(6px) scale(0.95); }
+  7%   { opacity: 1; transform: translateY(0) scale(1); }
+  22%  { opacity: 1; transform: translateY(0) scale(1); }
+  28%  { opacity: 0; transform: translateY(-4px) scale(1.02); }
   100% { opacity: 0; }
 }
 
@@ -1627,25 +1619,6 @@ svg { display: block; }
   margin: 0 auto;
 }
 .why-mobile-gif-wrap .why-gif {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  z-index: 1;
-}
-.why-mobile-gif-wrap::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background:
-    linear-gradient(to right, #0d0d0d 0%, transparent 22%),
-    linear-gradient(to left,  #0d0d0d 0%, transparent 18%),
-    linear-gradient(to bottom, #0d0d0d 0%, transparent 12%),
-    linear-gradient(to top,   #0d0d0d 0%, transparent 12%);
-  pointer-events: none;
   border-radius: inherit;
 }
 .why-mobile-gif-wrap .why-keywords { border-radius: inherit; }
