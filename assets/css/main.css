@@ -1493,6 +1493,20 @@ svg { display: block; }
   overflow: hidden;
   position: relative;
 }
+/* Gradient mask to hide white edges of the GIF */
+.why-visual-main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(to right, #0d0d0d 0%, transparent 22%),
+    linear-gradient(to left,  #0d0d0d 0%, transparent 18%),
+    linear-gradient(to bottom, #0d0d0d 0%, transparent 12%),
+    linear-gradient(to top,   #0d0d0d 0%, transparent 12%);
+  pointer-events: none;
+  border-radius: inherit;
+}
 .why-visual-bg {
   position: absolute; inset: 0;
   background:
@@ -1620,6 +1634,19 @@ svg { display: block; }
   object-fit: cover;
   border-radius: inherit;
   z-index: 1;
+}
+.why-mobile-gif-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(to right, #0d0d0d 0%, transparent 22%),
+    linear-gradient(to left,  #0d0d0d 0%, transparent 18%),
+    linear-gradient(to bottom, #0d0d0d 0%, transparent 12%),
+    linear-gradient(to top,   #0d0d0d 0%, transparent 12%);
+  pointer-events: none;
+  border-radius: inherit;
 }
 .why-mobile-gif-wrap .why-keywords { border-radius: inherit; }
 
