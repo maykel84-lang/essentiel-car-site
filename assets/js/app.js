@@ -656,6 +656,51 @@ function initBackTop() {
   });
 }
 
+/* ── 18b. UGC Videos — lecture auto au hover, fallback gracieux ── */
+function initUGCVideos() {
+  const videos = document.querySelectorAll('.ugc-video');
+  if (!videos.length) return;
+
+  videos.forEach(video => {
+    const card = video.closest('.ugc-card');
+    if (!card) return;
+
+    // Tester si la vidéo est disponible (elle charge sans erreur)
+    video.addEventListener('loadeddata', () => {
+      video.classList.add('ugc-video--ready');
+      card.classList.add('ugc-has-video');
+    });
+    video.addEventListener('error', () => {
+      video.style.display = 'none'; // reste sur le placeholder gradient
+    });
+
+    // Lecture au hover, pause au départ
+    card.addEventListener('mouseenter', () => {
+      if (!card.classList.contains('ugc-has-video')) return;
+      video.play().catch(() => {});
+    });
+    card.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+
+    // Sur mobile : IntersectionObserver pour auto-play quand visible à 60%
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!card.classList.contains('ugc-has-video')) return;
+          if (e.isIntersecting) video.play().catch(() => {});
+          else { video.pause(); video.currentTime = 0; }
+        });
+      }, { threshold: 0.6 });
+      obs.observe(card);
+    }
+
+    // Déclencher le chargement maintenant (preload="none" → on force)
+    video.load();
+  });
+}
+
 /* ── 18. Footer Curtain Reveal ── */
 function initFooter() {
   const footer = document.querySelector('.footer');
@@ -712,6 +757,7 @@ function startAnimations() {
   initFooter();
   initBackTop();
   initTrustBar();
+  initUGCVideos();
 
   // Render dynamic content
   renderProducts();
