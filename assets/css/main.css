@@ -669,6 +669,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem;
+  align-items: stretch;
   margin-bottom: 3rem;
 }
 
@@ -757,6 +758,7 @@ svg { display: block; }
   flex-direction: column;
 }
 /* ── Card color swatches ── */
+.card-body-push { flex: 1; }
 .card-swatches {
   display: flex;
   gap: 5px;
@@ -820,7 +822,6 @@ svg { display: block; }
 }
 .product-card-pricing {
   display: flex; align-items: baseline; gap: 0.6rem;
-  margin-top: auto;
   margin-bottom: 1.25rem;
 }
 .price-current {
@@ -1004,6 +1005,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  align-items: stretch;
 }
 .problem-card {
   background: var(--black-2);
@@ -1334,6 +1336,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  align-items: stretch;
 }
 .category-card {
   background: var(--black-2);
@@ -1959,6 +1962,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem;
+  align-items: stretch;
 }
 .product-hidden { display: none; }
 
@@ -2517,6 +2521,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
+  align-items: stretch;
   margin-top: 2.5rem;
 }
 .spec-card {
@@ -2552,6 +2557,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  align-items: stretch;
   margin-top: 2.5rem;
 }
 .product-review-card {
@@ -2573,6 +2579,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  align-items: stretch;
   margin-top: 2.5rem;
 }
 
@@ -3125,7 +3132,10 @@ svg { display: block; }
   gap: 0.5rem;
   background: rgba(224, 0, 12, 0.08);
   border-top: 1px solid rgba(224, 0, 12, 0.15);
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 0;
+  margin: 0.35rem -1.5rem 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .countdown-icon {
@@ -3158,7 +3168,7 @@ svg { display: block; }
   font-size: 0.72rem;
   color: #ff8c00;
   margin-top: 0.35rem;
-  padding: 0 1.25rem 0.6rem;
+  padding-bottom: 0.2rem;
 }
 
 .stock-dot {

@@ -420,6 +420,17 @@ function buildProductCard(p, lang, num) {
           <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()} ${reviewsText})</span>
         </div>
         ${swatchHTML}
+        <div class="card-body-push"></div>
+        ${isHot ? `
+        <div class="stock-badge" data-stock-id="${p.id}">
+          <span class="stock-dot"></span>
+          <span>Il reste <span class="stock-num">3</span> ${stockLabel}</span>
+        </div>
+        <div class="countdown-wrap" data-countdown="${p.id}">
+          <span class="countdown-icon">⏱</span>
+          <span class="countdown-label">${offerLabel}</span>
+          <span class="countdown-timer">--:--:--</span>
+        </div>` : ''}
         <div class="product-card-pricing">
           <span class="price-current" data-eur="${p.price}">${p.price.toFixed(2).replace('.', ',')}€</span>
           <span class="price-old" data-eur="${p.oldPrice}">${p.oldPrice.toFixed(2).replace('.', ',')}€</span>
@@ -430,16 +441,6 @@ function buildProductCard(p, lang, num) {
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
         </button>
       </div>
-      ${isHot ? `
-      <div class="stock-badge" data-stock-id="${p.id}">
-        <span class="stock-dot"></span>
-        <span>Il reste <span class="stock-num">3</span> ${stockLabel}</span>
-      </div>
-      <div class="countdown-wrap" data-countdown="${p.id}">
-        <span class="countdown-icon">⏱</span>
-        <span class="countdown-label">${offerLabel}</span>
-        <span class="countdown-timer">--:--:--</span>
-      </div>` : ''}
     </article>`;
 }
 
