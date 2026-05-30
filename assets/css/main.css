@@ -1176,6 +1176,10 @@ svg { display: block; }
   pointer-events: none;
 }
 .bs-promo-left { flex: 1; }
+@keyframes tagBlink {
+  0%, 49% { opacity: 1; box-shadow: 0 0 12px rgba(224,0,12,0.7); }
+  50%, 100% { opacity: 0.35; box-shadow: none; }
+}
 .bs-promo-tag {
   display: inline-block;
   background: var(--red);
@@ -1188,6 +1192,7 @@ svg { display: block; }
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
   margin-bottom: 0.6rem;
+  animation: tagBlink 1s step-end infinite;
 }
 .bs-promo-desc {
   font-family: var(--font-sans);
@@ -1203,7 +1208,7 @@ svg { display: block; }
   text-align: center;
   flex-shrink: 0;
   line-height: 1;
-  gap: 0;
+  gap: 0.2rem;
 }
 .bs-promo-num {
   font-family: var(--font-display);
@@ -1217,10 +1222,10 @@ svg { display: block; }
 }
 .bs-promo-article {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.85);
   text-transform: uppercase;
 }
 .bs-promo-pct {
