@@ -2121,6 +2121,8 @@ svg { display: block; }
 .social-btn--tiktok:hover { background: #010101 !important; border-color: #69C9D0 !important; color: #69C9D0; }
 .social-btn--snapchat { color: #FFFC00; border-color: rgba(255,252,0,0.3); }
 .social-btn--snapchat:hover { background: #FFFC00 !important; border-color: #FFFC00 !important; color: #111; }
+.social-btn--youtube { color: #FF0000; border-color: rgba(255,0,0,0.3); }
+.social-btn--youtube:hover { background: #FF0000 !important; border-color: #FF0000 !important; color: #fff; }
 
 /* ── Comparison Table ── */
 .comparison-section { background: var(--black-2); }
