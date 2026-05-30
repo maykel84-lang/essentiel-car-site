@@ -1884,32 +1884,23 @@ svg { display: block; }
   z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.60) 0%,
-    rgba(0,0,0,0.35) 30%,
-    rgba(0,0,0,0.10) 55%,
+    rgba(0,0,0,0.42) 0%,
+    rgba(0,0,0,0.22) 28%,
+    rgba(0,0,0,0.05) 52%,
     rgba(0,0,0,0.0) 100%
   );
 }
-/* Cache le watermark Veo en bas à droite */
+/* Fond dégradé bas pour cacher le watermark Veo centré en bas */
 .final-cta::after {
   content: '';
   position: absolute;
-  bottom: 0; right: 0;
-  width: 420px;
-  height: 160px;
-  background: linear-gradient(135deg, transparent 12%, rgba(5,5,5,0.99) 42%);
+  bottom: 0; left: 0; right: 0;
+  height: 130px;
+  background: linear-gradient(to top, rgba(5,5,5,0.98) 0%, rgba(5,5,5,0.55) 50%, transparent 100%);
   z-index: 4;
   pointer-events: none;
 }
-.cta-wm {
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 240px;
-  height: 90px;
-  background: #050505;
-  z-index: 5;
-  pointer-events: none;
-}
+.cta-wm { display: none; }
 .cta-content {
   position: relative;
   z-index: 2;
@@ -1984,13 +1975,12 @@ svg { display: block; }
   .cta-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(0,0,0,0.42) 0%,
-      rgba(0,0,0,0.58) 50%,
-      rgba(0,0,0,0.75) 100%
+      rgba(0,0,0,0.38) 0%,
+      rgba(0,0,0,0.52) 50%,
+      rgba(0,0,0,0.68) 100%
     );
   }
-  .cta-wm { width: 200px; height: 80px; }
-  .final-cta::after { width: 300px; height: 120px; }
+  .final-cta::after { height: 100px; }
   .cta-content {
     text-align: center;
     padding: 5rem 0 4rem;
