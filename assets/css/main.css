@@ -2327,16 +2327,16 @@ svg { display: block; }
 .comparison-table th { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-2); text-align: center; }
 .comparison-table tbody tr:last-child td { border-bottom: none; }
 .comparison-table tbody tr:hover { background: rgba(255,255,255,0.025); transition: background 0.2s; }
-.cmp-feature-label { color: var(--white); font-weight: 700; width: 38%; font-size: 1rem; }
+.cmp-feature-label { color: var(--white); font-weight: 700; width: 40%; font-size: 1rem; }
 .cmp-col-us { background: rgba(224,0,12,0.06) !important; color: var(--white); font-weight: 600; text-align: left; }
 .cmp-col-them { color: var(--gray-2); text-align: center; }
 
 /* Logo in header */
-/* Logo clippé comme dans la navbar (k=1.5 → 60px visible) */
-.cmp-logo-wrap { overflow: hidden; height: 60px; position: relative; width: 100%; }
-.cmp-logo { position: absolute; width: 270px; height: 270px; top: -105px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
-.comparison-table th.cmp-col-us { width: 40%; padding: 0.6rem 1.25rem; }
-.comparison-table th.cmp-col-them { width: 20%; }
+/* Logo clippé (k=1.2 → 48px visible) */
+.cmp-logo-wrap { overflow: hidden; height: 48px; position: relative; width: 100%; }
+.cmp-logo { position: absolute; width: 216px; height: 216px; top: -84px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
+.comparison-table th.cmp-col-us   { width: 30%; padding: 0.6rem 1.25rem; }
+.comparison-table th.cmp-col-them { width: 30%; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.1em; color: var(--white); padding: 0.6rem 1.25rem; text-align: center; vertical-align: middle; }
 
 /* SVG icons */
 .cmp-svg { width: 24px; height: 24px; flex-shrink: 0; display: inline-block; vertical-align: middle; margin-right: 0.5rem; }
