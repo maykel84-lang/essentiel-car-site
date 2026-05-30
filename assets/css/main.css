@@ -2332,8 +2332,10 @@ svg { display: block; }
 .cmp-col-them { color: var(--gray-2); text-align: center; }
 
 /* Logo in header */
-.cmp-logo { height: 80px; width: auto; max-width: 100%; display: block; margin: 0 auto; filter: brightness(1.1); }
-.comparison-table th.cmp-col-us { width: 40%; padding: 1.2rem 1.5rem; }
+/* Logo clippé comme dans la navbar mais à grande échelle (k=2.5) */
+.cmp-logo-wrap { overflow: hidden; height: 100px; position: relative; width: 100%; }
+.cmp-logo { position: absolute; width: 450px; height: 450px; top: -175px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
+.comparison-table th.cmp-col-us { width: 40%; padding: 0.5rem 1rem; }
 .comparison-table th.cmp-col-them { width: 20%; }
 
 /* SVG icons */
