@@ -168,7 +168,17 @@ function renderProduct(p) {
 
             <p class="product-desc">${data.desc}</p>
 
-            ${p.variants && p.variants.length ? `<div class="product-variants">${buildVariants(p.variants, lang)}</div>` : ''}
+            ${p.variants && p.variants.length ? `
+              ${p.isBundle ? `
+                <div class="pack-variant-note">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <p>${lang === 'en'
+                    ? 'This pack includes products available in multiple colors. Please select your preferences before adding to your cart.'
+                    : 'Ce pack contient des produits disponibles en plusieurs couleurs. Veuillez sélectionner votre couleur préférée avant de valider votre panier.'
+                  }</p>
+                </div>` : ''}
+              <div class="product-variants">${buildVariants(p.variants, lang)}</div>
+            ` : ''}
 
             <div class="product-ctas">
               <button class="btn btn--primary btn--lg btn--cart" id="addToCartBtn" data-id="${p.id}" data-magnetic>
@@ -289,9 +299,16 @@ function buildVariants(variants, lang) {
           </div>
         </div>`;
     }
+    const randomLabel = lang === 'en' ? 'Pick for me' : 'Choisir pour moi';
     return `
       <div class="variant-group">
-        <p class="variant-label">${v.label} : <strong class="variant-selected-label"></strong></p>
+        <div class="variant-label-row">
+          <p class="variant-label">${v.label} : <strong class="variant-selected-label"></strong></p>
+          <button class="variant-random-btn" type="button" title="${randomLabel}">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
+            ${randomLabel}
+          </button>
+        </div>
         <div class="variant-options">
           ${v.options.map((opt, i) => `
             <button class="variant-swatch${i === 0 ? ' active' : ''}"
@@ -336,6 +353,20 @@ function initVariants() {
   });
 
   container.addEventListener('click', e => {
+    const randBtn = e.target.closest('.variant-random-btn');
+    if (randBtn) {
+      const group = randBtn.closest('.variant-group');
+      const swatches = [...group.querySelectorAll('.variant-swatch, .variant-qty')];
+      if (!swatches.length) return;
+      const pick = swatches[Math.floor(Math.random() * swatches.length)];
+      pick.click();
+      pick.classList.remove('swatch-picked');
+      void pick.offsetWidth;
+      pick.classList.add('swatch-picked');
+      setTimeout(() => pick.classList.remove('swatch-picked'), 600);
+      return;
+    }
+
     const btn = e.target.closest('.variant-swatch, .variant-qty');
     if (!btn) return;
     const group = btn.closest('.variant-group');
