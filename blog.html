@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
   <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
   <link rel="stylesheet" href="assets/fonts/inter.css">
-  <link rel="stylesheet" href="assets/css/main.css?v=2638">
+  <link rel="stylesheet" href="assets/css/main.css?v=2639">
   <style>
     body.is-loading { opacity: 0; }
     .blog-page { min-height: 100vh; padding-top: 100px; }
@@ -52,6 +52,33 @@
   <button class="back-top" aria-label="Retour en haut">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
   </button>
+
+  <!-- Promo Bar -->
+  <div class="promo-bar" id="promoBar" role="region" aria-label="Offres promotionnelles">
+    <button class="promo-bar-arrow" id="promoPrev" aria-label="Annonce précédente">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+    </button>
+    <div class="promo-bar-track-wrap">
+      <div class="promo-bar-track" id="promoTrack">
+        <div class="promo-bar-item active">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+          <span>2ème Article à -50% sur les Best Sellers</span>
+          <a href="boutique.html?filter=bestseller">Voir les offres →</a>
+        </div>
+        <div class="promo-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Livraison gratuite partout en Europe</span>
+        </div>
+        <div class="promo-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <span>Paiement 100% sécurisé</span>
+        </div>
+      </div>
+    </div>
+    <button class="promo-bar-arrow" id="promoNext" aria-label="Annonce suivante">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+    </button>
+  </div>
 
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
     <div class="nav-inner">
@@ -281,5 +308,6 @@
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/features.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/promo-bar.js"></script>
 </body>
 </html>

@@ -160,10 +160,59 @@ svg { display: block; }
 .lang-btn.active { color: var(--white); background: var(--red); }
 .lang-divider { width: 1px; height: 10px; background: var(--border-h); }
 
+/* ── Promo Bar ── */
+.promo-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 101;
+  height: 36px;
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.85);
+}
+.promo-bar-arrow {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.promo-bar-arrow:hover { color: var(--white); }
+.promo-bar-track-wrap { flex: 1; overflow: hidden; text-align: center; }
+.promo-bar-item {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.promo-bar-item.active { display: flex; }
+.promo-bar-item svg { flex-shrink: 0; opacity: 0.75; }
+.promo-bar-item a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 0.3rem;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.promo-bar-item a:hover { opacity: 1; }
+
 /* ── Navigation ── */
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 36px; left: 0; right: 0;
   z-index: 100;
   padding: 0 var(--pad);
   height: 72px;
