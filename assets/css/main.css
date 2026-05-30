@@ -2333,8 +2333,8 @@ svg { display: block; }
 
 /* Logo in header */
 /* Logo clippé (k=1.2 → 48px visible) */
-.cmp-logo-wrap { overflow: hidden; height: 42px; position: relative; width: 100%; }
-.cmp-logo { position: absolute; width: 189px; height: 189px; top: -74px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
+.cmp-logo-wrap { overflow: hidden; height: 43px; position: relative; width: 100%; }
+.cmp-logo { position: absolute; width: 194px; height: 194px; top: -75px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
 .comparison-table th.cmp-col-us   { width: 30%; padding: 0.6rem 1.25rem; }
 .comparison-table th.cmp-col-them { width: 30%; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.1em; color: var(--white); padding: 0.6rem 1.25rem; text-align: center; vertical-align: middle; }
 
