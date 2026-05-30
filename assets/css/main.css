@@ -1855,7 +1855,7 @@ svg { display: block; }
   overflow: hidden;
   background: #0a0a0a;
   padding: 0;
-  min-height: 600px;
+  min-height: 760px;
   display: flex;
   align-items: stretch;
 }
@@ -1884,11 +1884,9 @@ svg { display: block; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.04) 0%,
-    rgba(0,0,0,0.0) 40%
-  );
+  background:
+    radial-gradient(ellipse 42% 55% at 13% 28%, rgba(0,0,0,0.50) 0%, transparent 100%),
+    linear-gradient(to right, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.0) 42%);
 }
 /* Grille subtile desktop */
 .cta-grid {
@@ -1911,13 +1909,24 @@ svg { display: block; }
   z-index: 4;
   pointer-events: none;
 }
-.cta-wm { display: none; }
+.cta-wm {
+  position: absolute;
+  left: 68%;
+  top: 18%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,4,4,0.96) 22%, rgba(4,4,4,0.65) 55%, transparent 100%);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+}
 .cta-content {
   position: relative;
   z-index: 3;
   max-width: 600px;
   text-align: left;
-  padding: 5rem 0;
+  padding: 7.5rem 0 5rem;
 }
 .cta-content .section-eyebrow {
   justify-content: flex-start;
@@ -1990,6 +1999,7 @@ svg { display: block; }
 @media (max-width: 768px) {
   .cta-gif--desktop { display: none; }
   .cta-gif--mobile  { display: block; }
+  .cta-wm { display: none; }
   .final-cta { min-height: 820px; }
   .cta-overlay {
     background: linear-gradient(
