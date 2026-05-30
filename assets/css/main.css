@@ -2332,8 +2332,9 @@ svg { display: block; }
 .cmp-col-them { color: var(--gray-2); text-align: center; }
 
 /* Logo in header */
-.cmp-logo { width: 100%; max-height: 64px; object-fit: contain; display: block; filter: brightness(1.1); }
-.comparison-table thead th.cmp-col-us { padding: 1.1rem 1rem; }
+.cmp-logo { height: 80px; width: auto; max-width: 100%; display: block; margin: 0 auto; filter: brightness(1.1); }
+.comparison-table th.cmp-col-us { width: 40%; padding: 1.2rem 1.5rem; }
+.comparison-table th.cmp-col-them { width: 20%; }
 
 /* SVG icons */
 .cmp-svg { width: 22px; height: 22px; flex-shrink: 0; display: inline-block; vertical-align: middle; margin-right: 0.45rem; }
