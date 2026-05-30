@@ -41,21 +41,21 @@
     slot.style.transform = 'translateY(0)';
 
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      // Fast phase: zoom through first half
-      slot.style.transition = `transform ${values.length * 0.22}s cubic-bezier(0.4, 0, 0.6, 1)`;
+      // Fast phase: zoom through first 60%
+      slot.style.transition = `transform ${values.length * 0.12}s cubic-bezier(0.4, 0, 0.8, 1)`;
       slot.style.transform = `translateY(${totalY * 0.6}px)`;
 
       setTimeout(() => {
         // Slow phase: ease into -50%
-        slot.style.transition = `transform ${values.length * 0.28}s cubic-bezier(0.1, 0.8, 0.25, 1)`;
+        slot.style.transition = `transform ${values.length * 0.17}s cubic-bezier(0.1, 0.8, 0.25, 1)`;
         slot.style.transform = `translateY(${totalY}px)`;
-        setTimeout(() => { spinning = false; }, values.length * 280 + 200);
-      }, values.length * 220 - 100);
+        setTimeout(() => { spinning = false; }, values.length * 170 + 150);
+      }, values.length * 120 - 60);
     }));
   }
 
   // First spin after page loads
-  setTimeout(spin, 800);
-  // Repeat every 4.5s
-  setInterval(spin, 4500);
+  setTimeout(spin, 500);
+  // Repeat every 3.2s
+  setInterval(spin, 3200);
 })();
