@@ -114,7 +114,7 @@ const TRANSLATIONS = {
 
     /* ── Final CTA ── */
     cta_eyebrow: 'Prêt à passer à l\'action ?',
-    cta_title: 'ÉQUIPEZ VOTRE\nVOITURE MAINTENANT',
+    cta_title: 'ÉQUIPEZ<br>VOTRE<br>VOITURE<br>MAINTENANT',
     cta_sub: 'Plus de 50 accessoires auto premium disponibles. Livraison rapide. Retours faciles. Satisfaction garantie.',
     cta_btn1: 'Commander maintenant',
     cta_btn2: 'Voir les bestsellers',

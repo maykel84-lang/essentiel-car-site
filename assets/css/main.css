@@ -1933,6 +1933,11 @@ svg { display: block; }
   margin-bottom: 2rem;
   text-transform: uppercase;
   text-shadow: 0 2px 18px rgba(0,0,0,0.75), 0 0 40px rgba(0,0,0,0.55);
+  animation: ctaTitleIn 0.9s var(--ease-out) 0.2s both;
+}
+@keyframes ctaTitleIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .cta-btn-main {
   display: inline-flex;
@@ -1986,7 +1991,6 @@ svg { display: block; }
 @media (max-width: 768px) {
   .cta-gif--desktop { display: none; }
   .cta-gif--mobile  { display: block; }
-  .cta-grid { display: none; }
   .final-cta { min-height: 820px; }
   .cta-overlay {
     background: linear-gradient(
