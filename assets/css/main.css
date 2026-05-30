@@ -2323,24 +2323,24 @@ svg { display: block; }
 .comparison-wrap { overflow-x: auto; border-radius: var(--r); border: 1px solid var(--border); margin-top: 3rem; }
 .comparison-table { width: 100%; border-collapse: collapse; }
 .comparison-table thead tr { background: var(--black-3); }
-.comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.875rem; vertical-align: middle; }
-.comparison-table th { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-2); text-align: center; }
+.comparison-table th, .comparison-table td { padding: 1.1rem 1.4rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 1rem; vertical-align: middle; }
+.comparison-table th { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-2); text-align: center; }
 .comparison-table tbody tr:last-child td { border-bottom: none; }
 .comparison-table tbody tr:hover { background: rgba(255,255,255,0.025); transition: background 0.2s; }
-.cmp-feature-label { color: var(--white); font-weight: 600; width: 38%; }
-.cmp-col-us { background: rgba(224,0,12,0.06) !important; color: var(--white); font-weight: 500; text-align: left; }
+.cmp-feature-label { color: var(--white); font-weight: 700; width: 38%; font-size: 1rem; }
+.cmp-col-us { background: rgba(224,0,12,0.06) !important; color: var(--white); font-weight: 600; text-align: left; }
 .cmp-col-them { color: var(--gray-2); text-align: center; }
 
 /* Logo in header */
-/* Logo clippé comme dans la navbar mais à grande échelle (k=2.5) */
-.cmp-logo-wrap { overflow: hidden; height: 100px; position: relative; width: 100%; }
-.cmp-logo { position: absolute; width: 450px; height: 450px; top: -175px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
-.comparison-table th.cmp-col-us { width: 40%; padding: 0.5rem 1rem; }
+/* Logo clippé comme dans la navbar (k=1.5 → 60px visible) */
+.cmp-logo-wrap { overflow: hidden; height: 60px; position: relative; width: 100%; }
+.cmp-logo { position: absolute; width: 270px; height: 270px; top: -105px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
+.comparison-table th.cmp-col-us { width: 40%; padding: 0.6rem 1.25rem; }
 .comparison-table th.cmp-col-them { width: 20%; }
 
 /* SVG icons */
-.cmp-svg { width: 22px; height: 22px; flex-shrink: 0; display: inline-block; vertical-align: middle; margin-right: 0.45rem; }
-.cmp-detail { font-size: 0.82rem; color: rgba(255,255,255,0.7); vertical-align: middle; }
+.cmp-svg { width: 24px; height: 24px; flex-shrink: 0; display: inline-block; vertical-align: middle; margin-right: 0.5rem; }
+.cmp-detail { font-size: 0.95rem; color: rgba(255,255,255,0.75); vertical-align: middle; }
 
 /* Icon initial states (pre-animation) */
 .cmp-svg--check polyline { stroke-dasharray: 30; stroke-dashoffset: 30; }
