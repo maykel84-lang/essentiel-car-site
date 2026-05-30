@@ -406,6 +406,12 @@ const PRODUCTS = [
     category: 'pack',
     isBundle: true,
     accentColor: '#0a1a0a',
+    variants: [
+      { label: 'Table de volant', options: [
+        { value: 'blanc', display: 'Blanc', hex: '#f0ede8' },
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
+      ]}
+    ],
     images: [
       'assets/images/products/pack-entretien-cover.png',
       'assets/images/products/compresseur-air-1.jpg.png',
@@ -443,6 +449,17 @@ const PRODUCTS = [
     category: 'pack',
     isBundle: true,
     accentColor: '#001828',
+    variants: [
+      { label: 'Lance mousse', options: [
+        { value: 'noir',  display: 'Noir',             hex: '#1a1a1a' },
+        { value: 'blanc', display: 'Blanc transparent', hex: '#e8e8e8', transparent: true },
+      ]},
+      { label: 'Brosse jantes', options: [
+        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c' },
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
+        { value: 'jaune', display: 'Jaune', hex: '#f5c518' },
+      ]}
+    ],
     images: [
       'assets/images/products/pack-nettoyage-cover.png',
       'assets/images/products/aspirateur-sans-fil-1.jpg.png',
