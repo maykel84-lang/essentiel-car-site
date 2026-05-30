@@ -365,6 +365,18 @@ function initCarousel() {
 }
 
 /* ── 12. Products Renderer ── */
+function renderBestSellers() {
+  const grid = document.getElementById('bestSellersGrid');
+  if (!grid || typeof PRODUCTS === 'undefined') return;
+  const lang  = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+  const t_key = lang === 'en' ? 'en' : 'fr';
+  const bs = PRODUCTS.filter(p => p.badgeType === 'bestseller' && p.category !== 'pack');
+  grid.innerHTML = bs.map((p, i) => buildProductCard(p, t_key, i + 1)).join('');
+  refreshCursorTargets();
+  if (typeof initCountdowns === 'function') initCountdowns();
+  if (typeof initStockCounters === 'function') initStockCounters();
+}
+
 function renderProducts() {
   const grid = document.getElementById('productsGrid');
   if (!grid || typeof PRODUCTS === 'undefined') return;
@@ -760,6 +772,7 @@ function startAnimations() {
 
   // Render dynamic content
   renderProducts();
+  renderBestSellers();
   renderBundles();
   renderReviews();
   renderCategories();
@@ -848,8 +861,9 @@ function renderCartPanel() {
     const linePrice = (p.price * qty).toFixed(2).replace('.', ',');
     subtotal += p.price * qty;
     const imgSrc = p.images && p.images[0] ? p.images[0] : '';
+    const isBs = p.badgeType === 'bestseller';
     return `<div class="cart-panel-item" data-id="${p.id}">
-      <div class="cart-panel-item-img">${imgSrc ? `<img src="${imgSrc}" alt="${data.name}" loading="lazy">` : `<span style="font-size:1.6rem">${p.icon}</span>`}</div>
+      <div class="cart-panel-item-img">${imgSrc ? `<img src="${imgSrc}" alt="${data.name}" loading="lazy">` : `<span style="font-size:1.6rem">${p.icon}</span>`}${isBs ? '<span class="cart-bs-tag">BESTSELLER</span>' : ''}</div>
       <div class="cart-panel-item-info">
         <p class="cart-panel-item-name">${data.name}</p>
         <p class="cart-panel-item-price">${linePrice}€</p>
@@ -865,11 +879,34 @@ function renderCartPanel() {
     </div>`;
   }).join('');
   body.innerHTML = items;
+
+  // -50% sur le 2ème article Best Seller (le moins cher)
+  const bsUnits = [];
+  cart.forEach(item => {
+    const p = PRODUCTS && PRODUCTS.find(pr => pr.id === item.id);
+    if (!p || p.badgeType !== 'bestseller') return;
+    for (let i = 0; i < (item.qty || 1); i++) bsUnits.push(p.price);
+  });
+  bsUnits.sort((a, b) => a - b);
+  const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
+
   const isFreeShipping = subtotal >= 49.99;
   const shipping = isFreeShipping ? 0 : 4.99;
-  const total = subtotal + shipping;
+  const total = subtotal - bsDiscount + shipping;
+  const discountLine = bsDiscount > 0
+    ? `<div class="cart-panel-discount">
+        <span>🎁 2ème Best Seller -50%</span>
+        <span class="cart-discount-val">-${bsDiscount.toFixed(2).replace('.', ',')}€</span>
+       </div>`
+    : (bsUnits.length === 1
+        ? `<div class="cart-panel-promo-hint">
+             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+             Ajoutez 1 Best Seller de plus pour -50% !
+           </div>`
+        : '');
   footer.innerHTML = `
     <div class="cart-panel-subtotal"><span>Sous-total</span><span>${subtotal.toFixed(2).replace('.', ',')}€</span></div>
+    ${discountLine}
     <div class="cart-panel-shipping${isFreeShipping ? ' cart-panel-shipping--free' : ''}"><span>Livraison</span><span>${isFreeShipping ? 'Gratuite 🎉' : shipping.toFixed(2).replace('.', ',') + '€'}</span></div>
     <div class="cart-panel-total"><span>Total</span><strong>${total.toFixed(2).replace('.', ',')}€</strong></div>
     <a href="cart.html" class="btn btn--primary btn--full" onclick="closeCartPanel()">
