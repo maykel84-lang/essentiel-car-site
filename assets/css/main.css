@@ -1909,14 +1909,15 @@ svg { display: block; }
   z-index: 4;
   pointer-events: none;
 }
-/* Cover Veo TEXT — coin bas-droite */
+/* Cover Veo TEXT — ellipse centrée sur la position exacte du texte */
 .cta-veo {
   position: absolute;
-  bottom: 80px;
-  right: 0;
-  width: 320px;
-  height: 220px;
-  background: linear-gradient(225deg, rgba(4,4,4,0.97) 0%, rgba(4,4,4,0.80) 35%, rgba(4,4,4,0.40) 60%, transparent 85%);
+  left: 68%;
+  top: 68%;
+  width: 200px;
+  height: 90px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(3,3,3,0.99) 25%, rgba(3,3,3,0.78) 60%, transparent 100%);
   z-index: 5;
   pointer-events: none;
 }
