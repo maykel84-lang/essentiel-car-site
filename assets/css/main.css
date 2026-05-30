@@ -2321,18 +2321,56 @@ svg { display: block; }
 /* ── Comparison Table ── */
 .comparison-section { background: var(--black-2); }
 .comparison-wrap { overflow-x: auto; border-radius: var(--r); border: 1px solid var(--border); margin-top: 3rem; }
-.comparison-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+.comparison-table { width: 100%; border-collapse: collapse; }
 .comparison-table thead tr { background: var(--black-3); }
-.comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
-.comparison-table th { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-2); }
+.comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.875rem; vertical-align: middle; }
+.comparison-table th { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-2); text-align: center; }
 .comparison-table tbody tr:last-child td { border-bottom: none; }
-.comparison-table tbody tr:hover { background: rgba(255,255,255,0.025); }
-.cmp-col-feature { color: var(--white); font-weight: 500; width: 30%; }
-.cmp-col-us { background: rgba(224,0,12,0.06) !important; color: var(--white); font-weight: 500; }
-.cmp-col-them { color: var(--gray-2); }
-.cmp-us-badge { display: inline-block; background: var(--red); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; }
-.cmp-check { color: #22c55e; font-weight: 700; margin-right: 0.35rem; }
-.cmp-cross { color: #ef4444; font-weight: 700; margin-right: 0.35rem; }
+.comparison-table tbody tr:hover { background: rgba(255,255,255,0.025); transition: background 0.2s; }
+.cmp-feature-label { color: var(--white); font-weight: 600; width: 38%; }
+.cmp-col-us { background: rgba(224,0,12,0.06) !important; color: var(--white); font-weight: 500; text-align: left; }
+.cmp-col-them { color: var(--gray-2); text-align: center; }
+
+/* Logo in header */
+.cmp-logo { height: 30px; width: auto; display: block; margin: 0 auto; filter: brightness(1.1); }
+
+/* SVG icons */
+.cmp-svg { width: 22px; height: 22px; flex-shrink: 0; display: inline-block; vertical-align: middle; margin-right: 0.45rem; }
+.cmp-detail { font-size: 0.82rem; color: rgba(255,255,255,0.7); vertical-align: middle; }
+
+/* Icon initial states (pre-animation) */
+.cmp-svg--check polyline { stroke-dasharray: 30; stroke-dashoffset: 30; }
+.cmp-svg--cross line    { stroke-dasharray: 20; stroke-dashoffset: 20; opacity: 0; }
+
+/* Row entrance animation */
+@keyframes cmpRowIn {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes cmpCheckDraw {
+  from { stroke-dashoffset: 30; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes cmpCrossIn {
+  from { stroke-dashoffset: 20; opacity: 0; }
+  to   { stroke-dashoffset: 0;  opacity: 1; }
+}
+
+.comparison-table tbody tr { opacity: 0; }
+.comparison-table tbody tr.cmp-visible { animation: cmpRowIn 0.42s ease forwards; }
+.cmp-visible .cmp-svg--check polyline   { animation: cmpCheckDraw 0.32s ease forwards; }
+.cmp-visible .cmp-svg--cross line       { animation: cmpCrossIn   0.28s ease forwards; }
+
+/* Mobile — compact: juste l'icône, texte masqué */
+@media (max-width: 560px) {
+  .comparison-wrap { overflow-x: unset; }
+  .comparison-table th, .comparison-table td { padding: 0.65rem 0.6rem; font-size: 0.8rem; }
+  .cmp-logo { height: 22px; }
+  .cmp-detail { display: none; }
+  .cmp-svg { margin-right: 0; }
+  .cmp-col-us { text-align: center; }
+  .cmp-feature-label { width: 45%; font-size: 0.78rem; }
+}
 
 /* ── Vu sur logos (inline SVG) ── */
 .vu-sur-logo { display: flex; align-items: center; justify-content: center; }

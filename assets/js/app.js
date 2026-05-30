@@ -934,6 +934,26 @@ function removePanelItem(id) {
   renderCartPanel();
 }
 
+/* ── Comparison table row stagger ── */
+function initComparisonTable() {
+  const rows = document.querySelectorAll('.comparison-table tbody tr');
+  if (!rows.length || !('IntersectionObserver' in window)) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const idx = [...rows].indexOf(e.target);
+      const rowDelay = idx * 0.08;
+      e.target.style.animationDelay = `${rowDelay}s`;
+      e.target.querySelectorAll('.cmp-svg--check polyline, .cmp-svg--cross line').forEach(el => {
+        el.style.animationDelay = `${rowDelay + 0.28}s`;
+      });
+      e.target.classList.add('cmp-visible');
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.2 });
+  rows.forEach(r => obs.observe(r));
+}
+
 /* ── DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loader')) {
@@ -942,4 +962,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('is-loading');
     startAnimations();
   }
+  initComparisonTable();
 });
