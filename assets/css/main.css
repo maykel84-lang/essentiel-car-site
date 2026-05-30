@@ -1886,10 +1886,21 @@ svg { display: block; }
   z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.22) 0%,
-    rgba(0,0,0,0.08) 30%,
+    rgba(0,0,0,0.10) 0%,
+    rgba(0,0,0,0.03) 30%,
     rgba(0,0,0,0.0) 55%
   );
+}
+/* Grille subtile desktop */
+.cta-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
 }
 /* Fond dégradé bas pour cacher le watermark Veo centré en bas */
 .final-cta::after {
@@ -1904,7 +1915,7 @@ svg { display: block; }
 .cta-wm { display: none; }
 .cta-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 600px;
   text-align: left;
   padding: 5rem 0;
@@ -1975,13 +1986,14 @@ svg { display: block; }
 @media (max-width: 768px) {
   .cta-gif--desktop { display: none; }
   .cta-gif--mobile  { display: block; }
-  .final-cta { min-height: 800px; }
+  .cta-grid { display: none; }
+  .final-cta { min-height: 820px; }
   .cta-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(0,0,0,0.22) 0%,
-      rgba(0,0,0,0.35) 60%,
-      rgba(0,0,0,0.52) 100%
+      rgba(0,0,0,0.20) 0%,
+      rgba(0,0,0,0.32) 60%,
+      rgba(0,0,0,0.50) 100%
     );
   }
   .final-cta::after { height: 110px; }
@@ -1995,12 +2007,19 @@ svg { display: block; }
     min-height: 780px;
   }
   .cta-content .section-eyebrow { justify-content: center; }
-  /* Chaque mot sur sa propre ligne */
+  /* Chaque mot sur sa propre ligne, taille réduite */
   .cta-title {
-    font-size: clamp(3.4rem, 15.5vw, 5.5rem);
-    margin-bottom: 1.5rem;
+    font-size: clamp(2.8rem, 12.5vw, 4.5rem);
+    margin-bottom: 0;
   }
-  /* Bouton proportionné */
+  /* Bouton ancré en bas juste au-dessus des icônes */
+  .cta-btns {
+    margin-top: auto;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .cta-btn-main {
     width: auto;
     justify-content: center;
@@ -2008,14 +2027,13 @@ svg { display: block; }
     padding: 0.85rem 2rem;
     margin-bottom: 0;
   }
-  /* Features en bas */
+  /* 3 features en ligne juste sous le bouton */
   .cta-features {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
     max-width: 100%;
-    margin-top: auto;
-    padding-top: 2rem;
+    margin-top: 0;
     gap: 0.5rem;
   }
   .cta-feature {
