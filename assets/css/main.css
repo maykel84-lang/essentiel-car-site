@@ -1230,6 +1230,44 @@ svg { display: block; }
   line-height: 1;
   text-shadow: 0 0 40px rgba(224,0,12,0.5);
 }
+
+/* Slot machine */
+.bs-slot-wrap {
+  height: clamp(3.5rem, 7vw, 6rem);
+  overflow: hidden;
+  position: relative;
+}
+.bs-slot-wrap::before,
+.bs-slot-wrap::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 30%;
+  z-index: 1;
+  pointer-events: none;
+}
+.bs-slot-wrap::before { top: 0; background: linear-gradient(to bottom, #1a0204, transparent); }
+.bs-slot-wrap::after  { bottom: 0; background: linear-gradient(to top, #1a0204, transparent); }
+.bs-slot-strip {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+.bs-slot-item {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1;
+  height: clamp(3.5rem, 7vw, 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+.bs-slot-winner {
+  color: var(--red) !important;
+  text-shadow: 0 0 40px rgba(224,0,12,0.6);
+}
 .bs-promo-right { flex: 1; display: flex; justify-content: flex-end; }
 
 @media (max-width: 768px) {

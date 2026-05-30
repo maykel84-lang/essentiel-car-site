@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/fonts/inter.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/main.css?v=2641">
+  <link rel="stylesheet" href="assets/css/main.css?v=2642">
 
   <style>
     /* Inline critical styles */
@@ -85,10 +85,7 @@
           <span>2ème Article à -50% sur les Best Sellers</span>
           <a href="boutique.html?filter=bestseller">Voir les offres →</a>
         </div>
-        <div class="promo-bar-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          <span>Livraison gratuite partout en Europe</span>
-        </div>
+        <div class="promo-bar-item"><span>LIVRAISON 🚚 GRATUITE</span></div>
         <div class="promo-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           <span>Paiement 100% sécurisé</span>
@@ -493,15 +490,17 @@
         <div class="bs-promo-banner" data-reveal>
           <div class="bs-promo-left">
             <span class="bs-promo-tag">OFFRE EXCLUSIVE</span>
-            <p class="bs-promo-desc">Achetez 2 Best Sellers,<br>le moins cher est à moitié prix !</p>
+            <p class="bs-promo-desc">Achetez 2 Best Sellers,<br>le 2ème est à -50% !</p>
           </div>
           <div class="bs-promo-center">
             <span class="bs-promo-num">2<sup>ÈME</sup></span>
             <span class="bs-promo-article">ARTICLE</span>
-            <span class="bs-promo-pct">-50%</span>
+            <div class="bs-slot-wrap" aria-label="-50%">
+              <div class="bs-slot-strip" id="bsSlot"></div>
+            </div>
           </div>
           <div class="bs-promo-right">
-            <a href="boutique.html" class="btn btn--primary" data-magnetic>
+            <a href="#bestSellersGrid" class="btn btn--primary" data-magnetic onclick="event.preventDefault();document.getElementById('bestSellersGrid').scrollIntoView({behavior:'smooth',block:'start'})">
               Profiter de l'offre
               <svg width="13" height="13" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5"/></svg>
             </a>
@@ -514,7 +513,7 @@
             <span class="eyebrow-text">Nos incontournables</span>
           </div>
           <h2 class="section-title" data-split>BEST SELLERS</h2>
-          <p class="section-sub">Les produits préférés de nos clients — achetez-en 2 et le moins cher est à -50%.</p>
+          <p class="section-sub">Sélectionnés par des milliers de clients — choisissez 2 Best Sellers et profitez <strong>immédiatement de -50%</strong> sur le moins cher. Offre exclusive, directement appliquée dans votre panier.</p>
         </div>
 
         <div id="bestSellersGrid" class="products-grid" data-stagger></div>
