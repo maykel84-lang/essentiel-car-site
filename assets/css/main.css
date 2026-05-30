@@ -1904,11 +1904,23 @@ svg { display: block; }
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 200px;
-  background: linear-gradient(to top, rgba(5,5,5,0.99) 0%, rgba(5,5,5,0.92) 35%, rgba(5,5,5,0.60) 62%, transparent 100%);
+  height: 90px;
+  background: linear-gradient(to top, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.30) 60%, transparent 100%);
   z-index: 4;
   pointer-events: none;
 }
+/* Cover Veo TEXT — coin bas-droite */
+.cta-veo {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 320px;
+  height: 220px;
+  background: linear-gradient(225deg, rgba(4,4,4,0.97) 0%, rgba(4,4,4,0.80) 35%, rgba(4,4,4,0.40) 60%, transparent 85%);
+  z-index: 5;
+  pointer-events: none;
+}
+@media (max-width: 768px) { .cta-veo { display: none; } }
 .cta-wm {
   position: absolute;
   left: 68%;
