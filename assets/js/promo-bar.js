@@ -56,6 +56,6 @@
 
   // First spin after page loads
   setTimeout(spin, 500);
-  // Repeat every 3.2s
-  setInterval(spin, 3200);
+  // Repeat every 2.5s
+  setInterval(spin, 2500);
 })();
