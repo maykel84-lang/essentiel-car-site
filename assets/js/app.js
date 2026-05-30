@@ -395,10 +395,13 @@ function buildProductCard(p, lang, num) {
   const stockLabel = lang === 'en' ? 'left in stock' : 'en stock';
   const offerLabel = lang === 'en' ? 'Offer expires in' : 'Offre expire dans';
 
-  const colorGroup = p.variants && p.variants.find(v => !v.type);
-  const swatchHTML = colorGroup ? `
+  const colorGroups = p.variants ? p.variants.filter(v => !v.type) : [];
+  const swatchHTML = colorGroups.length ? `
     <div class="card-swatches">
-      ${colorGroup.options.map(o => `<span class="card-swatch-dot${o.transparent ? ' card-swatch-dot--transparent' : ''}" style="${o.transparent ? '' : `background:${o.hex}`}" title="${o.display}"></span>`).join('')}
+      ${colorGroups.map((g, gi) => `
+        ${gi > 0 ? '<span class="card-swatch-sep"></span>' : ''}
+        ${g.options.map(o => `<span class="card-swatch-dot${o.transparent ? ' card-swatch-dot--transparent' : ''}" style="${o.transparent ? '' : `background:${o.hex}`}" title="${g.label} : ${o.display}"></span>`).join('')}
+      `).join('')}
     </div>` : '';
 
   return `

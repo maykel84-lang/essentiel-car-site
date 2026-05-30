@@ -793,6 +793,14 @@ svg { display: block; }
   background: conic-gradient(#ccc 0% 50%, transparent 50%) !important;
   border-style: dashed;
 }
+.card-swatch-sep {
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 3px;
+  flex-shrink: 0;
+}
 .product-card-cat {
   font-family: var(--font-sans);
   font-size: 0.65rem;
