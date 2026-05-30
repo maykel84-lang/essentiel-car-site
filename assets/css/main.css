@@ -1886,9 +1886,8 @@ svg { display: block; }
   z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.10) 0%,
-    rgba(0,0,0,0.03) 30%,
-    rgba(0,0,0,0.0) 55%
+    rgba(0,0,0,0.04) 0%,
+    rgba(0,0,0,0.0) 40%
   );
 }
 /* Grille subtile desktop */
