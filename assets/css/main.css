@@ -1909,31 +1909,9 @@ svg { display: block; }
   z-index: 4;
   pointer-events: none;
 }
-/* Cover Veo TEXT — ellipse centrée sur la position exacte du texte */
-.cta-veo {
-  position: absolute;
-  left: 68%;
-  top: 68%;
-  width: 200px;
-  height: 90px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(ellipse at center, rgba(3,3,3,0.99) 25%, rgba(3,3,3,0.78) 60%, transparent 100%);
-  z-index: 5;
-  pointer-events: none;
-}
-@media (max-width: 768px) { .cta-veo { display: none; } }
-.cta-wm {
-  position: absolute;
-  left: 68%;
-  top: 18%;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(4,4,4,0.96) 22%, rgba(4,4,4,0.65) 55%, transparent 100%);
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  pointer-events: none;
-}
+/* Watermark covers — plus nécessaires avec la vidéo MP4 propre */
+.cta-veo { display: none; }
+.cta-wm  { display: none; }
 .cta-content {
   position: relative;
   z-index: 3;
