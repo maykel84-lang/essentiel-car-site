@@ -2371,8 +2371,8 @@ svg { display: block; }
   .comparison-table th, .comparison-table td { padding: 0.65rem 0.5rem; font-size: 0.8rem; }
   .comparison-table th.cmp-col-us { padding: 0.4rem 0.3rem; width: 38%; }
   .comparison-table th.cmp-col-them { width: 22%; padding: 0.4rem 0.3rem; font-size: 0.85rem; }
-  .cmp-logo-wrap { height: 38px; }
-  .cmp-logo { width: 171px; height: 171px; top: -66px; }
+  .cmp-logo-wrap { height: 28px; }
+  .cmp-logo { width: 126px; height: 126px; top: -49px; }
   .cmp-detail { display: none; }
   .cmp-svg { margin-right: 0; }
   .cmp-col-us { text-align: center; }
