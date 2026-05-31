@@ -245,7 +245,7 @@ const CHAT_REPLIES = [
 
   // Retours
   { pattern: /retour|rembours|échange|return|refund|annuler|insatisfait|déçu|ne convient pas/i,
-    reply: () => `↩️ Vous avez <strong>30 jours</strong> pour retourner votre commande.<br><br>📋 Envoyez un email à <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a> avec votre numéro de commande.<br>Remboursement effectué sous 5–10 jours ouvrés.<br><br><a href='politique-remboursement.html' style='color:var(--red)'>→ Politique complète</a>` },
+    reply: () => `↩️ Vous avez <strong>30 jours</strong> pour retourner votre commande.<br><br>📋 Procédure : email à <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a> avec votre numéro de commande.<br>⚠️ <strong>Frais de retour à votre charge</strong> (sauf article défectueux ou erreur de notre part).<br>💰 Remboursement sous <strong>5 à 10 jours ouvrés</strong> après réception.<br><br><a href='politique-remboursement.html' style='color:var(--red)'>→ Politique de remboursement complète</a>` },
 
   // Promos
   { pattern: /promo|réduction|remise|code|coupon|solde|discount|offre spéciale|moins cher|économiser/i,
@@ -300,8 +300,8 @@ const CHAT_REPLIES = [
     reply: () => `📦 Nos <strong>Packs économiques</strong> (jusqu'à -20%) :<br><br>🔧 <a href='product.html?id=pack-entretien' style='color:var(--red)'><strong>Pack Entretien</strong></a> — 64,90€<br>🧼 <a href='product.html?id=pack-nettoyage' style='color:var(--red)'><strong>Pack Nettoyage Complet</strong></a> — 159,90€<br>🛡️ <a href='product.html?id=pack-securite' style='color:var(--red)'><strong>Pack Sécurité & Confort</strong></a> — 134,90€<br><br>💡 Les packs = les meilleures économies !` },
 
   // Paiement
-  { pattern: /paiement|visa|paypal|mastercard|payer|carte.?bancaire|payment/i,
-    reply: () => "💳 Nous acceptons <strong>Visa, Mastercard et PayPal</strong>.<br>🔒 Transactions sécurisées par <strong>cryptage SSL 256 bits</strong>.<br>Vos données bancaires ne sont jamais stockées." },
+  { pattern: /paiement|visa|paypal|mastercard|apple.?pay|google.?pay|payer|carte.?bancaire|payment/i,
+    reply: () => "💳 Modes de paiement acceptés :<br>• Visa, Mastercard, American Express<br>• PayPal<br>• Apple Pay & Google Pay<br><br>🔒 Transactions sécurisées <strong>SSL 256 bits</strong>, certifié PCI-DSS.<br>Vos données bancaires ne sont jamais stockées." },
 
   // Garantie
   { pattern: /garantie|warranty|défaut|cassé|abîmé|en panne|problème produit/i,
@@ -334,12 +334,44 @@ const CHAT_REPLIES = [
   // Pneu
   { pattern: /pneu|gonflage|pression.?air|tire/i,
     reply: () => `🔵 Pour vos pneus, deux produits :<br><br>🔧 <a href='product.html?id=compresseur-air' style='color:var(--red)'><strong>Compresseur d'Air Sans Fil</strong></a> — 54,90€ (gonflage rapide)<br>📡 <a href='product.html?id=tpms' style='color:var(--red)'><strong>TPMS Surveillance Pneus</strong></a> — 49,90€ (alerte pression)` },
+
+  // CGV / Conditions de vente
+  { pattern: /cgv|conditions.?générales|conditions.?de.?vente|mentions.?contract|accord.?achat/i,
+    reply: () => `📄 Nos <strong>Conditions Générales de Vente</strong> couvrent :<br>• Prix TTC, commande & paiement<br>• Livraison & suivi<br>• Retours & remboursements<br>• Garanties 2 ans<br><br><a href='cgv.html' style='color:var(--red)'>→ Lire les CGV complètes</a>` },
+
+  // Droit de rétractation légal
+  { pattern: /rétractation|délai.?légal|14.?jour|droit.?légal|code.?consommation/i,
+    reply: () => `⚖️ <strong>Droit de rétractation légal : 14 jours</strong><br>Conformément à la loi (art. L221-18 Code de la Consommation), vous pouvez vous rétracter <strong>sans motif</strong> dans les 14 jours suivant la réception.<br><br>📧 Email : <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a><br>⚠️ Frais de retour à votre charge.<br><br><a href='cgv.html' style='color:var(--red)'>→ Voir les CGV</a>` },
+
+  // Mentions légales / confidentialité / RGPD
+  { pattern: /mentions.?légales|confidentialité|rgpd|données.?personnelles|vie.?privée|privacy/i,
+    reply: () => `🔐 Nous respectons votre vie privée :<br>• <a href='mentions-legales.html' style='color:var(--red)'>Mentions légales</a> — société BIASS VTC SERVICE<br>• <a href='confidentialite.html' style='color:var(--red)'>Politique de confidentialité</a> — RGPD<br>• <a href='cookies.html' style='color:var(--red)'>Politique cookies</a><br><br>Nous ne revendons jamais vos données.` },
+
+  // Cookies
+  { pattern: /cookie|traceur|tracking|pistage|localStorage/i,
+    reply: () => `🍪 <strong>Cookies & vie privée</strong><br>Nous n'utilisons que des cookies <strong>fonctionnels essentiels</strong> (ex : panier) — aucun cookie de tracking publicitaire ni de profilage.<br><br><a href='cookies.html' style='color:var(--red)'>→ Politique cookies complète</a>` },
+
+  // Comment commander
+  { pattern: /comment.?(commander|passer commande|acheter|procéder)|je.?(veux|voudrais|souhaite).?(commander|acheter|passer)/i,
+    reply: () => `🛒 Commander en 4 étapes simples :<br>1. Choisissez vos produits et <strong>ajoutez au panier</strong><br>2. Vérifiez votre récapitulatif<br>3. Saisissez votre <strong>adresse de livraison</strong><br>4. Choisissez votre moyen de paiement et <strong>validez</strong> ✅<br><br>Un email de confirmation est envoyé immédiatement.<br><a href='boutique.html' style='color:var(--red)'>→ Commencer vos achats</a>` },
+
+  // Colis endommagé / manquant
+  { pattern: /endommagé|cassé.?(livraison|colis)|manquant|incomplet|pas reçu|colis.?(abîmé|manque|perdu)/i,
+    reply: () => `😟 Colis endommagé ou incomplet ?<br><br>📧 Contactez-nous dans les <strong>48h</strong> à <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a> avec :<br>• Votre numéro de commande<br>• Photos du colis et du contenu<br><br>Nous trouvons une solution rapide — remplacement ou remboursement, frais à notre charge. 💪` },
+
+  // Litige / médiation / réclamation
+  { pattern: /litige|médiation|réclamation|plainte|tribunal|conflit|dispute/i,
+    reply: () => `⚖️ En cas de litige, nous privilégions le dialogue :<br><br>📧 Contactez-nous d'abord : <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a><br><br>Si aucun accord amiable, vous pouvez recourir à la <strong>médiation de la consommation</strong> (gratuite, ordonnance 2015-1033).<br><a href='cgv.html' style='color:var(--red)'>→ Voir les CGV</a>` },
+
+  // FAQ
+  { pattern: /faq|questions.?fréquentes|aide.?générale|j'ai.?une.?question/i,
+    reply: () => `❓ Retrouvez toutes nos réponses dans la <a href='index.html#faq' style='color:var(--red)'><strong>FAQ →</strong></a><br><br>Ou posez-moi votre question directement, je suis là pour vous aider ! 😊` },
 ];
 
 const DEFAULT_REPLIES = [
-  () => `Je peux vous renseigner sur :<br>• 🚚 <strong>Livraison</strong> & <strong>retours</strong><br>• 💥 <strong>Promotions</strong> & <strong>Best Sellers</strong><br>• 📦 <strong>Packs</strong> & <strong>produits</strong><br>• 💳 <strong>Paiement</strong> & <strong>garantie</strong><br><br>Tapez votre question !`,
-  () => `Je n'ai pas bien compris 😅 Essayez :<br>"<strong>livraison</strong>" · "<strong>pack</strong>" · "<strong>promo</strong>" · "<strong>dashcam</strong>" · "<strong>aspirateur</strong>"<br><br>Ou contactez-nous : <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a>`,
-  () => `Reformulez votre question 😊 ou visitez directement <a href='boutique.html' style='color:var(--red)'>notre boutique</a> pour découvrir tous nos produits.`,
+  () => `Je peux vous renseigner sur :<br>• 🚚 <strong>Livraison</strong> & <strong>retours</strong><br>• 💥 <strong>Promotions</strong> & <strong>Best Sellers</strong><br>• 📦 <strong>Packs</strong> & <strong>produits</strong><br>• 💳 <strong>Paiement</strong> & <strong>garantie</strong><br>• 📄 <strong>CGV</strong> · <strong>Cookies</strong> · <strong>RGPD</strong><br><br>Tapez votre question !`,
+  () => `Je n'ai pas bien compris 😅 Essayez :<br>"<strong>livraison</strong>" · "<strong>retour</strong>" · "<strong>cgv</strong>" · "<strong>pack</strong>" · "<strong>dashcam</strong>"<br><br>Ou contactez-nous : <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a>`,
+  () => `Reformulez votre question 😊 ou visitez directement <a href='boutique.html' style='color:var(--red)'>notre boutique</a> — et consultez nos <a href='cgv.html' style='color:var(--red)'>CGV</a> pour toutes les informations légales.`,
 ];
 let _defaultIdx = 0;
 
