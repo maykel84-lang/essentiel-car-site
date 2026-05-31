@@ -919,7 +919,19 @@ function renderCartPanel() {
              Ajoutez 1 Best Seller de plus pour -50% !
            </div>`
         : '');
+  const totalItems = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+  const gwpUnlocked = totalItems >= 2;
+  const gwpBar = `<div class="gwp-bar${gwpUnlocked ? ' gwp-unlocked' : ''}">
+    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau surprise débloqué !' : '🎁 Cadeau surprise'}</div>
+    <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (totalItems / 2) * 100)}%"></div></div>
+    <div class="gwp-bar-sub">${gwpUnlocked
+      ? '✓ Kit microfibre + surprise vous attend dans votre colis !'
+      : `Plus que ${2 - totalItems} article${2 - totalItems > 1 ? 's' : ''} pour débloquer votre kit cadeau`
+    }</div>
+  </div>`;
+
   footer.innerHTML = `
+    ${gwpBar}
     <div class="cart-panel-subtotal"><span>Sous-total</span><span>${subtotal.toFixed(2).replace('.', ',')}€</span></div>
     ${discountLine}
     <div class="cart-panel-shipping${isFreeShipping ? ' cart-panel-shipping--free' : ''}"><span>Livraison</span><span>${isFreeShipping ? 'Gratuite 🎉' : shipping.toFixed(2).replace('.', ',') + '€'}</span></div>

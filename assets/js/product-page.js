@@ -187,6 +187,14 @@ function renderProduct(p) {
               </button>
               <a href="boutique.html" class="btn btn--secondary btn--lg">${txt.backShop}</a>
             </div>
+
+            <div class="gwp-teaser" id="gwpTeaser">
+              <span class="gwp-teaser-emoji">🎁</span>
+              <div>
+                <div class="gwp-teaser-title">Cadeau surprise offert !</div>
+                <div class="gwp-teaser-desc">Achetez 2 articles et recevez un kit ESSENTIEL CAR dans votre colis — microfibre, gants, surprise…</div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -450,6 +458,12 @@ function handleAddToCart(product, data, isFr) {
   updateCartCounter();
   showCartToast(data.name, isFr);
 
+  // GWP: detect if threshold just crossed (2 items)
+  const newTotal = cart.reduce((s, i) => s + (i.qty || 1), 0);
+  if (newTotal >= 2) {
+    setTimeout(() => showGiftUnlockedToast(), 900);
+  }
+
   // Upsell popup — show after short delay
   setTimeout(() => {
     if (typeof openUpsellPopup === 'function') openUpsellPopup(product.id);
@@ -625,4 +639,19 @@ function showCartToast(name, isFr) {
   toast.classList.add('show');
   clearTimeout(toast._timer);
   toast._timer = setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+/* ── GWP toast ── */
+function showGiftUnlockedToast() {
+  let toast = document.getElementById('giftToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'giftToast';
+    toast.className = 'gift-toast';
+    toast.innerHTML = `<span class="gift-toast-icon">🎁</span><div class="gift-toast-text">Cadeau surprise débloqué !<span class="gift-toast-sub">Votre kit ESSENTIEL CAR vous attend dans le colis 🎉</span></div>`;
+    document.body.appendChild(toast);
+  }
+  toast.classList.add('show');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove('show'), 3500);
 }
