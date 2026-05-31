@@ -314,17 +314,18 @@ function initFAQ() {
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
       const item   = btn.closest('.faq-item');
-      const answer = item.querySelector('.faq-answer');
       const isOpen = item.classList.contains('open');
 
-      // Close all
+      // Close all open items
       document.querySelectorAll('.faq-item.open').forEach(openItem => {
         openItem.classList.remove('open');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
       });
 
+      // Open clicked item only if it was closed
       if (!isOpen) {
         item.classList.add('open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
