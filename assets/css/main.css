@@ -2369,7 +2369,8 @@ svg { display: block; }
 @media (max-width: 560px) {
   .comparison-wrap { overflow-x: unset; }
   .comparison-table th, .comparison-table td { padding: 0.65rem 0.6rem; font-size: 0.8rem; }
-  .cmp-logo { height: 22px; }
+  .cmp-logo-wrap { height: 30px; }
+  .cmp-logo { width: 135px; height: 135px; top: -53px; }
   .cmp-detail { display: none; }
   .cmp-svg { margin-right: 0; }
   .cmp-col-us { text-align: center; }
