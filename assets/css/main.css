@@ -2368,13 +2368,15 @@ svg { display: block; }
 /* Mobile — compact: juste l'icône, texte masqué */
 @media (max-width: 560px) {
   .comparison-wrap { overflow-x: unset; }
-  .comparison-table th, .comparison-table td { padding: 0.65rem 0.6rem; font-size: 0.8rem; }
-  .cmp-logo-wrap { height: 30px; }
-  .cmp-logo { width: 135px; height: 135px; top: -53px; }
+  .comparison-table th, .comparison-table td { padding: 0.65rem 0.5rem; font-size: 0.8rem; }
+  .comparison-table th.cmp-col-us { padding: 0.4rem 0.3rem; width: 38%; }
+  .comparison-table th.cmp-col-them { width: 22%; padding: 0.4rem 0.3rem; font-size: 0.85rem; }
+  .cmp-logo-wrap { height: 38px; }
+  .cmp-logo { width: 171px; height: 171px; top: -66px; }
   .cmp-detail { display: none; }
   .cmp-svg { margin-right: 0; }
   .cmp-col-us { text-align: center; }
-  .cmp-feature-label { width: 45%; font-size: 0.78rem; }
+  .cmp-feature-label { width: 40%; font-size: 0.78rem; }
 }
 
 /* ── Vu sur logos (inline SVG) ── */
