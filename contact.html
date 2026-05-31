@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez ESSENTIEL CAR — Notre équipe vous répond sous 2h en jours ouvrés. Question, retour, partenariat : on est là pour vous.">
+  <title>Contact — ESSENTIEL CAR</title>
+  <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
+  <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
+  <link rel="stylesheet" href="assets/fonts/inter.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=2714">
+  <style>
+    body.is-loading { opacity: 0; }
+
+    .contact-page { min-height: 100vh; padding-top: 100px; }
+
+    /* Hero */
+    .contact-hero {
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 0%, rgba(224,0,12,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .contact-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .contact-hero p {
+      font-size: 1rem;
+      color: var(--gray-2);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Layout */
+    .contact-layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    /* Form card */
+    .contact-form-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+    }
+    .contact-form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 1.75rem;
+    }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 540px) { .contact-row { grid-template-columns: 1fr; } }
+
+    .contact-field { margin-bottom: 1.25rem; }
+    .contact-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 0.45rem;
+    }
+    .contact-input,
+    .contact-select,
+    .contact-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.75rem;
+      padding: 0.875rem 1.125rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+    }
+    .contact-input:focus,
+    .contact-select:focus,
+    .contact-textarea:focus {
+      border-color: var(--red);
+      background: rgba(255,255,255,0.07);
+    }
+    .contact-input::placeholder,
+    .contact-textarea::placeholder { color: rgba(255,255,255,0.22); }
+    .contact-select { cursor: pointer; }
+    .contact-select option { background: #1a1a1a; color: #fff; }
+    .contact-textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+
+    .contact-submit { width: 100%; margin-top: 0.5rem; }
+
+    .contact-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .contact-success.show { display: block; }
+    .contact-success-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .contact-success h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+    .contact-success p { font-size: 0.88rem; color: var(--gray-2); }
+
+    /* Info card */
+    .contact-info-col { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .contact-info-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+    }
+    .contact-info-card-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+    .contact-info-item:last-child { margin-bottom: 0; }
+    .contact-info-icon {
+      width: 36px; height: 36px;
+      background: rgba(224,0,12,0.1);
+      border: 1px solid rgba(224,0,12,0.2);
+      border-radius: 0.625rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .contact-info-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.2rem;
+    }
+    .contact-info-value {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .contact-info-value a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-info-value a:hover { color: var(--red); }
+
+    /* Response time badge */
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.2);
+      border-radius: 999px;
+      padding: 0.35rem 0.875rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #4ade80;
+      margin-bottom: 1.5rem;
+    }
+    .contact-badge-dot {
+      width: 6px; height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse-green 2s ease-in-out infinite;
+    }
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* Social card */
+    .contact-socials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.625rem;
+    }
+    .contact-social-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 0.875rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.625rem;
+      text-decoration: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .contact-social-btn:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.15);
+      color: var(--white);
+    }
+    .contact-social-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* FAQ shortcut */
+    .contact-faq-card {
+      background: rgba(224,0,12,0.05);
+      border: 1px solid rgba(224,0,12,0.15);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .contact-faq-card p {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="is-loading">
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div id="loader" role="status" aria-label="Chargement">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <div class="loader-mark">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 11 23 A 34 34 0 1 1 11 57" stroke="#E0000C" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <line x1="40" y1="40" x2="40" y2="9" stroke="#E0000C" stroke-width="5" stroke-linecap="round"/>
+            <line x1="40" y1="40" x2="67" y2="56" stroke="#E0000C" stroke-width="5" stroke-linecap="round"/>
+            <line x1="40" y1="40" x2="13" y2="56" stroke="#E0000C" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="40" cy="40" r="7.5" fill="#E0000C"/>
+            <circle cx="40" cy="40" r="3" fill="#ffffff"/>
+          </svg>
+        </div>
+        <div class="loader-wordmark">
+          <span class="l-e">ESSENTIEL</span><span class="l-c">CAR</span>
+        </div>
+      </div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <button class="back-top" aria-label="Retour en haut">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+  </button>
+
+  <!-- Promo Bar -->
+  <div class="promo-bar" id="promoBar" role="region" aria-label="Offres promotionnelles">
+    <button class="promo-bar-arrow" id="promoPrev" aria-label="Annonce précédente">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+    </button>
+    <div class="promo-bar-track-wrap">
+      <div class="promo-bar-track" id="promoTrack">
+        <div class="promo-bar-item active">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+          <span>2ème Article à -50% sur les Best Sellers</span>
+          <a href="boutique.html?filter=bestseller">Voir les offres →</a>
+        </div>
+        <div class="promo-bar-item"><span>LIVRAISON 🚚 GRATUITE dès 50€</span></div>
+        <div class="promo-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <span>Paiement 100% sécurisé</span>
+        </div>
+      </div>
+    </div>
+    <button class="promo-bar-arrow" id="promoNext" aria-label="Annonce suivante">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+    </button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ESSENTIEL CAR — Accueil">
+        <span class="logo-img-crop"><img src="assets/images/logo-essentiel-car.png" alt="ESSENTIEL CAR" class="logo-png" loading="eager"></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link">Boutique</a></li>
+        <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+        <li><a href="tracking.html" class="nav-link">Suivi commande</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-cart-btn" id="navCartBtn" aria-label="Panier" onclick="window.location.href='cart.html'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="20" height="20"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" id="cartCount" style="display:none">0</span>
+        </button>
+        <a href="boutique.html" class="btn btn--primary btn--sm nav-cta-desktop" data-magnetic>Boutique</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
+      <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
+        <li><a href="index.html" class="mobile-link">Accueil</a></li>
+        <li><a href="boutique.html" class="mobile-link">Boutique</a></li>
+        <li><a href="index.html#faq" class="mobile-link">FAQ</a></li>
+        <li><a href="tracking.html" class="mobile-link">Suivi commande</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="contact-page" role="main">
+
+    <section class="contact-hero">
+      <div class="container">
+        <div class="section-eyebrow" style="justify-content:center;margin-bottom:1.25rem">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Nous contacter</span>
+        </div>
+        <h1>ON EST LÀ POUR VOUS</h1>
+        <p>Une question, un problème, une idée ? Notre équipe vous répond rapidement.</p>
+      </div>
+    </section>
+
+    <div class="contact-layout">
+
+      <!-- Formulaire -->
+      <div class="contact-form-card">
+        <div class="contact-badge">
+          <span class="contact-badge-dot"></span>
+          Réponse garantie sous 2h en jours ouvrés
+        </div>
+
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="contact-row">
+            <div class="contact-field">
+              <label class="contact-label" for="contactName">Prénom & Nom</label>
+              <input type="text" id="contactName" class="contact-input" placeholder="Jean Dupont" required autocomplete="name">
+            </div>
+            <div class="contact-field">
+              <label class="contact-label" for="contactEmail">Adresse e-mail</label>
+              <input type="email" id="contactEmail" class="contact-input" placeholder="votre@email.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="contact-field">
+            <label class="contact-label" for="contactSubject">Sujet</label>
+            <select id="contactSubject" class="contact-select" required>
+              <option value="" disabled selected>Choisissez un sujet…</option>
+              <option value="produit">❓ Question sur un produit</option>
+              <option value="commande">📦 Suivi de commande</option>
+              <option value="retour">↩️ Retour / Remboursement</option>
+              <option value="livraison">🚚 Problème de livraison</option>
+              <option value="garantie">🛡️ Garantie / Produit défectueux</option>
+              <option value="partenariat">🤝 Partenariat / Presse</option>
+              <option value="autre">💬 Autre</option>
+            </select>
+          </div>
+
+          <div class="contact-field">
+            <label class="contact-label" for="contactOrder">Numéro de commande <span style="color:rgba(255,255,255,0.25);font-weight:400">(optionnel)</span></label>
+            <input type="text" id="contactOrder" class="contact-input" placeholder="EC-2024-00123" autocomplete="off">
+          </div>
+
+          <div class="contact-field">
+            <label class="contact-label" for="contactMessage">Votre message</label>
+            <textarea id="contactMessage" class="contact-textarea" placeholder="Décrivez votre demande avec le maximum de détails…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg contact-submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="currentColor" stroke="none"/></svg>
+            Envoyer le message
+          </button>
+        </form>
+
+        <div class="contact-success" id="contactSuccess">
+          <div class="contact-success-icon">✅</div>
+          <h3>Message envoyé !</h3>
+          <p>Merci de nous avoir contactés.<br>Nous vous répondrons sous <strong>2h</strong> en jours ouvrés (lun–ven, 9h–18h).</p>
+        </div>
+      </div>
+
+      <!-- Colonne infos -->
+      <div class="contact-info-col">
+
+        <!-- Coordonnées -->
+        <div class="contact-info-card">
+          <p class="contact-info-card-title">Nos coordonnées</p>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📧</div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-value">
+                <a href="mailto:contact@essentielcar.com">contact@essentielcar.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🕐</div>
+            <div>
+              <div class="contact-info-label">Horaires du service client</div>
+              <div class="contact-info-value">Lun – Ven, 9h à 18h</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">⚡</div>
+            <div>
+              <div class="contact-info-label">Délai de réponse</div>
+              <div class="contact-info-value">Sous 2h en jours ouvrés</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🏢</div>
+            <div>
+              <div class="contact-info-label">Société</div>
+              <div class="contact-info-value">BIASS VTC SERVICE<br><span style="font-size:0.78rem;font-weight:400;color:rgba(255,255,255,0.4)">Enregistrée en France</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="contact-info-card">
+          <p class="contact-info-card-title">Nos réseaux sociaux</p>
+          <div class="contact-socials-grid">
+            <a href="https://www.instagram.com/essentielcar/" target="_blank" rel="noopener" class="contact-social-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="15" cy="5" r="0.5" fill="currentColor"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/essentiel.car/" target="_blank" rel="noopener" class="contact-social-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3h-2a4 4 0 00-4 4v1H4v3h2v7h3v-7h2.6l.4-3H9V7a1 1 0 011-1h2V3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.tiktok.com/@essentiel.car?lang=fr" target="_blank" rel="noopener" class="contact-social-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 3a4 4 0 01-4 4V3h4z M10 7v7a3 3 0 11-3-3h1"/></svg>
+              TikTok
+            </a>
+            <a href="https://www.youtube.com/@ESSENTIELCAR" target="_blank" rel="noopener" class="contact-social-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="16" height="11" rx="3"/><polygon points="8,8 14,10.5 8,13" fill="currentColor" stroke="none"/></svg>
+              YouTube
+            </a>
+            <a href="https://www.snapchat.com/web" target="_blank" rel="noopener" class="contact-social-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2c-3.3 0-5 2-5 5v1c-.8.1-1.5.5-1.5 1s.5 1 1.3 1.2c-.2.4-.5.8-.8 1-.5.4-.5.8 0 1 .4.2 1 .2 1.8-.1.6.9 1.7 1.9 4.2 1.9s3.6-1 4.2-1.9c.8.3 1.4.3 1.8.1.5-.2.5-.6 0-1-.3-.2-.6-.6-.8-1 .8-.2 1.3-.7 1.3-1.2s-.7-.9-1.5-1V7c0-3-1.7-5-5-5z"/></svg>
+              Snapchat
+            </a>
+            <a href="https://www.instagram.com/essentielcar/" target="_blank" rel="noopener" class="contact-social-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Threads
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ shortcut -->
+        <div class="contact-faq-card">
+          <p>Votre réponse est peut-être déjà dans notre FAQ 👇</p>
+          <a href="index.html#faq" class="btn btn--ghost btn--sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Consulter la FAQ
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand footer-col">
+            <a href="index.html" class="footer-logo" aria-label="ESSENTIEL CAR accueil">
+              <span class="logo-img-crop"><img src="assets/images/logo-essentiel-car.png" alt="ESSENTIEL CAR" class="logo-png" loading="eager"></span>
+            </a>
+            <p class="footer-tagline">L'essentiel pour votre voiture.</p>
+            <p class="footer-promise">Performez au quotidien.</p>
+            <div class="footer-socials" aria-label="Réseaux sociaux">
+              <a href="https://www.instagram.com/essentielcar/" class="social-btn social-btn--instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="15" cy="5" r="0.5" fill="currentColor"/></svg></a>
+              <a href="https://www.facebook.com/essentiel.car/" class="social-btn social-btn--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3h-2a4 4 0 00-4 4v1H4v3h2v7h3v-7h2.6l.4-3H9V7a1 1 0 011-1h2V3z"/></svg></a>
+              <a href="https://www.tiktok.com/@essentiel.car?lang=fr" class="social-btn social-btn--tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 3a4 4 0 01-4 4V3h4z M10 7v7a3 3 0 11-3-3h1"/></svg></a>
+              <a href="https://www.youtube.com/@ESSENTIELCAR" class="social-btn social-btn--youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="16" height="11" rx="3"/><polygon points="8,8 14,10.5 8,13" fill="currentColor" stroke="none"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Navigation</p>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Accueil</a></li>
+              <li><a href="boutique.html" class="footer-link">Boutique</a></li>
+              <li><a href="tracking.html" class="footer-link">Suivi commande</a></li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+              <li><a href="index.html#faq" class="footer-link">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Contact</p>
+            <ul class="footer-links">
+              <li><a href="mailto:contact@essentielcar.com" class="footer-contact-email">contact@essentielcar.com</a></li>
+              <li style="margin-top:0.5rem;font-size:0.8rem;color:rgba(255,255,255,0.35)">Lun–Ven · 9h–18h</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Légal</p>
+            <ul class="footer-links">
+              <li><a href="mentions-legales.html" class="footer-link">Mentions légales</a></li>
+              <li><a href="confidentialite.html" class="footer-link">Confidentialité</a></li>
+              <li><a href="cgv.html" class="footer-link">CGV</a></li>
+              <li><a href="politique-remboursement.html" class="footer-link">Remboursement</a></li>
+              <li><a href="politique-expedition.html" class="footer-link">Expédition</a></li>
+              <li><a href="cookies.html" class="footer-link">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-rights">© 2024 ESSENTIEL CAR. Tous droits réservés.</p>
+        <p class="footer-made">Fait avec passion pour les passionnés d'automobile.</p>
+      </div>
+    </div>
+    <div class="footer-bg-text" aria-hidden="true">CONTACT</div>
+  </footer>
+
+  <!-- Chatbot -->
+  <button class="chatbot-bubble" id="chatbotBubble" aria-label="Ouvrir le chat assistant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <div class="chatbot-bubble-dot" aria-hidden="true"></div>
+  </button>
+  <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-modal="true" aria-label="Chat assistant">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar" aria-hidden="true">EC</div>
+      <div>
+        <div class="chatbot-name">ESSENTIEL CAR</div>
+        <div class="chatbot-status">● En ligne</div>
+      </div>
+      <button class="chatbot-close" id="chatbotClose" aria-label="Fermer le chat">✕</button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite"></div>
+    <div class="chatbot-input-wrap">
+      <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Posez votre question..." autocomplete="off" aria-label="Message">
+      <button class="chatbot-send" id="chatbotSend" aria-label="Envoyer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="currentColor" stroke="none"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/vendor/gsap.min.js"></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor/lenis.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/features.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/promo-bar.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name    = document.getElementById('contactName').value.trim();
+      const email   = document.getElementById('contactEmail').value.trim();
+      const subject = document.getElementById('contactSubject');
+      const subjectText = subject.options[subject.selectedIndex].text;
+      const order   = document.getElementById('contactOrder').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+
+      const body = `Nom : ${name}\nEmail : ${email}\nSujet : ${subjectText}${order ? '\nN° commande : ' + order : ''}\n\n${message}`;
+      const mailtoLink = `mailto:contact@essentielcar.com?subject=${encodeURIComponent('[ESSENTIEL CAR] ' + subjectText)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('contactSuccess').classList.add('show');
+      }, 500);
+    }
+  </script>
+</body>
+</html>
