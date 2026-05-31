@@ -223,38 +223,125 @@ function showToast(msg) {
 
 /* ── Chatbot ── */
 const CHAT_REPLIES = [
-  { pattern: /livraison|délai|expéd|envoi|shipping|delivery/i,
-    reply: () => "🚚 Expédition sous <strong>24h ouvrées</strong>, livraison <strong>3–7 jours</strong> en France. Un email de suivi vous est envoyé dès l'expédition." },
-  { pattern: /suivi|commande|tracking|colis|order|track/i,
-    reply: () => `📦 Suivez votre commande sur notre <a href='tracking.html' style='color:var(--red)'>page de suivi</a>. Entrez votre numéro de commande + email.` },
-  { pattern: /retour|rembours|échange|satisfait|return|refund/i,
-    reply: () => "↩️ Retours gratuits sous <strong>30 jours</strong>. Contactez-nous à <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a>." },
-  { pattern: /promo|réduction|remise|code|coupon|solde|discount/i,
-    reply: () => "💥 Bestsellers à <strong>-37%</strong> en ce moment ! Code <strong>ESSCAR10</strong> pour -10% supplémentaires sur votre commande." },
-  { pattern: /aspirateur|vacuum|aspirat/i,
-    reply: () => `🔋 <strong>Aspirateur Sans Fil</strong> — 49,90€ (-37%). Moteur 120W, batterie 30 min, filtre HEPA. <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'>Voir le produit →</a>` },
-  { pattern: /dashcam|caméra|camera/i,
-    reply: () => `📹 <strong>Dashcam 4K Ultra HD</strong> — 89,90€. Vision nocturne, GPS, 170° grand-angle. <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Voir le produit →</a>` },
-  { pattern: /compresseur|pneu|gonf|tire|pump/i,
-    reply: () => `🔧 <strong>Compresseur d'Air Sans Fil</strong> — 54,90€. Gonflage en 3 min, batterie rechargeable. <a href='product.html?id=compresseur-air' style='color:var(--red)'>Voir le produit →</a>` },
-  { pattern: /paiement|visa|paypal|mastercard|payer|payment/i,
-    reply: () => "💳 Visa, Mastercard, Amex, PayPal, Apple Pay. Toutes les transactions sont sécurisées par cryptage <strong>SSL 256 bits</strong>." },
-  { pattern: /contact|email|mail|service|aide|help/i,
-    reply: () => "📧 <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a> — réponse garantie sous <strong>2h</strong> en jours ouvrés." },
-  { pattern: /bonjour|salut|hello|hi|hey|bonsoir/i,
-    reply: () => "Bonjour ! 😊 Comment puis-je vous aider ? Posez-moi vos questions sur les produits, la livraison, les retours ou le paiement." },
-  { pattern: /produit|product|article|catalogue/i,
-    reply: () => `🛍️ Découvrez notre catalogue complet sur <a href='boutique.html' style='color:var(--red)'>la boutique</a>. Des accessoires auto premium, testés et sélectionnés.` },
-  { pattern: /garantie|warranty|durée/i,
-    reply: () => "🛡️ Tous nos produits bénéficient d'une <strong>garantie 2 ans</strong>. En cas de défaut, remplacement ou remboursement intégral." },
+  // Fin de conversation
+  { pattern: /au.?revoir|bye|bonne journée|bonne soirée|à bientôt|ciao|tchao|bonne route/i,
+    reply: () => "Au revoir ! 👋 Merci de votre visite sur <strong>ESSENTIEL CAR</strong>. Bonne route et à très bientôt ! 🚗" },
+  { pattern: /^(merci+|thanks?|thank you|super|parfait|nickel|génial|top|cool|ok merci|d'accord merci|avec plaisir)[\s!]*$/i,
+    reply: () => "Avec plaisir ! 😊 N'hésitez pas si vous avez d'autres questions. <a href='boutique.html' style='color:var(--red)'>Découvrez notre boutique →</a>" },
+  { pattern: /^(ok|oui|non|vu|yes|no|okay|d'accord|compris|entendu|c'est bon)[\s!.]*$/i,
+    reply: () => "Parfait ! 👍 Autre chose pour vous ? Je peux vous parler de nos produits, promotions, livraisons ou retours." },
+
+  // Salutations
+  { pattern: /bonjour|salut|hello|hi\b|hey\b|bonsoir|coucou/i,
+    reply: () => "Bonjour ! 😊 Je suis l'assistant <strong>ESSENTIEL CAR</strong>.<br><br>Comment puis-je vous aider ?<br>• 🔥 Nos <strong>Best Sellers</strong><br>• 📦 Nos <strong>Packs économiques</strong><br>• 🚚 <strong>Livraison & retours</strong><br>• 💥 <strong>Promotions en cours</strong>" },
+
+  // Livraison
+  { pattern: /livraison|délai|expéd|envoi|shipping|delivery|combien de temps|quand.*recev/i,
+    reply: () => "🚚 Expédition sous <strong>24h ouvrées</strong>, livraison en <strong>3–7 jours ouvrés</strong> en France.<br><br>📧 Un email de suivi vous est envoyé dès l'expédition.<br>🎁 Livraison <strong>gratuite dès 50€</strong> d'achat.<br><br><a href='politique-expedition.html' style='color:var(--red)'>→ Politique d'expédition complète</a>" },
+
+  // Suivi commande
+  { pattern: /suivi|tracking|colis|où est ma|order status|numéro de commande/i,
+    reply: () => `📦 Suivez votre colis en temps réel sur notre <a href='tracking.html' style='color:var(--red)'><strong>page de suivi →</strong></a><br>Munissez-vous de votre numéro de commande et de votre email.` },
+
+  // Retours
+  { pattern: /retour|rembours|échange|return|refund|annuler|insatisfait|déçu|ne convient pas/i,
+    reply: () => `↩️ Vous avez <strong>30 jours</strong> pour retourner votre commande.<br><br>📋 Envoyez un email à <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a> avec votre numéro de commande.<br>Remboursement effectué sous 5–10 jours ouvrés.<br><br><a href='politique-remboursement.html' style='color:var(--red)'>→ Politique complète</a>` },
+
+  // Promos
+  { pattern: /promo|réduction|remise|code|coupon|solde|discount|offre spéciale|moins cher|économiser/i,
+    reply: () => `💥 <strong>Offre exclusive :</strong> achetez 2 Best Sellers → <strong>-50% sur le 2ème article</strong>, appliqué automatiquement en caisse !<br><br>🏆 <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Dashcam 4K</a> · <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'>Aspirateur</a> · <a href='product.html?id=support-telephone' style='color:var(--red)'>Kit Mains Libres</a>` },
+
+  // Best Sellers
+  { pattern: /best.?seller|plus vendu|meilleur|recommand|top produit|coup de cœur/i,
+    reply: () => `⭐ Nos <strong>3 Best Sellers</strong> :<br><br>📹 <a href='product.html?id=dashcam-4k' style='color:var(--red)'><strong>Dashcam 4K Ultra HD</strong></a> — 89,90€<br>📱 <a href='product.html?id=support-telephone' style='color:var(--red)'><strong>Kit Mains Libres 360°</strong></a> — 27,90€<br>🔋 <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'><strong>Aspirateur Sans Fil</strong></a> — 49,90€<br><br>💡 Achetez-en 2 → <strong>-50% sur le 2ème !</strong>` },
+
+  // Aspirateur
+  { pattern: /aspirateur|vacuum|aspir/i,
+    reply: () => `🔋 <strong>Aspirateur Sans Fil Voiture</strong> — <strong>49,90€</strong><br>✔ Moteur 120W · 30 min d'autonomie · Filtre HEPA<br>✔ Parfait pour l'habitacle · ⭐ Best Seller<br><br><a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'>→ Voir & commander</a>` },
+
+  // Dashcam
+  { pattern: /dashcam|caméra.?bord|cam.?bord|enregistreur|dash.?cam/i,
+    reply: () => `📹 <strong>Dashcam 4K Ultra HD</strong> — <strong>89,90€</strong><br>✔ Résolution 4K · Vision nocturne · GPS intégré · 170°<br>✔ ⭐ Best Seller<br><br><a href='product.html?id=dashcam-4k' style='color:var(--red)'>→ Voir & commander</a>` },
+
+  // Compresseur
+  { pattern: /compresseur|gonfleur|gonfl|pompe.?air/i,
+    reply: () => `🔧 <strong>Compresseur d'Air Sans Fil</strong> — <strong>54,90€</strong><br>✔ Gonflage en 3 min · Batterie rechargeable · Arrêt auto<br><br><a href='product.html?id=compresseur-air' style='color:var(--red)'>→ Voir & commander</a>` },
+
+  // Kit mains libres
+  { pattern: /mains.?libres|kit mains|support.?tel|porte.?tel|téléphone voiture|smartphone voiture/i,
+    reply: () => `📱 <strong>Kit Mains Libres 360°</strong> — <strong>27,90€</strong><br>✔ Rotation 360° · Compatible tous smartphones · ⭐ Best Seller<br><br><a href='product.html?id=support-telephone' style='color:var(--red)'>→ Voir & commander</a>` },
+
+  // Machine à polir
+  { pattern: /polir|polisseuse|lustrer|carrosserie|polish/i,
+    reply: () => `✨ <strong>Machine à Polir Sans Fil</strong> — <strong>79,90€</strong><br>✔ Professionnelle · Sans fil · Vitesse variable<br><br><a href='product.html?id=machine-polir' style='color:var(--red)'>→ Voir le produit</a>` },
+
+  // Lance mousse
+  { pattern: /mousse|foam|pulvérisateur|lance.?mousse|nettoyant voiture/i,
+    reply: () => `🫧 <strong>Pulvérisateur de Mousse</strong> — <strong>44,90€</strong><br>✔ Mousse épaisse · Nettoyage carrosserie pro<br><br><a href='product.html?id=lance-mousse' style='color:var(--red)'>→ Voir le produit</a>` },
+
+  // TPMS
+  { pattern: /tpms|pression.?pneu|surveillance.?pneu|capteur.?pneu/i,
+    reply: () => `🔵 <strong>TPMS Surveillance Pneus</strong> — <strong>49,90€</strong><br>✔ Surveillance temps réel · Alerte sous-gonflage · Sécurité max<br><br><a href='product.html?id=tpms' style='color:var(--red)'>→ Voir le produit</a>` },
+
+  // Table volant
+  { pattern: /table.?volant|plateau.?volant|manger.?voiture|travailler.?voiture/i,
+    reply: () => `🍽️ <strong>Table à Manger Volant</strong> — <strong>24,90€</strong><br>✔ Repas & travail en voiture · Fixation sur le volant<br><br><a href='product.html?id=table-volant' style='color:var(--red)'>→ Voir le produit</a>` },
+
+  // Essuie-glace
+  { pattern: /essuie.?glace|balai.?glace|rétroviseur.?pluie|wipers?/i,
+    reply: () => `🌧️ <strong>Essuie-Glace Rétroviseur Portable</strong> — <strong>19,90€</strong><br>✔ Vision claire sous la pluie · Adapté rétroviseurs<br><br><a href='product.html?id=essuie-glace-retros' style='color:var(--red)'>→ Voir le produit</a>` },
+
+  // Brosse jantes
+  { pattern: /brosse|jante|roue|nettoyage.?roue/i,
+    reply: () => `🔵 <strong>Brosse à Jantes Pro</strong> — <strong>12,90€</strong> · Lot de 3 à 24,90€<br>✔ Nettoyage en profondeur · Toutes tailles<br><br><a href='product.html?id=brosse-jantes' style='color:var(--red)'>→ Voir le produit</a>` },
+
+  // Packs / bundles
+  { pattern: /pack|bundle|kit.?complet|ensemble|combinaison|économies/i,
+    reply: () => `📦 Nos <strong>Packs économiques</strong> (jusqu'à -20%) :<br><br>🔧 <a href='product.html?id=pack-entretien' style='color:var(--red)'><strong>Pack Entretien</strong></a> — 64,90€<br>🧼 <a href='product.html?id=pack-nettoyage' style='color:var(--red)'><strong>Pack Nettoyage Complet</strong></a> — 159,90€<br>🛡️ <a href='product.html?id=pack-securite' style='color:var(--red)'><strong>Pack Sécurité & Confort</strong></a> — 134,90€<br><br>💡 Les packs = les meilleures économies !` },
+
+  // Paiement
+  { pattern: /paiement|visa|paypal|mastercard|payer|carte.?bancaire|payment/i,
+    reply: () => "💳 Nous acceptons <strong>Visa, Mastercard et PayPal</strong>.<br>🔒 Transactions sécurisées par <strong>cryptage SSL 256 bits</strong>.<br>Vos données bancaires ne sont jamais stockées." },
+
+  // Garantie
+  { pattern: /garantie|warranty|défaut|cassé|abîmé|en panne|problème produit/i,
+    reply: () => "🛡️ Tous nos produits sont couverts par une <strong>garantie 2 ans</strong>.<br>En cas de défaut : remplacement ou remboursement intégral.<br>Contactez <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a>" },
+
+  // Contact
+  { pattern: /contact|email|mail|service client|aide|parler|humain|conseiller|joindre/i,
+    reply: () => "📧 <a href='mailto:contact@essentielcar.com' style='color:var(--red)'><strong>contact@essentielcar.com</strong></a><br>⏱ Réponse garantie sous <strong>2h</strong> en jours ouvrés (lun–ven, 9h–18h)." },
+
+  // Prix / tarifs
+  { pattern: /prix|combien|coût|tarif|cost|price/i,
+    reply: () => `💰 Nos prix vont de <strong>12,90€ à 159,90€</strong>.<br><br>🔥 Best Sellers : Dashcam 89,90€ · Aspirateur 49,90€ · Kit Mains Libres 27,90€<br><br>💥 Achetez 2 Best Sellers = <strong>-50% sur le 2ème !</strong><br><a href='boutique.html' style='color:var(--red)'>→ Voir tous les prix</a>` },
+
+  // Frais de livraison
+  { pattern: /frais.*(livraison|envoi|port)|livraison.*(gratuit|payant|prix)/i,
+    reply: () => "🚚 Livraison <strong>gratuite dès 50€</strong> d'achat.<br>En dessous de 50€, les frais sont indiqués clairement en caisse." },
+
+  // Confiance / sécurité
+  { pattern: /sécurité|confiance|fiable|sérieux|légit|arnaque/i,
+    reply: () => "🔒 ESSENTIEL CAR est une enseigne française sérieuse.<br>✔ Paiement SSL 256 bits · Garantie 2 ans · Retours 30 jours<br>✔ Société BIASS VTC SERVICE enregistrée en France.<br><a href='mentions-legales.html' style='color:var(--red)'>→ Mentions légales</a>" },
+
+  // Boutique
+  { pattern: /boutique|magasin|shop|voir tout|catalogue|tous.?produit/i,
+    reply: () => `🛍️ <a href='boutique.html' style='color:var(--red)'><strong>→ Accéder à la boutique</strong></a><br><br>Filtrez par catégorie : <strong>Nettoyage</strong> · <strong>Sécurité</strong> · <strong>Confort</strong> · <strong>Entretien</strong>` },
+
+  // Cadeau
+  { pattern: /cadeau|gift|offrir|anniversaire|noël|fête/i,
+    reply: () => `🎁 Vous cherchez un cadeau pour un passionné d'automobile ?<br><br>Nos suggestions :<br>📹 <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Dashcam 4K</a> — 89,90€<br>📱 <a href='product.html?id=support-telephone' style='color:var(--red)'>Kit Mains Libres 360°</a> — 27,90€<br>🔧 <a href='product.html?id=pack-entretien' style='color:var(--red)'>Pack Entretien</a> — 64,90€` },
+
+  // Pneu
+  { pattern: /pneu|gonflage|pression.?air|tire/i,
+    reply: () => `🔵 Pour vos pneus, deux produits :<br><br>🔧 <a href='product.html?id=compresseur-air' style='color:var(--red)'><strong>Compresseur d'Air Sans Fil</strong></a> — 54,90€ (gonflage rapide)<br>📡 <a href='product.html?id=tpms' style='color:var(--red)'><strong>TPMS Surveillance Pneus</strong></a> — 49,90€ (alerte pression)` },
 ];
 
-const DEFAULT_REPLY = () => `Je peux vous renseigner sur :<br>
-• 📦 <strong>Livraison & suivi</strong><br>
-• ↩️ <strong>Retours & remboursements</strong><br>
-• 💥 <strong>Promotions en cours</strong><br>
-• 🛍️ <strong>Nos produits</strong><br>
-• 💳 <strong>Paiement sécurisé</strong>`;
+const DEFAULT_REPLIES = [
+  () => `Je peux vous renseigner sur :<br>• 🚚 <strong>Livraison</strong> & <strong>retours</strong><br>• 💥 <strong>Promotions</strong> & <strong>Best Sellers</strong><br>• 📦 <strong>Packs</strong> & <strong>produits</strong><br>• 💳 <strong>Paiement</strong> & <strong>garantie</strong><br><br>Tapez votre question !`,
+  () => `Je n'ai pas bien compris 😅 Essayez :<br>"<strong>livraison</strong>" · "<strong>pack</strong>" · "<strong>promo</strong>" · "<strong>dashcam</strong>" · "<strong>aspirateur</strong>"<br><br>Ou contactez-nous : <a href='mailto:contact@essentielcar.com' style='color:var(--red)'>contact@essentielcar.com</a>`,
+  () => `Reformulez votre question 😊 ou visitez directement <a href='boutique.html' style='color:var(--red)'>notre boutique</a> pour découvrir tous nos produits.`,
+];
+let _defaultIdx = 0;
 
 function initChatbot() {
   const bubble  = document.getElementById('chatbotBubble');
@@ -290,7 +377,13 @@ function initChatbot() {
     const typingEl = addBot('…', true);
     setTimeout(() => {
       const match = CHAT_REPLIES.find(r => r.pattern.test(txt));
-      typingEl.innerHTML = match ? match.reply() : DEFAULT_REPLY();
+      if (match) {
+        _defaultIdx = 0;
+        typingEl.innerHTML = match.reply();
+      } else {
+        typingEl.innerHTML = DEFAULT_REPLIES[_defaultIdx % DEFAULT_REPLIES.length]();
+        _defaultIdx++;
+      }
     }, 700 + Math.random() * 400);
   }
 
