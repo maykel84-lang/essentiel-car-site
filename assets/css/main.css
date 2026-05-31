@@ -2663,7 +2663,7 @@ svg { display: block; }
   pointer-events: none;
   z-index: 0;
 }
-.product-visual-badge { position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2; }
+.product-visual-badge { position: absolute; top: 1.25rem; right: 1.25rem; left: auto; z-index: 2; }
 .product-visual-icon {
   width: 55%;
   color: rgba(255,255,255,0.85);
