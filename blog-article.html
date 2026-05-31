@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article du blog ESSENTIEL CAR — Conseils, guides et astuces pour entretenir, protéger et équiper votre voiture.">
+  <title>Article — ESSENTIEL CAR Blog</title>
+  <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
+  <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
+  <link rel="stylesheet" href="assets/fonts/inter.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=2713">
+  <style>
+    body.is-loading { opacity: 0; }
+    .article-page { min-height:100vh; padding-top:100px; }
+    .article-container { max-width:780px; margin:0 auto; padding:0 1.5rem 5rem; }
+    .article-breadcrumb { font-size:0.78rem; color:var(--gray-2); padding:1.5rem 0; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; }
+    .article-breadcrumb a { color:var(--gray-2); text-decoration:none; }
+    .article-breadcrumb a:hover { color:var(--red); }
+    .article-breadcrumb span { color:var(--border); }
+    .article-hero { padding:2rem 0 3rem; border-bottom:1px solid var(--border); margin-bottom:3rem; }
+    .article-cat { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(224,0,12,0.1); border:1px solid rgba(224,0,12,0.25); color:var(--red); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:999px; margin-bottom:1.25rem; }
+    .article-emoji { font-size:2.5rem; margin-bottom:1rem; display:block; }
+    .article-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,5vw,3.5rem); letter-spacing:0.04em; line-height:1.1; margin-bottom:1.25rem; }
+    .article-meta { display:flex; align-items:center; gap:0.75rem; font-size:0.78rem; color:var(--gray-2); flex-wrap:wrap; }
+    .article-meta-dot { width:3px; height:3px; border-radius:50%; background:var(--border); }
+    .article-tags { display:flex; gap:0.4rem; flex-wrap:wrap; margin-top:1rem; }
+    .article-tag { padding:0.2rem 0.6rem; border:1px solid var(--border); border-radius:999px; font-size:0.7rem; color:var(--gray-2); }
+    /* Body */
+    .article-body h2 { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:0.04em; color:var(--white); margin:2.5rem 0 1rem; }
+    .article-body p { font-size:0.95rem; color:var(--gray-2); line-height:1.85; margin-bottom:1.25rem; }
+    .article-intro { font-size:1.05rem !important; color:rgba(255,255,255,0.8) !important; font-weight:500; border-left:3px solid var(--red); padding-left:1.25rem; }
+    .article-body ul { padding-left:0; list-style:none; margin-bottom:1.25rem; }
+    .article-body ul li { padding:0.5rem 0 0.5rem 1.5rem; position:relative; font-size:0.92rem; color:var(--gray-2); line-height:1.7; border-bottom:1px solid rgba(255,255,255,0.04); }
+    .article-body ul li::before { content:'→'; position:absolute; left:0; color:var(--red); font-weight:700; }
+    .article-tip { background:rgba(251,191,36,0.06); border:1px solid rgba(251,191,36,0.2); border-radius:0.75rem; padding:1.25rem 1.5rem; margin:1.5rem 0; }
+    .article-tip span { font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#fbbf24; display:block; margin-bottom:0.5rem; }
+    .article-tip p { color:rgba(255,255,255,0.75) !important; margin:0 !important; font-size:0.88rem !important; }
+    .article-conclusion { background:rgba(224,0,12,0.05); border:1px solid rgba(224,0,12,0.15); border-radius:0.75rem; padding:1.5rem; margin-top:2rem; }
+    .article-conclusion p { color:rgba(255,255,255,0.8) !important; font-weight:500; margin:0 !important; }
+    /* CTA */
+    .article-cta { margin:3rem 0; padding:2rem; background:var(--black-2); border:1px solid var(--border); border-radius:1.25rem; text-align:center; }
+    .article-cta h3 { font-family:'Bebas Neue',sans-serif; font-size:1.75rem; letter-spacing:0.05em; margin-bottom:0.5rem; }
+    .article-cta p { font-size:0.88rem; color:var(--gray-2); margin-bottom:1.25rem; }
+    /* Share */
+    .article-share { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; margin:2rem 0; padding-top:2rem; border-top:1px solid var(--border); }
+    .article-share-label { font-size:0.78rem; font-weight:600; color:var(--gray-2); text-transform:uppercase; letter-spacing:0.08em; }
+    .share-btn { display:inline-flex; align-items:center; gap:0.4rem; padding:0.4rem 0.9rem; border:1px solid var(--border); border-radius:var(--r); font-size:0.78rem; color:var(--gray-2); cursor:pointer; background:transparent; transition:all 0.2s; text-decoration:none; }
+    .share-btn:hover { border-color:var(--red); color:var(--red); }
+    /* Related */
+    .article-related { margin-top:4rem; padding-top:3rem; border-top:1px solid var(--border); }
+    .article-related h3 { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:0.05em; margin-bottom:1.5rem; }
+    .related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem; }
+    .related-card { background:var(--black-2); border:1px solid var(--border); border-radius:1rem; padding:1.25rem; text-decoration:none; color:inherit; display:block; transition:border-color 0.2s, transform 0.2s; }
+    .related-card:hover { border-color:rgba(224,0,12,0.3); transform:translateY(-2px); }
+    .related-card-emoji { font-size:1.5rem; margin-bottom:0.75rem; }
+    .related-card-cat { font-size:0.7rem; color:var(--red); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem; }
+    .related-card-title { font-size:0.88rem; font-weight:600; color:var(--white); line-height:1.4; }
+    /* Not found */
+    .article-not-found { text-align:center; padding:6rem 1.5rem; }
+    .article-not-found h2 { font-family:'Bebas Neue',sans-serif; font-size:2rem; margin-bottom:1rem; }
+    /* Back btn */
+    .article-back { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--gray-2); text-decoration:none; margin-bottom:2rem; transition:color 0.2s; }
+    .article-back:hover { color:var(--red); }
+  </style>
+</head>
+<body class="is-loading">
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <button class="back-top" aria-label="Retour en haut">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+  </button>
+
+  <!-- Promo Bar -->
+  <div class="promo-bar" id="promoBar" role="region" aria-label="Offres promotionnelles">
+    <button class="promo-bar-arrow" id="promoPrev" aria-label="Annonce précédente"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg></button>
+    <div class="promo-bar-track-wrap"><div class="promo-bar-track" id="promoTrack">
+      <div class="promo-bar-item active"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg><span>2ème Article à -50% sur les Best Sellers</span><a href="boutique.html?filter=bestseller">Voir les offres →</a></div>
+      <div class="promo-bar-item"><span>LIVRAISON 🚚 GRATUITE dès 50€</span></div>
+      <div class="promo-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><span>Paiement 100% sécurisé</span></div>
+    </div></div>
+    <button class="promo-bar-arrow" id="promoNext" aria-label="Annonce suivante"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg></button>
+  </div>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ESSENTIEL CAR — Accueil">
+        <span class="logo-img-crop"><img src="assets/images/logo-essentiel-car.png" alt="ESSENTIEL CAR" class="logo-png" loading="eager"></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link">Boutique</a></li>
+        <li><a href="blog.html" class="nav-link" style="color:var(--red)">Blog</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn--ghost btn--sm nav-cta-desktop" style="font-size:0.78rem">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Contact
+        </a>
+        <a href="boutique.html" class="btn btn--primary btn--sm nav-cta-desktop" data-magnetic>Boutique</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
+      <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
+        <li><a href="index.html" class="mobile-link">Accueil</a></li>
+        <li><a href="boutique.html" class="mobile-link">Boutique</a></li>
+        <li><a href="blog.html" class="mobile-link" style="color:var(--red)">Blog</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        <li style="margin-top:1rem"><a href="boutique.html" class="btn btn--primary">Boutique</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="article-page">
+    <div class="article-container" id="articleContainer">
+      <!-- Dynamic content rendered by JS -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand footer-col">
+            <a href="index.html" class="footer-logo" aria-label="ESSENTIEL CAR accueil">
+              <span class="logo-img-crop"><img src="assets/images/logo-essentiel-car.png" alt="ESSENTIEL CAR" class="logo-png" loading="eager"></span>
+            </a>
+            <p class="footer-tagline">L'essentiel pour votre voiture.</p>
+            <p class="footer-promise">Performez au quotidien.</p>
+            <div class="footer-socials" aria-label="Réseaux sociaux">
+              <a href="https://www.instagram.com/essentielcar/" class="social-btn social-btn--instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram ESSENTIEL CAR">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="15" cy="5" r="0.5" fill="currentColor"/></svg>
+              </a>
+              <a href="https://www.facebook.com/essentiel.car/" class="social-btn social-btn--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook ESSENTIEL CAR">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3h-2a4 4 0 00-4 4v1H4v3h2v7h3v-7h2.6l.4-3H9V7a1 1 0 011-1h2V3z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@essentiel.car?lang=fr" class="social-btn social-btn--tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok ESSENTIEL CAR">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 3a4 4 0 01-4 4V3h4z M10 7v7a3 3 0 11-3-3h1"/></svg>
+              </a>
+              <a href="https://www.snapchat.com/web" class="social-btn social-btn--snapchat" target="_blank" rel="noopener noreferrer" aria-label="Snapchat ESSENTIEL CAR">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2c-3.3 0-5 2-5 5v1c-.8.1-1.5.5-1.5 1s.5 1 1.3 1.2c-.2.4-.5.8-.8 1-.5.4-.5.8 0 1 .4.2 1 .2 1.8-.1.6.9 1.7 1.9 4.2 1.9s3.6-1 4.2-1.9c.8.3 1.4.3 1.8.1.5-.2.5-.6 0-1-.3-.2-.6-.6-.8-1 .8-.2 1.3-.7 1.3-1.2s-.7-.9-1.5-1V7c0-3-1.7-5-5-5z"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@ESSENTIELCAR" class="social-btn social-btn--youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube ESSENTIEL CAR">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="16" height="11" rx="3"/><polygon points="8,8 14,10.5 8,13" fill="currentColor" stroke="none"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Navigation</p>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Accueil</a></li>
+              <li><a href="boutique.html" class="footer-link">Boutique</a></li>
+              <li><a href="blog.html" class="footer-link">Blog</a></li>
+              <li><a href="tracking.html" class="footer-link">Suivi commande</a></li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+              <li><a href="#" class="footer-link">Catégories</a></li>
+              <li><a href="#" class="footer-link">Avis</a></li>
+              <li><a href="index.html#faq" class="footer-link">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Contact</p>
+            <ul class="footer-links">
+              <li><a href="mailto:contact@essentielcar.com" class="footer-contact-email">contact@essentielcar.com</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-title">Légal</p>
+            <ul class="footer-links">
+              <li><a href="mentions-legales.html" class="footer-link">Mentions légales</a></li>
+              <li><a href="confidentialite.html" class="footer-link">Confidentialité</a></li>
+              <li><a href="cgv.html" class="footer-link">CGV</a></li>
+              <li><a href="politique-remboursement.html" class="footer-link">Remboursement</a></li>
+              <li><a href="politique-expedition.html" class="footer-link">Expédition</a></li>
+              <li><a href="cookies.html" class="footer-link">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-rights">© 2024 ESSENTIEL CAR. Tous droits réservés.</p>
+        <p class="footer-made">Fait avec passion pour les passionnés d'automobile.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    async function loadArticle() {
+      const slug = new URLSearchParams(window.location.search).get('slug');
+      const container = document.getElementById('articleContainer');
+
+      if (!slug) { showNotFound(container); return; }
+
+      try {
+        const res = await fetch('assets/data/blog-posts.json');
+        const data = await res.json();
+        const article = data.articles.find(a => a.slug === slug);
+
+        if (!article) { showNotFound(container); return; }
+
+        // Update page title and meta
+        document.title = article.title + ' — ESSENTIEL CAR Blog';
+
+        const date = new Date(article.date).toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
+
+        // Render sections
+        const bodyHTML = article.sections.map(s => {
+          if (s.type === 'intro') return '<p class="article-intro">' + s.text + '</p>';
+          if (s.type === 'h2') return '<h2>' + s.text + '</h2>';
+          if (s.type === 'p') return '<p>' + s.text + '</p>';
+          if (s.type === 'ul') return '<ul>' + s.items.map(i => '<li>' + i + '</li>').join('') + '</ul>';
+          if (s.type === 'tip') return '<div class="article-tip"><span>💡 Conseil</span><p>' + s.text + '</p></div>';
+          if (s.type === 'conclusion') return '<div class="article-conclusion"><p>' + s.text + '</p></div>';
+          return '';
+        }).join('');
+
+        // Related articles
+        const related = data.articles.filter(a => a.slug !== slug && a.category === article.category).slice(0, 3);
+        const relatedFallback = related.length < 3
+          ? [...related, ...data.articles.filter(a => a.slug !== slug && a.category !== article.category)].slice(0, 3)
+          : related;
+
+        const relatedHTML = relatedFallback.map(r =>
+          '<a href="blog-article.html?slug=' + r.slug + '" class="related-card">' +
+            '<div class="related-card-emoji">' + r.emoji + '</div>' +
+            '<div class="related-card-cat">' + r.category + '</div>' +
+            '<div class="related-card-title">' + r.title + '</div>' +
+          '</a>'
+        ).join('');
+
+        const tagsHTML = (article.tags || []).map(t => '<span class="article-tag">#' + t + '</span>').join('');
+
+        container.innerHTML =
+          '<a href="blog.html" class="article-back">' +
+            '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M13 7H1M7 1L1 7l6 6"/></svg>' +
+            'Retour au blog' +
+          '</a>' +
+          '<nav class="article-breadcrumb" aria-label="Breadcrumb">' +
+            '<a href="index.html">Accueil</a><span>›</span>' +
+            '<a href="blog.html">Blog</a><span>›</span>' +
+            '<span style="color:var(--white)">' + article.title + '</span>' +
+          '</nav>' +
+          '<div class="article-hero">' +
+            '<span class="article-emoji">' + article.emoji + '</span>' +
+            '<div class="article-cat">' + article.category + '</div>' +
+            '<h1 class="article-title">' + article.title + '</h1>' +
+            '<div class="article-meta">' +
+              '<span>' + date + '</span>' +
+              '<span class="article-meta-dot"></span>' +
+              '<span>' + article.readTime + ' min de lecture</span>' +
+            '</div>' +
+            '<div class="article-tags">' + tagsHTML + '</div>' +
+          '</div>' +
+          '<div class="article-body">' + bodyHTML + '</div>' +
+          '<div class="article-cta">' +
+            '<h3>Trouvez le produit qu\'il vous faut</h3>' +
+            '<p>Découvrez tous nos accessoires auto sélectionnés chez ESSENTIEL CAR</p>' +
+            '<a href="boutique.html" class="btn btn--primary">Voir la boutique →</a>' +
+          '</div>' +
+          '<div class="article-share">' +
+            '<span class="article-share-label">Partager</span>' +
+            '<button class="share-btn" onclick="copyLink(event)">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>' +
+              'Copier le lien' +
+            '</button>' +
+            '<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '" target="_blank" rel="noopener">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>' +
+              'Facebook' +
+            '</a>' +
+            '<a class="share-btn" href="https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(article.title) + '" target="_blank" rel="noopener">' +
+              '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>' +
+              'Twitter' +
+            '</a>' +
+          '</div>' +
+          '<div class="article-related">' +
+            '<h3>Articles similaires</h3>' +
+            '<div class="related-grid">' + relatedHTML + '</div>' +
+          '</div>';
+
+      } catch(e) {
+        showNotFound(container);
+      }
+    }
+
+    function showNotFound(container) {
+      document.title = 'Article introuvable — ESSENTIEL CAR';
+      container.innerHTML =
+        '<div class="article-not-found">' +
+          '<div style="font-size:4rem;margin-bottom:1rem">📭</div>' +
+          '<h2>Article introuvable</h2>' +
+          '<p style="color:var(--gray-2);margin-bottom:1.5rem">Cet article n\'existe pas ou a été déplacé.</p>' +
+          '<a href="blog.html" class="btn btn--primary">← Retour au blog</a>' +
+        '</div>';
+    }
+
+    function copyLink(event) {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = event.target.closest('.share-btn');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ Lien copié !';
+        setTimeout(() => btn.innerHTML = orig, 2000);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadArticle);
+  </script>
+</body>
+</html>
