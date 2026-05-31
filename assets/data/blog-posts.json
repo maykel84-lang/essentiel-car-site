@@ -1,6 +1,100 @@
 {
   "articles": [
     {
+      "slug": "filtre-habitacle-voiture-quand-changer",
+      "title": "Filtre habitacle voiture : quand et comment le changer ?",
+      "excerpt": "Découvrez l'importance du filtre habitacle pour votre santé. Guide complet sur le changement et l'entretien de votre filtre habitacle automobile.",
+      "category": "Entretien",
+      "emoji": "🌬️",
+      "readTime": 6,
+      "tags": [
+        "filtre habitacle",
+        "entretien voiture",
+        "qualité air intérieur",
+        "maintenance auto",
+        "santé conducteur"
+      ],
+      "sections": [
+        {
+          "type": "intro",
+          "text": "Le filtre habitacle est souvent oublié lors de l'entretien régulier d'une voiture, pourtant il joue un rôle crucial pour votre confort et votre santé. Découvrez pourquoi ce petit composant mérite votre attention et comment l'entretenir correctement pour respirer un air pur en conduisant."
+        },
+        {
+          "type": "h2",
+          "text": "Qu'est-ce qu'un filtre habitacle et à quoi sert-il ?"
+        },
+        {
+          "type": "p",
+          "text": "Le filtre habitacle, également appelé filtre climatisation ou filtre d'air intérieur, est un composant essentiel de votre véhicule. Il se situe généralement sous le tableau de bord ou derrière la boîte à gants et filtre l'air extérieur avant qu'il n'entre dans l'habitacle. Son rôle principal est de capturer les polluants, poussières, pollens et particules fines pour vous offrir un air plus sain à respirer pendant vos trajets."
+        },
+        {
+          "type": "h2",
+          "text": "Les signes d'un filtre habitacle encrassé"
+        },
+        {
+          "type": "p",
+          "text": "Un filtre habitacle usé affecte directement la qualité de l'air intérieur et les performances de votre système de climatisation. Plusieurs indices doivent vous alerter sur l'état de votre filtre et vous pousser à agir rapidement pour maintenir votre confort et votre santé."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Mauvaises odeurs persistantes dans l'habitacle",
+            "Réduction du débit d'air à la climatisation ou au chauffage",
+            "Augmentation de la buée sur les vitres",
+            "Allergies ou problèmes respiratoires amplifiés en conduisant"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Quand faut-il changer son filtre habitacle ?"
+        },
+        {
+          "type": "p",
+          "text": "La fréquence de changement dépend de vos conditions de conduite. En conditions normales, il est recommandé de changer le filtre habitacle tous les 12 000 à 15 000 km ou une fois par an. Si vous circulez fréquemment en zone urbaine très polluée ou en construction, cette fréquence peut réduire à 6 000 km. Consultez le carnet d'entretien de votre véhicule pour les recommandations spécifiques du fabricant."
+        },
+        {
+          "type": "h2",
+          "text": "Comment changer son filtre habitacle soi-même ?"
+        },
+        {
+          "type": "p",
+          "text": "La bonne nouvelle : changer son filtre habitacle est une opération simple que vous pouvez réaliser vous-même sans compétences mécaniques particulières. Elle prend généralement entre 10 et 20 minutes. Commencez par localiser le logement du filtre (sous le tableau de bord ou derrière la boîte à gants), retirez délicatement l'ancien filtre encrassé, nettoyez le logement, puis installez le nouveau filtre en respectant le sens de circulation de l'air indiqué."
+        },
+        {
+          "type": "tip",
+          "text": "Avant d'acheter un filtre habitacle, notez le modèle exact de votre voiture. Les filtres ne sont pas universels et chaque marque automobile a ses propres dimensions. Vérifiez aussi les recommandations du constructeur pour le type de filtre (standard, charbon actif ou haute performance)."
+        },
+        {
+          "type": "h2",
+          "text": "Les différents types de filtres habitacle"
+        },
+        {
+          "type": "p",
+          "text": "Il existe plusieurs catégories de filtres habitacle adaptés à différents besoins. Les filtres standard offrent une filtration basique des poussières. Les filtres à charbon actif éliminent également les odeurs et certains gaz polluants. Les filtres haute performance combinent plusieurs couches pour une filtration optimale. Choisissez selon votre environnement de conduite et votre sensibilité aux allergies."
+        },
+        {
+          "type": "h2",
+          "text": "Avantages d'un filtre habitacle régulièrement entretenu"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Amélioration significative de la qualité de l'air respiré",
+            "Meilleure performance du système de climatisation",
+            "Réduction des allergies et problèmes respiratoires",
+            "Prévention de la dégradation du système HVAC",
+            "Confort accru pour tous les occupants du véhicule"
+          ]
+        },
+        {
+          "type": "conclusion",
+          "text": "Entretenir régulièrement votre filtre habitacle est un geste simple mais essentiel pour votre santé et le confort de vos trajets. Ne négligez pas ce petit composant qui fait toute la différence ! Retrouvez tous les filtres habitacle compatibles avec votre véhicule dans la boutique ESSENTIEL CAR, avec des produits de qualité sélectionnés pour garantir votre satisfaction."
+        }
+      ],
+      "id": 11,
+      "date": "2026-05-31"
+    },
+    {
       "id": 1,
       "slug": "nettoyer-voiture-comme-pro",
       "title": "5 astuces pour nettoyer votre voiture comme un pro",
@@ -9,21 +103,65 @@
       "emoji": "🚗",
       "date": "2026-05-28",
       "readTime": 5,
-      "tags": ["nettoyage", "carrosserie", "entretien", "detailing"],
+      "tags": [
+        "nettoyage",
+        "carrosserie",
+        "entretien",
+        "detailing"
+      ],
       "sections": [
-        {"type": "intro", "text": "Un lavage raté laisse des auréoles, des micro-rayures et une carrosserie terne. Les professionnels du détailing connaissent les gestes exacts qui font la différence. Voici leurs 5 secrets."},
-        {"type": "h2", "text": "1. La règle des deux seaux"},
-        {"type": "p", "text": "Le lavage à deux seaux est la règle d'or du détailing : un seau avec du shampoing voiture, un seau d'eau claire. Après chaque passage du gant de lavage sur la carrosserie, vous le rincez dans le seau clair avant de le replonger dans le shampoing. Résultat : la saleté ne se retransfère jamais sur la carrosserie."},
-        {"type": "h2", "text": "2. Toujours de haut en bas"},
-        {"type": "p", "text": "Les salissures les plus importantes sont en bas du véhicule. En commençant par le toit et en descendant progressivement, vous évitez de contaminer les parties déjà propres. Réservez les parties basses (jupes, bas de caisse) pour la toute fin du lavage."},
-        {"type": "h2", "text": "3. Le gant en microfibre, pas l'éponge"},
-        {"type": "p", "text": "L'éponge classique emprisonne les particules abrasives contre la peinture. Le gant en microfibre, lui, piège les salissures dans ses fibres et les éloigne de la surface. C'est le premier investissement que tout amateur de voiture devrait faire."},
-        {"type": "tip", "text": "Conseil ESSENTIEL CAR : utilisez un gant microfibre par surface (carrosserie, jantes, vitres) pour éviter toute contamination croisée."},
-        {"type": "h2", "text": "4. Sécher immédiatement"},
-        {"type": "p", "text": "Laisser sécher à l'air libre crée des auréoles calcaires impossibles à éliminer sans polissage. Une chamoisine ou un chiffon microfibre sec, appliqué par tapotements (jamais en frottant), élimine l'eau résiduelle sans marque."},
-        {"type": "h2", "text": "5. Finir par une cire ou un spray détaillant"},
-        {"type": "p", "text": "Une fois la carrosserie propre et sèche, un spray détaillant ou une cire liquide en 5 minutes apporte brillance et protection hydrophobe. L'eau perle, la saleté accroche moins et le prochain lavage sera encore plus facile."},
-        {"type": "conclusion", "text": "Avec ces 5 règles simples, vous obtenez un résultat professionnel à domicile. Le bon matériel fait 80% du travail — retrouvez nos kits de nettoyage dans la boutique ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "Un lavage raté laisse des auréoles, des micro-rayures et une carrosserie terne. Les professionnels du détailing connaissent les gestes exacts qui font la différence. Voici leurs 5 secrets."
+        },
+        {
+          "type": "h2",
+          "text": "1. La règle des deux seaux"
+        },
+        {
+          "type": "p",
+          "text": "Le lavage à deux seaux est la règle d'or du détailing : un seau avec du shampoing voiture, un seau d'eau claire. Après chaque passage du gant de lavage sur la carrosserie, vous le rincez dans le seau clair avant de le replonger dans le shampoing. Résultat : la saleté ne se retransfère jamais sur la carrosserie."
+        },
+        {
+          "type": "h2",
+          "text": "2. Toujours de haut en bas"
+        },
+        {
+          "type": "p",
+          "text": "Les salissures les plus importantes sont en bas du véhicule. En commençant par le toit et en descendant progressivement, vous évitez de contaminer les parties déjà propres. Réservez les parties basses (jupes, bas de caisse) pour la toute fin du lavage."
+        },
+        {
+          "type": "h2",
+          "text": "3. Le gant en microfibre, pas l'éponge"
+        },
+        {
+          "type": "p",
+          "text": "L'éponge classique emprisonne les particules abrasives contre la peinture. Le gant en microfibre, lui, piège les salissures dans ses fibres et les éloigne de la surface. C'est le premier investissement que tout amateur de voiture devrait faire."
+        },
+        {
+          "type": "tip",
+          "text": "Conseil ESSENTIEL CAR : utilisez un gant microfibre par surface (carrosserie, jantes, vitres) pour éviter toute contamination croisée."
+        },
+        {
+          "type": "h2",
+          "text": "4. Sécher immédiatement"
+        },
+        {
+          "type": "p",
+          "text": "Laisser sécher à l'air libre crée des auréoles calcaires impossibles à éliminer sans polissage. Une chamoisine ou un chiffon microfibre sec, appliqué par tapotements (jamais en frottant), élimine l'eau résiduelle sans marque."
+        },
+        {
+          "type": "h2",
+          "text": "5. Finir par une cire ou un spray détaillant"
+        },
+        {
+          "type": "p",
+          "text": "Une fois la carrosserie propre et sèche, un spray détaillant ou une cire liquide en 5 minutes apporte brillance et protection hydrophobe. L'eau perle, la saleté accroche moins et le prochain lavage sera encore plus facile."
+        },
+        {
+          "type": "conclusion",
+          "text": "Avec ces 5 règles simples, vous obtenez un résultat professionnel à domicile. Le bon matériel fait 80% du travail — retrouvez nos kits de nettoyage dans la boutique ESSENTIEL CAR."
+        }
       ]
     },
     {
@@ -35,19 +173,63 @@
       "emoji": "📷",
       "date": "2026-05-25",
       "readTime": 7,
-      "tags": ["dashcam", "sécurité", "accident", "assurance"],
+      "tags": [
+        "dashcam",
+        "sécurité",
+        "accident",
+        "assurance"
+      ],
       "sections": [
-        {"type": "intro", "text": "En France, les litiges liés aux accidents de la route explosent. Sans témoin, c'est souvent parole contre parole. La dashcam est devenue l'outil le plus efficace pour se protéger — légalement et financièrement."},
-        {"type": "h2", "text": "La dashcam est-elle légale en France ?"},
-        {"type": "p", "text": "Oui, complètement légale pour filmer la voie publique depuis votre véhicule. En revanche, il est interdit de filmer l'intérieur d'un autre véhicule ou des personnes sans leur consentement. Pour votre propre sécurité, ne montrez les images qu'à votre assureur ou aux forces de l'ordre."},
-        {"type": "h2", "text": "Ce qu'une dashcam peut prouver"},
-        {"type": "ul", "items": ["Le responsable réel d'un accident", "Un refus de priorité ou un grillage de feu rouge", "Une tentative d'escroquerie à l'assurance (accident provoqué)", "Un délit de fuite", "L'état de la route ou de la signalisation au moment du fait"]},
-        {"type": "h2", "text": "Les critères essentiels pour bien choisir"},
-        {"type": "p", "text": "Résolution minimum Full HD (1080p), grand angle (140° minimum), vision nocturne correcte, et détection de mouvement en stationnement. La capacité de la carte microSD doit être d'au moins 64 Go pour environ 6h d'enregistrement continu en écrasement automatique."},
-        {"type": "tip", "text": "Préférez une dashcam avec condensateur plutôt que batterie Li-Ion pour les pays chauds — les batteries gonflent dans les habitacles en été et peuvent endommager l'appareil."},
-        {"type": "h2", "text": "Installation : caché ou visible ?"},
-        {"type": "p", "text": "Une dashcam visible peut dissuader certains automobilistes mal intentionnés. Mais de nombreux conducteurs préfèrent une installation discrète derrière le rétroviseur central, câblée directement sur le fusible (câblage discret dans les joints de portière)."},
-        {"type": "conclusion", "text": "La dashcam est un investissement de 40 à 150€ qui peut en économiser des milliers en cas de litige. Retrouvez notre sélection de dashcams testées dans la boutique ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "En France, les litiges liés aux accidents de la route explosent. Sans témoin, c'est souvent parole contre parole. La dashcam est devenue l'outil le plus efficace pour se protéger — légalement et financièrement."
+        },
+        {
+          "type": "h2",
+          "text": "La dashcam est-elle légale en France ?"
+        },
+        {
+          "type": "p",
+          "text": "Oui, complètement légale pour filmer la voie publique depuis votre véhicule. En revanche, il est interdit de filmer l'intérieur d'un autre véhicule ou des personnes sans leur consentement. Pour votre propre sécurité, ne montrez les images qu'à votre assureur ou aux forces de l'ordre."
+        },
+        {
+          "type": "h2",
+          "text": "Ce qu'une dashcam peut prouver"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Le responsable réel d'un accident",
+            "Un refus de priorité ou un grillage de feu rouge",
+            "Une tentative d'escroquerie à l'assurance (accident provoqué)",
+            "Un délit de fuite",
+            "L'état de la route ou de la signalisation au moment du fait"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Les critères essentiels pour bien choisir"
+        },
+        {
+          "type": "p",
+          "text": "Résolution minimum Full HD (1080p), grand angle (140° minimum), vision nocturne correcte, et détection de mouvement en stationnement. La capacité de la carte microSD doit être d'au moins 64 Go pour environ 6h d'enregistrement continu en écrasement automatique."
+        },
+        {
+          "type": "tip",
+          "text": "Préférez une dashcam avec condensateur plutôt que batterie Li-Ion pour les pays chauds — les batteries gonflent dans les habitacles en été et peuvent endommager l'appareil."
+        },
+        {
+          "type": "h2",
+          "text": "Installation : caché ou visible ?"
+        },
+        {
+          "type": "p",
+          "text": "Une dashcam visible peut dissuader certains automobilistes mal intentionnés. Mais de nombreux conducteurs préfèrent une installation discrète derrière le rétroviseur central, câblée directement sur le fusible (câblage discret dans les joints de portière)."
+        },
+        {
+          "type": "conclusion",
+          "text": "La dashcam est un investissement de 40 à 150€ qui peut en économiser des milliers en cas de litige. Retrouvez notre sélection de dashcams testées dans la boutique ESSENTIEL CAR."
+        }
       ]
     },
     {
@@ -59,17 +241,54 @@
       "emoji": "🔧",
       "date": "2026-05-22",
       "readTime": 4,
-      "tags": ["pneus", "TPMS", "sécurité", "consommation", "entretien"],
+      "tags": [
+        "pneus",
+        "TPMS",
+        "sécurité",
+        "consommation",
+        "entretien"
+      ],
       "sections": [
-        {"type": "intro", "text": "80% des conducteurs roulent avec au moins un pneu sous-gonflé sans le savoir. Les conséquences sont multiples : surconsommation, usure prématurée, risque d'éclatement sur autoroute. Un simple capteur TPMS suffit à tout surveiller."},
-        {"type": "h2", "text": "Combien coûte vraiment un pneu sous-gonflé ?"},
-        {"type": "p", "text": "Un pneu gonflé à 1,6 bar au lieu de 2,2 bars (pression recommandée) augmente la consommation de carburant de 3 à 6% et réduit la durée de vie du pneu de 20 à 40%. Sur un an, c'est entre 80€ et 200€ de carburant gaspillé et un jeu de pneus changé 15 000 km trop tôt."},
-        {"type": "h2", "text": "Les 3 niveaux de danger"},
-        {"type": "ul", "items": ["-10% de pression : imperceptible au volant, mais les pneus chauffent et s'usent anormalement", "-20% de pression : tenue de route dégradée, distances de freinage allongées", "-30% et plus : risque d'éclatement sur route rapide, perte de contrôle potentielle"]},
-        {"type": "h2", "text": "Le TPMS : surveillance en temps réel"},
-        {"type": "p", "text": "Le système TPMS (Tyre Pressure Monitoring System) est obligatoire sur les véhicules neufs depuis 2014 en Europe. Mais les véhicules plus anciens n'en sont pas équipés. Des capteurs TPMS universels se clipsent sur les valves et envoient la pression en temps réel sur un afficheur dans l'habitacle ou sur votre smartphone."},
-        {"type": "tip", "text": "Vérifiez la pression à froid (véhicule garé depuis au moins 2 heures) — la chaleur générée par la conduite gonfle artificiellement les pneus et fausse la lecture."},
-        {"type": "conclusion", "text": "Un kit TPMS 4 capteurs coûte entre 25 et 60€ et peut vous économiser des centaines d'euros par an. Découvrez nos capteurs TPMS compatibles dans la boutique ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "80% des conducteurs roulent avec au moins un pneu sous-gonflé sans le savoir. Les conséquences sont multiples : surconsommation, usure prématurée, risque d'éclatement sur autoroute. Un simple capteur TPMS suffit à tout surveiller."
+        },
+        {
+          "type": "h2",
+          "text": "Combien coûte vraiment un pneu sous-gonflé ?"
+        },
+        {
+          "type": "p",
+          "text": "Un pneu gonflé à 1,6 bar au lieu de 2,2 bars (pression recommandée) augmente la consommation de carburant de 3 à 6% et réduit la durée de vie du pneu de 20 à 40%. Sur un an, c'est entre 80€ et 200€ de carburant gaspillé et un jeu de pneus changé 15 000 km trop tôt."
+        },
+        {
+          "type": "h2",
+          "text": "Les 3 niveaux de danger"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "-10% de pression : imperceptible au volant, mais les pneus chauffent et s'usent anormalement",
+            "-20% de pression : tenue de route dégradée, distances de freinage allongées",
+            "-30% et plus : risque d'éclatement sur route rapide, perte de contrôle potentielle"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Le TPMS : surveillance en temps réel"
+        },
+        {
+          "type": "p",
+          "text": "Le système TPMS (Tyre Pressure Monitoring System) est obligatoire sur les véhicules neufs depuis 2014 en Europe. Mais les véhicules plus anciens n'en sont pas équipés. Des capteurs TPMS universels se clipsent sur les valves et envoient la pression en temps réel sur un afficheur dans l'habitacle ou sur votre smartphone."
+        },
+        {
+          "type": "tip",
+          "text": "Vérifiez la pression à froid (véhicule garé depuis au moins 2 heures) — la chaleur générée par la conduite gonfle artificiellement les pneus et fausse la lecture."
+        },
+        {
+          "type": "conclusion",
+          "text": "Un kit TPMS 4 capteurs coûte entre 25 et 60€ et peut vous économiser des centaines d'euros par an. Découvrez nos capteurs TPMS compatibles dans la boutique ESSENTIEL CAR."
+        }
       ]
     },
     {
@@ -81,19 +300,64 @@
       "emoji": "✨",
       "date": "2026-05-19",
       "readTime": 8,
-      "tags": ["polissage", "rayures", "carrosserie", "detailing", "machine à polir"],
+      "tags": [
+        "polissage",
+        "rayures",
+        "carrosserie",
+        "detailing",
+        "machine à polir"
+      ],
       "sections": [
-        {"type": "intro", "text": "Les micro-rayures et tourbillons (swirl marks) ternissent n'importe quelle carrosserie avec le temps. La bonne nouvelle : 90% des rayures sont superficielles et disparaissent avec un simple polissage. Voici comment procéder."},
-        {"type": "h2", "text": "Rayures superficielles vs profondes : comment savoir ?"},
-        {"type": "p", "text": "Passez l'ongle sur la rayure. Si l'ongle ne s'accroche pas, la rayure est dans le vernis et disparaîtra au polissage. Si l'ongle s'accroche, la rayure traverse la peinture — le polissage réduira son apparence mais ne l'effacera pas totalement."},
-        {"type": "h2", "text": "Le matériel nécessaire"},
-        {"type": "ul", "items": ["Une machine à polir orbitale (obligatoire — pas de polissage à la main pour les grosses surfaces)", "Un pad de mousse ou microfibre adapté à votre type de peinture", "Un polish abrasif (coupe) pour les rayures, un polish finition pour le brillant", "Un chiffon microfibre pour retirer le résidu de polish", "Un éclairage latéral pour voir les défauts"]},
-        {"type": "h2", "text": "La technique étape par étape"},
-        {"type": "p", "text": "1. Lavez et décontaminez la carrosserie (argile de décontamination si nécessaire). 2. Travaillez panneau par panneau, jamais en plein soleil. 3. Appliquez le polish sur le pad, étalez à vitesse basse avant d'augmenter. 4. Travaillez en mouvements croisés (horizontaux puis verticaux). 5. Retirez le résidu avant qu'il ne sèche. 6. Inspectez sous éclairage latéral."},
-        {"type": "tip", "text": "Commencez toujours par le produit le moins abrasif et évaluez le résultat. Le sur-polissage amincit inutilement le vernis — sur les peintures claires, il ne reste parfois que 80 à 100 microns de vernis."},
-        {"type": "h2", "text": "Après le polissage : protégez impérativement"},
-        {"type": "p", "text": "Le polissage retire la protection existante. Appliquez toujours une cire, un sealant ou une céramique dans les 24h suivant le polissage pour protéger la peinture nue."},
-        {"type": "conclusion", "text": "Avec la bonne machine et les bons produits, vous pouvez retrouver un état showroom en une après-midi. Retrouvez nos kits de polissage et pads dans la boutique ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "Les micro-rayures et tourbillons (swirl marks) ternissent n'importe quelle carrosserie avec le temps. La bonne nouvelle : 90% des rayures sont superficielles et disparaissent avec un simple polissage. Voici comment procéder."
+        },
+        {
+          "type": "h2",
+          "text": "Rayures superficielles vs profondes : comment savoir ?"
+        },
+        {
+          "type": "p",
+          "text": "Passez l'ongle sur la rayure. Si l'ongle ne s'accroche pas, la rayure est dans le vernis et disparaîtra au polissage. Si l'ongle s'accroche, la rayure traverse la peinture — le polissage réduira son apparence mais ne l'effacera pas totalement."
+        },
+        {
+          "type": "h2",
+          "text": "Le matériel nécessaire"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Une machine à polir orbitale (obligatoire — pas de polissage à la main pour les grosses surfaces)",
+            "Un pad de mousse ou microfibre adapté à votre type de peinture",
+            "Un polish abrasif (coupe) pour les rayures, un polish finition pour le brillant",
+            "Un chiffon microfibre pour retirer le résidu de polish",
+            "Un éclairage latéral pour voir les défauts"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "La technique étape par étape"
+        },
+        {
+          "type": "p",
+          "text": "1. Lavez et décontaminez la carrosserie (argile de décontamination si nécessaire). 2. Travaillez panneau par panneau, jamais en plein soleil. 3. Appliquez le polish sur le pad, étalez à vitesse basse avant d'augmenter. 4. Travaillez en mouvements croisés (horizontaux puis verticaux). 5. Retirez le résidu avant qu'il ne sèche. 6. Inspectez sous éclairage latéral."
+        },
+        {
+          "type": "tip",
+          "text": "Commencez toujours par le produit le moins abrasif et évaluez le résultat. Le sur-polissage amincit inutilement le vernis — sur les peintures claires, il ne reste parfois que 80 à 100 microns de vernis."
+        },
+        {
+          "type": "h2",
+          "text": "Après le polissage : protégez impérativement"
+        },
+        {
+          "type": "p",
+          "text": "Le polissage retire la protection existante. Appliquez toujours une cire, un sealant ou une céramique dans les 24h suivant le polissage pour protéger la peinture nue."
+        },
+        {
+          "type": "conclusion",
+          "text": "Avec la bonne machine et les bons produits, vous pouvez retrouver un état showroom en une après-midi. Retrouvez nos kits de polissage et pads dans la boutique ESSENTIEL CAR."
+        }
       ]
     },
     {
@@ -105,19 +369,57 @@
       "emoji": "📱",
       "date": "2026-05-16",
       "readTime": 6,
-      "tags": ["support téléphone", "GPS", "charge sans fil", "accessoires voiture"],
+      "tags": [
+        "support téléphone",
+        "GPS",
+        "charge sans fil",
+        "accessoires voiture"
+      ],
       "sections": [
-        {"type": "intro", "text": "Un téléphone posé sur le siège passager, c'est illégal et dangereux. Mais tous les supports ne se valent pas — entre ceux qui tombent au premier virage et ceux qui masquent la route, le choix peut vite devenir compliqué."},
-        {"type": "h2", "text": "Grille d'aération : pratique mais fragile"},
-        {"type": "p", "text": "Les supports clip sur grille d'aération sont les plus populaires pour leur facilité d'installation. Problème : ils sollicitent mécaniquement la grille et la cassent sur les véhicules récents aux aérations fragiles. De plus, la chaleur de l'aération (mode chaud) peut surchauffer la batterie du téléphone."},
-        {"type": "h2", "text": "Pare-brise : la meilleure visibilité"},
-        {"type": "p", "text": "Les supports ventouse sur pare-brise offrent la meilleure position visuelle, proche de l'axe de regard vers la route. Inconvénient : ils sont interdits par le Code de la Route s'ils gênent le champ de vision du conducteur — positionnez-les toujours dans le coin inférieur du pare-brise, du côté du conducteur."},
-        {"type": "h2", "text": "Tableau de bord avec pad adhésif"},
-        {"type": "p", "text": "Les supports à pad collant sur tableau de bord sont très stables et résistants aux vibrations. Parfaits pour les routes accidentées. Le pad se recharge à l'eau froide quand il perd son adhérence."},
-        {"type": "h2", "text": "La charge sans fil intégrée : l'option premium"},
-        {"type": "p", "text": "Les supports avec charge sans fil Qi (15W) éliminent les câbles et maintiennent le téléphone chargé en permanence. Compatibles iPhone 8 et plus, tous les Android avec Qi. Certains modèles s'ouvrent automatiquement à l'approche du téléphone."},
-        {"type": "tip", "text": "Vérifiez toujours la compatibilité avec votre téléphone avec coque — certaines coques en carbone ou métallisées bloquent la charge sans fil."},
-        {"type": "conclusion", "text": "Notre recommandation pour 90% des cas : un support charge sans fil magnétique (compatible MagSafe pour iPhone, avec plaque magnétique pour Android). Découvrez notre sélection dans la boutique."}
+        {
+          "type": "intro",
+          "text": "Un téléphone posé sur le siège passager, c'est illégal et dangereux. Mais tous les supports ne se valent pas — entre ceux qui tombent au premier virage et ceux qui masquent la route, le choix peut vite devenir compliqué."
+        },
+        {
+          "type": "h2",
+          "text": "Grille d'aération : pratique mais fragile"
+        },
+        {
+          "type": "p",
+          "text": "Les supports clip sur grille d'aération sont les plus populaires pour leur facilité d'installation. Problème : ils sollicitent mécaniquement la grille et la cassent sur les véhicules récents aux aérations fragiles. De plus, la chaleur de l'aération (mode chaud) peut surchauffer la batterie du téléphone."
+        },
+        {
+          "type": "h2",
+          "text": "Pare-brise : la meilleure visibilité"
+        },
+        {
+          "type": "p",
+          "text": "Les supports ventouse sur pare-brise offrent la meilleure position visuelle, proche de l'axe de regard vers la route. Inconvénient : ils sont interdits par le Code de la Route s'ils gênent le champ de vision du conducteur — positionnez-les toujours dans le coin inférieur du pare-brise, du côté du conducteur."
+        },
+        {
+          "type": "h2",
+          "text": "Tableau de bord avec pad adhésif"
+        },
+        {
+          "type": "p",
+          "text": "Les supports à pad collant sur tableau de bord sont très stables et résistants aux vibrations. Parfaits pour les routes accidentées. Le pad se recharge à l'eau froide quand il perd son adhérence."
+        },
+        {
+          "type": "h2",
+          "text": "La charge sans fil intégrée : l'option premium"
+        },
+        {
+          "type": "p",
+          "text": "Les supports avec charge sans fil Qi (15W) éliminent les câbles et maintiennent le téléphone chargé en permanence. Compatibles iPhone 8 et plus, tous les Android avec Qi. Certains modèles s'ouvrent automatiquement à l'approche du téléphone."
+        },
+        {
+          "type": "tip",
+          "text": "Vérifiez toujours la compatibilité avec votre téléphone avec coque — certaines coques en carbone ou métallisées bloquent la charge sans fil."
+        },
+        {
+          "type": "conclusion",
+          "text": "Notre recommandation pour 90% des cas : un support charge sans fil magnétique (compatible MagSafe pour iPhone, avec plaque magnétique pour Android). Découvrez notre sélection dans la boutique."
+        }
       ]
     },
     {
@@ -129,18 +431,57 @@
       "emoji": "🛡️",
       "date": "2026-05-13",
       "readTime": 6,
-      "tags": ["céramique", "cire", "protection carrosserie", "detailing"],
+      "tags": [
+        "céramique",
+        "cire",
+        "protection carrosserie",
+        "detailing"
+      ],
       "sections": [
-        {"type": "intro", "text": "La peinture d'une voiture n'est pas éternelle. Pluie acide, UV, fientes d'oiseaux, sève de pin — autant d'agresseurs qui ternissent et attaquent le vernis. Une protection adaptée peut multiplier par 3 la durée de vie de votre peinture."},
-        {"type": "h2", "text": "La cire naturelle : le classique"},
-        {"type": "p", "text": "Faite à base de cire de carnauba, elle offre un brillant chaud et profond inégalé. Durée de protection : 1 à 3 mois selon l'exposition aux intempéries. Application facile à la main ou au pad. Idéale pour les voitures de collection ou les propriétaires qui aiment entretenir régulièrement."},
-        {"type": "h2", "text": "Le sealant synthétique : le bon compromis"},
-        {"type": "p", "text": "Les sealants à base de polymères synthétiques protègent 6 à 12 mois avec un effet hydrophobe efficace. Moins brillants que la cire naturelle, mais bien plus durables. Résistants à la chaleur et aux détergents. Le meilleur rapport qualité/protection pour le conducteur quotidien."},
-        {"type": "h2", "text": "Le revêtement céramique : la solution longue durée"},
-        {"type": "p", "text": "Les coating céramiques (SiO2) forment une couche dure semi-permanente qui dure 2 à 5 ans selon la qualité. Résistance aux rayures légères, hydrophobie extrême, facile d'entretien. Application plus technique (surface parfaitement préparée obligatoire, temps de polymérisation 24-48h)."},
-        {"type": "ul", "items": ["Cire : 1-3 mois, brillant optimal, facile", "Sealant : 6-12 mois, bon compromis, facile", "Céramique : 2-5 ans, protection maximale, technique"]},
-        {"type": "tip", "text": "Une céramique mal appliquée sur une surface non préparée (sans décontamination, sans polissage) emprisonne les défauts sous la couche et ne peut pas être retirée facilement. Préparez toujours parfaitement avant d'appliquer."},
-        {"type": "conclusion", "text": "Pour la majorité des conducteurs, un sealant tous les 6 mois offre le meilleur compromis. Pour ceux qui veulent en finir avec l'entretien régulier, la céramique est l'investissement d'une vie."}
+        {
+          "type": "intro",
+          "text": "La peinture d'une voiture n'est pas éternelle. Pluie acide, UV, fientes d'oiseaux, sève de pin — autant d'agresseurs qui ternissent et attaquent le vernis. Une protection adaptée peut multiplier par 3 la durée de vie de votre peinture."
+        },
+        {
+          "type": "h2",
+          "text": "La cire naturelle : le classique"
+        },
+        {
+          "type": "p",
+          "text": "Faite à base de cire de carnauba, elle offre un brillant chaud et profond inégalé. Durée de protection : 1 à 3 mois selon l'exposition aux intempéries. Application facile à la main ou au pad. Idéale pour les voitures de collection ou les propriétaires qui aiment entretenir régulièrement."
+        },
+        {
+          "type": "h2",
+          "text": "Le sealant synthétique : le bon compromis"
+        },
+        {
+          "type": "p",
+          "text": "Les sealants à base de polymères synthétiques protègent 6 à 12 mois avec un effet hydrophobe efficace. Moins brillants que la cire naturelle, mais bien plus durables. Résistants à la chaleur et aux détergents. Le meilleur rapport qualité/protection pour le conducteur quotidien."
+        },
+        {
+          "type": "h2",
+          "text": "Le revêtement céramique : la solution longue durée"
+        },
+        {
+          "type": "p",
+          "text": "Les coating céramiques (SiO2) forment une couche dure semi-permanente qui dure 2 à 5 ans selon la qualité. Résistance aux rayures légères, hydrophobie extrême, facile d'entretien. Application plus technique (surface parfaitement préparée obligatoire, temps de polymérisation 24-48h)."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Cire : 1-3 mois, brillant optimal, facile",
+            "Sealant : 6-12 mois, bon compromis, facile",
+            "Céramique : 2-5 ans, protection maximale, technique"
+          ]
+        },
+        {
+          "type": "tip",
+          "text": "Une céramique mal appliquée sur une surface non préparée (sans décontamination, sans polissage) emprisonne les défauts sous la couche et ne peut pas être retirée facilement. Préparez toujours parfaitement avant d'appliquer."
+        },
+        {
+          "type": "conclusion",
+          "text": "Pour la majorité des conducteurs, un sealant tous les 6 mois offre le meilleur compromis. Pour ceux qui veulent en finir avec l'entretien régulier, la céramique est l'investissement d'une vie."
+        }
       ]
     },
     {
@@ -152,17 +493,49 @@
       "emoji": "🏠",
       "date": "2026-05-10",
       "readTime": 5,
-      "tags": ["tapis voiture", "protection intérieur", "confort", "accessoires"],
+      "tags": [
+        "tapis voiture",
+        "protection intérieur",
+        "confort",
+        "accessoires"
+      ],
       "sections": [
-        {"type": "intro", "text": "Le sol de votre voiture encaisse boue, sable, eau et débris quotidiennement. Un bon jeu de tapis peut sauver la moquette d'origine (très difficile et coûteuse à remplacer) pendant toute la durée de vie du véhicule."},
-        {"type": "h2", "text": "Tapis velours : le confort mais pas l'étanchéité"},
-        {"type": "p", "text": "Les tapis en velours/moquette offrent un toucher premium et s'intègrent parfaitement à l'habitacle. Mais ils absorbent l'eau et les salissures, difficiles à nettoyer en profondeur. À réserver aux conducteurs qui ne transportent pas d'enfants ou d'animaux."},
-        {"type": "h2", "text": "Tapis caoutchouc universel : économique mais approximatif"},
-        {"type": "p", "text": "Les tapis caoutchouc universels coûtent peu mais s'adaptent mal à la forme du plancher. Ils bougent, se retournent et peuvent coincer sous la pédale d'accélérateur — un vrai danger. Si vous choisissez du caoutchouc, vérifiez qu'ils ont des fixations homologuées."},
-        {"type": "h2", "text": "Tapis sur-mesure 3D : la solution optimale"},
-        {"type": "p", "text": "Moulés exactement pour votre modèle de véhicule, les tapis 3D en polyuréthane ou TPE couvrent 100% du plancher avec des rebords relevés (3 à 5 cm) qui retiennent l'eau et la boue. Ils se nettoient en 30 secondes avec un jet d'eau. La différence de prix (20 à 40€ de plus) est largement compensée par leur efficacité."},
-        {"type": "tip", "text": "Vérifiez toujours la compatibilité exacte avec votre modèle (année, motorisation manuelle/automatique — le tunnel de transmission varie). Un tapis qui se pose mal est plus dangereux qu'utile."},
-        {"type": "conclusion", "text": "Notre recommandation : des tapis sur-mesure 3D en TPE pour une protection totale, nettoyage rapide et durabilité. Trouvez le jeu compatible avec votre véhicule dans la boutique ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "Le sol de votre voiture encaisse boue, sable, eau et débris quotidiennement. Un bon jeu de tapis peut sauver la moquette d'origine (très difficile et coûteuse à remplacer) pendant toute la durée de vie du véhicule."
+        },
+        {
+          "type": "h2",
+          "text": "Tapis velours : le confort mais pas l'étanchéité"
+        },
+        {
+          "type": "p",
+          "text": "Les tapis en velours/moquette offrent un toucher premium et s'intègrent parfaitement à l'habitacle. Mais ils absorbent l'eau et les salissures, difficiles à nettoyer en profondeur. À réserver aux conducteurs qui ne transportent pas d'enfants ou d'animaux."
+        },
+        {
+          "type": "h2",
+          "text": "Tapis caoutchouc universel : économique mais approximatif"
+        },
+        {
+          "type": "p",
+          "text": "Les tapis caoutchouc universels coûtent peu mais s'adaptent mal à la forme du plancher. Ils bougent, se retournent et peuvent coincer sous la pédale d'accélérateur — un vrai danger. Si vous choisissez du caoutchouc, vérifiez qu'ils ont des fixations homologuées."
+        },
+        {
+          "type": "h2",
+          "text": "Tapis sur-mesure 3D : la solution optimale"
+        },
+        {
+          "type": "p",
+          "text": "Moulés exactement pour votre modèle de véhicule, les tapis 3D en polyuréthane ou TPE couvrent 100% du plancher avec des rebords relevés (3 à 5 cm) qui retiennent l'eau et la boue. Ils se nettoient en 30 secondes avec un jet d'eau. La différence de prix (20 à 40€ de plus) est largement compensée par leur efficacité."
+        },
+        {
+          "type": "tip",
+          "text": "Vérifiez toujours la compatibilité exacte avec votre modèle (année, motorisation manuelle/automatique — le tunnel de transmission varie). Un tapis qui se pose mal est plus dangereux qu'utile."
+        },
+        {
+          "type": "conclusion",
+          "text": "Notre recommandation : des tapis sur-mesure 3D en TPE pour une protection totale, nettoyage rapide et durabilité. Trouvez le jeu compatible avec votre véhicule dans la boutique ESSENTIEL CAR."
+        }
       ]
     },
     {
@@ -174,17 +547,55 @@
       "emoji": "📡",
       "date": "2026-05-07",
       "readTime": 7,
-      "tags": ["caméra recul", "aide au stationnement", "installation", "sécurité"],
+      "tags": [
+        "caméra recul",
+        "aide au stationnement",
+        "installation",
+        "sécurité"
+      ],
       "sections": [
-        {"type": "intro", "text": "En France, une collision sur cinq lors d'une manœuvre implique un objet ou une personne invisible dans les angles morts. La caméra de recul réduit ce risque à presque zéro. Obligatoire sur les véhicules neufs depuis 2022, elle peut s'installer sur n'importe quel véhicule."},
-        {"type": "h2", "text": "Filaire ou sans fil ?"},
-        {"type": "p", "text": "Les caméras filaires offrent une image stable et sans latence. Elles nécessitent de passer un câble de l'arrière jusqu'à l'écran ou l'autoradio — installation plus complexe (1 à 2h) mais résultat professionnel. Les caméras sans fil transmettent via WiFi ou 2.4GHz, installation rapide mais risque d'interférences et légère latence de 100-200ms."},
-        {"type": "h2", "text": "Les critères de qualité image"},
-        {"type": "ul", "items": ["Résolution minimum 720p (1080p recommandé)", "Angle de vision 150° à 170° (évitez le 120° qui manque les angles)", "Vision nocturne LED infrarouge (6 à 8 LEDs minimum)", "Indice d'étanchéité IP67 (immersion 1m, 30 minutes)", "Image miroir ajustable (obligatoire pour une vue intuitive en recul)"]},
-        {"type": "h2", "text": "Où se connecte-t-elle ?"},
-        {"type": "p", "text": "La caméra s'alimente sur le feu de recul (s'allume automatiquement en marche arrière) et l'image se connecte soit à un moniteur dédié, soit à l'autoradio Android (via câble AV ou WiFi), soit au rétroviseur avec écran intégré."},
-        {"type": "tip", "text": "Sur les véhicules récents avec systèmes d'aide au stationnement intégrés, une caméra aftermarket peut déclencher des warnings. Vérifiez la compatibilité avec votre véhicule avant l'achat."},
-        {"type": "conclusion", "text": "La caméra de recul est l'un des meilleurs investissements sécurité pour moins de 40€. Retrouvez nos modèles testés et validés dans la boutique ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "En France, une collision sur cinq lors d'une manœuvre implique un objet ou une personne invisible dans les angles morts. La caméra de recul réduit ce risque à presque zéro. Obligatoire sur les véhicules neufs depuis 2022, elle peut s'installer sur n'importe quel véhicule."
+        },
+        {
+          "type": "h2",
+          "text": "Filaire ou sans fil ?"
+        },
+        {
+          "type": "p",
+          "text": "Les caméras filaires offrent une image stable et sans latence. Elles nécessitent de passer un câble de l'arrière jusqu'à l'écran ou l'autoradio — installation plus complexe (1 à 2h) mais résultat professionnel. Les caméras sans fil transmettent via WiFi ou 2.4GHz, installation rapide mais risque d'interférences et légère latence de 100-200ms."
+        },
+        {
+          "type": "h2",
+          "text": "Les critères de qualité image"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Résolution minimum 720p (1080p recommandé)",
+            "Angle de vision 150° à 170° (évitez le 120° qui manque les angles)",
+            "Vision nocturne LED infrarouge (6 à 8 LEDs minimum)",
+            "Indice d'étanchéité IP67 (immersion 1m, 30 minutes)",
+            "Image miroir ajustable (obligatoire pour une vue intuitive en recul)"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Où se connecte-t-elle ?"
+        },
+        {
+          "type": "p",
+          "text": "La caméra s'alimente sur le feu de recul (s'allume automatiquement en marche arrière) et l'image se connecte soit à un moniteur dédié, soit à l'autoradio Android (via câble AV ou WiFi), soit au rétroviseur avec écran intégré."
+        },
+        {
+          "type": "tip",
+          "text": "Sur les véhicules récents avec systèmes d'aide au stationnement intégrés, une caméra aftermarket peut déclencher des warnings. Vérifiez la compatibilité avec votre véhicule avant l'achat."
+        },
+        {
+          "type": "conclusion",
+          "text": "La caméra de recul est l'un des meilleurs investissements sécurité pour moins de 40€. Retrouvez nos modèles testés et validés dans la boutique ESSENTIEL CAR."
+        }
       ]
     },
     {
@@ -196,19 +607,57 @@
       "emoji": "📦",
       "date": "2026-05-04",
       "readTime": 4,
-      "tags": ["organisation coffre", "rangement voiture", "confort", "accessoires"],
+      "tags": [
+        "organisation coffre",
+        "rangement voiture",
+        "confort",
+        "accessoires"
+      ],
       "sections": [
-        {"type": "intro", "text": "Un coffre désorganisé, c'est des courses abîmées, du matériel endommagé et des objets qui deviennent des projectiles lors d'un freinage d'urgence. L'organisation du coffre est une question de confort mais aussi de sécurité."},
-        {"type": "h2", "text": "L'organisateur de coffre : la base"},
-        {"type": "p", "text": "Un organisateur de coffre en polyester ou en feutre avec compartiments séparés maintient vos courses, outils et équipements en place. Les modèles pliables s'rangent à plat quand vous en avez pas besoin. Choisissez-en un avec fond antidérapant et parois rigides."},
-        {"type": "h2", "text": "Le filet de coffre : pour les petits objets"},
-        {"type": "p", "text": "Les filets élastiques fixés aux anneaux de coffre maintiennent les petits objets (spray lave-glace, trousse de premiers secours, câble de recharge) sans qu'ils roulent partout. Ils s'utilisent en complément de l'organisateur principal."},
-        {"type": "h2", "text": "Les crochets et séparateurs"},
-        {"type": "p", "text": "Des crochets latéraux permettent de suspendre les sacs de courses sans qu'ils se renversent. Certains SUV et berlines ont des anneaux d'attache intégrés — utilisez-les avec des sangles pour sécuriser les charges lourdes."},
-        {"type": "tip", "text": "En cas de freinage d'urgence à 50 km/h, un objet de 5 kg non attaché devient un projectile de 150 kg d'impact. Ne laissez jamais d'objets lourds non fixés dans le coffre ou sur la plage arrière."},
-        {"type": "h2", "text": "Le bac de coffre sur-mesure"},
-        {"type": "p", "text": "Pour les véhicules de famille ou utilitaires, un bac de coffre moulé sur-mesure protège le plancher et facilite le nettoyage (lavable au jet d'eau). Compatible avec animaux, vélos, bottes boueuses."},
-        {"type": "conclusion", "text": "Un coffre bien organisé, c'est 5 minutes gagnées à chaque trajet. Découvrez nos organisateurs de coffre, filets et accessoires de rangement chez ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "Un coffre désorganisé, c'est des courses abîmées, du matériel endommagé et des objets qui deviennent des projectiles lors d'un freinage d'urgence. L'organisation du coffre est une question de confort mais aussi de sécurité."
+        },
+        {
+          "type": "h2",
+          "text": "L'organisateur de coffre : la base"
+        },
+        {
+          "type": "p",
+          "text": "Un organisateur de coffre en polyester ou en feutre avec compartiments séparés maintient vos courses, outils et équipements en place. Les modèles pliables s'rangent à plat quand vous en avez pas besoin. Choisissez-en un avec fond antidérapant et parois rigides."
+        },
+        {
+          "type": "h2",
+          "text": "Le filet de coffre : pour les petits objets"
+        },
+        {
+          "type": "p",
+          "text": "Les filets élastiques fixés aux anneaux de coffre maintiennent les petits objets (spray lave-glace, trousse de premiers secours, câble de recharge) sans qu'ils roulent partout. Ils s'utilisent en complément de l'organisateur principal."
+        },
+        {
+          "type": "h2",
+          "text": "Les crochets et séparateurs"
+        },
+        {
+          "type": "p",
+          "text": "Des crochets latéraux permettent de suspendre les sacs de courses sans qu'ils se renversent. Certains SUV et berlines ont des anneaux d'attache intégrés — utilisez-les avec des sangles pour sécuriser les charges lourdes."
+        },
+        {
+          "type": "tip",
+          "text": "En cas de freinage d'urgence à 50 km/h, un objet de 5 kg non attaché devient un projectile de 150 kg d'impact. Ne laissez jamais d'objets lourds non fixés dans le coffre ou sur la plage arrière."
+        },
+        {
+          "type": "h2",
+          "text": "Le bac de coffre sur-mesure"
+        },
+        {
+          "type": "p",
+          "text": "Pour les véhicules de famille ou utilitaires, un bac de coffre moulé sur-mesure protège le plancher et facilite le nettoyage (lavable au jet d'eau). Compatible avec animaux, vélos, bottes boueuses."
+        },
+        {
+          "type": "conclusion",
+          "text": "Un coffre bien organisé, c'est 5 minutes gagnées à chaque trajet. Découvrez nos organisateurs de coffre, filets et accessoires de rangement chez ESSENTIEL CAR."
+        }
       ]
     },
     {
@@ -220,26 +669,77 @@
       "emoji": "⚡",
       "date": "2026-04-30",
       "readTime": 6,
-      "tags": ["booster démarrage", "panne", "kit urgence", "batterie voiture"],
+      "tags": [
+        "booster démarrage",
+        "panne",
+        "kit urgence",
+        "batterie voiture"
+      ],
       "sections": [
-        {"type": "intro", "text": "Une batterie à plat, c'est la panne la plus fréquente — et celle qui arrive toujours au pire moment. Avec un booster de démarrage compact dans le coffre, vous redémarrez seul en 30 secondes, sans dépendre d'un autre véhicule."},
-        {"type": "h2", "text": "Booster de démarrage vs câbles pinces classiques"},
-        {"type": "p", "text": "Les câbles pinces classiques nécessitent un autre véhicule pour vous dépanner. Le booster de démarrage (jump starter) est un bloc batterie autonome qui démarre votre véhicule seul. Compact (taille d'une grosse batterie externe smartphone), il tient dans la boîte à gants. Les modèles récents démarrent des moteurs jusqu'à 6L essence et 3L diesel."},
-        {"type": "h2", "text": "La capacité : combien de mAh ?"},
-        {"type": "ul", "items": ["Citadine / moteur jusqu'à 2L : 10 000 mAh suffisent", "Berline / SUV jusqu'à 4L : 18 000 à 20 000 mAh recommandés", "4x4 / véhicule de plus de 4L : 24 000 mAh et plus", "Diesel : préférer 20 000 mAh minimum (plus difficile à démarrer à froid)"]},
-        {"type": "h2", "text": "Les fonctions bonus indispensables"},
-        {"type": "p", "text": "Les boosters modernes intègrent une lampe LED (mode SOS clignotant pour signaler la panne), un port USB-A et USB-C pour recharger vos appareils, et parfois un compresseur intégré pour gonfler les pneus. Ce dernier point peut être très utile en cas de crevaison légère."},
-        {"type": "tip", "text": "Chargez votre booster tous les 3 mois s'il ne sert pas — les batteries lithium se déchargent lentement même stockées. La plupart des modèles maintiennent leur charge 6 à 12 mois, mais mieux vaut vérifier avant l'hiver."},
-        {"type": "h2", "text": "Le gonfleur portable : le complément parfait"},
-        {"type": "p", "text": "Un gonfleur portable 12V ou sur batterie permet de regonfler un pneu crevé (crevaison légère) ou simplement de corriger la pression sans aller à la station. Indispensable avec un kit de réparation de pneu (gel colmatant + gonflage)."},
-        {"type": "conclusion", "text": "Un booster de démarrage 20 000 mAh coûte 40 à 80€ et peut vous éviter 200€ de dépanneuse. C'est le premier accessoire à avoir dans son coffre. Retrouvez nos boosters sélectionnés chez ESSENTIEL CAR."}
+        {
+          "type": "intro",
+          "text": "Une batterie à plat, c'est la panne la plus fréquente — et celle qui arrive toujours au pire moment. Avec un booster de démarrage compact dans le coffre, vous redémarrez seul en 30 secondes, sans dépendre d'un autre véhicule."
+        },
+        {
+          "type": "h2",
+          "text": "Booster de démarrage vs câbles pinces classiques"
+        },
+        {
+          "type": "p",
+          "text": "Les câbles pinces classiques nécessitent un autre véhicule pour vous dépanner. Le booster de démarrage (jump starter) est un bloc batterie autonome qui démarre votre véhicule seul. Compact (taille d'une grosse batterie externe smartphone), il tient dans la boîte à gants. Les modèles récents démarrent des moteurs jusqu'à 6L essence et 3L diesel."
+        },
+        {
+          "type": "h2",
+          "text": "La capacité : combien de mAh ?"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Citadine / moteur jusqu'à 2L : 10 000 mAh suffisent",
+            "Berline / SUV jusqu'à 4L : 18 000 à 20 000 mAh recommandés",
+            "4x4 / véhicule de plus de 4L : 24 000 mAh et plus",
+            "Diesel : préférer 20 000 mAh minimum (plus difficile à démarrer à froid)"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Les fonctions bonus indispensables"
+        },
+        {
+          "type": "p",
+          "text": "Les boosters modernes intègrent une lampe LED (mode SOS clignotant pour signaler la panne), un port USB-A et USB-C pour recharger vos appareils, et parfois un compresseur intégré pour gonfler les pneus. Ce dernier point peut être très utile en cas de crevaison légère."
+        },
+        {
+          "type": "tip",
+          "text": "Chargez votre booster tous les 3 mois s'il ne sert pas — les batteries lithium se déchargent lentement même stockées. La plupart des modèles maintiennent leur charge 6 à 12 mois, mais mieux vaut vérifier avant l'hiver."
+        },
+        {
+          "type": "h2",
+          "text": "Le gonfleur portable : le complément parfait"
+        },
+        {
+          "type": "p",
+          "text": "Un gonfleur portable 12V ou sur batterie permet de regonfler un pneu crevé (crevaison légère) ou simplement de corriger la pression sans aller à la station. Indispensable avec un kit de réparation de pneu (gel colmatant + gonflage)."
+        },
+        {
+          "type": "conclusion",
+          "text": "Un booster de démarrage 20 000 mAh coûte 40 à 80€ et peut vous éviter 200€ de dépanneuse. C'est le premier accessoire à avoir dans son coffre. Retrouvez nos boosters sélectionnés chez ESSENTIEL CAR."
+        }
       ]
     }
   ],
-  "categories": ["Tous", "Nettoyage", "Sécurité", "Carrosserie", "Confort", "High-Tech", "Entretien"],
+  "categories": [
+    "Tous",
+    "Nettoyage",
+    "Sécurité",
+    "Carrosserie",
+    "Confort",
+    "High-Tech",
+    "Entretien"
+  ],
   "meta": {
     "lastUpdated": "2026-05-31",
-    "totalArticles": 10,
-    "autoGenerated": false
+    "totalArticles": 11,
+    "autoGenerated": true
   }
 }
