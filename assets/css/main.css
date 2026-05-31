@@ -2050,6 +2050,36 @@ svg { display: block; }
   padding-bottom: 1.5rem;
 }
 
+/* ── Section scroll hint (chevron bas) ── */
+@keyframes scrollHintBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0);   opacity: 0.5; }
+  50%       { transform: translateX(-50%) translateY(7px); opacity: 1;   }
+}
+.section-scroll-hint {
+  display: block;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+  animation: scrollHintBounce 2s ease-in-out infinite;
+  z-index: 4;
+}
+.section-scroll-hint svg { width: 18px; height: 18px; }
+.section-scroll-hint:hover {
+  color: var(--white);
+  border-color: var(--red);
+  background: var(--red);
+  animation-play-state: paused;
+}
+/* Les sections qui portent un scroll-hint doivent être position:relative */
+#packs, #demo, #best-sellers, #avis { position: relative; }
+
 /* ── FAQ extra (masqué par défaut) ── */
 .faq-extra {
   overflow: hidden;
