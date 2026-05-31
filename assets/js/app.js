@@ -329,6 +329,20 @@ function initFAQ() {
       }
     });
   });
+
+  // Bouton "Voir plus / Voir moins"
+  const moreBtn  = document.getElementById('faqMoreBtn');
+  const faqExtra = document.getElementById('faqExtra');
+  if (moreBtn && faqExtra) {
+    const label = moreBtn.querySelector('.faq-more-label');
+    moreBtn.addEventListener('click', () => {
+      const isOpen = faqExtra.classList.toggle('open');
+      moreBtn.classList.toggle('open', isOpen);
+      moreBtn.setAttribute('aria-expanded', isOpen);
+      faqExtra.setAttribute('aria-hidden', !isOpen);
+      label.textContent = isOpen ? 'Voir moins de questions' : 'Voir les 10 autres questions';
+    });
+  }
 }
 
 /* ── 11. Reviews Carousel ── */
