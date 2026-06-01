@@ -1883,10 +1883,11 @@ svg { display: block; }
 }
 .footer-payment-logos {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
-  flex-wrap: nowrap;
-  order: 2;
+  margin-top: 1.25rem;
+  max-width: 192px;
+  opacity: 0.85;
 }
 .footer-rights {
   font-size: 0.775rem;
