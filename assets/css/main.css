@@ -160,10 +160,60 @@ svg { display: block; }
 .lang-btn.active { color: var(--white); background: var(--red); }
 .lang-divider { width: 1px; height: 10px; background: var(--border-h); }
 
+/* ── Promo Bar ── */
+.promo-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 101;
+  height: 44px;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.promo-bar-arrow {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.promo-bar-arrow:hover { color: var(--white); }
+.promo-bar-track-wrap { flex: 1; overflow: hidden; text-align: center; }
+.promo-bar-item {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+}
+.promo-bar-item.active { display: flex; }
+.promo-bar-item svg { flex-shrink: 0; opacity: 0.9; }
+.promo-bar-item a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 0.4rem;
+  opacity: 0.85;
+  font-size: 0.78rem;
+  transition: opacity 0.15s;
+}
+.promo-bar-item a:hover { opacity: 1; }
+
 /* ── Navigation ── */
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 44px; left: 0; right: 0;
   z-index: 100;
   padding: 0 var(--pad);
   height: 72px;
@@ -1999,7 +2049,7 @@ svg { display: block; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.65;
 }
 .cta-gif--mobile { display: none; }
 .cta-overlay {
@@ -2148,8 +2198,8 @@ svg { display: block; }
 .cmp-us-badge { display: inline-block; background: var(--red); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; }
 .cmp-check { color: #22c55e; font-weight: 700; margin-right: 0.35rem; }
 .cmp-cross { color: #ef4444; font-weight: 700; margin-right: 0.35rem; }
-.cmp-logo-wrap { display: flex; align-items: center; justify-content: center; }
-.cmp-logo { height: 32px; width: auto; filter: brightness(0) invert(1); }
+.cmp-logo-wrap { overflow: hidden; height: 43px; position: relative; width: 100%; }
+.cmp-logo { position: absolute; width: 194px; height: 194px; top: -75px; left: 50%; transform: translateX(-50%); filter: brightness(1.1); }
 
 /* ── Vu sur logos (inline SVG) ── */
 .vu-sur-logo { display: flex; align-items: center; justify-content: center; }
