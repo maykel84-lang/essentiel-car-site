@@ -447,13 +447,37 @@ function buildRelatedProducts(currentProduct, lang) {
 
 /* ── Cart logic ── */
 function handleAddToCart(product, data, isFr) {
-  const cart     = JSON.parse(localStorage.getItem('ec_cart') || '[]');
-  const existing = cart.find(item => item.id === product.id);
+  const cart = JSON.parse(localStorage.getItem('ec_cart') || '[]');
+
+  // Read active qty variant (Lot de 3, À l'unité…)
+  const activeQty = document.querySelector('.variant-qty.active');
+  const variantPrice    = activeQty ? parseFloat(activeQty.dataset.price)    : null;
+  const variantOldPrice = activeQty ? parseFloat(activeQty.dataset.oldprice) : null;
+  const variantLabel    = activeQty ? activeQty.dataset.label                : null;
+  const variantValue    = activeQty ? activeQty.dataset.value                : null;
+
+  // Read active color swatch
+  const activeSwatch = document.querySelector('.variant-swatch.active');
+  const colorLabel   = activeSwatch ? activeSwatch.dataset.label : null;
+  const colorValue   = activeSwatch ? activeSwatch.dataset.value : null;
+
+  // Use variant-aware cart key so Lot de 3 ≠ À l'unité
+  const cartKey = variantValue ? `${product.id}__${variantValue}` : product.id;
+  const existing = cart.find(item => item.cartKey === cartKey || (!item.cartKey && item.id === product.id && !variantValue));
+
   if (existing) {
     existing.qty = (existing.qty || 1) + 1;
   } else {
-    cart.push({ id: product.id, qty: 1 });
+    const entry = { id: product.id, cartKey, qty: 1 };
+    if (variantPrice !== null)    entry.variantPrice    = variantPrice;
+    if (variantOldPrice !== null) entry.variantOldPrice = variantOldPrice;
+    if (variantLabel)             entry.variantLabel    = variantLabel;
+    if (variantValue)             entry.variantValue    = variantValue;
+    if (colorLabel)               entry.colorLabel      = colorLabel;
+    if (colorValue)               entry.colorValue      = colorValue;
+    cart.push(entry);
   }
+
   localStorage.setItem('ec_cart', JSON.stringify(cart));
   updateCartCounter();
   showCartToast(data.name, isFr);

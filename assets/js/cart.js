@@ -63,10 +63,14 @@ function renderCart() {
   `;
 
   // Calculate totals
-  const subtotal  = items.reduce((s, item) => s + item.product.price * item.qty, 0);
+  const subtotal  = items.reduce((s, item) => s + (item.variantPrice ?? item.product.price) * item.qty, 0);
   const shipping  = subtotal >= 49.99 ? 0 : 4.99;
   const total     = subtotal + shipping;
-  const savings   = items.reduce((s, item) => s + (item.product.oldPrice - item.product.price) * item.qty, 0);
+  const savings   = items.reduce((s, item) => {
+    const price    = item.variantPrice    ?? item.product.price;
+    const oldPrice = item.variantOldPrice ?? item.product.oldPrice;
+    return s + (oldPrice - price) * item.qty;
+  }, 0);
 
   const fmtPrice = (v) => v.toFixed(2).replace('.', ',') + '€';
 
@@ -166,9 +170,11 @@ function renderCart() {
 function renderCartItem(item, t_key, isFr) {
   const p    = item.product;
   const data = p[t_key] || p.fr;
-  const priceStr    = p.price.toFixed(2).replace('.', ',');
-  const oldStr      = p.oldPrice.toFixed(2).replace('.', ',');
-  const lineTotal   = (p.price * item.qty).toFixed(2).replace('.', ',');
+  const price    = item.variantPrice    ?? p.price;
+  const oldPrice = item.variantOldPrice ?? p.oldPrice;
+  const priceStr    = price.toFixed(2).replace('.', ',');
+  const oldStr      = oldPrice.toFixed(2).replace('.', ',');
+  const lineTotal   = (price * item.qty).toFixed(2).replace('.', ',');
 
   return `
     <div class="cart-item" data-id="${p.id}">
@@ -184,6 +190,7 @@ function renderCartItem(item, t_key, isFr) {
           <div>
             <p class="cart-item-cat">${isFr ? getCatLabel(p.category, true) : getCatLabel(p.category, false)}</p>
             <a href="product.html?id=${p.id}" class="cart-item-name">${data.name}</a>
+            ${item.variantLabel ? `<p class="cart-item-variant">${item.variantLabel}${item.colorLabel ? ' · ' + item.colorLabel : ''}</p>` : ''}
             <p class="cart-item-tagline">${data.tagline}</p>
           </div>
           <button class="cart-item-remove" onclick="removeFromCart('${p.id}')" aria-label="${isFr ? 'Supprimer' : 'Remove'}">
@@ -291,8 +298,8 @@ async function handleCheckout() {
     if (!product) return null;
     const data = product[isFr ? 'fr' : 'en'] || product.fr;
     return {
-      name:  data.name,
-      price: product.price,
+      name:  item.variantLabel ? `${data.name} — ${item.variantLabel}` : data.name,
+      price: item.variantPrice ?? product.price,
       qty:   item.qty,
       image: product.images && product.images[0]
         ? window.location.origin + '/' + product.images[0]
@@ -301,7 +308,7 @@ async function handleCheckout() {
   }).filter(Boolean);
 
   // Add shipping line if applicable
-  const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0);
+  const subtotal = items.reduce((s, i) => s + (i.price ?? 0) * i.qty, 0);
   if (subtotal < 49.99) {
     items.push({ name: isFr ? 'Frais de livraison' : 'Shipping', price: 4.99, qty: 1, image: null });
   }

@@ -730,6 +730,9 @@ svg { display: block; }
   transition: border-color 0.35s, transform 0.35s var(--ease-out), box-shadow 0.35s;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .product-card:hover {
   border-color: rgba(224,0,12,0.4);
@@ -800,8 +803,24 @@ svg { display: block; }
 .badge--practical  { background: #005f8c; color: var(--white); }
 .badge--bundle     { background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: var(--white); letter-spacing: 0.1em; }
 
+.product-card-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.product-card-footer {
+  padding: 0.75rem 1.5rem 1.625rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
 .product-card-body {
-  padding: 1.375rem 1.5rem 1.625rem;
+  padding: 1.375rem 1.5rem 0.75rem;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 .card-swatches {
   display: flex;
@@ -3344,6 +3363,13 @@ svg { display: block; }
   transition: color 0.2s;
 }
 .cart-item-name:hover { color: var(--red); }
+.cart-item-variant {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 0.2rem;
+}
 .cart-item-tagline {
   font-family: var(--font-body);
   font-size: 0.78rem;
