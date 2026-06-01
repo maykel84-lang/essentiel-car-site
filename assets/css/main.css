@@ -729,7 +729,7 @@ svg { display: block; }
 }
 .product-badge {
   position: absolute;
-  top: 1rem; left: 1rem;
+  top: 1rem; right: 1rem; left: auto;
   z-index: 5;
   font-family: var(--font-sans);
   font-size: 0.62rem;
@@ -1206,6 +1206,150 @@ svg { display: block; }
   transition: opacity 0.2s;
 }
 .ugc-cta-link:hover { opacity: 0.75; }
+
+/* ── Best Sellers Section ── */
+.best-sellers-section {
+  background: linear-gradient(180deg, #0a0a0a 0%, #110506 50%, #0a0a0a 100%);
+  position: relative;
+}
+.best-sellers-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(224,0,12,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Promo Banner */
+.bs-promo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #1a0204 0%, #2a0407 50%, #1a0204 100%);
+  border: 1px solid rgba(224,0,12,0.35);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.bs-promo-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(224,0,12,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.bs-promo-left { flex: 1; }
+@keyframes tagBlink {
+  0%, 49% { opacity: 1; box-shadow: 0 0 12px rgba(224,0,12,0.7); }
+  50%, 100% { opacity: 0.35; box-shadow: none; }
+}
+.bs-promo-tag {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+  animation: tagBlink 1s step-end infinite;
+}
+.bs-promo-desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+.bs-promo-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1;
+  gap: 0.2rem;
+}
+.bs-promo-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fff;
+  line-height: 1;
+}
+.bs-promo-num sup {
+  font-size: 0.4em;
+  vertical-align: super;
+}
+.bs-promo-article {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+}
+.bs-promo-pct {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  color: var(--red);
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(224,0,12,0.5);
+}
+
+/* Slot machine */
+.bs-slot-wrap {
+  height: clamp(3.5rem, 7vw, 6rem);
+  overflow: hidden;
+  position: relative;
+}
+.bs-slot-wrap::before,
+.bs-slot-wrap::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 30%;
+  z-index: 1;
+  pointer-events: none;
+}
+.bs-slot-wrap::before { top: 0; background: linear-gradient(to bottom, #1a0204, transparent); }
+.bs-slot-wrap::after  { bottom: 0; background: linear-gradient(to top, #1a0204, transparent); }
+.bs-slot-strip {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+.bs-slot-item {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1;
+  height: clamp(3.5rem, 7vw, 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+.bs-slot-winner {
+  color: var(--red) !important;
+  text-shadow: 0 0 40px rgba(224,0,12,0.6);
+}
+.bs-promo-right { flex: 1; display: flex; justify-content: flex-end; }
+
+@media (max-width: 768px) {
+  .bs-promo-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem 1rem;
+  }
+  .bs-promo-left { text-align: center; }
+  .bs-promo-right { justify-content: center; }
+}
 
 /* ── Stats Section ── */
 .stats-section {
@@ -1710,8 +1854,72 @@ svg { display: block; }
   padding: 0 0 0 0;
 }
 .faq-item.open .faq-answer {
-  max-height: 300px;
+  max-height: 600px;
   padding-bottom: 1.5rem;
+}
+
+/* ── Section scroll hint (chevron bas) ── */
+@keyframes scrollHintBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0);   opacity: 0.5; }
+  50%       { transform: translateX(-50%) translateY(7px); opacity: 1;   }
+}
+.section-scroll-hint {
+  display: block;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+  animation: scrollHintBounce 2s ease-in-out infinite;
+  z-index: 4;
+}
+.section-scroll-hint svg { width: 18px; height: 18px; }
+.section-scroll-hint:hover {
+  color: var(--white);
+  border-color: var(--red);
+  background: var(--red);
+  animation-play-state: paused;
+}
+/* Les sections qui portent un scroll-hint doivent être position:relative */
+#packs, #demo, #best-sellers, #avis { position: relative; }
+
+/* ── FAQ More Button ── */
+.faq-more-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.75rem;
+}
+.faq-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--white);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+.faq-more-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+.faq-more-icon {
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.35s var(--ease-out);
+}
+.faq-more-btn.open .faq-more-icon {
+  transform: rotate(180deg);
 }
 
 /* ── Final CTA ── */
