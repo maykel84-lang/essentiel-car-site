@@ -1,6 +1,96 @@
 {
   "articles": [
     {
+      "slug": "pare-chocs-protection-carrosserie-guide-complet",
+      "title": "Pare-chocs auto : protection et réparation | Guide 2025",
+      "excerpt": "Découvrez comment protéger et entretenir votre pare-chocs. Guide complet sur les solutions de réparation et prévention des chocs.",
+      "category": "Carrosserie",
+      "emoji": "🛡️",
+      "readTime": 6,
+      "tags": [
+        "pare-chocs",
+        "carrosserie",
+        "protection auto",
+        "réparation",
+        "entretien"
+      ],
+      "sections": [
+        {
+          "type": "intro",
+          "text": "Le pare-chocs est l'élément de carrosserie le plus exposé aux chocs du quotidien. Entre les frottements de parking, les petits accrochages et les projections, votre pare-chocs subit des dégâts constants. Découvrez comment le protéger efficacement et réparer les dommages sans démontage complet."
+        },
+        {
+          "type": "h2",
+          "text": "Pourquoi protéger son pare-chocs ?"
+        },
+        {
+          "type": "p",
+          "text": "Le pare-chocs n'est pas qu'un élément esthétique : c'est votre première ligne de défense contre les impacts. Les rayures, fissures et déformations s'accumulent rapidement en ville. Une protection préventive évite des coûts de réparation élevés et maintient la valeur de revente de votre véhicule. Sans entretien régulier, la peinture s'écaille et expose le plastique aux UV et à la corrosion."
+        },
+        {
+          "type": "h2",
+          "text": "Les solutions de protection du pare-chocs"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Film protecteur transparent : invisible et très efficace contre rayures et chocs légers",
+            "Bandes de protection mousse : absorbent les impacts lors du stationnement",
+            "Protecteur d'angle pare-chocs : renforce les zones fragiles des coins",
+            "Peinture de retouche : corrige les petits éclats avant aggravation"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Réparer un pare-chocs endommagé"
+        },
+        {
+          "type": "p",
+          "text": "Selon l'ampleur du dégât, plusieurs solutions existent. Pour les rayures superficielles, une retouche de peinture suffit. Les petits chocs se lissent avec un décapant doux et un polish adapté. Les fissures nécessitent soit un kit de réparation thermique, soit le remplacement du pare-chocs. Un professionnel peut évaluer la réparation en 10 minutes sans démontage."
+        },
+        {
+          "type": "h2",
+          "text": "Entretien régulier du pare-chocs"
+        },
+        {
+          "type": "p",
+          "text": "Un nettoyage mensuel à l'eau savonneuse élimine les résidus routiers. Appliquez ensuite un protecteur plastique pour rehausser la teinte et créer une barrière hydrophobe. L'hiver, rincez le pare-chocs après chaque passage en zone salée pour éviter l'oxydation. Ce geste simple triple la durée de vie de votre protection."
+        },
+        {
+          "type": "h2",
+          "text": "Les erreurs à éviter"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ne pas utiliser d'eau chaude sur du plastique : risque de déformation",
+            "Éviter les produits abrasifs ou l'alcool : détruisent la peinture",
+            "Ne pas négliger les petits chocs : ils s'aggravent rapidement",
+            "Oublier de sécher après nettoyage : favorise la rouille des fixations"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Prévention au quotidien"
+        },
+        {
+          "type": "p",
+          "text": "En parking, adoptez des gestes simples : stationnez dos à la circulation, utilisez des capteurs de distance, et maintenez une distance de sécurité. Les protecteurs de pare-chocs adhésifs coûtent 15 à 30 euros et vous évitent des frais de réparation de plusieurs centaines d'euros. C'est un investissement rentable sur 2-3 ans."
+        },
+        {
+          "type": "tip",
+          "text": "Photographiez régulièrement votre pare-chocs pour documenter son état. En cas de sinistre, ces preuves visuelles accélèrent les démarches d'assurance et facilitent les estimations de réparation."
+        },
+        {
+          "type": "conclusion",
+          "text": "Protéger et entretenir son pare-chocs, c'est préserver l'intégrité de votre carrosserie. ESSENTIEL CAR vous propose une sélection complète de solutions : films protecteurs, kits de retouche, protecteurs plastique et accessoires de réparation. Consultez notre catalogue pour trouver la protection adaptée à votre véhicule et roulez serein."
+        }
+      ],
+      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-routine-checklist-1080_png.png?v=1762602476",
+      "id": 95,
+      "date": "2026-06-01"
+    },
+    {
       "id": 12,
       "slug": "pack-securite-confort-restez-vigilant-organise-et-mains-libres-guide-complet",
       "title": "Pack Sécurité & Confort : vigilance, preuves vidéo et navigation claire",
@@ -23872,7 +23962,7 @@
   ],
   "meta": {
     "lastUpdated": "2026-06-01",
-    "totalArticles": 94,
+    "totalArticles": 95,
     "autoGenerated": true
   }
 }
