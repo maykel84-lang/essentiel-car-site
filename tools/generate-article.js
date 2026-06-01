@@ -116,6 +116,15 @@ function extractJSON(text) {
   throw new Error('No valid JSON found in Claude response');
 }
 
+var CATEGORY_IMAGES = {
+  'Nettoyage': 'https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-nettoyage-aspirateur-mousse-brosse-polisseuse-1080_jpg.png?v=1762868819',
+  'Securite': 'https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-securite-confort-coffre-jour-1080_jpg.png?v=1762868936',
+  'Carrosserie': 'https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-routine-checklist-1080_png.png?v=1762602476',
+  'Confort': 'https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-compresseur-table-volant-lifestyle-1080_png.png?v=1762868733',
+  'High-Tech': 'https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-interieur-angles-1080_png.png?v=1762598046',
+  'Entretien': 'https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-compresseur-table-volant-lifestyle-1080_png.png?v=1762868733'
+};
+
 callClaude(prompt).then(function(rawText) {
   console.log('Claude response received, parsing...');
 
@@ -133,6 +142,12 @@ callClaude(prompt).then(function(rawText) {
     counter++;
   }
   articleData.slug = slug;
+
+  // Assign category image
+  var cat = articleData.category || manualCategory;
+  if (!articleData.image && CATEGORY_IMAGES[cat]) {
+    articleData.image = CATEGORY_IMAGES[cat];
+  }
 
   var today = new Date().toISOString().split('T')[0];
   articleData.id = blogData.articles.length + 1;
