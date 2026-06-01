@@ -405,17 +405,19 @@ const PRODUCTS = [
     reviews: 312,
     category: 'pack',
     isBundle: true,
+    bundleIncludes: ['compresseur-air', 'table-volant'],
     accentColor: '#0a1a0a',
     variants: [
       { label: 'Table de volant', options: [
-        { value: 'blanc', display: 'Blanc', hex: '#f0ede8' },
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
+        { value: 'blanc', display: 'Blanc', hex: '#f0ede8', imageIndex: 2 },
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 3 },
       ]}
     ],
     images: [
       'assets/images/products/pack-entretien-cover.png',
       'assets/images/products/compresseur-air-1.jpg.png',
       'assets/images/products/table-volant-1.jpg.png',
+      'assets/images/products/table-volant-2.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="14" width="18" height="26" rx="4"/>
@@ -448,22 +450,25 @@ const PRODUCTS = [
     reviews: 187,
     category: 'pack',
     isBundle: true,
+    bundleIncludes: ['aspirateur-sans-fil', 'lance-mousse', 'brosse-jantes', 'machine-polir'],
     accentColor: '#001828',
     variants: [
       { label: 'Lance mousse', options: [
-        { value: 'noir',  display: 'Noir',             hex: '#1a1a1a' },
-        { value: 'blanc', display: 'Blanc transparent', hex: '#e8e8e8', transparent: true },
+        { value: 'noir',  display: 'Noir',             hex: '#1a1a1a',  imageIndex: 2 },
+        { value: 'blanc', display: 'Blanc transparent', hex: '#e8e8e8', transparent: true, imageIndex: 3 },
       ]},
       { label: 'Brosse jantes', options: [
-        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c' },
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a' },
-        { value: 'jaune', display: 'Jaune', hex: '#f5c518' },
+        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 4 },
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 4 },
+        { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 4 },
       ]}
     ],
     images: [
       'assets/images/products/pack-nettoyage-cover.png',
       'assets/images/products/aspirateur-sans-fil-1.jpg.png',
       'assets/images/products/lance-mousse-1.jpg.png',
+      'assets/images/products/lance-mousse-2.jpg.png',
+      'assets/images/products/brosse-jantes-1.jpg.png',
       'assets/images/products/machine-polir-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -495,11 +500,13 @@ const PRODUCTS = [
     reviews: 224,
     category: 'pack',
     isBundle: true,
+    bundleIncludes: ['dashcam-4k', 'tpms', 'support-telephone'],
     accentColor: '#1a0a08',
     images: [
       'assets/images/products/pack-securite-cover.png',
       'assets/images/products/dashcam-4k-1.jpg.png',
       'assets/images/products/tpms-1.jpg.png',
+      'assets/images/products/support-telephone-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M24 4 L40 10 L40 26 Q40 38 24 44 Q8 38 8 26 L8 10 Z"/>

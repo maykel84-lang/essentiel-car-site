@@ -78,6 +78,37 @@ function renderProduct(p) {
   const container = document.getElementById('productMain');
   if (!container) return;
 
+  // Build bundle included products list
+  const bundleItems = p.bundleIncludes && typeof PRODUCTS !== 'undefined'
+    ? p.bundleIncludes.map(bid => PRODUCTS.find(prod => prod.id === bid)).filter(Boolean)
+    : [];
+
+  function buildBundleIncludes() {
+    if (!bundleItems.length) return '';
+    const title = isFr ? 'Produits inclus dans ce pack' : 'Products included in this pack';
+    return `
+      <div class="bundle-includes">
+        <h3 class="bundle-includes-title">${title}</h3>
+        <div class="bundle-includes-grid">
+          ${bundleItems.map(bp => {
+            const bpData = bp[lang] || bp.fr;
+            return `
+              <div class="bundle-item" onclick="window.location.href='product.html?id=${bp.id}'">
+                <div class="bundle-item-img" style="background:radial-gradient(ellipse at 40% 40%,${bp.accentColor} 0%,#111 100%)">
+                  ${bp.images && bp.images[0]
+                    ? `<img src="${bp.images[0]}" alt="${bpData.name}" loading="lazy">`
+                    : `<div class="bundle-item-icon">${bp.icon}</div>`}
+                </div>
+                <div class="bundle-item-info">
+                  <span class="bundle-item-name">${bpData.name}</span>
+                  <span class="bundle-item-price">${bp.price.toFixed(2).replace('.', ',')}€</span>
+                </div>
+              </div>`;
+          }).join('')}
+        </div>
+      </div>`;
+  }
+
   container.innerHTML = `
     <!-- Breadcrumb -->
     <div class="product-breadcrumb">
@@ -167,6 +198,8 @@ function renderProduct(p) {
             </div>
 
             <p class="product-desc">${data.desc}</p>
+
+            ${buildBundleIncludes()}
 
             ${p.variants && p.variants.length ? `
               ${p.isBundle ? `
