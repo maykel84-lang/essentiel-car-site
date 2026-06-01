@@ -898,22 +898,36 @@ function renderCartPanel() {
     if (!p) return '';
     const data = isFr ? p.fr : (p.en || p.fr);
     const qty = item.qty || 1;
-    const linePrice = (p.price * qty).toFixed(2).replace('.', ',');
-    subtotal += p.price * qty;
+    const unitPrice = item.variantPrice ?? p.price;
+    const linePrice = (unitPrice * qty).toFixed(2).replace('.', ',');
+    subtotal += unitPrice * qty;
     const imgSrc = p.images && p.images[0] ? p.images[0] : '';
     const isBs = p.badgeType === 'bestseller';
-    return `<div class="cart-panel-item" data-id="${p.id}">
-      <div class="cart-panel-item-img">${imgSrc ? `<img src="${imgSrc}" alt="${data.name}" loading="lazy">` : `<span style="font-size:1.6rem">${p.icon}</span>`}${isBs ? '<span class="cart-bs-tag">BESTSELLER</span>' : ''}</div>
+    const cartKey = item.cartKey || p.id;
+    // Show stacked images for qty lot (up to 3 thumbnails)
+    const isLot = item.variantValue === 'lot';
+    const imgHTML = imgSrc
+      ? (isLot
+          ? `<div class="cart-panel-lot-imgs">
+               <img src="${imgSrc}" alt="${data.name}" loading="lazy" class="cart-panel-lot-img">
+               <img src="${imgSrc}" alt="" loading="lazy" class="cart-panel-lot-img">
+               <img src="${imgSrc}" alt="" loading="lazy" class="cart-panel-lot-img">
+             </div>`
+          : `<img src="${imgSrc}" alt="${data.name}" loading="lazy">`)
+      : `<span style="font-size:1.6rem">${p.icon}</span>`;
+    return `<div class="cart-panel-item" data-cartkey="${cartKey}">
+      <div class="cart-panel-item-img">${imgHTML}${isBs ? '<span class="cart-bs-tag">BESTSELLER</span>' : ''}</div>
       <div class="cart-panel-item-info">
         <p class="cart-panel-item-name">${data.name}</p>
+        ${item.variantLabel ? `<p class="cart-panel-item-variant">${item.variantLabel}</p>` : ''}
         <p class="cart-panel-item-price">${linePrice}€</p>
         <div class="cart-panel-item-qty">
-          <button class="qty-btn" onclick="changePanelQty('${p.id}',-1)">−</button>
+          <button class="qty-btn" onclick="changePanelQty('${cartKey}',-1)">−</button>
           <span>${qty}</span>
-          <button class="qty-btn" onclick="changePanelQty('${p.id}',1)">+</button>
+          <button class="qty-btn" onclick="changePanelQty('${cartKey}',1)">+</button>
         </div>
       </div>
-      <button class="cart-panel-item-remove" onclick="removePanelItem('${p.id}')" aria-label="Supprimer">
+      <button class="cart-panel-item-remove" onclick="removePanelItem('${cartKey}')" aria-label="Supprimer">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="13" height="13"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>
       </button>
     </div>`;
@@ -925,7 +939,8 @@ function renderCartPanel() {
   cart.forEach(item => {
     const p = PRODUCTS && PRODUCTS.find(pr => pr.id === item.id);
     if (!p || p.badgeType !== 'bestseller') return;
-    for (let i = 0; i < (item.qty || 1); i++) bsUnits.push(p.price);
+    const unitPrice = item.variantPrice ?? p.price;
+    for (let i = 0; i < (item.qty || 1); i++) bsUnits.push(unitPrice);
   });
   bsUnits.sort((a, b) => a - b);
   const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
@@ -968,9 +983,9 @@ function renderCartPanel() {
     <a href="cart.html" class="cart-panel-view-all" onclick="closeCartPanel()">Voir le panier complet →</a>`;
 }
 
-function changePanelQty(id, delta) {
+function changePanelQty(cartKey, delta) {
   const cart = JSON.parse(localStorage.getItem('ec_cart') || '[]');
-  const item = cart.find(i => i.id === id);
+  const item = cart.find(i => (i.cartKey || i.id) === cartKey);
   if (!item) return;
   item.qty = Math.max(1, (item.qty || 1) + delta);
   localStorage.setItem('ec_cart', JSON.stringify(cart));
@@ -978,9 +993,9 @@ function changePanelQty(id, delta) {
   renderCartPanel();
 }
 
-function removePanelItem(id) {
+function removePanelItem(cartKey) {
   let cart = JSON.parse(localStorage.getItem('ec_cart') || '[]');
-  cart = cart.filter(i => i.id !== id);
+  cart = cart.filter(i => (i.cartKey || i.id) !== cartKey);
   localStorage.setItem('ec_cart', JSON.stringify(cart));
   updateCartCounter();
   renderCartPanel();
