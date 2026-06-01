@@ -107,7 +107,7 @@
           "text": "Voir le Pack Sécurité & Confort →"
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-securite-confort-coffre-jour-1080_jpg.png?v=1762868936"
+      "image": "assets/images/01_pack_securite_confort_vigilance_preuves_video_navigation_claire.png"
     },
     {
       "id": 13,
@@ -208,7 +208,7 @@
           "text": "Voir le Pack Nettoyage Complet →"
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-nettoyage-aspirateur-mousse-brosse-polisseuse-1080_jpg.png?v=1762868819"
+      "image": "assets/images/02_pack_nettoyage_complet_resultat_showroom_a_la_maison.png"
     },
     {
       "id": 14,
@@ -301,7 +301,7 @@
           "text": "Voir le Pack Entretien Essentiel →"
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-compresseur-table-volant-lifestyle-1080_png.png?v=1762868733"
+      "image": "assets/images/03_pack_entretien_essentiel_pret_en_2_minutes_roulez_serein.png"
     },
     {
       "id": 15,
@@ -1864,7 +1864,7 @@
           "text": "https://www.essentielcar.com/products/brosse-jantes-professionnelle-nettoyage-auto"
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-routine-checklist-1080_png.png?v=1762602476"
+      "image": "assets/images/04_brosse_a_jantes_routine_express_checklist_finale.png"
     },
     {
       "id": 30,
@@ -2195,7 +2195,7 @@
           "text": "https://www.essentielcar.com/products/brosse-jantes-professionnelle-nettoyage-auto"
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-interieur-angles-1080_png.png?v=1762598046"
+      "image": "assets/images/05_detail_interieur_de_jante_techniques_angles_surs.png"
     },
     {
       "id": 33,
@@ -23215,7 +23215,7 @@
       ],
       "id": 11,
       "date": "2026-05-31",
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-compresseur-table-volant-lifestyle-1080_png.png?v=1762868733"
+      "image": "assets/images/06_filtre_habitacle_voiture_quand_et_comment_le_changer.png"
     },
     {
       "id": 1,
@@ -23286,7 +23286,7 @@
           "text": "Avec ces 5 règles simples, vous obtenez un résultat professionnel à domicile. Le bon matériel fait 80% du travail — retrouvez nos kits de nettoyage dans la boutique ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-nettoyage-aspirateur-mousse-brosse-polisseuse-1080_jpg.png?v=1762868819"
+      "image": "assets/images/07_5_astuces_pour_nettoyer_votre_voiture_comme_un_pro.png"
     },
     {
       "id": 2,
@@ -23355,7 +23355,7 @@
           "text": "La dashcam est un investissement de 40 à 150€ qui peut en économiser des milliers en cas de litige. Retrouvez notre sélection de dashcams testées dans la boutique ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-securite-confort-coffre-jour-1080_jpg.png?v=1762868936"
+      "image": "assets/images/08_dashcam_pourquoi_c_est_devenu_indispensable_en_2026.png"
     },
     {
       "id": 3,
@@ -23415,7 +23415,7 @@
           "text": "Un kit TPMS 4 capteurs coûte entre 25 et 60€ et peut vous économiser des centaines d'euros par an. Découvrez nos capteurs TPMS compatibles dans la boutique ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-securite-confort-coffre-jour-1080_jpg.png?v=1762868936"
+      "image": "assets/images/09_pneus_sous_gonfles_les_risques_que_vous_ignorez.png"
     },
     {
       "id": 4,
@@ -23485,7 +23485,7 @@
           "text": "Avec la bonne machine et les bons produits, vous pouvez retrouver un état showroom en une après-midi. Retrouvez nos kits de polissage et pads dans la boutique ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-routine-checklist-1080_png.png?v=1762602476"
+      "image": "assets/images/10_polissage_auto_eliminer_les_rayures_soi_meme.png"
     },
     {
       "id": 5,
@@ -23548,7 +23548,7 @@
           "text": "Notre recommandation pour 90% des cas : un support charge sans fil magnétique (compatible MagSafe pour iPhone, avec plaque magnétique pour Android). Découvrez notre sélection dans la boutique."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-interieur-angles-1080_png.png?v=1762598046"
+      "image": "assets/images/11_support_telephone_voiture_lequel_choisir_en_2026.png"
     },
     {
       "id": 6,
@@ -23611,7 +23611,7 @@
           "text": "Pour la majorité des conducteurs, un sealant tous les 6 mois offre le meilleur compromis. Pour ceux qui veulent en finir avec l'entretien régulier, la céramique est l'investissement d'une vie."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-routine-checklist-1080_png.png?v=1762602476"
+      "image": "assets/images/12_cire_sealant_ou_ceramique_quelle_protection_pour_votre_carrosserie.png"
     },
     {
       "id": 7,
@@ -23666,7 +23666,7 @@
           "text": "Notre recommandation : des tapis sur-mesure 3D en TPE pour une protection totale, nettoyage rapide et durabilité. Trouvez le jeu compatible avec votre véhicule dans la boutique ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-compresseur-table-volant-lifestyle-1080_png.png?v=1762868733"
+      "image": "assets/images/13_tapis_de_voiture_comment_choisir_pour_proteger_efficacement.png"
     },
     {
       "id": 8,
@@ -23727,7 +23727,7 @@
           "text": "La caméra de recul est l'un des meilleurs investissements sécurité pour moins de 40€. Retrouvez nos modèles testés et validés dans la boutique ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-brosse-jantes-interieur-angles-1080_png.png?v=1762598046"
+      "image": "assets/images/14_camera_de_recul_installation_et_choix_en_2026.png"
     },
     {
       "id": 9,
@@ -23790,7 +23790,7 @@
           "text": "Un coffre bien organisé, c'est 5 minutes gagnées à chaque trajet. Découvrez nos organisateurs de coffre, filets et accessoires de rangement chez ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-compresseur-table-volant-lifestyle-1080_png.png?v=1762868733"
+      "image": "assets/images/15_comment_organiser_son_coffre_de_voiture_intelligemment.png"
     },
     {
       "id": 10,
@@ -23858,7 +23858,7 @@
           "text": "Un booster de démarrage 20 000 mAh coûte 40 à 80€ et peut vous éviter 200€ de dépanneuse. C'est le premier accessoire à avoir dans son coffre. Retrouvez nos boosters sélectionnés chez ESSENTIEL CAR."
         }
       ],
-      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-securite-confort-coffre-jour-1080_jpg.png?v=1762868936"
+      "image": "assets/images/16_kit_de_demarrage_d_urgence_indispensable_pour_ne_jamais_tomber_en_panne.png"
     }
   ],
   "categories": [
