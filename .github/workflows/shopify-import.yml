@@ -169,16 +169,29 @@ jobs:
             const blogData = JSON.parse(fs.readFileSync(blogDataPath, 'utf8'));
             const existingSlugs = new Set(blogData.articles.map(a => a.slug));
 
-            // Step 5: Convert and add new articles
+            // Step 5: Convert and add new articles, update images for existing
             const converted = [];
             let skipped = 0;
+            let updatedImages = 0;
             for (const sa of allArticles) {
               const slug = sa.handle || slugify(sa.title);
-              if (existingSlugs.has(slug)) { skipped++; continue; }
+              const imageUrl = sa.image && sa.image.src ? sa.image.src : null;
+              if (existingSlugs.has(slug)) {
+                // Update image for existing article if missing
+                if (imageUrl) {
+                  const idx = blogData.articles.findIndex(a => a.slug === slug);
+                  if (idx !== -1 && !blogData.articles[idx].image) {
+                    blogData.articles[idx].image = imageUrl;
+                    updatedImages++;
+                  }
+                }
+                skipped++;
+                continue;
+              }
               const tags = sa.tags ? sa.tags.split(',').map(t => t.trim()).filter(Boolean) : [];
               const bodyText = stripHtml(sa.body_html || '');
               const excerpt = sa.excerpt || bodyText.substring(0, 150).trim() + '...';
-              converted.push({
+              const article = {
                 id: blogData.articles.length + converted.length + 1,
                 slug,
                 title: sa.title,
@@ -189,24 +202,28 @@ jobs:
                 readTime: Math.max(2, Math.round(bodyText.split(/\s+/).length / 200)),
                 tags: tags.slice(0, 6),
                 sections: parseSections(sa.body_html || '', excerpt)
-              });
+              };
+              if (imageUrl) article.image = imageUrl;
+              converted.push(article);
               existingSlugs.add(slug);
             }
 
-            console.log('New articles to import: ' + converted.length + ' | Skipped: ' + skipped);
+            console.log('New articles: ' + converted.length + ' | Images updated: ' + updatedImages + ' | Skipped: ' + skipped);
 
-            if (converted.length === 0) {
-              console.log('No new articles to import.');
+            if (converted.length === 0 && updatedImages === 0) {
+              console.log('Nothing to update.');
               return;
             }
 
-            converted.sort((a, b) => new Date(b.date) - new Date(a.date));
-            blogData.articles = [...converted, ...blogData.articles];
+            if (converted.length > 0) {
+              converted.sort((a, b) => new Date(b.date) - new Date(a.date));
+              blogData.articles = [...converted, ...blogData.articles];
+            }
             blogData.meta.lastUpdated = new Date().toISOString().split('T')[0];
             blogData.meta.totalArticles = blogData.articles.length;
 
             fs.writeFileSync(blogDataPath, JSON.stringify(blogData, null, 2), 'utf8');
-            console.log('SUCCESS: ' + blogData.articles.length + ' total articles in blog-posts.json');
+            console.log('SUCCESS: ' + blogData.articles.length + ' total articles, ' + updatedImages + ' images added');
           }
 
           main().catch(err => {
