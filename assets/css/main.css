@@ -1881,6 +1881,13 @@ svg { display: block; }
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 0.75rem;
 }
+.footer-payment-logos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  order: 2;
+}
 .footer-rights {
   font-size: 0.775rem;
   color: var(--gray-2);
