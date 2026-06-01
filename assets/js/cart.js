@@ -238,11 +238,57 @@ function clearCart() {
   renderCart();
 }
 
-function handleCheckout() {
-  const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
-  const isFr = lang === 'fr';
-  alert(isFr
-    ? '🛒 Commande en cours de traitement...\n\nIntégrez un système de paiement (Stripe, PayPal) pour finaliser le checkout.'
-    : '🛒 Processing order...\n\nConnect a payment provider (Stripe, PayPal) to complete checkout.'
-  );
+async function handleCheckout() {
+  const cart = getCart();
+  if (cart.length === 0) return;
+
+  const lang  = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+  const isFr  = lang === 'fr';
+
+  const items = cart.map(item => {
+    const product = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(p => p.id === item.id) : null;
+    if (!product) return null;
+    const data = product[isFr ? 'fr' : 'en'] || product.fr;
+    return {
+      name:  data.name,
+      price: product.price,
+      qty:   item.qty,
+      image: product.images && product.images[0]
+        ? window.location.origin + '/' + product.images[0]
+        : null,
+    };
+  }).filter(Boolean);
+
+  // Add shipping line if applicable
+  const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0);
+  if (subtotal < 49.99) {
+    items.push({ name: isFr ? 'Frais de livraison' : 'Shipping', price: 4.99, qty: 1, image: null });
+  }
+
+  const btn = document.querySelector('.cart-checkout-btn');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = `<span style="opacity:.7">${isFr ? 'Redirection vers le paiement…' : 'Redirecting to payment…'}</span>`;
+  }
+
+  try {
+    const res  = await fetch('/.netlify/functions/create-checkout', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ items }),
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error(data.error || 'No checkout URL');
+    }
+  } catch (err) {
+    console.error('Checkout error:', err);
+    renderCart();
+    alert(isFr
+      ? 'Erreur lors de la connexion au paiement. Veuillez réessayer.'
+      : 'Could not connect to payment. Please try again.'
+    );
+  }
 }
