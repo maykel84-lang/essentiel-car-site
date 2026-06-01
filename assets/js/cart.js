@@ -105,9 +105,50 @@ function renderCart() {
       ${isFr ? 'Commander — ' + fmtPrice(total) : 'Checkout — ' + fmtPrice(total)}
     </button>
 
+    <div class="cart-payment-logos">
+      <!-- Visa -->
+      <span class="pay-logo pay-logo--visa" aria-label="Visa">
+        <svg viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="13">
+          <rect width="50" height="16" rx="3" fill="#1A1F71"/>
+          <text x="5" y="12" font-family="Arial" font-size="10" font-weight="bold" font-style="italic" fill="white" letter-spacing="0.5">VISA</text>
+        </svg>
+      </span>
+      <!-- Mastercard -->
+      <span class="pay-logo pay-logo--mc" aria-label="Mastercard">
+        <svg viewBox="0 0 50 32" width="34" height="22" xmlns="http://www.w3.org/2000/svg">
+          <rect width="50" height="32" rx="4" fill="#252525"/>
+          <circle cx="19" cy="16" r="10" fill="#EB001B"/>
+          <circle cx="31" cy="16" r="10" fill="#F79E1B"/>
+          <path d="M25 8.27a10 10 0 0 1 0 15.46A10 10 0 0 1 25 8.27z" fill="#FF5F00"/>
+        </svg>
+      </span>
+      <!-- CB -->
+      <span class="pay-logo pay-logo--cb" aria-label="Carte Bancaire">
+        <svg viewBox="0 0 50 32" width="34" height="22" xmlns="http://www.w3.org/2000/svg">
+          <rect width="50" height="32" rx="4" fill="#0066CC"/>
+          <text x="8" y="21" font-family="Arial" font-size="13" font-weight="bold" fill="white">CB</text>
+        </svg>
+      </span>
+      <!-- Apple Pay -->
+      <span class="pay-logo pay-logo--apple" aria-label="Apple Pay">
+        <svg viewBox="0 0 60 32" width="46" height="22" xmlns="http://www.w3.org/2000/svg">
+          <rect width="60" height="32" rx="4" fill="#000"/>
+          <text x="7" y="22" font-family="-apple-system, Arial" font-size="11" fill="white"> Pay</text>
+          <path d="M10 10.5c.6-.7.9-1.6.8-2.5-.8.1-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9 0 1.8-.4 2.3-1.1zm.8 1.3c-1.3-.1-2.4.7-3 .7-.6 0-1.5-.7-2.5-.7-1.3 0-2.5.8-3.1 1.9-1.3 2.3-.3 5.7 1 7.5.6.9 1.4 1.9 2.4 1.8.9 0 1.3-.6 2.4-.6 1.1 0 1.4.6 2.4.6 1 0 1.7-.9 2.4-1.8.7-1 1-2 1-2.1 0 0-2-.8-2-3 0-1.9 1.6-2.8 1.6-2.8-.9-1.3-2.3-1.5-2.6-1.5z" fill="white" transform="translate(2, 1) scale(0.85)"/>
+        </svg>
+      </span>
+      <!-- Google Pay -->
+      <span class="pay-logo pay-logo--gpay" aria-label="Google Pay">
+        <svg viewBox="0 0 60 32" width="46" height="22" xmlns="http://www.w3.org/2000/svg">
+          <rect width="60" height="32" rx="4" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+          <text x="8" y="22" font-family="Arial" font-size="11" font-weight="500" fill="#3c4043"><tspan fill="#4285F4">G</tspan><tspan fill="#3c4043">oogle </tspan><tspan fill="#3c4043">Pay</tspan></text>
+        </svg>
+      </span>
+    </div>
+
     <p class="cart-secure-note">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-      ${isFr ? 'Paiement 100% sécurisé · SSL · CB · PayPal' : '100% secure payment · SSL · Card · PayPal'}
+      ${isFr ? 'Paiement 100% sécurisé · SSL · Chiffrement 3D Secure' : '100% secure payment · SSL · 3D Secure encryption'}
     </p>
 
     <a href="boutique.html" class="cart-continue-link">
