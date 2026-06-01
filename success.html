@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Commande confirmée — ESSENTIEL CAR</title>
+
+  <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
+  <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
+  <link rel="stylesheet" href="assets/fonts/inter.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=2713">
+
+  <style>
+    body.is-loading { opacity: 0; }
+
+    .success-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .success-card {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1.5px solid rgba(34, 197, 94, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+    }
+
+    .success-icon svg {
+      color: #22c55e;
+    }
+
+    .success-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .success-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .success-email-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+    }
+
+    .success-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body class="is-loading">
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div id="loader" role="status" aria-label="Chargement">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <div class="loader-mark">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 11 23 A 34 34 0 1 1 11 57" stroke="#E0000C" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <line x1="40" y1="40" x2="40" y2="9" stroke="#E0000C" stroke-width="5" stroke-linecap="round"/>
+  <line x1="40" y1="40" x2="67" y2="56" stroke="#E0000C" stroke-width="5" stroke-linecap="round"/>
+  <line x1="40" y1="40" x2="13" y2="56" stroke="#E0000C" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="40" cy="40" r="7.5" fill="#E0000C"/>
+  <circle cx="40" cy="40" r="3" fill="#ffffff"/>
+</svg>
+        </div>
+        <div class="loader-wordmark">
+          <span class="l-e">ESSENTIEL</span><span class="l-c">CAR</span>
+        </div>
+      </div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Promo Bar -->
+  <div class="promo-bar" id="promoBar" role="region" aria-label="Offres promotionnelles">
+    <button class="promo-bar-arrow" id="promoPrev" aria-label="Annonce précédente">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+    </button>
+    <div class="promo-bar-track-wrap">
+      <div class="promo-bar-track" id="promoTrack">
+        <div class="promo-bar-item active"><span>Livraison gratuite dès 50€</span></div>
+      </div>
+    </div>
+    <button class="promo-bar-arrow" id="promoNext" aria-label="Annonce suivante">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+    </button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ESSENTIEL CAR — Accueil">
+        <span class="logo-img-crop"><img src="assets/images/logo-essentiel-car.png" alt="ESSENTIEL CAR" class="logo-png" loading="eager"></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link">Boutique</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="boutique.html" class="btn btn--ghost btn--sm">Boutique</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Menu mobile">
+      <ul class="nav-mobile-links" role="list">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="boutique.html" class="nav-link">Boutique</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="success-page" role="main">
+    <div class="success-card">
+
+      <div class="success-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <h1 class="success-title">Commande confirmée</h1>
+
+      <p class="success-subtitle">
+        Merci pour votre commande !<br>
+        Vous allez recevoir un email de confirmation avec les détails de votre livraison.
+      </p>
+
+      <div class="success-email-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Un email de confirmation vous a été envoyé
+      </div>
+
+      <div class="success-actions">
+        <a href="tracking.html" class="btn btn--primary btn--lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8l5 2v4h-5M1 16l2 4h11l2-4"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Suivre ma commande
+        </a>
+        <a href="boutique.html" class="btn btn--ghost btn--lg">
+          Continuer mes achats
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-rights">© 2024 ESSENTIEL CAR. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/vendor/gsap.min.js"></script>
+  <script src="assets/js/vendor/lenis.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/promo-bar.js"></script>
+  <script>
+    // Clear cart after successful payment
+    localStorage.removeItem('ec_cart');
+    // Animate success icon
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap !== 'undefined') {
+        gsap.from('.success-icon', { scale: 0, duration: 0.6, ease: 'back.out(1.7)', delay: 0.3 });
+        gsap.from('.success-title', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out', delay: 0.5 });
+        gsap.from('.success-subtitle', { opacity: 0, y: 15, duration: 0.5, ease: 'power3.out', delay: 0.65 });
+        gsap.from('.success-email-note', { opacity: 0, y: 10, duration: 0.5, ease: 'power3.out', delay: 0.8 });
+        gsap.from('.success-actions', { opacity: 0, y: 10, duration: 0.5, ease: 'power3.out', delay: 0.9 });
+      }
+    });
+  </script>
+</body>
+</html>
