@@ -48,6 +48,9 @@ jobs:
           MANUAL_CATEGORY: ${{ github.event.inputs.category }}
         run: node tools/generate-article.js
 
+      - name: Update sitemap
+        run: node tools/generate-sitemap.js
+
       - name: Read article title
         id: article_info
         run: |
@@ -59,6 +62,6 @@ jobs:
         run: |
           git config --local user.email "blog-bot@essentielcar.com"
           git config --local user.name "ESSENTIEL CAR Blog Bot"
-          git add assets/data/blog-posts.json
+          git add assets/data/blog-posts.json sitemap.xml
           git diff --staged --quiet || git commit -m "Blog: ajout automatique - ${{ steps.article_info.outputs.title }} (${{ steps.article_info.outputs.date }})"
           git push origin main

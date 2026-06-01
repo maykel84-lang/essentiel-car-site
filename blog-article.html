@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Article du blog ESSENTIEL CAR — Conseils, guides et astuces pour entretenir, protéger et équiper votre voiture.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ESSENTIEL CAR">
+  <meta property="og:image" content="https://essentielcar.com/assets/images/logo-essentiel-car.png">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Article — ESSENTIEL CAR Blog</title>
   <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
   <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
@@ -203,8 +207,27 @@
 
         if (!article) { showNotFound(container); return; }
 
-        // Update page title and meta
+        // Update page title and meta SEO
         document.title = article.title + ' — ESSENTIEL CAR Blog';
+        var baseUrl = 'https://essentielcar.com';
+        var pageUrl = baseUrl + '/blog-article.html?slug=' + article.slug;
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', article.excerpt || article.title);
+        var setMeta = function(prop, val, attr) {
+          var el = document.querySelector('meta[' + (attr||'property') + '="' + prop + '"]');
+          if (!el) { el = document.createElement('meta'); el.setAttribute(attr||'property', prop); document.head.appendChild(el); }
+          el.setAttribute('content', val);
+        };
+        setMeta('og:title', article.title + ' — ESSENTIEL CAR');
+        setMeta('og:description', article.excerpt || article.title);
+        setMeta('og:url', pageUrl);
+        if (article.image) setMeta('og:image', article.image);
+        setMeta('twitter:title', article.title, 'name');
+        setMeta('twitter:description', article.excerpt || article.title, 'name');
+        if (article.image) setMeta('twitter:image', article.image, 'name');
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+        canonical.href = pageUrl;
 
         const date = new Date(article.date).toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
 
