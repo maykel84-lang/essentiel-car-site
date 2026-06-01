@@ -702,6 +702,31 @@ function initUGCVideos() {
   document.querySelectorAll('.ugc-card[data-youtube]').forEach(card => {
     card.addEventListener('click', () => openYTModal(card.dataset.youtube));
   });
+  upgradeYTThumbs();
+}
+
+function upgradeYTThumbs() {
+  document.querySelectorAll('.ugc-thumb-img[src*="youtube.com"]').forEach(img => {
+    const vid = img.closest('[data-youtube]')?.dataset.youtube;
+    if (!vid) return;
+    const sizes = ['maxresdefault', 'sddefault', 'hqdefault'];
+    let idx = 0;
+    function trySize() {
+      if (idx >= sizes.length) return;
+      const probe = new Image();
+      const size = sizes[idx++];
+      probe.onload = function() {
+        if (this.naturalWidth > 120) {
+          img.src = `https://img.youtube.com/vi/${vid}/${size}.jpg`;
+        } else {
+          trySize();
+        }
+      };
+      probe.onerror = trySize;
+      probe.src = `https://img.youtube.com/vi/${vid}/${size}.jpg`;
+    }
+    trySize();
+  });
 }
 
 function openYTModal(videoId) {
