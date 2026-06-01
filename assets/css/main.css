@@ -803,6 +803,33 @@ svg { display: block; }
 .product-card-body {
   padding: 1.375rem 1.5rem 1.625rem;
 }
+.card-swatches {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.card-swatch-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  flex-shrink: 0;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.product-card:hover .card-swatch-dot { border-color: rgba(255,255,255,0.5); }
+.card-swatch-dot--transparent {
+  background: conic-gradient(#ccc 0% 50%, transparent 50%) !important;
+  border-style: dashed;
+}
+.card-swatch-sep {
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 3px;
+  flex-shrink: 0;
+}
 .product-card-cat {
   font-family: var(--font-sans);
   font-size: 0.65rem;
