@@ -12,6 +12,7 @@ const TRANSLATIONS = {
     nav_faq: 'FAQ',
     nav_shop: 'Boutique',
     nav_track: 'Suivi commande',
+    cart_title: 'Panier',
 
     /* ── Hero ── */
     hero_badge: 'Équipement Auto Premium',
@@ -160,6 +161,7 @@ const TRANSLATIONS = {
     nav_faq: 'FAQ',
     nav_shop: 'Shop',
     nav_track: 'Track order',
+    cart_title: 'Cart',
 
     /* ── Hero ── */
     hero_badge: 'Premium Auto Equipment',
@@ -300,6 +302,7 @@ const TRANSLATIONS = {
     nav_faq: 'FAQ',
     nav_shop: 'Tienda',
     nav_track: 'Seguimiento',
+    cart_title: 'Carrito',
 
     /* ── Hero ── */
     hero_badge: 'Equipamiento Auto Premium',
@@ -440,6 +443,7 @@ const TRANSLATIONS = {
     nav_faq: 'الأسئلة الشائعة',
     nav_shop: 'المتجر',
     nav_track: 'تتبع الطلب',
+    cart_title: 'سلة التسوق',
 
     /* ── Hero ── */
     hero_badge: 'معدات السيارات الفاخرة',
@@ -580,6 +584,7 @@ const TRANSLATIONS = {
     nav_faq: 'FAQ',
     nav_shop: 'Negozio',
     nav_track: 'Traccia ordine',
+    cart_title: 'Carrello',
 
     /* ── Hero ── */
     hero_badge: 'Attrezzatura Auto Premium',
@@ -720,6 +725,7 @@ const TRANSLATIONS = {
     nav_faq: 'FAQ',
     nav_shop: 'Loja',
     nav_track: 'Rastrear pedido',
+    cart_title: 'Carrinho',
 
     /* ── Hero ── */
     hero_badge: 'Equipamento Auto Premium',
@@ -860,6 +866,7 @@ const TRANSLATIONS = {
     nav_faq: 'FAQ',
     nav_shop: 'Shop',
     nav_track: 'Sendungsverfolgung',
+    cart_title: 'Warenkorb',
 
     /* ── Hero ── */
     hero_badge: 'Premium Auto-Ausstattung',
@@ -1000,6 +1007,7 @@ const TRANSLATIONS = {
     nav_faq: 'FAQ',
     nav_shop: 'Winkel',
     nav_track: 'Bestelling volgen',
+    cart_title: 'Winkelwagen',
 
     /* ── Hero ── */
     hero_badge: 'Premium Auto-uitrusting',
