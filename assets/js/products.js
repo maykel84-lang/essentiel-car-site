@@ -408,7 +408,7 @@ const PRODUCTS = [
     bundleIncludes: ['compresseur-air', 'table-volant'],
     accentColor: '#0a1a0a',
     variants: [
-      { label: 'Table de volant', options: [
+      { label: 'Table de volant', productId: 'table-volant', options: [
         { value: 'blanc', display: 'Blanc', hex: '#f0ede8', imageIndex: 2 },
         { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 3 },
       ]}
@@ -453,11 +453,11 @@ const PRODUCTS = [
     bundleIncludes: ['aspirateur-sans-fil', 'lance-mousse', 'brosse-jantes', 'machine-polir'],
     accentColor: '#001828',
     variants: [
-      { label: 'Lance mousse', options: [
+      { label: 'Lance mousse', productId: 'lance-mousse', options: [
         { value: 'noir',  display: 'Noir',             hex: '#1a1a1a',  imageIndex: 2 },
         { value: 'blanc', display: 'Blanc transparent', hex: '#e8e8e8', transparent: true, imageIndex: 3 },
       ]},
-      { label: 'Brosse jantes', options: [
+      { label: 'Brosse jantes', productId: 'brosse-jantes', options: [
         { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 4 },
         { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 4 },
         { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 4 },

@@ -435,6 +435,7 @@ function buildProductCard(p, lang, num) {
     <article class="product-card" data-id="${p.id}" data-category="${p.category}" onclick="goToProduct('${p.id}')">
       <div class="product-card-visual" style="background: radial-gradient(ellipse at 40% 50%, ${p.accentColor} 0%, #111 100%);">
         <div class="product-badge badge--${p.badgeType}">${p.badge}</div>
+        <div class="product-discount-badge">-${p.discount}%</div>
         ${p.images && p.images[0]
           ? `<img class="product-card-img" src="${p.images[0]}" alt="${data.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
           : ''}

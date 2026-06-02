@@ -92,11 +92,12 @@ function renderProduct(p) {
         <div class="bundle-includes-grid">
           ${bundleItems.map(bp => {
             const bpData = bp[lang] || bp.fr;
+            const hasImg = bp.images && bp.images[0];
             return `
-              <div class="bundle-item" onclick="window.location.href='product.html?id=${bp.id}'">
+              <div class="bundle-item" data-bundle-id="${bp.id}" onclick="window.location.href='product.html?id=${bp.id}'">
                 <div class="bundle-item-img" style="background:radial-gradient(ellipse at 40% 40%,${bp.accentColor} 0%,#111 100%)">
-                  ${bp.images && bp.images[0]
-                    ? `<img src="${bp.images[0]}" alt="${bpData.name}" loading="lazy">`
+                  ${hasImg
+                    ? `<img src="${bp.images[0]}" alt="${bpData.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="bundle-item-icon" style="display:none">${bp.icon}</div>`
                     : `<div class="bundle-item-icon">${bp.icon}</div>`}
                 </div>
                 <div class="bundle-item-info">
@@ -202,14 +203,20 @@ function renderProduct(p) {
             ${buildBundleIncludes()}
 
             ${p.variants && p.variants.length ? `
-              ${p.isBundle ? `
-                <div class="pack-variant-note">
+              ${p.isBundle ? (() => {
+                const colorVars = p.variants.filter(v => !v.type);
+                const colorSummary = colorVars.map(v => {
+                  const def = v.options.find(o => o.default) || v.options[0];
+                  return `<span class="pack-color-selection" data-variant-label="${v.label}">${v.label} : <strong>${def ? def.display : '—'}</strong></span>`;
+                }).join(' &nbsp;·&nbsp; ');
+                const base = lang === 'en'
+                  ? 'This pack includes products available in multiple colors. Please select your preferences before adding to your cart.'
+                  : 'Ce pack contient des produits disponibles en plusieurs couleurs. Veuillez sélectionner votre couleur préférée avant de valider votre panier.';
+                return `<div class="pack-variant-note" id="packVariantNote">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                  <p>${lang === 'en'
-                    ? 'This pack includes products available in multiple colors. Please select your preferences before adding to your cart.'
-                    : 'Ce pack contient des produits disponibles en plusieurs couleurs. Veuillez sélectionner votre couleur préférée avant de valider votre panier.'
-                  }</p>
-                </div>` : ''}
+                  <p>${base}${colorSummary ? `<br><span class="pack-color-summary">${colorSummary}</span>` : ''}</p>
+                </div>`;
+              })() : ''}
               <div class="product-variants">${buildVariants(p.variants, lang)}</div>
             ` : ''}
 
@@ -416,6 +423,45 @@ function initVariants() {
     group.querySelector('.variant-selected-label').textContent = btn.dataset.label;
     if (btn.dataset.price) updateProductPrice(parseFloat(btn.dataset.price), parseFloat(btn.dataset.oldprice));
     if (btn.dataset.imgindex !== undefined) switchImageByIndex(parseInt(btn.dataset.imgindex, 10));
+
+    // Update pack color note and bundle-item thumbnail
+    const variantLabel = group.querySelector('.variant-label');
+    if (variantLabel) {
+      const labelText = variantLabel.textContent.split(':')[0].trim();
+      // Update pack-color-selection span in the note
+      const noteSpan = document.querySelector(`.pack-color-selection[data-variant-label="${labelText}"]`);
+      if (noteSpan) noteSpan.innerHTML = `${labelText} : <strong>${btn.dataset.label}</strong>`;
+      // Update bundle-item thumbnail that matches this variant's productId
+      const variantGroupEl = group;
+      const allVariantGroups = document.querySelectorAll('.variant-group');
+      allVariantGroups.forEach(vg => {
+        const lbl = vg.querySelector('.variant-label');
+        if (!lbl || lbl.textContent.split(':')[0].trim() !== labelText) return;
+        // Find the productId from the active button's group via data attribute
+      });
+      // Update bundle-item image using pack images array
+      if (btn.dataset.imgindex !== undefined && typeof p !== 'undefined' && p.images) {
+        const imgIndex = parseInt(btn.dataset.imgindex, 10);
+        const newSrc = p.images[imgIndex];
+        if (newSrc) {
+          // Find bundle item whose product images contain this path
+          document.querySelectorAll('.bundle-item[data-bundle-id]').forEach(bundleEl => {
+            const bundleImg = bundleEl.querySelector('.bundle-item-img img');
+            if (!bundleImg) return;
+            const bundleId = bundleEl.dataset.bundleId;
+            const bprod = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(x => x.id === bundleId) : null;
+            if (!bprod) return;
+            // Check if the pack image path is a product image for this bundle item
+            if (bprod.images && bprod.images.some(img => newSrc.endsWith(img.split('/').pop()))) {
+              bundleImg.src = newSrc;
+              bundleImg.style.display = '';
+              const fallbackIcon = bundleEl.querySelector('.bundle-item-icon');
+              if (fallbackIcon) fallbackIcon.style.display = 'none';
+            }
+          });
+        }
+      }
+    }
   });
 }
 
@@ -494,12 +540,28 @@ function handleAddToCart(product, data, isFr) {
   const colorLabel   = activeSwatch ? activeSwatch.dataset.label : null;
   const colorValue   = activeSwatch ? activeSwatch.dataset.value : null;
 
-  // Use variant-aware cart key so Lot de 3 ≠ À l'unité
+  // Use variant-aware cart key
   const cartKey = variantValue ? `${product.id}__${variantValue}` : product.id;
-  const existing = cart.find(item => item.cartKey === cartKey || (!item.cartKey && item.id === product.id && !variantValue));
+
+  // Remove any stale entry for the same product (different variant or legacy entry without cartKey)
+  // This prevents showing both "À l'unité" and "Lot de 3" simultaneously in cart
+  const staleIdx = cart.findIndex(item =>
+    item.id === product.id && (item.cartKey || item.id) !== cartKey
+  );
+  if (staleIdx !== -1) cart.splice(staleIdx, 1);
+
+  const existing = cart.find(item => (item.cartKey || item.id) === cartKey);
 
   if (existing) {
     existing.qty = (existing.qty || 1) + 1;
+    // Update variant info in case it changed
+    existing.cartKey = cartKey;
+    if (variantPrice !== null)    existing.variantPrice    = variantPrice;
+    if (variantOldPrice !== null) existing.variantOldPrice = variantOldPrice;
+    if (variantLabel)             existing.variantLabel    = variantLabel;
+    if (variantValue)             existing.variantValue    = variantValue;
+    if (colorLabel)               existing.colorLabel      = colorLabel;
+    if (colorValue)               existing.colorValue      = colorValue;
   } else {
     const entry = { id: product.id, cartKey, qty: 1 };
     if (variantPrice !== null)    entry.variantPrice    = variantPrice;

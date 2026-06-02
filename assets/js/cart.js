@@ -193,7 +193,7 @@ function renderCartItem(item, t_key, isFr) {
             ${item.variantLabel ? `<p class="cart-item-variant">${item.variantLabel}${item.colorLabel ? ' · ' + item.colorLabel : ''}</p>` : ''}
             <p class="cart-item-tagline">${data.tagline}</p>
           </div>
-          <button class="cart-item-remove" onclick="removeFromCart('${p.id}')" aria-label="${isFr ? 'Supprimer' : 'Remove'}">
+          <button class="cart-item-remove" onclick="removeFromCart('${item.cartKey || p.id}')" aria-label="${isFr ? 'Supprimer' : 'Remove'}">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
@@ -201,12 +201,12 @@ function renderCartItem(item, t_key, isFr) {
           <div class="cart-item-pricing">
             <span class="cart-item-price">${priceStr}€</span>
             <span class="cart-item-old">${oldStr}€</span>
-            <span class="cart-item-discount">-${p.discount}%</span>
+            <span class="cart-item-discount">-${Math.round((1 - price / (item.variantOldPrice ?? p.oldPrice)) * 100)}%</span>
           </div>
           <div class="cart-item-qty">
-            <button class="qty-btn" onclick="updateQty('${p.id}', -1)" aria-label="${isFr ? 'Diminuer' : 'Decrease'}">−</button>
+            <button class="qty-btn" onclick="updateQty('${item.cartKey || p.id}', -1)" aria-label="${isFr ? 'Diminuer' : 'Decrease'}">−</button>
             <span class="qty-value">${item.qty}</span>
-            <button class="qty-btn" onclick="updateQty('${p.id}', 1)" aria-label="${isFr ? 'Augmenter' : 'Increase'}">+</button>
+            <button class="qty-btn" onclick="updateQty('${item.cartKey || p.id}', 1)" aria-label="${isFr ? 'Augmenter' : 'Increase'}">+</button>
           </div>
           <span class="cart-item-total">${lineTotal}€</span>
         </div>
@@ -247,21 +247,21 @@ function getCatLabel(cat, isFr) {
   return labels[cat] || cat;
 }
 
-function updateQty(id, delta) {
+function updateQty(cartKey, delta) {
   const cart = getCart();
-  const item = cart.find(i => i.id === id);
+  const item = cart.find(i => (i.cartKey || i.id) === cartKey);
   if (!item) return;
   item.qty = Math.max(1, (item.qty || 1) + delta);
   if (item.qty < 1) {
-    removeFromCart(id);
+    removeFromCart(cartKey);
     return;
   }
   saveCart(cart);
   renderCart();
 }
 
-function removeFromCart(id) {
-  const cart = getCart().filter(i => i.id !== id);
+function removeFromCart(cartKey) {
+  const cart = getCart().filter(i => (i.cartKey || i.id) !== cartKey);
   saveCart(cart);
 
   // Animate out
