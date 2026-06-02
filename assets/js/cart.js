@@ -265,7 +265,7 @@ function removeFromCart(cartKey) {
   saveCart(cart);
 
   // Animate out
-  const el = document.querySelector(`.cart-item[data-id="${id}"]`);
+  const el = document.querySelector(`.cart-item[data-id="${cartKey}"]`);
   if (el && typeof gsap !== 'undefined') {
     gsap.to(el, {
       opacity: 0, x: -30, height: 0, marginBottom: 0, paddingTop: 0, paddingBottom: 0,
@@ -334,9 +334,9 @@ async function handleCheckout() {
   } catch (err) {
     console.error('Checkout error:', err);
     renderCart();
-    alert(isFr
-      ? 'Erreur lors de la connexion au paiement. Veuillez réessayer.'
-      : 'Could not connect to payment. Please try again.'
-    );
+    const msg = err.message && err.message !== 'No checkout URL' && err.message !== 'Failed to fetch'
+      ? err.message
+      : (isFr ? 'Erreur lors de la connexion au paiement. Veuillez réessayer.' : 'Could not connect to payment. Please try again.');
+    alert(msg);
   }
 }
