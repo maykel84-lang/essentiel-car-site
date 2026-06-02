@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
   <link rel="stylesheet" href="assets/fonts/space-grotesk.css">
   <link rel="stylesheet" href="assets/fonts/inter.css">
-  <link rel="stylesheet" href="assets/css/main.css?v=9000">
+  <link rel="stylesheet" href="assets/css/main.css?v=9001">
 
   <style>
     body.is-loading { opacity: 0; }
@@ -204,8 +204,10 @@
   <script src="assets/js/app.js?v=900"></script>
   <script src="assets/js/promo-bar.js"></script>
   <script>
-    // Clear cart after successful payment
-    localStorage.removeItem('ec_cart');
+    // Only clear cart when arriving from Stripe (session_id present)
+    if (new URLSearchParams(location.search).get('session_id')) {
+      localStorage.removeItem('ec_cart');
+    }
     // Animate success icon
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof gsap !== 'undefined') {
