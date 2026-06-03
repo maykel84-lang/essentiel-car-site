@@ -730,8 +730,9 @@ svg { display: block; }
   transition: border-color 0.35s, transform 0.35s var(--ease-out), box-shadow 0.35s;
   cursor: pointer;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto auto auto;
   height: 100%;
 }
 .product-card:hover {
@@ -828,11 +829,10 @@ svg { display: block; }
   min-height: 0;
 }
 .product-card-footer {
+  grid-row: 5;
   padding: 0.75rem 1.5rem 1.625rem;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
-  margin-top: auto;
 }
 .product-card-body {
   padding: 1.375rem 1.5rem 0.75rem;
@@ -3925,6 +3925,7 @@ svg { display: block; }
    ========================================================= */
 
 .countdown-wrap {
+  grid-row: 4;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -3957,6 +3958,7 @@ svg { display: block; }
 
 /* Stock badge */
 .stock-badge {
+  grid-row: 3;
   display: flex;
   align-items: center;
   gap: 0.35rem;
