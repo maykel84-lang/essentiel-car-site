@@ -1179,7 +1179,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  align-items: end;
+  align-items: start;
 }
 .ugc-card {
   display: flex;
