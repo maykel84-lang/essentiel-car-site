@@ -1346,6 +1346,16 @@ function setLang(lang) {
   if (typeof renderCategories === 'function') renderCategories();
   if (typeof renderProblems === 'function') renderProblems();
 
+  const _flagCC = { fr:'fr', en:'gb', es:'es', ar:'sa', it:'it', pt:'pt', de:'de', pl:'pl', nl:'nl' };
+  const _labels = { fr:'FR', en:'EN', es:'ES', ar:'AR', it:'IT', pt:'PT', de:'DE', pl:'PL', nl:'NL' };
+  const _cc = _flagCC[lang] || lang;
+  const _lbl = _labels[lang] || lang.toUpperCase();
+  const navBtn = document.getElementById('navLangBtn');
+  if (navBtn) navBtn.innerHTML = `<img src="https://flagcdn.com/20x15/${_cc}.png" alt="${_lbl}" class="lang-flag"> ${_lbl} ▾`;
+  document.querySelectorAll('.lang-option[data-lang]').forEach(el =>
+    el.classList.toggle('active', el.dataset.lang === lang)
+  );
+
   document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
 }
 

@@ -45,8 +45,8 @@
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
-  <!-- Lang Switcher -->
-  <div class="lang-switcher" role="navigation" aria-label="Choix de langue">
+  <!-- Lang Switcher (legacy, hidden) -->
+  <div class="lang-switcher" role="navigation" aria-label="Choix de langue" style="display:none">
     <button class="lang-btn active" data-lang="fr" aria-label="Français">FR</button>
     <div class="lang-divider" aria-hidden="true"></div>
     <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
@@ -97,28 +97,49 @@
         <li><a href="index.html#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
       </ul>
 
-      <div class="nav-right">
+      <div class="nav-actions">
+        <!-- Language -->
+        <div class="nav-lang" id="navLang">
+          <button class="nav-lang-btn" id="navLangBtn" onclick="toggleLangDropdown()"><img src="https://flagcdn.com/20x15/fr.png" alt="FR" class="lang-flag"> FR ▾</button>
+          <div class="lang-dropdown" id="langDropdown">
+            <div class="lang-option active" data-lang="fr" onclick="setLangFromNav('fr')"><img src="https://flagcdn.com/20x15/fr.png" alt="FR" class="lang-flag"> FR</div>
+            <div class="lang-option" data-lang="en" onclick="setLangFromNav('en')"><img src="https://flagcdn.com/20x15/gb.png" alt="EN" class="lang-flag"> EN</div>
+            <div class="lang-option" data-lang="es" onclick="setLangFromNav('es')"><img src="https://flagcdn.com/20x15/es.png" alt="ES" class="lang-flag"> ES</div>
+            <div class="lang-option" data-lang="ar" onclick="setLangFromNav('ar')"><img src="https://flagcdn.com/20x15/sa.png" alt="AR" class="lang-flag"> AR</div>
+            <div class="lang-option" data-lang="it" onclick="setLangFromNav('it')"><img src="https://flagcdn.com/20x15/it.png" alt="IT" class="lang-flag"> IT</div>
+            <div class="lang-option" data-lang="pt" onclick="setLangFromNav('pt')"><img src="https://flagcdn.com/20x15/pt.png" alt="PT" class="lang-flag"> PT</div>
+            <div class="lang-option" data-lang="de" onclick="setLangFromNav('de')"><img src="https://flagcdn.com/20x15/de.png" alt="DE" class="lang-flag"> DE</div>
+            <div class="lang-option" data-lang="pl" onclick="setLangFromNav('pl')"><img src="https://flagcdn.com/20x15/pl.png" alt="PL" class="lang-flag"> PL</div>
+          </div>
+        </div>
+        <!-- Contact -->
+        <a href="contact.html" class="btn btn--ghost btn--sm nav-cta-desktop" style="font-size:0.78rem">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Contact
+        </a>
+        <!-- Boutique -->
+        <a href="boutique.html" class="btn btn--primary btn--sm nav-cta-desktop" data-magnetic data-i18n="nav_shop">
+          Boutique
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
+        </a>
         <button class="nav-cart-btn" id="navCartBtn" aria-label="Panier" aria-current="page">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
           <span class="cart-count" id="cartCount" style="display:none">0</span>
         </button>
-        <a href="contact.html" class="btn btn--ghost btn--sm" style="font-size:0.78rem">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-          Contact
-        </a>
-        <a href="boutique.html" class="btn btn--ghost btn--sm" data-i18n="nav_shop">Boutique</a>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-    <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Menu mobile">
-      <ul class="nav-mobile-links" role="list">
-        <li><a href="index.html" class="nav-link" data-i18n="nav_home">Accueil</a></li>
-        <li><a href="boutique.html" class="nav-link" data-i18n="nav_shop">Boutique</a></li>
-        <li><a href="index.html#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
-        <li><a href="index.html#avis" class="nav-link" data-i18n="nav_reviews">Avis</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-hidden="true">
+      <ul role="list" style="text-align:center;display:flex;flex-direction:column;gap:1.25rem">
+        <li><a href="index.html" class="mobile-link" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="boutique.html" class="mobile-link" data-i18n="nav_shop">Boutique</a></li>
+        <li><a href="index.html#categories" class="mobile-link" data-i18n="nav_categories">Catégories</a></li>
+        <li><a href="index.html#avis" class="mobile-link" data-i18n="nav_reviews">Avis</a></li>
+        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        <li style="margin-top:1rem"><a href="boutique.html" class="btn btn--primary" data-i18n="nav_shop">Boutique</a></li>
       </ul>
     </div>
   </nav>
@@ -262,10 +283,11 @@
   <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/js/vendor/lenis.min.js"></script>
   <script src="assets/js/vendor/split-type.min.js"></script>
-  <script src="assets/js/products.js?v=901"></script>
-  <script src="assets/js/i18n.js?v=902"></script>
+  <script src="assets/js/products.js?v=902"></script>
+  <script src="assets/js/i18n.js?v=903"></script>
   <script src="assets/js/app.js?v=904"></script>
   <script src="assets/js/cart.js?v=905"></script>
+  <script src="assets/js/features.js?v=903"></script>
   <script src="assets/js/promo-bar.js"></script>
 </body>
 </html>
