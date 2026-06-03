@@ -1,6 +1,99 @@
 {
   "articles": [
     {
+      "slug": "nettoyage-interieur-voiture-cuir-tissu-guide",
+      "title": "Nettoyage intérieur voiture : cuir & tissu sans abîmer",
+      "excerpt": "Découvrez comment nettoyer l'intérieur de votre voiture efficacement. Guide complet cuir, tissu et plastique avec produits adaptés.",
+      "category": "Nettoyage",
+      "emoji": "🧹",
+      "readTime": 6,
+      "tags": [
+        "nettoyage intérieur",
+        "entretien auto",
+        "cuir voiture",
+        "tissu automobile"
+      ],
+      "sections": [
+        {
+          "type": "intro",
+          "text": "L'intérieur de votre voiture mérite autant d'attention que l'extérieur. Un habitacle propre préserve la valeur de votre véhicule, améliore votre bien-être et prolonge la durée de vie des matériaux. Découvrez nos conseils d'experts pour un nettoyage intérieur efficace et sécurisé."
+        },
+        {
+          "type": "h2",
+          "text": "Pourquoi nettoyer régulièrement l'intérieur de sa voiture ?"
+        },
+        {
+          "type": "p",
+          "text": "Un intérieur propre n'est pas qu'une question d'esthétique. La poussière, les miettes et les résidus s'accumulent sur les sièges, le tableau de bord et les moquettes, créant un environnement peu hygiénique. Un nettoyage régulier élimine les bactéries, réduit les mauvaises odeurs et prévient l'usure prématurée des matériaux. De plus, un habitacle bien entretenu conserve sa valeur lors d'une revente."
+        },
+        {
+          "type": "h2",
+          "text": "Les différents matériaux de l'intérieur : comment les traiter ?"
+        },
+        {
+          "type": "p",
+          "text": "Chaque surface de votre voiture nécessite une approche spécifique. Le cuir demande un traitement délicat avec des produits nourrissants, le tissu requiert un détergent adapté, et le plastique ou le caoutchouc ont besoin d'un nettoyant doux pour éviter les traces. Identifier correctement les matériaux présents dans votre véhicule est la première étape pour un nettoyage efficace et sans risque."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Cuir : utiliser un savon spécifique et un conditionneur pour maintenir la souplesse",
+            "Tissu : appliquer un shampooing automobile avec un aspirateur pour éliminer la poussière",
+            "Plastique tableau de bord : nettoyer avec un chiffon microfibre humide et un produit doux",
+            "Moquette et tapis : aspirer régulièrement puis traiter les taches avec un détergent adapté"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Étapes du nettoyage intérieur pas à pas"
+        },
+        {
+          "type": "p",
+          "text": "Commencez par vider complètement votre voiture de tous les objets personnels. Aspirez ensuite les sièges, la moquette et les zones difficiles d'accès. Utilisez des brosses adaptées pour déloger la poussière incrustée. Nettoyez le tableau de bord et les surfaces plastiques de haut en bas pour éviter que la saleté ne retombe sur les zones déjà propres."
+        },
+        {
+          "type": "h2",
+          "text": "Traiter les taches tenaces et mauvaises odeurs"
+        },
+        {
+          "type": "p",
+          "text": "Les taches fraîches se nettoient plus facilement : tamponnez avec un chiffon humide sans frotter vigoureusement. Pour les taches anciennes, appliquez un détergent spécialisé et laissez agir quelques minutes. Concernant les odeurs, l'aération régulière reste le meilleur allié. Complétez avec un désodorisant automobile ou un nettoyant parfumé adapté au type de matériau de votre intérieur."
+        },
+        {
+          "type": "h2",
+          "text": "Les erreurs à éviter lors du nettoyage"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ne pas utiliser d'eau de javel ou de produits agressifs sur le cuir ou le tissu",
+            "Éviter d'humidifier excessivement pour ne pas créer de moisissures",
+            "Ne pas négliger le nettoyage des joints et des crevasses où s'accumule la saleté",
+            "Prendre garde à ne pas endommager l'électronique lors du nettoyage près du tableau de bord"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Fréquence de nettoyage recommandée"
+        },
+        {
+          "type": "p",
+          "text": "L'idéal est de procéder à un nettoyage hebdomadaire léger : aspirer les miettes, nettoyer le tableau de bord. Un nettoyage en profondeur tous les trois mois permet de maintenir un habitacle impeccable. En cas d'utilisation intensive ou de passagers fréquents, augmentez la fréquence pour conserver une voiture propre et hygiénique toute l'année."
+        },
+        {
+          "type": "tip",
+          "text": "Investissez dans des produits de nettoyage de qualité adaptés à chaque matériau. Un chiffon microfibre reste votre meilleur allié pour éviter les rayures et les traces. Aérez votre voiture après le nettoyage pour éliminer les odeurs de produits."
+        },
+        {
+          "type": "conclusion",
+          "text": "Un intérieur propre et bien entretenu transforme votre expérience de conduite. Chez ESSENTIEL CAR, nous proposons une gamme complète de produits et accessoires de nettoyage spécialisés pour chaque surface automobile. Découvrez notre sélection de brosses, chiffons microfibres et détergents pour un résultat showroom à la maison. Rendez-vous sur notre boutique ESSENTIEL CAR pour équiper votre routine d'entretien !"
+        }
+      ],
+      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-nettoyage-aspirateur-mousse-brosse-polisseuse-1080_jpg.png?v=1762868819",
+      "id": 97,
+      "date": "2026-06-02"
+    },
+    {
       "slug": "filtre-habitacle-entretien-changement-guide",
       "title": "Filtre habitacle auto : entretien et changement",
       "excerpt": "Guide complet pour entretenir et remplacer votre filtre habitacle. Améliorez la qualité de l'air intérieur de votre voiture en 10 minutes.",
@@ -24052,8 +24145,8 @@
     "Entretien"
   ],
   "meta": {
-    "lastUpdated": "2026-06-01",
-    "totalArticles": 96,
+    "lastUpdated": "2026-06-02",
+    "totalArticles": 97,
     "autoGenerated": true
   }
 }
