@@ -3946,8 +3946,16 @@ svg { display: block; }
 
 @media (max-width: 768px) {
   .product-main-img { height: 260px; }
-  .product-img-thumbs { padding: 0.5rem 0.75rem; }
-  .product-thumb { width: 52px; height: 52px; }
+
+  /* Miniatures sur 2 lignes sur mobile — évite le débordement horizontal */
+  .product-img-thumbs {
+    padding: 0.5rem 0.75rem;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: flex-start;
+    gap: 0.4rem;
+  }
+  .product-thumb { width: 52px; height: 52px; flex-shrink: 0; }
 
   /* Fix débordement horizontal du card image sur mobile */
   .product-visual-card {
