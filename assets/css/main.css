@@ -1753,11 +1753,13 @@ svg { display: block; }
 }
 .why-accent-card {
   position: absolute;
-  bottom: 2rem; right: -1.5rem;
+  bottom: 1.25rem; right: 1rem;
+  z-index: 10;
   background: var(--red);
   border-radius: var(--r-lg);
   padding: 1.25rem 1.5rem;
-  min-width: 160px;
+  min-width: 140px;
+  box-shadow: 0 8px 24px rgba(224,0,12,0.45);
 }
 .why-accent-num {
   font-family: var(--font-display);
@@ -1774,8 +1776,11 @@ svg { display: block; }
 }
 .why-dot-card {
   position: absolute;
-  top: 2rem; left: -1.5rem;
-  background: var(--black-2);
+  top: 1.25rem; left: 1rem;
+  z-index: 10;
+  background: rgba(15,15,15,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: 1rem 1.25rem;
