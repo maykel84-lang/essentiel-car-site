@@ -26,6 +26,42 @@ const topicInstruction = process.env.MANUAL_TOPIC
 
 const existingList = existingTitles.slice(0, 20).join('\n- ');
 
+// Map article keywords → exact English product name for imagePrompt
+var PRODUCT_MAP = [
+  { keywords: ['dashcam', 'dash cam', 'camera de bord', 'boite noire'], en: 'dual 4K dashcam car camera' },
+  { keywords: ['lance-mousse', 'lance mousse', 'mousse active', 'foam cannon', 'pulverisateur'], en: 'foam cannon spray bottle car wash' },
+  { keywords: ['aspirateur'], en: 'cordless car vacuum cleaner handheld' },
+  { keywords: ['brosse', 'jante', 'jantes'], en: 'car wheel rim cleaning brush kit' },
+  { keywords: ['machine a polir', 'polisseuse', 'polish', 'polissage'], en: 'cordless car polisher orbital machine' },
+  { keywords: ['compresseur', 'gonflage', 'pneu', 'pression'], en: 'portable car tire inflator compressor digital display' },
+  { keywords: ['tpms', 'capteur pression', 'surveillance pression'], en: 'TPMS tire pressure monitoring system sensors display' },
+  { keywords: ['support telephone', 'support telephone', 'support smartphone'], en: 'magnetic car phone holder mount dashboard' },
+  { keywords: ['table volant', 'tablette volant', 'plateau volant'], en: 'steering wheel desk tray laptop table car' },
+  { keywords: ['filtre habitacle', 'filtre air', 'filtre cabine'], en: 'car cabin air filter HEPA replacement automotive' },
+  { keywords: ['essuie-glace', 'essuie glace', 'retroviseur', 'balai'], en: 'car wiper blade rearview mirror telescopic' }
+];
+
+function detectProduct(title) {
+  var lower = title.toLowerCase();
+  for (var i = 0; i < PRODUCT_MAP.length; i++) {
+    for (var j = 0; j < PRODUCT_MAP[i].keywords.length; j++) {
+      if (lower.indexOf(PRODUCT_MAP[i].keywords[j]) !== -1) {
+        return PRODUCT_MAP[i].en;
+      }
+    }
+  }
+  return null;
+}
+
+// Brand DA: dark/black background, red (#CC0000) + white accents, professional automotive studio photography
+var DA_STYLE = 'dramatic dark studio background, bold red and white color accents, professional automotive product photography, premium brand identity, sharp focus, cinematic lighting, black background';
+
+var DA_PRODUCT_EXAMPLES = [
+  '"dual 4K dashcam mounted on windshield interior view ' + DA_STYLE + '"',
+  '"foam cannon spray bottle producing white foam on black car ' + DA_STYLE + '"',
+  '"flat tire on dark asphalt road red danger warning light dramatic ' + DA_STYLE + '"'
+].join(', ');
+
 const prompt = [
   'Tu es un expert en accessoires automobiles et SEO francais.',
   'Genere un article de blog complet pour le site ESSENTIEL CAR.',
@@ -45,7 +81,7 @@ const prompt = [
   '  "category": "' + manualCategory + '",',
   '  "emoji": "emoji",',
   '  "readTime": 5,',
-  '  "imagePrompt": "Short English description for AI image generation, 10-15 words, photo-realistic automotive product on dark studio background",',
+  '  "imagePrompt": "VOIR REGLES CI-DESSOUS",',
   '  "tags": ["tag1","tag2","tag3"],',
   '  "sections": [',
   '    {"type":"intro","text":"Introduction 2-3 phrases"},',
@@ -61,8 +97,19 @@ const prompt = [
   '  ]',
   '}',
   '',
-  'Regles : 500-800 mots, SEO longue traine francais, conclusion cite la boutique ESSENTIEL CAR.',
-  'Pour imagePrompt : courte description anglaise precise du sujet de l\'article, style photo-realiste, fond studio sombre, ex: "car foam cannon spray gun professional car wash dark background"'
+  'REGLES imagePrompt — TRES IMPORTANT :',
+  'imagePrompt est une description en anglais pour generer une image IA qui respecte la charte graphique de la marque ESSENTIEL CAR :',
+  '- Style : photo-realisme professionnel, eclairage studio dramatique',
+  '- Palette : fond NOIR/sombre, accents ROUGE vif et BLANC',
+  '- Composition : produit central bien visible, qualite premium, ombre portee',
+  '- Produits references (si l\'article en parle) : foam cannon spray bottle, cordless car vacuum, wheel rim brush, orbital car polisher, portable tire inflator, TPMS sensors, magnetic phone mount, steering wheel desk tray, cabin air filter, telescopic wiper blade, dual 4K dashcam',
+  '- Si l\'article traite d\'un de ces produits : INCLURE le nom exact du produit dans le prompt',
+  '- Si l\'article traite d\'un sujet general (pneus, entretien, etc.) : decrire la scene avec la meme DA sombre/rouge/blanc',
+  '- Toujours terminer par : dramatic dark studio background bold red white accents professional automotive photography',
+  '- Longueur : 15-25 mots maximum',
+  '- Exemples reussis : ' + DA_PRODUCT_EXAMPLES,
+  '',
+  'Regles article : 500-800 mots, SEO longue traine francais, conclusion cite la boutique ESSENTIEL CAR.'
 ].join('\n');
 
 function callClaude(promptText) {
@@ -144,10 +191,18 @@ callClaude(prompt).then(function(rawText) {
   articleData.id = newId;
   articleData.date = today;
 
-  // Build AI image URL from Claude-generated prompt; seed = article ID for reproducibility
-  var imagePrompt = articleData.imagePrompt
-    || (articleData.title + ' car accessory automotive product professional studio dark background');
-  articleData.image = buildPollinationsUrl(imagePrompt, newId);
+  // If Claude gave an imagePrompt, enrich it with detected product + DA style suffix
+  var basePrompt = articleData.imagePrompt || '';
+  var detectedProduct = detectProduct(articleData.title);
+  if (!basePrompt) {
+    // Fallback: build prompt from title + detected product + DA
+    basePrompt = (detectedProduct || articleData.title + ' automotive')
+      + ' dramatic dark studio background bold red white accents professional automotive photography';
+  } else if (detectedProduct && basePrompt.toLowerCase().indexOf(detectedProduct.split(' ')[0]) === -1) {
+    // Claude didn't mention the product — prepend it
+    basePrompt = detectedProduct + ' ' + basePrompt;
+  }
+  articleData.image = buildPollinationsUrl(basePrompt, newId);
 
   // Remove imagePrompt from stored data (it's only needed to build the URL)
   delete articleData.imagePrompt;
