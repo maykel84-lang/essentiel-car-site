@@ -1,6 +1,97 @@
 {
   "articles": [
     {
+      "slug": "filtre-habitacle-entretien-changement-guide",
+      "title": "Filtre habitacle auto : entretien et changement",
+      "excerpt": "Guide complet pour entretenir et remplacer votre filtre habitacle. Améliorez la qualité de l'air intérieur de votre voiture en 10 minutes.",
+      "category": "Entretien",
+      "emoji": "🌬️",
+      "readTime": 6,
+      "tags": [
+        "filtre habitacle",
+        "entretien auto",
+        "qualité air",
+        "maintenance voiture",
+        "accessoires auto"
+      ],
+      "sections": [
+        {
+          "type": "intro",
+          "text": "Le filtre habitacle est l'un des éléments essentiels pour garantir une bonne qualité de l'air à l'intérieur de votre véhicule. Pourtant, beaucoup de conducteurs l'oublient lors de leurs révisions. Découvrez comment entretenir correctement votre filtre habitacle et à quelle fréquence le remplacer pour respirer un air pur en voiture."
+        },
+        {
+          "type": "h2",
+          "text": "À quoi sert le filtre habitacle ?"
+        },
+        {
+          "type": "p",
+          "text": "Le filtre habitacle retient les polluants extérieurs, les poussières, les pollens et les gaz d'échappement avant qu'ils ne pénètrent dans l'habitacle. Il joue un rôle crucial pour la santé des occupants, particulièrement pour les enfants et les personnes sensibles. Un filtre propre améliore aussi l'efficacité du système de climatisation et réduit les mauvaises odeurs à l'intérieur du véhicule."
+        },
+        {
+          "type": "h2",
+          "text": "Signes d'un filtre habitacle encrassé"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Odeur désagréable persistante dans la voiture malgré l'aération",
+            "Baisse de la puissance du chauffage ou de la climatisation",
+            "Buée plus importante sur les vitres",
+            "Bruit accru du ventilateur de chauffage",
+            "Air intérieur moins pur et plus étouffant"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Fréquence de remplacement recommandée"
+        },
+        {
+          "type": "p",
+          "text": "En conditions normales, le filtre habitacle doit être changé tous les 12 à 15 mois ou tous les 15 000 kilomètres. En milieu urbain pollué ou en cas d'utilisation fréquente en circulation dense, cette fréquence peut être réduite à 10 000 kilomètres. Consultez votre carnet d'entretien pour respecter les préconisations du constructeur."
+        },
+        {
+          "type": "h2",
+          "text": "Comment changer soi-même son filtre habitacle ?"
+        },
+        {
+          "type": "p",
+          "text": "Le remplacement d'un filtre habitacle est une opération simple qui ne nécessite aucun outil spécifique. Le filtre se situe généralement derrière la boîte à gants ou sous le tableau de bord. Ouvrez l'accès, repérez le filtre et ses points de fixation, puis remplacez-le par un nouveau modèle compatible avec votre véhicule. L'opération prend environ 10 minutes."
+        },
+        {
+          "type": "h2",
+          "text": "Entretien et nettoyage du filtre"
+        },
+        {
+          "type": "p",
+          "text": "Entre deux remplacements, vous pouvez prolonger la durée de vie de votre filtre en le nettoyant régulièrement. Utilisez un aspirateur à faible puissance ou un chiffon microfibre pour enlever les poussières accumulées en surface. Ne tentez pas de laver le filtre à l'eau, cela réduirait son efficacité et pourrait l'endommager définitivement."
+        },
+        {
+          "type": "tip",
+          "text": "Pour une meilleure qualité de l'air, optez pour un filtre habitacle avec technologie charbon actif qui élimine aussi les odeurs et les gaz polluants. C'est un investissement minimal pour un confort respiratoire optimal en voiture."
+        },
+        {
+          "type": "h2",
+          "text": "Quel filtre habitacle choisir ?"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Filtre standard : filtre papier classique pour une filtration basique",
+            "Filtre charbon actif : meilleure retenue des odeurs et gaz",
+            "Filtre électrostatique : efficacité maximale contre les particules fines",
+            "Filtre antiallergénique : idéal pour les personnes allergiques"
+          ]
+        },
+        {
+          "type": "conclusion",
+          "text": "L'entretien régulier de votre filtre habitacle est essentiel pour respirer un air sain en voiture. En le changeant tous les 12 à 15 mois et en le nettoyant entre les remplacements, vous garantissez une meilleure qualité de l'air intérieur et une meilleure performance de votre système de climatisation. Découvrez chez ESSENTIEL CAR notre sélection de filtres habitacle de qualité, adaptés à tous les modèles de véhicules, pour un confort de conduite optimal."
+        }
+      ],
+      "image": "https://cdn.shopify.com/s/files/1/0916/3879/2484/articles/essentielcar-pack-compresseur-table-volant-lifestyle-1080_png.png?v=1762868733",
+      "id": 96,
+      "date": "2026-06-01"
+    },
+    {
       "slug": "pare-chocs-protection-carrosserie-guide-complet",
       "title": "Pare-chocs auto : protection et réparation | Guide 2025",
       "excerpt": "Découvrez comment protéger et entretenir votre pare-chocs. Guide complet sur les solutions de réparation et prévention des chocs.",
@@ -23962,7 +24053,7 @@
   ],
   "meta": {
     "lastUpdated": "2026-06-01",
-    "totalArticles": 95,
+    "totalArticles": 96,
     "autoGenerated": true
   }
 }
