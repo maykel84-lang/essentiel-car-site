@@ -920,7 +920,11 @@ function renderCartPanel() {
       <div class="cart-panel-item-img">${imgHTML}${isBs ? '<span class="cart-bs-tag">BESTSELLER</span>' : ''}</div>
       <div class="cart-panel-item-info">
         <p class="cart-panel-item-name">${data.name}</p>
-        ${item.variantLabel ? `<p class="cart-panel-item-variant">${item.variantLabel}</p>` : ''}
+        ${item.variantsDisplay
+          ? `<p class="cart-panel-item-variant">${item.variantsDisplay}</p>`
+          : (item.variantLabel || item.colorLabel)
+            ? `<p class="cart-panel-item-variant">${[item.variantLabel, item.colorLabel].filter(Boolean).join(' · ')}</p>`
+            : ''}
         <p class="cart-panel-item-price">${linePrice}€</p>
         <div class="cart-panel-item-qty">
           <button class="qty-btn" onclick="changePanelQty('${cartKey}',-1)">−</button>

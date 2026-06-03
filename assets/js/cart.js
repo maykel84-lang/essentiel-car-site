@@ -167,6 +167,14 @@ function renderCart() {
   }
 }
 
+function buildVariantLine(item) {
+  if (item.variantsDisplay) return `<p class="cart-item-variant">${item.variantsDisplay}</p>`;
+  const parts = [];
+  if (item.variantLabel) parts.push(item.variantLabel);
+  if (item.colorLabel)   parts.push(item.colorLabel);
+  return parts.length > 0 ? `<p class="cart-item-variant">${parts.join(' · ')}</p>` : '';
+}
+
 function renderCartItem(item, t_key, isFr) {
   const p    = item.product;
   const data = p[t_key] || p.fr;
@@ -190,7 +198,7 @@ function renderCartItem(item, t_key, isFr) {
           <div>
             <p class="cart-item-cat">${isFr ? getCatLabel(p.category, true) : getCatLabel(p.category, false)}</p>
             <a href="product.html?id=${p.id}" class="cart-item-name">${data.name}</a>
-            ${item.variantLabel ? `<p class="cart-item-variant">${item.variantLabel}${item.colorLabel ? ' · ' + item.colorLabel : ''}</p>` : ''}
+            ${buildVariantLine(item)}
             <p class="cart-item-tagline">${data.tagline}</p>
           </div>
           <button class="cart-item-remove" onclick="removeFromCart('${item.cartKey || p.id}')" aria-label="${isFr ? 'Supprimer' : 'Remove'}">
@@ -297,8 +305,12 @@ async function handleCheckout() {
     const product = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(p => p.id === item.id) : null;
     if (!product) return null;
     const data = product[isFr ? 'fr' : 'en'] || product.fr;
+    const variantParts = [];
+    if (item.variantLabel)   variantParts.push(item.variantLabel);
+    if (item.variantsDisplay) variantParts.push(item.variantsDisplay);
+    else if (item.colorLabel) variantParts.push(item.colorLabel);
     return {
-      name:  item.variantLabel ? `${data.name} — ${item.variantLabel}` : data.name,
+      name:  variantParts.length > 0 ? `${data.name} — ${variantParts.join(' · ')}` : data.name,
       price: item.variantPrice ?? product.price,
       qty:   item.qty,
       image: product.images && product.images[0]

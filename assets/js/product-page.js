@@ -535,13 +535,27 @@ function handleAddToCart(product, data, isFr) {
   const variantLabel    = activeQty ? activeQty.dataset.label                : null;
   const variantValue    = activeQty ? activeQty.dataset.value                : null;
 
-  // Read active color swatch
-  const activeSwatch = document.querySelector('.variant-swatch.active');
-  const colorLabel   = activeSwatch ? activeSwatch.dataset.label : null;
-  const colorValue   = activeSwatch ? activeSwatch.dataset.value : null;
+  // Collect ALL active color swatch groups (handles packs with multiple variant groups)
+  const selectedVariants = [];
+  document.querySelectorAll('.variant-group').forEach(group => {
+    const activeSwatch = group.querySelector('.variant-swatch.active');
+    if (!activeSwatch) return;
+    const labelEl = group.querySelector('.variant-label');
+    const groupLabel = labelEl ? labelEl.textContent.split(':')[0].trim() : '';
+    selectedVariants.push({ label: groupLabel, value: activeSwatch.dataset.label, color: activeSwatch.dataset.value });
+  });
+  const variantsDisplay = selectedVariants.length > 0
+    ? selectedVariants.map(v => `${v.label} : ${v.value}`).join(' · ')
+    : null;
+  // Backward-compat for single-color products
+  const colorLabel = selectedVariants.length === 1 ? selectedVariants[0].value : null;
+  const colorValue = selectedVariants.length === 1 ? selectedVariants[0].color : null;
 
-  // Use variant-aware cart key
-  const cartKey = variantValue ? `${product.id}__${variantValue}` : product.id;
+  // Use variant-aware cart key (qty variant takes priority; fall back to color key for packs)
+  const colorKey = selectedVariants.map(v => v.color).join('_');
+  const cartKey = variantValue
+    ? `${product.id}__${variantValue}`
+    : colorKey ? `${product.id}__${colorKey}` : product.id;
 
   // Remove any stale entry for the same product (different variant or legacy entry without cartKey)
   // This prevents showing both "À l'unité" and "Lot de 3" simultaneously in cart
@@ -554,22 +568,25 @@ function handleAddToCart(product, data, isFr) {
 
   if (existing) {
     existing.qty = (existing.qty || 1) + 1;
-    // Update variant info in case it changed
     existing.cartKey = cartKey;
-    if (variantPrice !== null)    existing.variantPrice    = variantPrice;
-    if (variantOldPrice !== null) existing.variantOldPrice = variantOldPrice;
-    if (variantLabel)             existing.variantLabel    = variantLabel;
-    if (variantValue)             existing.variantValue    = variantValue;
-    if (colorLabel)               existing.colorLabel      = colorLabel;
-    if (colorValue)               existing.colorValue      = colorValue;
+    if (variantPrice !== null)         existing.variantPrice      = variantPrice;
+    if (variantOldPrice !== null)      existing.variantOldPrice   = variantOldPrice;
+    if (variantLabel)                  existing.variantLabel      = variantLabel;
+    if (variantValue)                  existing.variantValue      = variantValue;
+    if (variantsDisplay)               existing.variantsDisplay   = variantsDisplay;
+    if (selectedVariants.length > 0)   existing.selectedVariants  = selectedVariants;
+    if (colorLabel)                    existing.colorLabel        = colorLabel;
+    if (colorValue)                    existing.colorValue        = colorValue;
   } else {
     const entry = { id: product.id, cartKey, qty: 1 };
-    if (variantPrice !== null)    entry.variantPrice    = variantPrice;
-    if (variantOldPrice !== null) entry.variantOldPrice = variantOldPrice;
-    if (variantLabel)             entry.variantLabel    = variantLabel;
-    if (variantValue)             entry.variantValue    = variantValue;
-    if (colorLabel)               entry.colorLabel      = colorLabel;
-    if (colorValue)               entry.colorValue      = colorValue;
+    if (variantPrice !== null)         entry.variantPrice      = variantPrice;
+    if (variantOldPrice !== null)      entry.variantOldPrice   = variantOldPrice;
+    if (variantLabel)                  entry.variantLabel      = variantLabel;
+    if (variantValue)                  entry.variantValue      = variantValue;
+    if (variantsDisplay)               entry.variantsDisplay   = variantsDisplay;
+    if (selectedVariants.length > 0)   entry.selectedVariants  = selectedVariants;
+    if (colorLabel)                    entry.colorLabel        = colorLabel;
+    if (colorValue)                    entry.colorValue        = colorValue;
     cart.push(entry);
   }
 
