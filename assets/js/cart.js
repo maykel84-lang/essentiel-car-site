@@ -372,12 +372,26 @@ async function handleCheckout() {
   }
 
   try {
+    // GitHub Pages doesn't support Netlify functions
+    if (window.location.hostname.includes('github.io')) {
+      throw new Error(isFr
+        ? 'Le paiement n\'est disponible que sur le site officiel (essentielcar.com). Vous êtes sur une version de prévisualisation.'
+        : 'Payment is only available on the official site (essentielcar.com). You are on a preview version.');
+    }
+
     const res  = await fetch('/.netlify/functions/create-checkout', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ items }),
     });
-    const data = await res.json();
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      throw new Error(isFr
+        ? 'Erreur de connexion au serveur de paiement. Veuillez utiliser le site officiel essentielcar.com.'
+        : 'Payment server connection error. Please use the official site essentielcar.com.');
+    }
     if (data.url) {
       window.location.href = data.url;
     } else {
