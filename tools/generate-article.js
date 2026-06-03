@@ -158,14 +158,23 @@ const prompt = [
   '8. Les liens doivent etre DANS le texte des sections, integres naturellement',
   '9. Texte ancre : utiliser des mots-cles descriptifs (pas "cliquez ici")',
   '',
-  'Regles article : 500-800 mots, SEO longue traine francais, maillage interne complet obligatoire.'
+  'REGLES LONGUEUR ARTICLE — TRES IMPORTANT :',
+  'Longueur cible : 1500 a 2500 mots (EXCELLENT SEO). Minimum absolu : 1200 mots.',
+  'Structure recommandee pour atteindre 1500-2500 mots :',
+  '- intro : 3-4 phrases (60-80 mots)',
+  '- 6 a 8 sections h2 avec paragraphes de 150-250 mots chacun',
+  '- 1 liste ul de 5-7 points detailles',
+  '- 1 tip approfondi (80-120 mots)',
+  '- conclusion : 4-5 phrases avec appels a action et liens (100-150 mots)',
+  'Chaque paragraphe DOIT faire minimum 100 mots. Ne pas faire de contenu superficiel.',
+  'SEO longue traine francais, maillage interne complet obligatoire.'
 ].join('\n');
 
 function callClaude(promptText) {
   return new Promise(function(resolve, reject) {
     var body = JSON.stringify({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 2000,
+      max_tokens: 4500,
       messages: [{ role: 'user', content: promptText }]
     });
 

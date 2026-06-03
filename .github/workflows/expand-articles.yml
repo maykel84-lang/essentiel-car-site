@@ -1,0 +1,40 @@
+name: Expand Short Articles
+
+on:
+  workflow_dispatch:
+    inputs:
+      article_ids:
+        description: 'IDs des articles à enrichir (ex: 95,96,97,98)'
+        required: true
+        default: '95,96,97,98'
+
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Expand articles via Claude API
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ARTICLE_IDS: ${{ github.event.inputs.article_ids }}
+        run: node tools/expand-article.js
+
+      - name: Commit and push expanded articles
+        run: |
+          git config --local user.email "blog-bot@essentielcar.com"
+          git config --local user.name "ESSENTIEL CAR Blog Bot"
+          git add assets/data/blog-posts.json
+          git diff --staged --quiet || git commit -m "Blog: enrichissement articles ${{ github.event.inputs.article_ids }} → 1500-2500 mots"
+          git push origin main
