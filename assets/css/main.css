@@ -2356,6 +2356,20 @@ svg { display: block; }
 .comparison-table th { font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-2); }
 .comparison-table tbody tr:last-child td { border-bottom: none; }
 .comparison-table tbody tr:hover { background: rgba(255,255,255,0.025); }
+
+@media (max-width: 768px) {
+  .comparison-wrap { overflow-x: visible; }
+  .comparison-table { min-width: 0; width: 100%; }
+  .comparison-table th,
+  .comparison-table td { padding: 0.55rem 0.7rem; font-size: 0.82rem; }
+  .comparison-table th { font-size: 0.75rem; letter-spacing: 0.03em; }
+  .cmp-feature-label { font-size: 0.82rem; }
+  .cmp-col-them { font-size: 0.85rem; }
+  .cmp-detail { display: none; }
+  .cmp-svg { width: 16px; height: 16px; }
+  .cmp-logo-wrap { height: 30px; }
+  .cmp-logo { width: 130px; height: 130px; top: -50px; }
+}
 .cmp-col-feature { color: var(--white); font-weight: 600; width: 30%; font-size: 1rem; }
 .cmp-col-us { background: rgba(224,0,12,0.06) !important; color: var(--white); font-weight: 500; }
 .cmp-col-them { color: var(--gray-1); font-size: 1.05rem; font-weight: 700; text-align: center; }
@@ -2557,9 +2571,23 @@ svg { display: block; }
   .mobile-menu { display: flex; }
   .nav-cta-desktop { display: none; }
 
-  .hero-content { padding: 8rem var(--pad) 4rem; }
+  /* ── Panier visible sur mobile ── */
+  .currency-selector { display: none; }
+  .nav-actions { gap: 0.5rem; }
+  .nav-cart-btn {
+    display: flex;
+    border-color: var(--red);
+    background: rgba(224,0,12,0.08);
+    padding: 0.45rem 0.7rem;
+  }
+
+  /* ── Hero centré sur mobile ── */
+  .hero-content { padding: 8rem var(--pad) 4rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
   .hero-title { font-size: clamp(3.75rem, 17vw, 6rem); line-height: 0.9; }
-  .hero-sub { font-size: clamp(0.95rem, 3.5vw, 1.1rem); max-width: 100%; color: rgba(255,255,255,0.78); }
+  .hero-sub { font-size: clamp(0.95rem, 3.5vw, 1.1rem); max-width: 100%; color: rgba(255,255,255,0.78); text-align: center; }
+  .hero-ctas { justify-content: center; }
+  .hero-stats { width: 100%; justify-content: center; }
+  .hero-trust-line { text-align: center; }
   .hero-badge { font-size: 0.68rem; letter-spacing: 0.12em; }
   .hero-stats { flex-wrap: wrap; gap: 1rem; padding-top: 2rem; }
   .hero-stat { padding: 0 1rem; }
