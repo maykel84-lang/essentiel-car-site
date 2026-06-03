@@ -1,0 +1,53 @@
+name: Générer vidéos démo produits (Pollo.ai)
+
+on:
+  workflow_dispatch:
+    inputs:
+      product:
+        description: 'Produit(s) à générer (ex: dashcam ou dashcam,lance-mousse ou all)'
+        required: true
+        default: 'dashcam'
+        type: choice
+        options:
+          - dashcam
+          - machine-polir
+          - lance-mousse
+          - compresseur
+          - brosse-jantes
+          - tpms
+          - support-telephone
+          - all
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Créer dossier vidéos démo
+        run: mkdir -p assets/videos/demo
+
+      - name: Générer vidéo(s) via Pollo.ai
+        env:
+          POLLO_API_KEY: ${{ secrets.POLLO_API_KEY }}
+          PRODUCT: ${{ github.event.inputs.product }}
+        run: node tools/generate-demo-video.js
+
+      - name: Commit et push vidéos générées
+        run: |
+          git config --local user.email "demo-bot@essentielcar.com"
+          git config --local user.name "ESSENTIEL CAR Demo Bot"
+          git add assets/videos/demo/
+          git diff --staged --quiet || git commit -m "Demo: vidéo générée — ${{ github.event.inputs.product }}"
+          git push origin main
