@@ -998,6 +998,147 @@ const TRANSLATIONS = {
     sort_rating: 'Bestbewertet',
   },
 
+  pl: {
+    /* ── Navigation ── */
+    nav_home: 'Strona główna',
+    nav_products: 'Produkty',
+    nav_categories: 'Kategorie',
+    nav_reviews: 'Opinie',
+    nav_faq: 'FAQ',
+    nav_shop: 'Sklep',
+    nav_track: 'Śledzenie zamówienia',
+    cart_title: 'Koszyk',
+
+    /* ── Hero ── */
+    hero_badge: 'Premium akcesoria samochodowe',
+    hero_title_1: 'WYPOSAŻAJ.',
+    hero_title_2: 'CHROŃ.',
+    hero_title_3: 'DZIAŁAJ.',
+    hero_sub: 'Niezbędne wyposażenie dla Twojego auta — użyteczne, praktyczne akcesoria o wysokiej wydajności, dostarczone prosto do Ciebie.',
+    hero_cta1: 'Odkryj sklep',
+    hero_cta2: 'Zobacz bestsellery',
+    hero_stat1_label: 'Zadowolonych klientów',
+    hero_stat2_label: 'Średnia ocena',
+    hero_stat3_label: 'Ekspresowa dostawa',
+    hero_scroll: 'Przewiń',
+
+    /* ── Trust bar ── */
+    trust_1: 'Szybka dostawa 🚚',
+    trust_2: '100% bezpieczna płatność',
+    trust_3: '+10 000 zadowolonych klientów',
+    trust_4: 'Łatwy zwrot 30 dni',
+    trust_5: 'Testowane i wybrane produkty',
+    trust_6: 'Reaktywna obsługa 24/7',
+
+    /* ── Products section ── */
+    products_eyebrow: 'Nasze must-have',
+    products_title: 'BESTSELLERY',
+    products_sub: 'Wybrane pod kątem jakości, użyteczności i wyjątkowego stosunku jakości do ceny.',
+    products_cta: 'Zobacz wszystkie produkty',
+    product_cta: 'Zobacz produkt',
+    product_reviews_label: 'opinii',
+
+    /* ── Demo section ── */
+    demo_eyebrow: 'W praktyce',
+    demo_title: 'WIDZIANE W AKCJI',
+    demo_sub: 'Produkty stworzone do codziennego użytku. Przekonaj się sam o różnicy.',
+
+    /* ── Problem/Solution ── */
+    problem_eyebrow: 'Codzienne życie',
+    problem_title: 'TWOJE AUTO\nZASŁUGUJE NA WIĘCEJ',
+    problem_sub: 'Każdy kierowca zna te same wyzwania. ESSENTIEL CAR ma konkretne rozwiązanie.',
+    problem_label: 'Problem',
+    solution_label: 'Rozwiązanie',
+    result_label: 'Wynik',
+
+    /* ── Stats ── */
+    stats_eyebrow: 'ESSENTIEL CAR w liczbach',
+    stats_title: 'NAM UFAJĄ',
+    stat_1_label: 'Zadowolonych klientów',
+    stat_2_label: 'Wyselekcjonowanych produktów',
+    stat_3_label: 'Średnia ocena klientów',
+    stat_4_label: 'Ekspresowa dostawa',
+
+    /* ── Categories ── */
+    cat_eyebrow: 'Znajdź to, czego potrzebujesz',
+    cat_title: 'WEDŁUG KATEGORII',
+    cat_sub: 'Sześć światów produktów, aby wyposażyć, chronić i ulepszyć każdy aspekt Twojego auta.',
+    cat_cta: 'Zobacz kategorię',
+
+    /* ── Why section ── */
+    why_eyebrow: 'Nasza obietnica',
+    why_title: 'DLACZEGO\nESSENTIEL CAR?',
+    why_1_title: 'Sprawdzona jakość',
+    why_1_text: 'Każdy produkt jest rygorystycznie testowany przed dodaniem do naszego katalogu. Sprzedajemy tylko to, co naprawdę działa — w praktyce.',
+    why_2_title: 'Uczciwa cena',
+    why_2_text: 'Produkty premium bez zawyżonych marż dużych marek. Najlepszy stosunek jakości do ceny dla inteligentnego wyposażenia pojazdu.',
+    why_3_title: 'Szybka dostawa',
+    why_3_text: 'Wysyłka w ciągu 24h, śledzenie w czasie rzeczywistym. Dostawa w 3 do 7 dni roboczych. Zadowolony lub zwrot pieniędzy.',
+    why_4_title: 'Reaktywna obsługa',
+    why_4_text: 'Nasz zespół odpowiada w ciągu 24h, od poniedziałku do piątku. Jeśli produkt nie pasuje, zawsze szybko znajdziemy rozwiązanie.',
+
+    /* ── Reviews ── */
+    reviews_eyebrow: 'Zaufali nam',
+    reviews_title: 'CO MÓWIĄ',
+    reviews_sub: 'Tysiące kierowców już wybrało ESSENTIEL CAR. Oto ich opinie.',
+    reviews_verified: 'Zweryfikowany zakup',
+
+    /* ── FAQ ── */
+    faq_eyebrow: 'Najczęściej zadawane pytania',
+    faq_title: 'FAQ',
+    faq_sub: 'Wszystko, co musisz wiedzieć przed zamówieniem.',
+    faq_1_q: 'Jak długo trwa dostawa?',
+    faq_1_a: 'Zamówienia są wysyłane w ciągu 24 godzin roboczych. Dostawa trwa od 3 do 7 dni roboczych. Po wysyłce otrzymasz e-mail z linkiem do śledzenia w czasie rzeczywistym.',
+    faq_2_q: 'Czy mogę zwrócić produkt?',
+    faq_2_a: 'Tak, masz 30 dni na zwrot nieużywanego produktu w oryginalnym opakowaniu. Zwrot środków nastąpi w ciągu 5 do 10 dni roboczych od otrzymania zwrotu.',
+    faq_3_q: 'Jakie metody płatności akceptujecie?',
+    faq_3_a: 'Akceptujemy Visa, Mastercard, American Express, PayPal i Apple Pay. Wszystkie transakcje są zabezpieczone szyfrowaniem SSL 256-bit. Twoje dane bankowe nigdy nie są przechowywane na naszych serwerach.',
+    faq_4_q: 'Czy produkty mają gwarancję?',
+    faq_4_a: 'Wszystkie nasze produkty posiadają gwarancję producenta na co najmniej 12 miesięcy. W przypadku wady lub problemu skontaktuj się z naszą obsługą klienta — zawsze wymienimy lub zwrócimy pieniądze bez zadawania pytań.',
+    faq_5_q: 'Jak skontaktować się z obsługą klienta?',
+    faq_5_a: 'Nasz zespół jest dostępny przez e-mail pod adresem contact@essentielcar.com, od poniedziałku do piątku w godzinach 9-18. Odpowiadamy w maksymalnie 24h. W celu natychmiastowej odpowiedzi skorzystaj z czatu na żywo na naszej stronie.',
+    faq_6_q: 'Czy produkty są kompatybilne z moim pojazdem?',
+    faq_6_a: 'Zdecydowana większość naszych produktów jest uniwersalna i kompatybilna ze wszystkimi pojazdami, niezależnie od marki czy modelu. Szczegóły kompatybilności są wyraźnie wskazane na stronie każdego produktu.',
+
+    /* ── Final CTA ── */
+    cta_eyebrow: 'Gotowy do działania?',
+    cta_title: 'WYPOSAŻ SWOJE\nAUTO TERAZ',
+    cta_sub: 'Ponad 50 premium akcesoriów samochodowych. Szybka dostawa. Łatwy zwrot. Gwarancja satysfakcji.',
+    cta_btn1: 'Zamów teraz',
+    cta_btn2: 'Zobacz bestsellery',
+
+    /* ── Footer ── */
+    footer_tagline: 'Niezbędne dla Twojego auta.',
+    footer_promise: 'Działaj każdego dnia.',
+    footer_nav: 'Nawigacja',
+    footer_contact_title: 'Kontakt',
+    footer_legal_title: 'Prawne',
+    footer_home: 'Strona główna',
+    footer_shop: 'Sklep',
+    footer_about: 'O nas',
+    footer_faq: 'FAQ',
+    footer_email: 'contact@essentielcar.com',
+    footer_mentions: 'Wzmianki prawne',
+    footer_privacy: 'Polityka prywatności',
+    footer_cgv: 'Warunki sprzedaży',
+    footer_rights: '© 2024 ESSENTIEL CAR. Wszelkie prawa zastrzeżone.',
+    footer_made: 'Zrobione z pasją dla entuzjastów motoryzacji.',
+
+    /* ── Boutique page ── */
+    boutique_title: 'NASZE PRODUKTY',
+    boutique_sub: 'Nasza pełna selekcja premium akcesoriów samochodowych.',
+    filter_all: 'Wszystkie',
+    filter_nettoyage: 'Czyszczenie',
+    filter_securite: 'Bezpieczeństwo',
+    filter_confort: 'Komfort',
+    filter_technologie: 'Technologia',
+    filter_entretien: 'Konserwacja',
+    sort_popular: 'Popularność',
+    sort_price_asc: 'Cena: rosnąco',
+    sort_price_desc: 'Cena: malejąco',
+    sort_rating: 'Najlepiej oceniane',
+  },
+
   nl: {
     /* ── Navigation ── */
     nav_home: 'Home',
@@ -1183,6 +1324,7 @@ function applyTranslations() {
       pt: 'ESSENTIEL CAR — Equipamento Auto Premium',
       de: 'ESSENTIEL CAR — Premium Auto-Ausstattung',
       nl: 'ESSENTIEL CAR — Premium Auto-uitrusting',
+      pl: 'ESSENTIEL CAR — Premium Akcesoria Samochodowe',
     };
     document.title = pageTitles[currentLang] || pageTitles['fr'];
   }

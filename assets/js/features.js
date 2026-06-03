@@ -448,9 +448,12 @@ function toggleLangDropdown() {
 
 function setLangFromNav(lang) {
   if (typeof setLang === 'function') setLang(lang);
-  const flags = { fr:'🇫🇷 FR', en:'🇬🇧 EN', es:'🇪🇸 ES', ar:'🇸🇦 AR', it:'🇮🇹 IT', pt:'🇵🇹 PT', de:'🇩🇪 DE', nl:'🇳🇱 NL' };
+  const flagCC = { fr:'fr', en:'gb', es:'es', ar:'sa', it:'it', pt:'pt', de:'de', pl:'pl', nl:'nl' };
+  const labels  = { fr:'FR', en:'EN', es:'ES', ar:'AR', it:'IT', pt:'PT', de:'DE', pl:'PL', nl:'NL' };
+  const cc    = flagCC[lang] || lang;
+  const label = labels[lang] || lang.toUpperCase();
   const btn = document.getElementById('navLangBtn');
-  if (btn) btn.textContent = (flags[lang] || lang.toUpperCase()) + ' ▾';
+  if (btn) btn.innerHTML = `<img src="https://flagcdn.com/20x15/${cc}.png" alt="${label}" class="lang-flag"> ${label} ▾`;
   document.querySelectorAll('.lang-option[data-lang]').forEach(el =>
     el.classList.toggle('active', el.dataset.lang === lang)
   );

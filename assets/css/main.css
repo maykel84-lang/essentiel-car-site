@@ -4083,6 +4083,15 @@ svg { display: block; }
   align-items: center;
 }
 
+.lang-flag {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 3px;
+}
 .nav-lang-btn {
   padding: 0.28rem 0.5rem;
   border: none;
@@ -4093,6 +4102,9 @@ svg { display: block; }
   transition: color 0.2s;
   font-family: var(--font-sans);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .nav-lang-btn:hover,
@@ -4140,8 +4152,8 @@ svg { display: block; }
   font-size: 0.82rem;
   color: var(--gray-1);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 6px;
   transition: background 0.15s, color 0.15s;
   user-select: none;
 }
