@@ -64,13 +64,24 @@ function renderCart() {
 
   // Calculate totals
   const subtotal  = items.reduce((s, item) => s + (item.variantPrice ?? item.product.price) * item.qty, 0);
-  const shipping  = subtotal >= 49.99 ? 0 : 4.99;
-  const total     = subtotal + shipping;
   const savings   = items.reduce((s, item) => {
     const price    = item.variantPrice    ?? item.product.price;
     const oldPrice = item.variantOldPrice ?? item.product.oldPrice;
     return s + (oldPrice - price) * item.qty;
   }, 0);
+
+  // Bestseller -50% on cheapest bestseller unit
+  const bsUnits = [];
+  items.forEach(item => {
+    if (item.product.badgeType !== 'bestseller') return;
+    const unitPrice = item.variantPrice ?? item.product.price;
+    for (let i = 0; i < item.qty; i++) bsUnits.push(unitPrice);
+  });
+  bsUnits.sort((a, b) => a - b);
+  const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
+
+  const shipping  = subtotal >= 49.99 ? 0 : 4.99;
+  const total     = subtotal - bsDiscount + shipping;
 
   const fmtPrice = (v) => v.toFixed(2).replace('.', ',') + '€';
 
@@ -86,6 +97,14 @@ function renderCart() {
         <span>${isFr ? 'Économies' : 'Savings'}</span>
         <span class="savings-amount">-${fmtPrice(savings)}</span>
       </div>
+      ${bsDiscount > 0 ? `
+      <div class="cart-summary-line cart-summary-bs-discount">
+        <span>🎁 ${isFr ? '2ème Best Seller -50%' : '2nd Best Seller -50%'}</span>
+        <span class="savings-amount">-${fmtPrice(bsDiscount)}</span>
+      </div>` : (bsUnits.length === 1 ? `
+      <div class="cart-summary-bs-hint">
+        ${isFr ? 'Ajoutez 1 Best Seller de plus pour −50% !' : 'Add 1 more Best Seller for −50%!'}
+      </div>` : '')}
       <div class="cart-summary-line">
         <span>${isFr ? 'Livraison' : 'Shipping'}</span>
         <span class="${shipping === 0 ? 'shipping-free' : ''}">${shipping === 0 ? (isFr ? 'Gratuite' : 'Free') : fmtPrice(shipping)}</span>
@@ -306,10 +325,12 @@ async function handleCheckout() {
     if (!product) return null;
     const data = product[isFr ? 'fr' : 'en'] || product.fr;
     const variantParts = [];
-    if (item.variantLabel)   variantParts.push(item.variantLabel);
-    if (item.variantsDisplay) variantParts.push(item.variantsDisplay);
-    else if (item.colorLabel) variantParts.push(item.colorLabel);
+    if (item.variantLabel)    variantParts.push(item.variantLabel);
+    if (item.variantsDisplay)  variantParts.push(item.variantsDisplay);
+    else if (item.colorLabel)  variantParts.push(item.colorLabel);
     return {
+      id:    product.id,
+      isBs:  product.badgeType === 'bestseller',
       name:  variantParts.length > 0 ? `${data.name} — ${variantParts.join(' · ')}` : data.name,
       price: item.variantPrice ?? product.price,
       qty:   item.qty,
@@ -318,6 +339,25 @@ async function handleCheckout() {
         : null,
     };
   }).filter(Boolean);
+
+  // Apply bestseller -50% on cheapest bestseller unit
+  const bsEntries = [];
+  items.forEach((item, idx) => {
+    if (!item.isBs) return;
+    for (let i = 0; i < item.qty; i++) bsEntries.push({ idx, price: item.price });
+  });
+  bsEntries.sort((a, b) => a.price - b.price);
+  if (bsEntries.length >= 2) {
+    const { idx, price } = bsEntries[0];
+    const target = items[idx];
+    if (target.qty > 1) {
+      target.qty -= 1;
+      items.push({ name: target.name + (isFr ? ' (−50%)' : ' (−50%)'), price: price * 0.5, qty: 1, image: target.image });
+    } else {
+      target.price = price * 0.5;
+      target.name += ' (−50%)';
+    }
+  }
 
   // Add shipping line if applicable
   const subtotal = items.reduce((s, i) => s + (i.price ?? 0) * i.qty, 0);

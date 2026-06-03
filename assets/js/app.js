@@ -917,9 +917,9 @@ function renderCartPanel() {
           : `<img src="${imgSrc}" alt="${data.name}" loading="lazy">`)
       : `<span style="font-size:1.6rem">${p.icon}</span>`;
     return `<div class="cart-panel-item" data-cartkey="${cartKey}">
-      <div class="cart-panel-item-img">${imgHTML}${isBs ? '<span class="cart-bs-tag">BESTSELLER</span>' : ''}</div>
+      <div class="cart-panel-item-img">${imgHTML}</div>
       <div class="cart-panel-item-info">
-        <p class="cart-panel-item-name">${data.name}</p>
+        <p class="cart-panel-item-name">${data.name}${isBs ? ' <span class="cart-bs-tag">BS</span>' : ''}</p>
         ${item.variantsDisplay
           ? `<p class="cart-panel-item-variant">${item.variantsDisplay}</p>`
           : (item.variantLabel || item.colorLabel)
