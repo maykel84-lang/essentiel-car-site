@@ -975,7 +975,8 @@ svg { display: block; }
 .demo-item:nth-child(6) .demo-icon-wrap svg { width: 100px; height: 100px; }
 
 /* ── GIF / real image ── */
-.demo-img {
+.demo-img,
+.demo-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -987,7 +988,8 @@ svg { display: block; }
   filter: contrast(1.08) saturate(1.1) brightness(1.25);
   will-change: transform;
 }
-.demo-item:hover .demo-img {
+.demo-item:hover .demo-img,
+.demo-item:hover .demo-video {
   transform: scale(1.07);
   filter: contrast(1.25) saturate(1.4) brightness(1.08);
 }
