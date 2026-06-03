@@ -249,6 +249,8 @@
         const res = await fetch('assets/data/blog-posts.json');
         const data = await res.json();
         allArticles = data.articles;
+        // Sort newest → oldest
+        allArticles.sort(function(a, b) { return new Date(b.date) - new Date(a.date); });
         renderArticles();
       } catch(e) {
         grid.innerHTML = '<div class="blog-empty"><p>Impossible de charger les articles. Réessayez plus tard.</p></div>';
