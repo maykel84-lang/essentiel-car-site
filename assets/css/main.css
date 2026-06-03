@@ -3948,6 +3948,27 @@ svg { display: block; }
   .product-main-img { height: 260px; }
   .product-img-thumbs { padding: 0.5rem 0.75rem; }
   .product-thumb { width: 52px; height: 52px; }
+
+  /* Fix débordement horizontal du card image sur mobile */
+  .product-visual-card {
+    max-width: 100% !important;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: auto;
+    box-sizing: border-box;
+  }
+  .product-visual-card--image {
+    max-width: 100%;
+    width: 100%;
+  }
+  .product-main-img-wrap {
+    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+  .product-section-wrap .container {
+    overflow: hidden;
+  }
 }
 
 /* =========================================================
