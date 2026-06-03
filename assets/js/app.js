@@ -453,17 +453,17 @@ function buildProductCard(p, lang, num) {
           </div>
           ${swatchHTML}
         </div>
-        ${isHot ? `
-        <div class="stock-badge" data-stock-id="${p.id}">
-          <span class="stock-dot"></span>
-          <span>Il reste <span class="stock-num">3</span> ${stockLabel}</span>
-        </div>
-        <div class="countdown-wrap" data-countdown="${p.id}">
-          <span class="countdown-icon">⏱</span>
-          <span class="countdown-label">${offerLabel}</span>
-          <span class="countdown-timer">--:--:--</span>
-        </div>` : ''}
       </div>
+      ${isHot ? `
+      <div class="stock-badge" data-stock-id="${p.id}">
+        <span class="stock-dot"></span>
+        <span>Il reste <span class="stock-num">3</span> ${stockLabel}</span>
+      </div>
+      <div class="countdown-wrap" data-countdown="${p.id}">
+        <span class="countdown-icon">⏱</span>
+        <span class="countdown-label">${offerLabel}</span>
+        <span class="countdown-timer">--:--:--</span>
+      </div>` : ''}
       <div class="product-card-footer">
         <div class="product-card-pricing">
           <span class="price-current" data-eur="${p.price}">${p.price.toFixed(2).replace('.', ',')}€</span>
