@@ -244,6 +244,11 @@ callClaude(prompt).then(function(rawText) {
     throw new Error('Missing required fields: slug, title or sections');
   }
 
+  // Si la file d'attente impose un slug exact, on l'utilise (garantit correspondance avec image uploadée)
+  if (nextTopic && nextTopic.slug && !process.env.MANUAL_TOPIC) {
+    articleData.slug = nextTopic.slug;
+  }
+
   // Ensure unique slug
   var slug = articleData.slug;
   var counter = 2;
