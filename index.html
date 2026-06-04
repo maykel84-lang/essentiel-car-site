@@ -413,7 +413,7 @@
           <p class="section-sub" data-i18n="demo_sub">Des produits pensés pour le quotidien. Voyez par vous-même la différence qu'ils font.</p>
         </div>
 
-        <div class="demo-grid" data-stagger>
+        <div class="demo-grid demo-grid-top" data-stagger>
           <!-- Slot 1 : Aspirateur sans fil (large) -->
           <div class="demo-item">
             <video class="demo-video" autoplay muted loop playsinline>
@@ -499,24 +499,9 @@
               <p class="demo-caption">Rayures effacées, carrosserie comme neuve</p>
             </div>
           </div>
-          <!-- Slot 6 : Aspirateur coffre (grand) -->
-          <div class="demo-item">
-            <video class="demo-video" autoplay muted loop playsinline>
-              <source src="assets/videos/demo-aspirateur-coffre.mp4" type="video/mp4">
-            </video>
-            <div class="demo-visual demo-bg-6"></div>
-            <div class="demo-icon-wrap" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-linecap="round"><path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/><circle cx="15" cy="38" r="4"/></svg>
-            </div>
-            <div class="demo-overlay">
-              <div class="demo-label-wrap">
-                <span class="demo-live-dot" aria-hidden="true"></span>
-                <span class="demo-label">ASPIRATEUR SANS FIL</span>
-              </div>
-              <p class="demo-caption">Coffre impeccable en quelques secondes</p>
-            </div>
-          </div>
-          <!-- Slot 7 : Support téléphone -->
+        </div>
+        <div class="demo-grid demo-grid-bottom" data-stagger>
+          <!-- Slot 6 : Support téléphone -->
           <div class="demo-item">
             <video class="demo-video" autoplay muted loop playsinline>
               <source src="assets/videos/demo-support-telephone.mp4" type="video/mp4">
@@ -531,6 +516,23 @@
                 <span class="demo-label">SUPPORT TÉLÉPHONE</span>
               </div>
               <p class="demo-caption">Navigation mains libres, conduite sécurisée</p>
+            </div>
+          </div>
+          <!-- Slot 7 : Aspirateur coffre -->
+          <div class="demo-item">
+            <video class="demo-video" autoplay muted loop playsinline>
+              <source src="assets/videos/demo-aspirateur-coffre.mp4" type="video/mp4">
+            </video>
+            <div class="demo-visual demo-bg-6"></div>
+            <div class="demo-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-linecap="round"><path d="M10 38 L16 18 Q18 14 22 14 L36 14 Q40 14 40 18 L40 22 Q40 26 36 26 L26 26 L22 38 Z"/><circle cx="15" cy="38" r="4"/></svg>
+            </div>
+            <div class="demo-overlay">
+              <div class="demo-label-wrap">
+                <span class="demo-live-dot" aria-hidden="true"></span>
+                <span class="demo-label">ASPIRATEUR SANS FIL</span>
+              </div>
+              <p class="demo-caption">Coffre impeccable en quelques secondes</p>
             </div>
           </div>
           <!-- Slot 8 : TPMS -->
