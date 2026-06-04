@@ -964,14 +964,12 @@ svg { display: block; }
 .demo-item:nth-child(4) { grid-column: 2; }
 .demo-item:nth-child(5) { grid-column: 3; }
 /* 2ème bloc de 5 — symétrique, grand à droite */
-.demo-item:nth-child(6) { grid-column: 3; grid-row: 3 / 5; aspect-ratio: auto; }
+.demo-item:nth-child(6) { grid-column: 3; }
 .demo-item:nth-child(7) { grid-column: 1; }
 .demo-item:nth-child(8) { grid-column: 2; aspect-ratio: auto; }
 .demo-item:nth-child(9) { grid-column: 1; }
 .demo-item:nth-child(10) { grid-column: 2; aspect-ratio: auto; }
-/* Overlay toujours visible sur les grands items */
-.demo-item:nth-child(6) .demo-overlay { opacity: 1; }
-.demo-item:nth-child(6) .demo-caption { font-size: 1.05rem; }
+.demo-item:nth-child(11) { grid-column: 3; }
 .demo-item:nth-child(6) .demo-icon-wrap svg { width: 100px; height: 100px; }
 
 /* ── GIF / real image ── */
