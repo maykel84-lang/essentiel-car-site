@@ -966,9 +966,24 @@ svg { display: block; }
 /* 2ème bloc de 5 — symétrique, grand à droite */
 .demo-item:nth-child(6) { grid-column: 3; grid-row: 3 / 5; aspect-ratio: auto; }
 .demo-item:nth-child(7) { grid-column: 1; }
-.demo-item:nth-child(8) { grid-column: 2; }
+.demo-item:nth-child(8) { grid-column: 2; aspect-ratio: auto; }
 .demo-item:nth-child(9) { grid-column: 1; }
-.demo-item:nth-child(10) { grid-column: 2; }
+.demo-item:nth-child(10) { grid-column: 2; aspect-ratio: auto; }
+/* Watermark logo sur chaque item */
+.demo-watermark {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  background: url('../images/logo-mark.png') center / contain no-repeat;
+  filter: brightness(0) invert(1);
+  opacity: 0.45;
+  z-index: 4;
+  pointer-events: none;
+}
+.demo-item:nth-child(1) .demo-watermark,
+.demo-item:nth-child(6) .demo-watermark { width: 36px; height: 36px; bottom: 14px; left: 14px; }
 /* Overlay toujours visible sur les grands items */
 .demo-item:nth-child(6) .demo-overlay { opacity: 1; }
 .demo-item:nth-child(6) .demo-caption { font-size: 1.05rem; }

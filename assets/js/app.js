@@ -1035,4 +1035,10 @@ document.addEventListener('DOMContentLoaded', () => {
     startAnimations();
   }
   initComparisonTable();
+  document.querySelectorAll('.demo-item').forEach(item => {
+    const wm = document.createElement('span');
+    wm.className = 'demo-watermark';
+    wm.setAttribute('aria-hidden', 'true');
+    item.appendChild(wm);
+  });
 });
