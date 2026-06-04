@@ -9,20 +9,33 @@ const fs = require('fs');
 const path = require('path');
 
 const BLOG_DATA_PATH = path.join(__dirname, '../assets/data/blog-posts.json');
+const TOPICS_QUEUE_PATH = path.join(__dirname, '../assets/data/blog-topics-queue.json');
 
 const blogData = JSON.parse(fs.readFileSync(BLOG_DATA_PATH, 'utf8'));
 const existingSlugs = blogData.articles.map(a => a.slug);
 const existingTitles = blogData.articles.map(a => a.title.toLowerCase());
 
+// Lire la file d'attente de sujets
+let topicsQueue = [];
+try {
+  if (fs.existsSync(TOPICS_QUEUE_PATH)) {
+    topicsQueue = JSON.parse(fs.readFileSync(TOPICS_QUEUE_PATH, 'utf8'));
+  }
+} catch(e) { topicsQueue = []; }
+const nextTopic = topicsQueue.length > 0 ? topicsQueue[0] : null;
+
 const CATEGORIES = ['Nettoyage', 'Securite', 'Carrosserie', 'Confort', 'High-Tech', 'Entretien'];
 
 const manualCategory = (process.env.MANUAL_CATEGORY && process.env.MANUAL_CATEGORY !== 'Auto')
   ? process.env.MANUAL_CATEGORY
+  : nextTopic ? nextTopic.category
   : CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)];
 
 const topicInstruction = process.env.MANUAL_TOPIC
   ? 'Le sujet impose est : "' + process.env.MANUAL_TOPIC + '".'
-  : 'Choisis un sujet pertinent et SEO dans la categorie "' + manualCategory + '" pour des accessoires auto en France.';
+  : nextTopic
+    ? 'Le sujet impose est : "' + nextTopic.title + '".'
+    : 'Choisis un sujet pertinent et SEO dans la categorie "' + manualCategory + '" pour des accessoires auto en France.';
 
 const existingList = existingTitles.slice(0, 20).join('\n- ');
 
@@ -261,6 +274,13 @@ callClaude(prompt).then(function(rawText) {
   fs.writeFileSync('/tmp/article_title.txt', articleData.title, 'utf8');
   // Pass article data to card generator via temp file
   fs.writeFileSync('/tmp/article_data.json', JSON.stringify(articleData), 'utf8');
+
+  // Consommer le sujet de la file d'attente
+  if (nextTopic && !process.env.MANUAL_TOPIC && topicsQueue.length > 0) {
+    topicsQueue.shift();
+    fs.writeFileSync(TOPICS_QUEUE_PATH, JSON.stringify(topicsQueue, null, 2), 'utf8');
+    console.log('Queue: ' + topicsQueue.length + ' sujets restants');
+  }
 
   console.log('SUCCESS: ' + articleData.title);
   console.log('Slug: ' + articleData.slug);
