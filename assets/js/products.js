@@ -459,8 +459,8 @@ const PRODUCTS = [
       ]},
       { label: 'Brosse jantes', productId: 'brosse-jantes', options: [
         { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 4 },
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 4 },
-        { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 4 },
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 5 },
+        { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 6 },
       ]}
     ],
     images: [
@@ -469,6 +469,8 @@ const PRODUCTS = [
       'assets/images/products/lance-mousse-1.jpg.png',
       'assets/images/products/lance-mousse-2.jpg.png',
       'assets/images/products/brosse-jantes-1.jpg.png',
+      'assets/images/products/brosse-jantes-2.jpg.png',
+      'assets/images/products/brosse-jantes-3.jpg.png',
       'assets/images/products/machine-polir-1.jpg.png',
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">

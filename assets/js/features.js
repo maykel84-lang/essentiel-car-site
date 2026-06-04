@@ -448,12 +448,6 @@ function toggleLangDropdown() {
 
 function setLangFromNav(lang) {
   if (typeof setLang === 'function') setLang(lang);
-  const flags = { fr:'🇫🇷 FR', en:'🇬🇧 EN', es:'🇪🇸 ES', ar:'🇸🇦 AR', it:'🇮🇹 IT', pt:'🇵🇹 PT', de:'🇩🇪 DE', nl:'🇳🇱 NL' };
-  const btn = document.getElementById('navLangBtn');
-  if (btn) btn.textContent = (flags[lang] || lang.toUpperCase()) + ' ▾';
-  document.querySelectorAll('.lang-option[data-lang]').forEach(el =>
-    el.classList.toggle('active', el.dataset.lang === lang)
-  );
   const dd = document.getElementById('navLang');
   if (dd) dd.classList.remove('open');
 }

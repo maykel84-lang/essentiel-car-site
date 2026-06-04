@@ -64,13 +64,24 @@ function renderCart() {
 
   // Calculate totals
   const subtotal  = items.reduce((s, item) => s + (item.variantPrice ?? item.product.price) * item.qty, 0);
-  const shipping  = subtotal >= 49.99 ? 0 : 4.99;
-  const total     = subtotal + shipping;
   const savings   = items.reduce((s, item) => {
     const price    = item.variantPrice    ?? item.product.price;
     const oldPrice = item.variantOldPrice ?? item.product.oldPrice;
     return s + (oldPrice - price) * item.qty;
   }, 0);
+
+  // Bestseller -50% on cheapest bestseller unit
+  const bsUnits = [];
+  items.forEach(item => {
+    if (item.product.badgeType !== 'bestseller') return;
+    const unitPrice = item.variantPrice ?? item.product.price;
+    for (let i = 0; i < item.qty; i++) bsUnits.push(unitPrice);
+  });
+  bsUnits.sort((a, b) => a - b);
+  const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
+
+  const shipping  = subtotal >= 49.99 ? 0 : 4.99;
+  const total     = subtotal - bsDiscount + shipping;
 
   const fmtPrice = (v) => v.toFixed(2).replace('.', ',') + '€';
 
@@ -86,6 +97,14 @@ function renderCart() {
         <span>${isFr ? 'Économies' : 'Savings'}</span>
         <span class="savings-amount">-${fmtPrice(savings)}</span>
       </div>
+      ${bsDiscount > 0 ? `
+      <div class="cart-summary-line cart-summary-bs-discount">
+        <span>🎁 ${isFr ? '2ème Best Seller -50%' : '2nd Best Seller -50%'}</span>
+        <span class="savings-amount">-${fmtPrice(bsDiscount)}</span>
+      </div>` : (bsUnits.length === 1 ? `
+      <div class="cart-summary-bs-hint">
+        ${isFr ? 'Ajoutez 1 Best Seller de plus pour −50% !' : 'Add 1 more Best Seller for −50%!'}
+      </div>` : '')}
       <div class="cart-summary-line">
         <span>${isFr ? 'Livraison' : 'Shipping'}</span>
         <span class="${shipping === 0 ? 'shipping-free' : ''}">${shipping === 0 ? (isFr ? 'Gratuite' : 'Free') : fmtPrice(shipping)}</span>
@@ -167,6 +186,14 @@ function renderCart() {
   }
 }
 
+function buildVariantLine(item) {
+  if (item.variantsDisplay) return `<p class="cart-item-variant">${item.variantsDisplay}</p>`;
+  const parts = [];
+  if (item.variantLabel) parts.push(item.variantLabel);
+  if (item.colorLabel)   parts.push(item.colorLabel);
+  return parts.length > 0 ? `<p class="cart-item-variant">${parts.join(' · ')}</p>` : '';
+}
+
 function renderCartItem(item, t_key, isFr) {
   const p    = item.product;
   const data = p[t_key] || p.fr;
@@ -190,7 +217,7 @@ function renderCartItem(item, t_key, isFr) {
           <div>
             <p class="cart-item-cat">${isFr ? getCatLabel(p.category, true) : getCatLabel(p.category, false)}</p>
             <a href="product.html?id=${p.id}" class="cart-item-name">${data.name}</a>
-            ${item.variantLabel ? `<p class="cart-item-variant">${item.variantLabel}${item.colorLabel ? ' · ' + item.colorLabel : ''}</p>` : ''}
+            ${buildVariantLine(item)}
             <p class="cart-item-tagline">${data.tagline}</p>
           </div>
           <button class="cart-item-remove" onclick="removeFromCart('${item.cartKey || p.id}')" aria-label="${isFr ? 'Supprimer' : 'Remove'}">
@@ -297,8 +324,14 @@ async function handleCheckout() {
     const product = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(p => p.id === item.id) : null;
     if (!product) return null;
     const data = product[isFr ? 'fr' : 'en'] || product.fr;
+    const variantParts = [];
+    if (item.variantLabel)    variantParts.push(item.variantLabel);
+    if (item.variantsDisplay)  variantParts.push(item.variantsDisplay);
+    else if (item.colorLabel)  variantParts.push(item.colorLabel);
     return {
-      name:  item.variantLabel ? `${data.name} — ${item.variantLabel}` : data.name,
+      id:    product.id,
+      isBs:  product.badgeType === 'bestseller',
+      name:  variantParts.length > 0 ? `${data.name} — ${variantParts.join(' · ')}` : data.name,
       price: item.variantPrice ?? product.price,
       qty:   item.qty,
       image: product.images && product.images[0]
@@ -306,6 +339,25 @@ async function handleCheckout() {
         : null,
     };
   }).filter(Boolean);
+
+  // Apply bestseller -50% on cheapest bestseller unit
+  const bsEntries = [];
+  items.forEach((item, idx) => {
+    if (!item.isBs) return;
+    for (let i = 0; i < item.qty; i++) bsEntries.push({ idx, price: item.price });
+  });
+  bsEntries.sort((a, b) => a.price - b.price);
+  if (bsEntries.length >= 2) {
+    const { idx, price } = bsEntries[0];
+    const target = items[idx];
+    if (target.qty > 1) {
+      target.qty -= 1;
+      items.push({ name: target.name + (isFr ? ' (−50%)' : ' (−50%)'), price: price * 0.5, qty: 1, image: target.image });
+    } else {
+      target.price = price * 0.5;
+      target.name += ' (−50%)';
+    }
+  }
 
   // Add shipping line if applicable
   const subtotal = items.reduce((s, i) => s + (i.price ?? 0) * i.qty, 0);
@@ -320,12 +372,26 @@ async function handleCheckout() {
   }
 
   try {
+    // GitHub Pages doesn't support Netlify functions
+    if (window.location.hostname.includes('github.io')) {
+      throw new Error(isFr
+        ? 'Le paiement n\'est disponible que sur le site officiel (essentielcar.com). Vous êtes sur une version de prévisualisation.'
+        : 'Payment is only available on the official site (essentielcar.com). You are on a preview version.');
+    }
+
     const res  = await fetch('/.netlify/functions/create-checkout', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ items }),
     });
-    const data = await res.json();
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      throw new Error(isFr
+        ? 'Erreur de connexion au serveur de paiement. Veuillez utiliser le site officiel essentielcar.com.'
+        : 'Payment server connection error. Please use the official site essentielcar.com.');
+    }
     if (data.url) {
       window.location.href = data.url;
     } else {
