@@ -543,8 +543,12 @@ function renderReviews() {
     const initials = r.name.split(' ').map(n => n[0]).join('');
     const avatarColors = ['#c0392b','#16a085','#8e44ad','#2980b9','#d35400','#27ae60'];
     const avatarBg = avatarColors[idx % avatarColors.length];
+    const photoHtml = r.photo
+      ? `<div class="review-product-img-wrap"><img class="review-product-img" src="${r.photo}" alt="" loading="lazy"></div>`
+      : '';
     return `
       <article class="review-card">
+        ${photoHtml}
         <div class="review-stars">${stars}</div>
         <p class="review-text">${data.text}</p>
         <div class="review-meta">
