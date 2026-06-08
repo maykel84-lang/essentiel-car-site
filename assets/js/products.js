@@ -537,8 +537,8 @@ const REVIEWS = [
     product: 'Aspirateur Sans Fil Voiture',
     productId: 'aspirateur-sans-fil',
     photos: ['assets/images/reviews/review-aspirateur.jpg'],
-    fr: { text: 'L\'aspirateur sans fil est incroyable ! J\'ai enfin une voiture propre sans effort. La puissance est au rendez-vous et la batterie tient vraiment 30 minutes. Livraison ultra rapide, service client au top. Je recommande à 100% !' },
-    en: { text: 'The cordless vacuum is incredible! My car is finally clean effortlessly. Power is impressive and the battery genuinely lasts 30 minutes. Ultra fast delivery, excellent customer service. 100% recommend!' }
+    fr: { text: 'Franchement nickel ce petit aspirateur. Ma voiture était dans un état... là c\'est fait en 10 min sans câble qui traîne. L\'aspiration est bonne pour la taille, la batterie tient bien. Reçu rapidement, bien emballé. Je l\'ai mis direct dans le coffre.' },
+    en: { text: 'Honestly great little vacuum. My car was a state... done in 10 min without trailing cables. Good suction for its size, battery holds well. Arrived fast, well packaged. Went straight into my trunk.' }
   },
   {
     name: 'Sophie L.',
@@ -547,8 +547,8 @@ const REVIEWS = [
     product: 'Compresseur d\'Air Sans Fil',
     productId: 'compresseur-air',
     photos: ['assets/images/reviews/review-compresseur.jpg'],
-    fr: { text: 'Le compresseur m\'a sauvé la mise deux fois déjà. Compact, rapide et précis — il s\'arrête exactement à la pression cible. Je ne pars plus jamais en voiture sans lui. Une vraie révolution du quotidien.' },
-    en: { text: 'The compressor has saved me twice already. Compact, fast and precise — stops exactly at the target pressure. I never drive without it now. A true daily revolution.' }
+    fr: { text: 'J\'avais peur que ce soit un gadget mais non. J\'ai eu un pneu légèrement à plat, réglé en 3 minutes. Il s\'arrête tout seul à la pression voulue. Compact, je le laisse dans la voiture en permanence. Bon achat.' },
+    en: { text: 'I was afraid it\'d be a gimmick but no. Had a slightly flat tire, sorted in 3 minutes. Stops automatically at the set pressure. Compact, I leave it in the car permanently. Good purchase.' }
   },
   {
     name: 'Marc D.',
@@ -557,8 +557,8 @@ const REVIEWS = [
     product: 'Dashcam 4K Ultra HD',
     productId: 'dashcam-4k',
     photos: ['assets/images/reviews/review-dashcam.jpg'],
-    fr: { text: 'La dashcam 4K est d\'une qualité impressionnante, même la nuit les images sont nettes et exploitables. L\'installation est simple, le mode parking fonctionne parfaitement. Très satisfait de mon achat.' },
-    en: { text: 'The 4K dashcam quality is impressive, even at night the footage is sharp and usable. Easy installation, parking mode works perfectly. Very satisfied with my purchase.' }
+    fr: { text: 'Installation facile, image correcte même de nuit. J\'ai eu un accrochage en parking la semaine dernière, la vidéo était claire et exploitable. Le mode boucle tourne tout seul, pas besoin d\'y toucher. Satisfait.' },
+    en: { text: 'Easy install, decent image quality even at night. Had a parking incident last week, the footage was clear and usable. Loop mode runs on its own, no fiddling needed. Satisfied.' }
   },
   {
     name: 'Julie R.',
@@ -566,8 +566,8 @@ const REVIEWS = [
     rating: 5,
     product: 'Machine à Polir Sans Fil',
     productId: 'machine-polir',
-    fr: { text: 'La machine à polir a transformé ma vieille Clio ! Les micro-rayures ont disparu et la carrosserie brille comme au premier jour. Le kit inclus est complet et la prise en main très facile. Bluffant !' },
-    en: { text: 'The polishing machine transformed my old Clio! Micro-scratches are gone and the bodywork shines like new. The included kit is complete and very easy to use. Stunning results!' }
+    fr: { text: 'Je m\'attendais pas à ce résultat. J\'ai testé sur les rayures de ma Clio et ça a vraiment bien effacé. Le kit avec les disques est inclus, prise en main rapide. Petite batterie donc on travaille par zones, mais le rendu est là.' },
+    en: { text: 'Didn\'t expect this result. Tested on my Clio\'s scratches and it really erased them well. Kit with pads included, quick to get started. Small battery so you work in sections, but the finish is there.' }
   },
   {
     name: 'Antoine B.',
@@ -576,8 +576,8 @@ const REVIEWS = [
     product: 'Kit Mains Libres 360°',
     productId: 'support-telephone',
     photos: ['assets/images/reviews/review-support-telephone.jpg'],
-    fr: { text: 'Support téléphone magnétique de qualité professionnelle. Il tient même sur les pires routes de montagne. Ça fait 8 mois et il n\'a jamais bougé d\'un millimètre. Rapport qualité/prix excellent, je l\'offre maintenant à ma femme !' },
-    en: { text: 'Professional quality magnetic phone mount. Holds even on the worst mountain roads. 8 months in and it has never moved a millimeter. Excellent value, I\'m now buying one for my wife!' }
+    fr: { text: 'J\'en ai essayé trois ou quatre avant celui-là. Le téléphone tient vraiment, même sur les mauvaises routes. Ça fait des mois, il n\'a jamais bougé. Fixation aimantée solide, bras stable. J\'en ai pris un deuxième pour ma femme.' },
+    en: { text: 'Tried three or four before this one. The phone really holds, even on rough roads. Months later it hasn\'t moved once. Strong magnetic mount, stable arm. Got a second one for my wife.' }
   },
   {
     name: 'Camille F.',
@@ -585,8 +585,8 @@ const REVIEWS = [
     rating: 5,
     product: 'TPMS Surveillance Pneus',
     productId: 'tpms',
-    fr: { text: 'Le TPMS m\'a alerté d\'un sous-gonflage que je n\'avais pas remarqué. Sans lui, j\'aurais abîmé mon pneu. Depuis je roule l\'esprit tranquille et j\'ai même constaté une légère baisse de ma conso. Indispensable !' },
-    en: { text: 'The TPMS alerted me to under-inflation I hadn\'t noticed. Without it, I would have damaged my tire. Now I drive in peace and even noticed a slight drop in fuel consumption. Essential!' }
+    fr: { text: 'Pas le produit le plus glamour mais vraiment utile. Il m\'a alerté une fois sur un pneu qui perdait de l\'air, j\'aurais jamais vu ça à l\'oeil. Installation rapide sur les valves. Je recommande, surtout si vous roulez beaucoup.' },
+    en: { text: 'Not the most glamorous product but genuinely useful. Alerted me to a slow leak I would never have spotted by eye. Quick install on the valves. I recommend it, especially if you drive a lot.' }
   },
   {
     name: 'Nicolas P.',
@@ -595,8 +595,8 @@ const REVIEWS = [
     product: 'Table de Travail Volant',
     productId: 'table-volant',
     photos: ['assets/images/reviews/review-table-volant.jpg'],
-    fr: { text: 'Je fais beaucoup de route pour le boulot et cette table au volant est devenue mon bureau mobile. Solide, stable, installation en 10 secondes. Un achat que je ne regrette pas du tout, vraiment utile.' },
-    en: { text: 'I drive a lot for work and this steering wheel desk has become my mobile office. Solid, stable, 10-second setup. A purchase I don\'t regret at all, truly useful.' }
+    fr: { text: 'Représentant commercial, je passe mes journées dans la voiture. Cette table c\'est idéal pour remplir mes bons de commande ou déjeuner rapidement. Solide, ça ne bouge pas. J\'aurais eu besoin de ça depuis des années.' },
+    en: { text: 'Sales rep, I spend my days in the car. This desk is ideal for filling order forms or eating quickly. Solid, doesn\'t budge. I could have used one of these for years.' }
   },
   {
     name: 'Maykel.V',
@@ -609,8 +609,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-aspirateur-2.jpg',
       'assets/images/reviews/review-maykel-aspirateur-3.jpg'
     ],
-    fr: { text: 'Je l\'utilise depuis 3 semaines et je ne pourrais plus m\'en passer. J\'ai des enfants, la voiture ramassait tout — maintenant c\'est impeccable en 5 minutes. Légère, puissante et rechargeable USB. Top qualité.' },
-    en: { text: 'Been using it for 3 weeks and can\'t live without it. I have kids, the car was a mess — now it\'s spotless in 5 minutes. Light, powerful, USB rechargeable. Top quality.' }
+    fr: { text: 'Reçu rapidement, bien emballé. J\'ai des enfants donc la voiture ramasse tout — là j\'aspire en 5 min sans sortir de câble. Bonne puissance pour la taille, charge en USB. Je le garde dans le coffre et j\'en ai besoin souvent. Content de cet achat.' },
+    en: { text: 'Arrived quickly, well packaged. I have kids so the car collects everything — now I vacuum in 5 min without any cables. Good suction for its size, USB charging. Keeps in the trunk and I use it often. Happy with this purchase.' }
   },
   {
     name: 'Maykel.V',
@@ -623,8 +623,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-dashcam-2.jpg',
       'assets/images/reviews/review-maykel-dashcam-3.jpg'
     ],
-    fr: { text: 'Vendu avec la carte mémoire 64 Go incluse, livraison soignée. L\'image de nuit est vraiment nette, le mode boucle fonctionne tout seul. Je conduis sur Paris tous les jours, ça me rassure vraiment. Je recommande.' },
-    en: { text: 'Came with a 64GB memory card included, careful packaging. Night footage is truly sharp, loop mode works automatically. I drive in Paris every day, it really reassures me. I recommend.' }
+    fr: { text: 'La carte 64 Go est fournie, c\'est un vrai plus. Branchée en moins d\'une heure, l\'image est nette de jour comme de nuit. Je circule beaucoup dans Paris, ça me rassure d\'avoir les trajets enregistrés. Mode parking automatique, pas besoin d\'y toucher. Bonne qualité pour le prix.' },
+    en: { text: '64GB card included, that\'s a real bonus. Installed in under an hour, image is sharp day and night. I drive a lot in Paris, having journeys recorded is reassuring. Parking mode is automatic, no need to fiddle. Good quality for the price.' }
   },
   {
     name: 'Maykel.V',
@@ -637,8 +637,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-table-volant-2.jpg',
       'assets/images/reviews/review-maykel-table-volant-3.jpg'
     ],
-    fr: { text: 'Pratique pour bosser ou manger entre deux rendez-vous. Le plateau est solide et l\'installation sur le volant prend 10 secondes. J\'aurais pas cru que ce serait autant utile au quotidien !' },
-    en: { text: 'Perfect for working or eating between meetings. The tray is solid and setup on the steering wheel takes 10 seconds. I wouldn\'t have believed it could be so useful in daily life!' }
+    fr: { text: 'J\'étais pas convaincu au départ mais je l\'utilise plusieurs fois par semaine. Entre deux rendez-vous, pour manger ou noter deux-trois trucs rapidement. Tient bien sur le volant, stable, s\'installe en quelques secondes. Bon produit pour ce prix.' },
+    en: { text: 'Wasn\'t convinced at first but I use it several times a week. Between appointments, for eating or quickly jotting things down. Holds firm on the steering wheel, stable, sets up in seconds. Good product for the price.' }
   },
   {
     name: 'Maykel.V',
@@ -651,8 +651,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-essuie-glace-2.jpg',
       'assets/images/reviews/review-maykel-essuie-glace-3.jpg'
     ],
-    fr: { text: 'Ça fait un mois que je les ai posés et la visibilité sous la pluie est nettement améliorée. Compatibles avec mes rétros sans modification, installation rapide. Bonne qualité pour le prix, vraiment satisfait.' },
-    en: { text: 'Had them for a month and visibility in the rain is noticeably improved. Compatible with my mirrors without modification, quick installation. Good quality for the price, really satisfied.' }
+    fr: { text: 'Posés il y a environ 6 semaines. Ça se clipse direct, pas de modification à faire. Sous la pluie la différence est visible, les rétros restent dégagés plus longtemps. Le produit correspond exactement aux photos. Satisfait.' },
+    en: { text: 'Put on about 6 weeks ago. Clips on directly, no modification needed. In the rain the difference is noticeable, mirrors stay clear longer. Product matches the photos exactly. Satisfied.' }
   },
   {
     name: 'Maykel.V',
@@ -665,8 +665,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-compresseur-2.jpg',
       'assets/images/reviews/review-maykel-compresseur-3.jpg'
     ],
-    fr: { text: 'Très compact, je le garde dans le coffre en permanence. Gonflage précis, s\'arrête automatiquement à la pression choisie. Vaut largement le prix — j\'aurais pu me retrouver coincé sans lui un soir de semaine.' },
-    en: { text: 'Very compact, I keep it in the trunk permanently. Precise inflation, stops automatically at the chosen pressure. Totally worth the price — it could have saved me from being stranded on a weeknight.' }
+    fr: { text: 'Pratique d\'avoir ça dans le coffre. J\'ai eu un pneu un peu mou un matin — deux minutes pour le regonfler et j\'étais parti. La pression se règle facilement, il se coupe tout seul quand c\'est bon. Compact, léger. À avoir dans sa voiture.' },
+    en: { text: 'Handy to have in the trunk. Had a soft tire one morning — two minutes to top it up and I was off. Pressure is easy to set, cuts off automatically when done. Compact, lightweight. A must for your car.' }
   },
   {
     name: 'Maykel.V',
@@ -679,8 +679,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-machine-polir-2.jpg',
       'assets/images/reviews/review-maykel-machine-polir-3.jpg'
     ],
-    fr: { text: 'Les résultats sont impressionnants. J\'ai testé sur la portière rayée par un parking et ça a quasiment tout effacé. Les disques sont inclus dans la boîte, le manuel est clair. Achat validé à 100%.' },
-    en: { text: 'The results are impressive. I tested it on a door scratched by a parking lot and it erased almost everything. The pads are included in the box, the manual is clear. 100% confirmed purchase.' }
+    fr: { text: 'Résultat vraiment étonnant. J\'avais des rayures légères sur la carrosserie, j\'ai testé sur une zone et c\'était quasi effacé. Les disques sont bien inclus dans la boîte comme sur mes photos. Notice claire, batterie rechargeable. Je suis repassé dessus depuis, c\'est nickel.' },
+    en: { text: 'Really surprising result. Had light scratches on the bodywork, tested on one area and they were nearly gone. Pads included in the box as shown in my photos. Clear instructions, rechargeable battery. Went back over more areas since, spotless.' }
   }
 ];
 
