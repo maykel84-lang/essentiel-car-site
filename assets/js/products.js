@@ -536,7 +536,7 @@ const REVIEWS = [
     rating: 5,
     product: 'Aspirateur Sans Fil Voiture',
     productId: 'aspirateur-sans-fil',
-    photo: 'assets/images/reviews/review-aspirateur.jpg',
+    photos: ['assets/images/reviews/review-aspirateur.jpg'],
     fr: { text: 'L\'aspirateur sans fil est incroyable ! J\'ai enfin une voiture propre sans effort. La puissance est au rendez-vous et la batterie tient vraiment 30 minutes. Livraison ultra rapide, service client au top. Je recommande à 100% !' },
     en: { text: 'The cordless vacuum is incredible! My car is finally clean effortlessly. Power is impressive and the battery genuinely lasts 30 minutes. Ultra fast delivery, excellent customer service. 100% recommend!' }
   },
@@ -546,7 +546,7 @@ const REVIEWS = [
     rating: 5,
     product: 'Compresseur d\'Air Sans Fil',
     productId: 'compresseur-air',
-    photo: 'assets/images/reviews/review-compresseur.jpg',
+    photos: ['assets/images/reviews/review-compresseur.jpg'],
     fr: { text: 'Le compresseur m\'a sauvé la mise deux fois déjà. Compact, rapide et précis — il s\'arrête exactement à la pression cible. Je ne pars plus jamais en voiture sans lui. Une vraie révolution du quotidien.' },
     en: { text: 'The compressor has saved me twice already. Compact, fast and precise — stops exactly at the target pressure. I never drive without it now. A true daily revolution.' }
   },
@@ -556,7 +556,7 @@ const REVIEWS = [
     rating: 5,
     product: 'Dashcam 4K Ultra HD',
     productId: 'dashcam-4k',
-    photo: 'assets/images/reviews/review-dashcam.jpg',
+    photos: ['assets/images/reviews/review-dashcam.jpg'],
     fr: { text: 'La dashcam 4K est d\'une qualité impressionnante, même la nuit les images sont nettes et exploitables. L\'installation est simple, le mode parking fonctionne parfaitement. Très satisfait de mon achat.' },
     en: { text: 'The 4K dashcam quality is impressive, even at night the footage is sharp and usable. Easy installation, parking mode works perfectly. Very satisfied with my purchase.' }
   },
@@ -575,7 +575,7 @@ const REVIEWS = [
     rating: 5,
     product: 'Kit Mains Libres 360°',
     productId: 'support-telephone',
-    photo: 'assets/images/reviews/review-support-telephone.jpg',
+    photos: ['assets/images/reviews/review-support-telephone.jpg'],
     fr: { text: 'Support téléphone magnétique de qualité professionnelle. Il tient même sur les pires routes de montagne. Ça fait 8 mois et il n\'a jamais bougé d\'un millimètre. Rapport qualité/prix excellent, je l\'offre maintenant à ma femme !' },
     en: { text: 'Professional quality magnetic phone mount. Holds even on the worst mountain roads. 8 months in and it has never moved a millimeter. Excellent value, I\'m now buying one for my wife!' }
   },
@@ -594,7 +594,7 @@ const REVIEWS = [
     rating: 5,
     product: 'Table de Travail Volant',
     productId: 'table-volant',
-    photo: 'assets/images/reviews/review-table-volant.jpg',
+    photos: ['assets/images/reviews/review-table-volant.jpg'],
     fr: { text: 'Je fais beaucoup de route pour le boulot et cette table au volant est devenue mon bureau mobile. Solide, stable, installation en 10 secondes. Un achat que je ne regrette pas du tout, vraiment utile.' },
     en: { text: 'I drive a lot for work and this steering wheel desk has become my mobile office. Solid, stable, 10-second setup. A purchase I don\'t regret at all, truly useful.' }
   },
@@ -604,7 +604,11 @@ const REVIEWS = [
     rating: 5,
     product: 'Aspirateur Sans Fil Voiture',
     productId: 'aspirateur-sans-fil',
-    photo: 'assets/images/reviews/review-maykel-aspirateur.jpg',
+    photos: [
+      'assets/images/reviews/review-maykel-aspirateur-1.jpg',
+      'assets/images/reviews/review-maykel-aspirateur-2.jpg',
+      'assets/images/reviews/review-maykel-aspirateur-3.jpg'
+    ],
     fr: { text: 'Je l\'utilise depuis 3 semaines et je ne pourrais plus m\'en passer. J\'ai des enfants, la voiture ramassait tout — maintenant c\'est impeccable en 5 minutes. Légère, puissante et rechargeable USB. Top qualité.' },
     en: { text: 'Been using it for 3 weeks and can\'t live without it. I have kids, the car was a mess — now it\'s spotless in 5 minutes. Light, powerful, USB rechargeable. Top quality.' }
   },
@@ -614,7 +618,11 @@ const REVIEWS = [
     rating: 5,
     product: 'Dashcam 4K Ultra HD',
     productId: 'dashcam-4k',
-    photo: 'assets/images/reviews/review-maykel-dashcam.jpg',
+    photos: [
+      'assets/images/reviews/review-maykel-dashcam-1.jpg',
+      'assets/images/reviews/review-maykel-dashcam-2.jpg',
+      'assets/images/reviews/review-maykel-dashcam-3.jpg'
+    ],
     fr: { text: 'Vendu avec la carte mémoire 64 Go incluse, livraison soignée. L\'image de nuit est vraiment nette, le mode boucle fonctionne tout seul. Je conduis sur Paris tous les jours, ça me rassure vraiment. Je recommande.' },
     en: { text: 'Came with a 64GB memory card included, careful packaging. Night footage is truly sharp, loop mode works automatically. I drive in Paris every day, it really reassures me. I recommend.' }
   },
@@ -624,7 +632,11 @@ const REVIEWS = [
     rating: 5,
     product: 'Table de Travail Volant',
     productId: 'table-volant',
-    photo: 'assets/images/reviews/review-maykel-table-volant.jpg',
+    photos: [
+      'assets/images/reviews/review-maykel-table-volant-1.jpg',
+      'assets/images/reviews/review-maykel-table-volant-2.jpg',
+      'assets/images/reviews/review-maykel-table-volant-3.jpg'
+    ],
     fr: { text: 'Pratique pour bosser ou manger entre deux rendez-vous. Le plateau est solide et l\'installation sur le volant prend 10 secondes. J\'aurais pas cru que ce serait autant utile au quotidien !' },
     en: { text: 'Perfect for working or eating between meetings. The tray is solid and setup on the steering wheel takes 10 seconds. I wouldn\'t have believed it could be so useful in daily life!' }
   },
@@ -634,7 +646,11 @@ const REVIEWS = [
     rating: 5,
     product: 'Essuie-Glace Rétroviseurs',
     productId: 'essuie-glace-retros',
-    photo: 'assets/images/reviews/review-maykel-essuie-glace.jpg',
+    photos: [
+      'assets/images/reviews/review-maykel-essuie-glace-1.jpg',
+      'assets/images/reviews/review-maykel-essuie-glace-2.jpg',
+      'assets/images/reviews/review-maykel-essuie-glace-3.jpg'
+    ],
     fr: { text: 'Ça fait un mois que je les ai posés et la visibilité sous la pluie est nettement améliorée. Compatibles avec mes rétros sans modification, installation rapide. Bonne qualité pour le prix, vraiment satisfait.' },
     en: { text: 'Had them for a month and visibility in the rain is noticeably improved. Compatible with my mirrors without modification, quick installation. Good quality for the price, really satisfied.' }
   },
@@ -644,7 +660,11 @@ const REVIEWS = [
     rating: 5,
     product: 'Compresseur d\'Air Sans Fil',
     productId: 'compresseur-air',
-    photo: 'assets/images/reviews/review-maykel-compresseur.jpg',
+    photos: [
+      'assets/images/reviews/review-maykel-compresseur-1.jpg',
+      'assets/images/reviews/review-maykel-compresseur-2.jpg',
+      'assets/images/reviews/review-maykel-compresseur-3.jpg'
+    ],
     fr: { text: 'Très compact, je le garde dans le coffre en permanence. Gonflage précis, s\'arrête automatiquement à la pression choisie. Vaut largement le prix — j\'aurais pu me retrouver coincé sans lui un soir de semaine.' },
     en: { text: 'Very compact, I keep it in the trunk permanently. Precise inflation, stops automatically at the chosen pressure. Totally worth the price — it could have saved me from being stranded on a weeknight.' }
   },
@@ -654,7 +674,11 @@ const REVIEWS = [
     rating: 5,
     product: 'Machine à Polir Sans Fil',
     productId: 'machine-polir',
-    photo: 'assets/images/reviews/review-maykel-machine-polir.jpg',
+    photos: [
+      'assets/images/reviews/review-maykel-machine-polir-1.jpg',
+      'assets/images/reviews/review-maykel-machine-polir-2.jpg',
+      'assets/images/reviews/review-maykel-machine-polir-3.jpg'
+    ],
     fr: { text: 'Les résultats sont impressionnants. J\'ai testé sur la portière rayée par un parking et ça a quasiment tout effacé. Les disques sont inclus dans la boîte, le manuel est clair. Achat validé à 100%.' },
     en: { text: 'The results are impressive. I tested it on a door scratched by a parking lot and it erased almost everything. The pads are included in the box, the manual is clear. 100% confirmed purchase.' }
   }
