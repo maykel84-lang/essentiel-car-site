@@ -928,14 +928,19 @@ ESSENTIEL CAR ?</h2>
         </div>
 
         <!-- Rendered by JS -->
-        <div class="reviews-carousel-wrap">
-          <div class="reviews-carousel" role="list" aria-label="Témoignages clients"></div>
-        </div>
-
-        <div class="carousel-controls" data-reveal>
+        <div class="reviews-carousel-outer">
           <button class="carousel-btn carousel-prev" aria-label="Avis précédent">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
           </button>
+          <div class="reviews-carousel-wrap">
+            <div class="reviews-carousel" role="list" aria-label="Témoignages clients"></div>
+          </div>
+          <button class="carousel-btn carousel-next" aria-label="Avis suivant">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+          </button>
+        </div>
+
+        <div class="carousel-controls" data-reveal>
           <div class="carousel-dots" role="tablist">
             <button class="carousel-dot" role="tab" aria-label="Avis 1"></button>
             <button class="carousel-dot" role="tab" aria-label="Avis 2"></button>
@@ -944,9 +949,6 @@ ESSENTIEL CAR ?</h2>
             <button class="carousel-dot" role="tab" aria-label="Avis 5"></button>
             <button class="carousel-dot" role="tab" aria-label="Avis 6"></button>
           </div>
-          <button class="carousel-btn carousel-next" aria-label="Avis suivant">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
-          </button>
         </div>
       </div>
       <a href="#faq" class="section-scroll-hint" aria-label="Voir la FAQ">
