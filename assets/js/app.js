@@ -544,9 +544,10 @@ function renderReviews() {
     const avatarColors = ['#c0392b','#16a085','#8e44ad','#2980b9','#d35400','#27ae60'];
     const avatarBg = avatarColors[idx % avatarColors.length];
     const photosArr = r.photos || (r.photo ? [r.photo] : []);
+    const photosJson = photosArr.length > 0 ? JSON.stringify(photosArr.slice(0,3)).replace(/'/g, '&#39;') : '[]';
     const photoHtml = photosArr.length > 0
       ? `<div class="review-photos review-photos--${Math.min(photosArr.length, 3)}">
-          ${photosArr.slice(0, 3).map(p => `<img class="review-photo-item" src="${p}" alt="" loading="lazy">`).join('')}
+          ${photosArr.slice(0, 3).map((p, i) => `<img class="review-photo-item" src="${p}" alt="" loading="lazy" data-photos='${photosJson}' data-idx="${i}">`).join('')}
         </div>`
       : '';
     return `
@@ -571,6 +572,55 @@ function renderReviews() {
   // Duplicate for infinite scroll feel
   carousel.innerHTML += carousel.innerHTML;
   initCarousel();
+  initReviewLightbox();
+}
+
+/* ── 13b. Review Lightbox ── */
+function initReviewLightbox() {
+  if (document.getElementById('review-lightbox')) {
+    document.querySelectorAll('.review-photo-item').forEach(attachLightboxClick);
+    return;
+  }
+  const lb = document.createElement('div');
+  lb.id = 'review-lightbox';
+  lb.className = 'rlb-overlay';
+  lb.innerHTML = `
+    <button class="rlb-close" aria-label="Fermer">&#x2715;</button>
+    <button class="rlb-prev" aria-label="Photo précédente">&#8249;</button>
+    <img class="rlb-img" src="" alt="">
+    <div class="rlb-counter"></div>
+    <button class="rlb-next" aria-label="Photo suivante">&#8250;</button>`;
+  document.body.appendChild(lb);
+
+  let photos = [], idx = 0;
+
+  function show() {
+    lb.querySelector('.rlb-img').src = photos[idx];
+    const counter = lb.querySelector('.rlb-counter');
+    counter.textContent = photos.length > 1 ? (idx + 1) + ' / ' + photos.length : '';
+    lb.querySelector('.rlb-prev').style.display = photos.length > 1 ? '' : 'none';
+    lb.querySelector('.rlb-next').style.display = photos.length > 1 ? '' : 'none';
+  }
+  function open(p, i) { photos = p; idx = i; show(); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+  lb.querySelector('.rlb-close').addEventListener('click', close);
+  lb.querySelector('.rlb-prev').addEventListener('click', e => { e.stopPropagation(); idx = (idx - 1 + photos.length) % photos.length; show(); });
+  lb.querySelector('.rlb-next').addEventListener('click', e => { e.stopPropagation(); idx = (idx + 1) % photos.length; show(); });
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') { idx = (idx - 1 + photos.length) % photos.length; show(); }
+    if (e.key === 'ArrowRight') { idx = (idx + 1) % photos.length; show(); }
+  });
+
+  function attachLightboxClick(img) {
+    img.addEventListener('click', () => {
+      try { const p = JSON.parse(img.dataset.photos || '[]'); if (p.length) open(p, +img.dataset.idx || 0); } catch(e) {}
+    });
+  }
+  document.querySelectorAll('.review-photo-item').forEach(attachLightboxClick);
 }
 
 /* ── 14. Categories Renderer ── */

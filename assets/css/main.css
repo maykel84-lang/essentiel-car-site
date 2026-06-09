@@ -1973,6 +1973,45 @@ svg { display: block; }
   object-position: center;
   background: var(--black-3);
 }
+.review-photo-item { cursor: zoom-in; }
+.rlb-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.93);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.rlb-overlay.is-open { opacity: 1; pointer-events: all; }
+.rlb-img {
+  max-width: 90vw; max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease;
+}
+.rlb-close {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  background: rgba(255,255,255,0.1); border: none; border-radius: 50%;
+  color: #fff; font-size: 1.25rem; width: 40px; height: 40px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.rlb-close:hover { background: var(--red); }
+.rlb-prev, .rlb-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); border: none; border-radius: 50%;
+  color: #fff; font-size: 2rem; width: 48px; height: 48px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.rlb-prev:hover, .rlb-next:hover { background: rgba(255,255,255,0.25); }
+.rlb-prev { left: 1.25rem; }
+.rlb-next { right: 1.25rem; }
+.rlb-counter {
+  position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 0.05em;
+}
 .review-stars { display: flex; gap: 2px; margin-bottom: 1rem; }
 .review-text {
   font-size: 0.875rem;
