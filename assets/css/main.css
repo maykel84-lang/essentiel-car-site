@@ -1969,11 +1969,11 @@ svg { display: block; }
 .review-photos--3 .review-photo-item:first-child { grid-row: 1 / 3; }
 .review-photo-item {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  background: var(--black-3);
+  background: #111;
+  cursor: zoom-in;
 }
-.review-photo-item { cursor: zoom-in; }
 .rlb-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.93);

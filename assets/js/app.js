@@ -572,56 +572,45 @@ function renderReviews() {
   // Duplicate for infinite scroll feel
   carousel.innerHTML += carousel.innerHTML;
   initCarousel();
-  initReviewLightbox();
 }
 
 /* ── 13b. Review Lightbox ── */
-function initReviewLightbox() {
-  if (document.getElementById('review-lightbox')) {
-    document.querySelectorAll('.review-photo-item').forEach(attachLightboxClick);
-    return;
+(function() {
+  var lb = null, photos = [], idx = 0;
+  function build() {
+    if (lb) return;
+    lb = document.createElement('div');
+    lb.id = 'review-lightbox';
+    lb.className = 'rlb-overlay';
+    lb.innerHTML = '<button class="rlb-close">&#x2715;</button><button class="rlb-prev">&#8249;</button><img class="rlb-img" src="" alt=""><div class="rlb-counter"></div><button class="rlb-next">&#8250;</button>';
+    document.body.appendChild(lb);
+    lb.querySelector('.rlb-close').onclick = close;
+    lb.querySelector('.rlb-prev').onclick = function(e) { e.stopPropagation(); idx = (idx - 1 + photos.length) % photos.length; show(); };
+    lb.querySelector('.rlb-next').onclick = function(e) { e.stopPropagation(); idx = (idx + 1) % photos.length; show(); };
+    lb.onclick = function(e) { if (e.target === lb) close(); };
   }
-  const lb = document.createElement('div');
-  lb.id = 'review-lightbox';
-  lb.className = 'rlb-overlay';
-  lb.innerHTML = `
-    <button class="rlb-close" aria-label="Fermer">&#x2715;</button>
-    <button class="rlb-prev" aria-label="Photo précédente">&#8249;</button>
-    <img class="rlb-img" src="" alt="">
-    <div class="rlb-counter"></div>
-    <button class="rlb-next" aria-label="Photo suivante">&#8250;</button>`;
-  document.body.appendChild(lb);
-
-  let photos = [], idx = 0;
-
   function show() {
     lb.querySelector('.rlb-img').src = photos[idx];
-    const counter = lb.querySelector('.rlb-counter');
-    counter.textContent = photos.length > 1 ? (idx + 1) + ' / ' + photos.length : '';
+    lb.querySelector('.rlb-counter').textContent = photos.length > 1 ? (idx + 1) + ' / ' + photos.length : '';
     lb.querySelector('.rlb-prev').style.display = photos.length > 1 ? '' : 'none';
     lb.querySelector('.rlb-next').style.display = photos.length > 1 ? '' : 'none';
   }
-  function open(p, i) { photos = p; idx = i; show(); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
-  function close() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
-
-  lb.querySelector('.rlb-close').addEventListener('click', close);
-  lb.querySelector('.rlb-prev').addEventListener('click', e => { e.stopPropagation(); idx = (idx - 1 + photos.length) % photos.length; show(); });
-  lb.querySelector('.rlb-next').addEventListener('click', e => { e.stopPropagation(); idx = (idx + 1) % photos.length; show(); });
-  lb.addEventListener('click', e => { if (e.target === lb) close(); });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('is-open')) return;
+  function open(p, i) { build(); photos = p; idx = i || 0; show(); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { if (lb) lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.addEventListener('keydown', function(e) {
+    if (!lb || !lb.classList.contains('is-open')) return;
     if (e.key === 'Escape') close();
     if (e.key === 'ArrowLeft') { idx = (idx - 1 + photos.length) % photos.length; show(); }
     if (e.key === 'ArrowRight') { idx = (idx + 1) % photos.length; show(); }
   });
-
-  function attachLightboxClick(img) {
-    img.addEventListener('click', () => {
-      try { const p = JSON.parse(img.dataset.photos || '[]'); if (p.length) open(p, +img.dataset.idx || 0); } catch(e) {}
-    });
-  }
-  document.querySelectorAll('.review-photo-item').forEach(attachLightboxClick);
-}
+  document.addEventListener('click', function(e) {
+    var img = e.target;
+    if (!img || !img.classList || !img.classList.contains('review-photo-item')) return;
+    var raw = img.getAttribute('data-photos');
+    var i = parseInt(img.getAttribute('data-idx') || '0');
+    try { var p = raw ? JSON.parse(raw) : []; open(p.length ? p : [img.src], i); } catch(err) { open([img.src], 0); }
+  });
+})();
 
 /* ── 14. Categories Renderer ── */
 function renderCategories() {
