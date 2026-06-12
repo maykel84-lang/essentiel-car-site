@@ -623,8 +623,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-dashcam-2.jpg',
       'assets/images/reviews/review-maykel-dashcam-3.jpg'
     ],
-    fr: { text: 'La carte 64 Go est fournie, c\'est un vrai plus. Branchée en moins d\'une heure, l\'image est nette de jour comme de nuit. Je circule beaucoup dans Paris, ça me rassure d\'avoir les trajets enregistrés. Mode parking automatique, pas besoin d\'y toucher. Bonne qualité pour le prix.' },
-    en: { text: '64GB card included, that\'s a real bonus. Installed in under an hour, image is sharp day and night. I drive a lot in Paris, having journeys recorded is reassuring. Parking mode is automatic, no need to fiddle. Good quality for the price.' }
+    fr: { text: 'Installation en moins d\'une heure, l\'image est nette de jour comme de nuit. Je circule beaucoup dans Paris, ça me rassure d\'avoir les trajets enregistrés. Mode parking automatique, pas besoin d\'y toucher. Bonne qualité pour le prix.' },
+    en: { text: 'Installed in under an hour, image is sharp day and night. I drive a lot in Paris, having journeys recorded is reassuring. Parking mode is automatic, no need to fiddle. Good quality for the price.' }
   },
   {
     name: 'Maykel.V',
