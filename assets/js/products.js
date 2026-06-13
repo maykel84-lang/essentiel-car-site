@@ -261,14 +261,14 @@ const PRODUCTS = [
     fr: {
       name: 'Pulvérisateur de Mousse',
       tagline: 'Lavage sans contact premium',
-      desc: 'Mousse épaisse et clingante, protection peinture maximale, réservoir 1L intégré, compatible tous nettoyeurs HP. Bain de mousse professionnel à domicile.',
-      features: ['Mousse épaisse', 'Réservoir 1L', 'Compatible HP', 'Sans contact']
+      desc: 'Pulvérisateur à pompe manuelle avec buse fan 60° pour une couverture optimale de la carrosserie. Double embout inclus (mousse + arrosage), pression générée manuellement. Mousse épaisse pour un lavage sans contact professionnel à domicile.',
+      features: ['Buse fan 60°', 'Double embout inclus', 'Pompe manuelle', 'Lavage sans contact']
     },
     en: {
       name: 'Foam Sprayer',
       tagline: 'Premium contactless wash',
-      desc: 'Thick clinging foam, maximum paint protection, 1L integrated tank, compatible with all pressure washers. Professional foam bath at home.',
-      features: ['Thick foam', '1L tank', 'HP compatible', 'Contactless']
+      desc: 'Manual pump foam sprayer with 60° fan nozzle for optimal body coverage. Two nozzles included (foam + watering), manually pressurised. Thick foam for professional contactless car wash at home.',
+      features: ['60° fan nozzle', 'Double nozzle included', 'Manual pump', 'Contactless wash']
     }
   },
   {
