@@ -328,7 +328,7 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
-        { value: 'gris',  display: 'Gris clair', hex: '#d8d5d0', imageIndex: 0 },
+        { value: 'gris',  display: 'Gris clair', hex: '#a8a5a0', imageIndex: 0 },
         { value: 'noir',  display: 'Noir',      hex: '#1a1a1a', imageIndex: 1 },
       ]}
     ],
@@ -409,7 +409,7 @@ const PRODUCTS = [
     accentColor: '#0a1a0a',
     variants: [
       { label: 'Table de volant', productId: 'table-volant', options: [
-        { value: 'gris',  display: 'Gris clair', hex: '#d8d5d0', imageIndex: 2 },
+        { value: 'gris',  display: 'Gris clair', hex: '#a8a5a0', imageIndex: 2 },
         { value: 'noir',  display: 'Noir',       hex: '#1a1a1a', imageIndex: 3 },
       ]}
     ],
