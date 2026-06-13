@@ -299,14 +299,14 @@ const PRODUCTS = [
     fr: {
       name: 'TPMS Surveillance Pneus',
       tagline: 'Votre sécurité commence par vos pneus',
-      desc: 'Capteurs sans fil sur 4 valves, affichage temps réel sur écran LCD, alertes sonores et visuelles. Économisez jusqu\'à 15% de carburant. Roulez serein.',
-      features: ['4 capteurs sans fil', 'Écran LCD', 'Alertes temps réel', '-15% carburant']
+      desc: 'Système TPMS solaire sans fil avec 4 capteurs externes étanches. Vissage rapide sur les valves sans démontage. Affichage LCD temps réel, alertes sonores et visuelles en cas de sous-gonflage ou surchauffe. Batterie capteurs 3-5 ans. Roulez en sécurité à tout moment.',
+      features: ['Charge solaire', '4 capteurs étanches', 'Alertes instantanées', 'Installation 2 min']
     },
     en: {
       name: 'TPMS Tire Monitor',
       tagline: 'Safety starts with your tires',
-      desc: 'Wireless sensors on 4 valves, real-time LCD display, audible and visual alerts. Save up to 15% on fuel. Drive with confidence.',
-      features: ['4 wireless sensors', 'LCD display', 'Real-time alerts', '-15% fuel']
+      desc: 'Solar wireless TPMS with 4 external waterproof sensors. Quick screw-on installation, no tire removal needed. Real-time LCD display with audible and visual alerts for under-inflation or overheating. 3-5 year sensor battery life. Stay safe on every journey.',
+      features: ['Solar charging', '4 waterproof sensors', 'Instant alerts', '2-min install']
     }
   },
   {
