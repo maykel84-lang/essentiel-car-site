@@ -216,16 +216,16 @@ const PRODUCTS = [
       <path d="M30 8 L38 6 L40 14 L34 12"/>
     </svg>`,
     fr: {
-      name: 'Machine à Polir Sans Fil',
-      tagline: 'Finition showroom à domicile',
-      desc: 'Plateau orbital 600-3200 RPM, kit complet 6 disques + produits inclus. Efface rayures, oxydation, taches tenaces. Transformez votre carrosserie en 2 heures.',
-      features: ['600-3200 RPM', '6 disques inclus', 'Kit complet', 'Anti-vibrations']
+      name: 'Machine à Polir Sans Fil Pour Voiture',
+      tagline: 'Carrosserie impeccable en quelques gestes',
+      desc: 'Polisseuse sans fil rechargeable avec 3 plateaux inclus pour cirer, polir et réparer les micro-rayures. Batterie lithium 2000mAh intégrée pour travailler en toute liberté. Résultat professionnel, carrosserie propre et protégée directement chez vous.',
+      features: ['Sans fil rechargeable', '3 plateaux inclus', 'Répare micro-rayures', 'Cire + polissage']
     },
     en: {
-      name: 'Cordless Polishing Machine',
-      tagline: 'Showroom finish at home',
-      desc: '600-3200 RPM orbital pad, complete kit with 6 pads + products. Removes scratches, oxidation, stains. Transform your paintwork in 2 hours.',
-      features: ['600-3200 RPM', '6 pads included', 'Complete kit', 'Anti-vibration']
+      name: 'Cordless Car Polishing Machine',
+      tagline: 'Perfect paintwork in minutes',
+      desc: 'Rechargeable cordless polisher with 3 included pads for waxing, polishing and repairing light scratches. Built-in 2000mAh lithium battery for freedom of movement. Professional results at home.',
+      features: ['Cordless rechargeable', '3 pads included', 'Repairs micro-scratches', 'Wax + polish']
     }
   },
   {
