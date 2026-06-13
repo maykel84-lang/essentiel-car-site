@@ -384,14 +384,14 @@ const PRODUCTS = [
     fr: {
       name: 'Essuie-Glace Rétroviseur Portable',
       tagline: 'Visibilité parfaite par tous les temps',
-      desc: 'Lames en graphite haute résistance, installation universelle sans adaptateur, silence de fonctionnement garanti. Balayage parfait jusqu\'à 98cm. Résiste au gel, pluie et grêle.',
-      features: ['Graphite HD', 'Silencieux', 'Anti-gel', 'Jusqu\'à 98cm']
+      desc: 'Raclette rétractable portable jusqu\'à 98cm pour nettoyer rétroviseurs et vitres en quelques secondes. Lame en caoutchouc souple, manche télescopique compact à glisser dans la boîte à gants. Efficace sous la pluie, le gel et le brouillard.',
+      features: ['Rétractable 98cm', 'Manche télescopique', 'Anti-gel', 'Noir ou Rose']
     },
     en: {
-      name: 'Portable Mirror Wiper Blades',
+      name: 'Portable Retractable Mirror Wiper',
       tagline: 'Perfect visibility in any weather',
-      desc: 'High-resistance graphite blades, universal no-adapter installation, whisper-quiet operation. Perfect wipe up to 98cm. Resistant to ice, rain and hail.',
-      features: ['HD graphite', 'Silent', 'Anti-ice', 'Up to 98cm']
+      desc: 'Retractable portable wiper up to 98cm for cleaning mirrors and windows in seconds. Soft rubber blade, compact telescopic handle fits in the glove box. Effective in rain, frost and fog.',
+      features: ['Retractable 98cm', 'Telescopic handle', 'Anti-frost', 'Black or Pink']
     }
   },
   {
