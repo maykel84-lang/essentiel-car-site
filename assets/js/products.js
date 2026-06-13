@@ -343,14 +343,14 @@ const PRODUCTS = [
     fr: {
       name: 'Table à Manger Volant',
       tagline: 'Votre bureau mobile parfait',
-      desc: 'Surface antidérapante pliable, rangements latéraux, port USB intégré. Parfait pour les pauses repas, le télétravail et l\'organisation en déplacement. Compatible tous véhicules.',
-      features: ['Antidérapante', 'Port USB', 'Pliable', 'Universel']
+      desc: 'Plateau multifonction qui s\'accroche sur le volant. Surface antidérapante avec rangements latéraux intégrés. Idéal pour les pauses repas, le travail ou l\'organisation en voiture. Compatible tous véhicules.',
+      features: ['Accroche volant', 'Surface antidérapante', 'Rangements latéraux', 'Universel']
     },
     en: {
       name: 'Steering Wheel Table',
       tagline: 'Your perfect mobile office',
-      desc: 'Non-slip foldable surface, side organizers, built-in USB port. Perfect for meal breaks, remote work and on-the-go organization. Fits all vehicles.',
-      features: ['Non-slip', 'USB port', 'Foldable', 'Universal']
+      desc: 'Multifunction tray that hooks onto the steering wheel. Non-slip surface with integrated side compartments. Ideal for meal breaks, work or in-car organisation. Fits all vehicles.',
+      features: ['Hooks on wheel', 'Non-slip surface', 'Side compartments', 'Universal']
     }
   },
   {
