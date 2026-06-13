@@ -328,8 +328,8 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
-        { value: 'blanc', display: 'Blanc', hex: '#f0ede8', imageIndex: 0 },
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 1 },
+        { value: 'gris',  display: 'Gris clair', hex: '#d8d5d0', imageIndex: 0 },
+        { value: 'noir',  display: 'Noir',      hex: '#1a1a1a', imageIndex: 1 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
