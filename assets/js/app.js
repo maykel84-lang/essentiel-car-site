@@ -1014,13 +1014,13 @@ function renderCartPanel() {
   const uniqueProducts = cart.length;
   const gwpUnlocked = uniqueProducts >= 2;
   const gwpBar = `<div class="gwp-bar${gwpUnlocked ? ' gwp-unlocked' : ''}">
-    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau débloqué — Kit microfibre offert !' : '🎁 Cadeau offert dès 2 produits différents'}</div>
+    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau débloqué !' : '🎁 Cadeau offert dès 2 produits différents'}</div>
     <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (uniqueProducts / 2) * 100)}%"></div></div>
     <div class="gwp-bar-sub">${gwpUnlocked
-      ? '✓ Votre kit microfibre + surprise est inclus dans votre commande !'
+      ? '✓ Code promo -15% + Guide Entretien Auto offerts par e-mail après commande !'
       : uniqueProducts === 0
-        ? 'Ajoutez 2 produits différents au panier et recevez un kit cadeau offert 🎁'
-        : 'Plus qu\'1 produit différent à ajouter pour débloquer votre kit cadeau 🎁'
+        ? 'Ajoutez 2 produits différents et recevez un code promo -15% + Guide Auto offerts 🎁'
+        : 'Plus qu\'1 produit différent pour débloquer votre code promo -15% + Guide Auto 🎁'
     }</div>
   </div>`;
 
