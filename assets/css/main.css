@@ -3188,6 +3188,12 @@ svg { display: block; }
   border-color: var(--red);
   background: rgba(224,0,12,0.06);
 }
+.variant-swatch.out-of-stock {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  pointer-events: none;
+}
 .swatch-color {
   width: 18px;
   height: 18px;

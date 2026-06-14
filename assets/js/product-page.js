@@ -359,15 +359,15 @@ function buildVariants(variants, lang) {
         </div>
         <div class="variant-options">
           ${v.options.map((opt, i) => `
-            <button class="variant-swatch${i === 0 ? ' active' : ''}"
+            <button class="variant-swatch${i === 0 ? ' active' : ''}${opt.outOfStock ? ' out-of-stock' : ''}"
               data-value="${opt.value}"
               data-label="${opt.display}"
               style="--swatch-color:${opt.hex}"
               ${opt.transparent ? 'data-transparent="true"' : ''}
               ${opt.imageIndex !== undefined ? `data-imgindex="${opt.imageIndex}"` : ''}
-              title="${opt.display}">
+              ${opt.outOfStock ? 'disabled title="Rupture de stock"' : `title="${opt.display}"`}>
               <span class="swatch-color${opt.transparent ? ' swatch-color--transparent' : ''}"></span>
-              <span class="swatch-name">${opt.display}</span>
+              <span class="swatch-name">${opt.display}${opt.outOfStock ? ' <em style="font-size:0.7em;opacity:0.6">(Rupture)</em>' : ''}</span>
             </button>`).join('')}
         </div>
       </div>`;

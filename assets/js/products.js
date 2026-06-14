@@ -58,7 +58,7 @@ const PRODUCTS = [
       { label: 'Couleur', options: [
         { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 0 },
         { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 1 },
-        { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 2 },
+        { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 2, outOfStock: true },
       ]},
       { label: 'Quantité', type: 'qty', options: [
         { value: '1',   display: 'À l\'unité',  price: 12.90, oldPrice: 19.90, default: true },
