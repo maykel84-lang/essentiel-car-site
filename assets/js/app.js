@@ -1014,11 +1014,13 @@ function renderCartPanel() {
   const uniqueProducts = cart.length;
   const gwpUnlocked = uniqueProducts >= 2;
   const gwpBar = `<div class="gwp-bar${gwpUnlocked ? ' gwp-unlocked' : ''}">
-    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau surprise débloqué !' : '🎁 Cadeau surprise'}</div>
+    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau débloqué — Kit microfibre offert !' : '🎁 Cadeau offert dès 2 produits différents'}</div>
     <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (uniqueProducts / 2) * 100)}%"></div></div>
     <div class="gwp-bar-sub">${gwpUnlocked
-      ? '✓ Kit microfibre + surprise vous attend dans votre colis !'
-      : `Ajoutez ${2 - uniqueProducts} produit${2 - uniqueProducts > 1 ? '' : ''} supplémentaire pour débloquer votre kit cadeau`
+      ? '✓ Votre kit microfibre + surprise est inclus dans votre commande !'
+      : uniqueProducts === 0
+        ? 'Ajoutez 2 produits différents au panier et recevez un kit cadeau offert 🎁'
+        : 'Plus qu\'1 produit différent à ajouter pour débloquer votre kit cadeau 🎁'
     }</div>
   </div>`;
 
