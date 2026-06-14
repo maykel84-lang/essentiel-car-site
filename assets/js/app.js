@@ -1011,13 +1011,14 @@ function renderCartPanel() {
            </div>`
         : '');
   const totalItems = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
-  const gwpUnlocked = totalItems >= 2;
+  const uniqueProducts = cart.length;
+  const gwpUnlocked = uniqueProducts >= 2;
   const gwpBar = `<div class="gwp-bar${gwpUnlocked ? ' gwp-unlocked' : ''}">
     <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau surprise débloqué !' : '🎁 Cadeau surprise'}</div>
-    <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (totalItems / 2) * 100)}%"></div></div>
+    <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (uniqueProducts / 2) * 100)}%"></div></div>
     <div class="gwp-bar-sub">${gwpUnlocked
       ? '✓ Kit microfibre + surprise vous attend dans votre colis !'
-      : `Plus que ${2 - totalItems} article${2 - totalItems > 1 ? 's' : ''} pour débloquer votre kit cadeau`
+      : `Ajoutez ${2 - uniqueProducts} produit${2 - uniqueProducts > 1 ? '' : ''} supplémentaire pour débloquer votre kit cadeau`
     }</div>
   </div>`;
 
