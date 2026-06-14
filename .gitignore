@@ -1,0 +1,10 @@
+# Dépendances / build
+node_modules/
+*.log
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Archives générées
+*.zip
