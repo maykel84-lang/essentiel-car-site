@@ -144,16 +144,16 @@ const PRODUCTS = [
       <circle cx="10" cy="20" r="1.5" fill="currentColor"/>
     </svg>`,
     fr: {
-      name: 'Dashcam 4K Ultra HD',
+      name: 'Dashcam Full HD 1080P',
       tagline: 'Chaque trajet, documenté',
-      desc: 'Capteur Sony 4K, grand angle 170°, vision nocturne améliorée, détection de mouvement, mode parking avec surveillance continue. Votre témoin infaillible sur la route.',
-      features: ['Capteur Sony 4K', 'Grand angle 170°', 'Vision nocturne', 'Mode parking']
+      desc: 'Full HD 1080P, grand angle 170°, vision nocturne améliorée, détection de mouvement, mode parking avec surveillance continue. Votre témoin infaillible sur la route.',
+      features: ['Full HD 1080P', 'Grand angle 170°', 'Vision nocturne', 'Mode parking']
     },
     en: {
-      name: '4K Ultra HD Dashcam',
+      name: 'Full HD 1080P Dashcam',
       tagline: 'Every journey, documented',
-      desc: 'Sony 4K sensor, 170° wide angle, enhanced night vision, motion detection, continuous parking mode. Your infallible road witness.',
-      features: ['Sony 4K sensor', '170° wide angle', 'Night vision', 'Parking mode']
+      desc: 'Full HD 1080P, 170° wide angle, enhanced night vision, motion detection, continuous parking mode. Your infallible road witness.',
+      features: ['Full HD 1080P', '170° wide angle', 'Night vision', 'Parking mode']
     }
   },
   {
@@ -517,14 +517,14 @@ const PRODUCTS = [
     fr: {
       name: 'Pack Sécurité & Confort',
       tagline: 'Conduite Sereine',
-      desc: 'Dashcam 4K HD + TPMS surveillance pneus + Kit mains libres 360°. La sécurité complète pour chaque trajet. Économisez 32,80€ par rapport à l\'achat séparé.',
-      features: ['Dashcam 4K HD', 'TPMS 4 capteurs', 'Kit mains libres 360°', 'Économisez 32,80€']
+      desc: 'Dashcam Full HD 1080P + TPMS surveillance pneus + Kit mains libres 360°. La sécurité complète pour chaque trajet. Économisez 32,80€ par rapport à l\'achat séparé.',
+      features: ['Dashcam Full HD 1080P', 'TPMS 4 capteurs', 'Kit mains libres 360°', 'Économisez 32,80€']
     },
     en: {
       name: 'Safety & Comfort Pack',
       tagline: 'Serene Driving',
-      desc: '4K dashcam + TPMS tire monitor + 360° hands-free kit. Complete safety for every journey. Save 32.80€ vs. buying separately.',
-      features: ['4K dashcam', '4 TPMS sensors', '360° hands-free', 'Save 32.80€']
+      desc: 'Full HD dashcam + TPMS tire monitor + 360° hands-free kit. Complete safety for every journey. Save 32.80€ vs. buying separately.',
+      features: ['Full HD dashcam', '4 TPMS sensors', '360° hands-free', 'Save 32.80€']
     }
   },
   {
@@ -1075,7 +1075,7 @@ const REVIEWS = [
     name: 'Marc D.',
     city: 'Marseille',
     rating: 5,
-    product: 'Dashcam 4K Ultra HD',
+    product: 'Dashcam Full HD 1080P',
     productId: 'dashcam-4k',
     photos: ['assets/images/reviews/review-dashcam.jpg'],
     fr: { text: 'Installation facile, image correcte même de nuit. J\'ai eu un accrochage en parking la semaine dernière, la vidéo était claire et exploitable. Le mode boucle tourne tout seul, pas besoin d\'y toucher. Satisfait.' },
@@ -1137,7 +1137,7 @@ const REVIEWS = [
     name: 'Maykel.V',
     city: 'Paris',
     rating: 5,
-    product: 'Dashcam 4K Ultra HD',
+    product: 'Dashcam Full HD 1080P',
     productId: 'dashcam-4k',
     photos: [
       'assets/images/reviews/review-maykel-dashcam-1.jpg',
