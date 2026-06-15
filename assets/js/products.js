@@ -124,9 +124,9 @@ const PRODUCTS = [
     id: 'dashcam-4k',
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
-    price: 89.90,
-    oldPrice: 119.90,
-    discount: 25,
+    price: 49.90,
+    oldPrice: 69.90,
+    discount: 29,
     rating: 4.8,
     reviews: 634,
     category: 'technologie',
@@ -144,16 +144,16 @@ const PRODUCTS = [
       <circle cx="10" cy="20" r="1.5" fill="currentColor"/>
     </svg>`,
     fr: {
-      name: 'Dashcam Full HD 1080P',
-      tagline: 'Chaque trajet, documenté',
-      desc: 'Full HD 1080P, grand angle 170°, vision nocturne améliorée, détection de mouvement, mode parking avec surveillance continue. Votre témoin infaillible sur la route.',
-      features: ['Full HD 1080P', 'Grand angle 170°', 'Vision nocturne', 'Mode parking']
+      name: 'Dashcam Full HD 1080P Double Objectif',
+      tagline: 'Avant et arrière, en simultané',
+      desc: 'Double enregistrement simultané avant + arrière en Full HD 1080P, grand angle 170°, vision nocturne, mode parking avec détection de mouvement. Allume-cigare inclus.',
+      features: ['Double objectif avant/arrière', 'Full HD 1080P', 'Vision nocturne', 'Mode parking']
     },
     en: {
-      name: 'Full HD 1080P Dashcam',
-      tagline: 'Every journey, documented',
-      desc: 'Full HD 1080P, 170° wide angle, enhanced night vision, motion detection, continuous parking mode. Your infallible road witness.',
-      features: ['Full HD 1080P', '170° wide angle', 'Night vision', 'Parking mode']
+      name: 'Dual Lens Full HD 1080P Dashcam',
+      tagline: 'Front and rear, simultaneously',
+      desc: 'Simultaneous dual recording front + rear in Full HD 1080P, 170° wide angle, night vision, parking mode with motion detection. Cigarette lighter adapter included.',
+      features: ['Dual lens front/rear', 'Full HD 1080P', 'Night vision', 'Parking mode']
     }
   },
   {
@@ -495,9 +495,9 @@ const PRODUCTS = [
     id: 'pack-securite',
     badge: 'PACK',
     badgeType: 'bundle',
-    price: 134.90,
-    oldPrice: 167.70,
-    discount: 20,
+    price: 99.90,
+    oldPrice: 127.70,
+    discount: 22,
     rating: 4.8,
     reviews: 224,
     category: 'pack',
@@ -517,14 +517,14 @@ const PRODUCTS = [
     fr: {
       name: 'Pack Sécurité & Confort',
       tagline: 'Conduite Sereine',
-      desc: 'Dashcam Full HD 1080P + TPMS surveillance pneus + Kit mains libres 360°. La sécurité complète pour chaque trajet. Économisez 32,80€ par rapport à l\'achat séparé.',
-      features: ['Dashcam Full HD 1080P', 'TPMS 4 capteurs', 'Kit mains libres 360°', 'Économisez 32,80€']
+      desc: 'Dashcam Full HD Double Objectif + TPMS surveillance pneus + Kit mains libres 360°. La sécurité complète pour chaque trajet. Économisez 27,80€ par rapport à l\'achat séparé.',
+      features: ['Dashcam Full HD 1080P', 'TPMS 4 capteurs', 'Kit mains libres 360°', 'Économisez 27,80€']
     },
     en: {
       name: 'Safety & Comfort Pack',
       tagline: 'Serene Driving',
-      desc: 'Full HD dashcam + TPMS tire monitor + 360° hands-free kit. Complete safety for every journey. Save 32.80€ vs. buying separately.',
-      features: ['Full HD dashcam', '4 TPMS sensors', '360° hands-free', 'Save 32.80€']
+      desc: 'Dual lens Full HD dashcam + TPMS tire monitor + 360° hands-free kit. Complete safety for every journey. Save 27.80€ vs. buying separately.',
+      features: ['Full HD dashcam', '4 TPMS sensors', '360° hands-free', 'Save 27.80€']
     }
   },
   {

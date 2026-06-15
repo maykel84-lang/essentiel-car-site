@@ -1070,28 +1070,30 @@ Un pneu légèrement dégonflé peut vite devenir un vrai problème. Ce compress
 
 ---
 
-## PRODUIT 18 — DASHCAM FULL HD 1080P
+## PRODUIT 18 — DASHCAM FULL HD 1080P DOUBLE OBJECTIF
+
+**Prix WooCommerce : 49,90€ — Prix barré : 69,90€**
 
 **Titre produit**
-Dashcam Full HD 1080P pour Voiture – Grand Angle 170°, Vision Nocturne, Mode Parking
+Dashcam Full HD 1080P Double Objectif – Enregistrement Simultané Avant/Arrière, Vision Nocturne, Mode Parking
 
 **Slug URL**
 `/dashcam-full-hd-voiture`
 
-**SEO — Focus keyphrase :** dashcam full hd voiture vision nocturne
-**Meta title :** Dashcam Full HD 1080P Voiture – 170°, Vision Nocturne, Mode Parking | Essentiel Car
-**Meta description :** Dashcam Full HD 1080P, grand angle 170°, vision nocturne améliorée et mode parking avec détection de mouvement. Votre témoin fiable sur la route.
+**SEO — Focus keyphrase :** dashcam double objectif voiture enregistrement avant arrière
+**Meta title :** Dashcam Full HD 1080P Double Objectif – Avant/Arrière, Mode Parking | Essentiel Car
+**Meta description :** Dashcam Full HD 1080P à double objectif : enregistrement simultané avant et arrière, vision nocturne, mode parking. Votre témoin fiable sur la route à 49,90€.
 
 **Balises ALT images**
-- Image 1 : `Dashcam Full HD 1080P voiture vision nocturne grand angle`
-- Image 2 : `Caméra embarquée voiture 170 degrés grand angle pare-brise`
+- Image 1 : `Dashcam double objectif Full HD 1080P voiture avant arrière`
+- Image 2 : `Caméra embarquée voiture double lentille 170 degrés pare-brise`
 - Image 3 : `Dashcam mode parking surveillance voiture nuit`
 
 ---
 
 **DESCRIPTION COURTE**
 
-Un accrochage en parking, une fausse accusation en cas d'accident — sans preuve vidéo, votre parole ne pèse pas lourd. Cette dashcam Full HD 1080P enregistre en continu, de jour comme de nuit. Grand angle 170° couvre toute la largeur de la route. Mode parking avec détection de mouvement surveille votre véhicule même moteur éteint.
+Un accrochage en parking, une fausse accusation — sans preuve vidéo, votre parole ne pèse pas lourd. Cette dashcam Full HD 1080P à double objectif enregistre simultanément l'avant ET l'arrière de votre véhicule. Grand angle 170°, vision nocturne, mode parking avec détection de mouvement. Alimentation allume-cigare — plug & play.
 
 ---
 
@@ -1100,33 +1102,37 @@ Un accrochage en parking, une fausse accusation en cas d'accident — sans preuv
 ```html
 <p><strong>Un accrochage en parking, un refus de priorité, une fausse accusation — sans enregistrement vidéo, impossible de prouver ce qui s'est réellement passé.</strong></p>
 
-<p>La <strong>Dashcam Full HD 1080P Essentiel Car</strong> enregistre chaque trajet en continu sur carte mémoire (mode boucle automatique — les fichiers les plus anciens sont remplacés quand la carte est pleine). Son capteur offre une image nette de jour comme de nuit, sur toute la largeur de la route grâce au grand angle 170°. En mode parking, la détection de mouvement déclenche l'enregistrement si quelqu'un touche votre voiture à l'arrêt.</p>
+<p>La <strong>Dashcam Full HD 1080P Double Objectif Essentiel Car</strong> enregistre en simultané l'avant ET l'arrière de votre véhicule en continu sur carte mémoire (mode boucle automatique). En mode parking, la détection de mouvement déclenche l'enregistrement dès qu'on approche de votre voiture à l'arrêt.</p>
 
 <h3>Pourquoi vous allez l'apprécier</h3>
 <ul>
+  <li>✓ <strong>Double objectif avant + arrière</strong> — enregistrement simultané des deux côtés</li>
   <li>✓ <strong>Full HD 1080P</strong> — image nette de jour et de nuit</li>
   <li>✓ <strong>Grand angle 170°</strong> — couvre toute la largeur de la route</li>
   <li>✓ <strong>Vision nocturne améliorée</strong> — lisible même en conditions difficiles</li>
   <li>✓ <strong>Mode parking avec détection de mouvement</strong></li>
   <li>✓ <strong>Enregistrement en boucle automatique</strong> — aucune intervention requise</li>
-  <li>✓ <strong>Preuve vidéo en cas d'incident</strong></li>
+  <li>✓ <strong>Alimentation allume-cigare</strong> — installation sans câblage</li>
 </ul>
 
 <h3>Caractéristiques</h3>
 <ul>
-  <li><strong>Type :</strong> Caméra embarquée dashcam pour voiture</li>
+  <li><strong>Type :</strong> Dashcam double objectif pour voiture</li>
   <li><strong>Résolution :</strong> Full HD 1080P (1920×1080)</li>
+  <li><strong>Objectifs :</strong> Double — avant et arrière simultanés</li>
   <li><strong>Angle de vue :</strong> 170°</li>
   <li><strong>Vision nocturne :</strong> Améliorée</li>
+  <li><strong>Alimentation :</strong> Allume-cigare (Car Power)</li>
+  <li><strong>Couleur :</strong> Noir</li>
   <li><strong>Mode parking :</strong> Oui — détection de mouvement</li>
   <li><strong>Enregistrement :</strong> Boucle automatique sur carte mémoire</li>
-  <li><strong>Carte mémoire :</strong> Non incluse — format à confirmer sur fiche fournisseur</li>
-  <li><strong>Contenu du colis :</strong> 1 dashcam + câble d'alimentation + support pare-brise + notice</li>
+  <li><strong>Carte mémoire :</strong> Non incluse — classe 10 min. recommandée</li>
+  <li><strong>Contenu du colis :</strong> 1 dashcam double objectif + câble allume-cigare + support pare-brise + notice</li>
 </ul>
 
-<p><em><strong>Conseil :</strong> Utilisez une carte mémoire de classe 10 minimum (A1 recommandée) pour garantir des enregistrements fluides. Formatez la carte directement depuis la dashcam lors de la première utilisation.</em></p>
+<p><em><strong>Conseil :</strong> Utilisez une carte mémoire de classe 10 minimum (A1 recommandée). Formatez la carte directement depuis la dashcam lors de la première utilisation pour optimiser les performances d'écriture.</em></p>
 
-<p><strong>Équipez votre voiture dès aujourd'hui — chaque trajet documenté en toute tranquillité.</strong></p>
+<p><strong>Équipez votre voiture dès aujourd'hui — chaque trajet documenté sous tous les angles, en toute tranquillité.</strong></p>
 ```
 
 ---
@@ -1624,14 +1630,14 @@ Tout ce qu'il faut pour nettoyer votre voiture comme un professionnel, de l'habi
 ## PRODUIT 27 — PACK SÉCURITÉ & CONFORT
 
 **Titre produit**
-Pack Sécurité Voiture – Dashcam Full HD + TPMS Surveillance Pneus + Support Téléphone 360° | Économisez 32,80€
+Pack Sécurité Voiture – Dashcam Full HD + TPMS Surveillance Pneus + Support Téléphone 360° | Économisez 27,80€
 
 **Slug URL**
 `/pack-securite-confort-voiture`
 
 **SEO — Focus keyphrase :** pack sécurité voiture dashcam TPMS
 **Meta title :** Pack Sécurité Voiture – Dashcam HD + TPMS + Support | Essentiel Car
-**Meta description :** Pack sécurité : dashcam Full HD 1080P + système TPMS 4 capteurs + support téléphone 360°. Conduite sereine et documentée. Économisez 32,80€.
+**Meta description :** Pack sécurité : dashcam Full HD 1080P + système TPMS 4 capteurs + support téléphone 360°. Conduite sereine et documentée. Économisez 27,80€.
 
 **Balises ALT images**
 - Image 1 : `Pack sécurité voiture dashcam full hd TPMS support téléphone`
@@ -1643,7 +1649,7 @@ Pack Sécurité Voiture – Dashcam Full HD + TPMS Surveillance Pneus + Support 
 
 **DESCRIPTION COURTE**
 
-La sécurité en voiture, c'est aussi se préparer aux imprévus. Ce pack regroupe trois accessoires qui travaillent ensemble pour une conduite plus sereine : la Dashcam Full HD 1080P documente chaque trajet, le TPMS surveille la pression de vos 4 pneus en temps réel, et le Support Téléphone 360° garde votre GPS accessible en permanence. Économisez 32,80€ vs achat séparé.
+La sécurité en voiture, c'est aussi se préparer aux imprévus. Ce pack regroupe trois accessoires qui travaillent ensemble pour une conduite plus sereine : la Dashcam Full HD 1080P documente chaque trajet, le TPMS surveille la pression de vos 4 pneus en temps réel, et le Support Téléphone 360° garde votre GPS accessible en permanence. Économisez 27,80€ vs achat séparé.
 
 ---
 
@@ -1662,7 +1668,7 @@ La sécurité en voiture, c'est aussi se préparer aux imprévus. Ce pack regrou
 
 <h3>Pourquoi ce pack a du sens</h3>
 <ul>
-  <li>✓ <strong>Économisez 32,80€</strong> par rapport à l'achat des 3 produits séparément</li>
+  <li>✓ <strong>Économisez 27,80€</strong> par rapport à l'achat des 3 produits séparément</li>
   <li>✓ <strong>3 accessoires sécurité</strong> complémentaires dans un seul envoi</li>
   <li>✓ <strong>Dashcam Full HD 1080P</strong> — preuve vidéo en cas d'accident ou litige</li>
   <li>✓ <strong>TPMS 4 capteurs</strong> — alertes pression pneus en temps réel</li>
