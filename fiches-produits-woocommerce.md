@@ -882,3 +882,803 @@ Les longs trajets, les embouteillages, les journées de conduite prolongée — 
 - [ ] Délais de livraison réalistes
 - [ ] Meta title + Meta description renseignés dans Yoast/RankMath
 - [ ] Slug URL propre et court
+
+---
+---
+
+# FICHES PRODUITS CATALOGUE EXISTANT — ESSENTIEL CAR
+## Produits 15 à 27 (10 produits originaux + 3 packs)
+
+---
+
+## PRODUIT 15 — ASPIRATEUR SANS FIL VOITURE
+
+**Titre produit (champ Nom)**
+Aspirateur Sans Fil pour Voiture – Nettoyage Rapide de l'Habitacle, Filtre HEPA
+
+**Slug URL**
+`/aspirateur-sans-fil-voiture`
+
+**SEO — Focus keyphrase :** aspirateur voiture sans fil
+**Meta title :** Aspirateur Voiture Sans Fil 120W – Filtre HEPA | Essentiel Car
+**Meta description :** Aspirateur sans fil pour voiture. Moteur 120W, batterie 30 min, filtre HEPA, 4 accessoires inclus. Nettoyage rapide de l'habitacle sans câble.
+
+**Balises ALT images**
+- Image 1 : `Aspirateur sans fil voiture compact rechargeable HEPA`
+- Image 2 : `Aspirateur voiture intérieur habitacle sans câble`
+- Image 3 : `Aspirateur soufflant voiture accessoires inclus`
+
+---
+
+**DESCRIPTION COURTE**
+
+Marre des miettes, poussières et saletés qui s'accumulent dans votre voiture ? Cet aspirateur sans fil nettoie l'intégralité de votre habitacle en quelques minutes, sans câble qui traîne. Son moteur 120W offre une aspiration efficace pour les tapis, sièges et recoins. Batterie lithium 30 minutes d'autonomie, filtre HEPA, 4 accessoires inclus pour atteindre chaque zone.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Enfants, animaux, trajets du quotidien — votre habitacle encaisse tout.</strong> Les miettes s'incrustent, la poussière s'accumule, et sortir un aspirateur filaire reste une contrainte que personne n'a envie de gérer.</p>
+
+<p>L'<strong>Aspirateur Sans Fil Voiture Essentiel Car</strong> est conçu pour un usage rapide, à la demande, sans branchement ni préparation. Son moteur 120W aspire efficacement miettes, poils d'animaux et poussières sur les tapis, sièges, entre les sièges et dans les recoins. Le filtre HEPA retient les particules fines. Compact, il se range dans le coffre et est prêt à être utilisé à tout moment.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Moteur 120W</strong> — aspiration efficace pour l'habitacle</li>
+  <li>✓ <strong>Batterie lithium 30 minutes</strong> — largement suffisant pour un nettoyage complet</li>
+  <li>✓ <strong>Filtre HEPA</strong> — retient les particules fines et allergènes</li>
+  <li>✓ <strong>4 accessoires inclus</strong> — brosse plate, suceur fin, brosse ronde, rallonge</li>
+  <li>✓ <strong>Sans câble</strong> — liberté de mouvement totale</li>
+  <li>✓ <strong>Idéal pour familles, propriétaires d'animaux et conducteurs quotidiens</strong></li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Aspirateur sans fil portable pour voiture</li>
+  <li><strong>Puissance moteur :</strong> 120W</li>
+  <li><strong>Autonomie :</strong> Environ 30 minutes</li>
+  <li><strong>Filtration :</strong> Filtre HEPA</li>
+  <li><strong>Charge :</strong> USB (câble inclus)</li>
+  <li><strong>Accessoires inclus :</strong> 4 (brosse plate, suceur fin, brosse ronde, rallonge)</li>
+  <li><strong>Compatibilité :</strong> Tous véhicules</li>
+  <li><strong>Contenu du colis :</strong> 1 aspirateur + 4 accessoires + câble de charge</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Videz le bac après chaque utilisation pour maintenir les performances. Nettoyez le filtre HEPA régulièrement à l'air comprimé. Chargez complètement avant première utilisation.</em></p>
+
+<p><strong>Ajoutez-le à votre panier — un habitacle propre en 5 minutes, sans câble.</strong></p>
+```
+
+---
+
+## PRODUIT 16 — BROSSE À JANTES PRO
+
+**Titre produit**
+Brosse à Jantes pour Voiture – Poils Ultra-Souples 360°, Manche Ergonomique
+
+**Slug URL**
+`/brosse-jantes-voiture-pro`
+
+**SEO — Focus keyphrase :** brosse jantes voiture
+**Meta title :** Brosse Jantes Voiture – Poils Souples 360° | Essentiel Car
+**Meta description :** Brosse à jantes professionnelle pour voiture. Poils ultra-souples 360°, manche ergonomique antidérapant. Compatible toutes tailles. Disponible à l'unité ou en lot de 3.
+
+**Balises ALT images**
+- Image 1 : `Brosse jantes voiture gris poils souples 360 degrés`
+- Image 2 : `Brosse nettoyage jantes voiture manche ergonomique`
+- Image 3 : `Brosse jantes jaune voiture nettoyage rayons`
+- Image 4 : `Kit brosse jantes voiture résultat propre`
+
+---
+
+**DESCRIPTION COURTE**
+
+Des jantes encrassées ternissent l'apparence de toute la voiture. Cette brosse à jantes professionnelle avec poils ultra-souples 360° pénètre dans chaque recoin pour déloger la poussière de frein et les résidus incrustés. Son manche ergonomique antidérapant facilite le geste, sans effort. Compatible toutes tailles de jantes — résultat professionnel à la maison.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Vos jantes sont encrassées et ternes, mais les nettoyer avec un chiffon ordinaire ne suffit pas à atteindre les recoins ?</strong></p>
+
+<p>La <strong>Brosse à Jantes Pro Essentiel Car</strong> a été conçue pour s'adapter à la géométrie des jantes : ses poils ultra-souples à 360° atteignent les zones difficiles d'accès — entre les rayons, autour des boulons, dans les creux — sans rayer ni abîmer. Le manche antidérapant maintient une prise en main ferme même mouillé.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Poils ultra-souples 360°</strong> — pénètre dans tous les recoins sans rayer</li>
+  <li>✓ <strong>Manche ergonomique antidérapant</strong> — prise en main stable, même mouillé</li>
+  <li>✓ <strong>Compatible toutes tailles de jantes</strong></li>
+  <li>✓ <strong>Résultat professionnel</strong> à la maison</li>
+  <li>✓ <strong>Option lot de 3</strong> — économique pour entretien régulier</li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Brosse de nettoyage jantes automobile</li>
+  <li><strong>Poils :</strong> Ultra-souples, disposition 360°</li>
+  <li><strong>Manche :</strong> Ergonomique antidérapant</li>
+  <li><strong>Coloris :</strong> Gris / Noir / Jaune</li>
+  <li><strong>Compatibilité :</strong> Toutes tailles de jantes (acier et alliage)</li>
+  <li><strong>Contenu du colis :</strong> 1 brosse (ou lot de 3 selon variante choisie)</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Utilisez avec un produit nettoyant jantes pour un résultat optimal. Rincez la brosse après chaque utilisation. Le coloris Jaune peut être en rupture temporaire — vérifiez la disponibilité.</em></p>
+
+<p><strong>Commandez votre brosse et retrouvez des jantes impeccables dès le prochain lavage.</strong></p>
+```
+
+---
+
+## PRODUIT 17 — COMPRESSEUR D'AIR SANS FIL
+
+**Titre produit**
+Compresseur d'Air Sans Fil pour Voiture – Gonflage Automatique, 150 PSI, Charge USB-C
+
+**Slug URL**
+`/compresseur-air-sans-fil-voiture`
+
+**SEO — Focus keyphrase :** compresseur air voiture sans fil
+**Meta title :** Compresseur Air Voiture Sans Fil 150 PSI – USB-C | Essentiel Car
+**Meta description :** Compresseur d'air sans fil pour voiture. Capteur de pression intégré, arrêt automatique précis, 150 PSI, charge USB-C. Ne repartez plus avec un pneu à plat.
+
+**Balises ALT images**
+- Image 1 : `Compresseur air sans fil voiture 150 PSI gonflage pneu`
+- Image 2 : `Compresseur portable voiture USB-C arrêt automatique`
+
+---
+
+**DESCRIPTION COURTE**
+
+Un pneu légèrement dégonflé peut vite devenir un vrai problème. Ce compresseur d'air sans fil détecte la pression de vos pneus, gonfle jusqu'à la valeur souhaitée et s'arrête automatiquement — sans risque de surgonflage. Compact (800g), rechargeable via USB-C, jusqu'à 150 PSI. Il se glisse dans le coffre et reste prêt à l'emploi à tout moment.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Un pneu légèrement à plat, découvert le matin juste avant un rendez-vous important — ça arrive. Et sans compresseur dans le coffre, les options sont limitées.</strong></p>
+
+<p>Le <strong>Compresseur d'Air Sans Fil Essentiel Car</strong> rend cette situation gérable en quelques minutes. Son capteur de pression intégré mesure en temps réel la pression de votre pneu et son système d'arrêt automatique coupe le gonflage précisément à la valeur programmée, évitant tout surgonflage. Rechargeable via USB-C, il est toujours prêt dans votre coffre.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Capteur de pression intégré</strong> — lecture en temps réel</li>
+  <li>✓ <strong>Arrêt automatique précis</strong> — pas de risque de surgonflage</li>
+  <li>✓ <strong>150 PSI</strong> — adapté aux voitures, vélos et accessoires gonflables</li>
+  <li>✓ <strong>Recharge USB-C</strong> — compatible avec votre chargeur universel</li>
+  <li>✓ <strong>Compact (environ 800g)</strong> — se range dans le coffre ou la boîte à gants</li>
+  <li>✓ <strong>Indispensable en cas de panne, avant un long trajet ou en hiver</strong></li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Compresseur d'air portable sans fil</li>
+  <li><strong>Pression max :</strong> 150 PSI</li>
+  <li><strong>Capteur :</strong> Pression intégré avec affichage digital</li>
+  <li><strong>Arrêt :</strong> Automatique à la pression programmée</li>
+  <li><strong>Charge :</strong> USB-C</li>
+  <li><strong>Poids :</strong> Environ 800g</li>
+  <li><strong>Contenu du colis :</strong> 1 compresseur + adaptateurs + câble USB-C</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Consultez la pression recommandée pour vos pneus (indiquée sur le flanc du pneu ou dans le manuel du véhicule). Rechargez après chaque utilisation.</em></p>
+
+<p><strong>Ajoutez-le à votre coffre — une tranquillité d'esprit à chaque trajet.</strong></p>
+```
+
+---
+
+## PRODUIT 18 — DASHCAM 4K ULTRA HD
+
+**Titre produit**
+Dashcam 4K Ultra HD pour Voiture – Capteur Sony, Grand Angle 170°, Vision Nocturne, Mode Parking
+
+**Slug URL**
+`/dashcam-4k-ultra-hd-voiture`
+
+**SEO — Focus keyphrase :** dashcam 4K voiture vision nocturne
+**Meta title :** Dashcam 4K Ultra HD Voiture – Sony, 170°, Mode Parking | Essentiel Car
+**Meta description :** Dashcam 4K Ultra HD avec capteur Sony, grand angle 170°, vision nocturne améliorée et mode parking. Votre témoin fiable sur la route.
+
+**Balises ALT images**
+- Image 1 : `Dashcam 4K Ultra HD voiture capteur Sony vision nocturne`
+- Image 2 : `Caméra embarquée voiture 170 degrés grand angle pare-brise`
+- Image 3 : `Dashcam mode parking surveillance voiture nuit`
+
+---
+
+**DESCRIPTION COURTE**
+
+Un accrochage en parking, une fausse accusation en cas d'accident — sans preuve vidéo, votre parole ne pèse pas lourd. Cette dashcam 4K Ultra HD avec capteur Sony enregistre en continu, de jour comme de nuit. Grand angle 170° couvre toute la largeur de la route. Mode parking avec détection de mouvement surveille votre véhicule même moteur éteint.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Un accrochage en parking, un refus de priorité, une fausse accusation — sans enregistrement vidéo, impossible de prouver ce qui s'est réellement passé.</strong></p>
+
+<p>La <strong>Dashcam 4K Ultra HD Essentiel Car</strong> enregistre chaque trajet en continu sur carte mémoire (mode boucle automatique — les fichiers les plus anciens sont remplacés quand la carte est pleine). Son capteur Sony offre une image nette de jour comme de nuit, sur toute la largeur de la route grâce au grand angle 170°. En mode parking, la détection de mouvement déclenche l'enregistrement si quelqu'un touche votre voiture à l'arrêt.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Capteur Sony 4K</strong> — image nette de jour et de nuit</li>
+  <li>✓ <strong>Grand angle 170°</strong> — couvre toute la largeur de la route</li>
+  <li>✓ <strong>Vision nocturne améliorée</strong> — lisible même en conditions difficiles</li>
+  <li>✓ <strong>Mode parking avec détection de mouvement</strong></li>
+  <li>✓ <strong>Enregistrement en boucle automatique</strong> — aucune intervention requise</li>
+  <li>✓ <strong>Preuve vidéo en cas d'incident</strong></li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Caméra embarquée dashcam pour voiture</li>
+  <li><strong>Résolution :</strong> 4K Ultra HD</li>
+  <li><strong>Capteur :</strong> Sony</li>
+  <li><strong>Angle de vue :</strong> 170°</li>
+  <li><strong>Vision nocturne :</strong> Améliorée</li>
+  <li><strong>Mode parking :</strong> Oui — détection de mouvement</li>
+  <li><strong>Enregistrement :</strong> Boucle automatique sur carte mémoire</li>
+  <li><strong>Carte mémoire :</strong> Non incluse — format à confirmer sur fiche fournisseur</li>
+  <li><strong>Contenu du colis :</strong> 1 dashcam + câble d'alimentation + support pare-brise + notice</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Utilisez une carte mémoire de classe 10 minimum (A1 recommandée) pour garantir des enregistrements fluides en 4K. Formatez la carte directement depuis la dashcam lors de la première utilisation.</em></p>
+
+<p><strong>Équipez votre voiture dès aujourd'hui — chaque trajet documenté en toute tranquillité.</strong></p>
+```
+
+---
+
+## PRODUIT 19 — KIT MAINS LIBRES 360°
+
+**Titre produit**
+Support Téléphone Voiture 360° – Aimant Néodyme, Double Fixation Tableau de Bord et Grille
+
+**Slug URL**
+`/support-telephone-voiture-magnetique-360`
+
+**SEO — Focus keyphrase :** support téléphone voiture magnétique
+**Meta title :** Support Téléphone Voiture Magnétique 360° – Double Fixation | Essentiel Car
+**Meta description :** Support téléphone voiture à aimant néodyme ultra-puissant. Rotation 360°, fixation tableau de bord ou grille d'aération. Compatible smartphones jusqu'à 7".
+
+**Balises ALT images**
+- Image 1 : `Support téléphone voiture magnétique 360 degrés tableau de bord`
+- Image 2 : `Support aimant néodyme voiture grille aération universel`
+- Image 3 : `Kit mains libres voiture GPS téléphone fixation stable`
+
+---
+
+**DESCRIPTION COURTE**
+
+Votre téléphone glisse ou tombe pendant vos trajets, impossible d'accéder rapidement à votre GPS ? Ce support magnétique à aimant néodyme ultra-puissant maintient votre smartphone en toute circonstance — même sur les routes cahoteuses. Rotation 360° pour l'orientation idéale. Fixation au choix sur tableau de bord ou grille d'aération. Compatible tous smartphones jusqu'à 7".
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Votre téléphone glisse, tombe, ou reste inaccessible pendant vos trajets — et vous perdez votre GPS en plein centre-ville ?</strong></p>
+
+<p>Le <strong>Kit Mains Libres 360° Essentiel Car</strong> vous offre une fixation ferme et stable grâce à son aimant néodyme ultra-puissant. Posez votre téléphone — il se maintient. Tournez-le — il reste. Empruntez une route dégradée — il ne bouge pas. La rotation 360° vous permet d'ajuster l'angle parfait en portrait ou paysage selon votre usage.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Aimant néodyme ultra-puissant</strong> — maintien ferme en toutes conditions</li>
+  <li>✓ <strong>Rotation 360°</strong> — orientation portrait ou paysage selon vos besoins</li>
+  <li>✓ <strong>Double fixation</strong> — tableau de bord ou grille d'aération (2 systèmes inclus)</li>
+  <li>✓ <strong>Compatible tous smartphones jusqu'à 7"</strong></li>
+  <li>✓ <strong>Installation et retrait en 1 seconde</strong></li>
+  <li>✓ <strong>Idéal pour GPS, navigation et mains libres au quotidien</strong></li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Support téléphone magnétique pour voiture</li>
+  <li><strong>Système de fixation :</strong> Aimant néodyme</li>
+  <li><strong>Rotation :</strong> 360°</li>
+  <li><strong>Montages inclus :</strong> Tableau de bord (ventouse) + grille d'aération</li>
+  <li><strong>Compatibilité :</strong> Smartphones jusqu'à 7" (avec ou sans coque standard)</li>
+  <li><strong>Contenu du colis :</strong> 1 support + 2 systèmes de fixation + 2 plaques métalliques adhésives</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Collez la plaque métallique à l'arrière de votre téléphone ou à l'intérieur de votre coque pour une compatibilité magnétique optimale. La plaque ne gêne pas la recharge sans fil sur la plupart des modèles.</em></p>
+
+<p><strong>Commandez votre support — votre GPS toujours visible, votre téléphone toujours accessible.</strong></p>
+```
+
+---
+
+## PRODUIT 20 — MACHINE À POLIR SANS FIL
+
+**Titre produit**
+Machine à Polir Sans Fil pour Voiture – 3 Plateaux Inclus, Répare les Micro-Rayures, Rechargeable
+
+**Slug URL**
+`/machine-polir-voiture-sans-fil`
+
+**SEO — Focus keyphrase :** machine polir voiture sans fil
+**Meta title :** Machine à Polir Voiture Sans Fil – 3 Plateaux Inclus | Essentiel Car
+**Meta description :** Polisseuse sans fil pour voiture. 3 plateaux inclus pour cirer, polir et réparer les micro-rayures. Batterie lithium rechargeable. Résultat pro à la maison.
+
+**Balises ALT images**
+- Image 1 : `Machine polir voiture sans fil rechargeable 3 plateaux inclus`
+- Image 2 : `Polisseuse voiture micro-rayures carrosserie résultat`
+- Image 3 : `Machine polir sans fil voiture batterie lithium cire`
+
+---
+
+**DESCRIPTION COURTE**
+
+Votre carrosserie a des micro-rayures, une peinture terne, ou un manque d'éclat ? Cette polisseuse sans fil rechargeable permet d'effacer les micro-rayures légères, de cirer et de polir sans faire appel à un professionnel. Batterie lithium 2000mAh intégrée, 3 plateaux inclus (cire, polissage, réparation). Résultat visible dès la première utilisation.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Votre carrosserie a perdu son éclat, quelques micro-rayures sont apparues, et vous n'êtes pas prêt à payer un detailing professionnel ?</strong> C'est exactement pour cette situation que cette polisseuse existe.</p>
+
+<p>La <strong>Machine à Polir Sans Fil Essentiel Car</strong> vous donne accès au polissage à domicile sans équipement professionnel. Ses 3 plateaux distincts couvrent les trois étapes clés : réparation des micro-rayures légères, polissage pour redonner l'éclat, et cire pour protéger et sublimer. La batterie lithium 2000mAh rechargeable vous libère de tout câble pendant le travail.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Sans fil rechargeable</strong> — liberté de mouvement totale autour du véhicule</li>
+  <li>✓ <strong>3 plateaux inclus</strong> — cire, polissage et réparation micro-rayures</li>
+  <li>✓ <strong>Répare les micro-rayures légères</strong></li>
+  <li>✓ <strong>Batterie lithium 2000mAh</strong> intégrée</li>
+  <li>✓ <strong>Résultat visible dès la première utilisation</strong></li>
+  <li>✓ <strong>Adapté aux non-professionnels</strong> — prise en main rapide</li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Polisseuse orbitale sans fil pour carrosserie</li>
+  <li><strong>Alimentation :</strong> Batterie lithium 2000mAh rechargeable</li>
+  <li><strong>Plateaux inclus :</strong> 3 (cire / polissage / réparation micro-rayures)</li>
+  <li><strong>Vitesses :</strong> À confirmer sur fiche fournisseur</li>
+  <li><strong>Charge :</strong> USB inclus</li>
+  <li><strong>Compatibilité :</strong> Carrosserie peinte — toutes couleurs</li>
+  <li><strong>Contenu du colis :</strong> 1 machine + 3 plateaux + câble de charge</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Travaillez par petites zones (30×30cm) à la fois pour un contrôle optimal. Appliquez le produit de polissage en petite quantité sur le plateau. Vérifiez toujours le résultat sur une zone peu visible avant de traiter l'ensemble du véhicule.</em></p>
+
+<p><strong>Passez à une carrosserie impeccable — commandez votre polisseuse dès maintenant.</strong></p>
+```
+
+---
+
+## PRODUIT 21 — PULVÉRISATEUR DE MOUSSE
+
+**Titre produit**
+Pulvérisateur de Mousse pour Voiture – Lavage Sans Contact, Buse Fan 60°, Pompe Manuelle
+
+**Slug URL**
+`/pulverisateur-mousse-voiture-lavage`
+
+**SEO — Focus keyphrase :** pulvérisateur mousse voiture lavage sans contact
+**Meta title :** Pulvérisateur Mousse Voiture – Lavage Sans Contact Buse 60° | Essentiel Car
+**Meta description :** Pulvérisateur de mousse pour voiture à pompe manuelle. Buse fan 60°, double embout inclus. Lavage sans contact à domicile. Noir ou blanc transparent.
+
+**Balises ALT images**
+- Image 1 : `Pulvérisateur mousse voiture lavage sans contact buse 60 degrés`
+- Image 2 : `Lance mousse voiture noir pompe manuelle carrosserie`
+- Image 3 : `Pulvérisateur mousse blanc transparent voiture résultat`
+- Image 4 : `Lavage voiture sans contact mousse épaisse domicile`
+
+---
+
+**DESCRIPTION COURTE**
+
+Laver votre voiture sans râcler la carrosserie avec une éponge, c'est possible avec un pulvérisateur de mousse. Ce modèle à pompe manuelle propulse une mousse épaisse grâce à sa buse fan 60° qui couvre uniformément la carrosserie. Double embout inclus (mousse épaisse + arrosage). Aucun équipement spécial requis — résultat lavage sans contact à domicile. Coloris Noir ou Blanc transparent.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Laver votre voiture à l'éponge risque d'incruster des micro-particules dans la peinture.</strong> Le lavage sans contact à la mousse épaisse est la méthode qui protège le mieux la carrosserie — et elle est accessible à la maison.</p>
+
+<p>Le <strong>Pulvérisateur de Mousse Essentiel Car</strong> génère une mousse épaisse et adhérente grâce à sa pompe manuelle et sa buse fan 60°. La mousse s'accroche à la carrosserie, enrobe les salissures et permet de les rincer sans frotter. Le double embout permet de passer du mode mousse épaisse au mode arrosage directionnel selon les zones à traiter.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Buse fan 60°</strong> — couverture uniforme de la carrosserie</li>
+  <li>✓ <strong>Double embout inclus</strong> — mousse épaisse + arrosage directionnel</li>
+  <li>✓ <strong>Pompe manuelle</strong> — aucune alimentation électrique ou eau sous pression requise</li>
+  <li>✓ <strong>Mousse épaisse et adhérente</strong> — s'accroche à la carrosserie</li>
+  <li>✓ <strong>Lavage sans contact</strong> — protège la peinture</li>
+  <li>✓ <strong>Coloris Noir ou Blanc transparent</strong></li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Pulvérisateur de mousse à pompe manuelle</li>
+  <li><strong>Buse :</strong> Fan 60° pour couverture uniforme</li>
+  <li><strong>Embouts inclus :</strong> 2 — mousse épaisse + arrosage</li>
+  <li><strong>Alimentation :</strong> Pompe manuelle (aucun branchement)</li>
+  <li><strong>Coloris :</strong> Noir / Blanc transparent</li>
+  <li><strong>Capacité :</strong> À confirmer sur fiche fournisseur</li>
+  <li><strong>Contenu du colis :</strong> 1 pulvérisateur + 2 embouts</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Diluez votre shampoing auto selon les recommandations du fabricant. Pompez suffisamment pour créer une pression stable avant d'utiliser. Rincez à l'eau claire après le temps d'action de la mousse.</em></p>
+
+<p><strong>Commandez votre pulvérisateur et lavez votre voiture comme un pro à la maison.</strong></p>
+```
+
+---
+
+## PRODUIT 22 — TPMS SURVEILLANCE PNEUS
+
+**Titre produit**
+Système TPMS Solaire sans Fil – Surveillance Pression Pneus en Temps Réel, 4 Capteurs Étanches
+
+**Slug URL**
+`/tpms-surveillance-pression-pneus-voiture`
+
+**SEO — Focus keyphrase :** TPMS surveillance pression pneus voiture
+**Meta title :** TPMS Solaire Voiture – 4 Capteurs Pression Pneus Temps Réel | Essentiel Car
+**Meta description :** Système TPMS solaire sans fil avec 4 capteurs étanches. Surveillance pression pneus en temps réel, alertes sonores et visuelles. Installation 2 minutes.
+
+**Balises ALT images**
+- Image 1 : `TPMS solaire voiture surveillance pression pneus 4 capteurs`
+- Image 2 : `Capteur pression pneu voiture valve externe étanche`
+- Image 3 : `TPMS affichage LCD voiture pression température pneus`
+- Image 4 : `Système TPMS sans fil voiture installation facile valve`
+
+---
+
+**DESCRIPTION COURTE**
+
+Un pneu sous-gonflé augmente la consommation, détériore le comportement routier — et peut provoquer un accident. Ce système TPMS solaire vous alerte en temps réel dès qu'un pneu perd de la pression ou surchauffe. 4 capteurs externes se vissent sur les valves en 2 minutes, sans démontage. Affichage LCD, alertes sonores et visuelles, batterie capteurs 3 à 5 ans.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Un pneu légèrement sous-gonflé est souvent indétectable à l'œil nu — et pourtant, il augmente la consommation, dégrade la tenue de route et peut évoluer vers un éclatement.</strong></p>
+
+<p>Le <strong>Système TPMS Solaire Essentiel Car</strong> surveille en continu la pression et la température de vos 4 pneus, et vous alerte immédiatement en cas d'anomalie. Les 4 capteurs externes se vissent directement sur les valves existantes en moins de 2 minutes — aucun démontage, aucun outil spécifique. Le moniteur LCD se recharge via son panneau solaire intégré.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Surveillance temps réel</strong> des 4 pneus simultanément</li>
+  <li>✓ <strong>Alertes sonores et visuelles</strong> en cas de sous-gonflage ou surchauffe</li>
+  <li>✓ <strong>Capteurs solaires</strong> — batterie capteurs 3 à 5 ans</li>
+  <li>✓ <strong>4 capteurs externes étanches</strong> — vissage direct sur valve</li>
+  <li>✓ <strong>Installation 2 minutes</strong> — aucun démontage de pneu</li>
+  <li>✓ <strong>Affichage LCD clair</strong> — lisible d'un coup d'œil</li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Système de surveillance pression pneus (TPMS) sans fil</li>
+  <li><strong>Capteurs :</strong> 4 capteurs externes étanches (fixation sur valve)</li>
+  <li><strong>Affichage :</strong> LCD — pression et température par pneu</li>
+  <li><strong>Alertes :</strong> Sonores et visuelles (sous-gonflage et surchauffe)</li>
+  <li><strong>Alimentation moniteur :</strong> Panneau solaire + batterie de secours</li>
+  <li><strong>Autonomie capteurs :</strong> 3 à 5 ans selon utilisation</li>
+  <li><strong>Installation :</strong> Vissage sur valve — 2 minutes sans démontage</li>
+  <li><strong>Contenu du colis :</strong> 1 moniteur LCD + 4 capteurs + outil de serrage + notice</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Serrez les capteurs à la main + 1/4 de tour avec l'outil fourni — pas plus. Programmez les seuils d'alerte selon les valeurs recommandées pour votre véhicule (indiquées sur la plaque de porte côté conducteur).</em></p>
+
+<p><strong>Roulez en sécurité — commandez votre système TPMS dès aujourd'hui.</strong></p>
+```
+
+---
+
+## PRODUIT 23 — TABLE À MANGER VOLANT
+
+**Titre produit**
+Table de Travail pour Volant de Voiture – Surface Antidérapante, Rangements Intégrés, Universelle
+
+**Slug URL**
+`/table-voiture-volant-multifonction`
+
+**SEO — Focus keyphrase :** table volant voiture pratique
+**Meta title :** Table Volant Voiture – Surface Antidérapante & Rangements | Essentiel Car
+**Meta description :** Plateau multifonction à accrocher sur le volant. Surface antidérapante, rangements latéraux, compatible tous véhicules. Idéal repas, travail, organisation en voiture.
+
+**Balises ALT images**
+- Image 1 : `Table volant voiture plateau repas multifonction gris`
+- Image 2 : `Table de travail voiture volant noir antidérapant`
+- Image 3 : `Plateau voiture volant rangement latéral repas`
+- Image 4 : `Table volant voiture conducteur VTC bureau mobile`
+
+---
+
+**DESCRIPTION COURTE**
+
+Pauses repas en voiture, documents à consulter entre deux rendez-vous, téléphone à poser — ce plateau se fixe en quelques secondes sur votre volant et crée un espace de travail ou de repas stable et pratique. Surface antidérapante, rangements latéraux intégrés, compatible avec tous les véhicules. Disponible en Gris clair ou Noir.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Représentant commercial, livreur, VTC, ou simplement quelqu'un qui mange souvent en voiture entre deux rendez-vous — vous manquez d'une surface stable pour poser, écrire ou manger.</strong></p>
+
+<p>La <strong>Table à Manger Volant Essentiel Car</strong> s'accroche sur votre volant en quelques secondes et se transforme en plateau multifonction. Sa surface antidérapante maintient les objets en place même si vous devez bouger légèrement. Les rangements latéraux intégrés accueillent votre téléphone, un stylo ou des petits accessoires.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>S'accroche sur le volant</strong> — installation en 5 secondes</li>
+  <li>✓ <strong>Surface antidérapante</strong> — les objets ne glissent pas</li>
+  <li>✓ <strong>Rangements latéraux intégrés</strong> — téléphone, stylos, accessoires</li>
+  <li>✓ <strong>Compatible tous véhicules</strong></li>
+  <li>✓ <strong>Idéal pour repas, travail, organisation</strong></li>
+  <li>✓ <strong>Disponible en Gris clair ou Noir</strong></li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Plateau multifonction à fixer sur volant</li>
+  <li><strong>Surface :</strong> Antidérapante</li>
+  <li><strong>Rangements :</strong> Latéraux intégrés</li>
+  <li><strong>Coloris :</strong> Gris clair / Noir</li>
+  <li><strong>Compatibilité :</strong> Tous véhicules (volants standard)</li>
+  <li><strong>Dimensions :</strong> À confirmer sur fiche fournisseur</li>
+  <li><strong>Contenu du colis :</strong> 1 plateau</li>
+</ul>
+
+<p><em><strong>Important :</strong> Utiliser uniquement moteur à l'arrêt ou véhicule garé. Ne jamais utiliser en conduisant. Retirer avant de démarrer.</em></p>
+
+<p><strong>Ajoutez-le à votre panier — votre bureau mobile vous attend.</strong></p>
+```
+
+---
+
+## PRODUIT 24 — ESSUIE-GLACE RÉTROVISEUR PORTABLE
+
+**Titre produit**
+Essuie-Glace Rétroviseur Portable Rétractable – De 21cm à 98cm, Lame Caoutchouc Sans Rayures
+
+**Slug URL**
+`/essuie-glace-retroviseur-portable-voiture`
+
+**SEO — Focus keyphrase :** essuie-glace rétroviseur voiture portable
+**Meta title :** Essuie-Glace Rétroviseur Portable 21-98cm – Sans Rayures | Essentiel Car
+**Meta description :** Raclette rétractable 21 à 98cm pour nettoyer les rétroviseurs de voiture. Lame caoutchouc souple sans rayures. Noir ou Rose. Se range dans la boîte à gants.
+
+**Balises ALT images**
+- Image 1 : `Essuie-glace rétroviseur portable voiture rétractable noir`
+- Image 2 : `Raclette rétroviseur voiture rose rétractable pluie`
+
+---
+
+**DESCRIPTION COURTE**
+
+Sous la pluie ou après une nuit de brouillard, des rétroviseurs mouillés ou embués réduisent dangereusement la visibilité latérale. Cette raclette rétractable de 21cm à 98cm nettoie vos deux rétroviseurs sans sortir de votre voiture. Lame caoutchouc souple — zéro risque de rayure. Se range discrètement dans la boîte à gants. Disponible en Noir ou Rose.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Sous la pluie, vos rétroviseurs se couvrent de gouttelettes — et votre visibilité latérale chute brutalement avant même que vous ayez démarré.</strong></p>
+
+<p>L'<strong>Essuie-Glace Rétroviseur Portable Essentiel Car</strong> règle ce problème en quelques secondes depuis l'intérieur de votre voiture. Son manche rétractable s'étend de 21cm jusqu'à 98cm — assez pour atteindre les deux rétroviseurs côté conducteur sans bouger de votre siège. Sa lame en caoutchouc souple essuie sans rayer la surface des rétroviseurs.</p>
+
+<h3>Pourquoi vous allez l'apprécier</h3>
+<ul>
+  <li>✓ <strong>Rétractable de 21cm à 98cm</strong> — atteint les deux rétroviseurs sans sortir</li>
+  <li>✓ <strong>Lame caoutchouc souple</strong> — sans risque de rayure</li>
+  <li>✓ <strong>Visibilité restaurée en quelques secondes</strong> sous pluie et brouillard</li>
+  <li>✓ <strong>Compact</strong> — se range dans la boîte à gants ou l'accoudoir</li>
+  <li>✓ <strong>Disponible en Noir ou Rose</strong></li>
+</ul>
+
+<h3>Caractéristiques</h3>
+<ul>
+  <li><strong>Type :</strong> Raclette rétractable pour rétroviseurs</li>
+  <li><strong>Longueur :</strong> 21cm (replié) à 98cm (déplié)</li>
+  <li><strong>Lame :</strong> Caoutchouc souple sans rayures</li>
+  <li><strong>Coloris :</strong> Noir / Rose</li>
+  <li><strong>Rangement :</strong> Boîte à gants ou accoudoir</li>
+  <li><strong>Contenu du colis :</strong> 1 raclette rétractable</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Passez la lame en un mouvement continu pour éviter les traces. Nettoyez la lame après utilisation pour prolonger sa durée de vie.</em></p>
+
+<p><strong>Commandez votre raclette — roulez avec une visibilité parfaite dès ce soir.</strong></p>
+```
+
+---
+
+## PRODUIT 25 — PACK ENTRETIEN INDISPENSABLE
+
+**Titre produit**
+Pack Entretien Voiture – Compresseur d'Air Sans Fil + Table de Travail Volant | Économisez 14,90€
+
+**Slug URL**
+`/pack-entretien-voiture-compresseur-table`
+
+**SEO — Focus keyphrase :** pack entretien voiture compresseur
+**Meta title :** Pack Entretien Voiture – Compresseur + Table Volant | Essentiel Car
+**Meta description :** Pack duo : compresseur d'air sans fil 150 PSI + table de travail pour volant. Économisez 14,90€ vs achat séparé. Livraison suivie.
+
+**Balises ALT images**
+- Image 1 : `Pack entretien voiture compresseur air sans fil table volant`
+- Image 2 : `Compresseur air portable voiture 150 PSI USB-C`
+- Image 3 : `Table volant voiture gris pratique conducteur`
+- Image 4 : `Table volant voiture noir accoudoir pratique`
+
+---
+
+**DESCRIPTION COURTE**
+
+Deux accessoires auto essentiels réunis dans un seul pack avantageux : le Compresseur d'Air Sans Fil 150 PSI pour ne jamais repartir avec un pneu sous-gonflé, et la Table de Travail Volant pour vos pauses repas ou documents en voiture. Économisez 14,90€ par rapport à l'achat séparé. Choisissez la couleur de la table selon votre intérieur.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Deux accessoires que tout conducteur quotidien devrait avoir dans sa voiture — réunis dans un pack avantageux.</strong></p>
+
+<p>Le <strong>Pack Entretien Indispensable Essentiel Car</strong> combine deux produits complémentaires qui simplifient vraiment le quotidien en voiture :</p>
+
+<ul>
+  <li><strong>Compresseur d'Air Sans Fil 150 PSI</strong> — gonflage autonome avec arrêt automatique précis, capteur de pression intégré, charge USB-C. Pour ne jamais repartir avec un pneu sous-gonflé.</li>
+  <li><strong>Table à Manger Volant</strong> — plateau antidérapant avec rangements latéraux, s'accroche sur le volant en 5 secondes. Pour les pauses repas, documents ou organisation en voiture.</li>
+</ul>
+
+<h3>Pourquoi ce pack a du sens</h3>
+<ul>
+  <li>✓ <strong>Économisez 14,90€</strong> par rapport à l'achat séparé</li>
+  <li>✓ <strong>Deux accessoires du quotidien</strong> dans un seul envoi</li>
+  <li>✓ <strong>Compresseur 150 PSI</strong> — arrêt auto, USB-C, compact</li>
+  <li>✓ <strong>Table volant</strong> — antidérapante, rangements intégrés</li>
+  <li>✓ <strong>Couleur de la table au choix</strong> — Gris clair ou Noir</li>
+  <li>✓ <strong>Livraison suivie</strong></li>
+</ul>
+
+<h3>Contenu du pack</h3>
+<ul>
+  <li><strong>1×</strong> Compresseur d'Air Sans Fil 150 PSI (avec adaptateurs + câble USB-C)</li>
+  <li><strong>1×</strong> Table à Manger Volant (couleur au choix : Gris clair ou Noir)</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Consultez les fiches produits individuelles (Compresseur et Table de Volant) pour les conseils d'utilisation spécifiques à chaque accessoire.</em></p>
+
+<p><strong>Choisissez votre couleur de table et commandez votre pack dès maintenant.</strong></p>
+```
+
+---
+
+## PRODUIT 26 — PACK NETTOYAGE COMPLET
+
+**Titre produit**
+Pack Nettoyage Voiture Complet – Aspirateur + Lance à Mousse + Brosse Jantes + Polisseuse | Économisez 39,70€
+
+**Slug URL**
+`/pack-nettoyage-voiture-complet`
+
+**SEO — Focus keyphrase :** pack nettoyage voiture complet
+**Meta title :** Pack Nettoyage Voiture 4 Produits – Économisez 39,70€ | Essentiel Car
+**Meta description :** Pack nettoyage auto complet : aspirateur sans fil + pulvérisateur mousse + brosse jantes + polisseuse. Résultat professionnel. Économisez 39,70€.
+
+**Balises ALT images**
+- Image 1 : `Pack nettoyage voiture complet 4 accessoires aspirateur mousse`
+- Image 2 : `Aspirateur sans fil voiture habitacle nettoyage`
+- Image 3 : `Lance mousse voiture noir lavage sans contact`
+- Image 4 : `Brosse jantes voiture nettoyage poils souples`
+- Image 5 : `Machine polir voiture sans fil micro-rayures`
+- Image 6 : `Brosse jantes gris voiture rayons nettoyage`
+- Image 7 : `Lance mousse blanc transparent voiture carrosserie`
+- Image 8 : `Polisseuse voiture résultat carrosserie brillance`
+
+---
+
+**DESCRIPTION COURTE**
+
+Tout ce qu'il faut pour nettoyer votre voiture comme un professionnel, de l'habitacle à la carrosserie. Ce pack regroupe 4 accessoires complémentaires : Aspirateur Sans Fil (habitacle), Lance à Mousse (lavage sans contact), Brosse à Jantes (recoins et rayons), Machine à Polir (micro-rayures et brillance). Économisez 39,70€ vs achat séparé.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Un nettoyage voiture complet, de l'habitacle aux jantes en passant par la carrosserie — sans passer par un lavage automatique ou un detailing professionnel.</strong></p>
+
+<p>Le <strong>Pack Nettoyage Complet Essentiel Car</strong> regroupe 4 accessoires pensés pour couvrir chaque étape du nettoyage automobile :</p>
+
+<ul>
+  <li><strong>Aspirateur Sans Fil 120W</strong> — filtre HEPA, 30 min d'autonomie, 4 accessoires inclus</li>
+  <li><strong>Pulvérisateur de Mousse</strong> — buse fan 60°, double embout, lavage sans contact</li>
+  <li><strong>Brosse à Jantes Pro</strong> — poils ultra-souples 360°, manche ergonomique</li>
+  <li><strong>Machine à Polir Sans Fil</strong> — 3 plateaux inclus, batterie lithium rechargeable</li>
+</ul>
+
+<h3>Pourquoi ce pack a du sens</h3>
+<ul>
+  <li>✓ <strong>Économisez 39,70€</strong> par rapport à l'achat des 4 produits séparément</li>
+  <li>✓ <strong>4 produits complémentaires</strong> dans un seul envoi</li>
+  <li>✓ <strong>Nettoyage complet</strong> — intérieur, extérieur, jantes, carrosserie</li>
+  <li>✓ <strong>Résultat professionnel</strong> à domicile</li>
+  <li>✓ <strong>Coloris au choix</strong> — Lance mousse (Noir ou Blanc) et Brosse jantes (Gris ou Noir)</li>
+  <li>✓ <strong>Livraison suivie</strong></li>
+</ul>
+
+<h3>Contenu du pack</h3>
+<ul>
+  <li><strong>1×</strong> Aspirateur Sans Fil Voiture (4 accessoires + câble)</li>
+  <li><strong>1×</strong> Pulvérisateur de Mousse (coloris au choix : Noir ou Blanc)</li>
+  <li><strong>1×</strong> Brosse à Jantes Pro (coloris au choix : Gris ou Noir)</li>
+  <li><strong>1×</strong> Machine à Polir Sans Fil (3 plateaux + câble)</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Pour un résultat optimal, commencez par le lavage à la mousse (extérieur), puis les jantes, puis l'habitacle avec l'aspirateur, et terminez par le polissage de carrosserie.</em></p>
+
+<p><strong>Commandez votre pack et retrouvez votre voiture comme au premier jour.</strong></p>
+```
+
+---
+
+## PRODUIT 27 — PACK SÉCURITÉ & CONFORT
+
+**Titre produit**
+Pack Sécurité Voiture – Dashcam 4K + TPMS Surveillance Pneus + Support Téléphone 360° | Économisez 32,80€
+
+**Slug URL**
+`/pack-securite-confort-voiture`
+
+**SEO — Focus keyphrase :** pack sécurité voiture dashcam TPMS
+**Meta title :** Pack Sécurité Voiture – Dashcam 4K + TPMS + Support | Essentiel Car
+**Meta description :** Pack sécurité : dashcam 4K Ultra HD + système TPMS 4 capteurs + support téléphone 360°. Conduite sereine et documentée. Économisez 32,80€.
+
+**Balises ALT images**
+- Image 1 : `Pack sécurité voiture dashcam 4K TPMS support téléphone`
+- Image 2 : `Dashcam 4K voiture pare-brise enregistrement`
+- Image 3 : `TPMS surveillance pression pneus capteurs voiture`
+- Image 4 : `Support téléphone magnétique voiture navigation GPS`
+
+---
+
+**DESCRIPTION COURTE**
+
+La sécurité en voiture, c'est aussi se préparer aux imprévus. Ce pack regroupe trois accessoires qui travaillent ensemble pour une conduite plus sereine : la Dashcam 4K documente chaque trajet, le TPMS surveille la pression de vos 4 pneus en temps réel, et le Support Téléphone 360° garde votre GPS accessible en permanence. Économisez 32,80€ vs achat séparé.
+
+---
+
+**DESCRIPTION LONGUE (HTML)**
+
+```html
+<p><strong>Trois accessoires qui, ensemble, changent vraiment votre rapport à la sécurité sur la route.</strong></p>
+
+<p>Le <strong>Pack Sécurité & Confort Essentiel Car</strong> regroupe trois produits complémentaires pour une conduite plus sereine et mieux équipée :</p>
+
+<ul>
+  <li><strong>Dashcam 4K Ultra HD</strong> — capteur Sony, grand angle 170°, vision nocturne, mode parking. Votre preuve vidéo en cas d'incident.</li>
+  <li><strong>Système TPMS Solaire</strong> — 4 capteurs externes, surveillance pression et température en temps réel, alertes sonores et visuelles. Ne roulez plus sans savoir l'état de vos pneus.</li>
+  <li><strong>Kit Mains Libres 360°</strong> — aimant néodyme, double fixation, rotation 360°. Votre GPS toujours visible, sans câble encombrant.</li>
+</ul>
+
+<h3>Pourquoi ce pack a du sens</h3>
+<ul>
+  <li>✓ <strong>Économisez 32,80€</strong> par rapport à l'achat des 3 produits séparément</li>
+  <li>✓ <strong>3 accessoires sécurité</strong> complémentaires dans un seul envoi</li>
+  <li>✓ <strong>Dashcam 4K</strong> — preuve vidéo en cas d'accident ou litige</li>
+  <li>✓ <strong>TPMS 4 capteurs</strong> — alertes pression pneus en temps réel</li>
+  <li>✓ <strong>Support 360°</strong> — navigation toujours accessible</li>
+  <li>✓ <strong>Livraison suivie</strong></li>
+</ul>
+
+<h3>Contenu du pack</h3>
+<ul>
+  <li><strong>1×</strong> Dashcam 4K Ultra HD (câble + support pare-brise + notice)</li>
+  <li><strong>1×</strong> Système TPMS Solaire (4 capteurs + outil + notice)</li>
+  <li><strong>1×</strong> Kit Mains Libres 360° (2 systèmes de fixation + plaques magnétiques)</li>
+</ul>
+
+<p><em><strong>Conseil :</strong> Installez d'abord la dashcam (câblage discret le long du pare-brise), puis les capteurs TPMS (2 min par valve), et enfin le support téléphone à l'emplacement le plus pratique pour votre navigation.</em></p>
+
+<p><strong>Commandez votre pack et roulez avec la sérénité que vous méritez.</strong></p>
+```
