@@ -544,9 +544,10 @@ function renderReviews() {
     const avatarColors = ['#c0392b','#16a085','#8e44ad','#2980b9','#d35400','#27ae60'];
     const avatarBg = avatarColors[idx % avatarColors.length];
     const photosArr = r.photos || (r.photo ? [r.photo] : []);
+    const photosJson = photosArr.length > 0 ? JSON.stringify(photosArr.slice(0,3)).replace(/'/g, '&#39;') : '[]';
     const photoHtml = photosArr.length > 0
       ? `<div class="review-photos review-photos--${Math.min(photosArr.length, 3)}">
-          ${photosArr.slice(0, 3).map(p => `<img class="review-photo-item" src="${p}" alt="" loading="lazy">`).join('')}
+          ${photosArr.slice(0, 3).map((p, i) => `<img class="review-photo-item" src="${p}" alt="" loading="lazy" data-photos='${photosJson}' data-idx="${i}">`).join('')}
         </div>`
       : '';
     return `
@@ -572,6 +573,44 @@ function renderReviews() {
   carousel.innerHTML += carousel.innerHTML;
   initCarousel();
 }
+
+/* ── 13b. Review Lightbox ── */
+(function() {
+  var lb = null, photos = [], idx = 0;
+  function build() {
+    if (lb) return;
+    lb = document.createElement('div');
+    lb.id = 'review-lightbox';
+    lb.className = 'rlb-overlay';
+    lb.innerHTML = '<button class="rlb-close">&#x2715;</button><button class="rlb-prev">&#8249;</button><img class="rlb-img" src="" alt=""><div class="rlb-counter"></div><button class="rlb-next">&#8250;</button>';
+    document.body.appendChild(lb);
+    lb.querySelector('.rlb-close').onclick = close;
+    lb.querySelector('.rlb-prev').onclick = function(e) { e.stopPropagation(); idx = (idx - 1 + photos.length) % photos.length; show(); };
+    lb.querySelector('.rlb-next').onclick = function(e) { e.stopPropagation(); idx = (idx + 1) % photos.length; show(); };
+    lb.onclick = function(e) { if (e.target === lb) close(); };
+  }
+  function show() {
+    lb.querySelector('.rlb-img').src = photos[idx];
+    lb.querySelector('.rlb-counter').textContent = photos.length > 1 ? (idx + 1) + ' / ' + photos.length : '';
+    lb.querySelector('.rlb-prev').style.display = photos.length > 1 ? '' : 'none';
+    lb.querySelector('.rlb-next').style.display = photos.length > 1 ? '' : 'none';
+  }
+  function open(p, i) { build(); photos = p; idx = i || 0; show(); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { if (lb) lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.addEventListener('keydown', function(e) {
+    if (!lb || !lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') { idx = (idx - 1 + photos.length) % photos.length; show(); }
+    if (e.key === 'ArrowRight') { idx = (idx + 1) % photos.length; show(); }
+  });
+  document.addEventListener('click', function(e) {
+    var img = e.target;
+    if (!img || !img.classList || !img.classList.contains('review-photo-item')) return;
+    var raw = img.getAttribute('data-photos');
+    var i = parseInt(img.getAttribute('data-idx') || '0');
+    try { var p = raw ? JSON.parse(raw) : []; open(p.length ? p : [img.src], i); } catch(err) { open([img.src], 0); }
+  });
+})();
 
 /* ── 14. Categories Renderer ── */
 function renderCategories() {
@@ -972,13 +1011,16 @@ function renderCartPanel() {
            </div>`
         : '');
   const totalItems = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
-  const gwpUnlocked = totalItems >= 2;
+  const uniqueProducts = cart.length;
+  const gwpUnlocked = uniqueProducts >= 2;
   const gwpBar = `<div class="gwp-bar${gwpUnlocked ? ' gwp-unlocked' : ''}">
-    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau surprise débloqué !' : '🎁 Cadeau surprise'}</div>
-    <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (totalItems / 2) * 100)}%"></div></div>
+    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau débloqué !' : '🎁 Cadeau offert dès 2 produits différents'}</div>
+    <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (uniqueProducts / 2) * 100)}%"></div></div>
     <div class="gwp-bar-sub">${gwpUnlocked
-      ? '✓ Kit microfibre + surprise vous attend dans votre colis !'
-      : `Plus que ${2 - totalItems} article${2 - totalItems > 1 ? 's' : ''} pour débloquer votre kit cadeau`
+      ? '✓ Code promo -15% + Guide Entretien Auto offerts par e-mail après commande !'
+      : uniqueProducts === 0
+        ? 'Ajoutez 2 produits différents et recevez un code promo -15% + Guide Auto offerts 🎁'
+        : 'Plus qu\'1 produit différent pour débloquer votre code promo -15% + Guide Auto 🎁'
     }</div>
   </div>`;
 

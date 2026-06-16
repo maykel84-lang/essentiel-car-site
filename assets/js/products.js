@@ -58,7 +58,7 @@ const PRODUCTS = [
       { label: 'Couleur', options: [
         { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 0 },
         { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 1 },
-        { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 2 },
+        { value: 'jaune', display: 'Jaune', hex: '#f5c518', imageIndex: 2, outOfStock: true },
       ]},
       { label: 'Quantité', type: 'qty', options: [
         { value: '1',   display: 'À l\'unité',  price: 12.90, oldPrice: 19.90, default: true },
@@ -216,16 +216,16 @@ const PRODUCTS = [
       <path d="M30 8 L38 6 L40 14 L34 12"/>
     </svg>`,
     fr: {
-      name: 'Machine à Polir Sans Fil',
-      tagline: 'Finition showroom à domicile',
-      desc: 'Plateau orbital 600-3200 RPM, kit complet 6 disques + produits inclus. Efface rayures, oxydation, taches tenaces. Transformez votre carrosserie en 2 heures.',
-      features: ['600-3200 RPM', '6 disques inclus', 'Kit complet', 'Anti-vibrations']
+      name: 'Machine à Polir Sans Fil Pour Voiture',
+      tagline: 'Carrosserie impeccable en quelques gestes',
+      desc: 'Polisseuse sans fil rechargeable avec 3 plateaux inclus pour cirer, polir et réparer les micro-rayures. Batterie lithium 2000mAh intégrée pour travailler en toute liberté. Résultat professionnel, carrosserie propre et protégée directement chez vous.',
+      features: ['Sans fil rechargeable', '3 plateaux inclus', 'Répare micro-rayures', 'Cire + polissage']
     },
     en: {
-      name: 'Cordless Polishing Machine',
-      tagline: 'Showroom finish at home',
-      desc: '600-3200 RPM orbital pad, complete kit with 6 pads + products. Removes scratches, oxidation, stains. Transform your paintwork in 2 hours.',
-      features: ['600-3200 RPM', '6 pads included', 'Complete kit', 'Anti-vibration']
+      name: 'Cordless Car Polishing Machine',
+      tagline: 'Perfect paintwork in minutes',
+      desc: 'Rechargeable cordless polisher with 3 included pads for waxing, polishing and repairing light scratches. Built-in 2000mAh lithium battery for freedom of movement. Professional results at home.',
+      features: ['Cordless rechargeable', '3 pads included', 'Repairs micro-scratches', 'Wax + polish']
     }
   },
   {
@@ -261,14 +261,14 @@ const PRODUCTS = [
     fr: {
       name: 'Pulvérisateur de Mousse',
       tagline: 'Lavage sans contact premium',
-      desc: 'Mousse épaisse et clingante, protection peinture maximale, réservoir 1L intégré, compatible tous nettoyeurs HP. Bain de mousse professionnel à domicile.',
-      features: ['Mousse épaisse', 'Réservoir 1L', 'Compatible HP', 'Sans contact']
+      desc: 'Pulvérisateur à pompe manuelle avec buse fan 60° pour une couverture optimale de la carrosserie. Double embout inclus (mousse + arrosage), pression générée manuellement. Mousse épaisse pour un lavage sans contact professionnel à domicile.',
+      features: ['Buse fan 60°', 'Double embout inclus', 'Pompe manuelle', 'Lavage sans contact']
     },
     en: {
       name: 'Foam Sprayer',
       tagline: 'Premium contactless wash',
-      desc: 'Thick clinging foam, maximum paint protection, 1L integrated tank, compatible with all pressure washers. Professional foam bath at home.',
-      features: ['Thick foam', '1L tank', 'HP compatible', 'Contactless']
+      desc: 'Manual pump foam sprayer with 60° fan nozzle for optimal body coverage. Two nozzles included (foam + watering), manually pressurised. Thick foam for professional contactless car wash at home.',
+      features: ['60° fan nozzle', 'Double nozzle included', 'Manual pump', 'Contactless wash']
     }
   },
   {
@@ -299,14 +299,14 @@ const PRODUCTS = [
     fr: {
       name: 'TPMS Surveillance Pneus',
       tagline: 'Votre sécurité commence par vos pneus',
-      desc: 'Capteurs sans fil sur 4 valves, affichage temps réel sur écran LCD, alertes sonores et visuelles. Économisez jusqu\'à 15% de carburant. Roulez serein.',
-      features: ['4 capteurs sans fil', 'Écran LCD', 'Alertes temps réel', '-15% carburant']
+      desc: 'Système TPMS solaire sans fil avec 4 capteurs externes étanches. Vissage rapide sur les valves sans démontage. Affichage LCD temps réel, alertes sonores et visuelles en cas de sous-gonflage ou surchauffe. Batterie capteurs 3-5 ans. Roulez en sécurité à tout moment.',
+      features: ['Charge solaire', '4 capteurs étanches', 'Alertes instantanées', 'Installation 2 min']
     },
     en: {
       name: 'TPMS Tire Monitor',
       tagline: 'Safety starts with your tires',
-      desc: 'Wireless sensors on 4 valves, real-time LCD display, audible and visual alerts. Save up to 15% on fuel. Drive with confidence.',
-      features: ['4 wireless sensors', 'LCD display', 'Real-time alerts', '-15% fuel']
+      desc: 'Solar wireless TPMS with 4 external waterproof sensors. Quick screw-on installation, no tire removal needed. Real-time LCD display with audible and visual alerts for under-inflation or overheating. 3-5 year sensor battery life. Stay safe on every journey.',
+      features: ['Solar charging', '4 waterproof sensors', 'Instant alerts', '2-min install']
     }
   },
   {
@@ -328,8 +328,8 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
-        { value: 'blanc', display: 'Blanc', hex: '#f0ede8', imageIndex: 0 },
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 1 },
+        { value: 'gris',  display: 'Gris clair', hex: '#a8a5a0', imageIndex: 0 },
+        { value: 'noir',  display: 'Noir',      hex: '#1a1a1a', imageIndex: 1 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -343,14 +343,14 @@ const PRODUCTS = [
     fr: {
       name: 'Table à Manger Volant',
       tagline: 'Votre bureau mobile parfait',
-      desc: 'Surface antidérapante pliable, rangements latéraux, port USB intégré. Parfait pour les pauses repas, le télétravail et l\'organisation en déplacement. Compatible tous véhicules.',
-      features: ['Antidérapante', 'Port USB', 'Pliable', 'Universel']
+      desc: 'Plateau multifonction qui s\'accroche sur le volant. Surface antidérapante avec rangements latéraux intégrés. Idéal pour les pauses repas, le travail ou l\'organisation en voiture. Compatible tous véhicules.',
+      features: ['Accroche volant', 'Surface antidérapante', 'Rangements latéraux', 'Universel']
     },
     en: {
       name: 'Steering Wheel Table',
       tagline: 'Your perfect mobile office',
-      desc: 'Non-slip foldable surface, side organizers, built-in USB port. Perfect for meal breaks, remote work and on-the-go organization. Fits all vehicles.',
-      features: ['Non-slip', 'USB port', 'Foldable', 'Universal']
+      desc: 'Multifunction tray that hooks onto the steering wheel. Non-slip surface with integrated side compartments. Ideal for meal breaks, work or in-car organisation. Fits all vehicles.',
+      features: ['Hooks on wheel', 'Non-slip surface', 'Side compartments', 'Universal']
     }
   },
   {
@@ -384,14 +384,14 @@ const PRODUCTS = [
     fr: {
       name: 'Essuie-Glace Rétroviseur Portable',
       tagline: 'Visibilité parfaite par tous les temps',
-      desc: 'Lames en graphite haute résistance, installation universelle sans adaptateur, silence de fonctionnement garanti. Balayage parfait jusqu\'à 98cm. Résiste au gel, pluie et grêle.',
-      features: ['Graphite HD', 'Silencieux', 'Anti-gel', 'Jusqu\'à 98cm']
+      desc: 'Raclette rétractable de 21cm à 98cm pour nettoyer les deux rétroviseurs sans se déplacer. Lame caoutchouc souple sans rayures, restaure une vision nette sous la pluie et le brouillard. Compact, se range facilement dans la boîte à gants ou l\'accoudoir.',
+      features: ['21 à 98cm réglable', 'Sans rayures', 'Pluie & brouillard', 'Compact & portable']
     },
     en: {
-      name: 'Portable Mirror Wiper Blades',
+      name: 'Portable Retractable Mirror Wiper',
       tagline: 'Perfect visibility in any weather',
-      desc: 'High-resistance graphite blades, universal no-adapter installation, whisper-quiet operation. Perfect wipe up to 98cm. Resistant to ice, rain and hail.',
-      features: ['HD graphite', 'Silent', 'Anti-ice', 'Up to 98cm']
+      desc: 'Retractable wiper from 21cm to 98cm to clean both mirrors without moving. Scratch-free soft rubber blade restores clear vision in rain and fog. Compact, fits easily in the glove box or armrest.',
+      features: ['Retractable 98cm', 'Telescopic handle', 'Anti-frost', 'Black or Pink']
     }
   },
   {
@@ -409,8 +409,8 @@ const PRODUCTS = [
     accentColor: '#0a1a0a',
     variants: [
       { label: 'Table de volant', productId: 'table-volant', options: [
-        { value: 'blanc', display: 'Blanc', hex: '#f0ede8', imageIndex: 2 },
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 3 },
+        { value: 'gris',  display: 'Gris clair', hex: '#a8a5a0', imageIndex: 2 },
+        { value: 'noir',  display: 'Noir',       hex: '#1a1a1a', imageIndex: 3 },
       ]}
     ],
     images: [
@@ -1144,8 +1144,8 @@ const REVIEWS = [
       'assets/images/reviews/review-maykel-dashcam-2.jpg',
       'assets/images/reviews/review-maykel-dashcam-3.jpg'
     ],
-    fr: { text: 'La carte 64 Go est fournie, c\'est un vrai plus. Branchée en moins d\'une heure, l\'image est nette de jour comme de nuit. Je circule beaucoup dans Paris, ça me rassure d\'avoir les trajets enregistrés. Mode parking automatique, pas besoin d\'y toucher. Bonne qualité pour le prix.' },
-    en: { text: '64GB card included, that\'s a real bonus. Installed in under an hour, image is sharp day and night. I drive a lot in Paris, having journeys recorded is reassuring. Parking mode is automatic, no need to fiddle. Good quality for the price.' }
+    fr: { text: 'Installation en moins d\'une heure, l\'image est nette de jour comme de nuit. Je circule beaucoup dans Paris, ça me rassure d\'avoir les trajets enregistrés. Mode parking automatique, pas besoin d\'y toucher. Bonne qualité pour le prix.' },
+    en: { text: 'Installed in under an hour, image is sharp day and night. I drive a lot in Paris, having journeys recorded is reassuring. Parking mode is automatic, no need to fiddle. Good quality for the price.' }
   },
   {
     name: 'Maykel.V',
