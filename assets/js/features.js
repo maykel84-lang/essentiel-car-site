@@ -249,11 +249,11 @@ const CHAT_REPLIES = [
 
   // Promos
   { pattern: /promo|réduction|remise|code|coupon|solde|discount|offre spéciale|moins cher|économiser/i,
-    reply: () => `💥 <strong>Offre exclusive :</strong> achetez 2 Best Sellers → <strong>-50% sur le 2ème article</strong>, appliqué automatiquement en caisse !<br><br>🏆 <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Dashcam 4K</a> · <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'>Aspirateur</a> · <a href='product.html?id=support-telephone' style='color:var(--red)'>Kit Mains Libres</a>` },
+    reply: () => `💥 <strong>Offre exclusive :</strong> achetez 2 Best Sellers → <strong>-50% sur le 2ème article</strong>, appliqué automatiquement en caisse !<br><br>🏆 <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Dashcam Full HD</a> · <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'>Aspirateur</a> · <a href='product.html?id=support-telephone' style='color:var(--red)'>Kit Mains Libres</a>` },
 
   // Best Sellers
   { pattern: /best.?seller|plus vendu|meilleur|recommand|top produit|coup de cœur/i,
-    reply: () => `⭐ Nos <strong>3 Best Sellers</strong> :<br><br>📹 <a href='product.html?id=dashcam-4k' style='color:var(--red)'><strong>Dashcam 4K Ultra HD</strong></a> — 89,90€<br>📱 <a href='product.html?id=support-telephone' style='color:var(--red)'><strong>Kit Mains Libres 360°</strong></a> — 27,90€<br>🔋 <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'><strong>Aspirateur Sans Fil</strong></a> — 49,90€<br><br>💡 Achetez-en 2 → <strong>-50% sur le 2ème !</strong>` },
+    reply: () => `⭐ Nos <strong>3 Best Sellers</strong> :<br><br>📹 <a href='product.html?id=dashcam-4k' style='color:var(--red)'><strong>Dashcam Full HD 1080P</strong></a> — 49,90€<br>📱 <a href='product.html?id=support-telephone' style='color:var(--red)'><strong>Kit Mains Libres 360°</strong></a> — 27,90€<br>🔋 <a href='product.html?id=aspirateur-sans-fil' style='color:var(--red)'><strong>Aspirateur Sans Fil</strong></a> — 49,90€<br><br>💡 Achetez-en 2 → <strong>-50% sur le 2ème !</strong>` },
 
   // Aspirateur
   { pattern: /aspirateur|vacuum|aspir/i,
@@ -261,7 +261,7 @@ const CHAT_REPLIES = [
 
   // Dashcam
   { pattern: /dashcam|caméra.?bord|cam.?bord|enregistreur|dash.?cam/i,
-    reply: () => `📹 <strong>Dashcam 4K Ultra HD</strong> — <strong>89,90€</strong><br>✔ Résolution 4K · Vision nocturne · GPS intégré · 170°<br>✔ ⭐ Best Seller<br><br><a href='product.html?id=dashcam-4k' style='color:var(--red)'>→ Voir & commander</a>` },
+    reply: () => `📹 <strong>Dashcam Full HD 1080P Double Objectif</strong> — <strong>49,90€</strong><br>✔ Avant + arrière simultané · Vision nocturne · 170°<br>✔ ⭐ Best Seller<br><br><a href='product.html?id=dashcam-4k' style='color:var(--red)'>→ Voir & commander</a>` },
 
   // Compresseur
   { pattern: /compresseur|gonfleur|gonfl|pompe.?air/i,
@@ -297,7 +297,7 @@ const CHAT_REPLIES = [
 
   // Packs / bundles
   { pattern: /pack|bundle|kit.?complet|ensemble|combinaison|économies/i,
-    reply: () => `📦 Nos <strong>Packs économiques</strong> (jusqu'à -20%) :<br><br>🔧 <a href='product.html?id=pack-entretien' style='color:var(--red)'><strong>Pack Entretien</strong></a> — 64,90€<br>🧼 <a href='product.html?id=pack-nettoyage' style='color:var(--red)'><strong>Pack Nettoyage Complet</strong></a> — 159,90€<br>🛡️ <a href='product.html?id=pack-securite' style='color:var(--red)'><strong>Pack Sécurité & Confort</strong></a> — 134,90€<br><br>💡 Les packs = les meilleures économies !` },
+    reply: () => `📦 Nos <strong>Packs économiques</strong> (jusqu'à -22%) :<br><br>🔧 <a href='product.html?id=pack-entretien' style='color:var(--red)'><strong>Pack Entretien</strong></a> — 64,90€<br>🧼 <a href='product.html?id=pack-nettoyage' style='color:var(--red)'><strong>Pack Nettoyage Complet</strong></a> — 159,90€<br>🛡️ <a href='product.html?id=pack-securite' style='color:var(--red)'><strong>Pack Sécurité & Confort</strong></a> — 99,90€<br><br>💡 Les packs = les meilleures économies !` },
 
   // Paiement
   { pattern: /paiement|visa|paypal|mastercard|apple.?pay|google.?pay|payer|carte.?bancaire|payment/i,
@@ -313,7 +313,7 @@ const CHAT_REPLIES = [
 
   // Prix / tarifs
   { pattern: /prix|combien|coût|tarif|cost|price/i,
-    reply: () => `💰 Nos prix vont de <strong>12,90€ à 159,90€</strong>.<br><br>🔥 Best Sellers : Dashcam 89,90€ · Aspirateur 49,90€ · Kit Mains Libres 27,90€<br><br>💥 Achetez 2 Best Sellers = <strong>-50% sur le 2ème !</strong><br><a href='boutique.html' style='color:var(--red)'>→ Voir tous les prix</a>` },
+    reply: () => `💰 Nos prix vont de <strong>9,90€ à 159,90€</strong>.<br><br>🔥 Best Sellers : Dashcam 49,90€ · Aspirateur 49,90€ · Kit Mains Libres 27,90€<br><br>💥 Achetez 2 Best Sellers = <strong>-50% sur le 2ème !</strong><br><a href='boutique.html' style='color:var(--red)'>→ Voir tous les prix</a>` },
 
   // Frais de livraison
   { pattern: /frais.*(livraison|envoi|port)|livraison.*(gratuit|payant|prix)/i,
@@ -329,7 +329,7 @@ const CHAT_REPLIES = [
 
   // Cadeau
   { pattern: /cadeau|gift|offrir|anniversaire|noël|fête/i,
-    reply: () => `🎁 Vous cherchez un cadeau pour un passionné d'automobile ?<br><br>Nos suggestions :<br>📹 <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Dashcam 4K</a> — 89,90€<br>📱 <a href='product.html?id=support-telephone' style='color:var(--red)'>Kit Mains Libres 360°</a> — 27,90€<br>🔧 <a href='product.html?id=pack-entretien' style='color:var(--red)'>Pack Entretien</a> — 64,90€` },
+    reply: () => `🎁 Vous cherchez un cadeau pour un passionné d'automobile ?<br><br>Nos suggestions :<br>📹 <a href='product.html?id=dashcam-4k' style='color:var(--red)'>Dashcam Full HD</a> — 49,90€<br>📱 <a href='product.html?id=support-telephone' style='color:var(--red)'>Kit Mains Libres 360°</a> — 27,90€<br>🔧 <a href='product.html?id=pack-entretien' style='color:var(--red)'>Pack Entretien</a> — 64,90€` },
 
   // Pneu
   { pattern: /pneu|gonflage|pression.?air|tire/i,

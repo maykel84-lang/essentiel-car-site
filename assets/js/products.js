@@ -1223,8 +1223,8 @@ const PROBLEMS = [
   },
   {
     icon: `<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="14" y="6" width="14" height="22" rx="2"/><line x1="18" y1="9" x2="22" y2="9"/><circle cx="21" cy="26" r="1.5" fill="currentColor"/><path d="M21 28 L21 36 L14 36 M21 36 L28 36" stroke="var(--red)"/></svg>`,
-    fr: { problem: 'Téléphone qui tombe, pas de GPS disponible', solution: 'Support magnétique + Dashcam 4K', result: 'Navigation sécurisée, trajets documentés' },
-    en: { problem: 'Phone falling, no GPS available', solution: 'Magnetic mount + 4K Dashcam', result: 'Safe navigation, journeys documented' }
+    fr: { problem: 'Téléphone qui tombe, pas de GPS disponible', solution: 'Support magnétique + Dashcam Full HD', result: 'Navigation sécurisée, trajets documentés' },
+    en: { problem: 'Phone falling, no GPS available', solution: 'Magnetic mount + Full HD Dashcam', result: 'Safe navigation, journeys documented' }
   }
 ];
 
