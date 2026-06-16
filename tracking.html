@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Suivi de commande ESSENTIEL CAR — Entrez votre numéro de commande et votre email pour suivre votre livraison en temps réel.">
+  <meta name="description" content="Suivi de commande ESSENTIEL CAR — Suivez votre colis chez votre transporteur ou contactez notre équipe pour un point sur votre commande.">
   <title>Suivi commande — ESSENTIEL CAR</title>
 
   <link rel="stylesheet" href="assets/fonts/bebas-neue.css">
@@ -432,7 +432,7 @@
           <span class="eyebrow-text">Ma commande</span>
         </div>
         <h1 class="section-title" style="font-size:clamp(2.5rem,6vw,5rem);margin-bottom:1rem">SUIVI DE COMMANDE</h1>
-        <p class="section-sub" style="margin:0 auto">Entrez vos informations pour suivre votre livraison en temps réel.</p>
+        <p class="section-sub" style="margin:0 auto">Suivez votre colis directement chez votre transporteur, ou contactez notre équipe pour un point sur votre commande.</p>
       </div>
     </section>
 
@@ -453,83 +453,26 @@
           </button>
         </form>
 
-        <div class="tracking-error" id="trackingError">
-          Commande introuvable. Vérifiez votre numéro de commande et votre email, puis réessayez.
-        </div>
-
-        <!-- Demo result (shown on submit) -->
+        <!-- Confirmation (shown on submit) -->
         <div class="tracking-result" id="trackingResult">
           <div class="tracking-order-info">
-            <div class="tracking-order-ref">Commande #EC-2024-00123</div>
-            <div class="tracking-order-name">Aspirateur Sans Fil + Compresseur d'Air</div>
-            <div class="tracking-status-badge in-transit">
+            <div class="tracking-order-ref">Demande envoyée</div>
+            <div class="tracking-order-name">Votre messagerie va s'ouvrir avec un message pré-rempli à destination de notre équipe.</div>
+            <div class="tracking-status-badge">
               <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
-              En transit
+              Réponse sous 24h ouvrées
             </div>
           </div>
-
-          <div class="tracking-timeline" id="trackingTimeline">
-            <div class="timeline-step done">
-              <div class="timeline-dot">
-                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M2 5l2.5 2.5L8 3"/></svg>
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-date">Hier, 09:14</div>
-                <div class="timeline-title">Commande confirmée</div>
-                <div class="timeline-desc">Votre paiement a été validé.</div>
-              </div>
-            </div>
-
-            <div class="timeline-step done">
-              <div class="timeline-dot">
-                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M2 5l2.5 2.5L8 3"/></svg>
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-date">Hier, 14:32</div>
-                <div class="timeline-title">Préparation en cours</div>
-                <div class="timeline-desc">Votre colis est en cours de préparation dans notre entrepôt.</div>
-              </div>
-            </div>
-
-            <div class="timeline-step done">
-              <div class="timeline-dot">
-                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M2 5l2.5 2.5L8 3"/></svg>
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-date">Aujourd'hui, 07:51</div>
-                <div class="timeline-title">Expédié</div>
-                <div class="timeline-desc">Votre colis a été remis au transporteur.</div>
-              </div>
-            </div>
-
-            <div class="timeline-step active">
-              <div class="timeline-dot">
-                <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M5 2v3l2 2"/></svg>
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-date">En cours</div>
-                <div class="timeline-title">En transit</div>
-                <div class="timeline-desc">Votre colis est en route vers votre adresse de livraison.</div>
-              </div>
-            </div>
-
-            <div class="timeline-step">
-              <div class="timeline-dot"></div>
-              <div class="timeline-body">
-                <div class="timeline-date">Estimé dans 2–3 jours</div>
-                <div class="timeline-title">Livraison</div>
-                <div class="timeline-desc">Livraison à votre adresse.</div>
-              </div>
-            </div>
-          </div>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.6;margin:0">
+            Si votre messagerie ne s'est pas ouverte automatiquement, écrivez-nous directement à
+            <a href="mailto:contact@essentielcar.com" style="color:var(--red)">contact@essentielcar.com</a>
+            en indiquant votre numéro de commande et votre email.
+          </p>
         </div>
 
         <div class="tracking-help">
-          <p>Un problème avec votre commande ?</p>
-          <a href="mailto:contact@essentielcar.com" class="btn btn--ghost btn--sm">
-            Contacter le support
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
-          </a>
+          <p>Vous préférez un suivi immédiat ?</p>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-top:-0.5rem">Utilisez les liens de votre transporteur ci-dessous, avec le numéro reçu dans votre email d'expédition.</p>
         </div>
       </div>
 
@@ -687,18 +630,19 @@
       const orderId = document.getElementById('trackOrderId').value.trim();
       const email = document.getElementById('trackEmail').value.trim();
       const result = document.getElementById('trackingResult');
-      const error = document.getElementById('trackingError');
-
-      result.classList.remove('show');
-      error.classList.remove('show');
 
       if (!orderId || !email) return;
 
-      // Demo: show result for any non-empty input (static site)
+      const body = `Numéro de commande : ${orderId}\nEmail : ${email}\n\nBonjour, pourriez-vous me communiquer le statut de ma commande ? Merci.`;
+      const mailtoLink = `mailto:contact@essentielcar.com?subject=${encodeURIComponent('[ESSENTIEL CAR] Suivi de commande ' + orderId)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+
       setTimeout(() => {
+        document.getElementById('trackingForm').style.display = 'none';
         result.classList.add('show');
         result.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 600);
+      }, 500);
     }
   </script>
   <script src="assets/js/promo-bar.js"></script>
