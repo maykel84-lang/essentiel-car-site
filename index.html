@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAMPELLI — Aperçu de la page d'accueil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* Aperçu statique : on rend visibles les éléments normalement animés au scroll par le JS du thème */
+  .reveal{opacity:1 !important;transform:none !important;}
+  /* Filigrane discret indiquant qu'il s'agit d'une maquette */
+  .apercu-tag{position:fixed;z-index:200;right:14px;bottom:14px;background:rgba(0,0,0,.78);color:#FDE618;
+    font:500 11px/1 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px;}
+</style>
+</head>
+<body class="no-js">
+
+<!-- ICONES (symboles réutilisables) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="i-diamond"><path d="M7 4h10l4 5.5L12 21 3 9.5 7 4Z"/><path d="M3 9.5h18M7 4l3 5.5L12 4l2 5.5L17 4M10 9.5 12 21l2-11.5"/></g>
+<g id="i-sparkle"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></g>
+<g id="i-lock"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g>
+<g id="i-truck"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17.5" cy="17.5" r="1.6"/></g>
+<g id="i-arrow"><path d="M4 12h15M13 6l6 6-6 6"/></g>
+<g id="i-check"><path d="m4.5 12.5 5 5L19.5 7"/></g>
+<g id="i-star"><path d="m12 3 2.7 5.6 6.3.9-4.5 4.3 1 6.2-5.5-3-5.5 3 1-6.2L3 9.5l6.3-.9L12 3Z"/></g>
+<g id="i-search"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></g>
+<g id="i-account"><circle cx="12" cy="8" r="4"/><path d="M4.5 20c1.5-3.5 4.2-5 7.5-5s6 1.5 7.5 5"/></g>
+<g id="i-cart"><path d="M4 5h2l2.2 11h10.3l2-8H7"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="16.8" cy="19.5" r="1.4"/></g>
+<g id="i-menu"><path d="M4 7h16M4 12h16M4 17h16"/></g>
+<g id="i-instagram"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor" stroke="none"/></g>
+</defs></svg>
+
+<!-- BANDEAU ANNONCE -->
+<div class="n-annonce"><p><svg class="n-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Livraison offerte dès 49 € · Expédition sous 24/48 h · Paiement sécurisé</span></p></div>
+
+<!-- HEADER -->
+<header class="n-header is-scrolled">
+  <div class="n-container n-header__row">
+    <button class="n-burger" type="button" aria-label="Menu"><svg class="n-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-menu"/></svg></button>
+    <div class="n-header__brand">
+      <a class="n-logo" href="#"><svg class="n-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><use href="#i-diamond"/></svg><span class="n-logo__text">nampelli</span></a>
+    </div>
+    <nav class="n-nav"><ul class="n-nav__list">
+      <li class="current-menu-item"><a href="#">Accueil</a></li>
+      <li><a href="#">Routine Éclat</a></li>
+      <li><a href="#">Soins visage</a></li>
+      <li><a href="#">Coffrets</a></li>
+      <li><a href="#">Conseils beauté</a></li>
+      <li><a href="#">À propos</a></li>
+    </ul></nav>
+    <div class="n-header__actions">
+      <a class="n-action" href="#"><svg class="n-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-search"/></svg></a>
+      <a class="n-action" href="#"><svg class="n-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-account"/></svg></a>
+      <a class="n-action n-action--cart" href="#"><svg class="n-icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-cart"/></svg><span class="n-cart-count">2</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="n-home">
+
+<!-- 1 — HERO -->
+<section class="n-hero"><div class="n-container n-hero__grid">
+  <div class="n-hero__content">
+    <p class="n-hero__badge reveal"><span class="n-hero__badge-diamond"><svg class="n-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg></span>Nouveau · La Routine Éclat</p>
+    <h1 class="n-hero__title reveal">Révélez votre éclat avec une routine simple en 3 étapes</h1>
+    <p class="n-hero__text reveal">Des soins essentiels, élégants et sensoriels pour nettoyer, illuminer et nourrir votre peau au quotidien.</p>
+    <div class="n-hero__ctas reveal">
+      <a class="n-btn n-btn--primary" href="#">Découvrir la Routine Éclat <svg class="n-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-arrow"/></svg></a>
+      <a class="n-btn n-btn--ghost" href="#">Voir les soins</a>
+    </div>
+    <ul class="n-hero__props reveal">
+      <li><svg class="n-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-check"/></svg>3 gestes, 5 minutes</li>
+      <li><svg class="n-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-check"/></svg>Tous types de peau</li>
+      <li><svg class="n-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-check"/></svg>Marque française</li>
+    </ul>
+  </div>
+  <figure class="n-hero__media reveal"><img src="assets/img/hero.jpg" alt="Routine Éclat NAMPELLI" width="800" height="533"></figure>
+</div></section>
+
+<!-- 2 — REASSURANCE -->
+<section class="n-reassurance"><div class="n-container"><ul class="n-reassurance__grid">
+  <li class="reveal"><span class="n-reassurance__icon"><svg class="n-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-sparkle"/></svg></span><h2>Routine simple</h2><p>3 gestes essentiels, des résultats visibles au quotidien.</p></li>
+  <li class="reveal"><span class="n-reassurance__icon"><svg class="n-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg></span><h2>Expérience premium</h2><p>Des soins élégants et sensoriels, signés NAMPELLI.</p></li>
+  <li class="reveal"><span class="n-reassurance__icon"><svg class="n-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-lock"/></svg></span><h2>Paiement sécurisé</h2><p>Transactions chiffrées SSL — CB, PayPal, Apple Pay.</p></li>
+  <li class="reveal"><span class="n-reassurance__icon"><svg class="n-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-truck"/></svg></span><h2>Livraison suivie</h2><p>Expédition 24/48 h, offerte dès 49 € d'achat.</p></li>
+</ul></div></section>
+
+<!-- 3 — ROUTINE 3 ETAPES -->
+<section class="n-section n-routine"><div class="n-container">
+  <header class="n-section__head reveal"><p class="n-section__kicker">La méthode NAMPELLI</p><h2>Votre rituel éclat, en 3 gestes</h2><p class="n-section__intro">Pas de routine compliquée : trois essentiels pensés pour fonctionner ensemble, matin et soir.</p></header>
+  <ol class="n-routine__steps">
+    <li class="n-routine__step reveal"><span class="n-routine__num">01</span><h3>Nettoyer</h3><p>Le Nettoyant Purifiant élimine impuretés et excès de sébum, sans dessécher. La peau est nette, fraîche, prête à recevoir ses soins.</p><a class="n-routine__link" href="#">Nettoyant Purifiant <svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-arrow"/></svg></a></li>
+    <li class="n-routine__step reveal"><span class="n-routine__num">02</span><h3>Illuminer</h3><p>Le Sérum Éclat Vitamine C ravive la luminosité du teint et aide à estomper les signes de fatigue, jour après jour.</p><a class="n-routine__link" href="#">Sérum Éclat Vitamine C <svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-arrow"/></svg></a></li>
+    <li class="n-routine__step reveal"><span class="n-routine__num">03</span><h3>Nourrir</h3><p>La Crème Nutrition Karité nourrit intensément et enveloppe la peau d'un voile de confort durable.</p><a class="n-routine__link" href="#">Crème Nutrition Karité <svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-arrow"/></svg></a></li>
+  </ol>
+  <p class="n-section__cta reveal"><a class="n-btn n-btn--primary" href="#">Adopter la Routine Éclat <svg class="n-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-arrow"/></svg></a></p>
+</div></section>
+
+<!-- 4 — FOCUS -->
+<section class="n-section n-focus"><div class="n-container n-focus__grid">
+  <figure class="n-focus__media reveal"><img src="assets/img/serum.jpg" alt="Sérum Éclat Vitamine C — NAMPELLI" width="600" height="800"></figure>
+  <div class="n-focus__content">
+    <p class="n-section__kicker reveal">Le soin signature</p>
+    <h2 class="reveal">Sérum Éclat Vitamine C</h2>
+    <p class="n-focus__text reveal">Quelques gouttes suffisent : la vitamine C illumine le teint, lisse le grain de peau et redonne au visage son éclat naturel.</p>
+    <ul class="n-benefits reveal">
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Teint visiblement plus lumineux</span></li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Grain de peau affiné</span></li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Texture légère, absorption rapide</span></li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Convient à tous les types de peau</span></li>
+    </ul>
+    <div class="n-focus__buy reveal"><span class="n-price">34,90&nbsp;€</span><a class="n-btn n-btn--dark" href="#">Découvrir le sérum <svg class="n-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</div></section>
+
+<!-- 5 — BUNDLE -->
+<section class="n-section n-bundle"><div class="n-container"><div class="n-bundle__card reveal">
+  <figure class="n-bundle__media"><img src="assets/img/coffret.jpg" alt="Coffret Routine Éclat NAMPELLI" width="800" height="533"><span class="n-bundle__flag">Offre routine</span></figure>
+  <div class="n-bundle__content">
+    <p class="n-section__kicker">L'essentiel NAMPELLI</p>
+    <h2>La Routine Éclat complète</h2>
+    <p class="n-bundle__text">Les 3 essentiels NAMPELLI réunis dans un rituel simple et premium : nettoyer, illuminer, nourrir. Tout ce dont votre peau a besoin, rien de superflu.</p>
+    <ul class="n-bundle__list">
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-check"/></svg>Nettoyant Purifiant — 200 ml</li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-check"/></svg>Sérum Éclat Vitamine C — 30 ml</li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-check"/></svg>Crème Nutrition Karité — 50 ml</li>
+    </ul>
+    <p class="n-bundle__price"><del>82,70&nbsp;€</del> <ins>64,90&nbsp;€</ins></p>
+    <p class="n-bundle__save"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-sparkle"/></svg>Économisez 17,80 € par rapport aux soins achetés séparément</p>
+    <a class="n-btn n-btn--primary" href="#">Adopter la Routine Éclat <svg class="n-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-arrow"/></svg></a>
+  </div>
+</div></div></section>
+
+<!-- 6 — PRODUITS -->
+<section class="n-section n-essentials"><div class="n-container">
+  <header class="n-section__head reveal"><p class="n-section__kicker">La collection</p><h2>Les essentiels NAMPELLI</h2><p class="n-section__intro">Une gamme courte et cohérente : chaque soin a sa place, chaque geste a son effet.</p></header>
+  <ul class="n-products-grid">
+    <li class="n-product-card reveal"><a class="n-product-card__media" href="#"><img src="assets/img/nettoyant.jpg" alt="Nettoyant Purifiant" width="600" height="800"></a><div class="n-product-card__body"><h3><a href="#">Nettoyant Purifiant</a></h3><p class="n-card__tagline">Purifie la peau en douceur et prépare votre routine éclat.</p><p class="n-price">19,90&nbsp;€</p><a class="n-btn n-btn--outline" href="#">Découvrir</a></div></li>
+    <li class="n-product-card reveal"><a class="n-product-card__media" href="#"><img src="assets/img/serum.jpg" alt="Sérum Éclat Vitamine C" width="600" height="800"></a><div class="n-product-card__body"><h3><a href="#">Sérum Éclat Vitamine C</a></h3><p class="n-card__tagline">Illumine le teint et révèle l'éclat naturel de la peau.</p><p class="n-price">34,90&nbsp;€</p><a class="n-btn n-btn--outline" href="#">Découvrir</a></div></li>
+    <li class="n-product-card reveal"><a class="n-product-card__media" href="#"><img src="assets/img/creme.jpg" alt="Crème Nutrition Karité" width="600" height="800"></a><div class="n-product-card__body"><h3><a href="#">Crème Nutrition Karité</a></h3><p class="n-card__tagline">Nourrit, protège et enveloppe la peau d'un confort durable.</p><p class="n-price">27,90&nbsp;€</p><a class="n-btn n-btn--outline" href="#">Découvrir</a></div></li>
+  </ul>
+</div></section>
+
+<!-- 7 — POURQUOI -->
+<section class="n-section n-why"><div class="n-container n-why__grid">
+  <div class="n-why__content">
+    <p class="n-section__kicker reveal">Notre vision</p>
+    <h2 class="reveal">NAMPELLI, l'élégance en essentiel</h2>
+    <div class="n-why__text reveal">
+      <p>Chez NAMPELLI, nous croyons que le soin doit être à la fois simple, élégant et efficace. Pas de routine à rallonge, pas de promesses creuses : des formules pensées avec soin, des textures sensorielles et une identité affirmée.</p>
+      <p>La beauté n'est que le point de départ. NAMPELLI imagine des univers féminins premium qui sublimeront bientôt chaque facette de votre quotidien : soins corps, parfums, coffrets, bijoux, maroquinerie…</p>
+    </div>
+    <ul class="n-why__points reveal">
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Routine courte, résultats visibles</span></li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Textures sensorielles et élégantes</span></li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Marque française déposée à l'INPI</span></li>
+      <li><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg><span>Une maison pensée pour durer</span></li>
+    </ul>
+  </div>
+  <figure class="n-why__media reveal"><img src="assets/img/lifestyle.jpg" alt="Rituel de soin NAMPELLI" width="800" height="533"><span class="n-why__frame"></span></figure>
+</div></section>
+
+<!-- 8 — AVIS -->
+<section class="n-section n-reviews"><div class="n-container">
+  <header class="n-section__head reveal"><p class="n-section__kicker">Avis vérifiés</p><h2>Elles ont adopté la Routine Éclat</h2></header>
+  <ul class="n-reviews__grid">
+    <li class="n-review reveal"><span class="n-stars"><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span></span><blockquote><p>En trois semaines, mon teint est visiblement plus lumineux. La routine est simple et les textures sont un vrai plaisir.</p></blockquote><cite>Claire M.</cite></li>
+    <li class="n-review reveal"><span class="n-stars"><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span></span><blockquote><p>Enfin une routine que je tiens au quotidien. Le coffret est magnifique, je l'ai même offert à ma sœur.</p></blockquote><cite>Inès R.</cite></li>
+    <li class="n-review reveal"><span class="n-stars"><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span><span class="n-star is-on"><svg class="n-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-star"/></svg></span></span><blockquote><p>La crème au karité est un cocon de confort pour ma peau sèche. Je ne reviendrai pas en arrière.</p></blockquote><cite>Sophie L.</cite></li>
+  </ul>
+  <p class="n-section__intro" style="text-align:center;margin-top:1.4rem;font-size:.85rem;opacity:.7">Avis d'illustration — la section affiche vos vrais avis clients une fois en ligne.</p>
+</div></section>
+
+<!-- 10 — NEWSLETTER -->
+<section class="n-section n-news"><div class="n-container"><div class="n-news__card reveal">
+  <span class="n-news__diamond"><svg class="n-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-diamond"/></svg></span>
+  <h2>Recevez l'univers NAMPELLI</h2>
+  <p class="n-news__text">Conseils beauté, nouveautés et offres réservées : rejoignez le cercle NAMPELLI. Pas de spam, promis — uniquement de l'éclat.</p>
+  <form class="n-news__form" onsubmit="return false">
+    <div class="n-news__row"><input type="email" placeholder="Votre adresse e-mail"><button type="submit" class="n-btn n-btn--dark">Je m'abonne</button></div>
+    <label class="n-news__consent"><input type="checkbox"><span>J'accepte de recevoir les communications NAMPELLI et j'ai lu la <a href="#">politique de confidentialité</a>. Désinscription possible à tout moment.</span></label>
+  </form>
+</div></div></section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="n-footer"><div class="n-container">
+  <div class="n-footer__grid">
+    <div class="n-footer__brand">
+      <span class="n-footer__logo"><svg class="n-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><use href="#i-diamond"/></svg><span>nampelli</span></span>
+      <p class="n-footer__baseline">Révélez votre éclat</p>
+      <p class="n-footer__text">Maison française de beauté premium accessible. Une routine simple, des soins élégants, une marque pensée pour grandir avec vous.</p>
+      <ul class="n-socials"><li><a href="#"><svg class="n-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#i-instagram"/></svg></a></li></ul>
+    </div>
+    <nav class="n-footer__col"><h2>Boutique</h2><ul><li><a href="#">Tous les soins</a></li><li><a href="#">Routine Éclat</a></li><li><a href="#">Soins visage</a></li><li><a href="#">Coffrets</a></li></ul></nav>
+    <nav class="n-footer__col"><h2>Aide</h2><ul><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li><li><a href="#">Livraison &amp; retours</a></li><li><a href="#">Suivi de commande</a></li></ul></nav>
+    <nav class="n-footer__col"><h2>Informations</h2><ul><li><a href="#">À propos</a></li><li><a href="#">CGV</a></li><li><a href="#">Mentions légales</a></li><li><a href="#">Confidentialité</a></li></ul></nav>
+  </div>
+  <div class="n-footer__bottom">
+    <ul class="n-payments"><li>CB</li><li>VISA</li><li>Mastercard</li><li>PayPal</li><li>Apple Pay</li></ul>
+    <p class="n-footer__copy">© 2026 NAMPELLI — Tous droits réservés. Marque déposée à l'INPI.</p>
+  </div>
+</div></footer>
+
+</body>
+</html>
