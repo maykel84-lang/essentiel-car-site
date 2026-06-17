@@ -996,7 +996,7 @@ function renderCartPanel() {
   bsUnits.sort((a, b) => a - b);
   const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
 
-  const isFreeShipping = subtotal >= 49.99;
+  const isFreeShipping = subtotal >= 49.90;
   const shipping = isFreeShipping ? 0 : 4.99;
   const total = subtotal - bsDiscount + shipping;
   const discountLine = bsDiscount > 0

@@ -80,7 +80,7 @@ function renderCart() {
   bsUnits.sort((a, b) => a - b);
   const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
 
-  const shipping  = subtotal >= 49.99 ? 0 : 4.99;
+  const shipping  = subtotal >= 49.90 ? 0 : 4.99;
   const total     = subtotal - bsDiscount + shipping;
 
   const fmtPrice = (v) => v.toFixed(2).replace('.', ',') + '€';
@@ -109,12 +109,12 @@ function renderCart() {
         <span>${isFr ? 'Livraison' : 'Shipping'}</span>
         <span class="${shipping === 0 ? 'shipping-free' : ''}">${shipping === 0 ? (isFr ? 'Gratuite' : 'Free') : fmtPrice(shipping)}</span>
       </div>
-      ${subtotal < 49.99 && subtotal > 0 ? `
+      ${subtotal < 49.90 && subtotal > 0 ? `
       <div class="cart-free-shipping-notice">
         <div class="cart-free-shipping-bar">
-          <div class="cart-free-shipping-fill" style="width:${Math.min(100, (subtotal/49.99)*100).toFixed(0)}%"></div>
+          <div class="cart-free-shipping-fill" style="width:${Math.min(100, (subtotal/49.90)*100).toFixed(0)}%"></div>
         </div>
-        <p>${isFr ? `Plus que ${fmtPrice(49.99 - subtotal)} pour la livraison gratuite !` : `Only ${fmtPrice(49.99 - subtotal)} away from free shipping!`}</p>
+        <p>${isFr ? `Plus que ${fmtPrice(49.90 - subtotal)} pour la livraison gratuite !` : `Only ${fmtPrice(49.90 - subtotal)} away from free shipping!`}</p>
       </div>` : ''}
     </div>
 
@@ -361,7 +361,7 @@ async function handleCheckout() {
 
   // Add shipping line if applicable
   const subtotal = items.reduce((s, i) => s + (i.price ?? 0) * i.qty, 0);
-  if (subtotal < 49.99) {
+  if (subtotal < 49.90) {
     items.push({ name: isFr ? 'Frais de livraison' : 'Shipping', price: 4.99, qty: 1, image: null });
   }
 
