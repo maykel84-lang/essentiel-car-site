@@ -379,7 +379,7 @@ async function handleCheckout() {
         : 'Payment is only available on the official site (essentielcar.com). You are on a preview version.');
     }
 
-    const res  = await fetch('/.netlify/functions/create-checkout', {
+    const res  = await fetch('/create-checkout', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ items }),
