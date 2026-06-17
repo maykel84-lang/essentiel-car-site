@@ -372,14 +372,7 @@ async function handleCheckout() {
   }
 
   try {
-    // GitHub Pages doesn't support Netlify functions
-    if (window.location.hostname.includes('github.io')) {
-      throw new Error(isFr
-        ? 'Le paiement n\'est disponible que sur le site officiel (essentielcar.com). Vous êtes sur une version de prévisualisation.'
-        : 'Payment is only available on the official site (essentielcar.com). You are on a preview version.');
-    }
-
-    const res  = await fetch('/create-checkout', {
+    const res  = await fetch('https://create-checkout.essentielcar.workers.dev', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ items }),
