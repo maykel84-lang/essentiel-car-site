@@ -1047,6 +1047,448 @@ const PRODUCTS = [
       desc: 'Memory foam lumbar support cushion with universal attachment strap. Reduces back fatigue on long journeys. Suited to ride-share, taxi and delivery drivers. Fits all car seats.',
       features: ['Memory foam', 'Universal strap', 'Reduces back fatigue', 'All car seats']
     }
+  },
+  {
+    id: 'tracker-gps',
+    badge: 'NOUVEAU',
+    badgeType: 'new',
+    price: 39.90,
+    oldPrice: 59.90,
+    discount: 33,
+    rating: 4.7,
+    reviews: 318,
+    category: 'securite',
+    accentColor: '#0a1a2a',
+    images: [
+      'assets/images/products/tracker-gps-1.jpg.png',
+      'assets/images/products/tracker-gps-2.jpg.png',
+      'assets/images/products/tracker-gps-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 4 C16 4 10 10 10 18 C10 30 24 44 24 44 C24 44 38 30 38 18 C38 10 32 4 24 4Z"/>
+      <circle cx="24" cy="18" r="5" fill="var(--red)" stroke="var(--red)"/>
+      <path d="M14 44 L34 44" stroke="var(--red)" stroke-width="1.2"/>
+    </svg>`,
+    fr: {
+      name: 'Traceur GPS Voiture Nouvelle Génération',
+      tagline: 'Localisez votre véhicule en temps réel',
+      desc: 'Traceur GPS ultra-compact avec application mobile iOS/Android. Géolocalisation en temps réel, historique des trajets 90 jours, alertes de mouvement et de zones. Batterie longue durée 60 jours en veille. Idéal pour la protection anti-vol de votre véhicule.',
+      features: ['Temps réel via app', 'Historique 90 jours', 'Alerte mouvement', 'Batterie 60 jours']
+    },
+    en: {
+      name: 'Next-Gen Car GPS Tracker',
+      tagline: 'Locate your vehicle in real time',
+      desc: 'Ultra-compact GPS tracker with iOS/Android app. Real-time geolocation, 90-day route history, movement and zone alerts. Long-life battery lasting 60 days in standby. Ideal for vehicle anti-theft protection.',
+      features: ['Real-time app', '90-day history', 'Motion alert', '60-day battery']
+    }
+  },
+  {
+    id: 'dashcam-4k-wifi',
+    badge: '-31%',
+    badgeType: 'promo',
+    price: 89.90,
+    oldPrice: 129.90,
+    discount: 31,
+    rating: 4.8,
+    reviews: 427,
+    category: 'technologie',
+    accentColor: '#0a0a1a',
+    images: [
+      'assets/images/products/dashcam-4k-wifi-1.jpg.png',
+      'assets/images/products/dashcam-4k-wifi-2.jpg.png',
+      'assets/images/products/dashcam-4k-wifi-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="14" width="30" height="20" rx="3"/>
+      <circle cx="19" cy="24" r="6"/>
+      <circle cx="19" cy="24" r="2.5" fill="var(--red)" stroke="var(--red)"/>
+      <path d="M34 18 L42 15 L42 33 L34 30"/>
+      <path d="M38 8 Q44 10 44 15" stroke="var(--red)" stroke-width="1.4"/>
+      <path d="M36 10 Q40 12 40 16" stroke="var(--red)" stroke-width="1.4"/>
+    </svg>`,
+    fr: {
+      name: 'Dashcam 4K WiFi Avant/Arrière Connectée',
+      tagline: 'Contrôlez depuis votre smartphone',
+      desc: 'Dashcam double objectif 4K Ultra HD avant + Full HD 1080P arrière. Application WiFi pour visualiser, télécharger et paramétrer depuis votre téléphone, tablette ou ordinateur. Grand angle 170°, vision nocturne Sony STARVIS, GPS intégré, mode parking automatique.',
+      features: ['4K avant / HD arrière', 'App WiFi iOS & Android', 'GPS intégré', 'Mode parking auto']
+    },
+    en: {
+      name: '4K WiFi Connected Front/Rear Dashcam',
+      tagline: 'Control from your smartphone',
+      desc: '4K Ultra HD front + Full HD 1080P rear dual-lens dashcam. WiFi app to view, download and configure from your phone, tablet or computer. 170° wide angle, Sony STARVIS night vision, built-in GPS, automatic parking mode.',
+      features: ['4K front / HD rear', 'WiFi app iOS & Android', 'Built-in GPS', 'Auto parking mode']
+    }
+  },
+  {
+    id: 'dashcam-4g',
+    badge: 'PRO',
+    badgeType: 'new',
+    price: 129.90,
+    oldPrice: 179.90,
+    discount: 28,
+    rating: 4.7,
+    reviews: 156,
+    category: 'technologie',
+    accentColor: '#0a1a0a',
+    images: [
+      'assets/images/products/dashcam-4g-1.jpg.png',
+      'assets/images/products/dashcam-4g-2.jpg.png',
+      'assets/images/products/dashcam-4g-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="14" width="30" height="20" rx="3"/>
+      <circle cx="19" cy="24" r="6"/>
+      <circle cx="19" cy="24" r="2.5" fill="var(--red)" stroke="var(--red)"/>
+      <path d="M34 18 L42 15 L42 33 L34 30"/>
+      <line x1="36" y1="6" x2="36" y2="10"/>
+      <line x1="39" y1="7" x2="39" y2="10"/>
+      <line x1="42" y1="5" x2="42" y2="10"/>
+    </svg>`,
+    fr: {
+      name: 'Dashcam 4G/5G Surveillance Temps Réel',
+      tagline: 'Surveillance à distance, même à l\'étranger',
+      desc: 'Dashcam professionnelle 4G/5G avec surveillance en temps réel depuis n\'importe où dans le monde. Double objectif Full HD, SIM intégrée, alertes instantanées par notification, accès live via app. Idéale pour flotte, VTC, livreurs et conducteurs fréquents à l\'étranger.',
+      features: ['4G/5G SIM intégrée', 'Live streaming mondial', 'Alertes instantanées', 'Double objectif HD']
+    },
+    en: {
+      name: '4G/5G Real-Time Surveillance Dashcam',
+      tagline: 'Remote monitoring, even abroad',
+      desc: 'Professional 4G/5G dashcam with real-time monitoring from anywhere in the world. Dual Full HD lens, built-in SIM, instant push notifications, live access via app. Ideal for fleets, ride-share drivers, couriers and frequent travellers abroad.',
+      features: ['4G/5G built-in SIM', 'Global live stream', 'Instant alerts', 'Dual HD lens']
+    }
+  },
+  {
+    id: 'scanner-obd2',
+    badge: 'BESTSELLER',
+    badgeType: 'bestseller',
+    price: 24.90,
+    oldPrice: 39.90,
+    discount: 38,
+    rating: 4.9,
+    reviews: 1124,
+    category: 'technologie',
+    accentColor: '#1a1a0a',
+    images: [
+      'assets/images/products/scanner-obd2-1.jpg.png',
+      'assets/images/products/scanner-obd2-2.jpg.png',
+      'assets/images/products/scanner-obd2-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="12" y="8" width="24" height="32" rx="3"/>
+      <path d="M20 8 L20 4 L28 4 L28 8"/>
+      <rect x="16" y="14" width="16" height="8" rx="1" stroke="var(--red)"/>
+      <line x1="16" y1="28" x2="32" y2="28"/>
+      <line x1="16" y1="32" x2="26" y2="32"/>
+      <circle cx="30" cy="32" r="2" fill="var(--red)" stroke="var(--red)"/>
+    </svg>`,
+    fr: {
+      name: 'Scanner Diagnostic OBD2 Bluetooth',
+      tagline: 'Lisez et effacez les codes erreur voiture',
+      desc: 'Scanner OBD2 Bluetooth 5.0 compatible iOS et Android. Lisez plus de 3 000 codes d\'erreur, effacez le voyant moteur, suivez les données en temps réel (température, consommation, RPM). Compatible toutes marques depuis 2001. Application gratuite incluse.',
+      features: ['3000+ codes erreur', 'Efface voyant moteur', 'Données temps réel', 'Toutes marques 2001+']
+    },
+    en: {
+      name: 'OBD2 Bluetooth Diagnostic Scanner',
+      tagline: 'Read and clear your car error codes',
+      desc: 'Bluetooth 5.0 OBD2 scanner compatible with iOS and Android. Read over 3,000 error codes, clear the engine warning light, monitor live data (temperature, fuel consumption, RPM). Compatible with all brands since 2001. Free app included.',
+      features: ['3000+ error codes', 'Clear engine light', 'Live data', 'All brands 2001+']
+    }
+  },
+  {
+    id: 'camera-recul',
+    badge: '-36%',
+    badgeType: 'promo',
+    price: 34.90,
+    oldPrice: 54.90,
+    discount: 36,
+    rating: 4.7,
+    reviews: 589,
+    category: 'securite',
+    accentColor: '#0a1a0a',
+    images: [
+      'assets/images/products/camera-recul-1.jpg.png',
+      'assets/images/products/camera-recul-2.jpg.png',
+      'assets/images/products/camera-recul-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="14" y="12" width="20" height="16" rx="3"/>
+      <circle cx="24" cy="20" r="5"/>
+      <circle cx="24" cy="20" r="2" fill="var(--red)" stroke="var(--red)"/>
+      <path d="M8 18 L14 15 L14 25 L8 22 Z"/>
+      <path d="M10 30 L38 30 L34 38 L14 38 Z"/>
+      <line x1="20" y1="30" x2="20" y2="38"/>
+      <line x1="28" y1="30" x2="28" y2="38"/>
+    </svg>`,
+    fr: {
+      name: 'Caméra de Recul Sans Fil HD',
+      tagline: 'Reculez sans stress, voyez tout',
+      desc: 'Caméra de recul sans fil étanche IP67, grand angle 170°, vision nocturne infrarouge. Transmission sans fil stable jusqu\'à 10m. Installation en 10 minutes sans perçage. Compatible avec tous les autoradios Android et écrans de recul. Image miroir activable.',
+      features: ['Sans fil IP67', 'Grand angle 170°', 'Vision nocturne', 'Installation 10 min']
+    },
+    en: {
+      name: 'Wireless HD Reversing Camera',
+      tagline: 'Reverse stress-free, see everything',
+      desc: 'IP67 waterproof wireless reversing camera, 170° wide angle, infrared night vision. Stable wireless transmission up to 10m. 10-minute installation without drilling. Compatible with all Android car radios and reversing screens. Mirror image toggle.',
+      features: ['Wireless IP67', '170° wide angle', 'Night vision', '10-min install']
+    }
+  },
+  {
+    id: 'booster-demarrage',
+    badge: 'BESTSELLER',
+    badgeType: 'bestseller',
+    price: 59.90,
+    oldPrice: 89.90,
+    discount: 33,
+    rating: 4.9,
+    reviews: 742,
+    category: 'securite',
+    accentColor: '#1a0a00',
+    images: [
+      'assets/images/products/booster-demarrage-1.jpg.png',
+      'assets/images/products/booster-demarrage-2.jpg.png',
+      'assets/images/products/booster-demarrage-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="14" width="32" height="20" rx="3"/>
+      <path d="M16 14 L16 10 M32 14 L32 10"/>
+      <path d="M16 10 L20 10 M28 10 L32 10"/>
+      <path d="M20 10 L20 6" stroke="var(--red)"/>
+      <path d="M28 10 L28 6"/>
+      <path d="M22 24 L25 20 L25 25 L28 21" stroke="var(--red)" stroke-width="2"/>
+    </svg>`,
+    fr: {
+      name: 'Booster Démarrage Voiture 1000A',
+      tagline: 'Plus jamais en panne de batterie',
+      desc: 'Booster de démarrage 1000A compatible essence jusqu\'à 6L et diesel jusqu\'à 4L. Power bank 20 000 mAh pour recharger téléphones et tablettes. Lampe LED SOS intégrée. Câbles pinces intelligentes avec protection inversion de polarité. Pochette de transport incluse.',
+      features: ['1000A démarrage', 'Power bank 20 000mAh', 'Lampe LED SOS', 'Protection inversion']
+    },
+    en: {
+      name: '1000A Car Jump Starter',
+      tagline: 'Never stranded with a flat battery again',
+      desc: '1000A jump starter compatible with petrol engines up to 6L and diesel up to 4L. 20,000mAh power bank to charge phones and tablets. Built-in SOS LED torch. Smart clamp cables with reverse polarity protection. Carry case included.',
+      features: ['1000A jump start', '20,000mAh power bank', 'SOS LED torch', 'Reverse protection']
+    }
+  },
+  {
+    id: 'detecteur-angle-mort',
+    badge: '-38%',
+    badgeType: 'promo',
+    price: 49.90,
+    oldPrice: 79.90,
+    discount: 38,
+    rating: 4.6,
+    reviews: 284,
+    category: 'securite',
+    accentColor: '#0a0a1a',
+    images: [
+      'assets/images/products/detecteur-angle-mort-1.jpg.png',
+      'assets/images/products/detecteur-angle-mort-2.jpg.png',
+      'assets/images/products/detecteur-angle-mort-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="18" width="28" height="14" rx="2"/>
+      <path d="M34 22 L44 18 L44 32 L34 28"/>
+      <path d="M38 12 Q46 16 46 25" stroke="var(--red)" stroke-width="1.4" stroke-dasharray="2 2"/>
+      <path d="M36 14 Q42 18 42 25" stroke="var(--red)" stroke-width="1.4" stroke-dasharray="2 2"/>
+      <circle cx="10" cy="25" r="3" fill="var(--red)" stroke="var(--red)"/>
+    </svg>`,
+    fr: {
+      name: 'Détecteur d\'Angle Mort Radar BSM',
+      tagline: 'Changez de voie en toute sécurité',
+      desc: 'Système de détection d\'angle mort (BSM) avec capteurs radar 24GHz. Alerte visuelle sur rétroviseurs et sonore au changement de voie. Détection jusqu\'à 3m de distance, vitesse min 30km/h. Installation sans perçage avec adhésif 3M inclus. Compatible tous véhicules.',
+      features: ['Radar 24GHz', 'Alerte visuelle + sonore', 'Détection 3m', 'Sans perçage']
+    },
+    en: {
+      name: 'Blind Spot Radar Detector BSM',
+      tagline: 'Change lanes with total confidence',
+      desc: '24GHz radar blind spot monitoring (BSM) system. Visual alert on mirrors and audible warning when changing lane. Detection up to 3m, minimum speed 30km/h. No-drill installation with 3M adhesive included. Compatible with all vehicles.',
+      features: ['24GHz radar', 'Visual + audio alert', '3m detection', 'No-drill install']
+    }
+  },
+  {
+    id: 'chargeur-qi',
+    badge: 'NOUVEAU',
+    badgeType: 'new',
+    price: 29.90,
+    oldPrice: 44.90,
+    discount: 33,
+    rating: 4.7,
+    reviews: 398,
+    category: 'technologie',
+    accentColor: '#0a0a1a',
+    images: [
+      'assets/images/products/chargeur-qi-1.jpg.png',
+      'assets/images/products/chargeur-qi-2.jpg.png',
+      'assets/images/products/chargeur-qi-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="14" y="8" width="20" height="32" rx="4"/>
+      <path d="M20 22 L24 18 L24 24 L28 20" stroke="var(--red)" stroke-width="2"/>
+      <path d="M8 24 Q8 18 14 16" stroke="var(--red)" stroke-width="1.4" stroke-dasharray="2 2"/>
+      <path d="M40 24 Q40 18 34 16" stroke="var(--red)" stroke-width="1.4" stroke-dasharray="2 2"/>
+      <path d="M20 40 L28 40"/>
+    </svg>`,
+    fr: {
+      name: 'Chargeur Qi Voiture Sans Fil 15W',
+      tagline: 'Posez, chargez, roulez',
+      desc: 'Chargeur sans fil voiture 15W compatible Qi, MagSafe et charge rapide. Support auto-serrant s\'ouvre et se ferme automatiquement. Ventouse pare-brise ou grille d\'aération. Compatible iPhone 12/13/14/15 et Samsung Galaxy. Câble USB-C inclus.',
+      features: ['15W charge rapide', 'Compatible MagSafe', 'Auto-serrant', 'Ventouse + grille']
+    },
+    en: {
+      name: '15W Wireless Car Charger Qi',
+      tagline: 'Place it, charge it, drive',
+      desc: '15W Qi-compatible wireless car charger with MagSafe and fast charge support. Auto-clamping mount opens and closes automatically. Windscreen suction or air vent mounting. Compatible with iPhone 12/13/14/15 and Samsung Galaxy. USB-C cable included.',
+      features: ['15W fast charge', 'MagSafe compatible', 'Auto-clamp', 'Suction + vent']
+    }
+  },
+  {
+    id: 'lampe-torche-aimantee',
+    badge: '-33%',
+    badgeType: 'promo',
+    price: 19.90,
+    oldPrice: 29.90,
+    discount: 33,
+    rating: 4.7,
+    reviews: 463,
+    category: 'securite',
+    accentColor: '#1a1a00',
+    images: [
+      'assets/images/products/lampe-torche-aimantee-1.jpg.png',
+      'assets/images/products/lampe-torche-aimantee-2.jpg.png',
+      'assets/images/products/lampe-torche-aimantee-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 8 L30 8 L34 20 L14 20 Z"/>
+      <rect x="16" y="20" width="16" height="18" rx="2"/>
+      <path d="M20 38 L20 44 L28 44 L28 38"/>
+      <circle cx="24" cy="14" r="4" fill="var(--red)" stroke="var(--red)"/>
+      <path d="M10 42 Q10 38 14 38 Q14 42 10 42 Z" fill="currentColor" stroke="none"/>
+      <path d="M38 42 Q38 38 34 38 Q34 42 38 42 Z" fill="currentColor" stroke="none"/>
+      <line x1="14" y1="26" x2="34" y2="26" stroke="var(--red)" stroke-width="1.2"/>
+    </svg>`,
+    fr: {
+      name: 'Lampe Torche Multifonction Aimantée',
+      tagline: 'Éclairage pro, mains libres',
+      desc: 'Lampe torche rechargeable USB-C avec aimant puissant pour fixation sous capot ou sur carrosserie. Tête pivotante 180°, 3 modes d\'éclairage (fort, faible, SOS clignotant), 800 lumens. Autonomie 8h. Corps aluminium anti-choc. Idéale pour les pannes et interventions nocturnes.',
+      features: ['Aimant puissant', 'Tête pivotante 180°', 'Mode SOS clignotant', 'Rechargeable USB-C']
+    },
+    en: {
+      name: 'Magnetic Multifunction Torch',
+      tagline: 'Pro lighting, hands-free',
+      desc: 'USB-C rechargeable torch with powerful magnet for hands-free fixing under the bonnet or on bodywork. 180° pivoting head, 3 lighting modes (high, low, SOS flash), 800 lumens. 8h battery life. Anti-shock aluminium body. Ideal for breakdowns and night-time work.',
+      features: ['Powerful magnet', '180° pivot head', 'SOS flash mode', 'USB-C rechargeable']
+    }
+  },
+  {
+    id: 'kit-securite-routiere',
+    badge: 'ESSENTIEL',
+    badgeType: 'bestseller',
+    price: 29.90,
+    oldPrice: 44.90,
+    discount: 33,
+    rating: 4.8,
+    reviews: 876,
+    category: 'securite',
+    accentColor: '#1a0800',
+    images: [
+      'assets/images/products/kit-securite-routiere-1.jpg.png',
+      'assets/images/products/kit-securite-routiere-2.jpg.png',
+      'assets/images/products/kit-securite-routiere-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 4 L40 10 L40 26 Q40 38 24 44 Q8 38 8 26 L8 10 Z"/>
+      <path d="M14 24 L14 34 L34 34 L34 24 Z"/>
+      <path d="M18 24 L18 20 Q18 16 24 16 Q30 16 30 20 L30 24"/>
+      <path d="M16 30 L32 28" stroke="var(--red)" stroke-width="1.2"/>
+      <path d="M16 32 L32 30" stroke="var(--red)" stroke-width="1.2"/>
+    </svg>`,
+    fr: {
+      name: 'Kit Sécurité Routière Complet Homologué',
+      tagline: 'Obligation légale, tranquillité assurée',
+      desc: 'Kit sécurité routière complet conforme à la législation française et européenne. Inclus : gilet haute visibilité CE EN471 taille universelle, triangle de signalisation homologué, brise-glace + coupe-ceinture, trousse de secours 18 soins. Rangé dans une pochette compacte pour coffre.',
+      features: ['Gilet CE EN471', 'Triangle homologué', 'Brise-glace + coupe-ceinture', 'Trousse 18 soins']
+    },
+    en: {
+      name: 'Complete Approved Road Safety Kit',
+      tagline: 'Legal requirement, total peace of mind',
+      desc: 'Complete road safety kit compliant with French and European regulations. Includes: CE EN471 high-visibility vest (universal size), approved warning triangle, glass breaker + belt cutter, 18-piece first aid kit. Stored in a compact boot bag.',
+      features: ['CE EN471 vest', 'Approved triangle', 'Glass breaker + belt cutter', '18-piece first aid']
+    }
+  },
+  {
+    id: 'plot-retractable',
+    badge: '-30%',
+    badgeType: 'promo',
+    price: 34.90,
+    oldPrice: 49.90,
+    discount: 30,
+    rating: 4.6,
+    reviews: 198,
+    category: 'securite',
+    accentColor: '#1a0800',
+    images: [
+      'assets/images/products/plot-retractable-1.jpg.png',
+      'assets/images/products/plot-retractable-2.jpg.png',
+      'assets/images/products/plot-retractable-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 8 L28 8 L34 36 L14 36 Z" fill="var(--red)" stroke="var(--red)" stroke-width="1"/>
+      <path d="M16 36 L32 36 L34 42 L14 42 Z"/>
+      <line x1="15" y1="18" x2="33" y2="18" stroke="white" stroke-width="2"/>
+      <line x1="13" y1="28" x2="35" y2="28" stroke="white" stroke-width="2"/>
+    </svg>`,
+    fr: {
+      name: 'Plot de Signalisation Rétractable Orange (Lot de 4)',
+      tagline: 'Délimitez la zone, sécurisez les lieux',
+      desc: 'Lot de 4 plots de signalisation pliables haute visibilité couleur orange. Design rétractable compact pour un rangement facile dans le coffre. Base lestée anti-renversement, bandes réfléchissantes. Idéals pour délimiter une zone de panne, un accident ou un stationnement temporaire.',
+      features: ['Lot de 4 plots', 'Pliables compacts', 'Base lestée', 'Bandes réfléchissantes']
+    },
+    en: {
+      name: 'Retractable Orange Safety Cone Set (Pack of 4)',
+      tagline: 'Mark the zone, secure the scene',
+      desc: 'Pack of 4 foldable high-visibility orange safety cones. Compact collapsible design for easy boot storage. Weighted anti-tip base, reflective strips. Ideal for marking breakdown zones, accidents or temporary parking areas.',
+      features: ['Pack of 4', 'Collapsible compact', 'Weighted base', 'Reflective strips']
+    }
+  },
+  {
+    id: 'panneau-led',
+    badge: 'TENDANCE',
+    badgeType: 'new',
+    price: 39.90,
+    oldPrice: 59.90,
+    discount: 33,
+    rating: 4.7,
+    reviews: 534,
+    category: 'technologie',
+    accentColor: '#00081a',
+    images: [
+      'assets/images/products/panneau-led-1.jpg.png',
+      'assets/images/products/panneau-led-2.jpg.png',
+      'assets/images/products/panneau-led-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="12" width="40" height="24" rx="3"/>
+      <rect x="8" y="16" width="32" height="16" rx="1" stroke="var(--red)"/>
+      <circle cx="13" cy="24" r="1.5" fill="var(--red)" stroke="var(--red)"/>
+      <circle cx="18" cy="24" r="1.5" fill="var(--red)" stroke="var(--red)"/>
+      <circle cx="23" cy="24" r="1.5" fill="var(--red)" stroke="var(--red)"/>
+      <circle cx="28" cy="24" r="1.5" fill="currentColor" stroke="currentColor"/>
+      <circle cx="33" cy="24" r="1.5" fill="currentColor" stroke="currentColor"/>
+      <line x1="13" y1="20" x2="28" y2="20" stroke="var(--red)" stroke-width="1"/>
+      <line x1="13" y1="28" x2="23" y2="28" stroke="var(--red)" stroke-width="1"/>
+    </svg>`,
+    fr: {
+      name: 'Panneau LED Intelligent Messagerie Voiture',
+      tagline: 'Communiquez sur la route avec style',
+      desc: 'Panneau LED intelligent à placer sur la plage arrière ou la lunette. Application Bluetooth pour personnaliser vos messages en temps réel : "En panne", "Pneu crevé", "Merci", emojis et messages libres. 32 messages prédéfinis, 5 niveaux de luminosité, animation scrolling. Alimente sur allume-cigare 12V.',
+      features: ['App Bluetooth incluse', '32 messages prédéfinis', 'Messages personnalisés', '5 niveaux luminosité']
+    },
+    en: {
+      name: 'Smart LED Car Message Board',
+      tagline: 'Communicate on the road in style',
+      desc: 'Smart LED panel for rear parcel shelf or window. Bluetooth app to customise messages in real time: "Broken down", "Flat tyre", "Thank you", emojis and free text. 32 preset messages, 5 brightness levels, scrolling animation. Powered via 12V car socket.',
+      features: ['Bluetooth app', '32 preset messages', 'Custom messages', '5 brightness levels']
+    }
   }
 ];
 
