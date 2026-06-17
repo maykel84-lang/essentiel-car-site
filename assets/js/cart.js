@@ -372,28 +372,28 @@ async function handleCheckout() {
   }
 
   try {
-    const res  = await fetch('https://create-checkout.essentielcar.workers.dev', {
-      method:  'POST',
+    const res = await fetch('https://create-checkout.essentielcar.workers.dev', {
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ items }),
+      body: JSON.stringify({ items }),
     });
     let data;
     try {
       data = await res.json();
     } catch {
       throw new Error(isFr
-        ? 'Erreur de connexion au serveur de paiement. Veuillez utiliser le site officiel essentielcar.com.'
-        : 'Payment server connection error. Please use the official site essentielcar.com.');
+        ? 'Erreur temporaire du serveur de paiement. Veuillez réessayer dans quelques instants.'
+        : 'Temporary payment server error. Please try again in a moment.');
     }
     if (data.url) {
       window.location.href = data.url;
     } else {
-      throw new Error(data.error || 'No checkout URL');
+      throw new Error(data.error || (isFr ? 'Erreur paiement. Veuillez réessayer.' : 'Payment error. Please try again.'));
     }
   } catch (err) {
     console.error('Checkout error:', err);
     renderCart();
-    const msg = err.message && err.message !== 'No checkout URL' && err.message !== 'Failed to fetch'
+    const msg = (err.message && err.message !== 'Failed to fetch')
       ? err.message
       : (isFr ? 'Erreur lors de la connexion au paiement. Veuillez réessayer.' : 'Could not connect to payment. Please try again.');
     alert(msg);
