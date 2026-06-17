@@ -1452,6 +1452,82 @@ const PRODUCTS = [
       desc: 'Smart LED panel for rear parcel shelf or window. Bluetooth app to customise messages in real time: "Broken down", "Flat tyre", "Thank you", emojis and free text. 32 preset messages, 5 brightness levels, scrolling animation. Powered via 12V car socket.',
       features: ['Bluetooth app', '32 preset messages', 'Custom messages', '5 brightness levels']
     }
+  },
+  {
+    id: 'gants-nitrile',
+    badge: '3,99€',
+    badgeType: 'promo',
+    price: 3.99,
+    oldPrice: 7.99,
+    discount: 50,
+    rating: 4.8,
+    reviews: 1247,
+    category: 'nettoyage',
+    accentColor: '#0a0a0a',
+    images: [
+      'assets/images/products/gants-nitrile-1.jpg.png',
+      'assets/images/products/gants-nitrile-2.jpg.png',
+      'assets/images/products/gants-nitrile-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 40 L18 20 Q18 16 22 16 Q26 16 26 20 L26 28"/>
+      <path d="M26 28 L26 18 Q26 14 30 14 Q34 14 34 18 L34 28"/>
+      <path d="M14 32 L14 24 Q14 20 18 20"/>
+      <path d="M34 28 Q38 28 38 32 L38 36 Q38 42 30 44 L22 44 Q14 44 14 36 L14 32"/>
+      <line x1="22" y1="16" x2="22" y2="10" stroke="var(--red)"/>
+      <line x1="30" y1="14" x2="30" y2="8" stroke="var(--red)"/>
+    </svg>`,
+    fr: {
+      name: 'Gants Nitrile Noirs Mécanicien (Lot de 20)',
+      tagline: 'Mains propres, grip parfait',
+      desc: 'Gants nitrile noirs résistants aux huiles, graisses et produits chimiques. Idéals pour faire le plein, laver la voiture, changer l\'huile ou tout travail mécanique. Sans latex, sans allergie. Taille universelle M/L. Lot de 20 gants (10 paires).',
+      features: ['Lot de 20 gants', 'Sans latex', 'Résistant huile & graisse', 'Taille M/L universelle']
+    },
+    en: {
+      name: 'Black Nitrile Mechanic Gloves (Pack of 20)',
+      tagline: 'Clean hands, perfect grip',
+      desc: 'Black nitrile gloves resistant to oils, grease and chemicals. Ideal for filling up, washing the car, changing oil or any mechanical work. Latex-free, allergy-free. Universal M/L size. Pack of 20 gloves (10 pairs).',
+      features: ['Pack of 20', 'Latex-free', 'Oil & grease resistant', 'Universal M/L size']
+    }
+  },
+  {
+    id: 'microfibre-lot',
+    badge: '4,99€',
+    badgeType: 'promo',
+    price: 4.99,
+    oldPrice: 9.99,
+    discount: 50,
+    rating: 4.9,
+    reviews: 2134,
+    category: 'nettoyage',
+    accentColor: '#0a0a1a',
+    images: [
+      'assets/images/products/microfibre-lot-1.jpg.png',
+      'assets/images/products/microfibre-lot-2.jpg.png',
+      'assets/images/products/microfibre-lot-3.jpg.png',
+    ],
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="12" width="32" height="24" rx="3"/>
+      <path d="M8 20 L40 20"/>
+      <path d="M8 28 L40 28"/>
+      <path d="M20 12 L20 36"/>
+      <path d="M30 12 L30 36"/>
+      <circle cx="14" cy="16" r="1.5" fill="var(--red)" stroke="var(--red)"/>
+      <circle cx="24" cy="24" r="1.5" fill="var(--red)" stroke="var(--red)"/>
+      <circle cx="36" cy="32" r="1.5" fill="var(--red)" stroke="var(--red)"/>
+    </svg>`,
+    fr: {
+      name: 'Chiffons Microfibre Ultra-Doux (Lot de 5)',
+      tagline: 'Sans trace, sans rayure, à chaque essuyage',
+      desc: 'Lot de 5 chiffons microfibre 380g/m² ultra-absorbants. Sans rayure sur carrosserie, vitres et tableau de bord. Lavables en machine jusqu\'à 60°C, réutilisables des centaines de fois. Compatible avec tous les sprays et produits du catalogue. Couleurs assorties.',
+      features: ['Lot de 5 chiffons', '380g/m² ultra-absorbant', 'Sans rayure', 'Lavable machine 60°C']
+    },
+    en: {
+      name: 'Ultra-Soft Microfibre Cloths (Pack of 5)',
+      tagline: 'No streaks, no scratches, every time',
+      desc: 'Pack of 5 ultra-absorbent 380g/m² microfibre cloths. Scratch-free on bodywork, windows and dashboard. Machine washable up to 60°C, reusable hundreds of times. Compatible with all sprays and products in the catalogue. Assorted colours.',
+      features: ['Pack of 5 cloths', '380g/m² ultra-absorbent', 'Scratch-free', 'Machine wash 60°C']
+    }
   }
 ];
 
