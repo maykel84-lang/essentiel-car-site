@@ -1233,43 +1233,6 @@ const PRODUCTS = [
     }
   },
   {
-    id: 'booster-demarrage',
-    badge: 'BESTSELLER',
-    badgeType: 'bestseller',
-    price: 59.90,
-    oldPrice: 89.90,
-    discount: 33,
-    rating: 4.9,
-    reviews: 742,
-    category: 'securite',
-    accentColor: '#1a0a00',
-    images: [
-      'assets/images/products/booster-demarrage-1.jpg.png',
-      'assets/images/products/booster-demarrage-2.jpg.png',
-      'assets/images/products/booster-demarrage-3.jpg.png',
-    ],
-    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="8" y="14" width="32" height="20" rx="3"/>
-      <path d="M16 14 L16 10 M32 14 L32 10"/>
-      <path d="M16 10 L20 10 M28 10 L32 10"/>
-      <path d="M20 10 L20 6" stroke="var(--red)"/>
-      <path d="M28 10 L28 6"/>
-      <path d="M22 24 L25 20 L25 25 L28 21" stroke="var(--red)" stroke-width="2"/>
-    </svg>`,
-    fr: {
-      name: 'Booster Démarrage Voiture 1000A',
-      tagline: 'Plus jamais en panne de batterie',
-      desc: 'Booster de démarrage 1000A compatible essence jusqu\'à 6L et diesel jusqu\'à 4L. Power bank 20 000 mAh pour recharger téléphones et tablettes. Lampe LED SOS intégrée. Câbles pinces intelligentes avec protection inversion de polarité. Pochette de transport incluse.',
-      features: ['1000A démarrage', 'Power bank 20 000mAh', 'Lampe LED SOS', 'Protection inversion']
-    },
-    en: {
-      name: '1000A Car Jump Starter',
-      tagline: 'Never stranded with a flat battery again',
-      desc: '1000A jump starter compatible with petrol engines up to 6L and diesel up to 4L. 20,000mAh power bank to charge phones and tablets. Built-in SOS LED torch. Smart clamp cables with reverse polarity protection. Carry case included.',
-      features: ['1000A jump start', '20,000mAh power bank', 'SOS LED torch', 'Reverse protection']
-    }
-  },
-  {
     id: 'detecteur-angle-mort',
     badge: '-38%',
     badgeType: 'promo',
