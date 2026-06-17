@@ -5,6 +5,8 @@
 const PRODUCTS = [
   {
     id: 'aspirateur-sans-fil',
+    spu: 'CJJT1464798',
+    sku: 'CJJT146479802BY',
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
     price: 49.90,
@@ -39,6 +41,8 @@ const PRODUCTS = [
   },
   {
     id: 'brosse-jantes',
+    spu: 'CJJT1246906',
+    sku: 'CJJT124690601AZ',
     badge: '-35%',
     badgeType: 'promo',
     price: 12.90,
@@ -88,6 +92,8 @@ const PRODUCTS = [
   },
   {
     id: 'compresseur-air',
+    spu: 'CJYD1885563',
+    sku: 'CJYD188556301AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 54.90,
@@ -122,6 +128,8 @@ const PRODUCTS = [
   },
   {
     id: 'dashcam-4k',
+    spu: 'CJHS2007735',
+    sku: 'CJHS200773501AZ',
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
     price: 49.90,
@@ -194,6 +202,8 @@ const PRODUCTS = [
   },
   {
     id: 'machine-polir',
+    spu: 'CJYD2145988',
+    sku: 'CJYD214598801AZ',
     badge: 'PRO',
     badgeType: 'pro',
     price: 79.90,
@@ -230,6 +240,8 @@ const PRODUCTS = [
   },
   {
     id: 'lance-mousse',
+    spu: 'CJYD2233441',
+    sku: 'CJYD223344101AZ',
     badge: 'POPULAIRE',
     badgeType: 'popular',
     price: 44.90,
@@ -273,6 +285,8 @@ const PRODUCTS = [
   },
   {
     id: 'tpms',
+    spu: 'CJYD1977992',
+    sku: 'CJYD197799201AZ',
     badge: 'SÉCURITÉ',
     badgeType: 'security',
     price: 49.90,
@@ -311,6 +325,8 @@ const PRODUCTS = [
   },
   {
     id: 'table-volant',
+    spu: 'CJHS2287825',
+    sku: 'CJHS228782501AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 24.90,
@@ -355,6 +371,8 @@ const PRODUCTS = [
   },
   {
     id: 'essuie-glace-retros',
+    spu: 'CJQC1360918',
+    sku: 'CJQC136091801AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 19.90,
@@ -529,6 +547,8 @@ const PRODUCTS = [
   },
   {
     id: 'diffuseur-parfum',
+    spu: 'CJYD2252585',
+    sku: 'CJYD225258516PK',
     badge: 'NOUVEAU',
     badgeType: 'new',
     price: 29.90,
@@ -562,6 +582,8 @@ const PRODUCTS = [
   },
   {
     id: 'support-magnetique',
+    spu: 'CJSJ1785926',
+    sku: 'CJSJ178592601AZ',
     badge: 'NOUVEAU',
     badgeType: 'new',
     price: 24.90,
@@ -596,6 +618,8 @@ const PRODUCTS = [
   },
   {
     id: 'kit-lavage',
+    spu: 'CJJT1445878',
+    sku: 'CJJT144587801AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 39.90,
@@ -631,6 +655,8 @@ const PRODUCTS = [
   },
   {
     id: 'adaptateur-carplay',
+    spu: 'CJYD2192615',
+    sku: 'CJYD219261501AZ',
     badge: 'NOUVEAU',
     badgeType: 'new',
     price: 54.90,
@@ -666,6 +692,8 @@ const PRODUCTS = [
   },
   {
     id: 'organisateur-coffre-grand',
+    spu: 'CJYD2716827',
+    sku: 'CJYD271682701AZ',
     badge: '-20%',
     badgeType: 'promo',
     price: 39.90,
@@ -711,6 +739,8 @@ const PRODUCTS = [
   },
   {
     id: 'organisateur-coffre-compact',
+    spu: 'CJJJJTJT03592',
+    sku: 'CJJJJTJT03592-Black',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 24.90,
@@ -752,6 +782,8 @@ const PRODUCTS = [
   },
   {
     id: 'booster-demarrage',
+    spu: 'CJYD2650409',
+    sku: 'CJYD265040902BY',
     badge: 'SÉCURITÉ',
     badgeType: 'security',
     price: 94.90,
@@ -823,6 +855,8 @@ const PRODUCTS = [
   },
   {
     id: 'spray-coating',
+    spu: 'CJQC2531209',
+    sku: 'CJQC253120901AZ',
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
     price: 9.90,
@@ -861,6 +895,8 @@ const PRODUCTS = [
   },
   {
     id: 'bandeau-led',
+    spu: 'CJSN2628341',
+    sku: 'CJSN262834105EV',
     badge: '-21%',
     badgeType: 'promo',
     price: 14.90,
@@ -904,6 +940,8 @@ const PRODUCTS = [
   },
   {
     id: 'chargeur-voiture',
+    spu: 'CJYD2906573',
+    sku: 'CJYD290657301AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 14.99,
@@ -937,6 +975,8 @@ const PRODUCTS = [
   },
   {
     id: 'mini-poubelle',
+    spu: 'CJJT1214950',
+    sku: 'CJJT121495001AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 19.90,
@@ -973,6 +1013,8 @@ const PRODUCTS = [
   },
   {
     id: 'organisateur-siege',
+    spu: 'CJQCQCQC00048',
+    sku: 'CJQCQCQC00048-Beige',
     badge: 'POPULAIRE',
     badgeType: 'popular',
     price: 29.90,
@@ -1008,6 +1050,8 @@ const PRODUCTS = [
   },
   {
     id: 'coussin-lombaire',
+    spu: 'CJQC1381359',
+    sku: 'CJQC138135902BY',
     badge: 'CONFORT',
     badgeType: 'comfort',
     price: 44.90,
