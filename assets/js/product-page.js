@@ -30,7 +30,71 @@ function renderProduct(p) {
   const data  = p[lang] || p.fr;
   const isFr  = lang === 'fr';
 
+  const pageUrl    = `https://essentielcar.com/product.html?id=${p.id}`;
+  const imageUrl   = p.images && p.images[0] ? `https://essentielcar.com/${p.images[0]}` : 'https://essentielcar.com/assets/images/logo-essentiel-car.png';
+  const metaDesc   = `${data.name} — ${data.tagline}. ${data.desc.slice(0, 120)}… Livraison rapide, retours 30j.`;
+  const priceNum   = p.price.toFixed(2);
+
   document.title = `${data.name} — ESSENTIEL CAR`;
+
+  // Meta description
+  let metaEl = document.querySelector('meta[name="description"]');
+  if (!metaEl) { metaEl = document.createElement('meta'); metaEl.name = 'description'; document.head.appendChild(metaEl); }
+  metaEl.content = metaDesc;
+
+  // Canonical
+  let canonEl = document.querySelector('link[rel="canonical"]');
+  if (!canonEl) { canonEl = document.createElement('link'); canonEl.rel = 'canonical'; document.head.appendChild(canonEl); }
+  canonEl.href = pageUrl;
+
+  // Open Graph
+  const ogTags = {
+    'og:type':        'product',
+    'og:title':       `${data.name} — ESSENTIEL CAR`,
+    'og:description': metaDesc,
+    'og:url':         pageUrl,
+    'og:image':       imageUrl,
+    'og:site_name':   'ESSENTIEL CAR',
+    'product:price:amount':   priceNum,
+    'product:price:currency': 'EUR',
+  };
+  Object.entries(ogTags).forEach(([prop, content]) => {
+    let el = document.querySelector(`meta[property="${prop}"]`);
+    if (!el) { el = document.createElement('meta'); el.setAttribute('property', prop); document.head.appendChild(el); }
+    el.content = content;
+  });
+
+  // JSON-LD Product Schema
+  const existingLd = document.getElementById('product-jsonld');
+  if (existingLd) existingLd.remove();
+  const ld = document.createElement('script');
+  ld.type = 'application/ld+json';
+  ld.id   = 'product-jsonld';
+  ld.textContent = JSON.stringify({
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    name:        data.name,
+    description: data.desc,
+    image:       p.images ? p.images.map(img => `https://essentielcar.com/${img}`) : [imageUrl],
+    brand:       { '@type': 'Brand', name: 'ESSENTIEL CAR' },
+    offers: {
+      '@type':        'Offer',
+      url:            pageUrl,
+      priceCurrency:  'EUR',
+      price:          priceNum,
+      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+      availability:   'https://schema.org/InStock',
+      seller:         { '@type': 'Organization', name: 'ESSENTIEL CAR' },
+    },
+    aggregateRating: p.rating && p.reviews ? {
+      '@type':       'AggregateRating',
+      ratingValue:   p.rating.toString(),
+      reviewCount:   p.reviews.toString(),
+      bestRating:    '5',
+      worstRating:   '1',
+    } : undefined,
+  });
+  document.head.appendChild(ld);
 
   const catLabels = {
     nettoyage:   isFr ? 'Nettoyage'  : 'Cleaning',
@@ -54,7 +118,7 @@ function renderProduct(p) {
     savings:    isFr ? `Économisez ${saving}€` : `Save €${saving}`,
     stock:      isFr ? '✓ En stock — Expédié sous 24h' : '✓ In stock — Ships within 24h',
     freeShip:   isFr ? 'Livraison offerte'  : 'Free shipping',
-    freeShipS:  isFr ? 'Dès 49€ d\'achat'  : 'From €49.90',
+    freeShipS:  isFr ? 'Dès 49,90€ d\'achat'  : 'From €49.90',
     returns:    isFr ? 'Retours 30j'        : '30-day returns',
     returnsS:   isFr ? 'Satisfait ou remb.' : 'Money-back guarantee',
     secure:     isFr ? 'Paiement sécurisé'  : 'Secure payment',
