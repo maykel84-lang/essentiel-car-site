@@ -67,6 +67,7 @@ function renderCart() {
   const savings   = items.reduce((s, item) => {
     const price    = item.variantPrice    ?? item.product.price;
     const oldPrice = item.variantOldPrice ?? item.product.oldPrice;
+    if (!oldPrice || oldPrice <= price) return s;
     return s + (oldPrice - price) * item.qty;
   }, 0);
 
@@ -205,8 +206,9 @@ function renderCartItem(item, t_key, isFr) {
   const data = p[t_key] || p.fr;
   const price    = item.variantPrice    ?? p.price;
   const oldPrice = item.variantOldPrice ?? p.oldPrice;
+  const hasDiscount = oldPrice && oldPrice > price;
   const priceStr    = price.toFixed(2).replace('.', ',');
-  const oldStr      = oldPrice.toFixed(2).replace('.', ',');
+  const oldStr      = hasDiscount ? oldPrice.toFixed(2).replace('.', ',') : null;
   const lineTotal   = (price * item.qty).toFixed(2).replace('.', ',');
 
   return `
@@ -233,8 +235,7 @@ function renderCartItem(item, t_key, isFr) {
         <div class="cart-item-bottom">
           <div class="cart-item-pricing">
             <span class="cart-item-price">${priceStr}€</span>
-            <span class="cart-item-old">${oldStr}€</span>
-            <span class="cart-item-discount">-${Math.round((1 - price / (item.variantOldPrice ?? p.oldPrice)) * 100)}%</span>
+            ${hasDiscount ? `<span class="cart-item-old">${oldStr}€</span><span class="cart-item-discount">-${Math.round((1 - price / oldPrice) * 100)}%</span>` : ''}
           </div>
           <div class="cart-item-qty">
             <button class="qty-btn" onclick="updateQty('${item.cartKey || p.id}', -1)" aria-label="${isFr ? 'Diminuer' : 'Decrease'}">−</button>
@@ -339,7 +340,7 @@ function renderSmartSuggestions(subtotal, cartIds, isFr) {
     .slice(0, 3);
   const warnText = isFr
     ? `⚠️ Sans ajout : frais de livraison 🚚 <strong>+4,99€</strong> — il manque <strong>${fmt(gap)}</strong> au sous-total.`
-    : `⚠️ Without addition: frais de livraison 🚚 <strong>+€4.99</strong> — missing <strong>${fmt(gap)}</strong> to the subtotal.`;
+    : `⚠️ Without addition: delivery 🚚 <strong>+€4.99</strong> — missing <strong>${fmt(gap)}</strong> to the subtotal.`;
   if (suggestions.length === 0) {
     return `<div class="cart-smart-warning-only"><p>${warnText}</p></div>`;
   }

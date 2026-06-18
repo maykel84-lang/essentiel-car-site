@@ -295,8 +295,8 @@ function renderProduct(p) {
             <div class="gwp-teaser" id="gwpTeaser">
               <span class="gwp-teaser-emoji">🎁</span>
               <div>
-                <div class="gwp-teaser-title">Cadeau surprise offert !</div>
-                <div class="gwp-teaser-desc">Achetez 2 articles et recevez un kit ESSENTIEL CAR dans votre colis — microfibre, gants, surprise…</div>
+                <div class="gwp-teaser-title">Cadeau offert dès 2 articles !</div>
+                <div class="gwp-teaser-desc">Achetez 2 produits différents et recevez un PDF Entretien Auto + un coupon −15% par e-mail 🎁</div>
               </div>
             </div>
           </div>
@@ -848,7 +848,7 @@ function showGiftUnlockedToast() {
     toast = document.createElement('div');
     toast.id = 'giftToast';
     toast.className = 'gift-toast';
-    toast.innerHTML = `<span class="gift-toast-icon">🎁</span><div class="gift-toast-text">Cadeau surprise débloqué !<span class="gift-toast-sub">Votre kit ESSENTIEL CAR vous attend dans le colis 🎉</span></div>`;
+    toast.innerHTML = `<span class="gift-toast-icon">🎁</span><div class="gift-toast-text">Cadeau débloqué !<span class="gift-toast-sub">PDF Entretien Auto + coupon −15% envoyés par e-mail après commande 🎉</span></div>`;
     document.body.appendChild(toast);
   }
   toast.classList.add('show');
