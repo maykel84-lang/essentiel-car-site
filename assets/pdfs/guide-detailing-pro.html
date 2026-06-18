@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Detailing Pro — Essentiel Car</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: white; }
+    .page { width: 210mm; min-height: 297mm; padding: 0; page-break-after: always; overflow: hidden; position: relative; }
+    .page:last-child { page-break-after: avoid; }
+    @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+    /* ===========================
+       COVER PAGE
+    =========================== */
+    .cover {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      width: 210mm;
+      min-height: 297mm;
+    }
+    .cover-top-bar {
+      background: #DC2626;
+      height: 6px;
+      width: 100%;
+    }
+    .cover-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 14mm 14mm 10mm 14mm;
+      position: relative;
+    }
+    /* Subtle geometric accent */
+    .cover-inner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80mm;
+      height: 80mm;
+      background: radial-gradient(circle at top right, rgba(220,38,38,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cover-inner::after {
+      content: '';
+      position: absolute;
+      bottom: 30mm;
+      left: 0;
+      width: 60mm;
+      height: 60mm;
+      background: radial-gradient(circle at bottom left, rgba(220,38,38,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10mm;
+    }
+    .cover-logo-icon {
+      width: 38px;
+      height: 38px;
+      background: #DC2626;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cover-logo-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+    .cover-logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(220,38,38,0.18);
+      border: 1px solid rgba(220,38,38,0.45);
+      color: #f87171;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 3px;
+      width: fit-content;
+      margin-bottom: 9mm;
+    }
+    .cover-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: #DC2626;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .cover-number-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: #DC2626;
+      text-transform: uppercase;
+      margin-bottom: 4mm;
+    }
+
+    .cover-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 6mm;
+    }
+    .cover-title span {
+      color: #DC2626;
+    }
+
+    .cover-divider {
+      width: 50px;
+      height: 3px;
+      background: #DC2626;
+      margin-bottom: 7mm;
+    }
+
+    .cover-subtitle {
+      font-size: 15px;
+      color: #9ca3af;
+      line-height: 1.65;
+      max-width: 135mm;
+      margin-bottom: auto;
+    }
+
+    .cover-visual {
+      margin: 10mm 0;
+      display: flex;
+      gap: 4mm;
+    }
+    .cover-step-pill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cover-step-pill-num {
+      font-size: 22px;
+      font-weight: 800;
+      color: #DC2626;
+      line-height: 1;
+    }
+    .cover-step-pill-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .cover-footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 6mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cover-footer-left {
+      font-size: 11.5px;
+      color: #6b7280;
+      letter-spacing: 0.04em;
+    }
+    .cover-footer-right {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6b7280;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===========================
+       CONTENT PAGES
+    =========================== */
+    .content-page {
+      background: white;
+      padding: 0;
+    }
+
+    .page-header {
+      background: #1a1a1a;
+      padding: 7mm 12mm 6mm 12mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .page-header-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .page-header-logo-icon {
+      width: 26px;
+      height: 26px;
+      background: #DC2626;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .page-header-logo-icon svg {
+      width: 15px;
+      height: 15px;
+      fill: white;
+    }
+    .page-header-logo-text {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: white;
+      text-transform: uppercase;
+    }
+    .page-header-title {
+      font-size: 10px;
+      font-weight: 600;
+      color: #6b7280;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .page-accent-bar {
+      height: 3px;
+      background: linear-gradient(to right, #DC2626 0%, #DC2626 40%, #2d2d2d 100%);
+    }
+
+    .page-body {
+      padding: 9mm 12mm 18mm 12mm;
+    }
+
+    /* Section heading */
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6mm;
+    }
+    .section-num {
+      font-size: 52px;
+      font-weight: 900;
+      color: #f3f4f6;
+      line-height: 0.85;
+      letter-spacing: -0.03em;
+      flex-shrink: 0;
+      position: relative;
+      top: -4px;
+    }
+    .section-heading-text h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: #1a1a1a;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .section-heading-text .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #DC2626;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .section-divider {
+      width: 36px;
+      height: 2px;
+      background: #DC2626;
+      margin-top: 4px;
+    }
+
+    /* Intro box */
+    .intro-box {
+      background: #f9fafb;
+      border-left: 3px solid #DC2626;
+      padding: 7mm 8mm;
+      margin-bottom: 7mm;
+      border-radius: 0 4px 4px 0;
+    }
+    .intro-box p {
+      font-size: 12px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    /* Phase blocks */
+    .phase-block {
+      margin-bottom: 5mm;
+    }
+    .phase-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2mm;
+    }
+    .phase-dot {
+      width: 20px;
+      height: 20px;
+      background: #DC2626;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .phase-dot span {
+      font-size: 10px;
+      font-weight: 800;
+      color: white;
+    }
+    .phase-label h3 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .phase-label h3 em {
+      font-style: normal;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .phase-body {
+      padding-left: 28px;
+      font-size: 11.5px;
+      color: #4b5563;
+      line-height: 1.68;
+    }
+
+    /* Meta row */
+    .meta-row {
+      display: flex;
+      gap: 5mm;
+      margin-top: 5mm;
+    }
+    .meta-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      padding: 5px 11px;
+      font-size: 11px;
+      color: #4b5563;
+    }
+    .meta-pill strong {
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+    .meta-pill-icon {
+      font-size: 13px;
+    }
+
+    /* Stage blocks */
+    .stage-grid {
+      display: flex;
+      gap: 4mm;
+      margin-bottom: 5mm;
+    }
+    .stage-card {
+      flex: 1;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 5mm;
+      position: relative;
+    }
+    .stage-card-tag {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #DC2626;
+      margin-bottom: 2mm;
+    }
+    .stage-card h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 3mm;
+    }
+    .stage-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .stage-card ul li {
+      font-size: 11px;
+      color: #4b5563;
+      line-height: 1.65;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 1.5mm;
+    }
+    .stage-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #DC2626;
+      font-weight: 700;
+    }
+
+    /* Warning box */
+    .warning-box {
+      background: #fff7f7;
+      border: 1px solid #fecaca;
+      border-left: 3px solid #DC2626;
+      border-radius: 0 4px 4px 0;
+      padding: 5mm 6mm;
+      margin-top: 4mm;
+    }
+    .warning-box h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #DC2626;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 3mm;
+    }
+    .warning-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .warning-box ul li {
+      font-size: 11px;
+      color: #4b5563;
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 1.5mm;
+    }
+    .warning-box ul li::before {
+      content: '\2715';
+      position: absolute;
+      left: 0;
+      color: #DC2626;
+      font-size: 10px;
+      font-weight: 700;
+      top: 1px;
+    }
+
+    /* Protection levels */
+    .protection-level {
+      display: flex;
+      gap: 4mm;
+      margin-bottom: 4mm;
+      align-items: flex-start;
+    }
+    .protection-badge {
+      flex-shrink: 0;
+      width: 20mm;
+      text-align: center;
+      padding: 4mm 3mm;
+      border-radius: 5px;
+      border: 1px solid #e5e7eb;
+    }
+    .protection-badge .badge-num {
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1;
+      color: #1a1a1a;
+    }
+    .protection-badge .badge-stars {
+      font-size: 8px;
+      color: #DC2626;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+    .protection-content h3 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .protection-content .duration-tag {
+      display: inline-block;
+      background: #DC2626;
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 7px;
+      border-radius: 2px;
+      margin-bottom: 3mm;
+    }
+    .protection-content p {
+      font-size: 11px;
+      color: #4b5563;
+      line-height: 1.65;
+    }
+    .protection-divider {
+      height: 1px;
+      background: #f3f4f6;
+      margin: 0 0 4mm 0;
+    }
+
+    /* Entretien section */
+    .entretien-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 5mm;
+    }
+    .entretien-list li {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      padding: 3mm 0;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 11.5px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+    .entretien-list li:last-child { border-bottom: none; }
+    .entretien-list li .entretien-key {
+      font-weight: 700;
+      color: #1a1a1a;
+      flex-shrink: 0;
+      min-width: 22mm;
+    }
+    .entretien-list .never .entretien-key { color: #DC2626; }
+
+    /* Fatal errors list */
+    .fatal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      margin-top: 4mm;
+    }
+    .fatal-item {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 5px;
+      padding: 4mm 5mm;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .fatal-item-num {
+      font-size: 18px;
+      font-weight: 900;
+      color: #e5e7eb;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .fatal-item-text {
+      font-size: 10.5px;
+      color: #4b5563;
+      line-height: 1.55;
+    }
+    .fatal-item-text strong {
+      color: #DC2626;
+      font-weight: 700;
+      display: block;
+      font-size: 11px;
+      margin-bottom: 1px;
+    }
+
+    /* Kit table */
+    .kit-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4mm;
+      font-size: 11px;
+    }
+    .kit-table thead tr {
+      background: #1a1a1a;
+    }
+    .kit-table thead th {
+      padding: 4mm 5mm;
+      text-align: left;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: white;
+    }
+    .kit-table thead th:last-child {
+      text-align: right;
+      color: #DC2626;
+    }
+    .kit-table tbody tr:nth-child(odd) {
+      background: #f9fafb;
+    }
+    .kit-table tbody tr:nth-child(even) {
+      background: white;
+    }
+    .kit-table tbody tr:last-child {
+      background: #fff7f7;
+      border-top: 2px solid #fecaca;
+    }
+    .kit-table tbody td {
+      padding: 3.5mm 5mm;
+      color: #4b5563;
+      line-height: 1.5;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .kit-table tbody tr:last-child td {
+      color: #6b7280;
+      font-style: italic;
+    }
+    .kit-table tbody td:first-child {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+    .kit-table tbody tr:last-child td:first-child {
+      color: #6b7280;
+    }
+    .kit-table tbody td.budget {
+      text-align: right;
+      font-weight: 700;
+      color: #DC2626;
+      white-space: nowrap;
+    }
+    .kit-table tbody tr:last-child td.budget {
+      color: #9ca3af;
+    }
+
+    /* Back cover */
+    .back-cover {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      width: 210mm;
+      min-height: 297mm;
+    }
+    .back-cover-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16mm;
+      position: relative;
+      text-align: center;
+    }
+    .back-cover-inner::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120mm;
+      height: 120mm;
+      background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .back-cover-checkmark {
+      width: 20mm;
+      height: 20mm;
+      background: rgba(220,38,38,0.15);
+      border: 2px solid rgba(220,38,38,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 7mm;
+    }
+    .back-cover-checkmark svg {
+      width: 28px;
+      height: 28px;
+      stroke: #DC2626;
+      stroke-width: 2.5;
+      fill: none;
+    }
+    .back-cover-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #DC2626;
+      text-transform: uppercase;
+      margin-bottom: 5mm;
+    }
+    .back-cover-quote {
+      font-size: 21px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.35;
+      max-width: 140mm;
+      margin: 0 auto 8mm;
+      letter-spacing: -0.01em;
+    }
+    .back-cover-quote span {
+      color: #DC2626;
+    }
+    .back-cover-sub {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+      max-width: 110mm;
+      margin: 0 auto 12mm;
+    }
+    .back-cover-url {
+      display: inline-block;
+      background: #DC2626;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 5mm 12mm;
+      border-radius: 4px;
+      margin-bottom: 12mm;
+    }
+    .back-cover-series {
+      display: flex;
+      gap: 3mm;
+      justify-content: center;
+      margin-bottom: 10mm;
+    }
+    .series-dot {
+      width: 9mm;
+      height: 9mm;
+      border-radius: 50%;
+      background: #2d2d2d;
+      border: 1px solid #3d3d3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      color: #6b7280;
+    }
+    .series-dot.active {
+      background: #DC2626;
+      border-color: #DC2626;
+      color: white;
+    }
+    .back-cover-label {
+      font-size: 11px;
+      color: #374151;
+      font-style: italic;
+    }
+    .back-cover-footer {
+      background: #111;
+      padding: 5mm 16mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .back-cover-footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .back-cover-footer-logo-icon {
+      width: 22px;
+      height: 22px;
+      background: #DC2626;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-cover-footer-logo-icon svg {
+      width: 13px;
+      height: 13px;
+      fill: white;
+    }
+    .back-cover-footer-logo-text {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #9ca3af;
+      text-transform: uppercase;
+    }
+    .back-cover-footer-guide {
+      font-size: 10px;
+      font-weight: 600;
+      color: #4b5563;
+      letter-spacing: 0.06em;
+    }
+
+    /* Page footer */
+    .page-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #f9fafb;
+      border-top: 1px solid #e5e7eb;
+      padding: 3mm 12mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 9.5px;
+      color: #9ca3af;
+    }
+    .page-footer strong {
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    /* Two column layout */
+    .two-col {
+      display: flex;
+      gap: 6mm;
+    }
+    .col-main { flex: 1; }
+    .col-side { width: 52mm; flex-shrink: 0; }
+
+    .tip-box {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 5mm;
+      margin-bottom: 4mm;
+    }
+    .tip-box h4 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #DC2626;
+      margin-bottom: 3mm;
+    }
+    .tip-box p {
+      font-size: 11px;
+      color: #4b5563;
+      line-height: 1.65;
+    }
+
+    .steps-summary {
+      background: #1a1a1a;
+      border-radius: 6px;
+      padding: 5mm;
+    }
+    .steps-summary h4 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 4mm;
+    }
+    .steps-summary-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 2.5mm 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .steps-summary-item:last-child { border-bottom: none; }
+    .steps-summary-item-num {
+      font-size: 13px;
+      font-weight: 900;
+      color: #DC2626;
+      width: 14px;
+      flex-shrink: 0;
+    }
+    .steps-summary-item-text {
+      font-size: 10.5px;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===========================
+     PAGE 1 — COVER
+=========================== -->
+<div class="page cover">
+  <div class="cover-top-bar"></div>
+  <div class="cover-inner">
+
+    <div class="cover-logo">
+      <div class="cover-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/>
+        </svg>
+      </div>
+      <div class="cover-logo-text">Essentiel Car</div>
+    </div>
+
+    <div class="cover-badge">
+      <div class="cover-badge-dot"></div>
+      Guide Offert &mdash; Pack 4 Guides
+    </div>
+
+    <div class="cover-number-label">Guide n&deg;4 sur 4</div>
+
+    <div class="cover-title">Guide<br><span>Detailing</span><br>Pro</div>
+
+    <div class="cover-divider"></div>
+
+    <p class="cover-subtitle">La m&eacute;thode compl&egrave;te des professionnels pour sublimer votre carrosserie &mdash; d&eacute;contamination, correction de peinture et protection longue dur&eacute;e.</p>
+
+    <div class="cover-visual">
+      <div class="cover-step-pill">
+        <div class="cover-step-pill-num">01</div>
+        <div class="cover-step-pill-label">D&eacute;con-<br>tamination</div>
+      </div>
+      <div class="cover-step-pill">
+        <div class="cover-step-pill-num">02</div>
+        <div class="cover-step-pill-label">Correction<br>peinture</div>
+      </div>
+      <div class="cover-step-pill">
+        <div class="cover-step-pill-num">03</div>
+        <div class="cover-step-pill-label">Protection<br>durable</div>
+      </div>
+      <div class="cover-step-pill">
+        <div class="cover-step-pill-num">04</div>
+        <div class="cover-step-pill-label">Entretien<br>traitement</div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-footer-left">essentielcar.fr</div>
+      <div class="cover-footer-right">Guide n&deg;4 sur 4</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===========================
+     PAGE 2 — INTRODUCTION + ÉTAPE 1
+=========================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="page-header-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/>
+        </svg>
+      </div>
+      <div class="page-header-logo-text">Essentiel Car</div>
+    </div>
+    <div class="page-header-title">Guide Detailing Pro</div>
+  </div>
+  <div class="page-accent-bar"></div>
+  <div class="page-body">
+
+    <!-- INTRO -->
+    <div style="margin-bottom:7mm;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;color:#DC2626;text-transform:uppercase;margin-bottom:3mm;">Introduction</div>
+      <h2 style="font-size:18px;font-weight:800;color:#1a1a1a;margin-bottom:3mm;letter-spacing:-0.01em;">Qu&rsquo;est-ce que le Detailing&nbsp;?</h2>
+      <div class="intro-box">
+        <p>Le detailing automobile va au-del&agrave; du simple lavage. C&rsquo;est une approche m&eacute;thodique et compl&egrave;te de l&rsquo;entretien et de la restauration de l&rsquo;aspect d&rsquo;un v&eacute;hicule, aussi bien ext&eacute;rieur qu&rsquo;int&eacute;rieur. Un bon detailing <strong style="color:#1a1a1a;">pr&eacute;serve la valeur de revente</strong> et prolonge la vie du vernis de plusieurs ann&eacute;es. Ce guide vous enseigne la m&eacute;thode des professionnels, adapt&eacute;e &agrave; un usage amateur avec des r&eacute;sultats spectaculaires.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-main">
+
+        <!-- ÉTAPE 1 -->
+        <div class="section-heading">
+          <div class="section-num">01</div>
+          <div class="section-heading-text">
+            <div class="section-label">&Eacute;tape 1</div>
+            <h2>D&eacute;contamination</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+
+        <p style="font-size:11.5px;color:#4b5563;line-height:1.68;margin-bottom:4mm;">La d&eacute;contamination &eacute;limine les particules m&eacute;talliques, les r&eacute;sidus de goudron et les contaminants chimiques qui se sont incrust&eacute;s dans le vernis. Ces particules sont <strong style="color:#1a1a1a;">invisibles &agrave; l&rsquo;&oelig;il nu</strong> mais elles cr&eacute;ent de l&rsquo;oxydation et des micro-rayures.</p>
+
+        <div style="font-size:9.5px;font-weight:700;letter-spacing:0.15em;color:#DC2626;text-transform:uppercase;margin-bottom:4mm;">La base que 90% des gens sautent</div>
+
+        <div class="phase-block">
+          <div class="phase-label">
+            <div class="phase-dot"><span>1</span></div>
+            <h3>Lavage de pr&eacute;-d&eacute;contamination</h3>
+          </div>
+          <div class="phase-body">
+            Lavez la voiture normalement au shampoing pour &eacute;liminer les salissures superficielles. C&rsquo;est la base. Ne sautez jamais cette &eacute;tape, m&ecirc;me si la voiture &laquo;&nbsp;semble propre&nbsp;&raquo;.
+          </div>
+        </div>
+
+        <div class="phase-block">
+          <div class="phase-label">
+            <div class="phase-dot"><span>2</span></div>
+            <h3>D&eacute;contamination chimique <em>(Iron Remover)</em></h3>
+          </div>
+          <div class="phase-body">
+            Vaporisez un produit &laquo;&nbsp;iron remover&nbsp;&raquo; sur toute la carrosserie. Attendez 3&ndash;5 minutes. Vous verrez le produit virer au <strong style="color:#1a1a1a;">violet/rouge</strong> &mdash; ce sont les particules m&eacute;talliques qui r&eacute;agissent. Rincez abondamment. R&eacute;sultat&nbsp;: une carrosserie chimiquement propre.
+          </div>
+        </div>
+
+        <div class="phase-block">
+          <div class="phase-label">
+            <div class="phase-dot"><span>3</span></div>
+            <h3>D&eacute;contamination m&eacute;canique <em>(Argile)</em></h3>
+          </div>
+          <div class="phase-body">
+            Passez un clay bar sur toute la surface avec spray lubrifiant, par sections de 30&times;30 cm en mouvements <strong style="color:#1a1a1a;">lin&eacute;aires</strong>. Pliez l&rsquo;argile r&eacute;guli&egrave;rement pour toujours avoir une surface propre en contact avec la peinture.
+          </div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-pill">
+            <span class="meta-pill-icon">&#9200;</span>
+            <span><strong>2&ndash;3h</strong> pour une compacte</span>
+          </div>
+          <div class="meta-pill">
+            <span class="meta-pill-icon">&#8635;</span>
+            <span>Fr&eacute;quence : <strong>1&ndash;2x/an</strong></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-side">
+        <div class="tip-box">
+          <h4>Pourquoi c&rsquo;est essentiel</h4>
+          <p>Sans d&eacute;contamination, le polish ou la cire adh&egrave;re &agrave; une surface contamin&eacute;e. Le r&eacute;sultat final sera moins brillant et la protection moins durable.</p>
+        </div>
+        <div class="tip-box">
+          <h4>Astuce argile</h4>
+          <p>Si l&rsquo;argile glisse facilement sur la surface lubrifante sans &laquo;&nbsp;accrocher&nbsp;&raquo;, la surface est propre. Si elle accroche, continuez jusqu&rsquo;&agrave; ce qu&rsquo;elle glisse.</p>
+        </div>
+        <div class="steps-summary">
+          <h4>Les 4 &eacute;tapes</h4>
+          <div class="steps-summary-item">
+            <div class="steps-summary-item-num">1</div>
+            <div class="steps-summary-item-text" style="color:white;">D&eacute;contamination</div>
+          </div>
+          <div class="steps-summary-item">
+            <div class="steps-summary-item-num">2</div>
+            <div class="steps-summary-item-text">Correction</div>
+          </div>
+          <div class="steps-summary-item">
+            <div class="steps-summary-item-num">3</div>
+            <div class="steps-summary-item-text">Protection</div>
+          </div>
+          <div class="steps-summary-item">
+            <div class="steps-summary-item-num">4</div>
+            <div class="steps-summary-item-text">Entretien</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span><strong>Essentiel Car</strong> &mdash; Guide Detailing Pro</span>
+    <span>essentielcar.fr</span>
+    <span>Guide n&deg;4/4</span>
+  </div>
+</div>
+
+<!-- ===========================
+     PAGE 3 — ÉTAPE 2 : CORRECTION
+=========================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="page-header-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/>
+        </svg>
+      </div>
+      <div class="page-header-logo-text">Essentiel Car</div>
+    </div>
+    <div class="page-header-title">Guide Detailing Pro</div>
+  </div>
+  <div class="page-accent-bar"></div>
+  <div class="page-body">
+
+    <!-- ÉTAPE 2 heading -->
+    <div class="section-heading" style="margin-bottom:4mm;">
+      <div class="section-num">02</div>
+      <div class="section-heading-text">
+        <div class="section-label">&Eacute;tape 2 &mdash; Optionnel mais transformateur</div>
+        <h2>Correction de Peinture</h2>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+
+    <div class="intro-box" style="margin-bottom:5mm;">
+      <p>La correction de peinture &eacute;limine les <strong style="color:#1a1a1a;">micro-rayures, les swirl marks</strong> (cercles de rayures en araign&eacute;e visibles en plein soleil) et les oxydations l&eacute;g&egrave;res. Elle se fait avec une machine &agrave; polish.</p>
+    </div>
+
+    <!-- Evaluation -->
+    <div style="margin-bottom:5mm;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;color:#DC2626;text-transform:uppercase;margin-bottom:2.5mm;">&Eacute;valuation avant correction</div>
+      <p style="font-size:11.5px;color:#4b5563;line-height:1.68;">Inspectez la carrosserie sous lumi&egrave;re directe (soleil ou lampe halog&egrave;ne &agrave; 45&deg;). Si vous voyez des traces en toile d&rsquo;araign&eacute;e ou des rayures superficielles, une correction stage 1 ou 2 est recommand&eacute;e.</p>
+    </div>
+
+    <!-- Stage cards -->
+    <div class="stage-grid">
+      <div class="stage-card">
+        <div class="stage-card-tag">Stage 1 &mdash; L&eacute;ger</div>
+        <h3>Micro-rayures &amp; swirl marks</h3>
+        <ul>
+          <li><strong style="color:#1a1a1a;">Pad&nbsp;:</strong> mousse finition (souple)</li>
+          <li><strong style="color:#1a1a1a;">Polish&nbsp;:</strong> finishing polish (abrasivit&eacute; l&eacute;g&egrave;re)</li>
+          <li><strong style="color:#1a1a1a;">Vitesse&nbsp;:</strong> 1000&ndash;1200 rpm</li>
+          <li><strong style="color:#1a1a1a;">R&eacute;sultat&nbsp;:</strong> &eacute;limination 60&ndash;80% des micro-rayures, brillance restaur&eacute;e</li>
+        </ul>
+      </div>
+      <div class="stage-card" style="border-color:#DC2626;border-width:1.5px;">
+        <div class="stage-card-tag">Stage 2 &mdash; Moyen</div>
+        <h3>Rayures + profondes, oxydation l&eacute;g&egrave;re</h3>
+        <ul>
+          <li><strong style="color:#1a1a1a;">Pad&nbsp;:</strong> mousse polissage (medium)</li>
+          <li><strong style="color:#1a1a1a;">Polish&nbsp;:</strong> medium compound</li>
+          <li><strong style="color:#1a1a1a;">Vitesse&nbsp;:</strong> 1200&ndash;1500 rpm</li>
+          <li><strong style="color:#1a1a1a;">R&eacute;sultat&nbsp;:</strong> &eacute;limination 80&ndash;95% des d&eacute;fauts</li>
+          <li style="color:#DC2626;">Suivi obligatoire d&rsquo;un finishing polish stage 1</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>Les erreurs &agrave; &eacute;viter</h4>
+      <ul>
+        <li>Ne jamais passer sur les bords et ar&ecirc;tes (le vernis y est plus mince)</li>
+        <li>Toujours travailler en surface propre et d&eacute;contamin&eacute;e</li>
+        <li>Ne jamais polish sous fort soleil (le polish s&egrave;che trop vite)</li>
+        <li>Ne pas appuyer excessivement &mdash; laissez la machine travailler</li>
+      </ul>
+    </div>
+
+    <div class="meta-row" style="margin-top:4mm;">
+      <div class="meta-pill">
+        <span class="meta-pill-icon">&#9200;</span>
+        <span><strong>4&ndash;8h</strong> selon l&rsquo;&eacute;tat et la taille</span>
+      </div>
+      <div class="meta-pill">
+        <span class="meta-pill-icon">&#9888;</span>
+        <span>Max <strong>1&ndash;2x/an</strong> (enl&egrave;ve du vernis)</span>
+      </div>
+    </div>
+
+    <!-- Separator -->
+    <div style="height:1px;background:#f3f4f6;margin:6mm 0;"></div>
+
+    <!-- Info note -->
+    <div style="background:#f9fafb;border-radius:5px;padding:4mm 5mm;display:flex;gap:10px;align-items:flex-start;">
+      <div style="width:24px;height:24px;background:#DC2626;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <span style="color:white;font-size:14px;font-weight:900;line-height:1;">i</span>
+      </div>
+      <p style="font-size:11px;color:#4b5563;line-height:1.65;"><strong style="color:#1a1a1a;">La correction de peinture enl&egrave;ve physiquement une fine couche de vernis.</strong> C&rsquo;est pourquoi elle ne doit pas &ecirc;tre appliqu&eacute;e trop fr&eacute;quemment. Toujours mesurer l&rsquo;&eacute;paisseur du vernis avec un jaugeur si disponible avant d&rsquo;intervenir sur un v&eacute;hicule d&rsquo;occasion.</p>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span><strong>Essentiel Car</strong> &mdash; Guide Detailing Pro</span>
+    <span>essentielcar.fr</span>
+    <span>Guide n&deg;4/4</span>
+  </div>
+</div>
+
+<!-- ===========================
+     PAGE 4 — ÉTAPE 3 : PROTECTION + ÉTAPE 4
+=========================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="page-header-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/>
+        </svg>
+      </div>
+      <div class="page-header-logo-text">Essentiel Car</div>
+    </div>
+    <div class="page-header-title">Guide Detailing Pro</div>
+  </div>
+  <div class="page-accent-bar"></div>
+  <div class="page-body">
+
+    <!-- ÉTAPE 3 -->
+    <div class="section-heading" style="margin-bottom:4mm;">
+      <div class="section-num">03</div>
+      <div class="section-heading-text">
+        <div class="section-label">&Eacute;tape 3 &mdash; L&rsquo;&eacute;tape la plus importante pour la dur&eacute;e</div>
+        <h2>Protection</h2>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+
+    <div class="intro-box" style="margin-bottom:6mm;">
+      <p>La protection est ce qui d&eacute;termine <strong style="color:#1a1a1a;">combien de temps votre travail va durer</strong>. Il existe 3 niveaux selon votre budget, votre exp&eacute;rience et la durabilit&eacute; souhait&eacute;e.</p>
+    </div>
+
+    <!-- Niveau 1 -->
+    <div class="protection-level">
+      <div class="protection-badge" style="background:#f9fafb;">
+        <div class="badge-num" style="color:#6b7280;">1</div>
+        <div class="badge-stars">&#9733; &#9733;</div>
+      </div>
+      <div class="protection-content">
+        <h3>Spray C&eacute;ramique</h3>
+        <div class="duration-tag">6&ndash;12 mois</div>
+        <p>Le plus simple et le plus rapide. S&rsquo;applique sur carrosserie propre en 15 minutes. Cr&eacute;e un film protecteur hydrophobe. Id&eacute;al pour l&rsquo;entretien r&eacute;gulier entre deux detailings complets.<br><span style="font-size:10.5px;color:#6b7280;margin-top:3px;display:block;"><em>Application&nbsp;:</em> vaporiser sur panneau propre, &eacute;taler avec microfibre propre en mouvements crois&eacute;s, laisser flasher 1&ndash;2 min, retirer avec microfibre de finition. Un panneau &agrave; la fois.</span></p>
+      </div>
+    </div>
+
+    <div class="protection-divider"></div>
+
+    <!-- Niveau 2 -->
+    <div class="protection-level">
+      <div class="protection-badge" style="background:#f3f4f6;">
+        <div class="badge-num" style="color:#4b5563;">2</div>
+        <div class="badge-stars">&#9733; &#9733; &#9733;</div>
+      </div>
+      <div class="protection-content">
+        <h3>Cire Carnauba</h3>
+        <div class="duration-tag">3&ndash;6 mois</div>
+        <p>La cire traditionnelle des d&eacute;tailers. Donne une profondeur et un &laquo;&nbsp;wet look&nbsp;&raquo; incomparable mais une durabilit&eacute; moindre. S&rsquo;applique en couche tr&egrave;s fine avec un applicateur, laisse flash (jusqu&rsquo;&agrave; voile), enl&egrave;ve avec microfibre propre.</p>
+      </div>
+    </div>
+
+    <div class="protection-divider"></div>
+
+    <!-- Niveau 3 -->
+    <div class="protection-level">
+      <div class="protection-badge" style="background:#1a1a1a;border-color:#1a1a1a;">
+        <div class="badge-num" style="color:white;">3</div>
+        <div class="badge-stars" style="color:#f87171;">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+      </div>
+      <div class="protection-content">
+        <h3>Rev&ecirc;tement C&eacute;ramique Pro</h3>
+        <div class="duration-tag">2&ndash;5 ans</div>
+        <p>La protection ultime. S&rsquo;applique <strong style="color:#1a1a1a;">UNE FOIS</strong> sur peinture parfaitement d&eacute;contamin&eacute;e et corrig&eacute;e. Cr&eacute;e une couche de SiO2 qui fusionne avec le vernis. La voiture est hydrophobe, anti-rayure (l&eacute;g&egrave;res) et brillante pendant des ann&eacute;es.<br><span style="font-size:10.5px;color:#DC2626;margin-top:3px;display:block;font-weight:600;">Application d&eacute;licate&nbsp;: r&eacute;serv&eacute;e aux utilisateurs exp&eacute;riment&eacute;s ou professionnels.</span></p>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 4 -->
+    <div style="height:1px;background:#f3f4f6;margin:5mm 0;"></div>
+
+    <div class="section-heading" style="margin-bottom:3mm;">
+      <div class="section-num">04</div>
+      <div class="section-heading-text">
+        <div class="section-label">&Eacute;tape 4</div>
+        <h2>Entretien du Traitement</h2>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+
+    <p style="font-size:11.5px;color:#4b5563;line-height:1.68;margin-bottom:3mm;">Un detailing complet se prot&egrave;ge avec un entretien minimal r&eacute;gulier&nbsp;:</p>
+
+    <ul class="entretien-list">
+      <li>
+        <span class="entretien-key">Lavage</span>
+        <span>Toujours shampoing <strong style="color:#1a1a1a;">sans cire</strong> (les cires alt&egrave;rent les rev&ecirc;tements c&eacute;ramiques) &mdash; cherchez &laquo;&nbsp;pH neutre&nbsp;&raquo; sur l&rsquo;&eacute;tiquette.</span>
+      </li>
+      <li>
+        <span class="entretien-key">Apr&egrave;s lavage</span>
+        <span>Un spray quick detailer ou spray c&eacute;ramique boost pour entretenir la couche de protection.</span>
+      </li>
+      <li class="never">
+        <span class="entretien-key">Jamais</span>
+        <span>Jet haute pression directement sur les joints, &eacute;ponge abrasive, lavage automatique &agrave; brosses.</span>
+      </li>
+    </ul>
+
+  </div>
+  <div class="page-footer">
+    <span><strong>Essentiel Car</strong> &mdash; Guide Detailing Pro</span>
+    <span>essentielcar.fr</span>
+    <span>Guide n&deg;4/4</span>
+  </div>
+</div>
+
+<!-- ===========================
+     PAGE 5 — ERREURS FATALES + KIT
+=========================== -->
+<div class="page content-page">
+  <div class="page-header">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="page-header-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/>
+        </svg>
+      </div>
+      <div class="page-header-logo-text">Essentiel Car</div>
+    </div>
+    <div class="page-header-title">Guide Detailing Pro</div>
+  </div>
+  <div class="page-accent-bar"></div>
+  <div class="page-body">
+
+    <!-- Erreurs fatales -->
+    <div style="margin-bottom:6mm;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4mm;">
+        <div style="width:28px;height:28px;background:#DC2626;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span style="color:white;font-size:16px;font-weight:900;line-height:1;">!</span>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;color:#DC2626;text-transform:uppercase;">&Agrave; ne jamais faire</div>
+          <h2 style="font-size:17px;font-weight:800;color:#1a1a1a;letter-spacing:-0.01em;">Les 7 Erreurs Fatales du Detailing</h2>
+        </div>
+      </div>
+
+      <div class="fatal-grid">
+        <div class="fatal-item">
+          <div class="fatal-item-num">1</div>
+          <div class="fatal-item-text">
+            <strong>Erreur diagnostic</strong>
+            Polish sur vernis br&ucirc;l&eacute; ou tr&egrave;s oxyd&eacute; sans diagnostic pr&eacute;alable
+          </div>
+        </div>
+        <div class="fatal-item">
+          <div class="fatal-item-num">2</div>
+          <div class="fatal-item-text">
+            <strong>M&ecirc;me microfibre</strong>
+            Utiliser la m&ecirc;me microfibre pour tout (une pour chaque &eacute;tape&nbsp;!)
+          </div>
+        </div>
+        <div class="fatal-item">
+          <div class="fatal-item-num">3</div>
+          <div class="fatal-item-text">
+            <strong>Fort soleil</strong>
+            Travailler en plein soleil par temps chaud
+          </div>
+        </div>
+        <div class="fatal-item">
+          <div class="fatal-item-num">4</div>
+          <div class="fatal-item-text">
+            <strong>Pas de d&eacute;contamination</strong>
+            Sauter l&rsquo;&eacute;tape de d&eacute;contamination
+          </div>
+        </div>
+        <div class="fatal-item">
+          <div class="fatal-item-num">5</div>
+          <div class="fatal-item-text">
+            <strong>Trop de produit</strong>
+            Appliquer trop de produit (moins = mieux en detailing)
+          </div>
+        </div>
+        <div class="fatal-item">
+          <div class="fatal-item-num">6</div>
+          <div class="fatal-item-text">
+            <strong>Surface froide</strong>
+            Travailler sur surface froide en hiver (les produits ne flashent pas)
+          </div>
+        </div>
+        <div class="fatal-item" style="grid-column:1 / -1;">
+          <div class="fatal-item-num">7</div>
+          <div class="fatal-item-text">
+            <strong>S&eacute;chage trop long</strong>
+            Laisser s&eacute;cher un polish ou une cire trop longtemps &mdash; devient tr&egrave;s difficile &agrave; retirer
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kit table -->
+    <div style="height:1px;background:#f3f4f6;margin-bottom:5mm;"></div>
+
+    <div style="margin-bottom:3mm;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.18em;color:#DC2626;text-transform:uppercase;margin-bottom:2mm;">Ce dont vous avez besoin</div>
+      <h2 style="font-size:16px;font-weight:800;color:#1a1a1a;letter-spacing:-0.01em;">Votre Kit Detailing Minimum</h2>
+    </div>
+
+    <table class="kit-table">
+      <thead>
+        <tr>
+          <th>Produit</th>
+          <th>Usage</th>
+          <th>Budget</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2 seaux + grille anti-tourbillon</td>
+          <td>Lavage m&eacute;thode 2 seaux &mdash; &eacute;vite la contamination crois&eacute;e</td>
+          <td class="budget">15&ndash;20&nbsp;&euro;</td>
+        </tr>
+        <tr>
+          <td>Shampoing pH neutre</td>
+          <td>Lavage de base, compatible c&eacute;ramique</td>
+          <td class="budget">10&ndash;15&nbsp;&euro;</td>
+        </tr>
+        <tr>
+          <td>Clay bar + lubrifiant</td>
+          <td>D&eacute;contamination m&eacute;canique</td>
+          <td class="budget">15&ndash;25&nbsp;&euro;</td>
+        </tr>
+        <tr>
+          <td>Finishing polish + pad</td>
+          <td>Correction l&eacute;g&egrave;re stage 1</td>
+          <td class="budget">25&ndash;35&nbsp;&euro;</td>
+        </tr>
+        <tr>
+          <td>Spray c&eacute;ramique</td>
+          <td>Protection hydrophobe 6&ndash;12 mois</td>
+          <td class="budget">15&ndash;25&nbsp;&euro;</td>
+        </tr>
+        <tr>
+          <td>5 microfibres minimum</td>
+          <td>Lavage, polish, finition, protection&hellip;</td>
+          <td class="budget">20&ndash;30&nbsp;&euro;</td>
+        </tr>
+        <tr>
+          <td>Machine orbitale (optionnel)</td>
+          <td>Correction peinture &mdash; r&eacute;sultats pro</td>
+          <td class="budget">60&ndash;150&nbsp;&euro;</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="page-footer">
+    <span><strong>Essentiel Car</strong> &mdash; Guide Detailing Pro</span>
+    <span>essentielcar.fr</span>
+    <span>Guide n&deg;4/4</span>
+  </div>
+</div>
+
+<!-- ===========================
+     PAGE 6 — BACK COVER
+=========================== -->
+<div class="page back-cover">
+  <div class="cover-top-bar"></div>
+  <div class="back-cover-inner">
+
+    <div class="back-cover-checkmark">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <div class="back-cover-eyebrow">F&eacute;licitations &mdash; Guide compl&eacute;t&eacute;</div>
+
+    <div class="back-cover-quote">
+      Vous &ecirc;tes maintenant &eacute;quip&eacute; pour d&eacute;tailer votre voiture <span>comme un pro.</span>
+    </div>
+
+    <p class="back-cover-sub">
+      Retrouvez tous les produits r&eacute;f&eacute;renc&eacute;s dans ce guide sur notre boutique en ligne. Livraison rapide, s&eacute;lection test&eacute;e et approuv&eacute;e par nos experts.
+    </p>
+
+    <div class="back-cover-url">essentielcar.fr</div>
+
+    <div style="font-size:11px;color:#4b5563;margin-bottom:6mm;">Retrouvez tous les produits Essentiel Car sur essentielcar.fr</div>
+
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.16em;color:#6b7280;text-transform:uppercase;margin-bottom:4mm;">La collection compl&egrave;te &mdash; 4 guides</div>
+
+    <div class="back-cover-series">
+      <div class="series-dot" style="width:11mm;height:11mm;font-size:10px;">1</div>
+      <div class="series-dot" style="width:11mm;height:11mm;font-size:10px;">2</div>
+      <div class="series-dot" style="width:11mm;height:11mm;font-size:10px;">3</div>
+      <div class="series-dot active" style="width:11mm;height:11mm;font-size:10px;">4</div>
+    </div>
+
+    <div class="back-cover-label">Guide n&deg;4/4 &mdash; Detailing Pro</div>
+
+  </div>
+  <div class="back-cover-footer">
+    <div class="back-cover-footer-logo">
+      <div class="back-cover-footer-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/>
+        </svg>
+      </div>
+      <div class="back-cover-footer-logo-text">Essentiel Car</div>
+    </div>
+    <div class="back-cover-footer-guide">Guide n&deg;4/4 &mdash; La collection compl&egrave;te</div>
+  </div>
+</div>
+
+</body>
+</html>
