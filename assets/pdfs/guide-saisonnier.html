@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendrier Entretien par Saison — Essentiel Car</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: white; }
+    .page { width: 210mm; min-height: 297mm; padding: 0; page-break-after: always; position: relative; overflow: hidden; }
+    .page:last-child { page-break-after: avoid; }
+    @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+    /* ── COVER PAGE ── */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      color: white;
+      min-height: 297mm;
+      padding: 16mm 14mm;
+      text-align: center;
+      position: relative;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4mm;
+      background: #DC2626;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4mm;
+      background: #DC2626;
+    }
+    .cover-logo {
+      font-size: 11pt;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #DC2626;
+      margin-bottom: 6mm;
+    }
+    .cover-logo span {
+      color: white;
+    }
+    .cover-badge {
+      display: inline-block;
+      background: #DC2626;
+      color: white;
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 2.5mm 6mm;
+      border-radius: 2mm;
+      margin-bottom: 10mm;
+    }
+    .cover-icon {
+      font-size: 36pt;
+      margin-bottom: 6mm;
+      line-height: 1;
+    }
+    .cover-title {
+      font-size: 26pt;
+      font-weight: 800;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 6mm;
+      letter-spacing: -0.01em;
+    }
+    .cover-subtitle {
+      font-size: 11pt;
+      color: #9ca3af;
+      line-height: 1.6;
+      max-width: 130mm;
+      margin-bottom: 14mm;
+    }
+    .cover-divider {
+      width: 20mm;
+      height: 1px;
+      background: #DC2626;
+      margin: 0 auto 14mm;
+    }
+    .cover-seasons {
+      display: flex;
+      gap: 5mm;
+      margin-bottom: 16mm;
+    }
+    .cover-season-pill {
+      padding: 2mm 5mm;
+      border-radius: 20mm;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .pill-spring  { background: rgba(22,163,74,0.18);  color: #4ade80; }
+    .pill-summer  { background: rgba(217,119,6,0.18);  color: #fbbf24; }
+    .pill-autumn  { background: rgba(234,88,12,0.18);  color: #fb923c; }
+    .pill-winter  { background: rgba(37,99,235,0.18);  color: #60a5fa; }
+    .cover-footer {
+      position: absolute;
+      bottom: 8mm;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 7.5pt;
+      color: #6b7280;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── CONTENT PAGES ── */
+    .content-page {
+      padding: 0;
+      background: white;
+    }
+    .page-header {
+      padding: 7mm 14mm 6mm;
+      border-bottom: 0.3mm solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .page-header-logo {
+      font-size: 8pt;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #DC2626;
+    }
+    .page-header-logo span { color: #1a1a1a; }
+    .page-header-title {
+      font-size: 7.5pt;
+      color: #9ca3af;
+      letter-spacing: 0.05em;
+    }
+    .page-body {
+      padding: 8mm 14mm 6mm;
+    }
+
+    /* ── SEASON SECTION ── */
+    .season-block {
+      margin-bottom: 8mm;
+    }
+    .season-header {
+      display: flex;
+      align-items: center;
+      gap: 3.5mm;
+      padding: 4mm 5mm;
+      border-radius: 2.5mm;
+      margin-bottom: 5mm;
+    }
+    .season-emoji {
+      font-size: 18pt;
+      line-height: 1;
+    }
+    .season-title-group { flex: 1; }
+    .season-name {
+      font-size: 15pt;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .season-period {
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-top: 0.5mm;
+    }
+    .season-badge {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 1.5mm 3.5mm;
+      border-radius: 10mm;
+      white-space: nowrap;
+    }
+
+    /* Objective banner */
+    .objective-banner {
+      background: #f9fafb;
+      border-left: 3px solid currentColor;
+      padding: 3mm 4.5mm;
+      border-radius: 0 2mm 2mm 0;
+      margin-bottom: 5mm;
+      font-size: 8.5pt;
+      color: #4b5563;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .objective-banner strong {
+      font-style: normal;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    /* Priorities */
+    .section-label {
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-left: 2.5px solid;
+      padding-left: 3mm;
+      margin-bottom: 3mm;
+    }
+    .priorities-list {
+      list-style: none;
+      margin-bottom: 5mm;
+    }
+    .priority-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 3mm;
+      margin-bottom: 2.5mm;
+    }
+    .priority-num {
+      min-width: 5.5mm;
+      height: 5.5mm;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7pt;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+      margin-top: 0.3mm;
+    }
+    .priority-content {
+      font-size: 8.5pt;
+      color: #374151;
+      line-height: 1.55;
+    }
+    .priority-content strong {
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+
+    /* Two-column layout for priorities + checklist */
+    .season-cols {
+      display: grid;
+      grid-template-columns: 1fr 78mm;
+      gap: 5mm;
+      align-items: start;
+    }
+    .checklist-panel {
+      border-radius: 2.5mm;
+      padding: 3.5mm 4mm;
+    }
+    .checklist-title {
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 3mm;
+    }
+    .checklist-single {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5mm;
+      font-size: 8pt;
+      color: #374151;
+      line-height: 1.4;
+    }
+    .checklist-box {
+      min-width: 4mm;
+      width: 4mm;
+      height: 4mm;
+      border: 1.5px solid;
+      border-radius: 0.8mm;
+      flex-shrink: 0;
+      background: white;
+      margin-top: 0.5mm;
+    }
+
+    /* Page footer */
+    .page-footer {
+      position: absolute;
+      bottom: 5mm;
+      left: 14mm; right: 14mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #9ca3af;
+      border-top: 0.3mm solid #e5e7eb;
+      padding-top: 3mm;
+    }
+
+    /* ── BACK COVER ── */
+    .back-cover {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 297mm;
+      color: white;
+      text-align: center;
+      padding: 16mm 14mm;
+      position: relative;
+    }
+    .back-cover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4mm;
+      background: #DC2626;
+    }
+    .back-cover-icon {
+      font-size: 30pt;
+      margin-bottom: 6mm;
+    }
+    .back-cover-thank {
+      font-size: 20pt;
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 4mm;
+    }
+    .back-cover-sub {
+      font-size: 11pt;
+      color: #9ca3af;
+      margin-bottom: 10mm;
+    }
+    .back-cover-divider {
+      width: 16mm;
+      height: 1px;
+      background: #DC2626;
+      margin: 0 auto 10mm;
+    }
+    .back-cover-url {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #DC2626;
+      letter-spacing: 0.04em;
+      margin-bottom: 4mm;
+    }
+    .back-cover-guide {
+      font-size: 8.5pt;
+      color: #6b7280;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .back-cover-seasons {
+      display: flex;
+      gap: 5mm;
+      margin-top: 12mm;
+    }
+    .back-season-dot {
+      width: 8mm;
+      height: 8mm;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PAGE 1: COVER                                  -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="page">
+    <div class="cover">
+      <div class="cover-logo">ESSENTIEL <span>CAR</span></div>
+      <div class="cover-badge">Guide Offert — Pack 4 Guides</div>
+      <div class="cover-icon">🗓️</div>
+      <h1 class="cover-title">Calendrier Entretien<br>par Saison</h1>
+      <div class="cover-divider"></div>
+      <p class="cover-subtitle">Ce qu'il faut faire chaque trimestre pour protéger votre voiture toute l'année</p>
+      <div class="cover-seasons">
+        <span class="cover-season-pill pill-spring">🌸 Printemps</span>
+        <span class="cover-season-pill pill-summer">☀️ Été</span>
+        <span class="cover-season-pill pill-autumn">🍂 Automne</span>
+        <span class="cover-season-pill pill-winter">❄️ Hiver</span>
+      </div>
+      <div class="cover-footer">essentielcar.fr &nbsp;·&nbsp; Guide n°3 sur 4</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PAGE 2: PRINTEMPS + ÉTÉ                        -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="page content-page">
+    <div class="page-header">
+      <div class="page-header-logo">ESSENTIEL <span>CAR</span></div>
+      <div class="page-header-title">Calendrier Entretien par Saison</div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- PRINTEMPS -->
+      <div class="season-block">
+        <div class="season-header" style="background:#f0fdf4;">
+          <span class="season-emoji">🌸</span>
+          <div class="season-title-group">
+            <div class="season-name" style="color:#16a34a;">Printemps</div>
+            <div class="season-period" style="color:#15803d;">Mars – Mai</div>
+          </div>
+          <span class="season-badge" style="background:#dcfce7; color:#15803d;">Après l'hiver</span>
+        </div>
+
+        <div class="objective-banner" style="border-left-color:#16a34a;">
+          <strong>Objectif :</strong> Effacer les dégâts de l'hiver (sel, humidité, froid) et préparer la belle saison.
+        </div>
+
+        <div class="season-cols">
+          <div>
+            <div class="section-label" style="color:#16a34a; border-left-color:#16a34a;">5 priorités</div>
+            <ol class="priorities-list">
+              <li class="priority-item">
+                <div class="priority-num" style="background:#16a34a;">1</div>
+                <div class="priority-content"><strong>Lavage décontaminant complet</strong> — Le sel de déneigement attaque le métal et accélère la rouille. Un lavage en profondeur + passage à l'argile si possible est indispensable après mars.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#16a34a;">2</div>
+                <div class="priority-content"><strong>Inspection des jantes</strong> — Les sels et les chocs de gel laissent des micro-fissures. Nettoyez en profondeur et appliquez un protecteur.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#16a34a;">3</div>
+                <div class="priority-content"><strong>Vérification des joints</strong> — Contrôlez les joints de portes et de coffre : s'ils sont rigides ou craquelés, appliquez un revitalisant caoutchouc.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#16a34a;">4</div>
+                <div class="priority-content"><strong>Application d'une protection carrosserie</strong> — Après avoir éliminé les résidus d'hiver, c'est le moment idéal pour appliquer un spray céramique ou une cire de protection. Ça protégera pour tout l'été.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#16a34a;">5</div>
+                <div class="priority-content"><strong>Changement des essuie-glaces</strong> — Les essuie-glaces d'hiver (plus épais) doivent être remplacés par des modèles été. Vérifiez aussi le niveau de lave-glace.</div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="checklist-panel" style="background:#f0fdf4;">
+            <div class="checklist-title">✔ Check-list Printemps</div>
+            <div class="checklist-single">
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#16a34a;"></div><span>Lavage carrosserie décontaminant</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#16a34a;"></div><span>Nettoyage et protection jantes</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#16a34a;"></div><span>Vérification + revitalisation joints</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#16a34a;"></div><span>Application protection carrosserie (cire ou céramique)</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#16a34a;"></div><span>Changement essuie-glaces</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#16a34a;"></div><span>Remplacement lave-glace (formule été)</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#16a34a;"></div><span>Contrôle pression pneus (la chaleur dilate)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTÉ -->
+      <div class="season-block">
+        <div class="season-header" style="background:#fffbeb;">
+          <span class="season-emoji">☀️</span>
+          <div class="season-title-group">
+            <div class="season-name" style="color:#d97706;">Été</div>
+            <div class="season-period" style="color:#b45309;">Juin – Août</div>
+          </div>
+          <span class="season-badge" style="background:#fef3c7; color:#b45309;">Chaleur et UV</span>
+        </div>
+
+        <div class="objective-banner" style="border-left-color:#d97706;">
+          <strong>Objectif :</strong> Protéger contre les UV, la chaleur et les déjections d'oiseaux.
+        </div>
+
+        <div class="season-cols">
+          <div>
+            <div class="section-label" style="color:#d97706; border-left-color:#d97706;">5 priorités</div>
+            <ol class="priorities-list">
+              <li class="priority-item">
+                <div class="priority-num" style="background:#d97706;">1</div>
+                <div class="priority-content"><strong>Protection contre les UV</strong> — Le soleil estival dégrade le vernis et les plastiques. Un spray UV protecteur sur les plastiques intérieurs et un bon écran solaire (teinture ou parasol) limitent les dégâts.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#d97706;">2</div>
+                <div class="priority-content"><strong>Nettoyage rapide des fientes d'oiseaux</strong> — URGENCE : les fientes d'oiseaux sont très acides et peuvent attaquer le vernis en 24-48h par forte chaleur. Ne jamais laisser sécher. Enlever avec une lingette humide dès que possible.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#d97706;">3</div>
+                <div class="priority-content"><strong>Entretien de la climatisation</strong> — Faites désinfecter la clim tous les 2 ans minimum. En été, elle travaille constamment et des bactéries peuvent se développer dans l'évaporateur.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#d97706;">4</div>
+                <div class="priority-content"><strong>Hydratation des sièges cuir</strong> — La chaleur dessèche le cuir. Appliquez une crème hydratante pour cuir tous les 2 mois en été.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#d97706;">5</div>
+                <div class="priority-content"><strong>Vérification du niveau d'eau</strong> — Chaleur = évaporation accélérée. Contrôlez le liquide de refroidissement, le lave-glace et l'huile chaque mois.</div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="checklist-panel" style="background:#fffbeb;">
+            <div class="checklist-title">✔ Check-list Été</div>
+            <div class="checklist-single">
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#d97706;"></div><span>Application protecteur UV plastiques intérieurs</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#d97706;"></div><span>Nettoyage immédiat fientes d'oiseaux</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#d97706;"></div><span>Désinfection climatisation (si nécessaire)</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#d97706;"></div><span>Hydratation sièges cuir</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#d97706;"></div><span>Contrôle liquide refroidissement</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#d97706;"></div><span>Protection capot (parasol ou teinture)</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#d97706;"></div><span>Vérification usure pneus (chaleur = usure rapide)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>essentielcar.fr</span>
+      <span>Calendrier Entretien par Saison</span>
+      <span>Guide n°3/4 — Page 1</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PAGE 3: AUTOMNE + HIVER                        -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="page content-page">
+    <div class="page-header">
+      <div class="page-header-logo">ESSENTIEL <span>CAR</span></div>
+      <div class="page-header-title">Calendrier Entretien par Saison</div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- AUTOMNE -->
+      <div class="season-block">
+        <div class="season-header" style="background:#fff7ed;">
+          <span class="season-emoji">🍂</span>
+          <div class="season-title-group">
+            <div class="season-name" style="color:#ea580c;">Automne</div>
+            <div class="season-period" style="color:#c2410c;">Septembre – Novembre</div>
+          </div>
+          <span class="season-badge" style="background:#ffedd5; color:#c2410c;">Préparer l'hiver</span>
+        </div>
+
+        <div class="objective-banner" style="border-left-color:#ea580c;">
+          <strong>Objectif :</strong> Protéger la voiture avant l'humidité et le froid.
+        </div>
+
+        <div class="season-cols">
+          <div>
+            <div class="section-label" style="color:#ea580c; border-left-color:#ea580c;">5 priorités</div>
+            <ol class="priorities-list">
+              <li class="priority-item">
+                <div class="priority-num" style="background:#ea580c;">1</div>
+                <div class="priority-content"><strong>Traitement anti-pluie pour les vitres</strong> — Appliquez un répulsif eau (type Rain-X ou équivalent) sur le pare-brise et toutes les vitres. L'eau perle, la visibilité est transformée.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#ea580c;">2</div>
+                <div class="priority-content"><strong>Dernière protection carrosserie avant l'hiver</strong> — Appliquez une cire ou spray céramique à fort pouvoir protecteur. Elle résistera au sel et à l'humidité pendant tout l'hiver.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#ea580c;">3</div>
+                <div class="priority-content"><strong>Vérification de l'éclairage</strong> — Les jours raccourcissent. Testez tous les feux : position, croisement, route, stop, clignotants, feux de brouillard.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#ea580c;">4</div>
+                <div class="priority-content"><strong>Préparation des pneus neige</strong> — Dès que les températures descendent sous 7°C régulièrement, les pneus été perdent en efficacité. Prévoyez le changement.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#ea580c;">5</div>
+                <div class="priority-content"><strong>Nettoyage des canaux de drainage</strong> — Feuilles mortes = canaux bouchés = infiltrations d'eau. Vérifiez et nettoyez les canaux sous le capot et autour du coffre.</div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="checklist-panel" style="background:#fff7ed;">
+            <div class="checklist-title">✔ Check-list Automne</div>
+            <div class="checklist-single">
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#ea580c;"></div><span>Application anti-pluie sur toutes les vitres</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#ea580c;"></div><span>Cire ou céramique protection avant hiver</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#ea580c;"></div><span>Test complet de l'éclairage</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#ea580c;"></div><span>Programmation changement pneus neige</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#ea580c;"></div><span>Nettoyage canaux de drainage</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#ea580c;"></div><span>Vérification batterie (le froid l'affaiblit)</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#ea580c;"></div><span>Remplacement lave-glace (formule hiver, résistant -20°C)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIVER -->
+      <div class="season-block">
+        <div class="season-header" style="background:#eff6ff;">
+          <span class="season-emoji">❄️</span>
+          <div class="season-title-group">
+            <div class="season-name" style="color:#2563eb;">Hiver</div>
+            <div class="season-period" style="color:#1d4ed8;">Décembre – Février</div>
+          </div>
+          <span class="season-badge" style="background:#dbeafe; color:#1d4ed8;">Résister au froid</span>
+        </div>
+
+        <div class="objective-banner" style="border-left-color:#2563eb;">
+          <strong>Objectif :</strong> Minimiser les dégâts du gel, du sel et de l'humidité.
+        </div>
+
+        <div class="season-cols">
+          <div>
+            <div class="section-label" style="color:#2563eb; border-left-color:#2563eb;">5 priorités</div>
+            <ol class="priorities-list">
+              <li class="priority-item">
+                <div class="priority-num" style="background:#2563eb;">1</div>
+                <div class="priority-content"><strong>Ne jamais verser d'eau chaude sur le pare-brise givré</strong> — Le choc thermique peut le fissurer. Utilisez un grattoir + désembouage ou laissez chauffer la voiture.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#2563eb;">2</div>
+                <div class="priority-content"><strong>Rincez régulièrement sous le châssis</strong> — Si vous roulez sur routes salées, un rinçage au jet sous le châssis toutes les 2 semaines prévient la rouille.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#2563eb;">3</div>
+                <div class="priority-content"><strong>Protégez les serrures</strong> — Les serrures gèlent ! Appliquez du spray silicone dans les serrures de portes et coffre en début d'hiver.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#2563eb;">4</div>
+                <div class="priority-content"><strong>Maintenez le plein de carburant</strong> — Un réservoir vide par grand froid = condensation = eau dans le carburant. Gardez le réservoir au moins à moitié.</div>
+              </li>
+              <li class="priority-item">
+                <div class="priority-num" style="background:#2563eb;">5</div>
+                <div class="priority-content"><strong>Vérifiez la batterie</strong> — Le froid réduit jusqu'à 50% la puissance d'une batterie. Une batterie faible en été peut ne plus démarrer en hiver. Faites-la tester si elle a plus de 3 ans.</div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="checklist-panel" style="background:#eff6ff;">
+            <div class="checklist-title">✔ Check-list Hiver</div>
+            <div class="checklist-single">
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#2563eb;"></div><span>Spray anti-gel serrures</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#2563eb;"></div><span>Grattoir dans le véhicule</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#2563eb;"></div><span>Rincage châssis 2x/mois (si sel sur les routes)</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#2563eb;"></div><span>Vérification batterie</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#2563eb;"></div><span>Plein de carburant régulier</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#2563eb;"></div><span>Maintien de la cire protectrice</span></div>
+              <div class="checklist-item"><div class="checklist-box" style="border-color:#2563eb;"></div><span>Contrôle pression pneus (le froid les dégonfle)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>essentielcar.fr</span>
+      <span>Calendrier Entretien par Saison</span>
+      <span>Guide n°3/4 — Page 2</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- PAGE 4: BACK COVER                             -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="page">
+    <div class="back-cover">
+      <div class="back-cover-icon">🚗</div>
+      <div class="back-cover-thank">Merci d'être client<br>Essentiel Car</div>
+      <div class="back-cover-sub">Retrouvez tous nos produits sur</div>
+      <div class="back-cover-divider"></div>
+      <div class="back-cover-url">essentielcar.fr</div>
+      <div class="back-cover-guide">Guide n°3 / 4</div>
+      <div class="back-cover-seasons">
+        <div class="back-season-dot" style="background:#16a34a;" title="Printemps"></div>
+        <div class="back-season-dot" style="background:#d97706;" title="Été"></div>
+        <div class="back-season-dot" style="background:#ea580c;" title="Automne"></div>
+        <div class="back-season-dot" style="background:#2563eb;" title="Hiver"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
