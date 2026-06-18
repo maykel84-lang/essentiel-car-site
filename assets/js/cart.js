@@ -181,6 +181,8 @@ function renderCart() {
       ${isFr ? 'Paiement 100% sécurisé · SSL · Chiffrement 3D Secure' : '100% secure payment · SSL · 3D Secure encryption'}
     </p>
 
+    ${renderInCartBestsellerScroll(cartIds, isFr)}
+
     <a href="boutique.html" class="cart-continue-link">
       ← ${isFr ? 'Continuer mes achats' : 'Continue shopping'}
     </a>
@@ -318,6 +320,36 @@ function clearCart() {
   if (!confirm(msg)) return;
   saveCart([]);
   renderCart();
+}
+
+function renderInCartBestsellerScroll(cartIds, isFr) {
+  if (typeof PRODUCTS === 'undefined') return '';
+  const products = PRODUCTS
+    .filter(p => p.badgeType === 'bestseller' && !cartIds.includes(p.id))
+    .slice(0, 6);
+  if (products.length === 0) return '';
+  const fmt = v => v.toFixed(2).replace('.', ',') + '€';
+  return `
+    <div class="cart-bs-scroll-section">
+      <p class="cart-bs-scroll-title">${isFr ? '⭐ Complétez votre panier' : '⭐ Complete your cart'}</p>
+      <div class="cart-bs-scroll-track">
+        ${products.map(p => {
+          const d = p[isFr ? 'fr' : 'en'] || p.fr;
+          return `<div class="cart-bs-scroll-card">
+            <a href="product.html?id=${p.id}" class="cart-bs-scroll-img-link">
+              <div class="cart-bs-scroll-img" style="background:radial-gradient(ellipse at 40% 40%,${p.accentColor} 0%,#111 100%)">
+                ${p.images?.[0]
+                  ? `<img src="${p.images[0]}" alt="${d.name}" loading="lazy">`
+                  : `<span>${p.icon}</span>`}
+              </div>
+            </a>
+            <p class="cart-bs-scroll-name">${d.name}</p>
+            <p class="cart-bs-scroll-price">${fmt(p.price)}</p>
+            <button class="btn btn--primary cart-bs-scroll-add" onclick="addBsToCart('${p.id}')">${isFr ? '+ Ajouter' : '+ Add'}</button>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
 }
 
 function addBsToCart(productId) {

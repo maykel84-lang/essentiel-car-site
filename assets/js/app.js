@@ -1012,15 +1012,25 @@ function renderCartPanel() {
         : '');
   const totalItems = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
   const uniqueProducts = cart.length;
-  const gwpUnlocked = uniqueProducts >= 2;
-  const gwpBar = `<div class="gwp-bar${gwpUnlocked ? ' gwp-unlocked' : ''}">
-    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau débloqué !' : '🎁 Cadeau offert dès 2 produits différents'}</div>
-    <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (uniqueProducts / 2) * 100)}%"></div></div>
-    <div class="gwp-bar-sub">${gwpUnlocked
-      ? '✓ Code promo -15% + Guide Entretien Auto offerts par e-mail après commande !'
-      : uniqueProducts === 0
-        ? 'Ajoutez 2 produits différents et recevez un code promo -15% + Guide Auto offerts 🎁'
-        : 'Plus qu\'1 produit différent pour débloquer votre code promo -15% + Guide Auto 🎁'
+  const gwpTier = subtotal >= 100 ? 2 : (uniqueProducts >= 2 ? 1 : 0);
+  const gwpBar = `<div class="gwp-bar${gwpTier > 0 ? ' gwp-unlocked' : ''}${gwpTier === 2 ? ' gwp-tier2' : ''}">
+    <div class="gwp-bar-header">${
+      gwpTier === 2 ? '🎁🎁 4 Guides PDF débloqués !' :
+      gwpTier === 1 ? '🎁 2 Guides PDF débloqués !' :
+      '🎁 Guides PDF offerts dès 2 produits différents'
+    }</div>
+    <div class="gwp-progress-track gwp-progress-track--dual">
+      <div class="gwp-progress-fill" style="width:${Math.min(100, gwpTier === 2 ? 100 : (uniqueProducts / 2) * 100)}%"></div>
+      <div class="gwp-progress-milestone" style="left:50%" title="2 guides"></div>
+    </div>
+    <div class="gwp-bar-sub">${
+      gwpTier === 2
+        ? '✓ 4 Guides PDF Auto offerts par e-mail — Entretien, Saisons, Astuces Pro + Detailing 🎉'
+        : gwpTier === 1
+        ? `✓ 2 Guides PDF offerts ! Dépensez encore <strong>${(100 - subtotal).toFixed(2).replace('.', ',')}€</strong> pour débloquer <strong>4 Guides PDF</strong> 🚀`
+        : uniqueProducts === 0
+          ? 'Ajoutez 2 produits différents → 2 Guides PDF offerts, dès 100€ → 4 Guides PDF 🎁'
+          : 'Plus qu\'1 produit différent pour débloquer vos 2 premiers Guides PDF 🎁'
     }</div>
   </div>`;
 
