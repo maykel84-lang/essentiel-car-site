@@ -4979,6 +4979,191 @@ body.cart-panel-active { overflow: hidden; }
 .product-main-img-wrap { cursor: zoom-in; }
 
 /* ═══════════════════════════════════════════════════════════
+   AVANT / APRÈS SLIDER
+   ═══════════════════════════════════════════════════════════ */
+.ba-section {
+  background: var(--black-1);
+}
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.ba-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ba-wrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  user-select: none;
+  cursor: col-resize;
+  touch-action: pan-y;
+}
+
+.ba-after {
+  position: absolute;
+  inset: 0;
+}
+
+.ba-after img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.ba-before {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  clip-path: inset(0 50% 0 0);
+  will-change: clip-path;
+}
+
+/* Dirty-state backgrounds */
+.ba-before-polish {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(90,65,20,0.7) 0%, transparent 55%),
+    radial-gradient(ellipse at 72% 62%, rgba(65,45,12,0.6) 0%, transparent 50%),
+    linear-gradient(135deg, #1e1608 0%, #2e2208 45%, #0e0c07 100%);
+}
+.ba-before-polish::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -42deg,
+    transparent 0px, transparent 9px,
+    rgba(255,255,255,0.04) 9px, rgba(255,255,255,0.04) 10px
+  );
+}
+
+.ba-before-vacuum {
+  background:
+    radial-gradient(ellipse at 40% 35%, rgba(85,55,30,0.75) 0%, transparent 52%),
+    radial-gradient(ellipse at 68% 72%, rgba(55,38,20,0.6) 0%, transparent 45%),
+    linear-gradient(155deg, #1c140d 0%, #251b0c 50%, #0e0b07 100%);
+}
+
+.ba-before-compressor {
+  background:
+    radial-gradient(ellipse at 38% 55%, rgba(55,50,30,0.8) 0%, transparent 52%),
+    radial-gradient(ellipse at 70% 32%, rgba(65,58,28,0.55) 0%, transparent 42%),
+    linear-gradient(148deg, #1a160e 0%, #211b0e 48%, #0c0a06 100%);
+}
+
+.ba-before-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ba-state-tag {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+}
+
+.ba-state-desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.1vw, 0.78rem);
+  color: rgba(255,255,255,0.28);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Corner AVANT / APRÈS tags */
+.ba-corner-tag {
+  position: absolute;
+  top: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 2px;
+  z-index: 10;
+  pointer-events: none;
+}
+.ba-corner-tag--before {
+  left: 0.6rem;
+  background: rgba(0,0,0,0.6);
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.ba-corner-tag--after {
+  right: 0.6rem;
+  background: var(--red);
+  color: var(--white);
+}
+
+/* Divider line + handle button */
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255,255,255,0.85);
+  z-index: 20;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.ba-handle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.55);
+  color: var(--black);
+}
+
+.ba-card-name {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--white);
+}
+.ba-card-name span {
+  color: var(--red);
+}
+
+@media (max-width: 900px) {
+  .ba-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
    PNG LOGO — crop to content area (1055×240 within 1080×1080)
    ═══════════════════════════════════════════════════════════ */
 .logo-img-crop {

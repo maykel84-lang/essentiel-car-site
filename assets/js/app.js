@@ -1075,6 +1075,30 @@ function initComparisonTable() {
   rows.forEach(r => obs.observe(r));
 }
 
+/* ── Avant / Après slider ── */
+function initBeforeAfter() {
+  document.querySelectorAll('[data-ba]').forEach(wrap => {
+    const before = wrap.querySelector('.ba-before');
+    const handle = wrap.querySelector('.ba-handle');
+    let dragging = false;
+
+    function setPos(clientX) {
+      const r = wrap.getBoundingClientRect();
+      const pct = Math.min(Math.max((clientX - r.left) / r.width, 0), 1) * 100;
+      before.style.clipPath = `inset(0 ${(100 - pct).toFixed(2)}% 0 0)`;
+      handle.style.left = `${pct.toFixed(2)}%`;
+    }
+
+    wrap.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+
+    wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
+  });
+}
+
 /* ── DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loader')) {
@@ -1084,4 +1108,5 @@ document.addEventListener('DOMContentLoaded', () => {
     startAnimations();
   }
   initComparisonTable();
+  if (document.querySelector('[data-ba]')) initBeforeAfter();
 });
