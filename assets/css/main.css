@@ -5014,7 +5014,8 @@ body.cart-panel-active { overflow: hidden; }
   inset: 0;
 }
 
-.ba-after img {
+.ba-after img,
+.ba-before img {
   width: 100%;
   height: 100%;
   object-fit: cover;
