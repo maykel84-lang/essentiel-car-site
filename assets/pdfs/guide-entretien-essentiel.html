@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Guide Entretien Auto Essentiel — Essentiel Car</title>
+  <style>
+    /* Print-optimized styles */
+    @page { size: A4; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: white; }
+
+    /* Page breaks */
+    .page { width: 210mm; min-height: 297mm; padding: 0; page-break-after: always; position: relative; overflow: hidden; }
+    .page:last-child { page-break-after: avoid; }
+
+    /* Cover */
+    .cover { background: #1a1a1a; color: white; display: flex; flex-direction: column; justify-content: space-between; padding: 60px 50px; }
+    .cover-logo { font-size: 13px; font-weight: 800; letter-spacing: 0.15em; color: #DC2626; text-transform: uppercase; }
+    .cover-logo span { color: white; }
+    .cover-tagline { font-size: 10px; color: #6b7280; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 4px; }
+    .cover-badge { display: inline-block; background: #DC2626; color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
+    .cover-title { font-size: 42px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .cover-title span { color: #DC2626; }
+    .cover-sub { font-size: 15px; color: #9ca3af; line-height: 1.6; max-width: 400px; }
+    .cover-footer { font-size: 12px; color: #6b7280; }
+    .cover-deco { position: absolute; bottom: -40px; right: -40px; width: 300px; height: 300px; border-radius: 50%; background: rgba(220,38,38,0.08); }
+    .cover-deco2 { position: absolute; bottom: 60px; right: 80px; width: 150px; height: 150px; border-radius: 50%; background: rgba(220,38,38,0.05); }
+    .cover-deco3 { position: absolute; top: -60px; right: 120px; width: 200px; height: 200px; border-radius: 50%; background: rgba(220,38,38,0.04); }
+
+    /* Page header */
+    .page-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 50px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; font-size: 11px; color: #9ca3af; }
+    .page-header-logo { font-weight: 800; color: #DC2626; letter-spacing: 0.1em; font-size: 11px; text-transform: uppercase; }
+
+    /* Content pages */
+    .content-page { padding: 36px 50px 40px; }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .section-num { width: 40px; height: 40px; border-radius: 50%; background: #DC2626; color: white; font-size: 16px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .section-title { font-size: 22px; font-weight: 800; color: #1a1a1a; }
+    .section-subtitle { font-size: 13px; color: #6b7280; margin-top: 3px; }
+
+    /* Rules list */
+    .rules-list { display: flex; flex-direction: column; gap: 14px; }
+    .rule-item { display: flex; gap: 16px; padding: 18px; background: #f9fafb; border-radius: 10px; border-left: 3px solid #DC2626; }
+    .rule-num { font-size: 24px; font-weight: 900; color: #DC2626; line-height: 1; flex-shrink: 0; min-width: 24px; }
+    .rule-body { flex: 1; }
+    .rule-title { font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+    .rule-desc { font-size: 12.5px; color: #6b7280; line-height: 1.5; }
+
+    /* Steps list */
+    .steps-list { display: flex; flex-direction: column; gap: 13px; margin-bottom: 16px; }
+    .step { display: flex; gap: 14px; align-items: flex-start; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: #1a1a1a; color: white; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .step-content { flex: 1; }
+    .step-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; color: #1a1a1a; }
+    .step-desc { font-size: 12.5px; color: #6b7280; line-height: 1.5; }
+    .tip-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 11px 14px; font-size: 12px; color: #92400e; margin-top: 6px; line-height: 1.5; }
+    .warning-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 11px 14px; font-size: 12px; color: #991b1b; margin-top: 6px; line-height: 1.5; }
+    .time-badge { display: inline-flex; align-items: center; gap: 6px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 600; color: #166534; margin-top: 14px; }
+
+    /* Two-column layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    /* Checklist */
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .checklist li { display: flex; align-items: center; gap: 12px; font-size: 13.5px; font-weight: 500; padding: 11px 16px; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; color: #1a1a1a; }
+    .checkbox { width: 20px; height: 20px; border: 2px solid #d1d5db; border-radius: 4px; flex-shrink: 0; background: white; }
+
+    /* Checklist intro block */
+    .checklist-intro { background: #1a1a1a; color: white; border-radius: 10px; padding: 18px 20px; margin-bottom: 22px; display: flex; justify-content: space-between; align-items: center; }
+    .checklist-intro-text { font-size: 13px; color: #9ca3af; line-height: 1.6; }
+    .checklist-intro-badge { background: #DC2626; color: white; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; white-space: nowrap; margin-left: 20px; flex-shrink: 0; }
+
+    /* Back cover */
+    .back-cover { background: #1a1a1a; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 50px; gap: 0; }
+    .back-cover-inner { max-width: 420px; }
+    .back-cover h2 { font-size: 30px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+    .back-cover p { font-size: 14px; color: #9ca3af; line-height: 1.7; margin-bottom: 12px; }
+    .back-cover .site { font-size: 18px; font-weight: 700; color: #DC2626; margin: 10px 0 20px; display: block; letter-spacing: 0.05em; }
+    .back-cover-divider { width: 50px; height: 2px; background: #DC2626; margin: 24px auto; border-radius: 2px; }
+    .guide-num { font-size: 11px; color: #6b7280; margin-top: 28px; letter-spacing: 0.05em; }
+    .back-cover-deco { position: absolute; top: -50px; left: -50px; width: 250px; height: 250px; border-radius: 50%; background: rgba(220,38,38,0.06); }
+    .back-cover-deco2 { position: absolute; bottom: -30px; right: -30px; width: 200px; height: 200px; border-radius: 50%; background: rgba(220,38,38,0.05); }
+    .upsell-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px 20px; margin-top: 8px; }
+    .upsell-box p { font-size: 12.5px; color: #9ca3af; margin-bottom: 0; }
+    .upsell-box strong { color: white; }
+
+    /* Section divider line */
+    .section-divider { height: 1px; background: #e5e7eb; margin: 24px 0; }
+
+    /* Info callout */
+    .info-callout { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 13px 16px; font-size: 12.5px; color: #1e40af; line-height: 1.55; margin-bottom: 22px; }
+
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== PAGE 1: COVER ===================== -->
+  <div class="page cover">
+    <div>
+      <div class="cover-logo">ESSENTIEL <span>CAR</span></div>
+      <div class="cover-tagline">Accessoires Auto Premium</div>
+    </div>
+    <div>
+      <div class="cover-badge">Guide Offert</div>
+      <h1 class="cover-title">Guide Entretien<br><span>Auto Essentiel</span></h1>
+      <p class="cover-sub">Les fondamentaux pour garder votre voiture en parfait état — à lire une fois, à appliquer toute l'année.</p>
+    </div>
+    <div class="cover-footer">essentielcar.fr &nbsp;·&nbsp; Guide n°1 sur 4</div>
+    <div class="cover-deco"></div>
+    <div class="cover-deco2"></div>
+    <div class="cover-deco3"></div>
+  </div>
+
+  <!-- ===================== PAGE 2: 5 RÈGLES D'OR ===================== -->
+  <div class="page">
+    <div class="page-header">
+      <div class="page-header-logo">ESSENTIEL CAR</div>
+      <div>Guide Entretien Auto · Section 1</div>
+    </div>
+    <div class="content-page">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <div>
+          <div class="section-title">Les 5 Règles d'Or</div>
+          <div class="section-subtitle">Les principes essentiels à ne jamais oublier</div>
+        </div>
+      </div>
+
+      <div class="info-callout">
+        Avant d'aller dans le détail des techniques, ces 5 règles forment la base de tout entretien auto efficace. Les respecter vous fera gagner du temps, de l'argent, et préservera la valeur de votre véhicule.
+      </div>
+
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-num">1</div>
+          <div class="rule-body">
+            <div class="rule-title">Lavez régulièrement — au moins 1 fois par mois</div>
+            <div class="rule-desc">La saleté, les résidus de bitume, les fientes d'oiseaux et les pollens attaquent le vernis de votre carrosserie. Un mois d'accumulation peut provoquer des micro-rayures et des taches difficiles à effacer. La régularité est la clé.</div>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">2</div>
+          <div class="rule-body">
+            <div class="rule-title">Protégez la carrosserie après chaque lavage</div>
+            <div class="rule-desc">Un lavage sans protection laisse la carrosserie nue face aux éléments. Une cire ou un spray céramique crée un film hydrophobe qui repousse l'eau, la saleté et les UV. Quelques secondes d'application suffisent pour plusieurs semaines de protection.</div>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">3</div>
+          <div class="rule-body">
+            <div class="rule-title">Aspirez l'intérieur toutes les 2 semaines</div>
+            <div class="rule-desc">Poussière, acariens et particules fines s'accumulent dans les moquettes et les sièges. Une aspiration régulière préserve la qualité de l'air dans l'habitacle et prolonge la durée de vie des textiles. Pensez aux zones entre les sièges souvent oubliées.</div>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">4</div>
+          <div class="rule-body">
+            <div class="rule-title">Contrôlez la pression des pneus chaque mois</div>
+            <div class="rule-desc">Des pneus sous-gonflés augmentent la consommation de carburant, usent irrégulièrement les pneumatiques et réduisent l'adhérence en virage et au freinage. Un contrôle mensuel à froid prend moins de 5 minutes et peut vous sauver la vie.</div>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-num">5</div>
+          <div class="rule-body">
+            <div class="rule-title">N'attendez jamais — traitez les taches immédiatement</div>
+            <div class="rule-desc">Une petite tache traitée rapidement = 10 minutes de travail. La même tache laissée sécher et s'incruster = 2 heures d'effort, voire une tache permanente. La réactivité est votre meilleure arme contre les dégradations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE 3: NETTOYAGE EXTÉRIEUR ===================== -->
+  <div class="page">
+    <div class="page-header">
+      <div class="page-header-logo">ESSENTIEL CAR</div>
+      <div>Guide Entretien Auto · Section 2</div>
+    </div>
+    <div class="content-page">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <div>
+          <div class="section-title">Nettoyage Extérieur</div>
+          <div class="section-subtitle">Étape par étape — pour un résultat professionnel à la maison</div>
+        </div>
+      </div>
+
+      <div class="steps-list">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Rinçage initial</div>
+            <div class="step-desc">Utilisez de l'eau froide ou tiède pour éliminer la saleté grossière. Commencez par les roues et les bas de caisse, puis remontez vers le toit. <strong>Ne lavez jamais au soleil</strong> : la chaleur fait sécher l'eau trop vite et laisse des auréoles sur la carrosserie.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Application du shampoing carrosserie</div>
+            <div class="step-desc">Diluez votre shampoing carrosserie selon les recommandations. Appliquez avec un gant de lavage en microfibre en effectuant des <strong>mouvements circulaires de haut en bas</strong>. Ne frottez pas trop fort : laissez le produit faire le travail. Traitez une section à la fois pour ne pas laisser sécher la mousse.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Rinçage complet</div>
+            <div class="step-desc">Rincez abondamment en commençant par le toit et en descendant. Assurez-vous qu'aucune trace de shampoing ne reste sur la carrosserie — notamment dans les joints de portes et les moulures. Un rinçage incomplet laisse des résidus blancs en séchant.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Séchage à la microfibre</div>
+            <div class="step-desc">Séchez immédiatement avec un chiffon en microfibre grande taille (600 g/m² ou plus), en tamponnant plutôt qu'en frottant. <strong>N'utilisez jamais une serpillère, une éponge ordinaire ou un journal</strong> — ils rayent le vernis. Commencez par les vitres, puis la carrosserie.</div>
+            <div class="warning-box">⚠️ Erreur à éviter absolument : ne jamais frotter à sec sur la carrosserie. La moindre particule de saleté entre le chiffon et le vernis crée des micro-rayures visibles à la lumière rasante.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Protection de la carrosserie</div>
+            <div class="step-desc">Appliquez un spray coating céramique ou une cire de protection sur la carrosserie encore légèrement tiède. Vaporisez directement sur un chiffon microfibre propre et étalez par petites sections. Un passage en lumière rasante révèle une brillance miroir.</div>
+            <div class="tip-box">💡 Conseil : un spray céramique s'applique en moins de 5 minutes et protège votre carrosserie pendant 4 à 8 semaines. C'est le meilleur rapport temps/efficacité pour un entretien régulier.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-badge">⏱ Temps estimé : 30 à 45 minutes · Fréquence recommandée : 1 fois par mois</div>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE 4: NETTOYAGE INTÉRIEUR ===================== -->
+  <div class="page">
+    <div class="page-header">
+      <div class="page-header-logo">ESSENTIEL CAR</div>
+      <div>Guide Entretien Auto · Section 3</div>
+    </div>
+    <div class="content-page">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <div>
+          <div class="section-title">Nettoyage Intérieur</div>
+          <div class="section-subtitle">Étape par étape — un habitacle propre et sain</div>
+        </div>
+      </div>
+
+      <div class="steps-list">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Vider et déblayer l'habitacle</div>
+            <div class="step-desc">Retirez tous les objets personnels, les tapis amovibles et les rangements. Sortis du véhicule, secouez les tapis vigoureusement avant de les brosser. Un habitacle débarrassé de tous les objets permet un nettoyage complet et efficace sans zones oubliées.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Aspiration complète</div>
+            <div class="step-desc">Aspirez méthodiquement : les sièges (avant et arrière, y compris sous les sièges), les moquettes du plancher, les espaces entre les sièges et la console centrale, les rangements de portes et le coffre. Utilisez les embouts fins pour les zones difficiles d'accès.</div>
+            <div class="tip-box">💡 Utilisez l'embout brosse ronde pour les sièges en tissu afin de déloger les fibres incrustées sans abîmer le tissu.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Tableau de bord et plastiques</div>
+            <div class="step-desc">Utilisez un chiffon microfibre <strong>légèrement humide</strong> (jamais détrempé) pour essuyer le tableau de bord, la console centrale, les panneaux de portes et les aérations. Pour les zones difficiles (boutons, grilles de ventilation), utilisez un pinceau souple ou un coton-tige. Évitez les produits gras qui reflètent la lumière et éblouissent le conducteur.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Vitres intérieures</div>
+            <div class="step-desc">Nettoyez les vitres avec un produit vitre <strong>sans ammoniaque</strong> (l'ammoniaque attaque les films teintés et les plastiques proches). Vaporisez sur un chiffon microfibre spécial vitre, essuyez en mouvements horizontaux puis verticaux pour éviter les traces. Pour la lunette arrière, frottez dans le sens des filaments de dégivrage.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Nettoyage des sièges</div>
+            <div class="step-desc">Le traitement dépend du type de revêtement :</div>
+            <div style="margin-top: 10px;">
+              <div class="two-col">
+                <div style="background: #f9fafb; border-radius: 8px; padding: 13px; border: 1px solid #e5e7eb;">
+                  <div style="font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px;">Sièges tissu</div>
+                  <div style="font-size: 12px; color: #6b7280; line-height: 1.5;">Appliquez un nettoyant mousse spécial tissu. Laissez poser 2 minutes, frottez doucement avec une brosse à poils souples, puis essuyez avec un chiffon microfibre humide. Laissez sécher portes ouvertes.</div>
+                </div>
+                <div style="background: #f9fafb; border-radius: 8px; padding: 13px; border: 1px solid #e5e7eb;">
+                  <div style="font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px;">Sièges cuir</div>
+                  <div style="font-size: 12px; color: #6b7280; line-height: 1.5;">Nettoyez d'abord avec un chiffon légèrement humide, puis appliquez une crème hydratante spéciale cuir auto. Le cuir non nourri se dessèche et craquelle avec le temps. Traitez 4 fois par an minimum.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-badge">⏱ Temps estimé : 20 à 40 minutes · Fréquence recommandée : toutes les 2 semaines</div>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE 5: CHECK-LIST MENSUELLE ===================== -->
+  <div class="page">
+    <div class="page-header">
+      <div class="page-header-logo">ESSENTIEL CAR</div>
+      <div>Guide Entretien Auto · Section 4</div>
+    </div>
+    <div class="content-page">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <div>
+          <div class="section-title">Check-list Mensuelle</div>
+          <div class="section-subtitle">À cocher chaque mois pour un entretien complet et sans oubli</div>
+        </div>
+      </div>
+
+      <div class="checklist-intro">
+        <div class="checklist-intro-text">
+          Cette check-list couvre l'ensemble des opérations d'entretien à réaliser chaque mois. Imprimez-la, affichez-la dans votre garage ou ajoutez-la à votre téléphone. Comptez environ <strong style="color: white;">30 minutes</strong> pour tout cocher.
+        </div>
+        <div class="checklist-intro-badge">30 minutes / mois</div>
+      </div>
+
+      <ul class="checklist">
+        <li>
+          <div class="checkbox"></div>
+          Lavage extérieur complet (rinçage, shampoing, rinçage, séchage)
+        </li>
+        <li>
+          <div class="checkbox"></div>
+          Application spray protection carrosserie ou cire
+        </li>
+        <li>
+          <div class="checkbox"></div>
+          Aspiration complète de l'intérieur (sièges, moquettes, recoins)
+        </li>
+        <li>
+          <div class="checkbox"></div>
+          Nettoyage tableau de bord, console et plastiques intérieurs
+        </li>
+        <li>
+          <div class="checkbox"></div>
+          Contrôle et ajustement de la pression des pneus (à froid)
+        </li>
+        <li>
+          <div class="checkbox"></div>
+          Vérification et remplissage du niveau lave-glace
+        </li>
+        <li>
+          <div class="checkbox"></div>
+          Nettoyage des vitres intérieur et extérieur (sans ammoniaque)
+        </li>
+        <li>
+          <div class="checkbox"></div>
+          Contrôle de l'état et de l'efficacité des essuie-glaces
+        </li>
+      </ul>
+
+      <div class="section-divider"></div>
+
+      <div style="background: #f9fafb; border-radius: 10px; padding: 20px; border: 1px solid #e5e7eb;">
+        <div style="font-size: 13px; font-weight: 800; color: #1a1a1a; margin-bottom: 10px;">Bonus : les 3 vérifications trimestrielles</div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4b5563;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: #DC2626; flex-shrink: 0;"></div>
+            Nettoyage et hydratation des sièges en cuir (crème nourrissante spécialisée)
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4b5563;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: #DC2626; flex-shrink: 0;"></div>
+            Traitement des jantes et des plastiques extérieurs (protecteur UV)
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: #4b5563;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: #DC2626; flex-shrink: 0;"></div>
+            Nettoyage du compartiment moteur (à confier à un professionnel si besoin)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE 6: BACK COVER ===================== -->
+  <div class="page back-cover">
+    <div class="back-cover-deco"></div>
+    <div class="back-cover-deco2"></div>
+    <div class="back-cover-inner">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: #DC2626; text-transform: uppercase; margin-bottom: 32px;">ESSENTIEL CAR · Accessoires Auto Premium</div>
+
+      <h2>Merci d'être client<br>Essentiel Car &#x1F64F;</h2>
+
+      <div class="back-cover-divider"></div>
+
+      <p>Nous espérons que ce guide vous aidera à garder votre voiture dans un état impeccable, tout au long de l'année. Retrouvez tous nos produits d'entretien sélectionnés pour leur qualité sur :</p>
+
+      <span class="site">essentielcar.fr</span>
+
+      <p>Chiffons microfibre premium, sprays coating céramique, shampoings carrosserie, nettoyants intérieurs — tout ce qu'il vous faut, au meilleur rapport qualité-prix.</p>
+
+      <div class="upsell-box">
+        <p><strong>Guide n°1/4 — Découvrez nos 3 autres guides</strong><br>en commandant dès 100€ sur essentielcar.fr :<br>Guide Polissage &amp; Brillance · Guide Hiver · Guide Cuir &amp; Tissu</p>
+      </div>
+
+      <div class="guide-num">© Essentiel Car · essentielcar.fr · Reproduction interdite</div>
+    </div>
+  </div>
+
+</body>
+</html>

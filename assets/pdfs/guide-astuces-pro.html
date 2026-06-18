@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essentiel Car — 10 Astuces Pro</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+      color: #1a1a1a;
+      background: white;
+      font-size: 10pt;
+    }
+
+    /* ── PAGE SHELL ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 0;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+      background: white;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* ── COVER PAGE ── */
+    .cover {
+      background: #1a1a1a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 50px;
+      min-height: 297mm;
+    }
+
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo-main {
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: white;
+      line-height: 1;
+    }
+
+    .logo-main span {
+      color: #DC2626;
+    }
+
+    .logo-sub {
+      font-size: 7pt;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9ca3af;
+      font-weight: 400;
+    }
+
+    .badge {
+      background: #DC2626;
+      color: white;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
+    .cover-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 0 40px;
+    }
+
+    .cover-eyebrow {
+      font-size: 8pt;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #DC2626;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .cover-title {
+      font-size: 54pt;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .cover-title-accent {
+      font-size: 54pt;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: #DC2626;
+    }
+
+    .cover-title-sub {
+      font-size: 22pt;
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      color: white;
+      margin-top: 8px;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 4px;
+      background: #DC2626;
+      margin: 30px 0;
+    }
+
+    .cover-subtitle {
+      font-size: 12pt;
+      color: #9ca3af;
+      line-height: 1.6;
+      max-width: 380px;
+      font-weight: 300;
+    }
+
+    .cover-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #374151;
+      padding-top: 20px;
+    }
+
+    .cover-url {
+      font-size: 8pt;
+      color: #6b7280;
+      letter-spacing: 1px;
+    }
+
+    .cover-guide-num {
+      font-size: 8pt;
+      color: #6b7280;
+      letter-spacing: 1px;
+    }
+
+    /* ── CONTENT PAGES ── */
+    .content-page {
+      padding: 0;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-header {
+      background: #1a1a1a;
+      padding: 14px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-header-logo {
+      font-size: 10pt;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.3px;
+    }
+
+    .page-header-logo span {
+      color: #DC2626;
+    }
+
+    .page-header-label {
+      font-size: 7pt;
+      color: #9ca3af;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .content-body {
+      flex: 1;
+      padding: 28px 30px 20px;
+    }
+
+    /* ── ASTUCE CARD ── */
+    .astuce {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      padding: 16px 18px;
+      border-radius: 6px;
+      background: #f9fafb;
+      border-left: 3px solid #e5e7eb;
+      page-break-inside: avoid;
+    }
+
+    .astuce.accent {
+      background: white;
+      border-left: 3px solid #DC2626;
+      border: 1px solid #e5e7eb;
+      border-left: 3px solid #DC2626;
+    }
+
+    .astuce-number {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: #1a1a1a;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11pt;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .astuce.accent .astuce-number {
+      background: #DC2626;
+    }
+
+    .astuce-content {
+      flex: 1;
+    }
+
+    .astuce-em {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #DC2626;
+      margin-bottom: 3px;
+    }
+
+    .astuce-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+    }
+
+    .astuce-body {
+      font-size: 9pt;
+      color: #4b5563;
+      line-height: 1.65;
+    }
+
+    .astuce-body strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    /* ── FREQUENCY TABLE ── */
+    .frequency-table {
+      margin-top: 8px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .frequency-table tr td {
+      padding: 5px 8px;
+      font-size: 9pt;
+      color: #4b5563;
+      border-bottom: 1px solid #e5e7eb;
+      line-height: 1.4;
+    }
+
+    .frequency-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .frequency-table td:first-child {
+      font-weight: 600;
+      color: #1a1a1a;
+      width: 48%;
+      padding-right: 12px;
+    }
+
+    .frequency-table td.freq-val {
+      color: #DC2626;
+      font-weight: 500;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    /* ── BACK COVER ── */
+    .back-cover {
+      background: #1a1a1a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 50px;
+      min-height: 297mm;
+      gap: 0;
+    }
+
+    .back-cover-icon {
+      font-size: 48pt;
+      margin-bottom: 30px;
+      line-height: 1;
+    }
+
+    .back-cover-title {
+      font-size: 18pt;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .back-cover-divider {
+      width: 50px;
+      height: 3px;
+      background: #DC2626;
+      margin: 24px auto;
+    }
+
+    .back-cover-url {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #DC2626;
+      letter-spacing: -0.5px;
+      margin-bottom: 32px;
+    }
+
+    .back-cover-cta {
+      background: #DC2626;
+      color: white;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 3px;
+      margin-bottom: 40px;
+    }
+
+    .back-cover-guide-info {
+      font-size: 8.5pt;
+      color: #6b7280;
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+      border-top: 1px solid #374151;
+      padding-top: 24px;
+      max-width: 300px;
+    }
+
+    .back-cover-guide-info strong {
+      color: #9ca3af;
+    }
+
+    /* ── PAGE FOOTER ── */
+    .page-footer {
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .page-footer-url {
+      font-size: 7pt;
+      color: #9ca3af;
+      letter-spacing: 1px;
+    }
+
+    .page-footer-page {
+      font-size: 7pt;
+      color: #d1d5db;
+      letter-spacing: 1px;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       PAGE 1 — COVER
+  ══════════════════════════════════════ -->
+  <div class="page">
+    <div class="cover">
+
+      <div class="cover-top">
+        <div class="logo">
+          <div class="logo-main">ESSENTIEL <span>CAR</span></div>
+          <div class="logo-sub">Entretien &amp; Détailing Auto</div>
+        </div>
+        <div class="badge">Guide Offert</div>
+      </div>
+
+      <div class="cover-center">
+        <div class="cover-eyebrow">Guide Professionnel</div>
+        <div class="cover-title">10<br><span class="cover-title-accent">Astuces</span><br><span class="cover-title-sub">Pro</span></div>
+        <div class="cover-divider"></div>
+        <div class="cover-subtitle">
+          Les secrets des détailers que peu d'automobilistes connaissent — pour un entretien impeccable, sans dépense inutile.
+        </div>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-url">essentielcar.fr</div>
+        <div class="cover-guide-num">Guide n°2 sur 4</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       PAGE 2 — ASTUCES 1 à 5
+  ══════════════════════════════════════ -->
+  <div class="page">
+    <div class="content-page">
+
+      <div class="page-header">
+        <div class="page-header-logo">ESSENTIEL <span>CAR</span></div>
+        <div class="page-header-label">10 Astuces Pro — Guide n°2</div>
+      </div>
+
+      <div class="content-body">
+
+        <div class="section-title">Astuces 01 — 05 · Carrosserie &amp; Lavage</div>
+
+        <!-- ASTUCE 1 -->
+        <div class="astuce accent">
+          <div class="astuce-number">1</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Diagnostic</div>
+            <div class="astuce-title">Le test de la main</div>
+            <div class="astuce-body">
+              Pour savoir si votre carrosserie a besoin d'une protection, passez votre main à plat sur le capot après lavage et séchage. Si elle <strong>glisse facilement</strong> : bonne protection. Si elle <strong>"accroche" légèrement</strong> : il est temps d'appliquer une cire ou un spray céramique. Ce test prend 5 secondes et vous évite de gaspiller des produits inutilement.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 2 -->
+        <div class="astuce">
+          <div class="astuce-number">2</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Technique de lavage</div>
+            <div class="astuce-title">La règle des deux sceaux</div>
+            <div class="astuce-body">
+              Utilisez <strong>TOUJOURS deux seaux</strong> lors du lavage : un avec le shampoing, un avec de l'eau claire. Rincez votre éponge/gant dans le seau d'eau propre avant de la tremper dans le shampoing. Sans cette technique, vous re-déposez les particules abrasives sur la carrosserie et créez des micro-rayures invisibles à l'œil nu mais visibles en plein soleil.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 3 -->
+        <div class="astuce accent">
+          <div class="astuce-number">3</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Carrosserie</div>
+            <div class="astuce-title">Le sèche-cheveux pour les autocollants</div>
+            <div class="astuce-body">
+              Pour retirer un autocollant sans laisser de traces : chauffez-le <strong>20 secondes avec un sèche-cheveux</strong> à 15 cm. La chaleur ramollit la colle. Retirez doucement en tirant à 45°. Les résidus de colle partent ensuite à l'alcool isopropylique sur un chiffon microfibre.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 4 -->
+        <div class="astuce">
+          <div class="astuce-number">4</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Intérieur</div>
+            <div class="astuce-title">L'aspirateur avant l'humide</div>
+            <div class="astuce-body">
+              Règle absolue : aspirez <strong>TOUJOURS l'intérieur AVANT</strong> tout nettoyage humide. Si vous nettoyez d'abord avec un produit liquide sur de la poussière, vous créez une boue qui s'incruste dans les coutures et les recoins. L'ordre correct : <strong>sec → humide → sec</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 5 -->
+        <div class="astuce accent">
+          <div class="astuce-number">5</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Intérieur</div>
+            <div class="astuce-title">Nettoyez les vitres en dernier</div>
+            <div class="astuce-body">
+              Les vitres gardent les traces de tout ce que vous touchez. Si vous les nettoyez avant les plastiques, les projections de nettoyant plastique vont les recouvrir. Toujours nettoyer dans l'ordre : <strong>plafond → plastiques → sièges → vitres</strong>.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <div class="page-footer-url">essentielcar.fr</div>
+        <div class="page-footer-page">Page 2 / 4</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       PAGE 3 — ASTUCES 6 à 10
+  ══════════════════════════════════════ -->
+  <div class="page">
+    <div class="content-page">
+
+      <div class="page-header">
+        <div class="page-header-logo">ESSENTIEL <span>CAR</span></div>
+        <div class="page-header-label">10 Astuces Pro — Guide n°2</div>
+      </div>
+
+      <div class="content-body">
+
+        <div class="section-title">Astuces 06 — 10 · Polish, Protection &amp; Entretien</div>
+
+        <!-- ASTUCE 6 -->
+        <div class="astuce">
+          <div class="astuce-number">6</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Polish &amp; Correction</div>
+            <div class="astuce-title">L'huile de coude vs. la machine</div>
+            <div class="astuce-body">
+              Une polish à la main donne un résultat limité car vous n'arrivez pas à maintenir une pression et une vitesse constantes. Un <strong>polish machine</strong> (même d'entrée de gamme) fait en 15 minutes ce qu'une heure à la main ne peut pas égaler. Investissement : <strong>60–80 €</strong>, résultat : professionnel.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 7 -->
+        <div class="astuce accent">
+          <div class="astuce-number">7</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Vitres</div>
+            <div class="astuce-title">Le spray vitre sans ammoniaque</div>
+            <div class="astuce-body">
+              L'ammoniaque présent dans de nombreux nettoyants pour vitres <strong>dégrade progressivement les vitres teintées</strong> et le caoutchouc des joints. Vérifiez toujours que votre produit est "sans ammoniaque" ou utilisez simplement un peu d'alcool isopropylique dilué dans de l'eau.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 8 -->
+        <div class="astuce">
+          <div class="astuce-number">8</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Prévention</div>
+            <div class="astuce-title">L'entretien préventif du caoutchouc</div>
+            <div class="astuce-body">
+              Les joints de portes et vitres se craquèlent et deviennent bruyants avec le temps. Appliquez un <strong>protecteur de caoutchouc</strong> (ou à défaut de la glycérine diluée) sur tous les joints <strong>2 fois par an</strong>. Résultat : joints souples, silence parfait, étanchéité préservée.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 9 -->
+        <div class="astuce accent">
+          <div class="astuce-number">9</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Carrosserie</div>
+            <div class="astuce-title">Le trucage du parking rayé</div>
+            <div class="astuce-body">
+              Une légère rayure superficielle peut souvent disparaître avec du polish + microfibre. <strong>Test :</strong> passez l'ongle dessus. Si l'ongle <strong>ne s'accroche pas</strong>, c'est une micro-rayure dans le vernis — traitable à la maison. Si l'ongle <strong>accroche</strong>, c'est dans la peinture et il faut une correction professionnelle.
+            </div>
+          </div>
+        </div>
+
+        <!-- ASTUCE 10 -->
+        <div class="astuce">
+          <div class="astuce-number">10</div>
+          <div class="astuce-content">
+            <div class="astuce-em">Programme d'entretien</div>
+            <div class="astuce-title">La fréquence idéale</div>
+            <div class="astuce-body">
+              <table class="frequency-table">
+                <tr>
+                  <td>Lavage extérieur</td>
+                  <td class="freq-val">Toutes les 2–3 semaines</td>
+                </tr>
+                <tr>
+                  <td>Protection carrosserie</td>
+                  <td class="freq-val">Tous les 2–3 mois</td>
+                </tr>
+                <tr>
+                  <td>Aspiration intérieur</td>
+                  <td class="freq-val">Toutes les 2 semaines</td>
+                </tr>
+                <tr>
+                  <td>Nettoyage complet intérieur</td>
+                  <td class="freq-val">1× par mois</td>
+                </tr>
+                <tr>
+                  <td>Polish &amp; correction peinture</td>
+                  <td class="freq-val">1–2× par an maximum<br><span style="font-size:8pt;color:#9ca3af;font-weight:400;">(trop souvent enlève du vernis)</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer">
+        <div class="page-footer-url">essentielcar.fr</div>
+        <div class="page-footer-page">Page 3 / 4</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       PAGE 4 — BACK COVER
+  ══════════════════════════════════════ -->
+  <div class="page">
+    <div class="back-cover">
+
+      <div class="back-cover-icon">🙏</div>
+
+      <div class="back-cover-title">Merci d'être client Essentiel Car</div>
+
+      <div class="back-cover-divider"></div>
+
+      <div class="back-cover-url">essentielcar.fr</div>
+
+      <div class="back-cover-cta">Retrouvez nos produits en ligne</div>
+
+      <div class="back-cover-guide-info">
+        <strong>Guide n°2 / 4</strong><br>
+        Commandez dès 100&nbsp;€ pour recevoir les 4 guides complets.<br><br>
+        Chaque guide couvre un domaine essentiel de l'entretien auto — carrosserie, intérieur, protection longue durée et finition professionnelle.
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+</html>
