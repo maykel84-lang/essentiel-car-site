@@ -398,7 +398,7 @@ function renderProducts() {
   const lang  = typeof currentLang !== 'undefined' ? currentLang : 'fr';
   const t_key = lang === 'en' ? 'en' : 'fr';
 
-  const featured = PRODUCTS.slice(0, 6);
+  const featured = PRODUCTS.slice(0, 8);
   grid.innerHTML = featured.map((p, i) => buildProductCard(p, t_key, i + 1)).join('');
   refreshCursorTargets();
   if (typeof initCountdowns === 'function') initCountdowns();
