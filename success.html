@@ -79,6 +79,103 @@
       justify-content: center;
       flex-wrap: wrap;
     }
+
+    /* ── Bloc guides cadeaux ── */
+    .reward-block {
+      margin: 0 auto 2.5rem;
+      max-width: 480px;
+      text-align: left;
+      background: rgba(224, 0, 12, 0.05);
+      border: 1px solid rgba(224, 0, 12, 0.25);
+      border-radius: 16px;
+      padding: 1.5rem 1.5rem 1.75rem;
+    }
+    .reward-block[hidden] { display: none; }
+    .reward-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 0.35rem;
+    }
+    .reward-intro {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .reward-guides { display: flex; flex-direction: column; gap: 0.6rem; }
+    .reward-guide {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 11px;
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+    .reward-guide:hover {
+      border-color: rgba(224, 0, 12, 0.55);
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
+    }
+    .reward-guide-ic {
+      flex: 0 0 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(224, 0, 12, 0.14);
+      border-radius: 8px; color: #E0000C;
+    }
+    .reward-guide-txt {
+      flex: 1; min-width: 0;
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .reward-guide-name {
+      display: block;
+      font-size: 0.92rem; font-weight: 600;
+      color: var(--text-primary); line-height: 1.3;
+    }
+    .reward-guide-dl {
+      display: block;
+      font-size: 0.78rem; color: #E0000C; font-weight: 600;
+    }
+    .reward-guide-arrow { flex: 0 0 auto; color: var(--text-secondary); }
+
+    /* ── Code promo fidélité ── */
+    .reward-promo {
+      margin-top: 1.4rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .reward-promo-label {
+      font-size: 0.85rem; color: var(--text-secondary);
+      margin-bottom: 0.65rem;
+    }
+    .reward-promo-row {
+      display: inline-flex; align-items: stretch;
+      border: 1.5px dashed rgba(224, 0, 12, 0.5);
+      border-radius: 10px; overflow: hidden;
+    }
+    .reward-promo-code {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 1.15rem; font-weight: 700; letter-spacing: 0.08em;
+      color: var(--text-primary);
+      padding: 0.55rem 1rem; display: flex; align-items: center;
+    }
+    .reward-promo-copy {
+      border: none; cursor: pointer;
+      background: #E0000C; color: #fff;
+      font-size: 0.82rem; font-weight: 600;
+      padding: 0 1rem; transition: background 0.2s ease;
+    }
+    .reward-promo-copy:hover { background: #b8000a; }
+    .reward-promo-hint {
+      font-size: 0.78rem; color: var(--text-secondary);
+      margin-top: 0.6rem;
+    }
   </style>
 </head>
 <body class="is-loading">
@@ -175,6 +272,9 @@
         Un email de confirmation vous a été envoyé
       </div>
 
+      <!-- Bloc guides cadeaux (rempli dynamiquement depuis /order-reward) -->
+      <div class="reward-block" id="rewardBlock" hidden></div>
+
       <div class="success-actions">
         <a href="tracking.html" class="btn btn--primary btn--lg">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8l5 2v4h-5M1 16l2 4h11l2-4"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
@@ -205,9 +305,72 @@
   <script src="assets/js/promo-bar.js"></script>
   <script>
     // Only clear cart when arriving from Stripe (session_id present)
-    if (new URLSearchParams(location.search).get('session_id')) {
+    const _sessionId = new URLSearchParams(location.search).get('session_id');
+    if (_sessionId) {
       localStorage.removeItem('ec_cart');
     }
+
+    // ── Récupère et affiche les guides cadeaux gagnés ──
+    (async function loadReward() {
+      if (!_sessionId) return;
+      let data;
+      try {
+        const res = await fetch('/order-reward?session_id=' + encodeURIComponent(_sessionId));
+        data = await res.json();
+      } catch { return; }
+      if (!data || !data.paid || !Array.isArray(data.guides) || data.guides.length === 0) return;
+
+      const esc = s => String(s).replace(/[&<>"]/g, c => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
+      ));
+
+      const guidesHtml = data.guides.map(g => `
+        <a class="reward-guide" href="${esc(g.url)}" download target="_blank" rel="noopener">
+          <span class="reward-guide-ic">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          </span>
+          <span class="reward-guide-txt">
+            <span class="reward-guide-name">${esc(g.title)}</span>
+            <span class="reward-guide-dl">Télécharger le PDF</span>
+          </span>
+          <span class="reward-guide-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>
+          </span>
+        </a>`).join('');
+
+      const promoHtml = data.promo ? `
+        <div class="reward-promo">
+          <p class="reward-promo-label">🎉 Un cadeau pour votre prochaine commande :</p>
+          <div class="reward-promo-row">
+            <span class="reward-promo-code" id="promoCode">${esc(data.promo.code)}</span>
+            <button class="reward-promo-copy" id="promoCopy" type="button">Copier</button>
+          </div>
+          <p class="reward-promo-hint">-${esc(data.promo.percent)}% à saisir lors de votre prochain achat</p>
+        </div>` : '';
+
+      const block = document.getElementById('rewardBlock');
+      block.innerHTML = `
+        <p class="reward-title">🎁 Vos guides cadeaux</p>
+        <p class="reward-intro">Merci pour votre confiance ! Voici ${data.guides.length > 1 ? 'vos ' + data.guides.length + ' guides offerts' : 'votre guide offert'}, à télécharger :</p>
+        <div class="reward-guides">${guidesHtml}</div>
+        ${promoHtml}`;
+      block.hidden = false;
+
+      const copyBtn = document.getElementById('promoCopy');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          const code = document.getElementById('promoCode').textContent.trim();
+          try { await navigator.clipboard.writeText(code); } catch {}
+          copyBtn.textContent = 'Copié ✓';
+          setTimeout(() => { copyBtn.textContent = 'Copier'; }, 2000);
+        });
+      }
+
+      if (typeof gsap !== 'undefined') {
+        gsap.from(block, { opacity: 0, y: 15, duration: 0.5, ease: 'power3.out' });
+      }
+    })();
+
     // Animate success icon
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof gsap !== 'undefined') {

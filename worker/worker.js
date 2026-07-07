@@ -32,6 +32,7 @@ export default {
     body.append('locale', 'fr');
     body.append('billing_address_collection', 'auto');
     body.append('customer_creation', 'always');
+    body.append('allow_promotion_codes', 'true');
     ['FR', 'BE', 'CH', 'LU', 'MC'].forEach(c =>
       body.append('shipping_address_collection[allowed_countries][]', c)
     );

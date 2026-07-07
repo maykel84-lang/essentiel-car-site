@@ -1012,15 +1012,29 @@ function renderCartPanel() {
         : '');
   const totalItems = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
   const uniqueProducts = cart.length;
-  const gwpUnlocked = uniqueProducts >= 2;
-  const gwpBar = `<div class="gwp-bar${gwpUnlocked ? ' gwp-unlocked' : ''}">
-    <div class="gwp-bar-header">${gwpUnlocked ? '🎁 Cadeau débloqué !' : '🎁 Cadeau offert dès 2 produits différents'}</div>
-    <div class="gwp-progress-track"><div class="gwp-progress-fill" style="width:${Math.min(100, (uniqueProducts / 2) * 100)}%"></div></div>
-    <div class="gwp-bar-sub">${gwpUnlocked
-      ? '✓ Code promo -15% + Guide Entretien Auto offerts par e-mail après commande !'
+  // Paliers cadeaux : 2 produits différents = 2 guides ; panier ≥ 100€ = 4 guides
+  const gwpTier = subtotal >= 100 ? 2 : (uniqueProducts >= 2 ? 1 : 0);
+  const gwpFill = gwpTier === 2 ? 100
+    : gwpTier === 1 ? Math.min(99, 50 + (subtotal / 100) * 50)
+    : (uniqueProducts / 2) * 50;
+  const gwpBar = `<div class="gwp-bar${gwpTier > 0 ? ' gwp-unlocked' : ''}${gwpTier === 2 ? ' gwp-tier2' : ''}">
+    <div class="gwp-bar-header">${
+      gwpTier === 2 ? '🎁🎁 Les 4 guides PDF débloqués !'
+      : gwpTier === 1 ? '🎁 2 guides PDF débloqués !'
+      : '🎁 2 guides PDF offerts dès 2 produits différents'
+    }</div>
+    <div class="gwp-progress-track gwp-progress-track--dual">
+      <div class="gwp-progress-fill" style="width:${Math.min(100, gwpFill)}%"></div>
+      <div class="gwp-progress-milestone" style="left:50%" title="2 guides"></div>
+    </div>
+    <div class="gwp-bar-sub">${
+      gwpTier === 2
+        ? '✓ Les 4 guides PDF + code promo -15% offerts, à télécharger après commande !'
+      : gwpTier === 1
+        ? `✓ 2 guides PDF + code -15% débloqués ! Dépensez encore <strong>${(100 - subtotal).toFixed(2).replace('.', ',')}€</strong> pour débloquer les <strong>4 guides</strong>`
       : uniqueProducts === 0
-        ? 'Ajoutez 2 produits différents et recevez un code promo -15% + Guide Auto offerts 🎁'
-        : 'Plus qu\'1 produit différent pour débloquer votre code promo -15% + Guide Auto 🎁'
+        ? 'Ajoutez 2 produits différents et recevez 2 guides PDF + un code promo -15% 🎁'
+        : 'Plus qu\'1 produit différent pour débloquer vos 2 guides PDF + code -15% 🎁'
     }</div>
   </div>`;
 
