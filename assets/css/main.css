@@ -3322,6 +3322,31 @@ svg { display: block; }
 }
 .gwp-bar.gwp-unlocked .gwp-bar-sub { color: rgba(74,222,128,0.7); }
 
+/* ── Palier 2 (4 guides) — mise en avant premium dorée ── */
+.gwp-bar.gwp-tier2 {
+  background: rgba(251,191,36,0.09);
+  border-color: rgba(251,191,36,0.45);
+}
+.gwp-bar.gwp-tier2 .gwp-bar-header { color: #fbbf24; }
+.gwp-bar.gwp-tier2 .gwp-progress-fill {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+.gwp-bar.gwp-tier2 .gwp-bar-sub { color: rgba(251,191,36,0.78); }
+
+/* ── Barre à deux paliers : jalon intermédiaire (2 guides) ── */
+.gwp-progress-track--dual { position: relative; overflow: visible; }
+.gwp-progress-track--dual .gwp-progress-fill { position: relative; z-index: 1; }
+.gwp-progress-milestone {
+  position: absolute; top: 50%; z-index: 2;
+  width: 8px; height: 8px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 2px solid rgba(255,255,255,0.35);
+}
+.gwp-bar.gwp-unlocked .gwp-progress-milestone { border-color: #4ade80; }
+.gwp-bar.gwp-tier2 .gwp-progress-milestone { background: #fbbf24; border-color: #fbbf24; }
+
 /* ── Gift toast (GWP déverrouillé) ── */
 .gift-toast {
   position: fixed;
@@ -5265,8 +5290,4 @@ body.cart-panel-active { overflow: hidden; }
 .cart-bs-scroll-price { font-size: 0.78rem; font-weight: 700; color: var(--red); }
 .cart-bs-scroll-add { font-size: 0.7rem !important; padding: 0.25rem 0.5rem !important; width: 100%; }
 
-/* ── GWP tier 2 badge ─────────────────────────────────── */
-.gwp-tier2 { border-color: rgba(251,191,36,0.4) !important; background: rgba(251,191,36,0.06) !important; }
-.gwp-tier2 .gwp-bar-header { color: #fbbf24 !important; }
-.gwp-progress-track--dual { position: relative; }
-.gwp-progress-milestone { position: absolute; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); border: 1.5px solid rgba(255,255,255,0.6); }
+/* (styles GWP 2 paliers définis plus haut — voir « Palier 2 (4 guides) ») */

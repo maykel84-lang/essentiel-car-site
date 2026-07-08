@@ -56,6 +56,7 @@ exports.handler = async (event) => {
       },
       billing_address_collection: 'auto',
       customer_creation: 'always',
+      allow_promotion_codes: true,
     });
 
     return {

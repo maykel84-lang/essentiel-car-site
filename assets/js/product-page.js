@@ -295,8 +295,8 @@ function renderProduct(p) {
             <div class="gwp-teaser" id="gwpTeaser">
               <span class="gwp-teaser-emoji">🎁</span>
               <div>
-                <div class="gwp-teaser-title">Cadeau offert dès 2 articles !</div>
-                <div class="gwp-teaser-desc">Achetez 2 produits différents et recevez un PDF Entretien Auto + un coupon −15% par e-mail 🎁</div>
+                <div class="gwp-teaser-title">Guides PDF offerts 🎁</div>
+                <div class="gwp-teaser-desc">2 produits différents = 2 guides PDF Essentiel Car + un code promo -15%. Panier ≥ 100€ = les 4 guides complets !</div>
               </div>
             </div>
           </div>
@@ -658,9 +658,8 @@ function handleAddToCart(product, data, isFr) {
   updateCartCounter();
   showCartToast(data.name, isFr);
 
-  // GWP: detect if threshold just crossed (2 items)
-  const newTotal = cart.reduce((s, i) => s + (i.qty || 1), 0);
-  if (newTotal >= 2) {
+  // GWP: cadeau débloqué dès 2 produits DIFFÉRENTS dans le panier
+  if (cart.length >= 2) {
     setTimeout(() => showGiftUnlockedToast(), 900);
   }
 
@@ -848,7 +847,7 @@ function showGiftUnlockedToast() {
     toast = document.createElement('div');
     toast.id = 'giftToast';
     toast.className = 'gift-toast';
-    toast.innerHTML = `<span class="gift-toast-icon">🎁</span><div class="gift-toast-text">Cadeau débloqué !<span class="gift-toast-sub">PDF Entretien Auto + coupon −15% envoyés par e-mail après commande 🎉</span></div>`;
+    toast.innerHTML = `<span class="gift-toast-icon">🎁</span><div class="gift-toast-text">2 guides PDF débloqués !<span class="gift-toast-sub">À télécharger après votre commande + code promo -15% 🎉</span></div>`;
     document.body.appendChild(toast);
   }
   toast.classList.add('show');
