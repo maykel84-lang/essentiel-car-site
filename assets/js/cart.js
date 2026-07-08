@@ -408,60 +408,28 @@ async function handleCheckout() {
   const lang  = typeof currentLang !== 'undefined' ? currentLang : 'fr';
   const isFr  = lang === 'fr';
 
-  const items = cart.map(item => {
-    const product = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(p => p.id === item.id) : null;
-    if (!product) return null;
-    const data = product[isFr ? 'fr' : 'en'] || product.fr;
-    const variantParts = [];
-    if (item.variantLabel)    variantParts.push(item.variantLabel);
-    if (item.variantsDisplay)  variantParts.push(item.variantsDisplay);
-    else if (item.colorLabel)  variantParts.push(item.colorLabel);
-    return {
-      id:    product.id,
-      isBs:  product.badgeType === 'bestseller',
-      name:  variantParts.length > 0 ? `${data.name} — ${variantParts.join(' · ')}` : data.name,
-      price: item.variantPrice ?? product.price,
-      qty:   item.qty,
-      image: product.images && product.images[0]
-        ? window.location.origin + '/' + product.images[0]
-        : null,
-    };
-  }).filter(Boolean);
+  // On n'envoie QUE l'identité des articles (id + variante + quantité).
+  // Le serveur calcule lui-même les prix, la remise Best Seller, la livraison
+  // et le palier cadeaux depuis son catalogue de référence : le navigateur ne
+  // peut donc plus influencer aucun montant.
+  const items = cart
+    .filter(item => typeof PRODUCTS === 'undefined' || PRODUCTS.find(p => p.id === item.id))
+    .map(item => {
+      // Libellé d'affichage (variante + couleur) — purement cosmétique, sert à
+      // la préparation de commande. Le serveur ne l'utilise JAMAIS pour le prix.
+      const parts = [];
+      if (item.variantLabel)     parts.push(item.variantLabel);
+      if (item.variantsDisplay)  parts.push(item.variantsDisplay);
+      else if (item.colorLabel)  parts.push(item.colorLabel);
+      return {
+        id: item.id,
+        variant: item.variantValue ?? null,
+        qty: item.qty,
+        label: parts.join(' · ') || null,
+      };
+    });
 
-  // Apply bestseller -50% on cheapest bestseller unit
-  const bsEntries = [];
-  items.forEach((item, idx) => {
-    if (!item.isBs) return;
-    for (let i = 0; i < item.qty; i++) bsEntries.push({ idx, price: item.price });
-  });
-  bsEntries.sort((a, b) => a.price - b.price);
-  if (bsEntries.length >= 2) {
-    const { idx, price } = bsEntries[0];
-    const target = items[idx];
-    if (target.qty > 1) {
-      target.qty -= 1;
-      items.push({ name: target.name + (isFr ? ' (−50%)' : ' (−50%)'), price: price * 0.5, qty: 1, image: target.image });
-    } else {
-      target.price = price * 0.5;
-      target.name += ' (−50%)';
-    }
-  }
-
-  // Add shipping based on PRE-discount subtotal (consistent with cart display)
-  const preDiscountSubtotal = cart.reduce((s, item) => {
-    const product = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(p => p.id === item.id) : null;
-    if (!product) return s;
-    return s + (item.variantPrice ?? product.price) * item.qty;
-  }, 0);
-  if (preDiscountSubtotal < 49.90) {
-    items.push({ name: isFr ? 'Frais de livraison' : 'Shipping', price: 4.99, qty: 1, image: null });
-  }
-
-  // Palier cadeaux calculé côté client, sur le sous-total AVANT remise
-  // (= exactement ce que le client voit dans son panier). Transmis au serveur
-  // pour garantir que les guides livrés correspondent à la promesse affichée.
-  const gwpUniqueProducts = cart.length;
-  const gwpTier = preDiscountSubtotal >= 100 ? 2 : (gwpUniqueProducts >= 2 ? 1 : 0);
+  if (items.length === 0) return;
 
   const btn = document.querySelector('.cart-checkout-btn');
   if (btn) {
@@ -473,7 +441,7 @@ async function handleCheckout() {
     const res = await fetch('https://create-checkout.essentielcar.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items, gwpTier }),
+      body: JSON.stringify({ items }),
     });
     let data;
     try {

@@ -1,0 +1,317 @@
+{
+  "aspirateur-sans-fil": {
+    "name": "Aspirateur Sans Fil Voiture",
+    "image": "assets/images/products/aspirateur-sans-fil-1.jpg.png",
+    "bs": true,
+    "price": 49.9,
+    "variants": {}
+  },
+  "brosse-jantes": {
+    "name": "Brosse à Jantes Pro",
+    "image": "assets/images/products/brosse-jantes-1.jpg.png",
+    "bs": false,
+    "price": 12.9,
+    "variants": {
+      "1": {
+        "price": 12.9,
+        "display": "À l'unité"
+      },
+      "lot": {
+        "price": 24.9,
+        "display": "Lot de 3"
+      }
+    }
+  },
+  "compresseur-air": {
+    "name": "Compresseur d'Air Sans Fil",
+    "image": "assets/images/products/compresseur-air-1.jpg.png",
+    "bs": true,
+    "price": 54.9,
+    "variants": {}
+  },
+  "dashcam-4k": {
+    "name": "Dashcam Full HD 1080P Double Objectif",
+    "image": "assets/images/products/dashcam-4k-1.jpg.png",
+    "bs": true,
+    "price": 49.9,
+    "variants": {}
+  },
+  "support-telephone": {
+    "name": "Kit Mains Libres 360°",
+    "image": "assets/images/products/support-telephone-1.jpg.png",
+    "bs": true,
+    "price": 27.9,
+    "variants": {}
+  },
+  "machine-polir": {
+    "name": "Machine à Polir Sans Fil Pour Voiture",
+    "image": "assets/images/products/machine-polir-1.jpg.png",
+    "bs": false,
+    "price": 79.9,
+    "variants": {}
+  },
+  "lance-mousse": {
+    "name": "Pulvérisateur de Mousse",
+    "image": "assets/images/products/lance-mousse-1.jpg.png",
+    "bs": false,
+    "price": 44.9,
+    "variants": {}
+  },
+  "tpms": {
+    "name": "TPMS Surveillance Pneus",
+    "image": "assets/images/products/tpms-1.jpg.png",
+    "bs": false,
+    "price": 49.9,
+    "variants": {}
+  },
+  "table-volant": {
+    "name": "Table à Manger Volant",
+    "image": "assets/images/products/table-volant-1.jpg.png",
+    "bs": false,
+    "price": 24.9,
+    "variants": {}
+  },
+  "essuie-glace-retros": {
+    "name": "Essuie-Glace Rétroviseur Portable",
+    "image": "assets/images/products/essuie-glace-retros-1.jpg.png",
+    "bs": false,
+    "price": 19.9,
+    "variants": {}
+  },
+  "pack-entretien": {
+    "name": "Pack Entretien Indispensable",
+    "image": "assets/images/products/pack-entretien-cover.png",
+    "bs": false,
+    "price": 64.9,
+    "variants": {}
+  },
+  "pack-nettoyage": {
+    "name": "Pack Nettoyage Complet",
+    "image": "assets/images/products/pack-nettoyage-cover.png",
+    "bs": false,
+    "price": 159.9,
+    "variants": {}
+  },
+  "pack-securite": {
+    "name": "Pack Sécurité & Confort",
+    "image": "assets/images/products/pack-securite-cover.png",
+    "bs": false,
+    "price": 99.9,
+    "variants": {}
+  },
+  "diffuseur-parfum": {
+    "name": "Diffuseur Parfum Voiture",
+    "image": "assets/images/products/diffuseur-parfum-1.jpg.png",
+    "bs": false,
+    "price": 29.9,
+    "variants": {}
+  },
+  "support-magnetique": {
+    "name": "Support Magnétique 15W",
+    "image": "assets/images/products/support-magnetique-1.jpg.png",
+    "bs": false,
+    "price": 24.9,
+    "variants": {}
+  },
+  "kit-lavage": {
+    "name": "Kit Lavage Auto 12 Pièces",
+    "image": "assets/images/products/kit-lavage-1.jpg.png",
+    "bs": false,
+    "price": 39.9,
+    "variants": {}
+  },
+  "adaptateur-carplay": {
+    "name": "Adaptateur CarPlay Sans Fil",
+    "image": "assets/images/products/adaptateur-carplay-1.jpg.png",
+    "bs": false,
+    "price": 54.9,
+    "variants": {}
+  },
+  "organisateur-coffre-grand": {
+    "name": "Organisateur Coffre Pliable Grand",
+    "image": "assets/images/products/organisateur-coffre-grand-1.jpg.png",
+    "bs": false,
+    "price": 39.9,
+    "variants": {}
+  },
+  "organisateur-coffre-compact": {
+    "name": "Organisateur Coffre Compact",
+    "image": "assets/images/products/organisateur-coffre-compact-1.jpg.png",
+    "bs": false,
+    "price": 24.9,
+    "variants": {}
+  },
+  "booster-demarrage": {
+    "name": "Booster Démarrage Portable 1500A",
+    "image": "assets/images/products/booster-demarrage-1.jpg.png",
+    "bs": true,
+    "price": 94.9,
+    "variants": {}
+  },
+  "spray-antipluie": {
+    "name": "Spray Anti-Pluie Vitres",
+    "image": "assets/images/products/spray-antipluie-1.jpg.png",
+    "bs": false,
+    "price": 29.9,
+    "variants": {}
+  },
+  "spray-coating": {
+    "name": "Spray Protection Carrosserie",
+    "image": "assets/images/products/spray-coating-1.jpg.png",
+    "bs": true,
+    "price": 9.9,
+    "variants": {
+      "30ml": {
+        "price": 9.9,
+        "display": "30 ml"
+      },
+      "50ml": {
+        "price": 14.9,
+        "display": "50 ml"
+      },
+      "100ml": {
+        "price": 19.9,
+        "display": "100 ml"
+      }
+    }
+  },
+  "bandeau-led": {
+    "name": "Bandeau LED RGB Habitacle",
+    "image": "assets/images/products/bandeau-led-1.jpg.png",
+    "bs": false,
+    "price": 14.9,
+    "variants": {
+      "2m": {
+        "price": 14.9,
+        "display": "2 mètres"
+      },
+      "3m": {
+        "price": 18.9,
+        "display": "3 mètres"
+      },
+      "5m": {
+        "price": 22.9,
+        "display": "5 mètres"
+      }
+    }
+  },
+  "chargeur-voiture": {
+    "name": "Chargeur Voiture 4 Ports USB-C",
+    "image": "assets/images/products/chargeur-voiture-1.jpg.png",
+    "bs": false,
+    "price": 14.99,
+    "variants": {}
+  },
+  "mini-poubelle": {
+    "name": "Mini Poubelle Voiture",
+    "image": "assets/images/products/mini-poubelle-1.jpg.png",
+    "bs": false,
+    "price": 19.9,
+    "variants": {}
+  },
+  "organisateur-siege": {
+    "name": "Organisateur Siège Arrière",
+    "image": "assets/images/products/organisateur-siege-1.jpg.png",
+    "bs": false,
+    "price": 29.9,
+    "variants": {}
+  },
+  "coussin-lombaire": {
+    "name": "Coussin Lombaire Memory Foam",
+    "image": "assets/images/products/coussin-lombaire-1.jpg.png",
+    "bs": false,
+    "price": 44.9,
+    "variants": {}
+  },
+  "tracker-gps": {
+    "name": "Traceur GPS Voiture Nouvelle Génération",
+    "image": "assets/images/products/tracker-gps-1.jpg.png",
+    "bs": false,
+    "price": 39.9,
+    "variants": {}
+  },
+  "dashcam-4k-wifi": {
+    "name": "Dashcam 4K WiFi Avant/Arrière Connectée",
+    "image": "assets/images/products/dashcam-4k-wifi-1.jpg.png",
+    "bs": false,
+    "price": 89.9,
+    "variants": {}
+  },
+  "dashcam-4g": {
+    "name": "Dashcam 4G/5G Surveillance Temps Réel",
+    "image": "assets/images/products/dashcam-4g-1.jpg.png",
+    "bs": false,
+    "price": 129.9,
+    "variants": {}
+  },
+  "scanner-obd2": {
+    "name": "Scanner Diagnostic OBD2 Bluetooth",
+    "image": "assets/images/products/scanner-obd2-1.jpg.png",
+    "bs": true,
+    "price": 24.9,
+    "variants": {}
+  },
+  "camera-recul": {
+    "name": "Caméra de Recul Sans Fil HD",
+    "image": "assets/images/products/camera-recul-1.jpg.png",
+    "bs": false,
+    "price": 34.9,
+    "variants": {}
+  },
+  "detecteur-angle-mort": {
+    "name": "Détecteur d'Angle Mort Radar BSM",
+    "image": "assets/images/products/detecteur-angle-mort-1.jpg.png",
+    "bs": false,
+    "price": 49.9,
+    "variants": {}
+  },
+  "chargeur-qi": {
+    "name": "Chargeur Qi Voiture Sans Fil 15W",
+    "image": "assets/images/products/chargeur-qi-1.jpg.png",
+    "bs": false,
+    "price": 29.9,
+    "variants": {}
+  },
+  "lampe-torche-aimantee": {
+    "name": "Lampe Torche Multifonction Aimantée",
+    "image": "assets/images/products/lampe-torche-aimantee-1.jpg.png",
+    "bs": false,
+    "price": 19.9,
+    "variants": {}
+  },
+  "kit-securite-routiere": {
+    "name": "Kit Sécurité Routière Complet Homologué",
+    "image": "assets/images/products/kit-securite-routiere-1.jpg.png",
+    "bs": true,
+    "price": 29.9,
+    "variants": {}
+  },
+  "plot-retractable": {
+    "name": "Plot de Signalisation Rétractable Orange (Lot de 4)",
+    "image": "assets/images/products/plot-retractable-1.jpg.png",
+    "bs": false,
+    "price": 34.9,
+    "variants": {}
+  },
+  "panneau-led": {
+    "name": "Panneau LED Intelligent Messagerie Voiture",
+    "image": "assets/images/products/panneau-led-1.jpg.png",
+    "bs": false,
+    "price": 39.9,
+    "variants": {}
+  },
+  "gants-nitrile": {
+    "name": "Gants Nitrile Noirs Mécanicien (Lot de 20)",
+    "image": "assets/images/products/gants-nitrile-1.jpg.png",
+    "bs": false,
+    "price": 3.99,
+    "variants": {}
+  },
+  "microfibre-lot": {
+    "name": "Chiffons Microfibre Ultra-Doux (Lot de 5)",
+    "image": "assets/images/products/microfibre-lot-1.jpg.png",
+    "bs": false,
+    "price": 4.99,
+    "variants": {}
+  }
+}
