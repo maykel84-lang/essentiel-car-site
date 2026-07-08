@@ -457,6 +457,12 @@ async function handleCheckout() {
     items.push({ name: isFr ? 'Frais de livraison' : 'Shipping', price: 4.99, qty: 1, image: null });
   }
 
+  // Palier cadeaux calculé côté client, sur le sous-total AVANT remise
+  // (= exactement ce que le client voit dans son panier). Transmis au serveur
+  // pour garantir que les guides livrés correspondent à la promesse affichée.
+  const gwpUniqueProducts = cart.length;
+  const gwpTier = preDiscountSubtotal >= 100 ? 2 : (gwpUniqueProducts >= 2 ? 1 : 0);
+
   const btn = document.querySelector('.cart-checkout-btn');
   if (btn) {
     btn.disabled = true;
@@ -467,7 +473,7 @@ async function handleCheckout() {
     const res = await fetch('https://create-checkout.essentielcar.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items }),
+      body: JSON.stringify({ items, gwpTier }),
     });
     let data;
     try {
