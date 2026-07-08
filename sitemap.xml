@@ -2,57 +2,267 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://essentielcar.com/</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/boutique.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/blog.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/contact.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/cgv.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/mentions-legales.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/confidentialite.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/politique-expedition.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/politique-remboursement.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=coussin-lombaire-voiture-confort-route-long-trajet</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=nettoyant-vitres-voiture-sans-traces-guide</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=nettoyage-moteur-voiture-guide-complet-entretien</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=kit-securite-voiture-complet-protection-route</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=chargeur-voiture-rapide-usb-c-haute-puissance</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=appuie-tete-voiture-confort-ergonomique-route</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=camera-embarquee-voiture-dashcam-securite</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=bandes-adhesives-carrosserie-protection-rayures</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=deflecteur-air-voiture-protection-carrosserie</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=nettoyant-interieur-voiture-siege-tableau-bord</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=housse-siege-voiture-protection-confort-interieur</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=tapis-voiture-personnalisé-confort-protection-intérieur</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=baguettes-essuie-glace-voiture-changement-entretien</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=liquide-essuie-glace-voiture-entretien-nettoyage</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=repose-pieds-voiture-confort-voyage-long</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=plaquettes-de-frein-usure-changement-entretien</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=nettoyant-siege-voiture-taches-cuir-tissu</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=gilet-airbag-moto-voiture-securite-collision</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=nettoyage-vitres-voiture-produits-techniques-pro</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=protection-carrosserie-voiture-film-ppf</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=filtre-air-moteur-voiture-nettoyage-remplacement</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=plaquettes-frein-voiture-usure-changement</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=alarme-voiture-connectee-securite-gps-2024</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=nettoyant-moteur-voiture-dégraissant-entretien</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=pare-soleil-voiture-protection-chaleur-uv</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=coussin-lombaire-voiture-soutien-dorsal</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=chargeur-telephone-voiture-sans-fil-2024</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=liquide-refroidissement-voiture-entretien-remplacement</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=batterie-voiture-usure-remplacement-guide</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=dashcam-voiture-enregistrement-securite-legal</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=appuie-tete-voiture-confort-long-trajet</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=nettoyage-interieur-voiture-produits-techniques-pro</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=courroie-accessoires-voiture-usure-remplacement</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=siege-auto-chauffant-confort-hiver-guide-complet</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://essentielcar.com/blog-article.html?slug=plaquettes-frein-voiture-changement-usure-entretien</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://essentielcar.com/blog-article.html?slug=filtre-habitacle-voiture-changement-entretien</loc>

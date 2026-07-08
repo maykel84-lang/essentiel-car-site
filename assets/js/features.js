@@ -237,7 +237,7 @@ const CHAT_REPLIES = [
 
   // Livraison
   { pattern: /livraison|délai|expéd|envoi|shipping|delivery|combien de temps|quand.*recev/i,
-    reply: () => "🚚 Expédition sous <strong>24h ouvrées</strong>, livraison en <strong>3–7 jours ouvrés</strong> en France.<br><br>📧 Un email de suivi vous est envoyé dès l'expédition.<br>🎁 Livraison <strong>gratuite dès 50€</strong> d'achat.<br><br><a href='politique-expedition.html' style='color:var(--red)'>→ Politique d'expédition complète</a>" },
+    reply: () => "🚚 Expédition sous <strong>24h ouvrées</strong>, livraison en <strong>3–7 jours ouvrés</strong> en France.<br><br>📧 Un email de suivi vous est envoyé dès l'expédition.<br>🎁 Livraison <strong>gratuite dès 49,90€</strong> d'achat.<br><br><a href='politique-expedition.html' style='color:var(--red)'>→ Politique d'expédition complète</a>" },
 
   // Suivi commande
   { pattern: /suivi|tracking|colis|où est ma|order status|numéro de commande/i,
@@ -317,7 +317,7 @@ const CHAT_REPLIES = [
 
   // Frais de livraison
   { pattern: /frais.*(livraison|envoi|port)|livraison.*(gratuit|payant|prix)/i,
-    reply: () => "🚚 Livraison <strong>gratuite dès 50€</strong> d'achat.<br>En dessous de 50€, les frais sont indiqués clairement en caisse." },
+    reply: () => "🚚 Livraison <strong>gratuite dès 49,90€</strong> d'achat.<br>En dessous de 49,90€, les frais sont indiqués clairement en caisse." },
 
   // Confiance / sécurité
   { pattern: /sécurité|confiance|fiable|sérieux|légit|arnaque/i,

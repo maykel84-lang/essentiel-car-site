@@ -67,6 +67,7 @@ function renderCart() {
   const savings   = items.reduce((s, item) => {
     const price    = item.variantPrice    ?? item.product.price;
     const oldPrice = item.variantOldPrice ?? item.product.oldPrice;
+    if (!oldPrice || oldPrice <= price) return s;
     return s + (oldPrice - price) * item.qty;
   }, 0);
 
@@ -80,12 +81,18 @@ function renderCart() {
   bsUnits.sort((a, b) => a - b);
   const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
 
-  const shipping  = subtotal >= 49.99 ? 0 : 4.99;
+  const shipping  = subtotal >= 49.90 ? 0 : 4.99;
   const total     = subtotal - bsDiscount + shipping;
 
   const fmtPrice = (v) => v.toFixed(2).replace('.', ',') + '€';
 
+  const cartIds = items.map(i => i.product.id);
+  const smartBlock = (bsDiscount > 0 && shipping > 0)
+    ? renderSmartSuggestions(subtotal, cartIds, isFr)
+    : '';
+
   summaryEl.innerHTML = `
+    ${smartBlock}
     <h2 class="cart-summary-title">${isFr ? 'Récapitulatif' : 'Order summary'}</h2>
 
     <div class="cart-summary-lines">
@@ -109,12 +116,12 @@ function renderCart() {
         <span>${isFr ? 'Livraison' : 'Shipping'}</span>
         <span class="${shipping === 0 ? 'shipping-free' : ''}">${shipping === 0 ? (isFr ? 'Gratuite' : 'Free') : fmtPrice(shipping)}</span>
       </div>
-      ${subtotal < 49.99 && subtotal > 0 ? `
+      ${subtotal < 49.90 && subtotal > 0 ? `
       <div class="cart-free-shipping-notice">
         <div class="cart-free-shipping-bar">
-          <div class="cart-free-shipping-fill" style="width:${Math.min(100, (subtotal/49.99)*100).toFixed(0)}%"></div>
+          <div class="cart-free-shipping-fill" style="width:${Math.min(100, (subtotal/49.90)*100).toFixed(0)}%"></div>
         </div>
-        <p>${isFr ? `Plus que ${fmtPrice(49.99 - subtotal)} pour la livraison gratuite !` : `Only ${fmtPrice(49.99 - subtotal)} away from free shipping!`}</p>
+        <p>${isFr ? `Plus que ${fmtPrice(49.90 - subtotal)} sur le sous-total pour la livraison gratuite !` : `Only ${fmtPrice(49.90 - subtotal)} more in subtotal for free shipping!`}</p>
       </div>` : ''}
     </div>
 
@@ -174,6 +181,8 @@ function renderCart() {
       ${isFr ? 'Paiement 100% sécurisé · SSL · Chiffrement 3D Secure' : '100% secure payment · SSL · 3D Secure encryption'}
     </p>
 
+    ${renderInCartBestsellerScroll(cartIds, isFr)}
+
     <a href="boutique.html" class="cart-continue-link">
       ← ${isFr ? 'Continuer mes achats' : 'Continue shopping'}
     </a>
@@ -199,8 +208,9 @@ function renderCartItem(item, t_key, isFr) {
   const data = p[t_key] || p.fr;
   const price    = item.variantPrice    ?? p.price;
   const oldPrice = item.variantOldPrice ?? p.oldPrice;
+  const hasDiscount = oldPrice && oldPrice > price;
   const priceStr    = price.toFixed(2).replace('.', ',');
-  const oldStr      = oldPrice.toFixed(2).replace('.', ',');
+  const oldStr      = hasDiscount ? oldPrice.toFixed(2).replace('.', ',') : null;
   const lineTotal   = (price * item.qty).toFixed(2).replace('.', ',');
 
   return `
@@ -227,8 +237,7 @@ function renderCartItem(item, t_key, isFr) {
         <div class="cart-item-bottom">
           <div class="cart-item-pricing">
             <span class="cart-item-price">${priceStr}€</span>
-            <span class="cart-item-old">${oldStr}€</span>
-            <span class="cart-item-discount">-${Math.round((1 - price / (item.variantOldPrice ?? p.oldPrice)) * 100)}%</span>
+            ${hasDiscount ? `<span class="cart-item-old">${oldStr}€</span><span class="cart-item-discount">-${Math.round((1 - price / oldPrice) * 100)}%</span>` : ''}
           </div>
           <div class="cart-item-qty">
             <button class="qty-btn" onclick="updateQty('${item.cartKey || p.id}', -1)" aria-label="${isFr ? 'Diminuer' : 'Decrease'}">−</button>
@@ -313,6 +322,85 @@ function clearCart() {
   renderCart();
 }
 
+function renderInCartBestsellerScroll(cartIds, isFr) {
+  if (typeof PRODUCTS === 'undefined') return '';
+  const products = PRODUCTS
+    .filter(p => p.badgeType === 'bestseller' && !cartIds.includes(p.id))
+    .slice(0, 6);
+  if (products.length === 0) return '';
+  const fmt = v => v.toFixed(2).replace('.', ',') + '€';
+  return `
+    <div class="cart-bs-scroll-section">
+      <p class="cart-bs-scroll-title">${isFr ? '⭐ Complétez votre panier' : '⭐ Complete your cart'}</p>
+      <div class="cart-bs-scroll-track">
+        ${products.map(p => {
+          const d = p[isFr ? 'fr' : 'en'] || p.fr;
+          return `<div class="cart-bs-scroll-card">
+            <a href="product.html?id=${p.id}" class="cart-bs-scroll-img-link">
+              <div class="cart-bs-scroll-img" style="background:radial-gradient(ellipse at 40% 40%,${p.accentColor} 0%,#111 100%)">
+                ${p.images?.[0]
+                  ? `<img src="${p.images[0]}" alt="${d.name}" loading="lazy">`
+                  : `<span>${p.icon}</span>`}
+              </div>
+            </a>
+            <p class="cart-bs-scroll-name">${d.name}</p>
+            <p class="cart-bs-scroll-price">${fmt(p.price)}</p>
+            <button class="btn btn--primary cart-bs-scroll-add" onclick="addBsToCart('${p.id}')">${isFr ? '+ Ajouter' : '+ Add'}</button>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+}
+
+function addBsToCart(productId) {
+  const p = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(pr => pr.id === productId) : null;
+  if (!p) return;
+  const cart = getCart();
+  const existing = cart.find(i => i.id === productId);
+  if (existing) { existing.qty++; } else { cart.push({ id: productId, qty: 1 }); }
+  saveCart(cart);
+  renderCart();
+}
+
+function renderSmartSuggestions(subtotal, cartIds, isFr) {
+  if (typeof PRODUCTS === 'undefined') return '';
+  const gap = 49.90 - subtotal;
+  const fmt = v => v.toFixed(2).replace('.', ',') + '€';
+  const suggestions = PRODUCTS
+    .filter(p => p.badgeType === 'bestseller' && !cartIds.includes(p.id) && p.price >= gap)
+    .sort((a, b) => a.price - b.price)
+    .slice(0, 3);
+  const warnText = isFr
+    ? `⚠️ Sans ajout : frais de livraison 🚚 <strong>+4,99€</strong> — il manque <strong>${fmt(gap)}</strong> au sous-total.`
+    : `⚠️ Without addition: delivery 🚚 <strong>+€4.99</strong> — missing <strong>${fmt(gap)}</strong> to the subtotal.`;
+  if (suggestions.length === 0) {
+    return `<div class="cart-smart-warning-only"><p>${warnText}</p></div>`;
+  }
+  return `
+    <div class="cart-smart-suggestions">
+      <div class="cart-smart-header">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <p>${isFr ? 'Cumulez <strong>−50%</strong> + <strong>livraison offerte</strong> en ajoutant&nbsp;:' : 'Combine <strong>−50%</strong> + <strong>free shipping</strong> by adding:'}</p>
+      </div>
+      <div class="cart-smart-list">
+        ${suggestions.map(p => {
+          const d = p[isFr ? 'fr' : 'en'] || p.fr;
+          return `<div class="cart-smart-item">
+            <div class="cart-smart-visual" style="background:radial-gradient(ellipse at 40% 40%,${p.accentColor} 0%,#111 100%)">
+              ${p.images?.[0] ? `<img src="${p.images[0]}" alt="${d.name}" loading="lazy">` : `<span>${p.icon}</span>`}
+            </div>
+            <div class="cart-smart-info">
+              <p class="cart-smart-name">${d.name}</p>
+              <p class="cart-smart-price">${fmt(p.price)}</p>
+            </div>
+            <button class="btn btn--primary cart-smart-add" onclick="addBsToCart('${p.id}')">${isFr ? '+ Ajouter' : '+ Add'}</button>
+          </div>`;
+        }).join('')}
+      </div>
+      <p class="cart-smart-or">${warnText}</p>
+    </div>`;
+}
+
 async function handleCheckout() {
   const cart = getCart();
   if (cart.length === 0) return;
@@ -359,9 +447,13 @@ async function handleCheckout() {
     }
   }
 
-  // Add shipping line if applicable
-  const subtotal = items.reduce((s, i) => s + (i.price ?? 0) * i.qty, 0);
-  if (subtotal < 49.99) {
+  // Add shipping based on PRE-discount subtotal (consistent with cart display)
+  const preDiscountSubtotal = cart.reduce((s, item) => {
+    const product = typeof PRODUCTS !== 'undefined' ? PRODUCTS.find(p => p.id === item.id) : null;
+    if (!product) return s;
+    return s + (item.variantPrice ?? product.price) * item.qty;
+  }, 0);
+  if (preDiscountSubtotal < 49.90) {
     items.push({ name: isFr ? 'Frais de livraison' : 'Shipping', price: 4.99, qty: 1, image: null });
   }
 
@@ -372,28 +464,28 @@ async function handleCheckout() {
   }
 
   try {
-    const res  = await fetch('https://create-checkout.essentielcar.workers.dev', {
-      method:  'POST',
+    const res = await fetch('https://create-checkout.essentielcar.workers.dev', {
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ items }),
+      body: JSON.stringify({ items }),
     });
     let data;
     try {
       data = await res.json();
     } catch {
       throw new Error(isFr
-        ? 'Erreur de connexion au serveur de paiement. Veuillez utiliser le site officiel essentielcar.com.'
-        : 'Payment server connection error. Please use the official site essentielcar.com.');
+        ? 'Erreur temporaire du serveur de paiement. Veuillez réessayer dans quelques instants.'
+        : 'Temporary payment server error. Please try again in a moment.');
     }
     if (data.url) {
       window.location.href = data.url;
     } else {
-      throw new Error(data.error || 'No checkout URL');
+      throw new Error(data.error || (isFr ? 'Erreur paiement. Veuillez réessayer.' : 'Payment error. Please try again.'));
     }
   } catch (err) {
     console.error('Checkout error:', err);
     renderCart();
-    const msg = err.message && err.message !== 'No checkout URL' && err.message !== 'Failed to fetch'
+    const msg = (err.message && err.message !== 'Failed to fetch')
       ? err.message
       : (isFr ? 'Erreur lors de la connexion au paiement. Veuillez réessayer.' : 'Could not connect to payment. Please try again.');
     alert(msg);

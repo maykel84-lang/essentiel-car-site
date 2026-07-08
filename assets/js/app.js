@@ -398,7 +398,7 @@ function renderProducts() {
   const lang  = typeof currentLang !== 'undefined' ? currentLang : 'fr';
   const t_key = lang === 'en' ? 'en' : 'fr';
 
-  const featured = PRODUCTS.slice(0, 6);
+  const featured = PRODUCTS.slice(0, 8);
   grid.innerHTML = featured.map((p, i) => buildProductCard(p, t_key, i + 1)).join('');
   refreshCursorTargets();
   if (typeof initCountdowns === 'function') initCountdowns();
@@ -435,7 +435,7 @@ function buildProductCard(p, lang, num) {
     <article class="product-card" data-id="${p.id}" data-category="${p.category}" onclick="goToProduct('${p.id}')">
       <div class="product-card-visual" style="background: radial-gradient(ellipse at 40% 50%, ${p.accentColor} 0%, #111 100%);">
         <div class="product-badge badge--${p.badgeType}">${p.badge}</div>
-        <div class="product-discount-badge">-${p.discount}%</div>
+        ${p.discount ? `<div class="product-discount-badge">-${p.discount}%</div>` : ''}
         ${p.images && p.images[0]
           ? `<img class="product-card-img" src="${p.images[0]}" alt="${data.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
           : ''}
@@ -467,8 +467,8 @@ function buildProductCard(p, lang, num) {
       <div class="product-card-footer">
         <div class="product-card-pricing">
           <span class="price-current" data-eur="${p.price}">${p.price.toFixed(2).replace('.', ',')}€</span>
-          <span class="price-old" data-eur="${p.oldPrice}">${p.oldPrice.toFixed(2).replace('.', ',')}€</span>
-          <span class="price-discount">-${p.discount}%</span>
+          ${p.oldPrice ? `<span class="price-old" data-eur="${p.oldPrice}">${p.oldPrice.toFixed(2).replace('.', ',')}€</span>` : ''}
+          ${p.discount ? `<span class="price-discount">-${p.discount}%</span>` : ''}
         </div>
         <button class="btn btn--primary product-card-cta btn--sm">
           ${ctaText}
@@ -996,7 +996,7 @@ function renderCartPanel() {
   bsUnits.sort((a, b) => a - b);
   const bsDiscount = bsUnits.length >= 2 ? bsUnits[0] * 0.5 : 0;
 
-  const isFreeShipping = subtotal >= 49.99;
+  const isFreeShipping = subtotal >= 49.90;
   const shipping = isFreeShipping ? 0 : 4.99;
   const total = subtotal - bsDiscount + shipping;
   const discountLine = bsDiscount > 0
@@ -1089,6 +1089,30 @@ function initComparisonTable() {
   rows.forEach(r => obs.observe(r));
 }
 
+/* ── Avant / Après slider ── */
+function initBeforeAfter() {
+  document.querySelectorAll('[data-ba]').forEach(wrap => {
+    const before = wrap.querySelector('.ba-before');
+    const handle = wrap.querySelector('.ba-handle');
+    let dragging = false;
+
+    function setPos(clientX) {
+      const r = wrap.getBoundingClientRect();
+      const pct = Math.min(Math.max((clientX - r.left) / r.width, 0), 1) * 100;
+      before.style.clipPath = `inset(0 ${(100 - pct).toFixed(2)}% 0 0)`;
+      handle.style.left = `${pct.toFixed(2)}%`;
+    }
+
+    wrap.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+
+    wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
+  });
+}
+
 /* ── DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loader')) {
@@ -1098,4 +1122,5 @@ document.addEventListener('DOMContentLoaded', () => {
     startAnimations();
   }
   initComparisonTable();
+  if (document.querySelector('[data-ba]')) initBeforeAfter();
 });
