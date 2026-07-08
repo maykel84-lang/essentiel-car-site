@@ -315,7 +315,7 @@
       if (!_sessionId) return;
       let data;
       try {
-        const res = await fetch('/order-reward?session_id=' + encodeURIComponent(_sessionId));
+        const res = await fetch('https://create-checkout.essentielcar.workers.dev/reward?session_id=' + encodeURIComponent(_sessionId));
         data = await res.json();
       } catch { return; }
       if (!data || !data.paid || !Array.isArray(data.guides) || data.guides.length === 0) return;
