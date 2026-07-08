@@ -53,8 +53,8 @@ async function handleCheckout(request, env) {
   const key = (env.STRIPE_SECRET_KEY || '').trim();
   if (!key) return json({ error: 'Paiement non configuré.' }, 500);
 
-  let items;
-  try { ({ items } = await request.json()); }
+  let items, gwpTier;
+  try { ({ items, gwpTier } = await request.json()); }
   catch { return json({ error: 'Requête invalide' }, 400); }
 
   if (!items || items.length === 0) return json({ error: 'Panier vide' }, 400);
@@ -74,6 +74,10 @@ async function handleCheckout(request, env) {
   );
   body.append('success_url', `${origin}/success.html?session_id={CHECKOUT_SESSION_ID}`);
   body.append('cancel_url', `${origin}/cart.html`);
+  // Palier cadeaux calculé côté client (sous-total avant remise) — mémorisé sur
+  // la commande pour livrer EXACTEMENT les guides promis dans le panier.
+  const clientTier = [0, 1, 2].includes(gwpTier) ? gwpTier : 0;
+  body.append('metadata[gwp_tier]', String(clientTier));
   validItems.forEach((item, i) => {
     body.append(`line_items[${i}][price_data][currency]`, 'eur');
     body.append(`line_items[${i}][price_data][product_data][name]`, String(item.name).slice(0, 250));
@@ -118,22 +122,29 @@ async function handleReward(url, env) {
       return json({ paid: false }, 200);
     }
 
-    // 2) Articles → produits différents + sous-total
+    // 2) Palier promis au client (mémorisé dans la commande) — c'est la
+    //    référence : il est calculé sur le sous-total AVANT remise, donc
+    //    identique à ce que le client a vu dans son panier.
+    const metaTier = parseInt(session.metadata?.gwp_tier ?? '', 10);
+    const clientTier = (metaTier === 0 || metaTier === 1 || metaTier === 2) ? metaTier : null;
+
+    // 3) Filet de sécurité : recalcul serveur (sessions anciennes sans palier).
     const itemsRes = await fetch(
       `https://api.stripe.com/v1/checkout/sessions/${sessionId}/line_items?limit=100`, auth
     );
     const itemsData = await itemsRes.json();
     const lineItems = (itemsRes.ok && Array.isArray(itemsData.data)) ? itemsData.data : [];
-
     const subtotalCents = typeof session.amount_subtotal === 'number'
       ? session.amount_subtotal
       : lineItems.reduce((s, li) => s + (li.amount_subtotal || 0), 0);
-    const uniqueProducts = lineItems.length;
+    let serverTier = 0;
+    if (subtotalCents >= TIER2_THRESHOLD_CENTS) serverTier = 2;
+    else if (lineItems.length >= 2) serverTier = 1;
 
-    // 3) Palier
-    let tier = 0;
-    if (subtotalCents >= TIER2_THRESHOLD_CENTS) tier = 2;
-    else if (uniqueProducts >= 2) tier = 1;
+    // 4) Le palier client fait autorité (il correspond exactement à la promesse
+    //    du panier). Le recalcul serveur ne sert que si l'info est absente
+    //    (commandes créées avant cette mise à jour).
+    const tier = clientTier !== null ? clientTier : serverTier;
 
     const ids = tier === 2 ? TIER2_GUIDES : tier === 1 ? TIER1_GUIDES : [];
     const guides = ids.map(id => ({ title: GUIDES[id].title, url: GUIDES[id].url }));
