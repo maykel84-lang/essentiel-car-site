@@ -1,0 +1,48 @@
+name: Générer images produits
+
+on:
+  # Auto : dès que le fichier de correspondance (URLs) change sur main
+  push:
+    branches: [main]
+    paths: ['assets/data/product-images-map.json']
+  # Manuel : possibilité de relancer à la demande
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: 'IDs produits à générer (séparés par un espace, vide = tous ceux du mapping)'
+        required: false
+        default: ''
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install sharp + polices
+        run: |
+          npm install sharp --no-save
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-ubuntu fonts-liberation 2>/dev/null || true
+
+      - name: Générer les images produits
+        run: node tools/generate-product-images.js ${{ github.event.inputs.ids }}
+
+      - name: Commit et push des images
+        run: |
+          git config --local user.email "product-bot@essentielcar.com"
+          git config --local user.name "ESSENTIEL CAR Product Bot"
+          git add assets/images/products/
+          git diff --staged --quiet || git commit -m "Images produits générées ${{ github.event.inputs.ids }}"
+          git push origin ${{ github.ref_name }}

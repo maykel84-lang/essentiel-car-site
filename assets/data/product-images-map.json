@@ -1,0 +1,164 @@
+[
+  {
+    "id": "diffuseur-parfum",
+    "name": "Diffuseur Parfum Voiture",
+    "label": "Diffuseur Parfum",
+    "urls": []
+  },
+  {
+    "id": "support-magnetique",
+    "name": "Support Magnétique 15W",
+    "label": "Support Magnétique",
+    "urls": []
+  },
+  {
+    "id": "kit-lavage",
+    "name": "Kit Lavage Auto 12 Pièces",
+    "label": "Kit Lavage Auto",
+    "urls": []
+  },
+  {
+    "id": "adaptateur-carplay",
+    "name": "Adaptateur CarPlay Sans Fil",
+    "label": "CarPlay Sans Fil",
+    "urls": []
+  },
+  {
+    "id": "organisateur-coffre-grand",
+    "name": "Organisateur Coffre Pliable Grand",
+    "label": "Organisateur Coffre",
+    "urls": []
+  },
+  {
+    "id": "organisateur-coffre-compact",
+    "name": "Organisateur Coffre Compact",
+    "label": "Organisateur Compact",
+    "urls": []
+  },
+  {
+    "id": "booster-demarrage",
+    "name": "Booster Démarrage Portable 1500A",
+    "label": "Booster Démarrage",
+    "urls": []
+  },
+  {
+    "id": "spray-antipluie",
+    "name": "Spray Anti-Pluie Vitres",
+    "label": "Spray Anti-Pluie",
+    "urls": []
+  },
+  {
+    "id": "spray-coating",
+    "name": "Spray Protection Carrosserie",
+    "label": "Spray Protection",
+    "urls": []
+  },
+  {
+    "id": "bandeau-led",
+    "name": "Bandeau LED RGB Habitacle",
+    "label": "Bandeau LED RGB",
+    "urls": []
+  },
+  {
+    "id": "chargeur-voiture",
+    "name": "Chargeur Voiture 4 Ports USB-C",
+    "label": "Chargeur 4 Ports",
+    "urls": []
+  },
+  {
+    "id": "mini-poubelle",
+    "name": "Mini Poubelle Voiture",
+    "label": "Mini Poubelle",
+    "urls": []
+  },
+  {
+    "id": "organisateur-siege",
+    "name": "Organisateur Siège Arrière",
+    "label": "Organisateur Siège",
+    "urls": []
+  },
+  {
+    "id": "coussin-lombaire",
+    "name": "Coussin Lombaire Memory Foam",
+    "label": "Coussin Lombaire",
+    "urls": []
+  },
+  {
+    "id": "tracker-gps",
+    "name": "Traceur GPS Voiture Nouvelle Génération",
+    "label": "Traceur GPS",
+    "urls": []
+  },
+  {
+    "id": "dashcam-4k-wifi",
+    "name": "Dashcam 4K WiFi Avant/Arrière Connectée",
+    "label": "Dashcam 4K WiFi",
+    "urls": []
+  },
+  {
+    "id": "dashcam-4g",
+    "name": "Dashcam 4G/5G Surveillance Temps Réel",
+    "label": "Dashcam 4G",
+    "urls": []
+  },
+  {
+    "id": "scanner-obd2",
+    "name": "Scanner Diagnostic OBD2 Bluetooth",
+    "label": "Scanner OBD2",
+    "urls": []
+  },
+  {
+    "id": "camera-recul",
+    "name": "Caméra de Recul Sans Fil HD",
+    "label": "Caméra de Recul",
+    "urls": []
+  },
+  {
+    "id": "detecteur-angle-mort",
+    "name": "Détecteur d'Angle Mort Radar BSM",
+    "label": "Détecteur Angle Mort",
+    "urls": []
+  },
+  {
+    "id": "chargeur-qi",
+    "name": "Chargeur Qi Voiture Sans Fil 15W",
+    "label": "Chargeur Qi 15W",
+    "urls": []
+  },
+  {
+    "id": "lampe-torche-aimantee",
+    "name": "Lampe Torche Multifonction Aimantée",
+    "label": "Lampe Torche",
+    "urls": []
+  },
+  {
+    "id": "kit-securite-routiere",
+    "name": "Kit Sécurité Routière Complet Homologué",
+    "label": "Kit Sécurité",
+    "urls": []
+  },
+  {
+    "id": "plot-retractable",
+    "name": "Plot de Signalisation Rétractable Orange (Lot de 4)",
+    "label": "Plots Signalisation",
+    "urls": []
+  },
+  {
+    "id": "panneau-led",
+    "name": "Panneau LED Intelligent Messagerie Voiture",
+    "label": "Panneau LED",
+    "urls": []
+  },
+  {
+    "id": "gants-nitrile",
+    "name": "Gants Nitrile Noirs Mécanicien (Lot de 20)",
+    "label": "Gants Nitrile (x20)",
+    "urls": []
+  },
+  {
+    "id": "microfibre-lot",
+    "name": "Chiffons Microfibre Ultra-Doux (Lot de 5)",
+    "label": "Microfibres (x5)",
+    "urls": []
+  }
+]
