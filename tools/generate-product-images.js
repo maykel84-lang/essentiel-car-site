@@ -61,23 +61,15 @@ function download(url) {
   });
 }
 
-// Marque (roue) — tracé vectoriel identique au logo du site, net à toute taille
-const MARK = `<g transform="translate(40,44) scale(1.7)" stroke-linecap="round">
-  <path d="M 11 23 A 34 34 0 1 1 11 57" stroke="#1a1a1a" stroke-width="8" fill="none"/>
-  <line x1="40" y1="40" x2="40" y2="9"  stroke="#cf001e" stroke-width="5"/>
-  <line x1="40" y1="40" x2="67" y2="56" stroke="#cf001e" stroke-width="5"/>
-  <line x1="40" y1="40" x2="13" y2="56" stroke="#cf001e" stroke-width="5"/>
-  <circle cx="40" cy="40" r="7.5" fill="#cf001e"/>
-  <circle cx="40" cy="40" r="3" fill="#ffffff"/>
-</g>`;
+// Roue de marque (fichier réel, fond transparent)
+const LOGO_PATH = path.join(__dirname, '../assets/images/logo-wheel.png');
 
-// Le fond (blanc + cercles + marque), en SVG rasterisé
+// Le fond (blanc + cercles), en SVG rasterisé
 function backgroundSvg() {
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
     <rect width="${W}" height="${H}" fill="#ffffff"/>
     <circle cx="1015" cy="130" r="430" fill="${CREAM}"/>
     <circle cx="690" cy="1185" r="445" fill="${RED}"/>
-    ${MARK}
   </svg>`);
 }
 
@@ -114,6 +106,10 @@ async function buildImage(name, productBuffer) {
       <text x="540" y="430" fill="#9a9a9a" font-family='${FONT}' font-size="34" font-weight="700" text-anchor="middle">PHOTO PRODUIT</text>
     </svg>`) });
   }
+
+  // Roue de marque, haut-gauche
+  const logo = await sharp(LOGO_PATH).resize({ width: 172 }).toBuffer();
+  layers.push({ input: logo, left: 52, top: 56 });
 
   // Nom dans le cercle rouge
   layers.push({ input: nameSvg(name) });
