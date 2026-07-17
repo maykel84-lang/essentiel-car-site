@@ -76,11 +76,12 @@ function backgroundSvg() {
 // Le nom du produit, blanc, centré dans le cercle rouge
 function nameSvg(name) {
   const lines = wrapName(name);
-  const fs2 = lines.length > 1 ? 88 : 100;
+  const fs2 = lines.length > 1 ? 100 : 118;
   const cx = 690;
-  const startY = lines.length > 1 ? 905 : 955;
+  const startY = lines.length > 1 ? 908 : 968;
+  const step = fs2 + 18;
   const els = lines.map((l, i) =>
-    `<text x="${cx}" y="${startY + i * (fs2 + 8)}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" text-anchor="middle">${esc(l)}</text>`
+    `<text x="${cx}" y="${startY + i * step}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" letter-spacing="5" text-anchor="middle">${esc(l)}</text>`
   ).join('');
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${els}</svg>`);
 }
