@@ -25,7 +25,7 @@ const W = 1080, H = 1080;
 const CREAM = '#f5eee6';
 const RED = '#cf001e';
 const OUT_DIR = path.join(__dirname, '../assets/images/products');
-const FONT = 'Ubuntu, "Liberation Sans", Arial, sans-serif';
+const FONT = 'Anton, "Ubuntu Condensed", Impact, sans-serif';
 
 function esc(s) {
   return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
@@ -76,11 +76,12 @@ function backgroundSvg() {
 // Le nom du produit, blanc, centré dans le cercle rouge
 function nameSvg(name) {
   const lines = wrapName(name);
-  const fs2 = lines.length > 1 ? 88 : 100;
+  const fs2 = lines.length > 1 ? 100 : 118;
   const cx = 690;
-  const startY = lines.length > 1 ? 905 : 955;
+  const startY = lines.length > 1 ? 908 : 968;
+  const step = fs2 + 18;
   const els = lines.map((l, i) =>
-    `<text x="${cx}" y="${startY + i * (fs2 + 8)}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" text-anchor="middle">${esc(l)}</text>`
+    `<text x="${cx}" y="${startY + i * step}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" letter-spacing="5" text-anchor="middle">${esc(l)}</text>`
   ).join('');
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${els}</svg>`);
 }
@@ -89,16 +90,22 @@ function nameSvg(name) {
 async function buildImage(name, productBuffer) {
   const layers = [{ input: backgroundSvg() }];
 
-  // Photo produit : détourée sur fond blanc → on rogne le blanc et on centre
+  // Photo produit : on rend le fond blanc TRANSPARENT (sinon le rectangle blanc
+  // de la photo masque les cercles), puis on rogne et on centre.
   if (productBuffer) {
-    const prod = await sharp(productBuffer)
-      .trim({ threshold: 12 })
-      .resize({ width: 660, height: 600, fit: 'inside', withoutEnlargement: false })
+    const { data, info } = await sharp(productBuffer).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+    for (let i = 0; i < data.length; i += info.channels) {
+      if (data[i] > 243 && data[i + 1] > 243 && data[i + 2] > 243) data[i + 3] = 0;
+    }
+    const keyed = await sharp(data, { raw: { width: info.width, height: info.height, channels: info.channels } }).png().toBuffer();
+    const prod = await sharp(keyed)
+      .trim()
+      .resize({ width: 620, height: 580, fit: 'inside', withoutEnlargement: false })
       .toBuffer();
     const meta = await sharp(prod).metadata();
     const left = Math.round((W - meta.width) / 2);
-    const top = Math.round(430 - meta.height / 2);
-    layers.push({ input: prod, left: Math.max(0, left), top: Math.max(20, top) });
+    const top = Math.round(420 - meta.height / 2);
+    layers.push({ input: prod, left: Math.max(0, left), top: Math.max(30, top) });
   } else {
     // Placeholder pour l'aperçu de gabarit
     layers.push({ input: Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
