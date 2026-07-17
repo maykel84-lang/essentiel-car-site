@@ -81,7 +81,7 @@ function nameSvg(name) {
   const startY = lines.length > 1 ? 908 : 968;
   const step = fs2 + 18;
   const els = lines.map((l, i) =>
-    `<text x="${cx}" y="${startY + i * step}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" letter-spacing="5" text-anchor="middle">${esc(l)}</text>`
+    `<text x="${cx}" y="${startY + i * step}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" letter-spacing="12" text-anchor="middle">${esc(l)}</text>`
   ).join('');
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${els}</svg>`);
 }
