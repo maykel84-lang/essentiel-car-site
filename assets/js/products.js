@@ -560,6 +560,8 @@ const PRODUCTS = [
     accentColor: '#1a0a1a',
     images: [
       'assets/images/products/diffuseur-parfum-1.jpg.png',
+      'assets/images/products/diffuseur-parfum-2.jpg.png',
+      'assets/images/products/diffuseur-parfum-3.jpg.png'
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 38 Q18 26 24 24 Q30 26 30 38 Q30 42 24 42 Q18 42 18 38Z"/>
@@ -630,7 +632,7 @@ const PRODUCTS = [
     category: 'nettoyage',
     accentColor: '#0a1a0a',
     images: [
-      'assets/images/products/kit-lavage-1.jpg.png',
+      'assets/images/products/kit-lavage-1.jpg.png'
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 20 L14 40 L34 40 L36 20 Z"/>
@@ -706,8 +708,7 @@ const PRODUCTS = [
     images: [
       'assets/images/products/organisateur-coffre-grand-1.jpg.png',
       'assets/images/products/organisateur-coffre-grand-2.jpg.png',
-      'assets/images/products/organisateur-coffre-grand-3.jpg.png',
-      'assets/images/products/organisateur-coffre-grand-4.jpg.png',
+      'assets/images/products/organisateur-coffre-grand-3.jpg.png'
     ],
     variants: [
       { label: 'Couleur', options: [
@@ -753,6 +754,7 @@ const PRODUCTS = [
     images: [
       'assets/images/products/organisateur-coffre-compact-1.jpg.png',
       'assets/images/products/organisateur-coffre-compact-2.jpg.png',
+      'assets/images/products/organisateur-coffre-compact-3.jpg.png'
     ],
     variants: [
       { label: 'Couleur', options: [
@@ -795,6 +797,7 @@ const PRODUCTS = [
     accentColor: '#1a0505',
     images: [
       'assets/images/products/booster-demarrage-1.jpg.png',
+      'assets/images/products/booster-demarrage-2.jpg.png'
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="8" y="18" width="32" height="20" rx="3"/>
@@ -865,7 +868,7 @@ const PRODUCTS = [
     category: 'entretien',
     accentColor: '#1a1005',
     images: [
-      'assets/images/products/spray-coating-1.jpg.png',
+      'assets/images/products/spray-coating-1.jpg.png'
     ],
     variants: [
       { label: 'Contenance', type: 'size', options: [
@@ -908,6 +911,7 @@ const PRODUCTS = [
     accentColor: '#0a0a1a',
     images: [
       'assets/images/products/bandeau-led-1.jpg.png',
+      'assets/images/products/bandeau-led-2.jpg.png'
     ],
     variants: [
       { label: 'Longueur', type: 'size', options: [
@@ -951,6 +955,8 @@ const PRODUCTS = [
     accentColor: '#1a1a1a',
     images: [
       'assets/images/products/chargeur-voiture-1.jpg.png',
+      'assets/images/products/chargeur-voiture-2.jpg.png',
+      'assets/images/products/chargeur-voiture-3.jpg.png'
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="26" r="16"/>
@@ -987,7 +993,7 @@ const PRODUCTS = [
     category: 'accessoires',
     accentColor: '#0a0a0a',
     images: [
-      'assets/images/products/mini-poubelle-1.jpg.png',
+      'assets/images/products/mini-poubelle-1.jpg.png'
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M14 20 L16 40 L32 40 L34 20 Z"/>
@@ -1026,6 +1032,8 @@ const PRODUCTS = [
     accentColor: '#1a0a05',
     images: [
       'assets/images/products/organisateur-siege-1.jpg.png',
+      'assets/images/products/organisateur-siege-2.jpg.png',
+      'assets/images/products/organisateur-siege-3.jpg.png'
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 10 Q10 6 14 6 L34 6 Q38 6 38 10 L38 38 Q38 42 24 42 Q10 42 10 38 Z"/>
@@ -1064,7 +1072,7 @@ const PRODUCTS = [
     images: [
       'assets/images/products/coussin-lombaire-1.jpg.png',
       'assets/images/products/coussin-lombaire-2.jpg.png',
-      'assets/images/products/coussin-lombaire-3.jpg.png',
+      'assets/images/products/coussin-lombaire-3.jpg.png'
     ],
     variants: [
       { label: 'Couleur', options: [
@@ -1325,8 +1333,7 @@ const PRODUCTS = [
     accentColor: '#0a0a1a',
     images: [
       'assets/images/products/chargeur-qi-1.jpg.png',
-      'assets/images/products/chargeur-qi-2.jpg.png',
-      'assets/images/products/chargeur-qi-3.jpg.png',
+      'assets/images/products/chargeur-qi-2.jpg.png'
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="14" y="8" width="20" height="32" rx="4"/>
