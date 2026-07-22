@@ -37,7 +37,7 @@ function wrapName(name) {
   const words = String(name).trim().split(/\s+/);
   if (words.length <= 1) return [name];
   const full = words.join(' ');
-  if (full.length <= 14) return [full];
+  if (full.length <= 11) return [full];
   let best = null, bestDiff = Infinity;
   for (let i = 1; i < words.length; i++) {
     const a = words.slice(0, i).join(' '), b = words.slice(i).join(' ');
@@ -73,16 +73,37 @@ function backgroundSvg() {
   </svg>`);
 }
 
-// Le nom du produit, blanc, centré dans le cercle rouge
-function nameSvg(name) {
+const LS = 12; // letter-spacing
+
+// Mesure la largeur réelle d'une ligne (Anton) à une taille donnée
+async function lineWidth(text, fs) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="400"><text x="10" y="200" font-family='${FONT}' font-size="${fs}" letter-spacing="${LS}">${esc(text)}</text></svg>`;
+  try {
+    const { info } = await sharp(Buffer.from(svg)).trim().toBuffer({ resolveWithObject: true });
+    return info.width;
+  } catch { return 0; }
+}
+
+// Le nom du produit, blanc, centré dans le cercle rouge — taille ADAPTATIVE
+// (réduite juste ce qu'il faut pour que le plus long mot rentre dans le cercle).
+async function nameSvg(name) {
   const lines = wrapName(name);
-  const fs2 = lines.length > 1 ? 100 : 118;
   const cx = 690;
-  const startY = lines.length > 1 ? 908 : 968;
-  const step = fs2 + 18;
-  const els = lines.map((l, i) =>
-    `<text x="${cx}" y="${startY + i * step}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" letter-spacing="12" text-anchor="middle">${esc(l)}</text>`
-  ).join('');
+  const maxWidth = lines.length > 1 ? 600 : 640;
+  let fs2 = lines.length > 1 ? 100 : 118;
+
+  // Mesure la ligne la plus large et réduit la taille si ça dépasse (marge incluse)
+  let widest = 0;
+  for (const l of lines) widest = Math.max(widest, await lineWidth(l, fs2));
+  if (widest > maxWidth) fs2 = Math.max(50, Math.floor(fs2 * maxWidth / widest));
+
+  const step = fs2 + 14;
+  // Ancrage bas dans la partie large du cercle rouge, on remonte pour les lignes du dessus
+  const bottomBaseline = lines.length > 1 ? 1035 : 1015;
+  const els = lines.map((l, i) => {
+    const y = bottomBaseline - (lines.length - 1 - i) * step;
+    return `<text x="${cx}" y="${y}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" letter-spacing="${LS}" text-anchor="middle">${esc(l)}</text>`;
+  }).join('');
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${els}</svg>`);
 }
 
@@ -119,7 +140,7 @@ async function buildImage(name, productBuffer) {
   layers.push({ input: logo, left: 52, top: 56 });
 
   // Nom dans le cercle rouge
-  layers.push({ input: nameSvg(name) });
+  layers.push({ input: await nameSvg(name) });
 
   return sharp({ create: { width: W, height: H, channels: 4, background: '#ffffff' } })
     .composite(layers)
