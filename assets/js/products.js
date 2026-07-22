@@ -708,7 +708,8 @@ const PRODUCTS = [
     images: [
       'assets/images/products/organisateur-coffre-grand-1.jpg.png',
       'assets/images/products/organisateur-coffre-grand-2.jpg.png',
-      'assets/images/products/organisateur-coffre-grand-3.jpg.png'
+      'assets/images/products/organisateur-coffre-grand-3.jpg.png',
+      'assets/images/products/organisateur-coffre-grand-4.jpg.png'
     ],
     variants: [
       { label: 'Couleur', options: [
@@ -755,12 +756,6 @@ const PRODUCTS = [
       'assets/images/products/organisateur-coffre-compact-1.jpg.png',
       'assets/images/products/organisateur-coffre-compact-2.jpg.png',
       'assets/images/products/organisateur-coffre-compact-3.jpg.png'
-    ],
-    variants: [
-      { label: 'Couleur', options: [
-        { value: 'noir', display: 'Noir', hex: '#1a1a1a', imageIndex: 0 },
-        { value: 'gris', display: 'Gris', hex: '#8c8c8c', imageIndex: 1 },
-      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="10" y="20" width="28" height="20" rx="2"/>
@@ -1077,8 +1072,8 @@ const PRODUCTS = [
     variants: [
       { label: 'Couleur', options: [
         { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 0 },
-        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 1 },
-        { value: 'rouge', display: 'Rouge', hex: '#c0392b', imageIndex: 2 },
+        { value: 'rouge', display: 'Rouge', hex: '#c0392b', imageIndex: 1 },
+        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 2 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
