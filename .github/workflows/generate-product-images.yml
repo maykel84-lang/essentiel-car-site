@@ -1,10 +1,12 @@
 name: Générer images produits
 
 on:
-  # Auto : dès que le fichier de correspondance (URLs) change sur main
+  # Auto : quand les URLs OU le générateur changent sur main
   push:
     branches: [main]
-    paths: ['assets/data/product-images-map.json']
+    paths:
+      - 'assets/data/product-images-map.json'
+      - 'tools/generate-product-images.js'
   # Manuel : possibilité de relancer à la demande
   workflow_dispatch:
     inputs:
