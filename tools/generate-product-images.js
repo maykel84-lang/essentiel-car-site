@@ -25,7 +25,8 @@ const W = 1080, H = 1080;
 const CREAM = '#f5eee6';
 const RED = '#cf001e';
 const OUT_DIR = path.join(__dirname, '../assets/images/products');
-const FONT = 'Anton, "Ubuntu Condensed", Impact, sans-serif';
+const FONT = 'Oswald, "Liberation Sans", Arial, sans-serif';
+const FW = 700; // graisse Oswald Bold
 
 function esc(s) {
   return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
@@ -73,36 +74,36 @@ function backgroundSvg() {
   </svg>`);
 }
 
-const LS = 12; // letter-spacing
+const LS = 6; // letter-spacing
 
-// Mesure la largeur réelle d'une ligne (Anton) à une taille donnée
+// Mesure la largeur réelle d'une ligne à une taille donnée
 async function lineWidth(text, fs) {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="400"><text x="10" y="200" font-family='${FONT}' font-size="${fs}" letter-spacing="${LS}">${esc(text)}</text></svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="400"><text x="10" y="200" font-family='${FONT}' font-weight="${FW}" font-size="${fs}" letter-spacing="${LS}">${esc(text)}</text></svg>`;
   try {
     const { info } = await sharp(Buffer.from(svg)).trim().toBuffer({ resolveWithObject: true });
     return info.width;
   } catch { return 0; }
 }
 
-// Le nom du produit, blanc, centré dans le cercle rouge — taille ADAPTATIVE
-// (réduite juste ce qu'il faut pour que le plus long mot rentre dans le cercle).
+// Le nom du produit, blanc, CENTRÉ dans le cercle rouge — taille ADAPTATIVE
+// (réduite juste ce qu'il faut pour que le plus long mot rentre, avec marge).
 async function nameSvg(name) {
   const lines = wrapName(name);
   const cx = 690;
-  const maxWidth = lines.length > 1 ? 600 : 640;
-  let fs2 = lines.length > 1 ? 100 : 118;
+  const maxWidth = lines.length > 1 ? 570 : 650;
+  let fs2 = lines.length > 1 ? 96 : 116;
 
-  // Mesure la ligne la plus large et réduit la taille si ça dépasse (marge incluse)
   let widest = 0;
   for (const l of lines) widest = Math.max(widest, await lineWidth(l, fs2));
-  if (widest > maxWidth) fs2 = Math.max(50, Math.floor(fs2 * maxWidth / widest));
+  if (widest > maxWidth) fs2 = Math.max(48, Math.floor(fs2 * maxWidth / widest));
 
-  const step = fs2 + 14;
-  // Ancrage bas dans la partie large du cercle rouge, on remonte pour les lignes du dessus
-  const bottomBaseline = lines.length > 1 ? 1035 : 1015;
+  // Centrage vertical du bloc de texte au milieu de la partie visible du cercle
+  const targetCenter = 928;
+  const step = fs2 + 12;
+  const firstBaseline = Math.round(targetCenter + 0.34 * fs2 - (lines.length - 1) * step / 2);
   const els = lines.map((l, i) => {
-    const y = bottomBaseline - (lines.length - 1 - i) * step;
-    return `<text x="${cx}" y="${y}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="800" letter-spacing="${LS}" text-anchor="middle">${esc(l)}</text>`;
+    const y = firstBaseline + i * step;
+    return `<text x="${cx}" y="${y}" fill="#ffffff" font-family='${FONT}' font-size="${fs2}" font-weight="${FW}" letter-spacing="${LS}" text-anchor="middle">${esc(l)}</text>`;
   }).join('');
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${els}</svg>`);
 }
