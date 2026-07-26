@@ -108,8 +108,22 @@ async function nameSvg(name) {
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${els}</svg>`);
 }
 
+// Badge de variante (nom couleur/parfum, en français) — pilule sombre haut-droite
+function variantBadgeSvg(label) {
+  const s = String(label);
+  const fs = s.length > 12 ? 36 : 42;
+  const cy = 106, h = fs + 24, rightEdge = 1044;
+  const w = Math.round(s.length * fs * 0.52 + 52);
+  const x = Math.max(24, rightEdge - w);
+  const cx = x + w / 2;
+  return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+    <rect x="${x}" y="${cy - h / 2}" width="${w}" height="${h}" rx="${h / 2}" fill="#1a1a1a"/>
+    <text x="${cx}" y="${cy + fs * 0.34}" fill="#ffffff" font-family='${FONT}' font-weight="${FW}" font-size="${fs}" letter-spacing="2" text-anchor="middle">${esc(s)}</text>
+  </svg>`);
+}
+
 // Compose l'image finale à partir d'un buffer de photo produit (ou null = placeholder)
-async function buildImage(name, productBuffer) {
+async function buildImage(name, productBuffer, variantLabel) {
   const layers = [{ input: backgroundSvg() }];
 
   // Photo produit : on rend le fond blanc TRANSPARENT (sinon le rectangle blanc
@@ -140,6 +154,9 @@ async function buildImage(name, productBuffer) {
   const logo = await sharp(LOGO_PATH).resize({ width: 172 }).toBuffer();
   layers.push({ input: logo, left: 52, top: 56 });
 
+  // Badge de variante (couleur/parfum) en haut-droite, si fourni
+  if (variantLabel) layers.push({ input: variantBadgeSvg(variantLabel) });
+
   // Nom dans le cercle rouge
   layers.push({ input: await nameSvg(name) });
 
@@ -161,11 +178,14 @@ async function main() {
     const urls = (entry.urls || []).filter(Boolean);
     if (!urls.length) { console.log('⏭  ' + entry.id + ' : aucune URL, ignoré'); continue; }
     let i = 0;
-    for (const url of urls) {
+    for (const u of urls) {
       i++;
+      // Une URL peut être une chaîne, ou { url, variant } pour un nom de variante
+      const url = typeof u === 'string' ? u : u.url;
+      const variant = typeof u === 'string' ? null : (u.variant || null);
       try {
         const buf = await download(url);
-        const out = await buildImage(entry.label || entry.name, buf);
+        const out = await buildImage(entry.label || entry.name, buf, variant);
         const outPath = path.join(OUT_DIR, `${entry.id}-${i}.jpg.png`);
         fs.writeFileSync(outPath, out);
         console.log('✓ ' + path.relative(path.join(__dirname, '..'), outPath));
