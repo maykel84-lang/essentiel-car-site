@@ -104,9 +104,12 @@ function renderProduct(p) {
     entretien:   isFr ? 'Entretien'  : 'Maintenance',
   };
 
+  const hasOldPrice = typeof p.oldPrice === 'number' && p.oldPrice > p.price;
   const priceStr    = p.price.toFixed(2).replace('.', ',');
-  const oldStr      = p.oldPrice.toFixed(2).replace('.', ',');
-  const saving      = (p.oldPrice - p.price).toFixed(2).replace('.', ',');
+  const oldStr      = hasOldPrice ? p.oldPrice.toFixed(2).replace('.', ',') : '';
+  const saving      = hasOldPrice ? (p.oldPrice - p.price).toFixed(2).replace('.', ',') : '';
+  const discountPct = typeof p.discount === 'number' ? p.discount
+                    : hasOldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
   const productIdx  = typeof PRODUCTS !== 'undefined' ? PRODUCTS.indexOf(p) + 1 : 1;
 
   const txt = {
@@ -247,13 +250,14 @@ function renderProduct(p) {
 
             <div class="product-price-block">
               <div class="product-price-left">
-                <span class="product-price-old">${oldStr}€</span>
+                ${hasOldPrice ? `<span class="product-price-old">${oldStr}€</span>` : ''}
                 <span class="product-price-main">${priceStr}€</span>
               </div>
+              ${hasOldPrice ? `
               <div class="product-price-right">
-                <span class="product-price-savings">-${p.discount}%</span>
+                <span class="product-price-savings">-${discountPct}%</span>
                 <span class="product-price-saving-text">${txt.savings}</span>
-              </div>
+              </div>` : ''}
             </div>
 
             <p class="product-stock">${txt.stock}</p>
@@ -455,13 +459,14 @@ function initVariants() {
   const container = document.querySelector('.product-variants');
   if (!container) return;
 
-  // Set initial labels, price and image on load
+  // Set initial labels and price on load. On NE change PAS l'image ici : on
+  // laisse l'image principale (image[0], ex. le diffuseur seul) comme visuel
+  // d'accueil. L'image de variante ne s'affiche qu'au clic sur une pastille.
   container.querySelectorAll('.variant-group').forEach(group => {
     const activeBtn = group.querySelector('.variant-swatch.active, .variant-qty.active');
     if (!activeBtn) return;
     group.querySelector('.variant-selected-label').textContent = activeBtn.dataset.label;
     if (activeBtn.dataset.price) updateProductPrice(parseFloat(activeBtn.dataset.price), parseFloat(activeBtn.dataset.oldprice));
-    if (activeBtn.dataset.imgindex !== undefined) switchImageByIndex(parseInt(activeBtn.dataset.imgindex, 10));
   });
 
   container.addEventListener('click', e => {
