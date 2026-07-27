@@ -895,16 +895,16 @@ const PRODUCTS = [
       <path d="M38 16 Q44 22 44 28 Q44 36 38 40" stroke="var(--red)" stroke-dasharray="3 2" stroke-width="1.2"/>
     </svg>`,
     fr: {
-      name: 'Spray Protection Carrosserie',
-      tagline: 'Brillance et protection au quotidien',
-      desc: 'Spray protection carrosserie multi-couche avec propriétés anti-rayures légères. Restaure la brillance et crée un effet hydrophobe. Compatible toutes finitions. Disponible en 3 formats.',
-      features: ['Anti-rayures légères', 'Brillance restaurée', 'Effet hydrophobe', '3 formats']
+      name: 'Spray Revêtement Vitres Hydrophobe',
+      tagline: 'Pluie repoussée, vision nette',
+      desc: 'Revêtement hydrophobe en spray pour vitres, pare-brise et rétroviseurs. L\'eau perle et s\'évacue d\'elle-même pour une meilleure visibilité sous la pluie. Formule longue tenue, application en quelques minutes. Disponible en 3 formats (30, 50, 100 ml).',
+      features: ['Effet hydrophobe', 'Vitres & rétros', 'Vision nette', '3 formats']
     },
     en: {
-      name: 'Car Body Protection Spray',
-      tagline: 'Shine and protection every day',
-      desc: 'Multi-layer car body protection spray with light anti-scratch properties. Restores shine and creates a hydrophobic effect. Compatible with all paint finishes. Available in 3 sizes.',
-      features: ['Light anti-scratch', 'Restored shine', 'Hydrophobic effect', '3 sizes']
+      name: 'Hydrophobic Glass Coating Spray',
+      tagline: 'Rain repelled, clear vision',
+      desc: 'Hydrophobic coating spray for windows, windshield and mirrors. Water beads and runs off on its own for better visibility in the rain. Long-lasting formula, applied in minutes. Available in 3 sizes (30, 50, 100 ml).',
+      features: ['Hydrophobic effect', 'Windows & mirrors', 'Clear vision', '3 sizes']
     }
   },
   {
