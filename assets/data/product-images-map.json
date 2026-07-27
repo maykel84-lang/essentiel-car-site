@@ -4,9 +4,30 @@
     "name": "Diffuseur Parfum Voiture",
     "label": "Diffuseur Parfum",
     "urls": [
-      "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/2aa222b7-9426-407d-acac-e28bae7d3c15_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/aa20d156-5b98-4374-a099-ae6401f8b334_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/7746a5bc-bbdd-4656-bf9d-f7b77b3c5630_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500"
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/aa20d156-5b98-4374-a099-ae6401f8b334_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Hilton"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/7746a5bc-bbdd-4656-bf9d-f7b77b3c5630_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Gardenia"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/771663de-a79c-4d26-a037-3a6dadca93e0_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Ocean"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/729863e4-2e18-4abe-ad17-6b84f3e9aae7_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Encounter"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/27c361fa-9728-4a25-9a48-5e7088247e78_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Ancient Dragon"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2024/12/24/09/f3cf45a9-bb35-46ea-a111-d414f8049f33_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Osmanthus"
+      }
     ]
   },
   {
@@ -36,10 +57,22 @@
     "name": "Organisateur Coffre Pliable Grand",
     "label": "Organisateur Coffre",
     "urls": [
-      "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/04552a32-0c9d-4dee-a429-8b14784406bf_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/c76aefa4-d97d-4b15-8a11-00cc41a8234a_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/1a012958-9ad1-4b08-a20d-35db673d058a_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/91b81b49-c6ca-4c7b-a285-834e86f2962e_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500"
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/04552a32-0c9d-4dee-a429-8b14784406bf_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Noir"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/1a012958-9ad1-4b08-a20d-35db673d058a_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Rouge"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/c76aefa4-d97d-4b15-8a11-00cc41a8234a_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Gris"
+      },
+      {
+        "url": "https://oss-cf.cjdropshipping.com/product/2026/01/07/08/91b81b49-c6ca-4c7b-a285-834e86f2962e_trans.jpeg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Blanc Ivoire"
+      }
     ]
   },
   {
@@ -89,9 +122,14 @@
     "name": "Chargeur Voiture 4 Ports USB-C",
     "label": "Chargeur 4 Ports",
     "urls": [
-      "https://cf.cjdropshipping.com/quick/product/4a6bac88-f0d7-490b-a07a-6a108f4446dd.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://cf.cjdropshipping.com/quick/product/cf2c549a-b246-4fdb-8916-fd2e1f4cdd5a.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://cf.cjdropshipping.com/quick/product/a324e7b4-6368-4bec-97c2-91d5467841c3.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500"
+      {
+        "url": "https://cf.cjdropshipping.com/quick/product/4a6bac88-f0d7-490b-a07a-6a108f4446dd.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Noir"
+      },
+      {
+        "url": "https://cf.cjdropshipping.com/quick/product/cf2c549a-b246-4fdb-8916-fd2e1f4cdd5a.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Blanc"
+      }
     ]
   },
   {
@@ -107,9 +145,22 @@
     "name": "Organisateur Siège Arrière",
     "label": "Organisateur Siège",
     "urls": [
-      "https://cf.cjdropshipping.com/15282144/872357117013.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://cf.cjdropshipping.com/15282144/86477589432.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://cf.cjdropshipping.com/15282144/1830975956700.png?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500"
+      {
+        "url": "https://cf.cjdropshipping.com/15282144/872357117013.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Noir"
+      },
+      {
+        "url": "https://cf.cjdropshipping.com/15282144/86477589432.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Beige"
+      },
+      {
+        "url": "https://cf.cjdropshipping.com/15282144/1830975956700.png?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Gris"
+      },
+      {
+        "url": "https://cf.cjdropshipping.com/15282144/6767864691012.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Rouge"
+      }
     ]
   },
   {
@@ -117,9 +168,18 @@
     "name": "Coussin Lombaire Memory Foam",
     "label": "Coussin Lombaire",
     "urls": [
-      "https://cf.cjdropshipping.com/d5f88cf0-286c-4401-9b47-5edad28dd070.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://cf.cjdropshipping.com/e91bb0ad-2640-42e6-9e96-f57f11813905.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
-      "https://cf.cjdropshipping.com/3a29057e-0e10-4545-8f9a-f860f88c5f96.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500"
+      {
+        "url": "https://cf.cjdropshipping.com/d5f88cf0-286c-4401-9b47-5edad28dd070.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Noir"
+      },
+      {
+        "url": "https://cf.cjdropshipping.com/3a29057e-0e10-4545-8f9a-f860f88c5f96.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Gris"
+      },
+      {
+        "url": "https://cf.cjdropshipping.com/e91bb0ad-2640-42e6-9e96-f57f11813905.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500",
+        "variant": "Rouge"
+      }
     ]
   },
   {

@@ -561,7 +561,20 @@ const PRODUCTS = [
     images: [
       'assets/images/products/diffuseur-parfum-1.jpg.png',
       'assets/images/products/diffuseur-parfum-2.jpg.png',
-      'assets/images/products/diffuseur-parfum-3.jpg.png'
+      'assets/images/products/diffuseur-parfum-3.jpg.png',
+      'assets/images/products/diffuseur-parfum-4.jpg.png',
+      'assets/images/products/diffuseur-parfum-5.jpg.png',
+      'assets/images/products/diffuseur-parfum-6.jpg.png'
+    ],
+    variants: [
+      { label: 'Parfum', options: [
+        { value: 'hilton',    display: 'Hilton',         hex: '#8c8c8c', imageIndex: 0 },
+        { value: 'gardenia',  display: 'Gardenia',       hex: '#e79ab5', imageIndex: 1 },
+        { value: 'ocean',     display: 'Ocean',          hex: '#2c7fb8', imageIndex: 2 },
+        { value: 'encounter', display: 'Encounter',      hex: '#3a9a54', imageIndex: 3 },
+        { value: 'dragon',    display: 'Ancient Dragon', hex: '#e0b93a', imageIndex: 4 },
+        { value: 'osmanthus', display: 'Osmanthus',      hex: '#e08a2e', imageIndex: 5 },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 38 Q18 26 24 24 Q30 26 30 38 Q30 42 24 42 Q18 42 18 38Z"/>
@@ -713,10 +726,10 @@ const PRODUCTS = [
     ],
     variants: [
       { label: 'Couleur', options: [
-        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 0 },
-        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 1 },
-        { value: 'rouge', display: 'Rouge', hex: '#c0392b', imageIndex: 2 },
-        { value: 'bleu',  display: 'Bleu',  hex: '#2c3e7a', imageIndex: 3 },
+        { value: 'noir',   display: 'Noir',         hex: '#1a1a1a', imageIndex: 0 },
+        { value: 'rouge',  display: 'Rouge',        hex: '#c0392b', imageIndex: 1 },
+        { value: 'gris',   display: 'Gris',         hex: '#8c8c8c', imageIndex: 2 },
+        { value: 'ivoire', display: 'Blanc Ivoire', hex: '#efe9dc', imageIndex: 3 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -950,8 +963,13 @@ const PRODUCTS = [
     accentColor: '#1a1a1a',
     images: [
       'assets/images/products/chargeur-voiture-1.jpg.png',
-      'assets/images/products/chargeur-voiture-2.jpg.png',
-      'assets/images/products/chargeur-voiture-3.jpg.png'
+      'assets/images/products/chargeur-voiture-2.jpg.png'
+    ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 0 },
+        { value: 'blanc', display: 'Blanc', hex: '#f2f2f2', imageIndex: 1 },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="24" cy="26" r="16"/>
@@ -1028,7 +1046,16 @@ const PRODUCTS = [
     images: [
       'assets/images/products/organisateur-siege-1.jpg.png',
       'assets/images/products/organisateur-siege-2.jpg.png',
-      'assets/images/products/organisateur-siege-3.jpg.png'
+      'assets/images/products/organisateur-siege-3.jpg.png',
+      'assets/images/products/organisateur-siege-4.jpg.png'
+    ],
+    variants: [
+      { label: 'Couleur', options: [
+        { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 0 },
+        { value: 'beige', display: 'Beige', hex: '#d8c3a5', imageIndex: 1 },
+        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 2 },
+        { value: 'rouge', display: 'Rouge', hex: '#c0392b', imageIndex: 3 },
+      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10 10 Q10 6 14 6 L34 6 Q38 6 38 10 L38 38 Q38 42 24 42 Q10 42 10 38 Z"/>
@@ -1072,8 +1099,8 @@ const PRODUCTS = [
     variants: [
       { label: 'Couleur', options: [
         { value: 'noir',  display: 'Noir',  hex: '#1a1a1a', imageIndex: 0 },
-        { value: 'rouge', display: 'Rouge', hex: '#c0392b', imageIndex: 1 },
-        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 2 },
+        { value: 'gris',  display: 'Gris',  hex: '#8c8c8c', imageIndex: 1 },
+        { value: 'rouge', display: 'Rouge', hex: '#c0392b', imageIndex: 2 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
