@@ -126,47 +126,63 @@ function variantBadgeSvg(label) {
   </svg>`);
 }
 
-// Analyse les lignes d'une image RGBA (après mise en transparence du blanc) et
-// renvoie [top, height] de la bande de contenu la PLUS DENSE = le produit.
-// Sert à retirer une étiquette texte détachée (ex. « Black » incrusté par CJ)
-// située au-dessus ou en dessous, séparée par un espace blanc.
-// Sécurité : si le produit occupe déjà ≥ 60 % du contenu (une seule pièce, ou
-// pièces jointes), on ne rogne rien (renvoie l'image entière).
-function mainContentBand(data, w, h, ch) {
-  const rowCount = new Array(h).fill(0);
-  let total = 0;
-  for (let y = 0; y < h; y++) {
-    let c = 0;
-    const base = y * w * ch;
-    for (let x = 0; x < w; x++) if (data[base + x * ch + 3] > 12) c++;
-    rowCount[y] = c;
-    total += c;
-  }
-  if (total === 0) return [0, h];
+// Retire les étiquettes texte en ANGLAIS incrustées par CJ (« BLACK », « GREY »,
+// « RED »…) posées À CÔTÉ ou au-dessus du produit sur fond blanc. Méthode :
+// analyse en COMPOSANTES CONNEXES (après mise en transparence du blanc). Le
+// produit est un gros bloc unique ; les lettres du texte sont de petits blocs
+// isolés. On efface (alpha = 0) tout composant nettement plus petit que le
+// produit. Modifie `data` en place. Renvoie le nombre de composants effacés.
+// Sécurités : ne s'applique que sur fond majoritairement blanc (photo détourée),
+// et n'efface jamais si cela retirerait une trop grande part du contenu.
+function removeStrayText(data, w, h, ch) {
+  const N = w * h;
+  const A = 14; // seuil alpha : au-dessus = contenu
+  // Garde-fou : si le fond n'est PAS majoritairement transparent (ex. photo
+  // d'ambiance sombre plein cadre), on ne touche à rien.
+  let opaque = 0;
+  for (let p = 0; p < N; p++) if (data[p * ch + 3] > A) opaque++;
+  if (opaque === 0 || opaque > N * 0.72) return 0;
 
-  // Segmente en bandes séparées par des trous d'au moins GAP lignes vides
-  const GAP = 20, MIN_ROW = 4;
-  const bands = [];
-  let start = -1, gap = 0;
-  for (let y = 0; y < h; y++) {
-    if (rowCount[y] > MIN_ROW) { if (start < 0) start = y; gap = 0; }
-    else if (start >= 0) { if (++gap >= GAP) { bands.push([start, y - gap]); start = -1; gap = 0; } }
+  const label = new Int32Array(N).fill(-1);
+  const sizes = [];
+  const stack = [];
+  let comp = 0;
+  for (let p = 0; p < N; p++) {
+    if (data[p * ch + 3] <= A) { label[p] = -2; continue; }
+    if (label[p] !== -1) continue;
+    let size = 0; stack.length = 0; stack.push(p); label[p] = comp;
+    while (stack.length) {
+      const q = stack.pop(); size++;
+      const x = q % w, y = (q - x) / w;
+      for (let dy = -1; dy <= 1; dy++) {
+        const ny = y + dy; if (ny < 0 || ny >= h) continue;
+        for (let dx = -1; dx <= 1; dx++) {
+          if (!dx && !dy) continue;
+          const nx = x + dx; if (nx < 0 || nx >= w) continue;
+          const np = ny * w + nx;
+          if (label[np] === -1 && data[np * ch + 3] > A) { label[np] = comp; stack.push(np); }
+        }
+      }
+    }
+    sizes.push(size); comp++;
   }
-  if (start >= 0) bands.push([start, h - 1]);
-  if (bands.length <= 1) return [0, h];
+  if (comp <= 1) return 0;
 
-  // Bande la plus dense
-  let best = [0, h - 1], bestSum = -1;
-  for (const [a, b] of bands) {
-    let s = 0; for (let y = a; y <= b; y++) s += rowCount[y];
-    if (s > bestSum) { bestSum = s; best = [a, b]; }
+  let maxSize = 0, total = 0;
+  for (let c = 0; c < comp; c++) { total += sizes[c]; if (sizes[c] > maxSize) maxSize = sizes[c]; }
+  // Un composant est « du texte » s'il est bien plus petit que le produit
+  const keepThresh = Math.max(500, maxSize * 0.12);
+  let removeCount = 0;
+  for (let c = 0; c < comp; c++) if (sizes[c] < keepThresh) removeCount += sizes[c];
+  // Si on retirerait trop (produit multi-pièces équilibré), on s'abstient
+  if (removeCount > total * 0.4) return 0;
+
+  let erased = 0;
+  for (let p = 0; p < N; p++) {
+    const l = label[p];
+    if (l >= 0 && sizes[l] < keepThresh) { data[p * ch + 3] = 0; erased++; }
   }
-  // Si la bande principale ne domine pas nettement, on garde tout (produit multi-pièces)
-  if (bestSum < total * 0.6) return [0, h];
-  const pad = 6;
-  const top = Math.max(0, best[0] - pad);
-  const bot = Math.min(h - 1, best[1] + pad);
-  return [top, bot - top + 1];
+  return erased;
 }
 
 // Compose l'image finale à partir d'un buffer de photo produit (ou null = placeholder)
@@ -182,14 +198,10 @@ async function buildImage(name, productBuffer, variantLabel) {
       if (data[i] > 243 && data[i + 1] > 243 && data[i + 2] > 243) data[i + 3] = 0;
     }
 
-    // Certaines photos CJ ont une étiquette texte en ANGLAIS (« Black », « Grey »…)
-    // incrustée sous le produit, séparée par un espace blanc. On garde uniquement
-    // la bande verticale la plus « pleine » (le produit) pour effacer l'étiquette.
-    const [cropTop, cropH] = mainContentBand(data, w, h, ch);
-    let keyed = await sharp(data, { raw: { width: w, height: h, channels: ch } }).png().toBuffer();
-    if (cropTop > 0 || cropH < h) {
-      keyed = await sharp(keyed).extract({ left: 0, top: cropTop, width: w, height: cropH }).png().toBuffer();
-    }
+    // Efface les étiquettes texte en ANGLAIS incrustées par CJ (« BLACK »,
+    // « GREY », « RED »…) posées à côté/au-dessus du produit sur fond blanc.
+    removeStrayText(data, w, h, ch);
+    const keyed = await sharp(data, { raw: { width: w, height: h, channels: ch } }).png().toBuffer();
     const prod = await sharp(keyed)
       .trim()
       .resize({ width: 620, height: 580, fit: 'inside', withoutEnlargement: false })
