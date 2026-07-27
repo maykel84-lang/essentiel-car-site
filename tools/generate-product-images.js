@@ -185,6 +185,19 @@ function removeStrayText(data, w, h, ch) {
   return erased;
 }
 
+// Rogne une image selon des fractions 0..1 {left,top,width,height} de sa taille.
+// Sert à isoler le flacon et retirer un bandeau de texte incrusté (ex. notes
+// olfactives en anglais sur les photos d'ambiance CJ).
+async function cropFractional(buf, c) {
+  const meta = await sharp(buf).metadata();
+  const W = meta.width, H = meta.height;
+  const left = Math.max(0, Math.round((c.left || 0) * W));
+  const top = Math.max(0, Math.round((c.top || 0) * H));
+  const width = Math.min(Math.round((c.width || 1) * W), W - left);
+  const height = Math.min(Math.round((c.height || 1) * H), H - top);
+  return sharp(buf).extract({ left, top, width, height }).toBuffer();
+}
+
 // Compose l'image finale à partir d'un buffer de photo produit (ou null = placeholder)
 async function buildImage(name, productBuffer, variantLabel) {
   const layers = [{ input: backgroundSvg() }];
@@ -248,12 +261,19 @@ async function main() {
     let i = 0;
     for (const u of urls) {
       i++;
-      // Une URL peut être une chaîne, ou { url, variant } pour un nom de variante
+      // Une URL peut être une chaîne, ou { url, variant, title, crop } :
+      //   variant → pastille/badge nom en haut-droite
+      //   title   → texte du cercle rouge (remplace le nom du produit)
+      //   crop    → rognage fractionnel {left,top,width,height} en 0..1 pour
+      //             isoler le produit et retirer un texte incrusté au-dessus
       const url = typeof u === 'string' ? u : u.url;
       const variant = typeof u === 'string' ? null : (u.variant || null);
+      const title = typeof u === 'string' ? null : (u.title || null);
+      const crop = typeof u === 'string' ? null : (u.crop || null);
       try {
-        const buf = await download(url);
-        const out = await buildImage(entry.label || entry.name, buf, variant);
+        let buf = await download(url);
+        if (crop) buf = await cropFractional(buf, crop);
+        const out = await buildImage(title || entry.label || entry.name, buf, variant);
         const outPath = path.join(OUT_DIR, `${entry.id}-${i}.jpg.png`);
         fs.writeFileSync(outPath, out);
         console.log('✓ ' + path.relative(path.join(__dirname, '..'), outPath));
