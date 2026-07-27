@@ -804,6 +804,7 @@ svg { display: block; }
 .badge--pro        { background: #111; color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
 .badge--security   { background: #111; color: var(--white); border: 1px solid rgba(255,255,255,0.15); }
 .badge--practical  { background: #111; color: var(--white); border: 1px solid rgba(255,255,255,0.15); }
+.badge--comfort    { background: #111; color: var(--white); border: 1px solid rgba(255,255,255,0.15); }
 .badge--bundle     { background: #111; color: var(--white); border: 1px solid rgba(255,255,255,0.15); letter-spacing: 0.1em; }
 
 /* ── Discount badge on product card image (bottom-left, red) ── */

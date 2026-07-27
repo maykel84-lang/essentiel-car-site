@@ -43,7 +43,7 @@ const PRODUCTS = [
     id: 'brosse-jantes',
     spu: 'CJJT1246906',
     sku: 'CJJT124690601AZ',
-    badge: '-35%',
+    badge: 'Malin',
     badgeType: 'promo',
     price: 12.90,
     oldPrice: 19.90,
@@ -559,22 +559,16 @@ const PRODUCTS = [
     category: 'accessoires',
     accentColor: '#1a0a1a',
     images: [
-      'assets/images/products/diffuseur-parfum-1.jpg.png',
-      'assets/images/products/diffuseur-parfum-2.jpg.png',
-      'assets/images/products/diffuseur-parfum-3.jpg.png',
-      'assets/images/products/diffuseur-parfum-4.jpg.png',
-      'assets/images/products/diffuseur-parfum-5.jpg.png',
-      'assets/images/products/diffuseur-parfum-6.jpg.png',
-      'assets/images/products/diffuseur-parfum-7.jpg.png'
+      'assets/images/products/diffuseur-parfum-1.jpg.png'
     ],
     variants: [
       { label: 'Parfum', options: [
-        { value: 'hilton',    display: 'Hilton',         hex: '#8c8c8c', imageIndex: 1 },
-        { value: 'gardenia',  display: 'Gardenia',       hex: '#e79ab5', imageIndex: 2 },
-        { value: 'ocean',     display: 'Ocean',          hex: '#2c7fb8', imageIndex: 3 },
-        { value: 'encounter', display: 'Encounter',      hex: '#3a9a54', imageIndex: 4 },
-        { value: 'dragon',    display: 'Ancient Dragon', hex: '#e0b93a', imageIndex: 5 },
-        { value: 'osmanthus', display: 'Osmanthus',      hex: '#e08a2e', imageIndex: 6 },
+        { value: 'gris',   display: 'Gris',   hex: '#8c8c8c' },
+        { value: 'rose',   display: 'Rose',   hex: '#e79ab5' },
+        { value: 'bleu',   display: 'Bleu',   hex: '#2c7fb8' },
+        { value: 'vert',   display: 'Vert',   hex: '#3a9a54' },
+        { value: 'jaune',  display: 'Jaune',  hex: '#e0b93a' },
+        { value: 'orange', display: 'Orange', hex: '#e08a2e' },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -710,7 +704,7 @@ const PRODUCTS = [
     id: 'organisateur-coffre-grand',
     spu: 'CJYD2716827',
     sku: 'CJYD271682701AZ',
-    badge: '-20%',
+    badge: 'Astucieux',
     badgeType: 'promo',
     price: 39.90,
     oldPrice: 49.90,
@@ -911,7 +905,7 @@ const PRODUCTS = [
     id: 'bandeau-led',
     spu: 'CJSN2628341',
     sku: 'CJSN262834105EV',
-    badge: '-21%',
+    badge: 'Incroyable',
     badgeType: 'promo',
     price: 14.90,
     oldPrice: 18.90,
@@ -1163,7 +1157,7 @@ const PRODUCTS = [
   },
   {
     id: 'dashcam-4k-wifi',
-    badge: '-31%',
+    badge: 'Bluffant',
     badgeType: 'promo',
     price: 89.90,
     oldPrice: 129.90,
@@ -1275,7 +1269,7 @@ const PRODUCTS = [
   },
   {
     id: 'camera-recul',
-    badge: '-36%',
+    badge: 'Indispensable',
     badgeType: 'promo',
     price: 34.90,
     oldPrice: 54.90,
@@ -1313,7 +1307,7 @@ const PRODUCTS = [
   },
   {
     id: 'detecteur-angle-mort',
-    badge: '-38%',
+    badge: 'Ingénieux',
     badgeType: 'promo',
     price: 49.90,
     oldPrice: 79.90,
@@ -1384,7 +1378,7 @@ const PRODUCTS = [
   },
   {
     id: 'lampe-torche-aimantee',
-    badge: '-33%',
+    badge: 'Futé',
     badgeType: 'promo',
     price: 19.90,
     oldPrice: 29.90,
@@ -1458,7 +1452,7 @@ const PRODUCTS = [
   },
   {
     id: 'plot-retractable',
-    badge: '-30%',
+    badge: 'Utile',
     badgeType: 'promo',
     price: 34.90,
     oldPrice: 49.90,
@@ -1533,7 +1527,7 @@ const PRODUCTS = [
   },
   {
     id: 'gants-nitrile',
-    badge: '3,99€',
+    badge: 'Irrésistible',
     badgeType: 'promo',
     price: 3.99,
     oldPrice: 7.99,
@@ -1570,7 +1564,7 @@ const PRODUCTS = [
   },
   {
     id: 'microfibre-lot',
-    badge: '4,99€',
+    badge: 'Génial',
     badgeType: 'promo',
     price: 4.99,
     oldPrice: 9.99,
