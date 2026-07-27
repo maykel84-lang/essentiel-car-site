@@ -564,16 +564,17 @@ const PRODUCTS = [
       'assets/images/products/diffuseur-parfum-3.jpg.png',
       'assets/images/products/diffuseur-parfum-4.jpg.png',
       'assets/images/products/diffuseur-parfum-5.jpg.png',
-      'assets/images/products/diffuseur-parfum-6.jpg.png'
+      'assets/images/products/diffuseur-parfum-6.jpg.png',
+      'assets/images/products/diffuseur-parfum-7.jpg.png'
     ],
     variants: [
       { label: 'Parfum', options: [
-        { value: 'hilton',    display: 'Hilton',         hex: '#8c8c8c', imageIndex: 0 },
-        { value: 'gardenia',  display: 'Gardenia',       hex: '#e79ab5', imageIndex: 1 },
-        { value: 'ocean',     display: 'Ocean',          hex: '#2c7fb8', imageIndex: 2 },
-        { value: 'encounter', display: 'Encounter',      hex: '#3a9a54', imageIndex: 3 },
-        { value: 'dragon',    display: 'Ancient Dragon', hex: '#e0b93a', imageIndex: 4 },
-        { value: 'osmanthus', display: 'Osmanthus',      hex: '#e08a2e', imageIndex: 5 },
+        { value: 'hilton',    display: 'Hilton',         hex: '#8c8c8c', imageIndex: 1 },
+        { value: 'gardenia',  display: 'Gardenia',       hex: '#e79ab5', imageIndex: 2 },
+        { value: 'ocean',     display: 'Ocean',          hex: '#2c7fb8', imageIndex: 3 },
+        { value: 'encounter', display: 'Encounter',      hex: '#3a9a54', imageIndex: 4 },
+        { value: 'dragon',    display: 'Ancient Dragon', hex: '#e0b93a', imageIndex: 5 },
+        { value: 'osmanthus', display: 'Osmanthus',      hex: '#e08a2e', imageIndex: 6 },
       ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -871,6 +872,8 @@ const PRODUCTS = [
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
     price: 9.90,
+    oldPrice: 16.90,
+    discount: 41,
     rating: 4.7,
     reviews: 1205,
     category: 'entretien',
@@ -957,6 +960,8 @@ const PRODUCTS = [
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 14.99,
+    oldPrice: 24.99,
+    discount: 40,
     rating: 4.7,
     reviews: 1456,
     category: 'technologie',
@@ -1365,7 +1370,7 @@ const PRODUCTS = [
       <path d="M20 40 L28 40"/>
     </svg>`,
     fr: {
-      name: 'Chargeur Qi Voiture Sans Fil 15W',
+      name: 'Chargeur Qi Rapide Voiture Sans Fil 15W',
       tagline: 'Posez, chargez, roulez',
       desc: 'Chargeur sans fil voiture 15W compatible Qi, MagSafe et charge rapide. Support auto-serrant s\'ouvre et se ferme automatiquement. Ventouse pare-brise ou grille d\'aération. Compatible iPhone 12/13/14/15 et Samsung Galaxy. Câble USB-C inclus.',
       features: ['15W charge rapide', 'Compatible MagSafe', 'Auto-serrant', 'Ventouse + grille']

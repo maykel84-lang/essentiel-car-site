@@ -90,15 +90,19 @@ async function lineWidth(text, fs) {
 async function nameSvg(name) {
   const lines = wrapName(name);
   const cx = 690;
-  const maxWidth = lines.length > 1 ? 570 : 650;
+  // Largeur utile RÉDUITE pour le haut du cercle rouge (qui se rétrécit vers le
+  // haut) : un mot long seul sur sa ligne (ex. « Organisateur ») ne doit pas
+  // toucher les bords. On abaisse aussi le bloc pour profiter de la partie large.
+  const maxWidth = lines.length > 1 ? 500 : 620;
   let fs2 = lines.length > 1 ? 96 : 116;
 
   let widest = 0;
   for (const l of lines) widest = Math.max(widest, await lineWidth(l, fs2));
   if (widest > maxWidth) fs2 = Math.max(48, Math.floor(fs2 * maxWidth / widest));
 
-  // Centrage vertical du bloc de texte au milieu de la partie visible du cercle
-  const targetCenter = 928;
+  // Centrage vertical du bloc de texte, abaissé pour rester dans la zone large
+  // du cercle rouge (sans faire déborder la 2e ligne hors du canvas).
+  const targetCenter = 950;
   const step = fs2 + 12;
   const firstBaseline = Math.round(targetCenter + 0.34 * fs2 - (lines.length - 1) * step / 2);
   const els = lines.map((l, i) => {
@@ -122,6 +126,49 @@ function variantBadgeSvg(label) {
   </svg>`);
 }
 
+// Analyse les lignes d'une image RGBA (après mise en transparence du blanc) et
+// renvoie [top, height] de la bande de contenu la PLUS DENSE = le produit.
+// Sert à retirer une étiquette texte détachée (ex. « Black » incrusté par CJ)
+// située au-dessus ou en dessous, séparée par un espace blanc.
+// Sécurité : si le produit occupe déjà ≥ 60 % du contenu (une seule pièce, ou
+// pièces jointes), on ne rogne rien (renvoie l'image entière).
+function mainContentBand(data, w, h, ch) {
+  const rowCount = new Array(h).fill(0);
+  let total = 0;
+  for (let y = 0; y < h; y++) {
+    let c = 0;
+    const base = y * w * ch;
+    for (let x = 0; x < w; x++) if (data[base + x * ch + 3] > 12) c++;
+    rowCount[y] = c;
+    total += c;
+  }
+  if (total === 0) return [0, h];
+
+  // Segmente en bandes séparées par des trous d'au moins GAP lignes vides
+  const GAP = 20, MIN_ROW = 4;
+  const bands = [];
+  let start = -1, gap = 0;
+  for (let y = 0; y < h; y++) {
+    if (rowCount[y] > MIN_ROW) { if (start < 0) start = y; gap = 0; }
+    else if (start >= 0) { if (++gap >= GAP) { bands.push([start, y - gap]); start = -1; gap = 0; } }
+  }
+  if (start >= 0) bands.push([start, h - 1]);
+  if (bands.length <= 1) return [0, h];
+
+  // Bande la plus dense
+  let best = [0, h - 1], bestSum = -1;
+  for (const [a, b] of bands) {
+    let s = 0; for (let y = a; y <= b; y++) s += rowCount[y];
+    if (s > bestSum) { bestSum = s; best = [a, b]; }
+  }
+  // Si la bande principale ne domine pas nettement, on garde tout (produit multi-pièces)
+  if (bestSum < total * 0.6) return [0, h];
+  const pad = 6;
+  const top = Math.max(0, best[0] - pad);
+  const bot = Math.min(h - 1, best[1] + pad);
+  return [top, bot - top + 1];
+}
+
 // Compose l'image finale à partir d'un buffer de photo produit (ou null = placeholder)
 async function buildImage(name, productBuffer, variantLabel) {
   const layers = [{ input: backgroundSvg() }];
@@ -130,10 +177,19 @@ async function buildImage(name, productBuffer, variantLabel) {
   // de la photo masque les cercles), puis on rogne et on centre.
   if (productBuffer) {
     const { data, info } = await sharp(productBuffer).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-    for (let i = 0; i < data.length; i += info.channels) {
+    const ch = info.channels, w = info.width, h = info.height;
+    for (let i = 0; i < data.length; i += ch) {
       if (data[i] > 243 && data[i + 1] > 243 && data[i + 2] > 243) data[i + 3] = 0;
     }
-    const keyed = await sharp(data, { raw: { width: info.width, height: info.height, channels: info.channels } }).png().toBuffer();
+
+    // Certaines photos CJ ont une étiquette texte en ANGLAIS (« Black », « Grey »…)
+    // incrustée sous le produit, séparée par un espace blanc. On garde uniquement
+    // la bande verticale la plus « pleine » (le produit) pour effacer l'étiquette.
+    const [cropTop, cropH] = mainContentBand(data, w, h, ch);
+    let keyed = await sharp(data, { raw: { width: w, height: h, channels: ch } }).png().toBuffer();
+    if (cropTop > 0 || cropH < h) {
+      keyed = await sharp(keyed).extract({ left: 0, top: cropTop, width: w, height: cropH }).png().toBuffer();
+    }
     const prod = await sharp(keyed)
       .trim()
       .resize({ width: 620, height: 580, fit: 'inside', withoutEnlargement: false })
