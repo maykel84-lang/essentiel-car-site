@@ -148,32 +148,12 @@
     "price": 94.9,
     "variants": {}
   },
-  "spray-antipluie": {
-    "name": "Spray Anti-Pluie Vitres",
-    "image": "assets/images/products/spray-antipluie-1.jpg.png",
-    "bs": false,
-    "price": 29.9,
-    "variants": {}
-  },
   "spray-coating": {
-    "name": "Spray Protection Carrosserie",
+    "name": "Spray Revêtement Vitres Hydrophobe",
     "image": "assets/images/products/spray-coating-1.jpg.png",
     "bs": true,
-    "price": 9.9,
-    "variants": {
-      "30ml": {
-        "price": 9.9,
-        "display": "30 ml"
-      },
-      "50ml": {
-        "price": 14.9,
-        "display": "50 ml"
-      },
-      "100ml": {
-        "price": 19.9,
-        "display": "100 ml"
-      }
-    }
+    "price": 24.9,
+    "variants": {}
   },
   "bandeau-led": {
     "name": "Bandeau LED RGB Habitacle",
@@ -266,7 +246,7 @@
     "variants": {}
   },
   "chargeur-qi": {
-    "name": "Chargeur Qi Voiture Sans Fil 15W",
+    "name": "Chargeur Qi Rapide Voiture Sans Fil 15W",
     "image": "assets/images/products/chargeur-qi-1.jpg.png",
     "bs": false,
     "price": 29.9,

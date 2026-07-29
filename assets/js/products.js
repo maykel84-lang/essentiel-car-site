@@ -831,62 +831,20 @@ const PRODUCTS = [
     }
   },
   {
-    id: 'spray-antipluie',
-    badge: 'POPULAIRE',
-    badgeType: 'popular',
-    price: 29.90,
-    oldPrice: 44.90,
-    discount: 33,
-    rating: 4.5,
-    reviews: 634,
-    category: 'entretien',
-    accentColor: '#0a1020',
-    images: [
-      'assets/images/products/spray-antipluie-1.jpg.png',
-    ],
-    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 40 L20 18 Q20 16 22 16 L28 16 Q30 16 30 18 L30 40 Q30 42 25 42 Q20 42 20 40Z"/>
-      <path d="M24 16 L24 10 L28 10 L32 12 L32 16"/>
-      <circle cx="10" cy="24" r="2" fill="var(--red)" stroke="var(--red)"/>
-      <circle cx="7" cy="32" r="2" fill="var(--red)" stroke="var(--red)"/>
-      <circle cx="13" cy="36" r="1.5" fill="var(--red)" stroke="var(--red)"/>
-      <path d="M34 22 Q38 28 36 34" stroke="var(--red)" stroke-dasharray="3 2"/>
-    </svg>`,
-    fr: {
-      name: 'Spray Anti-Pluie Vitres',
-      tagline: 'Visibilité totale sous la pluie',
-      desc: 'Traitement hydrophobe en spray pour vitres et rétroviseurs. Les gouttes d\'eau glissent immédiatement, même à basse vitesse. Application simple en 2 minutes, efficacité durable selon conditions.',
-      features: ['Effet hydrophobe', 'Vitres & rétros', 'Visibilité accrue', 'Application rapide']
-    },
-    en: {
-      name: 'Rain Repellent Windshield Spray',
-      tagline: 'Full visibility in the rain',
-      desc: 'Hydrophobic spray treatment for windows and mirrors. Water beads and slides off immediately, even at low speed. Easy 2-minute application, lasting effectiveness depending on conditions.',
-      features: ['Hydrophobic effect', 'Windows & mirrors', 'Enhanced visibility', 'Quick apply']
-    }
-  },
-  {
     id: 'spray-coating',
     spu: 'CJQC2531209',
     sku: 'CJQC253120901AZ',
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
-    price: 9.90,
-    oldPrice: 16.90,
-    discount: 41,
+    price: 24.90,
+    oldPrice: 34.90,
+    discount: 29,
     rating: 4.7,
     reviews: 1205,
     category: 'entretien',
     accentColor: '#1a1005',
     images: [
       'assets/images/products/spray-coating-1.jpg.png'
-    ],
-    variants: [
-      { label: 'Contenance', type: 'size', options: [
-        { value: '30ml',  display: '30 ml',  price: 9.90,  default: true },
-        { value: '50ml',  display: '50 ml',  price: 14.90 },
-        { value: '100ml', display: '100 ml', price: 19.90 },
-      ]}
     ],
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 42 L18 16 Q18 14 21 14 L27 14 Q30 14 30 16 L30 42 Q30 44 24 44 Q18 44 18 42Z"/>
@@ -897,14 +855,14 @@ const PRODUCTS = [
     fr: {
       name: 'Spray Revêtement Vitres Hydrophobe',
       tagline: 'Pluie repoussée, vision nette',
-      desc: 'Revêtement hydrophobe en spray pour vitres, pare-brise et rétroviseurs. L\'eau perle et s\'évacue d\'elle-même pour une meilleure visibilité sous la pluie. Formule longue tenue, application en quelques minutes. Disponible en 3 formats (30, 50, 100 ml).',
-      features: ['Effet hydrophobe', 'Vitres & rétros', 'Vision nette', '3 formats']
+      desc: 'Revêtement hydrophobe en spray pour vitres, pare-brise et rétroviseurs. L\'eau perle et s\'évacue d\'elle-même pour une meilleure visibilité sous la pluie. Formule longue tenue, application en quelques minutes. Format 100 ml.',
+      features: ['Effet hydrophobe', 'Vitres & rétros', 'Vision nette', 'Format 100 ml']
     },
     en: {
       name: 'Hydrophobic Glass Coating Spray',
       tagline: 'Rain repelled, clear vision',
-      desc: 'Hydrophobic coating spray for windows, windshield and mirrors. Water beads and runs off on its own for better visibility in the rain. Long-lasting formula, applied in minutes. Available in 3 sizes (30, 50, 100 ml).',
-      features: ['Hydrophobic effect', 'Windows & mirrors', 'Clear vision', '3 sizes']
+      desc: 'Hydrophobic coating spray for windows, windshield and mirrors. Water beads and runs off on its own for better visibility in the rain. Long-lasting formula, applied in minutes. 100 ml bottle.',
+      features: ['Hydrophobic effect', 'Windows & mirrors', 'Clear vision', '100 ml bottle']
     }
   },
   {

@@ -6,7 +6,6 @@ Pour chaque article, noter : SKU · SPU · Prix fournisseur · Frais expédition
 | # | ID site | Titre FR | Titre anglais CJ (à copier) | Prix site |
 |---|---|---|---|---|
 | 1 | support-telephone | Kit Mains Libres 360° | `360 Degree Car Phone Holder Magnetic Dashboard Air Vent Mount` | 27,90€ |
-| 2 | spray-antipluie | Spray Anti-Pluie Vitres | `Hydrophobic Rain Repellent Spray Car Windshield Glass Treatment` | 29,90€ |
 | 3 | tracker-gps | Traceur GPS Voiture | `Mini GPS Tracker Car Vehicle Real Time Tracking Device Long Battery` | 39,90€ |
 | 4 | dashcam-4k-wifi | Dashcam 4K WiFi Avant/Arrière | `4K Dash Cam WiFi Front Rear Dual Lens Car Camera GPS Night Vision` | 89,90€ |
 | 5 | dashcam-4g | Dashcam 4G Surveillance Temps Réel | `4G LTE Dash Cam Real Time Remote Monitoring Car Camera Dual Lens` | 129,90€ |
