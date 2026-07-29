@@ -148,12 +148,32 @@
     "price": 94.9,
     "variants": {}
   },
+  "spray-antipluie": {
+    "name": "Spray Anti-Pluie Vitres",
+    "image": "assets/images/products/spray-antipluie-1.jpg.png",
+    "bs": false,
+    "price": 29.9,
+    "variants": {}
+  },
   "spray-coating": {
-    "name": "Spray Revêtement Vitres Hydrophobe",
+    "name": "Spray Protection Carrosserie",
     "image": "assets/images/products/spray-coating-1.jpg.png",
     "bs": true,
-    "price": 24.9,
-    "variants": {}
+    "price": 9.9,
+    "variants": {
+      "30ml": {
+        "price": 9.9,
+        "display": "30 ml"
+      },
+      "50ml": {
+        "price": 13.99,
+        "display": "50 ml"
+      },
+      "100ml": {
+        "price": 19.9,
+        "display": "100 ml"
+      }
+    }
   },
   "bandeau-led": {
     "name": "Bandeau LED RGB Habitacle",

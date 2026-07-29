@@ -132,12 +132,18 @@
     ]
   },
   {
-    "id": "spray-coating",
-    "name": "Spray Revêtement Vitres Hydrophobe",
-    "label": "Spray Hydrophobe",
+    "id": "spray-antipluie",
+    "name": "Spray Anti-Pluie Vitres",
+    "label": "Spray Anti-Pluie",
     "urls": [
       "https://oss-cf.cjdropshipping.com/product/2025/09/15/12/f5cef51f-0ce6-47d2-83b2-6153f6857821.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_500,h_500"
     ]
+  },
+  {
+    "id": "spray-coating",
+    "name": "Spray Protection Carrosserie",
+    "label": "Spray Carrosserie",
+    "urls": []
   },
   {
     "id": "bandeau-led",

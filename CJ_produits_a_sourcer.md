@@ -6,6 +6,7 @@ Pour chaque article, noter : SKU · SPU · Prix fournisseur · Frais expédition
 | # | ID site | Titre FR | Titre anglais CJ (à copier) | Prix site |
 |---|---|---|---|---|
 | 1 | support-telephone | Kit Mains Libres 360° | `360 Degree Car Phone Holder Magnetic Dashboard Air Vent Mount` | 27,90€ |
+| 2 | spray-coating | Spray Protection Carrosserie (30/50/100 ml) | `Car Paint Coating Protection Spray Hydrophobic Nano Ceramic 30/50/100ml` | 9,90€–19,90€ |
 | 3 | tracker-gps | Traceur GPS Voiture | `Mini GPS Tracker Car Vehicle Real Time Tracking Device Long Battery` | 39,90€ |
 | 4 | dashcam-4k-wifi | Dashcam 4K WiFi Avant/Arrière | `4K Dash Cam WiFi Front Rear Dual Lens Car Camera GPS Night Vision` | 89,90€ |
 | 5 | dashcam-4g | Dashcam 4G Surveillance Temps Réel | `4G LTE Dash Cam Real Time Remote Monitoring Car Camera Dual Lens` | 129,90€ |
@@ -46,7 +47,7 @@ composés de produits déjà sourcés — aucun fournisseur séparé nécessaire
 | organisateur-coffre-grand | CJYD2716827 | CJYD271682701AZ |
 | organisateur-coffre-compact | CJJJJTJT03592 | CJJJJTJT03592-Black |
 | booster-demarrage | CJYD2650409 | CJYD265040902BY |
-| spray-coating | CJQC2531209 | CJQC253120901AZ |
+| spray-antipluie | CJQC2531209 | CJQC253120901AZ |
 | bandeau-led | CJSN2628341 | CJSN262834105EV |
 | chargeur-voiture | CJYD2906573 | CJYD290657301AZ |
 | mini-poubelle | CJJT1214950 | CJJT121495001AZ |
