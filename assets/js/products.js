@@ -5,8 +5,8 @@
 const PRODUCTS = [
   {
     id: 'aspirateur-sans-fil',
-    spu: 'CJJT1464798',
-    sku: 'CJJT146479802BY',
+    spu: 'CJT1464798',
+    sku: 'CJT146479802BY',
     badge: 'BESTSELLER',
     badgeType: 'bestseller',
     price: 49.90,
@@ -41,8 +41,8 @@ const PRODUCTS = [
   },
   {
     id: 'brosse-jantes',
-    spu: 'CJJT1246906',
-    sku: 'CJJT124690601AZ',
+    spu: 'CJT1246906',
+    sku: 'CJT124690601AZ',
     badge: 'Malin',
     badgeType: 'promo',
     price: 12.90,
@@ -634,8 +634,8 @@ const PRODUCTS = [
   },
   {
     id: 'kit-lavage',
-    spu: 'CJJT1445878',
-    sku: 'CJJT144587801AZ',
+    spu: 'CJT1445878',
+    sku: 'CJT144587801AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 39.90,
@@ -755,8 +755,8 @@ const PRODUCTS = [
   },
   {
     id: 'organisateur-coffre-compact',
-    spu: 'CJJJJTJT03592',
-    sku: 'CJJJJTJT03592-Black',
+    spu: 'CJJJTDT03592',
+    sku: 'CJJJTDT03592-Black',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 24.90,
@@ -999,8 +999,8 @@ const PRODUCTS = [
   },
   {
     id: 'mini-poubelle',
-    spu: 'CJJT1214950',
-    sku: 'CJJT121495001AZ',
+    spu: 'CJT1214950',
+    sku: 'CJT121495001AZ',
     badge: 'PRATIQUE',
     badgeType: 'practical',
     price: 19.90,
@@ -1037,8 +1037,8 @@ const PRODUCTS = [
   },
   {
     id: 'organisateur-siege',
-    spu: 'CJQCQCQC00048',
-    sku: 'CJQCQCQC00048-Beige',
+    spu: 'CJCQCQC00048',
+    sku: 'CJCQCQC00048-Beige',
     badge: 'POPULAIRE',
     badgeType: 'popular',
     price: 29.90,
